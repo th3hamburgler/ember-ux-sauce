@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/uxs-button';
+import Clickable from 'ember-ux-sauce/mixins/clickable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 
 const {
@@ -9,7 +10,7 @@ const {
   },
 } = Ember;
 
-const Button = Component.extend(BEMComponent, {
+const Button = Component.extend(BEMComponent, Clickable, {
   // Attributes
   base: 'uxs-button',
   layout,

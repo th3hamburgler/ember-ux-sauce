@@ -2,10 +2,11 @@
 
  {{#viewer.nav as |nav|}}
     {{nav.item 'Introduction' 'docs.index'}}
+    {{nav.item 'Patterns' 'docs.patterns'}}
     {{nav.item 'Quickstart' 'docs.quickstart'}}
     <del>{{nav.item 'Forms' 'docs.forms.index'}}</del>
     {{#nav.subnav as |nav|}}
-      <del>{{nav.item 'Buttons' 'docs.forms.buttons'}}</del>
+      {{nav.item 'Buttons' 'docs.forms.buttons'}}
       <del>{{nav.item 'Input Controls' 'docs.forms.input-controls'}}</del>
       <del>{{nav.item 'Dropdown Controls' 'docs.forms.dropdown-controls'}}</del>
       <del>{{nav.item 'Toggle Controls' 'docs.forms.toggles'}}</del>

@@ -61,12 +61,12 @@
 
 <h2>Actions</h2>
 
-<p>Finally, this component fires an action on tap/click. Actions receive a reference to the component as the first argument.</p>
+<p>Finally, this component fires an action on tap/click. Actions receive a reference to the component as the first argument. The action will not be fired if the component is disabled.</p>
 
 {{#docs-demo as |demo|}}
 
   {{#demo.example name="button-action"}}
-    {{uxs-button text action="submit"}}
+    {{uxs-button text disabled=disabled action="submit"}}
   {{/demo.example}}
 
   {{demo.snippet 'button-action.hbs'}}

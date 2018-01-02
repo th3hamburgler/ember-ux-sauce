@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('docs', function() {
+    this.route('patterns');
     this.route('quickstart');
     this.route('forms', function() {
       this.route('buttons');
