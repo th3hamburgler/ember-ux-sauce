@@ -1,0 +1,75 @@
+<h1>Buttons</h1>
+
+<p>The button style is used for clickable actions. Groups of buttons should be wrapped in a .button-group</p>
+
+<h2>Usage</h2>
+
+<p>Let's look at a basic example:</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="button"}}
+    {{uxs-button
+      text
+      disabled=disabled
+      inline=inline
+      style=style
+      mini=mini
+      naked=naked
+      selected=selected
+    }}
+  {{/demo.example}}
+
+  {{demo.snippet 'button.hbs'}}
+
+{{/docs-demo}}
+
+<h2>Properties</h2>
+
+<p>Now explore the various properties available in this component:</p>
+
+<table class="docs-args-table">
+  <tr>
+    <td>text</td>
+    <td>{{input placeholder="Button Text" value=text}}</td>
+  </tr>
+  <tr>
+    <td>disabled</td>
+    <td>{{docs-toggle value=disabled}}</td>
+  </tr>
+  <tr>
+    <td>inline</td>
+    <td>{{docs-toggle value=inline}}</td>
+  </tr>
+  <tr>
+    <td>style</td>
+    <td>{{input placeholder="Button Style" value=style}}</td>
+  </tr>
+  <tr>
+    <td>mini</td>
+    <td>{{docs-toggle value=mini}}</td>
+  </tr>
+  <tr>
+    <td>naked</td>
+    <td>{{docs-toggle value=naked}}</td>
+  </tr>
+  <tr>
+    <td>selected</td>
+    <td>{{docs-toggle value=selected}}</td>
+  </tr>
+</table>
+
+<h2>Actions</h2>
+
+<p>Finally, this component fires an action on tap/click. Actions receive a reference to the component as the first argument.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="button-action"}}
+    {{uxs-button text action="submit"}}
+  {{/demo.example}}
+
+  {{demo.snippet 'button-action.hbs'}}
+  {{demo.snippet 'button-action.js'}}
+
+{{/docs-demo}}
