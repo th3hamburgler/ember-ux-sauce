@@ -1,0 +1,27 @@
+.heading {
+  @include type-heading;
+}
+
+.subheading {
+  @include type-subheading;
+}
+
+.content {
+  @include type-content;
+}
+
+.detail {
+  @include type-detail;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  @include bold-body-type;
+}
+
+.link {
+  @include link;
+}

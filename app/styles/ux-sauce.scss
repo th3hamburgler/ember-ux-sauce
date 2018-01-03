@@ -1,0 +1,19 @@
+/*
+ * ITCSS ~ https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+ * -----
+ * Settings – used with preprocessors and contain font, colors definitions, etc.
+ * Tools – globally used mixins and functions.
+ * Generic – reset and/or normalize styles, box-sizing definition
+ * Elements – styling for bare HTML elements
+ * Objects – class-based selectors which define undecorated design patterns
+ * Components – specific UI components.
+ * Utilities – utilities and helper classes - override anything before!
+ */
+// @import "settings.variables";
+// @import 'include.base';
+// @import 'include.tools';
+// @import 'include.vendor';
+// @import 'include.elements';
+// @import 'include.objects';
+// @import 'include.components';
+// @import 'include.trumps';

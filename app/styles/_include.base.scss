@@ -1,0 +1,8 @@
+@import 'reset.scss';
+@import 'https://fonts.googleapis.com/css?family=Lato:300,400,700|Material+Icons';
+
+body,
+body > .ember-view,
+html {
+  height: 100%;
+}

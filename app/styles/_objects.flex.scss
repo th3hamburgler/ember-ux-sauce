@@ -1,0 +1,74 @@
+.f {
+  display: flex;
+
+  &--nm {
+    display: block;
+    @include mq(phone) {
+      display: flex;
+    }
+  }
+}
+
+.fc {
+  @extend .f;
+  flex-direction: column;
+
+  &--nm {
+    display: block;
+    @include mq(phone) {
+      display: flex;
+    }
+  }
+}
+
+.fr {
+  @extend .f;
+  flex-direction: row;
+
+  &--nm {
+    display: block;
+    @include mq(phone) {
+      display: flex;
+    }
+  }
+}
+
+.fg {
+  flex: 1;
+}
+
+.fw {
+  flex-wrap: wrap;
+}
+
+.fj-c {
+  justify-content: center;
+}
+
+.fj-e {
+  justify-content: flex-end;
+}
+
+.fj-s {
+  justify-content: flex-start;
+}
+
+.fj-a {
+  justify-content: space-around;
+}
+
+.fj-b {
+  justify-content: space-between;
+}
+
+.fa-c {
+  align-items: center;
+}
+
+.fa-s {
+  align-items: flex-start;
+}
+
+.fa-e {
+  align-items: flex-end;
+}

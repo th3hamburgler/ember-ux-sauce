@@ -1,8 +1,19 @@
+/***
+ * Namespace uxs styles so we do not leak into the docs
+ */
+.docs-demo-example,
+.uxs {
+  @import 'include.base';
+  @import 'include.tools';
+  @import "settings.variables";
+  @import 'include.vendor';
+  @import 'include.elements';
+  @import 'include.objects';
+  @import 'include.components';
+  @import 'include.trumps';
+}
+
 .docs-args-table {
   margin: 16px 0;
   width : 100%;
-}
-
-button {
-  border: none;
 }

@@ -1,0 +1,96 @@
+/**
+ Theme Settings
+ ---
+ @class Variables
+ @namespace Styles
+ @public
+*/
+/**
+ Is this a high contrast theme
+ ---
+ @property high-contrast
+ @default  false
+ @type     {(boolean)}
+ @public
+*/
+$high-contrast                  : false!default;
+/*
+ * Media Queries
+ */
+$breakpoints                    : ( "phone": 480px, "tablet": 768px, "tablet-wide": 1024px, "desktop": 1248px, "desktop-wide": 1440px );
+/*
+ * Animations
+ */
+$transition-duration            : 0.2s!default;
+$transition-timing-function     : cubic-bezier(.4,0,.2,1)!default;
+/*
+ * Typeography
+ */
+$s-giant                        : 76.244px!default;
+$s-huge                         : 47.123px!default;
+$s-large                        : 29.124px!default;
+$s-medium                       : 18px!default;
+$s-small                        : 11.125px!default;
+$s-sk-medium                    : 15px!default;
+$max-width-content              : rem-size(480px)!default;
+$max-width-detail               : rem-size(320px)!default;
+/*
+ * Sizes
+ */
+$baseline                       : 25px!default; //
+/*
+ * Colors
+ */
+$c-white                        : rgb(255,255,255);
+$c-dark                         : rgb(31, 49, 59);
+$c-grey                         : rgb(148, 157,167);
+$c-mid                          : rgb(209, 215, 221);
+$c-light                        : rgb(237, 239, 241);
+$c-sk-back                      : $c-mid;
+$c-sk-front                     : $c-light;
+$c-sk-light                     : lighten($c-sk-front, 2%);
+/* Primary */
+$c-primary                      : rgb(25, 180, 197);
+$c-primary-1                    : $c-primary;
+$c-primary-2                    : shade-light($c-primary, 1);
+$c-primary-3                    : shade-light($c-primary, 2);
+$c-primary-4                    : shade-light($c-primary, 3);
+$c-primary-5                    : shade-light($c-primary, 4);
+/* Alert */
+$c-alert                        : rgb(117,192,68);
+$c-alert-1                      : $c-alert;
+$c-alert-2                      : shade-light($c-alert, 1);
+$c-alert-3                      : shade-light($c-alert, 2);
+$c-alert-4                      : shade-light($c-alert, 3);
+$c-alert-5                      : shade-light($c-alert, 4);
+/* Warning */
+$c-warning                      : rgb(199, 33, 110);
+$c-warning-1                    : $c-warning;
+$c-warning-2                    : shade-light($c-warning, 1);
+$c-warning-3                    : shade-light($c-warning, 2);
+$c-warning-4                    : shade-light($c-warning, 3);
+$c-warning-5                    : shade-light($c-warning, 4);
+/*
+ * Buttons
+ */
+$btn-background                 : $c-primary!default;
+$btn-color                      : $c-white!default;
+$btn-shadow-color               : $c-primary-4!default;
+$btn-border-color               : $c-light!default;
+/* Hover */
+$btn-hover-background           : $c-primary-2!default;
+$btn-hover-color                : $c-white!default;
+$btn-hover-border-color         : $c-white!default;
+/* Selected */
+$btn-selected-background        : $c-white!default;
+$btn-selected-color             : $c-primary!default;
+/* Selected Hover */
+$btn-selected-hover-background  : $c-primary-5!default;
+$btn-selected-hover-color       : $c-primary!default;
+/* Disabled */
+$btn-disabled-background        : $c-primary-2!default;
+$btn-disabled-color             : $c-primary-4!default;
+$btn-disabled-border-color      : $c-primary-4!default;
+/* Disabled Hover */
+$btn-disabled-hover-color       : $c-primary-4!default;
+$btn-disabled-hover-border-color: $c-primary-4!default;

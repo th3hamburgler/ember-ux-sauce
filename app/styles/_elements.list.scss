@@ -1,0 +1,54 @@
+dl,
+ol,
+ul {
+  @extend .content;
+  margin-bottom: rem-size($baseline);
+}
+
+ol,
+ul {
+  padding-left: rem-size(20px);
+}
+
+dl {}
+
+dt {
+  @include bold-body-type;
+  @extend .detail;
+}
+
+dd {
+  margin-left: rem-size($baseline);
+}
+
+li {
+  list-style-position: outside;
+}
+
+ol {
+  li {
+    list-style-type: decimal;
+  }
+
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  li {
+    list-style-type: circle;
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+ol.detail,
+ul.detail {
+  ol,
+  ul {
+    @extend .detail;
+  }
+}

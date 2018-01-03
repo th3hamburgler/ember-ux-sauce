@@ -1,0 +1,28 @@
+table.table--no-margin {
+  margin: 0;
+}
+
+table.detail {
+  max-width: none;
+
+  td,
+  th {
+    @extend .detail;
+  }
+}
+
+.table-section {
+  td {
+    padding-top: rem-size($baseline*1);
+  }
+}
+
+.table-emphasis {
+  td {
+    @include bold-body-type;
+  }
+}
+
+.table-wrap {
+  white-space: normal;
+}

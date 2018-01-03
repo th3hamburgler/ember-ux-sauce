@@ -1,0 +1,47 @@
+.hidden {
+  display: none!important;
+
+  &--m {
+    @include mq(phone, max) {
+      display: none!important;
+    }
+  }
+
+  &--t {
+    @include mq(tablet-wide, max) {
+      display: none!important;
+    }
+  }
+}
+
+.transparent {
+  opacity: 0;
+
+  &--m {
+    @include mq(phone, max) {
+      opacity: 0!important;
+    }
+  }
+
+  &--t {
+    @include mq(tablet-wide, max) {
+      opacity: 0!important;
+    }
+  }
+}
+
+.opaque {
+  opacity: 1!important;
+
+  &--m {
+    @include mq(phone, max) {
+      opacity: 1!important;
+    }
+  }
+
+  &--t {
+    @include mq(tablet-wide, max) {
+      opacity: 1!important;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+body {
+  @include body-type;
+  background: $c-white;
+  color     : $c-dark;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+img {
+  display  : block;
+  max-width: 100%;
+}

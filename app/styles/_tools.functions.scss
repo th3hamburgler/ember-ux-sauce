@@ -1,0 +1,57 @@
+/**
+ * strip unit
+ * ---
+ * Remove the unit from a css string
+ * e.g. 16px
+ *
+ * @param  {string} $number a css unit string
+ * @return {number}         number without unit
+ */
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+/**
+ * rem-size
+ * ---
+ * Convert pixels into rems
+ * e.g. 160px = 10rem
+ *
+ * @param  {string}   $pixels description
+ * @return {string}           description
+ */
+@function rem-size($pixels) {
+  $value   : strip-unit($pixels);
+  $remValue: ($value/16);
+  @return #{$remValue}rem;
+}
+/**
+ * shade-light
+ * ---
+ * Take a color and lighten it by equal intervals
+ *
+ * @param  {string}   $base-color  css color
+ * @param  {int}      $step        amount of steps to lighten
+ * @param  {int}      $steps       total number of steps
+ * @return {string}                lighter color
+ */
+@function shade-light($base-color, $step, $steps:5) {
+  $luminosity-factor: (100 - lightness($base-color)) / $steps;
+  @return lighten($base-color, $luminosity-factor*$step);
+}
+/**
+ * shade-dark
+ * ---
+ * Take a color and darken it by equal intervals
+ *
+ * @param  {string}   $base-color  css color
+ * @param  {int}      $step        amount of steps to darken
+ * @param  {int}      $steps       total number of steps
+ * @return {string}                darker color
+ */
+@function shade-dark($base-color, $step, $steps:5) {
+  $luminosity-factor: (lightness($base-color)) / $steps;
+  @return darken($base-color, $luminosity-factor*$step);
+}

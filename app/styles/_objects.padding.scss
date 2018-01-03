@@ -1,0 +1,22 @@
+/*
+ * padding helper classes
+ */
+.p {
+  padding: rem-size($baseline);
+}
+
+.pt {
+  padding-top: rem-size($baseline);
+}
+
+.pr {
+  padding-right: rem-size($baseline);
+}
+
+.pb {
+  padding-bottom: rem-size($baseline);
+}
+
+.pl {
+  padding-left: rem-size($baseline);
+}

@@ -1,0 +1,24 @@
+table {
+  margin     : 0 auto rem-size($baseline);
+  display    : block;
+  overflow-x : auto;
+  white-space: nowrap;
+  width      : 100%;
+}
+
+td,
+th {
+  @extend .content;
+  @include text-truncate;
+  text-align : left;
+  line-height: rem-size($baseline);
+  padding    : 0 rem-size($baseline*0.5);
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}

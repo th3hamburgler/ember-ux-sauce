@@ -5,7 +5,18 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
-    sassOptions: {}
+    sassOptions: {
+      includePaths: [
+        'node_modules/reset-css'
+      ],
+      outputPaths: {
+        app: {
+          css: {
+            'app': '/assets/ux-sauce.css',
+          }
+        }
+      }
+    },
   });
 
   /*
