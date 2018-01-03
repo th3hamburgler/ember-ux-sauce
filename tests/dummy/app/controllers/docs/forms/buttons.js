@@ -11,6 +11,7 @@ export default Controller.extend({
   inline: false,
   mini: false,
   naked: false,
+  name: 'my-button',
   selected: false,
   style: 'primary',
   // Actions

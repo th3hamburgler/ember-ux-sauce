@@ -16,6 +16,7 @@
       style=style
       mini=mini
       naked=naked
+      name=name
       selected=selected
     }}
   {{/demo.example}}
@@ -30,32 +31,48 @@
 
 <table class="docs-args-table">
   <tr>
-    <td>text</td>
+    <td>text<span class="req">*</span></td>
     <td>{{input placeholder="Button Text" value=text}}</td>
+    <td><em>String</em></td>
   </tr>
   <tr>
     <td>disabled</td>
     <td>{{docs-toggle value=disabled}}</td>
+    <td><em>Boolean</em></td>
   </tr>
   <tr>
     <td>inline</td>
     <td>{{docs-toggle value=inline}}</td>
+    <td><em>Boolean</em></td>
   </tr>
   <tr>
     <td>style</td>
     <td>{{input placeholder="Button Style" value=style}}</td>
+    <td><em>String</em></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td colspan="2"><em>Possible Values: "primary", "accent", "black", "white", "grey"</em></td>
   </tr>
   <tr>
     <td>mini</td>
     <td>{{docs-toggle value=mini}}</td>
+    <td><em>Boolean</em></td>
   </tr>
   <tr>
     <td>naked</td>
     <td>{{docs-toggle value=naked}}</td>
+    <td><em>Boolean</em></td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>{{input placeholder="Button Name" value=name}}</td>
+    <td><em>String</em></td>
   </tr>
   <tr>
     <td>selected</td>
     <td>{{docs-toggle value=selected}}</td>
+    <td><em>Boolean</em></td>
   </tr>
 </table>
 
