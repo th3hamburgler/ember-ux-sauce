@@ -14,6 +14,7 @@
   padding         : 0;
   margin          : rem-size(($baseline*0.5) - 1px) 0;
   max-width       : $max-width-content;
+  min-height      : rem-size($baseline*1.5);
   text-align      : center;
   width           : 100%;
   @include input-glow {
@@ -112,6 +113,7 @@
    */
   &--mini {
     @include type-detail;
+    min-height: rem-size($baseline);
   }
   /**
    * Naked
