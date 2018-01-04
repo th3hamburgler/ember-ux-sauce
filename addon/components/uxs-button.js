@@ -1,34 +1,40 @@
 import Ember from 'ember';
 import layout from '../templates/components/uxs-button';
-import {
+import PropTypeMixin, {
   PropTypes
 } from 'ember-prop-types';
+import Accessible from 'ember-ux-sauce/mixins/accessible';
 import Clickable from 'ember-ux-sauce/mixins/clickable';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 
 const {
   Component,
+  computed,
   computed: {
+    alias,
     equal,
+  },
+  String: {
+    dasherize,
   },
 } = Ember;
 
-const Button = Component.extend(BEMComponent, Clickable, Testable, {
+const Button = Component.extend(Accessible, BEMComponent, Clickable, PropTypeMixin, Testable, {
   // Attributes
   base: 'uxs-button',
   layout,
   modifiers: [
-    'disabled',
-    'inline',
     'isAccent:accent',
     'isBlack:black',
+    'disabled',
+    'inline',
     'isGray:gray',
-    'isPrimary:primary',
-    'isWhite:white',
     'mini',
     'naked',
+    'isPrimary:primary',
     'selected',
+    'isWhite:white',
   ],
   propTypes: {
     inline: PropTypes.bool,
@@ -44,12 +50,27 @@ const Button = Component.extend(BEMComponent, Clickable, Testable, {
   isGray: equal('style', 'gray'),
   isPrimary: equal('style', 'primary'),
   isWhite: equal('style', 'white'),
+  /**
+   * Alias for the aria accesibility label
+   */
+  label: alias('text'),
+  /**
+   * Default the component name to dasherized text
+   */
+  name: computed('text', function() {
+    return dasherize(this.get('text'));
+  }),
   // Methods
+  //
+  /**
+   * Init any property defaults
+   */
   getDefaultProps() {
+    Ember.Logger.log('getDefaultProps');
     return {
       style: 'primary',
-    }
-  }
+    };
+  },
 });
 
 Button.reopenClass({
@@ -57,42 +78,3 @@ Button.reopenClass({
 });
 
 export default Button;
-
-
-/*
-import Ember from 'ember';
-import layout from '../templates/components/ht-button';
-import ClickSupport from '../mixins/click-support';
-import AccessibleComponent from '../mixins/accessible-component';
-
-const {
-  Component,
-  computed: {
-    alias,
-  },
-} = Ember;
-
-const Button = Component.extend(AccessibleComponent, ClickSupport, {
-  attributeBindings: [
-    'disabled:disabled',
-    'type:type',
-    'name:name',
-    'name:data-test-button',
-  ],
-  classNameBindings: [
-    'naked:button--naked',
-    'selected:button--selected',
-    'disabled:button--disabled',
-    'inline:button--inline',
-    'mini:button--mini',
-  ],
-  classNames: ['button'],
-  layout,
-  role: 'button',
-  tagName: 'button',
-  type: 'button',
-  name: 'button',
-  // Computed
-  label: alias('text'),
-});
-*/
