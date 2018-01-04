@@ -17,7 +17,6 @@ const {
 */
 export default Mixin.create({
   // Attributes
-  attributeBindings: [],
   /**
     The name property is used as the value for test selectors.<br/>
     For example the foo-component would have the following selector:

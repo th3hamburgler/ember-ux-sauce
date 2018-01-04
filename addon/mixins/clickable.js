@@ -23,16 +23,6 @@ export default Mixin.create({
     @public
   */
   action: null,
-
-  /**
-    Prevents the action from firing when true
-    @property disabled
-    @default  null
-    @type     {boolean}
-    @public
-  */
-  disabled: null,
-
   /**
    * Mixins Property Managment config
    *
@@ -43,9 +33,9 @@ export default Mixin.create({
   propTypes: {
     action: PropTypes.oneOfType([
       PropTypes.null,
-      PropTypes.string
+      PropTypes.string,
+      PropTypes.func,
     ]),
-    disabled: PropTypes.bool,
   },
   /**
     Add a role to the item for accessibility
