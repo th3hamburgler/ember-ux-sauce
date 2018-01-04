@@ -6,6 +6,7 @@ Here's a summary of the patterns we use and encourage authors to follow when ext
 - [Make Use of ember-test-selectors](#make-use-of-ember-test-selectors)
 - [Create Accessible Components](#create-accessible-components)
 - [Build Components on Top of the Shared Mixins](#build-components-on-top-of-the-shared-mixins)
+- [Use Ember Prop Types](#use-ember-prop-types)
 
 ## BEM All the Things
 
@@ -26,3 +27,7 @@ Write this
 ## Build Components on Top of the Shared Mixins
 
 Write this
+
+## Use Ember Prop Types
+
+All UX components use the [ember-prop-types](https://github.com/ciena-blueplanet/ember-prop-types) addon to validate properties.

@@ -1,4 +1,7 @@
 import Ember from 'ember';
+import {
+  PropTypes
+} from 'ember-prop-types';
 
 const {
   Mixin
@@ -29,6 +32,21 @@ export default Mixin.create({
     @public
   */
   disabled: null,
+
+  /**
+   * Mixins Property Managment config
+   *
+   @property propTypes
+   @type     {Object}
+   @private
+   */
+  propTypes: {
+    action: PropTypes.oneOfType([
+      PropTypes.null,
+      PropTypes.string
+    ]),
+    disabled: PropTypes.bool,
+  },
   /**
     Add a role to the item for accessibility
     @property role

@@ -1,5 +1,8 @@
 import Ember from 'ember';
 import layout from '../templates/components/uxs-button';
+import {
+  PropTypes
+} from 'ember-prop-types';
 import Clickable from 'ember-ux-sauce/mixins/clickable';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
@@ -27,13 +30,26 @@ const Button = Component.extend(BEMComponent, Clickable, Testable, {
     'naked',
     'selected',
   ],
-  style: 'primary',
+  propTypes: {
+    inline: PropTypes.bool,
+    mini: PropTypes.bool,
+    naked: PropTypes.bool,
+    selected: PropTypes.bool,
+    style: PropTypes.oneOf(['accent', 'black', 'gray', 'primary', 'white']),
+    text: PropTypes.string.isRequired,
+  },
   // Computed
   isAccent: equal('style', 'accent'),
   isBlack: equal('style', 'black'),
   isGray: equal('style', 'gray'),
   isPrimary: equal('style', 'primary'),
   isWhite: equal('style', 'white'),
+  // Methods
+  getDefaultProps() {
+    return {
+      style: 'primary',
+    }
+  }
 });
 
 Button.reopenClass({
