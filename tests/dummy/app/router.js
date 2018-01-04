@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('quickstart');
     this.route('forms', function() {
       this.route('buttons');
+      this.route('button-links');
       this.route('input-controls');
       this.route('dropdown-controls');
       this.route('toggles');

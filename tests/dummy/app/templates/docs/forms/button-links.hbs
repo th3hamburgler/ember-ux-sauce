@@ -1,16 +1,26 @@
-<h1>Buttons</h1>
+<h1>Button Links</h1>
 
-<p>The button component is used for clickable actions.</p>
+<p>The button-link component is like the button component but extends the Ember <a href="https://guides.emberjs.com/v2.18.0/templates/links/">link-to component</a> so you can link to other routes.</p>
 
 <h2>Usage</h2>
 
-<p>Let's look at a basic example:</p>
+<p>Like link-to, this component takes one or two arguments:</p>
+
+<ul>
+  <li>The name of a route. In this example, it would be docs.patterns</li>
+  <li>At most one model for each dynamic segment. If there is no model to pass to the component, you can provide an explicit value instead</li>
+</ul>
+
+<p>In addition to being used as a block expression, the button-link component can also be used in inline form by specifying the link text as the first argument to the component:</p>
+
+<p>Let's look at an inline example:</p>
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="button"}}
-    {{uxs-button
+  {{#demo.example name="button-link"}}
+    {{uxs-button-link
       text
+      "docs.patterns"
       disabled=disabled
       inline=inline
       style=style
@@ -21,7 +31,7 @@
     }}
   {{/demo.example}}
 
-  {{demo.snippet 'button.hbs'}}
+  {{demo.snippet 'button-link.hbs'}}
 
 {{/docs-demo}}
 
@@ -80,17 +90,14 @@
   </tr>
 </table>
 
-<h2>Actions</h2>
-
-<p>Finally, this component fires an action on tap/click. Actions receive a reference to the component as the first argument. The action will not be fired if the component is disabled.</p>
+<h2>Block Usage</h2>
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="button-action"}}
-    {{uxs-button text disabled=disabled action="submit"}}
+  {{#demo.example name="block-button-link"}}
+    {{#uxs-button-link "docs.patterns"}}Block Button Link{{/uxs-button-link}}
   {{/demo.example}}
 
-  {{demo.snippet 'button-action.hbs'}}
-  {{demo.snippet 'button-action.js'}}
+  {{demo.snippet 'block-button-link.hbs'}}
 
 {{/docs-demo}}
