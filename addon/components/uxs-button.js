@@ -66,7 +66,6 @@ const Button = Component.extend(Accessible, BEMComponent, Clickable, PropTypeMix
    * Init any property defaults
    */
   getDefaultProps() {
-    Ember.Logger.log('getDefaultProps');
     return {
       style: 'primary',
     };
