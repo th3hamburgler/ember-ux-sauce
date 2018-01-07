@@ -2,6 +2,7 @@
   /**
    * Default
    */
+  @include text-truncate;
   @include transition-all;
   @extend .content;
   background-color: $btn-background;
@@ -145,11 +146,11 @@
    * Inline
    */
   &--inline {
-    border-color: $btn-background;
-    margin      : 0 rem-size($baseline*.5) rem-size($baseline*0.5) 0;
-    padding     : 0 rem-size($baseline);
-    max-width   : fit-content;
-    width       : auto;
+    display  : inline-block;
+    margin   : 0 rem-size($baseline*.5) rem-size($baseline*0.5) 0;
+    padding  : 0 rem-size($baseline);
+    max-width: fit-content;
+    width    : auto;
 
     &:last-child {
       margin-right: 0;
@@ -157,25 +158,52 @@
   }
 }
 
-.button-group {
-  background: $c-primary;
-  padding   : rem-size($baseline*0) rem-size(($baseline*.5) - 1px);
-  overflow  : hidden;
-  max-width : $max-width-content;
-  margin    : 0 auto;
-  width     : 100%;
+.uxs-button-group {
+  background    : $c-primary;
+  display       : flex;
+  flex-direction: column;
+  padding       : rem-size($baseline*0) rem-size(($baseline*.75) - 1px);
+  overflow      : hidden;
+  max-width     : $max-width-content;
+  margin        : 0 auto;
+  width         : 100%;
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--left {
+    justify-content: flex-start;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
 
   &--mini {
     max-width: $max-width-detail;
   }
 
-  .button {
-    &:first-child {
-      margin-top: rem-size(($baseline*0.75) - 1px);
+  &--inline {
+    flex-direction: row;
+    padding       : rem-size($baseline*.5);
+  }
+
+  &__item {
+    &:not(.uxs-button-group__item--inline) {
+      margin-bottom: 0;
+
+      &:first-child {
+        margin-top: rem-size(($baseline*0.75) - 1px);
+      }
+
+      &:last-child {
+        margin-bottom: rem-size(($baseline*0.75) - 2px);
+      }
     }
 
-    &:last-child {
-      margin-bottom: rem-size(($baseline*0.75) - 2px);
+    &--inline {
+      margin-bottom: 0;
     }
   }
 }
