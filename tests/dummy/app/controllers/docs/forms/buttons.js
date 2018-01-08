@@ -9,6 +9,7 @@ export default Controller.extend({
   text: 'The Button',
   disabled: false,
   inline: false,
+  loading: false,
   mini: false,
   naked: false,
   name: 'my-button',

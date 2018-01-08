@@ -27,6 +27,7 @@ export default Mixin.create(Accessible, BEMComponent, PropTypeMixin, Testable, {
     'disabled',
     'inline',
     'isGray:gray',
+    'loading',
     'mini',
     'naked',
     'isPrimary:primary',
@@ -74,6 +75,7 @@ export default Mixin.create(Accessible, BEMComponent, PropTypeMixin, Testable, {
   getDefaultProps() {
     return {
       style: 'primary',
+      loadingText: 'Loading…',
     };
   },
 });

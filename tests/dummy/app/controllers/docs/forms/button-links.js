@@ -9,6 +9,7 @@ export default Controller.extend({
   text: 'Go to Patterns',
   disabled: false,
   inline: false,
+  loading: false,
   mini: false,
   naked: false,
   name: 'my-button',
