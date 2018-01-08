@@ -1,4 +1,3 @@
-/* eslint-env node */
 'use strict';
 
 module.exports = function(environment) {
@@ -53,12 +52,17 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.autoboot = false;
   }
 
   if (environment === 'production') {
+<<<<<<< HEAD
     ENV.locationType = 'hash';
     ENV.rootURL = '/ember-ux-sauce/';
 
+=======
+    // here you can enable a production-specific feature
+>>>>>>> eabc579... message
   }
 
   return ENV;
