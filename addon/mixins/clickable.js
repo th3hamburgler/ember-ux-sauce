@@ -43,7 +43,7 @@ export default Mixin.create({
   role: 'button',
   // Actions
   click() {
-    if (!this.get('disabled')) {
+    if (!this.get('disabled') && this.get('clickAction')) {
       this.get('clickAction')();
     }
   },
