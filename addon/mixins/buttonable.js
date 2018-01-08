@@ -1,22 +1,13 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { equal, alias } from '@ember/object/computed';
+import Mixin from '@ember/object/mixin';
+import { dasherize } from '@ember/string';
 import PropTypeMixin, {
   PropTypes
 } from 'ember-prop-types';
 import Accessible from 'ember-ux-sauce/mixins/accessible';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
-
-const {
-  computed,
-  computed: {
-    alias,
-    equal,
-  },
-  Mixin,
-  String: {
-    dasherize,
-  },
-} = Ember;
 
 export default Mixin.create(Accessible, BEMComponent, PropTypeMixin, Testable, {
   // Attributes

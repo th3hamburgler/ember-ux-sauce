@@ -1,11 +1,7 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
 import {
   PropTypes
 } from 'ember-prop-types';
-
-const {
-  Mixin,
-} = Ember;
 
 /**
   A mixin to add accesibility attributes to a component

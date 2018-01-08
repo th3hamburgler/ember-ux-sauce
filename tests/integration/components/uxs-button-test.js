@@ -102,11 +102,11 @@ test('it fires an action on button click', function(assert) {
 
   assert.expect(1);
 
-  this.set('buttonClicked', (button) => {
-    assert.ok(button.get('name'), 'my-button');
+  this.set('buttonClicked', (name) => {
+    assert.ok(name, 'my-button');
   });
 
-  this.render(hbs `{{uxs-button text="My Button" name="my-button" action=buttonClicked}}`);
+  this.render(hbs `{{uxs-button text="My Button" name="my-button" clickAction=(action buttonClicked "my-button")}}`);
 
   let $button = this.$('[data-test-uxs-button="my-button"]');
 
@@ -116,20 +116,19 @@ test('it fires an action on button click', function(assert) {
 
 test('it does not fire an action on button click when disabled', function(assert) {
 
-  assert.expect(2);
+  assert.expect(1);
 
-  this.set('buttonClicked', (button) => {
-    assert.ok(button.get('name'), 'my-button');
+  this.set('buttonClicked', (name) => {
+    assert.ok(name, 'my-button', 'action called');
   });
 
-  this.render(hbs `{{uxs-button text="My Button" name="my-button" action=buttonClicked disabled=true}}`);
+  this.render(hbs `{{uxs-button text="My Button" name="my-button" clickAction=(action buttonClicked "my-button") disabled=true}}`);
 
   let $button = this.$('[data-test-uxs-button="my-button"]');
 
   $button.click();
 
-  assert.equal($button.hasClass('uxs-button--disabled'), true);
-  assert.equal($button.attr("class"), 'uxs-button uxs-button--disabled uxs-button--primary ember-view', true, 'Has correct classes');
+  assert.equal($button.attr("class"), 'uxs-button uxs-button--disabled uxs-button--primary ember-view', 'Has correct classes');
 
 });
 

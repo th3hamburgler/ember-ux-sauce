@@ -1,8 +1,4 @@
-import Ember from 'ember';
-
-const {
-  Controller
-} = Ember;
+import Controller from '@ember/controller';
 
 export default Controller.extend({
   // Attributes
@@ -18,8 +14,8 @@ export default Controller.extend({
   // Actions
   // BEGIN-SNIPPET button-action
   actions: {
-    submit(button) {
-      alert(`${button.get('text')} has been hit!`);
+    submit(name) {
+      alert(`"${name}" has been hit!`);
     },
   },
   // END-SNIPPET

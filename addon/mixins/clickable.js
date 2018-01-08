@@ -1,11 +1,8 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+// import get from '@ember/object/get';
 import {
   PropTypes
 } from 'ember-prop-types';
-
-const {
-  Mixin
-} = Ember;
 
 /**
   A mixin to add click support to a component.
@@ -17,12 +14,12 @@ export default Mixin.create({
   // Attributes
   /**
     The name of the action to fire on click
-    @property action
+    @property clickAction
     @default  null
     @type     {string}
     @public
   */
-  action: null,
+  clickAction: null,
   /**
    * Mixins Property Managment config
    *
@@ -33,7 +30,6 @@ export default Mixin.create({
   propTypes: {
     action: PropTypes.oneOfType([
       PropTypes.null,
-      PropTypes.string,
       PropTypes.func,
     ]),
   },
@@ -48,7 +44,7 @@ export default Mixin.create({
   // Actions
   click() {
     if (!this.get('disabled')) {
-      this.sendAction('action', this);
+      this.get('clickAction')();
     }
   },
 });
