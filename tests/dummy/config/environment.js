@@ -56,13 +56,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-<<<<<<< HEAD
     ENV.locationType = 'hash';
     ENV.rootURL = '/ember-ux-sauce/';
-
-=======
-    // here you can enable a production-specific feature
->>>>>>> eabc579... message
   }
 
   return ENV;
