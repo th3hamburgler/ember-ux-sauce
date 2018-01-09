@@ -1,6 +1,12 @@
-import { copy } from '@ember/object/internals';
-import { alias } from '@ember/object/computed';
-import { isEmpty } from '@ember/utils';
+import {
+  copy
+} from '@ember/object/internals';
+import {
+  alias
+} from '@ember/object/computed';
+import {
+  isEmpty
+} from '@ember/utils';
 import Mixin from '@ember/object/mixin';
 import Ember from 'ember';
 

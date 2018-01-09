@@ -1,0 +1,10 @@
+{{#if hasLabel}}
+  {{uxs-form-label label name=name}}
+{{/if}}
+{{#if hasInput}}
+  {{uxs-form-input name=name type=type value=value}}
+{{/if}}
+{{yield (hash
+  label=(component "uxs-form-label" name=name disabled=disabled)
+  input=(component "uxs-form-input" name=name disabled=disabled value=value)
+)}}
