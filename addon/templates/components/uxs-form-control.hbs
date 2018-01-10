@@ -4,7 +4,19 @@
 {{#if hasInput}}
   {{uxs-form-input name=name type=type value=value disabled=disabled}}
 {{/if}}
+{{#if hasTip}}
+  {{uxs-form-tip tip name=name disabled=disabled}}
+{{/if}}
+{{#if hasWarning}}
+  {{uxs-form-warning warning name=name disabled=disabled}}
+{{/if}}
+{{#if hasError}}
+  {{uxs-form-error error name=name disabled=disabled}}
+{{/if}}
 {{yield (hash
   label=(component "uxs-form-label" name=name disabled=disabled)
   input=(component "uxs-form-input" name=name disabled=disabled value=value)
+  tip=(component "uxs-form-tip" name=name disabled=disabled)
+  warning=(component "uxs-form-warning" name=name disabled=disabled)
+  error=(component "uxs-form-error" name=name disabled=disabled)
 )}}

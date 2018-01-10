@@ -14,8 +14,11 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   base: 'uxs-form__control',
   layout,
   // Computed
+  hasError: bool('error'),
   hasInput: bool('type'),
   hasLabel: bool('label'),
+  hasTip: bool('tip'),
+  hasWarning: bool('warning'),
   // Methods
   init() {
     this.set('modifiers', [

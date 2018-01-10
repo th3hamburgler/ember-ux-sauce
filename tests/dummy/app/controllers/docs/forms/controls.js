@@ -6,4 +6,7 @@ export default Controller.extend({
   label: 'Username',
   type: 'text',
   value: 'foo',
+  tip: 'This is a hint',
+  warning: '',
+  error: '',
 });
