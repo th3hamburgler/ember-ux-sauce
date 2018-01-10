@@ -1,8 +1,8 @@
 {{#if hasLabel}}
-  {{uxs-form-label label name=name}}
+  {{uxs-form-label label name=name disabled=disabled}}
 {{/if}}
 {{#if hasInput}}
-  {{uxs-form-input name=name type=type value=value}}
+  {{uxs-form-input name=name type=type value=value disabled=disabled}}
 {{/if}}
 {{yield (hash
   label=(component "uxs-form-label" name=name disabled=disabled)

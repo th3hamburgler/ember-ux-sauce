@@ -15,7 +15,7 @@ Router.map(function() {
       this.route('button-links');
       this.route('button-groups');
       this.route('controls');
-      this.route('input-controls');
+      this.route('inputs');
       this.route('dropdown-controls');
       this.route('toggles');
       this.route('validation');

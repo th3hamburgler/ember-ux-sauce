@@ -18,12 +18,12 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   hasLabel: bool('label'),
   // Methods
   init() {
+    this.set('modifiers', [
+      'disabled',
+    ]);
     this._super(...arguments);
     this.set('propTypes', {
       text: PropTypes.string,
     });
-    this.set('modifiers', [
-      'disabled',
-    ]);
   },
 });

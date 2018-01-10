@@ -28,6 +28,7 @@
   {{#demo.example name="form-control-properties"}}
     {{uxs-form-control
       label=label
+      disabled=disabled
       type=type
       value=value
       name="my-control"
@@ -58,6 +59,11 @@
     <td>{{input placeholder="Input Value" value=value}}</td>
     <td><em>String</em></td>
   </tr>
+  <tr>
+    <td>disabled</td>
+    <td>{{docs-toggle value=disabled}}</td>
+    <td><em>Boolean</em></td>
+  </tr>
 </table>
 
 <h2>Custom Usage</h2>
@@ -68,7 +74,7 @@
 
   {{#demo.example name="form-control-custom"}}
     {{#uxs-form-control as |control|}}
-      {{control.label "Username"}}
+      {{control.label "Username" disabled=disabled}}
       {{control.input value="Foo"}}
       {{control.tip "Think of a unique usename. This will be publicly visible."}}
     {{/uxs-form-control}}

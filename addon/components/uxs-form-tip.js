@@ -3,14 +3,13 @@ import PropTypeMixin, {
 } from 'ember-prop-types';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
-import layout from '../templates/components/uxs-form-label';
 import Component from '@ember/component';
+import layout from '../templates/components/uxs-form-tip';
 
-const FormLabel = Component.extend(BEMComponent, PropTypeMixin, Testable, {
+const FormTip = Component.extend(BEMComponent, PropTypeMixin, Testable, {
   // Attributes
-  base: 'uxs-form__label',
+  base: 'uxs-form__tip',
   layout,
-  tagName: 'label',
   // Methods
   init() {
     this.set('modifiers', [
@@ -32,8 +31,8 @@ const FormLabel = Component.extend(BEMComponent, PropTypeMixin, Testable, {
   },
 });
 
-FormLabel.reopenClass({
+FormTip.reopenClass({
   positionalParams: ['text']
 });
 
-export default FormLabel;
+export default FormTip;
