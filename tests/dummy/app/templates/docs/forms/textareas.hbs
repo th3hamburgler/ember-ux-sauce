@@ -1,6 +1,6 @@
-<h1>Form Inputs</h1>
+<h1>Form Textareas</h1>
 
-<p>The form input component extends from embers <em>input</em> component. As such you can pass any of the standard <a href="https://guides.emberjs.com/v2.18.0/templates/input-helpers/#toc_text-fields">input attributes</a></p>
+<p>The form textarea component extends from embers <em>textarea</em> component. As such you can pass any of the standard <a href="https://guides.emberjs.com/v2.18.0/templates/input-helpers/#toc_text-areas">textarea attributes</a></p>
 
 <h2>Basic Usage</h2>
 
@@ -8,12 +8,12 @@
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="form-input"}}
-    {{uxs-form-input value=value enter=(action "enterPressed" value)}}
+  {{#demo.example name="form-textarea"}}
+    {{uxs-form-textarea value=value enter=(action "enterPressed" value)}}
   {{/demo.example}}
 
-  {{demo.snippet 'form-input.hbs'}}
-  {{demo.snippet 'form-input-action.js'}}
+  {{demo.snippet 'form-textarea.hbs'}}
+  {{demo.snippet 'form-textarea-action.js'}}
 
 {{/docs-demo}}
 
@@ -32,22 +32,22 @@
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="form-input-further"}}
-    {{uxs-form-input
+  {{#demo.example name="form-textarea-further"}}
+    {{uxs-form-textarea
       value=value
-      readonly=readonly
+      rows=rows
+      cols=cols
       placeholder=placeholder
       disabled=disabled
-      size=size
       maxlength=maxlength
-      min=min
-      max=max
-      step=step
-      type=type
+      wrap=wrap
+      readonly=readonly
+      autofocus=autofocus
+      spellcheck=spellcheck
     }}
   {{/demo.example}}
 
-  {{demo.snippet 'form-input-further.hbs'}}
+  {{demo.snippet 'form-textarea-further.hbs'}}
 
 {{/docs-demo}}
 
@@ -58,9 +58,14 @@
     <td><em>String</em></td>
   </tr>
   <tr>
-    <td>readonly</td>
-    <td>{{docs-toggle value=readonly}}</td>
-    <td><em>Boolean</em></td>
+    <td>rows</td>
+    <td>{{input placeholder="Value" value=rows type="number"}}</td>
+    <td><em>String</em></td>
+  </tr>
+  <tr>
+    <td>cols</td>
+    <td>{{input placeholder="Value" value=cols type="number"}}</td>
+    <td><em>String</em></td>
   </tr>
   <tr>
     <td>placeholder</td>
@@ -78,24 +83,24 @@
     <td><em>Number</em></td>
   </tr>
   <tr>
-    <td>min</td>
-    <td>{{input type="number" value=min}}</td>
-    <td><em>Number</em></td>
+    <td>wrap</td>
+    <td>{{docs-toggle value=wrap}}</td>
+    <td><em>Boolean</em></td>
   </tr>
   <tr>
-    <td>max</td>
-    <td>{{input type="number" value=max}}</td>
-    <td><em>Number</em></td>
+    <td>readonly</td>
+    <td>{{docs-toggle value=readonly}}</td>
+    <td><em>Boolean</em></td>
   </tr>
   <tr>
-    <td>step</td>
-    <td>{{input type="number" value=step}}</td>
-    <td><em>Number</em></td>
+    <td>autofocus</td>
+    <td>{{docs-toggle value=autofocus}}</td>
+    <td><em>Boolean</em></td>
   </tr>
   <tr>
-    <td>type</td>
-    <td>{{input placeholder="Type" value=type}}</td>
-    <td><em>String</em></td>
+    <td>spellcheck</td>
+    <td>{{docs-toggle value=spellcheck}}</td>
+    <td><em>Boolean</em></td>
   </tr>
   <tr>
     <td></td>
