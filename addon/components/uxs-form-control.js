@@ -1,7 +1,15 @@
 import Component from '@ember/component';
 import {
-  bool
+  computed
+} from '@ember/object';
+
+import {
+  bool,
+  equal,
 } from '@ember/object/computed';
+import {
+  A
+} from '@ember/array';
 import PropTypeMixin, {
   PropTypes
 } from 'ember-prop-types';
@@ -15,7 +23,13 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   layout,
   // Computed
   hasError: bool('error'),
-  hasInput: bool('type'),
+  hasTextInput: computed('type', function() {
+    let textInputs = A([
+      'text', 'password', 'number', 'hidden', 'email', 'search', 'tel', 'url'
+    ]);
+    return textInputs.includes(this.get('type'));
+  }),
+  hasTextArea: equal('type', 'textarea'),
   hasLabel: bool('label'),
   hasTip: bool('tip'),
   hasWarning: bool('warning'),

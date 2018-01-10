@@ -4,7 +4,7 @@ export default Controller.extend({
   // Attributes
   disabled: false,
   label: 'Username',
-  type: 'text',
+  type: 'textarea',
   value: 'foo',
   tip: 'This is a hint',
   warning: '',

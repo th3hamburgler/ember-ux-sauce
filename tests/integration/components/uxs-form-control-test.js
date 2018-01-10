@@ -35,6 +35,7 @@ test('it renders a control with label & input props', function(assert) {
   assert.equal($label.text().trim(), 'My Label');
   assert.equal($label.attr("class"), 'uxs-form__label ember-view', 'Has correct classes');
 
+  assert.equal($input.prop("tagName"), 'INPUT', 'Has correct input tagname');
   assert.equal($input.val(), this.get('value'), 'Has correct input value')
   assert.equal($input.attr("class"), 'ember-text-field uxs-form__input uxs-form__input--text ember-view', 'Has correct classes');
 
@@ -53,6 +54,44 @@ test('it renders a control with label & input props', function(assert) {
   assert.equal($input[0].hasAttribute('aria-disabled'), true, 'has aria disabled attr');
   assert.equal($input[0].hasAttribute('disabled'), true, 'has disabled attr');
 });
+
+test('it renders a control with label & input textarea props', function(assert) {
+
+  this.set('value', 'foo');
+  this.set('disabled', false);
+
+  this.render(hbs `{{uxs-form-control label="My Label" name="my-control" type="textarea" value=value disabled=disabled}}`);
+
+  let $control = this.$('[data-test-uxs-form__control="my-control"]'),
+    $label = this.$('[data-test-uxs-form__label="my-control"]'),
+    $input = this.$('[data-test-uxs-form__input="my-control"]');
+
+  assert.equal($control.attr("class"), 'uxs-form__control ember-view', 'Has correct classes');
+
+  assert.equal($label.text().trim(), 'My Label');
+  assert.equal($label.attr("class"), 'uxs-form__label ember-view', 'Has correct classes');
+
+  assert.equal($input.prop("tagName"), 'TEXTAREA', 'Has correct input tagname');
+  assert.equal($input.val(), this.get('value'), 'Has correct input value')
+  assert.equal($input.val(), this.get('value'), 'Has correct input value')
+  assert.equal($input.attr("class"), 'ember-text-area uxs-form__input uxs-form__input--textarea ember-view', 'Has correct classes');
+
+  // Assert disabled state is passed to child components
+  this.set('disabled', true);
+
+  $control = this.$('[data-test-uxs-form__control="my-control"]');
+  $label = this.$('[data-test-uxs-form__label="my-control"]');
+  $input = this.$('[data-test-uxs-form__input="my-control"]');
+
+  assert.equal($control.attr("class"), 'uxs-form__control uxs-form__control--disabled ember-view', 'Has correct classes');
+
+  assert.equal($label.attr("class"), 'uxs-form__label uxs-form__label--disabled ember-view', 'Has correct classes');
+
+  assert.equal($input.attr("class"), 'ember-text-area uxs-form__input uxs-form__input--disabled uxs-form__input--textarea ember-view', 'Has correct classes');
+  assert.equal($input[0].hasAttribute('aria-disabled'), true, 'has aria disabled attr');
+  assert.equal($input[0].hasAttribute('disabled'), true, 'has disabled attr');
+});
+
 
 test('it renders a control with a tip property', function(assert) {
 

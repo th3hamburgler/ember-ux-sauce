@@ -4,7 +4,6 @@ import PropTypeMixin, {
 import Accessible from 'ember-ux-sauce/mixins/accessible';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
-import layout from '../templates/components/uxs-form-label';
 import TextField from '@ember/component/text-field';
 import {
   equal
@@ -13,7 +12,6 @@ import {
 export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testable, {
   // Attributes
   base: 'uxs-form__input',
-  layout,
   // Computed
   isEmail: equal('type', 'email'),
   isHidden: equal('type', 'hidden'),
@@ -28,18 +26,24 @@ export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testabl
     this.set('modifiers', [
       'disabled',
       'isEmail:email',
+      'error',
       'isHidden:hidden',
       'isNumber:number',
       'isPassword:password',
       'isSearch:search',
+      'success',
       'isTel:tel',
       'isText:text',
       'isURL:url',
+      'warning',
     ]);
     this._super(...arguments);
     this.set('propTypes', {
       type: PropTypes.oneOf(['email', 'hidden', 'number', 'password', 'search', 'tel', 'text', 'url']),
       disabled: PropTypes.boolean,
+      error: PropTypes.boolean,
+      success: PropTypes.boolean,
+      warning: PropTypes.boolean,
     });
   },
   getDefaultProps() {
