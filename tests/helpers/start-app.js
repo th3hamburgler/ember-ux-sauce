@@ -1,7 +1,14 @@
 import Application from '../../app';
 import config from '../../config/environment';
-import { merge } from '@ember/polyfills';
-import { run } from '@ember/runloop';
+import {
+  merge
+} from '@ember/polyfills';
+import {
+  run
+} from '@ember/runloop';
+import registerPowerSelectHelpers from 'ember-power-select/test-support/helpers';
+
+registerPowerSelectHelpers();
 
 export default function startApp(attrs) {
   let attributes = merge({}, config.APP);

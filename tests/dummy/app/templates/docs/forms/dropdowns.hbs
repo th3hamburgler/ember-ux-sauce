@@ -1,0 +1,37 @@
+<h1>Dropdown Controls</h1>
+
+<p>The form input component extends from embers <em>input</em> component. As such you can pass any of the standard <a href="https://guides.emberjs.com/v2.18.0/templates/input-helpers/#toc_text-fields">input attributes</a></p>
+
+<h2>Basic Usage</h2>
+
+<p>Let's look at a basic example with two way binding on the value and an action on pressing enter</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="form-dropdown"}}
+
+    {{#uxs-form-dropdown
+      selected=name
+      options=names
+      onchange=(action (mut name))
+      name="my-dropdown"
+      as |name|
+    }}
+      {{name}}
+    {{/uxs-form-dropdown}}
+
+    <div class="mt detail">Selected: <b>{{name}}</b></div>
+
+  {{/demo.example}}
+
+  {{demo.snippet 'form-dropdown.hbs'}}
+
+{{/docs-demo}}
+
+<table class="docs-args-table">
+  <tr>
+    <td>label</td>
+    <td>{{input placeholder="Value" value=value}}</td>
+    <td><em>String</em></td>
+  </tr>
+</table>
