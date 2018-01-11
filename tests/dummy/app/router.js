@@ -21,6 +21,7 @@ Router.map(function() {
       this.route('toggles');
       this.route('validation');
       this.route('fieldsets');
+      this.route('rows');
     });
     this.route('api', function() {
       this.route('class', {

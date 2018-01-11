@@ -162,64 +162,12 @@
 
     &--inline {
       margin-right: rem-size($baseline*.5);
+      width       : auto;
+      flex        : 1;
 
       &:last-child {
         margin-right: 0;
       }
-    }
-
-    &[type=date],
-    &[type=datetime],
-    &[type=month],
-    &[type=time],
-    &[type=week] {
-      padding: rem-size(($baseline*.25) - 2px) !important;
-    }
-
-    &[type=checkbox],
-    &[type=radio] {
-      $size             : rem-size(($baseline*0.5)+2px);
-      -webkit-appearance: none;
-      border            : 1px solid $c-primary;
-      margin            : 0 rem-size(5.5px) 0 0;
-      height            : $size;
-      position          : relative;
-      width             : $size;
-      min-width         : $size;
-      @include input-glow {
-        box-shadow: 0 0 0.5rem $c-primary-4;
-      };
-
-      &:checked:before {
-        $size     : rem-size(($baseline*0.5)-4px);
-        background: $c-primary;
-        content   : '';
-        height    : $size;
-        position  : absolute;
-        margin    : rem-size(2px);
-        width     : $size;
-      }
-
-      &:disabled {
-        border    : 2px solid $c-grey;
-        background: $c-white;
-      }
-    }
-
-    &[type=radio] {
-      border-radius: 100%;
-
-      &:checked:before {
-        border-radius: 100%;
-      }
-    }
-
-    &--date,
-    &--datetime,
-    &--time {
-      //max-width: rem-sub($max-width-content, 1.5rem)!important;
-      $iconWidth: 2.34375rem; // 37.5px
-      max-width : calc(#{$max-width-content} - #{$iconWidth})!important;
     }
   }
 
@@ -256,8 +204,9 @@
   &__tip {
     @extend .detail;
     @include transition-all;
-    clear  : both;
-    padding: 0 rem-size($baseline*0.5);
+    clear    : both;
+    padding  : 0;
+    max-width: $max-width-content;
 
     &--toggle {
       padding   : 0 rem-size(30px) rem-size($baseline*0.5);

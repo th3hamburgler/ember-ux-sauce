@@ -1,0 +1,118 @@
+<h1>Form Control Rows</h1>
+
+<p>The form control row is a display component to render form components like inputs inline.</p>
+
+<p>This component is just a presentational wrapper that will yeild content in a flexbox row.</p>
+
+<p>Like the control component, when rendering contextual components properties on the control, like <em>model</em> & <em>disabled</em> a passed though automatically to the input components.</p>
+
+<h2>Inline Input Usage</h2>
+
+<p>Let's look at a basic example of a name control where you require two inputs to sit alongside each other</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="form-row-inputs"}}
+
+    {{#uxs-form model=model as |form|}}
+
+      {{#form.control
+        label="Name"
+        name="name"
+        tip="Please enter you name curabitur diam sodales gravida quis adipiscing libero elementum"
+        disabled=disabled
+        as |control|
+      }}
+
+        {{#control.row as |row|}}
+          {{row.input name="firstName" placeholder="First Name"}}
+          {{row.input name="lastName" placeholder="Last Name"}}
+        {{/control.row}}
+
+      {{/form.control}}
+
+    {{/uxs-form}}
+
+  {{/demo.example}}
+
+  {{demo.snippet 'form-row-inputs.hbs'}}
+
+{{/docs-demo}}
+
+<table class="docs-args-table">
+  <tr>
+    <td>disabled</td>
+    <td>{{docs-toggle value=disabled}}</td>
+    <td><em>Boolean</em></td>
+  </tr>
+</table>
+
+
+<h2>Inline Button Usage</h2>
+
+<p>Here's a common search box pattern where we need an inline button.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="form-row-button"}}
+
+    {{#uxs-form as |form|}}
+
+      {{#form.row as |row|}}
+        {{row.input name="search" type="search" placeholder="Enter your search term"}}
+        {{row.button "Go" name="go"}}
+      {{/form.row}}
+
+    {{/uxs-form}}
+
+  {{/demo.example}}
+
+  {{demo.snippet 'form-row-button.hbs'}}
+
+{{/docs-demo}}
+
+<h2>Input Icon Usage</h2>
+
+<p>Finally, you can use this component to prefix or suffix inputs with icons.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="form-row-icon"}}
+
+    {{#uxs-form model=model as |form|}}
+
+      {{#form.control
+        label="Email"
+        name="email"
+        tip="Please enter your email address"
+        as |control|
+      }}
+
+        {{#control.row as |row|}}
+          {{row.icon "email"}}
+          {{row.input placeholder="Email"}}
+        {{/control.row}}
+
+      {{/form.control}}
+
+      {{#form.control
+        label="Phone Number"
+        name="phone"
+        tip="Please enter your phone number including an international code"
+        as |control|
+      }}
+
+        {{#control.row as |row|}}
+          {{row.input placeholder="+00 0000 000000"}}
+          {{row.icon "phone"}}
+        {{/control.row}}
+
+      {{/form.control}}
+
+    {{/uxs-form}}
+
+  {{/demo.example}}
+
+  {{demo.snippet 'form-row-icon.hbs'}}
+
+{{/docs-demo}}
