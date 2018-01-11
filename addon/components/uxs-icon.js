@@ -12,7 +12,17 @@ const FormTip = Component.extend(Buttonable, Clickable, {
   layout,
   // Methods
   init() {
-    this.set('modifiers', ['primary', 'accent', 'grey'])
+    this.set('modifiers', [
+      'accent',
+      'disabled',
+      'error',
+      'grey',
+      'inline',
+      'primary',
+      'prefix',
+      'suffix',
+      'warning',
+    ])
     this._super(...arguments);
     this.set('propTypes', {
       icon: PropTypes.string,

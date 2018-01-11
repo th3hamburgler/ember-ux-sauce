@@ -37,6 +37,7 @@ export default TextArea.extend(Accessible, BEMComponent, PropTypeMixin, Testable
     set(this, 'modifiers', [
       'disabled',
       'error',
+      'inline',
       'textarea',
       'warning',
     ]);

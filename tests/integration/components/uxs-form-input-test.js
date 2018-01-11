@@ -18,7 +18,7 @@ test('it renders a default input', function(assert) {
 
   assert.equal($input.prop("tagName"), 'INPUT', 'Has correct tag name');
   assert.equal($input.val(), 'foo', 'Has correct value');
-  assert.equal($input.attr("class"), 'ember-text-field uxs-form__input uxs-form__input--text ember-view', true, 'Has correct classes');
+  assert.equal($input.attr("class"), 'ember-text-field uxs-form__input uxs-form__input--text ember-view', 'Has correct classes');
 
   // change the value
   $input.val('bar').change();
@@ -36,7 +36,7 @@ test('it renders a numeric input', function(assert) {
 
   assert.equal($input.prop("tagName"), 'INPUT', 'Has correct tag name');
   assert.equal($input.val(), 42, 'Has correct value');
-  assert.equal($input.attr("class"), 'ember-text-field uxs-form__input uxs-form__input--disabled uxs-form__input--number ember-view', true, 'Has correct classes');
+  assert.equal($input.attr("class"), 'ember-text-field uxs-form__input uxs-form__input--disabled uxs-form__input--number ember-view', 'Has correct classes');
   assert.equal($input[0].hasAttribute('aria-disabled'), true, 'has aria disabled attr');
   assert.equal($input[0].hasAttribute('disabled'), true, 'has disabled attr');
 });

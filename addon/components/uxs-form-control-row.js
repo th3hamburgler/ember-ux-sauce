@@ -14,6 +14,7 @@ export default Component.extend(BEMComponent, Testable, {
   // Methods
   init() {
     this.set('modifiers', [
+      'disabled',
       'inline',
     ]);
     this._super(...arguments);
