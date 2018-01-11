@@ -1,0 +1,40 @@
+<h1>Icons</h1>
+
+<p>The icon component is used to render icons from the <a href="https://material.io/icons/">Material Icons</a> font library.</p>
+
+<h2>Simple Usage</h2>
+
+<p>Let's look at a basic example of a name control where you require two inputs to sit alongside each other</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="icons"}}
+
+    {{uxs-icon "check_circle"}}
+    {{uxs-icon "face" primary=true}}
+    {{uxs-icon "account_balance" accent=true}}
+    {{uxs-icon "done" grey=true}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "icons.hbs"}}
+
+{{/docs-demo}}
+
+
+<h2>Action Usage</h2>
+
+<p>You can pass action closures to icons</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="icon-actions"}}
+
+    {{uxs-icon "done" clickAction=(action 'save' "done")}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "icon-actions.hbs"}}
+  {{demo.snippet "icon-actions.js"}}
+
+{{/docs-demo}}

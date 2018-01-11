@@ -165,7 +165,7 @@
       width       : auto;
       flex        : 1;
 
-      &:last-child {
+      &:last-of-type {
         margin-right: 0;
       }
     }
@@ -212,40 +212,6 @@
       padding   : 0 rem-size(30px) rem-size($baseline*0.5);
       margin-top: rem-size($baseline*-0.5);
     }
-  }
-
-  &__icon {
-    @include transition-all;
-    @extend .material-icons;
-    $size        : rem-size($baseline*1.5);
-    border-radius: rem-size(3px);
-    color        : $c-grey;
-    cursor       : pointer;
-    display      : block;
-    height       : $size;
-    line-height  : $size;
-    margin-left  : rem-size($baseline*.5);
-    text-align   : center;
-    width        : $size;
-
-    &:focus,
-    &:hover {
-      background-color: $c-light;
-    }
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &--prefix {
-      background   : $c-primary;
-      border-radius: 0;
-      color        : $c-white;
-    }
-  }
-
-  &__icon~.form__icon {
-    margin-left: 0;
   }
 
   &__toggle-label {

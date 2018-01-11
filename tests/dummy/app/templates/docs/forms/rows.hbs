@@ -89,7 +89,7 @@
       }}
 
         {{#control.row as |row|}}
-          {{row.icon "email"}}
+          {{row.icon "email" prefix=true}}
           {{row.input placeholder="Email"}}
         {{/control.row}}
 
@@ -104,7 +104,7 @@
 
         {{#control.row as |row|}}
           {{row.input placeholder="+00 0000 000000"}}
-          {{row.icon "phone"}}
+          {{row.icon "phone" suffix=true}}
         {{/control.row}}
 
       {{/form.control}}

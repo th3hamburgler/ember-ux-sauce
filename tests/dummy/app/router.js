@@ -23,6 +23,7 @@ Router.map(function() {
       this.route('fieldsets');
       this.route('rows');
     });
+    this.route('icons');
     this.route('api', function() {
       this.route('class', {
         path: '/:class_id'
