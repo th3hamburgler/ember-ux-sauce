@@ -38,6 +38,12 @@
     }
   }
 
+  &__control-row {
+    display       : flex;
+    flex-direction: row;
+    max-width     : $max-width-content;
+  }
+
   &__control {
     display      : block;
     margin-bottom: rem-size($baseline*.5);
@@ -152,6 +158,14 @@
       color       : rgba($c-dark, 0.5);
       background  : $c-light;
       border-color: $c-mid;
+    }
+
+    &--inline {
+      margin-right: rem-size($baseline*.5);
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     &[type=date],

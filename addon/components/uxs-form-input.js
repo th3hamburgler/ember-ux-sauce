@@ -48,6 +48,7 @@ export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testabl
       'isEmail:email',
       'error',
       'isHidden:hidden',
+      'inline',
       'isNumber:number',
       'isPassword:password',
       'isSearch:search',
