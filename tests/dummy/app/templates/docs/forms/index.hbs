@@ -1,0 +1,35 @@
+<h1>Form</h1>
+
+<h2>Common Model bound form</h2>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="form-input"}}
+
+    {{#uxs-form model=model as |form|}}
+
+      {{model.title}}
+
+      {{form.control label="Title" name="title" type="text"}}
+
+      {{#form.control label="Name" name="name" as |control|}}
+
+        {{control.input name="firstName"}}
+        {{control.input name="lasttName"}}
+
+      {{/form.control}}
+
+      {{form.control label="Email" name="email" type="email"}}
+
+      {{form.control label="Biography" name="bio" type="textarea" rows=5}}
+
+      {{form.button "Save" type="submit"}}
+      {{form.link "Back" "docs"}}
+
+    {{/uxs-form}}
+
+  {{/demo.example}}
+
+  {{demo.snippet 'form-input.hbs'}} {{demo.snippet 'form-input-action.js'}}
+
+{{/docs-demo}}

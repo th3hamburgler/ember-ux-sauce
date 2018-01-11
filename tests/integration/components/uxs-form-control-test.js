@@ -2,13 +2,14 @@ import {
   moduleForComponent,
   test
 } from 'ember-qunit';
+import EmberObject from '@ember/object';
 import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('uxs-form-control', 'Integration | Component | uxs form control', {
   integration: true
 });
 
-test('it renders a default button', function(assert) {
+test('it renders a default control', function(assert) {
 
   this.render(hbs `{{uxs-form-control name="my-control"}}`);
 
@@ -191,4 +192,81 @@ test('it renders a control with custom children', function(assert) {
 
   assert.equal($error.text().trim(), 'Oh, that\'s not good');
   assert.equal($error.attr("class"), 'uxs-form__error ember-view', 'Has correct classes');
+});
+
+
+test('it renders a control bound to a model property', function(assert) {
+
+  let model = EmberObject.create({
+    foo: 'bar'
+  });
+  this.set('model', model);
+
+  this.render(hbs `{{uxs-form-control name="foo" model=model type="text"}}`);
+
+  let $input = this.$('[data-test-uxs-form__input="foo"]');
+
+  assert.equal($input.val(), 'bar', 'Has correct value');
+
+  // change the model
+  this.set('model.foo', 'boop');
+
+  assert.equal($input.val(), 'boop', 'Value is updated after model property is changed');
+
+  // change the value
+  $input.val('hello darkness').change();
+
+  assert.equal(model.get('foo'), 'hello darkness', 'Input change updates bound model property');
+});
+
+test('it renders a custom text control bound to a model property', function(assert) {
+
+  let model = EmberObject.create({
+    foo: 'bar'
+  });
+  this.set('model', model);
+
+  this.render(hbs `{{#uxs-form-control name="foo" model=model as |control|}}
+    {{control.input}}
+  {{/uxs-form-control}}`);
+
+  let $input = this.$('[data-test-uxs-form__input="foo"]');
+
+  assert.equal($input.val(), 'bar', 'Has correct value');
+
+  // change the model
+  this.set('model.foo', 'boop');
+
+  assert.equal($input.val(), 'boop', 'Value is updated after model property is changed');
+
+  // change the value
+  $input.val('hello darkness').change();
+
+  assert.equal(model.get('foo'), 'hello darkness', 'Input change updates bound model property');
+});
+
+test('it renders a custom textarea control bound to a model property', function(assert) {
+
+  let model = EmberObject.create({
+    foo: 'bar'
+  });
+  this.set('model', model);
+
+  this.render(hbs `{{#uxs-form-control name="foo" model=model as |control|}}
+    {{control.textarea}}
+  {{/uxs-form-control}}`);
+
+  let $input = this.$('[data-test-uxs-form__input="foo"]');
+
+  assert.equal($input.val(), 'bar', 'Has correct value');
+
+  // change the model
+  this.set('model.foo', 'boop');
+
+  assert.equal($input.val(), 'boop', 'Value is updated after model property is changed');
+
+  // change the value
+  $input.val('hello darkness').change();
+
+  assert.equal(model.get('foo'), 'hello darkness', 'Input change updates bound model property');
 });
