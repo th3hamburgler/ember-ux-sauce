@@ -1,0 +1,305 @@
+.uxs-form {
+  &__fieldset {
+    border        : rem-size(1px) solid $c-primary;
+    display       : flex;
+    flex-direction: column;
+    padding       : rem-size($baseline - 1px);
+    position      : relative;
+    max-width     : $max-width-content;
+    margin-bottom : rem-size($baseline*2);
+
+    &--inline {
+      border        : none;
+      flex-direction: row;
+      flex-wrap     : wrap;
+      padding       : 0;
+      margin-bottom : 0;
+    }
+  }
+
+  &__text {
+    @include type-content;
+    line-height: rem-size($baseline*1.5);
+  }
+
+  &__fieldset-controls {
+    &--inline {
+      flex: 1;
+      @include mq(tablet) {
+        display       : flex;
+        flex-direction: row;
+      }
+    }
+
+    &--inline-mobile {
+      flex          : 1;
+      display       : flex;
+      flex-direction: row;
+    }
+  }
+
+  &__control {
+    display      : block;
+    margin-bottom: rem-size($baseline*.5);
+    overflow     : hidden;
+    padding-bottom:: rem-size($baseline*1.5);
+    position     : relative;
+
+    &--inline {
+      @include mq(tablet) {
+        margin-right: rem-size($baseline*.5);
+
+        &:last-of-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &--inline-mobile {
+      margin-right: rem-size($baseline*.5);
+
+      &:last-of-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__control-meta {
+    min-height: rem-size($baseline*1.5);
+    position  : relative;
+    width     : 100%;
+
+    &--compact {
+      min-height: 0;
+    }
+  }
+
+  &__label,
+  &__legend {
+    @extend .subheading;
+    @include transition-all;
+    text-transform: uppercase;
+    display       : block;
+    margin-bottom : rem-size($baseline*0.5);
+    letter-spacing: 1px;
+
+    &--error {
+      color: $c-warning;
+    }
+
+    &--alert {
+      color: $c-alert;
+    }
+
+    &--disabled {
+      color: $c-grey;
+    }
+  }
+
+  &__legend {
+    background   : $c-white;
+    color        : $c-primary;
+    margin-bottom: 0;
+    padding-left : rem-size($baseline*0.25);
+    padding-right: rem-size($baseline*0.25);
+    margin-left  : rem-size($baseline*-0.5);
+    position     : absolute;
+    top          : rem-size($baseline*-0.5);
+
+    &--inline {
+      background   : transparent;
+      color        : $c-dark;
+      padding      : 0;
+      margin-left  : 0;
+      margin-bottom: rem-size($baseline*0.5);
+      position     : relative;
+      top          : auto;
+      width        : 100%;
+    }
+  }
+
+  &__select {
+    overflow : hidden;
+    max-width: $max-width-content;
+    width    : 100%;
+  }
+
+  &__input {
+    &--email,
+    &--number,
+    &--password,
+    &--search,
+    &--tel,
+    &--text,
+    &--textarea,
+    &--url {
+      @include input-base;
+    }
+
+    &--error:not([type=checkbox]):not([type=radio]) {
+      border-color: $c-warning;
+      color       : $c-warning;
+    }
+
+    &--alert:not([type=checkbox]):not([type=radio]) {
+      border-color: $c-alert;
+      color       : $c-alert;
+    }
+
+    &--disabled:not([type=checkbox]):not([type=radio]),
+    &:disabled:not([type=checkbox]):not([type=radio]) {
+      cursor      : not-allowed;
+      color       : rgba($c-dark, 0.5);
+      background  : $c-light;
+      border-color: $c-mid;
+    }
+
+    &[type=date],
+    &[type=datetime],
+    &[type=month],
+    &[type=time],
+    &[type=week] {
+      padding: rem-size(($baseline*.25) - 2px) !important;
+    }
+
+    &[type=checkbox],
+    &[type=radio] {
+      $size             : rem-size(($baseline*0.5)+2px);
+      -webkit-appearance: none;
+      border            : 1px solid $c-primary;
+      margin            : 0 rem-size(5.5px) 0 0;
+      height            : $size;
+      position          : relative;
+      width             : $size;
+      min-width         : $size;
+      @include input-glow {
+        box-shadow: 0 0 0.5rem $c-primary-4;
+      };
+
+      &:checked:before {
+        $size     : rem-size(($baseline*0.5)-4px);
+        background: $c-primary;
+        content   : '';
+        height    : $size;
+        position  : absolute;
+        margin    : rem-size(2px);
+        width     : $size;
+      }
+
+      &:disabled {
+        border    : 2px solid $c-grey;
+        background: $c-white;
+      }
+    }
+
+    &[type=radio] {
+      border-radius: 100%;
+
+      &:checked:before {
+        border-radius: 100%;
+      }
+    }
+
+    &--date,
+    &--datetime,
+    &--time {
+      //max-width: rem-sub($max-width-content, 1.5rem)!important;
+      $iconWidth: 2.34375rem; // 37.5px
+      max-width : calc(#{$max-width-content} - #{$iconWidth})!important;
+    }
+  }
+
+  &__error,
+  &__tip,
+  &__warning {
+    bottom  : 1px;
+    position: absolute;
+  }
+
+  &__error,
+  &__warning {
+    @extend .content;
+    @include transition-all;
+    @include text-truncate($max-width-content);
+    animation  : slideIn $transition-duration 1;
+    //margin     : rem-size($baseline*0.5) 0 0;
+    padding    : 0 rem-size($baseline*0.5);
+    line-height: rem-size($baseline*1.5);
+    clear      : both;
+    width      : 100%;
+  }
+
+  &__error {
+    background-color: $c-warning;
+    color           : $c-white;
+  }
+
+  &__warning {
+    background-color: $c-alert;
+    color           : $c-white;
+  }
+
+  &__tip {
+    @extend .detail;
+    @include transition-all;
+    clear  : both;
+    padding: 0 rem-size($baseline*0.5);
+
+    &--toggle {
+      padding   : 0 rem-size(30px) rem-size($baseline*0.5);
+      margin-top: rem-size($baseline*-0.5);
+    }
+  }
+
+  &__icon {
+    @include transition-all;
+    @extend .material-icons;
+    $size        : rem-size($baseline*1.5);
+    border-radius: rem-size(3px);
+    color        : $c-grey;
+    cursor       : pointer;
+    display      : block;
+    height       : $size;
+    line-height  : $size;
+    margin-left  : rem-size($baseline*.5);
+    text-align   : center;
+    width        : $size;
+
+    &:focus,
+    &:hover {
+      background-color: $c-light;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &--prefix {
+      background   : $c-primary;
+      border-radius: 0;
+      color        : $c-white;
+    }
+  }
+
+  &__icon~.form__icon {
+    margin-left: 0;
+  }
+
+  &__toggle-label {
+    @extend .subheading;
+    @include text-truncate;
+    align-items    : center;
+    color          : $c-primary;
+    display        : flex;
+    justify-content: flex-start;
+    padding        : rem-size($baseline*0.25) 0;
+    max-width      : $max-width-content;
+    user-select    : none;
+
+    &--disabled,
+    &:disabled {
+      color      : $c-grey;
+      font-weight: 400;
+    }
+  }
+}
