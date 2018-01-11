@@ -17,7 +17,8 @@ Router.map(function() {
       this.route('controls');
       this.route('inputs');
       this.route('textareas');
-      this.route('dropdown-controls');
+      this.route('dropdowns');
+      this.route('date-time-inputs');
       this.route('toggles');
       this.route('validation');
       this.route('fieldsets');
