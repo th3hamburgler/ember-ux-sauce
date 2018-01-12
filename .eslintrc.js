@@ -14,13 +14,12 @@ module.exports = {
   env: {
     browser: true
   },
-  rules: {
-  },
+  rules: {},
   overrides: [
     // node files
     {
       files: [
-        'index.js',
+        // 'index.js',
         'testem.js',
         'ember-cli-build.js',
         'config/**/*.js',
@@ -43,7 +42,6 @@ module.exports = {
         // add your custom rules and overrides for node files here
       })
     },
-
     // test files
     {
       files: ['tests/**/*.js'],
