@@ -1,10 +1,14 @@
 <h1>Dropdown Controls</h1>
 
-<p>The form input component extends from embers <em>input</em> component. As such you can pass any of the standard <a href="https://guides.emberjs.com/v2.18.0/templates/input-helpers/#toc_text-fields">input attributes</a></p>
+<p>The form drowdown component extends the <a href="https://ember-power-select.com/docs">ember power select</a> component. As such you can pass any of the power select <a href="https://ember-power-select.com/docs/api-reference">attributes</a></p>
 
 <h2>Basic Usage</h2>
 
-<p>Let's look at a basic example with two way binding on the value and an action on pressing enter</p>
+<p>Let's look at a basic example of using the drowdown component. It is always used in block format to enable flexible templationg of your optiosn.</p>
+
+<p>Power select aims to be maximally flexible and because of that it doesn't try to make strong assumptions about how you want to use it. e.g. two way bind the selected property. Instead it embraces DDAU (Data Down Actions Up) philosophy so data flow always is unidirectional and explicit.</p>
+
+<p>The <em>onchange</em> event must be handled in your template. This example shows the most common use, update the property on select. For this we can use the ember <em>mut</em> helper.</p>
 
 {{#docs-demo as |demo|}}
 
