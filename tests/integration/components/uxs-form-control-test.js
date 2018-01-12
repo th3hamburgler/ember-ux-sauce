@@ -197,7 +197,6 @@ test('it renders a control with custom children', function(assert) {
   assert.equal($error.attr("class"), 'uxs-form__error ember-view', 'Has correct classes');
 });
 
-
 test('it renders a control bound to a model property', function(assert) {
 
   let model = EmberObject.create({
@@ -273,7 +272,6 @@ test('it renders a custom textarea control bound to a model property', function(
 
   assert.equal(model.get('foo'), 'hello darkness', 'Input change updates bound model property');
 });
-
 
 test('it renders a custom dropdown control bound to a model property', function(assert) {
 

@@ -36,6 +36,28 @@
 
       {{form.control label="Biography" name="bio" type="textarea" rows=5}}
 
+      {{#form.control label="Date of Birth" name="dateOfBirth" type="date" as |control|}}
+
+        {{#control.row as |row|}}
+          {{row.icon 'date_range' prefix=true}}
+          {{row.date
+            onChange=(action (mut model.dateOfBirth))
+          }}
+        {{/control.row}}
+      {{/form.control}}
+
+      {{#form.control label="Date Time" name="datetime" as |control|}}
+        {{control.datetime
+          onChange=(action (mut model.datetime))
+        }}
+      {{/form.control}}
+
+      {{#form.control label="Time" name="time" as |control|}}
+        {{control.time
+          onChange=(action (mut model.time))
+        }}
+      {{/form.control}}
+
       {{form.button "Save" type="submit"}}
       {{form.link "Back" "docs"}}
 

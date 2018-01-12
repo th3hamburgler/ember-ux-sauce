@@ -131,6 +131,8 @@
   }
 
   &__input {
+    &--date,
+    &--datetime,
     &--email,
     &--number,
     &--password,
@@ -138,8 +140,15 @@
     &--tel,
     &--text,
     &--textarea,
+    &--time,
     &--url {
       @include input-base;
+    }
+
+    &--date,
+    &--datetime,
+    &--time {
+      padding: rem-size(($baseline*.25) - 2px) !important;
     }
 
     &--error:not([type=checkbox]):not([type=radio]) {

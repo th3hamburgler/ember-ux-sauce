@@ -7,8 +7,10 @@ import {
   run
 } from '@ember/runloop';
 import registerPowerSelectHelpers from 'ember-power-select/test-support/helpers';
+import registerFlatpickrHelpers from 'ember-flatpickr/test-support/helpers';
 
 registerPowerSelectHelpers();
+registerFlatpickrHelpers();
 
 export default function startApp(attrs) {
   let attributes = merge({}, config.APP);

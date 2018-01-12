@@ -8,8 +8,6 @@ import {
   selectChoose
 } from 'ember-power-select/test-support/helpers';
 
-
-
 moduleForComponent('uxs-form-dropdown', 'Integration | Component | uxs form dropdown', {
   integration: true
 });
