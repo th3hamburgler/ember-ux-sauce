@@ -8,8 +8,6 @@
 
     {{#uxs-form model=model as |form|}}
 
-      {{model.title}}
-
       {{form.control label="Title" name="title" type="text"}}
 
       {{#form.control label="Name" name="name" as |control|}}
@@ -22,6 +20,19 @@
       {{/form.control}}
 
       {{form.control label="Email" name="email" type="email"}}
+
+      {{#form.control label="Gender" as |control|}}
+        {{#control.dropdown
+          selected=model.gender
+          options=genders
+          allowClear=true
+          onchange=(action (mut model.gender))
+          as |gender|
+        }}
+          {{gender}}
+        {{/control.dropdown}}
+
+      {{/form.control}}
 
       {{form.control label="Biography" name="bio" type="textarea" rows=5}}
 

@@ -4,6 +4,10 @@ import {
 } from 'ember-qunit';
 import EmberObject from '@ember/object';
 import hbs from 'htmlbars-inline-precompile';
+import {
+  clickTrigger,
+  selectChoose
+} from 'ember-power-select/test-support/helpers';
 
 moduleForComponent('uxs-form-control', 'Integration | Component | uxs form control', {
   integration: true
@@ -92,7 +96,6 @@ test('it renders a control with label & input textarea props', function(assert) 
   assert.equal($input[0].hasAttribute('aria-disabled'), true, 'has aria disabled attr');
   assert.equal($input[0].hasAttribute('disabled'), true, 'has disabled attr');
 });
-
 
 test('it renders a control with a tip property', function(assert) {
 
@@ -269,4 +272,42 @@ test('it renders a custom textarea control bound to a model property', function(
   $input.val('hello darkness').change();
 
   assert.equal(model.get('foo'), 'hello darkness', 'Input change updates bound model property');
+});
+
+
+test('it renders a custom dropdown control bound to a model property', function(assert) {
+
+  let model = EmberObject.create({
+    gender: 'Male'
+  });
+  this.set('model', model);
+  this.set('genders', ['Female', 'Male', 'Unspecified']);
+
+  this.render(hbs `{{#uxs-form-control name="gender" model=model as |control|}}
+    {{#control.dropdown
+      selected=model.gender
+      onchange=(action (mut model.gender))
+      options=genders
+      as |gender|
+    }}
+      {{gender}}
+    {{/control.dropdown}}
+  {{/uxs-form-control}}`);
+
+  let selector = '[data-test-uxs-form__input="gender"]',
+    $dropdown = this.$(selector);
+
+  assert.equal($dropdown.text().trim(), 'Male', 'Has correct value');
+
+  // change the model
+  this.set('model.gender', 'Female');
+
+  assert.equal($dropdown.text().trim(), 'Female', 'Value is updated after model property is changed');
+
+  // open the dropdown
+  clickTrigger(selector);
+  // select a new gender
+  selectChoose(selector, "Unspecified");
+
+  assert.equal(model.get('gender'), 'Unspecified', 'Input change updates bound model property');
 });

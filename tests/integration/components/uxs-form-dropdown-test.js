@@ -6,7 +6,7 @@ import hbs from 'htmlbars-inline-precompile';
 import {
   clickTrigger,
   selectChoose
-} from 'ember-power-select/test-support/helpers'
+} from 'ember-power-select/test-support/helpers';
 
 
 

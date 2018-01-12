@@ -7,6 +7,7 @@ export default Route.extend({
       title: 'Mr',
       firstName: 'Fabian',
       lastName: 'Wardlaw',
+      gender: 'Male',
       email: 'fab@gmail.com',
       bio: 'lorem ipsum...',
     })
