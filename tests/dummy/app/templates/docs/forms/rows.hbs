@@ -25,6 +25,14 @@
       }}
 
         {{#control.row as |row|}}
+          {{#row.dropdown
+            selected=model.title
+            options=titles
+            onchange=(action (mut model.title))
+            as |title|
+          }}
+            {{title}}
+          {{/row.dropdown}}
           {{row.input name="firstName" placeholder="First Name"}}
           {{row.input name="lastName" placeholder="Last Name"}}
         {{/control.row}}

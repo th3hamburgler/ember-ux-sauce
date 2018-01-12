@@ -169,6 +169,12 @@
         margin-right: 0;
       }
     }
+    /* HACK - as dropdowns are not inputs the above last-of-type
+     * selector wont cut it. What we really want is a list-of-class */
+    &+.uxs-form__input--dropdown,
+    &--dropdown+.uxs-form__input {
+      margin-left: rem-size($baseline*.5);
+    }
   }
 
   &__error,
