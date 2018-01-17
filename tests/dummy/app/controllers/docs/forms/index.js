@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import {
+  get,
   set
 } from '@ember/object';
 export default Controller.extend({
@@ -7,5 +8,13 @@ export default Controller.extend({
     this._super(...arguments);
     set(this, 'genders', ['Female', 'Male', 'Unspecified']);
   },
-
+  // Actions
+  // BEGIN-SNIPPET form-demo
+  actions: {
+    save(model) {
+      window.alert(`Save model ${get(model, 'firstName')}`);
+      return false;
+    }
+  },
+  // END-SNIPPET
 });
