@@ -1,0 +1,31 @@
+.uxs-navbar {
+  border-bottom  : rem-size(1px) solid $c-light;
+  box-shadow     : 0 2px 2px 0 rgba($c-light,0.125);
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-between;
+  position       : sticky;
+  top            : 0;
+
+  &--fixed {
+    background: $c-white;
+    left      : 0;
+    position  : fixed;
+    top       : 0;
+    width     : 100%;
+  }
+
+  &__logo {
+    @include type-content;
+    line-height: rem-size($baseline*2);
+    margin     : 0 rem-size($baseline*0.5);
+
+    &:hover {
+      color: $c-grey;
+    }
+  }
+
+  &__nav {
+    margin: rem-size($baseline*0.5);
+  }
+}

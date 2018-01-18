@@ -28,6 +28,9 @@ Router.map(function() {
     this.route('typography', function() {
       this.route('navs');
     });
+    this.route('layout', function() {
+      this.route('navbar');
+    });
     this.route('api', function() {
       this.route('class', {
         path: '/:class_id'

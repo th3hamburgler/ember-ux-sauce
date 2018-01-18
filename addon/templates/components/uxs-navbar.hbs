@@ -1,0 +1,8 @@
+{{#if title}}
+  {{#uxs-navbar-logo}}{{title}}{{/uxs-navbar-logo}}
+{{/if}}
+
+{{yield (hash
+    logo=(component "uxs-navbar-logo")
+    nav=(component "uxs-nav" horizontal=true class="uxs-navbar__nav" align="right")
+)}}
