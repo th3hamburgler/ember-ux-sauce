@@ -25,12 +25,18 @@ Router.map(function() {
       this.route('rows');
     });
     this.route('icons');
+    this.route('typography', function() {
+      this.route('navs');
+    });
     this.route('api', function() {
       this.route('class', {
         path: '/:class_id'
       });
     });
   });
+
+  this.route('app');
+
   this.route('not-found', {
     path: '/*path'
   });

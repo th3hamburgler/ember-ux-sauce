@@ -1,0 +1,45 @@
+.uxs-container {
+  margin: rem-size($baseline);
+}
+
+.uxs-nav {
+  @include type-content;
+  list-style: none;
+  padding   : 0;
+  margin    : 0 0 rem-size($baseline);
+
+  &--detail {
+    @include type-detail;
+  }
+
+  &--horizontal {
+    max-width: none;
+  }
+
+  &--ac {
+    text-align: center;
+  }
+
+  &--al {
+    text-align: left;
+  }
+
+  &--ar {
+    text-align: right;
+  }
+
+  &__item {
+    @include transition-all;
+    cursor     : pointer;
+    border     : none;
+    font-weight: 400;
+    list-style : none;
+
+    &--horizontal {
+      display     : inline-block;
+      margin-right: rem-size($baseline*0.5);
+    }
+  }
+
+  &__link {}
+}

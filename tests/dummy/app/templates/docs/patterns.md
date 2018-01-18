@@ -20,11 +20,11 @@ All components should allow the passing of a **name** parameter that will be use
 
 In the case of components rendered in loops, either use model id's or a zero based index.
 
+## Use Closure Actions
+
+[Stop bubbling actions and use closure actions](https://dockyard.com/blog/2015/10/29/ember-best-practice-stop-bubbling-and-use-closure-actions)
+
 ## Create Accessible Components
-
-Write this
-
-## Build Components on Top of the Shared Mixins
 
 Write this
 

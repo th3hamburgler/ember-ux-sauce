@@ -1,3 +1,5 @@
+{{docs-navbar logo='ember-cli' name='AddonDocs'}}
+
 {{#docs-viewer as |viewer|}}
 
  {{#viewer.nav as |nav|}}
@@ -20,6 +22,10 @@
       <del>{{nav.item 'Fieldsets' 'docs.forms.fieldsets'}}</del>
     {{/nav.subnav}}
     {{nav.item 'Icons' 'docs.icons'}}
+    {{nav.item 'Typography' 'docs.typography.index'}}
+    {{#nav.subnav as |nav|}}
+      {{nav.item 'Navigation' 'docs.typography.navs'}}
+    {{/nav.subnav}}
  {{/viewer.nav}}
 
  {{#viewer.main}}
@@ -31,3 +37,5 @@
  {{/viewer.main}}
 
 {{/docs-viewer}}
+
+{{docs-keyboard-shortcuts}}
