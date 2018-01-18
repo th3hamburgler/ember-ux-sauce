@@ -1,9 +1,10 @@
 import Mixin from '@ember/object/mixin';
-// import get from '@ember/object/get';
 import {
   PropTypes
 } from 'ember-prop-types';
-
+import {
+  get
+} from '@ember/object';
 /**
   A mixin to add click support to a component.
   @class Clickable
@@ -14,12 +15,12 @@ export default Mixin.create({
   // Attributes
   /**
     The name of the action to fire on click
-    @property clickAction
+    @property onClick
     @default  null
     @type     {string}
     @public
   */
-  clickAction: null,
+  onClick: null,
   /**
    * Mixins Property Managment config
    *
@@ -43,8 +44,9 @@ export default Mixin.create({
   role: 'button',
   // Actions
   click() {
-    if (!this.get('disabled') && this.get('clickAction')) {
-      this.get('clickAction')();
+    let action = get(this, 'onClick');
+    if (!this.get('disabled') && action) {
+      action();
     }
   },
 });

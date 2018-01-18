@@ -106,7 +106,7 @@ test('it fires an action on button click', function(assert) {
     assert.ok(name, 'my-button');
   });
 
-  this.render(hbs `{{uxs-button text="My Button" name="my-button" clickAction=(action buttonClicked "my-button")}}`);
+  this.render(hbs `{{uxs-button text="My Button" name="my-button" onClick=(action buttonClicked "my-button")}}`);
 
   let $button = this.$('[data-test-uxs-button="my-button"]');
 
@@ -122,7 +122,7 @@ test('it does not fire an action on button click when disabled', function(assert
     assert.ok(name, 'my-button', 'action called');
   });
 
-  this.render(hbs `{{uxs-button text="My Button" name="my-button" clickAction=(action buttonClicked "my-button") disabled=true}}`);
+  this.render(hbs `{{uxs-button text="My Button" name="my-button" onClick=(action buttonClicked "my-button") disabled=true}}`);
 
   let $button = this.$('[data-test-uxs-button="my-button"]');
 

@@ -6,7 +6,7 @@
 
   {{#demo.example name="form-demo"}}
 
-    {{#uxs-form submit=(action "save" model) model=model as |form|}}
+    {{#uxs-form onSubmit=(action "save" model) model=model as |form|}}
 
       {{form.control label="Title" name="title" type="text"}}
 
@@ -15,8 +15,6 @@
         {{#control.row as |row|}}
           {{row.input name="firstName"}}
           {{row.input name="lastName"}}
-          {{model.firstName}}
-          {{model.lastName}}
         {{/control.row}}
 
       {{/form.control}}

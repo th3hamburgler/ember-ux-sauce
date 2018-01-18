@@ -1,18 +1,19 @@
 /***
  * Namespace uxs styles so we do not leak into the docs
  */
+@import 'include.tools';
+@import "settings.variables";
+
 .docs-demo-example,
 .uxs {
   @import 'include.base';
-  @import 'include.tools';
-  @import "settings.variables";
   @import 'include.vendor';
   @import 'include.elements';
   @import 'include.objects';
   @import 'include.components';
   @import 'include.trumps';
 }
-@import "ember-power-select";
+@import 'include.vendor';
 
 .docs-args-table {
   margin: 16px 0;

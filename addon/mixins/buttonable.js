@@ -1,7 +1,14 @@
-import { computed } from '@ember/object';
-import { equal, alias } from '@ember/object/computed';
+import {
+  computed
+} from '@ember/object';
+import {
+  equal,
+  alias
+} from '@ember/object/computed';
 import Mixin from '@ember/object/mixin';
-import { dasherize } from '@ember/string';
+import {
+  dasherize
+} from '@ember/string';
 import PropTypeMixin, {
   PropTypes
 } from 'ember-prop-types';
@@ -11,6 +18,7 @@ import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 
 export default Mixin.create(Accessible, BEMComponent, PropTypeMixin, Testable, {
   // Attributes
+  attributeBindings: ['type'],
   base: 'uxs-button',
   modifiers: [
     'isAccent:accent',

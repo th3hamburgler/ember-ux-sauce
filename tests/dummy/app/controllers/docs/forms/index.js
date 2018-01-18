@@ -13,7 +13,6 @@ export default Controller.extend({
   actions: {
     save(model) {
       window.alert(`Save model ${get(model, 'firstName')}`);
-      return false;
     }
   },
   // END-SNIPPET

@@ -9,6 +9,7 @@ import PropTypeMixin, {
 const Button = Component.extend(Buttonable, Clickable, PropTypeMixin, {
   // Attributes
   layout,
+  tagName: 'button',
   // Methods
   init() {
     this._super(...arguments);
