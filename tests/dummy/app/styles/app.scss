@@ -4,8 +4,21 @@
 @import 'include.tools';
 @import "settings.variables";
 
+html {
+  height: 100%;
+}
+
+.ember-application {
+  height: 100%;
+
+  > .ember-view {
+    height: 100%;
+  }
+}
+
 .docs-demo-example,
 .uxs {
+  height: 100%;
   @import 'include.base';
   @import 'include.vendor';
   @import 'include.elements';
