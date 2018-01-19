@@ -29,6 +29,7 @@ Router.map(function() {
       this.route('navs');
     });
     this.route('layout', function() {
+      this.route('app');
       this.route('navbar');
     });
     this.route('api', function() {

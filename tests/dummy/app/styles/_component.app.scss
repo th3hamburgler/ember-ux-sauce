@@ -1,8 +1,11 @@
 .uxs-app {
-  margin-top    : rem-size($baseline*2);
   padding       : rem-size($baseline);
   display       : flex;
   flex-direction: column;
   align-items   : center;
   min-height    : 100%;
+
+  &--has-fixed-navbar {
+    margin-top: rem-size($baseline*2);
+  }
 }
