@@ -20,13 +20,14 @@
   },
   "dependencies": {
     "ember-bem-sauce": "github:sauce-consultants/ember-bem-sauce",
-    "ember-cli-moment-shim": "^3.5.0",
-    "ember-power-select": "^2.0.0-beta.0",
-    "ember-prop-types": "^6.0.1",
-    "ember-flatpickr": "^2.3.0",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-htmlbars": "^2.0.1",
+    "ember-cli-moment-shim": "^3.5.0",
     "ember-cli-sass": "^7.1.3",
+    "ember-cp-validations": "^3.5.1",
+    "ember-flatpickr": "^2.3.0",
+    "ember-power-select": "^2.0.0-beta.0",
+    "ember-prop-types": "^6.0.1",
     "ember-test-selectors": "^0.3.8",
     "reset-css": "^2.2.1"
   },

@@ -1,0 +1,24 @@
+<h1>Validations</h1>
+
+<h2>Validating Model Form</h2>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="form-validation"}}
+
+    {{#uxs-form onSubmit=(action "login" model) model=model as |form|}}
+
+      {{form.control label="Username" name="username" type="text"}}
+
+      {{form.control label="Password" name="password" type="password"}}
+
+      {{form.submit "Login"}}
+
+    {{/uxs-form}}
+
+  {{/demo.example}}
+
+  {{demo.snippet 'form-validation.hbs'}}
+  {{demo.snippet 'form-validation.js'}}
+
+{{/docs-demo}}

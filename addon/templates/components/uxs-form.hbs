@@ -1,5 +1,11 @@
 {{yield (hash
-  control=(component "uxs-form-control" model=model disabled=disabled name=name)
+  control=(
+    component "uxs-form-control"
+    model=model
+    disabled=disabled
+    name=name
+    validateOnFocus=validateOnFocus
+  )
   button=(component "uxs-button" disabled=disabled name=name)
   submit=(component "uxs-button" disabled=disabled name=name type="submit")
   link=(component "uxs-button-link" disabled=disabled name=name)
