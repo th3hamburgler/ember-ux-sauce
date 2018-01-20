@@ -2,7 +2,14 @@
   {{uxs-form-label label name=name disabled=disabled}}
 {{/if}}
 {{#if hasTextInput}}
-  {{uxs-form-input model=model name=name type=type value=value disabled=disabled}}
+  {{uxs-form-input
+    autocomplete=autocomplete
+    model=model
+    name=name
+    type=type
+    value=value
+    disabled=disabled
+  }}
 {{/if}}
 {{#if hasTextArea}}
   {{uxs-form-textarea model=model name=name type=type value=value disabled=disabled}}

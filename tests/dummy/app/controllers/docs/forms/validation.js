@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-/* SNIPPET BEGIN form-validation-controller */
+// BEGIN-SNIPPET form-validation
 export default Controller.extend({
   actions: {
     login(model) {
@@ -7,4 +7,4 @@ export default Controller.extend({
     },
   },
 });
-/* SNIPPET END */
+// END-SNIPPET

@@ -8,9 +8,9 @@
 
     {{#uxs-form onSubmit=(action "login" model) model=model as |form|}}
 
-      {{form.control label="Username" name="username" type="text"}}
+      {{form.control label="Username" name="username" type="text" autocomplete="username"}}
 
-      {{form.control label="Password" name="password" type="password"}}
+      {{form.control label="Password" name="password" type="password" autocomplete="password"}}
 
       {{form.submit "Login"}}
 
@@ -19,7 +19,7 @@
   {{/demo.example}}
 
   {{demo.snippet 'form-validation.hbs'}}
-  {{demo.snippet 'form-validation-route.js'}}
-  {{demo.snippet 'form-validation-controller.js'}}
+  {{demo.snippet 'form-validation-route.js' label='route.js'}}
+  {{demo.snippet 'form-validation.js'}}
 
 {{/docs-demo}}
