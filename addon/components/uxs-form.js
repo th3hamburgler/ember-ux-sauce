@@ -39,8 +39,6 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   // Methods
   init() {
     this._super(...arguments);
-
-    this._super(...arguments);
     set(this, 'propTypes', {
       validateOnFocus: PropTypes.boolean,
     });
