@@ -30,11 +30,13 @@ Router.map(function() {
     });
     this.route('icons');
     this.route('typography', function() {
-      this.route('navs');
+      this.route('lists');
+      this.route('tables');
     });
     this.route('layout', function() {
       this.route('app');
       this.route('navbar');
+      this.route('navs');
     });
     this.route('api', function() {
       this.route('class', {

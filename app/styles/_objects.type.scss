@@ -49,6 +49,18 @@
     background-color: $c-warning;
   }
 }
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  @include bold-body-type;
+}
+
+.link {
+  @include link;
+}
 /* Font Sizes */
 .s-g {
   font-size  : rem-size($s-giant);
@@ -115,14 +127,25 @@
   @include color-modifiers;
 }
 
-.italic {
-  font-style: italic;
+.uxs-ol,
+.uxs-ul {
+  list-style-position: inside;
+  margin             : 0 0 rem-size($baseline);
+  padding            : 0 0 0 rem-size($baseline);
+
+  &__sublist {
+    margin-bottom: 0;
+  }
 }
 
-.bold {
-  @include bold-body-type;
+.uxs-ol {
+  list-style-type: decimal;
+
+  &__list {}
 }
 
-.link {
-  @include link;
+.uxs-ul {
+  list-style-type: disc;
+
+  &__list {}
 }
