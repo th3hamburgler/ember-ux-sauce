@@ -55,3 +55,26 @@
   {{demo.snippet "unordered-lists.hbs"}}
 
 {{/docs-demo}}
+
+<h2>Definition Lists</h2>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="definition-lists"}}
+
+    {{#uxs-dl
+      align=align
+      style=style
+      as |list|
+    }}
+      {{list.term "Coffee"}}
+      {{list.description "Black hot drink"}}
+      {{list.term "Milk"}}
+      {{list.description "White cold drink"}}
+    {{/uxs-dl}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "unordered-lists.hbs"}}
+
+{{/docs-demo}}

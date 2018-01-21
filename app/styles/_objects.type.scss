@@ -149,3 +149,18 @@
 
   &__list {}
 }
+
+.uxs-dl {
+  margin: 0 0 rem-size($baseline);
+
+  &__term {
+    @include type-detail;
+    @include bold-body-type;
+  }
+
+  &__description {
+    @include type-content;
+    margin      : 0;
+    padding-left: rem-size($baseline*.5);
+  }
+}
