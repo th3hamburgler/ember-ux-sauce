@@ -26,6 +26,6 @@ code {
   background-color: $c-light;
   border          : 1px solid $c-mid;
   border-radius   : rem-size(3px);
-  color           : $c-alert;
+  color           : $c-error;
   padding         : rem-size(($baseline - $s-medium - 1px) / 2);
 }

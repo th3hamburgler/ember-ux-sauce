@@ -1,0 +1,23 @@
+.uxs-swatch {
+  border        : 1px solid $c-light;
+  display       : flex;
+  flex-direction: row;
+  margin        : rem-size(-2px);
+
+  &__item {
+    // @include drop-shadow;
+    align-items    : flex-start;
+    display        : flex;
+    flex-direction : column;
+    justify-content: flex-end;
+    height         : rem-size(($baseline*6)-2px);
+    flex           : 1;
+    padding        : rem-size($baseline*.25);
+    position       : relative;
+  }
+
+  &__var {
+    @extend .detail;
+    display: block;
+  }
+}

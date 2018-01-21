@@ -47,37 +47,45 @@ $baseline: 25px!default; //
 /*
  * Colors
  */
+$c-dark: #141414;
+$c-grey: shade-light($c-dark, 5, 15);
+$c-mid: shade-light($c-dark, 10, 15);
+$c-light: shade-light($c-dark, 14, 15);
 $c-white: rgb(255,255,255);
-$c-dark: rgb(31, 49, 59);
-$c-grey: rgb(148, 157,167);
-$c-mid: rgb(209, 215, 221);
-$c-light: rgb(237, 239, 241);
+/* Aliases */
 $c-sk-back: $c-mid;
 $c-sk-front: $c-light;
 $c-sk-light: lighten($c-sk-front, 2%);
 /* Primary */
-$c-primary: rgb(25, 180, 197);
+$c-primary: #1C77C3;
 $c-primary-1: $c-primary;
 $c-primary-2: shade-light($c-primary, 1);
 $c-primary-3: shade-light($c-primary, 2);
 $c-primary-4: shade-light($c-primary, 3);
 $c-primary-5: shade-light($c-primary, 4);
 /* Accent */
-$c-accent: rgb(117,192,68);
+$c-accent: #8F3985;
 $c-accent-1: $c-accent;
 $c-accent-2: shade-light($c-accent, 1);
 $c-accent-3: shade-light($c-accent, 2);
 $c-accent-4: shade-light($c-accent, 3);
 $c-accent-5: shade-light($c-accent, 4);
+/* Success */
+$c-success: #5FAD56;
+$c-success-1: $c-success;
+$c-success-2: shade-light($c-success, 1);
+$c-success-3: shade-light($c-success, 2);
+$c-success-4: shade-light($c-success, 3);
+$c-success-5: shade-light($c-success, 4);
 /* Alert */
-$c-alert: rgb(117,192,68);
-$c-alert-1: $c-alert;
-$c-alert-2: shade-light($c-alert, 1);
-$c-alert-3: shade-light($c-alert, 2);
-$c-alert-4: shade-light($c-alert, 3);
-$c-alert-5: shade-light($c-alert, 4);
+$c-error: #DB3A34;
+$c-error-1: $c-error;
+$c-error-2: shade-light($c-error, 1);
+$c-error-3: shade-light($c-error, 2);
+$c-error-4: shade-light($c-error, 3);
+$c-error-5: shade-light($c-error, 4);
 /* Warning */
-$c-warning: rgb(199, 33, 110);
+$c-warning: #ECA400;
 $c-warning-1: $c-warning;
 $c-warning-2: shade-light($c-warning, 1);
 $c-warning-3: shade-light($c-warning, 2);

@@ -6,6 +6,11 @@
     {{nav.item 'Introduction' 'docs.index'}}
     {{nav.item 'Patterns' 'docs.patterns'}}
     {{nav.item 'Quickstart' 'docs.quickstart'}}
+    {{nav.item 'Settings' 'docs.settings.index'}}
+    {{#nav.subnav as |nav|}}
+      {{nav.item 'Colors' 'docs.settings.colors'}}
+      {{nav.item 'Typography' 'docs.settings.typography'}}
+    {{/nav.subnav}}
     {{nav.item 'Forms' 'docs.forms.index'}}
     {{#nav.subnav as |nav|}}
       {{nav.item 'Buttons' 'docs.forms.buttons'}}

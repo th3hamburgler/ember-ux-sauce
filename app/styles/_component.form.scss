@@ -44,7 +44,7 @@
     }
 
     &--alert {
-      color: $c-alert;
+      color: $c-error;
     }
 
     &--disabled {
@@ -79,8 +79,8 @@
     }
 
     &--alert:not([type=checkbox]):not([type=radio]) {
-      border-color: $c-alert;
-      color       : $c-alert;
+      border-color: $c-error;
+      color       : $c-error;
     }
 
     &--disabled:not([type=checkbox]):not([type=radio]),
@@ -134,7 +134,7 @@
   }
 
   &__warning {
-    background-color: $c-alert;
+    background-color: $c-error;
     color           : $c-white;
   }
 

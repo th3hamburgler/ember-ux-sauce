@@ -18,7 +18,11 @@ html {
 
 .docs-demo-example,
 .uxs {
-  height: 100%;
+  @include body-type;
+  @include content-font-size;
+  background: $c-white;
+  color     : $c-dark;
+  height    : 100%;
   @import 'include.base';
   @import 'include.vendor';
   @import 'include.elements';

@@ -10,6 +10,10 @@ Router.map(function() {
   this.route('docs', function() {
     this.route('patterns');
     this.route('quickstart');
+    this.route('settings', function() {
+      this.route('colors');
+      this.route('typography');
+    });
     this.route('forms', function() {
       this.route('buttons');
       this.route('button-links');

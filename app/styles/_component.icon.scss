@@ -27,11 +27,11 @@
   }
 
   &--accent {
-    color: $c-alert;
+    color: $c-error;
 
     &:focus,
     &:hover {
-      color: $c-alert-3;
+      color: $c-error-3;
     }
   }
   /**
