@@ -1,17 +1,81 @@
+@mixin align-modifiers {
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--justify {
+    text-align: justify;
+  }
+}
+@mixin color-modifiers {
+  &--c-primary {
+    color: $c-primary;
+  }
+
+  &--c-accent {
+    color: $c-accent;
+  }
+
+  &--c-alert {
+    color: $c-alert;
+  }
+
+  &--c-warning {
+    color: $c-warning;
+  }
+}
+@mixin background-color-modifiers {
+  &--bg-primary {
+    background-color: $c-primary;
+  }
+
+  &--bg-accent {
+    background-color: $c-accent;
+  }
+
+  &--bg-alert {
+    background-color: $c-alert;
+  }
+
+  &--bg-warning {
+    background-color: $c-warning;
+  }
+}
+
 .heading {
   @include type-heading;
+  @include align-modifiers;
+  @include background-color-modifiers;
+  @include color-modifiers;
 }
 
 .subheading {
   @include type-subheading;
+  @include align-modifiers;
+  @include background-color-modifiers;
+  @include color-modifiers;
 }
 
 .content {
   @include type-content;
+  @include align-modifiers;
+  @include background-color-modifiers;
+  @include color-modifiers;
 }
 
 .detail {
   @include type-detail;
+  @include align-modifiers;
+  @include background-color-modifiers;
+  @include color-modifiers;
 }
 
 .italic {

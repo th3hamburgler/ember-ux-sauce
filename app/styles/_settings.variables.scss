@@ -62,6 +62,13 @@ $c-primary-2: shade-light($c-primary, 1);
 $c-primary-3: shade-light($c-primary, 2);
 $c-primary-4: shade-light($c-primary, 3);
 $c-primary-5: shade-light($c-primary, 4);
+/* Accent */
+$c-accent: rgb(117,192,68);
+$c-accent-1: $c-accent;
+$c-accent-2: shade-light($c-accent, 1);
+$c-accent-3: shade-light($c-accent, 2);
+$c-accent-4: shade-light($c-accent, 3);
+$c-accent-5: shade-light($c-accent, 4);
 /* Alert */
 $c-alert: rgb(117,192,68);
 $c-alert-1: $c-alert;
