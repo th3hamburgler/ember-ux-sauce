@@ -84,14 +84,14 @@ test('it renders a row with a contextual icon', function(assert) {
     {{control.icon "add" prefix=true}}
   {{/uxs-form-control-row}}`);
 
-  let $input = this.$('[data-test-uxs-form__icon="my-row"]');
+  let $icon = this.$('[data-test-uxs-form__icon="my-row"]');
 
-  assert.equal($input.attr("class"), 'uxs-form__icon uxs-form__icon--inline uxs-form__icon--prefix ember-view', 'Has correct classes');
-  assert.equal($input.text().trim(), 'add', 'Has correct value');
+  assert.equal($icon.attr("class"), 'uxs-form__icon uxs-form__icon--black uxs-form__icon--inline uxs-form__icon--prefix ember-view', 'Has correct icon classes');
+  assert.equal($icon.text().trim(), 'add', 'Has correct icon value');
 
   this.set('disabled', true);
 
-  assert.equal($input.attr("class"), 'uxs-form__icon uxs-form__icon--disabled uxs-form__icon--inline uxs-form__icon--prefix ember-view', 'Has correct classes');
+  assert.equal($icon.attr("class"), 'uxs-form__icon uxs-form__icon--black uxs-form__icon--disabled uxs-form__icon--inline uxs-form__icon--prefix ember-view', 'Has correct updated icon classes');
 
 });
 

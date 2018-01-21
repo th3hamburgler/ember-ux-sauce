@@ -12,6 +12,7 @@ import layout from '../templates/components/uxs-button-group';
 export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   // Attribues
   base: 'uxs-button-group',
+  debugBem: true,
   layout,
   // Computed
   isAlignCenter: equal('align', 'center'),
@@ -26,7 +27,7 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   init() {
     this._super(...arguments);
 
-    this.set('modifiers', [
+    this.registerModifiers([
       'isAlignCenter:center',
       'disabled',
       'inline',

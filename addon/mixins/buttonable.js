@@ -15,24 +15,14 @@ import PropTypeMixin, {
 import Accessible from 'ember-ux-sauce/mixins/accessible';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
+import {
+  get
+} from '@ember/object';
 
 export default Mixin.create(Accessible, BEMComponent, PropTypeMixin, Testable, {
   // Attributes
   attributeBindings: ['type'],
   base: 'uxs-button',
-  modifiers: [
-    'isAccent:accent',
-    'isBlack:black',
-    'disabled',
-    'inline',
-    'isGray:gray',
-    'loading',
-    'mini',
-    'naked',
-    'isPrimary:primary',
-    'selected',
-    'isWhite:white',
-  ],
   propTypes: {
     inline: PropTypes.bool,
     mini: PropTypes.bool,
@@ -60,14 +50,29 @@ export default Mixin.create(Accessible, BEMComponent, PropTypeMixin, Testable, {
    * The name property should be set manually in block usage
    */
   name: computed('text', function() {
-    let text = this.get('text');
+    let text = get(this, 'text');
     if (text) {
-      return dasherize(this.get('text'));
+      return dasherize(get(this, 'text'));
     }
     return true;
   }),
   // Methods
-  //
+  init() {
+    this._super(...arguments);
+    this.registerModifiers([
+      'isAccent:accent',
+      'isBlack:black',
+      'disabled',
+      'inline',
+      'isGray:gray',
+      'loading',
+      'mini',
+      'naked',
+      'isPrimary:primary',
+      'selected',
+      'isWhite:white',
+    ]);
+  },
   /**
    * Init any property defaults
    */

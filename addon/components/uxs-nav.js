@@ -16,7 +16,7 @@ export default Component.extend(BEMComponent, Testable, {
   isAlignedRight: equal('align', 'right'),
   // Methods
   init() {
-    this.set('modifiers', [
+    this.registerModifiers([
       'detail',
       'isAlignedCenter:center',
       'horizontal',

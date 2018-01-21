@@ -1,8 +1,5 @@
 import Mixin from '@ember/object/mixin';
 import {
-  get
-} from '@ember/object';
-import {
   equal
 } from '@ember/object/computed';
 import PropTypeMixin, {
@@ -19,18 +16,23 @@ export default Mixin.create(PropTypeMixin, {
   isWarning: equal('style', 'warning'),
   // Methods
   init() {
-    get(this, 'modifiers').pushObjects([
+    this._super(...arguments);
+    this.registerModifiers([
       'isAccent:c-accent',
       'isAlert:c-alert',
       'isPrimary:c-primary',
       'isWarning:c-warning',
     ]);
-    this._super(...arguments);
     this.set('propTypes', {
       style: PropTypes.oneOfType([
         PropTypes.null,
         PropTypes.string,
       ]),
     });
+  },
+  registerModifiers: function() {
+    if (this._super) {
+      this._super(...arguments);
+    }
   },
 });

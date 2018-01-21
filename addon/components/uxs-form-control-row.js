@@ -5,6 +5,9 @@ import {
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import layout from '../templates/components/uxs-form-control-row';
+import {
+  set,
+} from '@ember/object';
 
 export default Component.extend(BEMComponent, Testable, {
   // Attributes
@@ -13,12 +16,12 @@ export default Component.extend(BEMComponent, Testable, {
   layout,
   // Methods
   init() {
-    this.set('modifiers', [
+    this._super(...arguments);
+    this.registerModifiers([
       'disabled',
       'inline',
     ]);
-    this._super(...arguments);
-    this.set('propTypes', {
+    set(this, 'propTypes', {
       inline: PropTypes.boolean,
     });
   },

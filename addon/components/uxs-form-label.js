@@ -13,7 +13,7 @@ const FormLabel = Component.extend(BEMComponent, PropTypeMixin, Testable, {
   tagName: 'label',
   // Methods
   init() {
-    this.set('modifiers', [
+    this.registerModifiers([
       'disabled',
       'error',
       'required',

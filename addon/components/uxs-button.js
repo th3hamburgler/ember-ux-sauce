@@ -13,7 +13,6 @@ const Button = Component.extend(Buttonable, Clickable, PropTypeMixin, {
   // Methods
   init() {
     this._super(...arguments);
-
     this.get('propTypes', {
       loading: PropTypes.bool,
       loadingText: PropTypes.string,

@@ -23,10 +23,8 @@ export default TextArea.extend(Accessible, BEMComponent, PropTypeMixin, Testable
   textarea: true,
   // Methods
   init() {
-    this.initModifiers();
-
     this._super(...arguments);
-
+    this.initModifiers();
     this.initModelComputedProperties();
     this.initPropTypes()
   },
@@ -34,7 +32,7 @@ export default TextArea.extend(Accessible, BEMComponent, PropTypeMixin, Testable
    * Set the properties to bind to BEM modifier classes
    */
   initModifiers() {
-    set(this, 'modifiers', [
+    this.registerModifiers([
       'disabled',
       'error',
       'inline',

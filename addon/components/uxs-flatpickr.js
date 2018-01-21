@@ -25,16 +25,16 @@ export default FlatPickr.extend(Accessible, BEMComponent, Testable, {
   date: oneWay('value'),
   // Methods
   init() {
+    this._super(...arguments);
     this.initModifiers();
     this.initModelComputedProperties();
     this.initDefaultAttributes();
-    this._super(...arguments);
   },
   /**
    * Set the properties to bind to BEM modifier classes
    */
   initModifiers() {
-    set(this, 'modifiers', [
+    this.registerModifiers([
       'disabled',
       'isDate:date',
       'isDateTime:datetime',

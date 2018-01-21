@@ -5,6 +5,9 @@ import Component from '@ember/component';
 import layout from '../templates/components/uxs-icon';
 import Buttonable from 'ember-ux-sauce/mixins/buttonable';
 import Clickable from 'ember-ux-sauce/mixins/clickable';
+import {
+  set
+} from '@ember/object';
 
 const FormTip = Component.extend(Buttonable, Clickable, {
   // Attributes
@@ -12,19 +15,17 @@ const FormTip = Component.extend(Buttonable, Clickable, {
   layout,
   // Methods
   init() {
-    this.set('modifiers', [
+    this._super(...arguments);
+    this.registerModifiers([
       'accent',
-      'disabled',
       'error',
       'grey',
-      'inline',
       'primary',
       'prefix',
       'suffix',
       'warning',
     ])
-    this._super(...arguments);
-    this.set('propTypes', {
+    set(this, 'propTypes', {
       icon: PropTypes.string,
     });
   },

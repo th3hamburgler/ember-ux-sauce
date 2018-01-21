@@ -9,7 +9,7 @@ export default Component.extend(BEMComponent, Testable, {
   layout,
   // Methods
   init() {
-    this.set('modifiers', ['fixed'])
+    this.registerModifiers(['fixed'])
     this._super(...arguments);
   },
   getDefaultProps() {

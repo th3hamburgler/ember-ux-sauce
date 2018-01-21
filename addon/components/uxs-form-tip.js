@@ -5,6 +5,9 @@ import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import Component from '@ember/component';
 import layout from '../templates/components/uxs-form-tip';
+import {
+  set
+} from '@ember/object';
 
 const FormTip = Component.extend(BEMComponent, PropTypeMixin, Testable, {
   // Attributes
@@ -12,7 +15,7 @@ const FormTip = Component.extend(BEMComponent, PropTypeMixin, Testable, {
   layout,
   // Methods
   init() {
-    this.set('modifiers', [
+    this.registerModifiers([
       'disabled',
       'error',
       'required',
@@ -20,7 +23,7 @@ const FormTip = Component.extend(BEMComponent, PropTypeMixin, Testable, {
       'warning',
     ]);
     this._super(...arguments);
-    this.set('propTypes', {
+    set(this, 'propTypes', {
       text: PropTypes.string,
       disabled: PropTypes.boolean,
       error: PropTypes.error,

@@ -48,7 +48,7 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   //isWarning
   // Methods
   init() {
-    set(this, 'modifiers', [
+    this.registerModifiers([
       'disabled',
     ]);
     this._super(...arguments);

@@ -1,8 +1,5 @@
 import Mixin from '@ember/object/mixin';
 import {
-  get
-} from '@ember/object';
-import {
   equal
 } from '@ember/object/computed';
 import PropTypeMixin, {
@@ -19,21 +16,24 @@ export default Mixin.create(PropTypeMixin, {
   isAlignRight: equal('align', 'right'),
   // Methods
   init() {
-    get(this, 'modifiers').pushObjects([
+    this._super(...arguments);
+    this.registerModifiers([
       'isAlignCenter:center',
       'isAlignLeft:left',
       'isAlignJustifed:justify',
       'isAlignRight:right',
     ]);
-
-    this._super(...arguments);
-
     this.set('propTypes', {
       align: PropTypes.oneOfType([
         PropTypes.null,
         PropTypes.string,
       ]),
     });
+  },
+  registerModifiers: function() {
+    if (this._super) {
+      this._super(...arguments);
+    }
   },
   /**
    * Init any property defaults

@@ -5,6 +5,9 @@ import Component from '@ember/component';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import layout from '../templates/components/uxs-form-error';
+import {
+  set
+} from '@ember/object';
 
 const FormError = Component.extend(BEMComponent, PropTypeMixin, Testable, {
   // Attributes
@@ -12,9 +15,9 @@ const FormError = Component.extend(BEMComponent, PropTypeMixin, Testable, {
   layout,
   // Methods
   init() {
-    this.set('modifiers', ['disabled']);
+    this.registerModifiers(['disabled']);
     this._super(...arguments);
-    this.set('propTypes', {
+    set(this, 'propTypes', {
       text: PropTypes.string,
       disabled: PropTypes.boolean,
     });

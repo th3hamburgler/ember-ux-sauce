@@ -32,10 +32,8 @@ export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testabl
   isURL: equal('type', 'url'),
   // Methods
   init() {
-    this.initModifiers();
-
     this._super(...arguments);
-
+    this.initModifiers();
     this.initModelComputedProperties();
     this.initPropTypes()
   },
@@ -43,7 +41,7 @@ export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testabl
    * Set the properties to bind to BEM modifier classes
    */
   initModifiers() {
-    set(this, 'modifiers', [
+    this.registerModifiers([
       'disabled',
       'isEmail:email',
       'error',

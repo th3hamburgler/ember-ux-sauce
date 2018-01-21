@@ -4,7 +4,6 @@ import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import {
   defineProperty,
-  set
 } from '@ember/object';
 import {
   alias,
@@ -18,15 +17,13 @@ export default PowerSelect.extend(Accessible, BEMComponent, Testable, {
   tagName: 'div',
   // Methods
   init() {
-    this.initModifiers();
-
     this._super(...arguments);
-
+    this.initModifiers();
     // this.initModelComputedProperties();
     // this.initPropTypes()
   },
   initModifiers() {
-    set(this, 'modifiers', [
+    this.registerModifiers([
       'disabled',
       'isDropdown:dropdown',
       'error',

@@ -28,12 +28,12 @@ test('it renders a button with different styles', function(assert) {
 
   let $button = this.$('[data-test-uxs-button="my-button"]');
 
-  assert.equal($button.attr("class"), 'uxs-button uxs-button--primary ember-view', true, 'Has correct classes');
+  assert.equal($button.attr("class"), 'uxs-button uxs-button--primary ember-view', 'Has correct classes');
 
   // Update style
   this.set('style', 'accent');
 
-  assert.equal($button.attr("class"), 'uxs-button uxs-button--accent ember-view', true, 'Has correct classes after update');
+  assert.equal($button.attr("class"), 'uxs-button uxs-button--accent ember-view', 'Has correct classes after update');
 
 });
 
