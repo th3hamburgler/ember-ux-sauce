@@ -38,6 +38,8 @@ Router.map(function() {
       this.route('navbar');
       this.route('navs');
       this.route('hero');
+      this.route('toolbar');
+      this.route('header');
     });
     this.route('api', function() {
       this.route('class', {

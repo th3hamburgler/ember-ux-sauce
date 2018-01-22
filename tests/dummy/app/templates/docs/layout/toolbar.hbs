@@ -1,0 +1,48 @@
+<h1>Toolbar</h1>
+
+<p>The header component is used to frame your page layouts.</p>
+
+<h2>Usage</h2>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="toolbar" theme="accent"}}
+
+      {{#uxs-toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{!-- {{toolbar.back-link "arrow_back"}} --}}
+        {{toolbar.title "Toolbar"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/uxs-toolbar}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "toolbar.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Contextual Components</h2>
+
+<p>The Hero component has the following child components:</p>
+
+<table class="docs-args-table">
+  <tr>
+    <td>heading</td>
+    <td>Alias of uxs-heading</td>
+  </tr>
+  <tr>
+    <td>content</td>
+    <td>Alias of uxs-content</td>
+  </tr>
+  <tr>
+    <td>button</td>
+    <td>Alias of uxs-button</td>
+  </tr>
+  <tr>
+    <td>button-link</td>
+    <td>Alias of uxs-button-link</td>
+  </tr>
+</table>

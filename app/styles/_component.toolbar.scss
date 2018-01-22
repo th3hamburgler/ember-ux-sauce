@@ -1,0 +1,27 @@
+.uxs-toolbar {
+  background    : $c-primary;
+  color         : $c-white;
+  display       : flex;
+  flex-direction: row;
+  padding       : rem-size($baseline*0.5);
+
+  &__title {
+    margin        : 0;
+    text-transform: none;
+    line-height   : rem-size($baseline);
+    font-weight   : 400;
+  }
+
+  &__back,
+  &__title {
+    margin-right: rem-size($baseline*0.25);
+  }
+
+  &__spacer {
+    flex: 1;
+  }
+
+  &__action {
+    margin-left: rem-size($baseline*0.25);
+  }
+}
