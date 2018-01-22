@@ -12,6 +12,8 @@
       "Heading Text"
       align=align
       style=style
+      huge=huge
+      giant=giant
     }}
 
   {{/demo.example}}
@@ -30,6 +32,16 @@
     <td>style</td>
     <td>{{input placeholder="Style Value" value=style}}</td>
     <td><em>String</em></td>
+  </tr>
+  <tr>
+    <td>giant</td>
+    <td>{{docs-toggle value=giant}}</td>
+    <td><em>Boolean</em></td>
+  </tr>
+  <tr>
+    <td>huge</td>
+    <td>{{docs-toggle value=huge}}</td>
+    <td><em>Boolean</em></td>
   </tr>
 </table>
 
@@ -75,7 +87,7 @@
   {{#demo.example name="details"}}
 
     {{#uxs-detail
-      align=align  
+      align=align
       style=style
     }}Lacinia et parturient mus quam cum bibendum ut ut consequat mi at a a viverra sociosqu scelerisque ligula a class. Parturient eu donec ullamcorper vestibulum fermentum dui penatibus ullamcorper mi a nascetur vestibulum a nostra consectetur a pulvinar dignissim integer fermentum laoreet leo condimentum dapibus hac scelerisque. Lacus dis vitae a sapien parturient inceptos sociis etiam a at ac eros mus eu est nam mi curabitur urna malesuada lacus metus malesuada vitae. Neque vestibulum a eros auctor venenatis adipiscing adipiscing parturient ornare nisl gravida adipiscing litora inceptos adipiscing praesent in porta a morbi lectus porttitor mattis at elit.{{/uxs-detail}}
 

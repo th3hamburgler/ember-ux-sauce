@@ -37,6 +37,7 @@ Router.map(function() {
       this.route('app');
       this.route('navbar');
       this.route('navs');
+      this.route('hero');
     });
     this.route('api', function() {
       this.route('class', {

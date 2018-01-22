@@ -1,0 +1,44 @@
+<h1>Hero</h1>
+
+<p>The hero component is used to give your pages impact.</p>
+
+<h2>Usage</h2>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="hero"}}
+
+    {{#uxs-hero image="https://placeimg.com/2560/1600/any/grayscale" as |hero|}}
+      {{hero.heading "We Are Sauce" huge=true}}
+      {{hero.content "Dis per bibendum adipiscing a velit sociosqu a habitant."}}
+      {{hero.button "Let's Do It"}}
+    {{/uxs-hero}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "hero.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Contextual Components</h2>
+
+<p>The Hero component has the following child components:</p>
+
+<table class="docs-args-table">
+  <tr>
+    <td>heading</td>
+    <td>Alias of uxs-heading</td>
+  </tr>
+  <tr>
+    <td>content</td>
+    <td>Alias of uxs-content</td>
+  </tr>
+  <tr>
+    <td>button</td>
+    <td>Alias of uxs-button</td>
+  </tr>
+  <tr>
+    <td>button-link</td>
+    <td>Alias of uxs-button-link</td>
+  </tr>
+</table>

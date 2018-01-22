@@ -5,6 +5,11 @@ import Textable from '../mixins/textable';
 const Heading = Component.extend(Textable, {
   base: 'heading',
   layout,
+  // Methods
+  init() {
+    this._super(...arguments);
+    this.registerModifiers(['giant', 'huge']);
+  },
 });
 
 Heading.reopenClass({
