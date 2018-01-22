@@ -1,1 +1,38 @@
 <h1>Tables</h1>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="tables"}}
+
+    {{#uxs-table as |table|}}
+      {{#table.row as |row|}}
+        {{row.heading "#ID" numeric=true}}
+        {{row.heading "First Name"}}
+        {{row.heading "Last Name"}}
+        {{row.heading "Handle"}}
+      {{/table.row}}
+      {{#table.row section=true as |row|}}
+        {{row.cell "1" numeric=true}}
+        {{row.cell "Mark"}}
+        {{row.cell "Otto"}}
+        {{row.cell "@mdo"}}
+      {{/table.row}}
+      {{#table.row highlight=true as |row|}}
+        {{row.cell "2" numeric=true}}
+        {{row.cell "Jacob"}}
+        {{row.cell "Thornton"}}
+        {{row.cell "@fat"}}
+      {{/table.row}}
+      {{#table.row as |row|}}
+        {{row.cell "3" numeric=true}}
+        {{row.cell "Larry"}}
+        {{row.cell "the Bird"}}
+        {{row.cell "@twitter"}}
+      {{/table.row}}
+    {{/uxs-table}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "tables.hbs"}}
+
+{{/docs-demo}}

@@ -42,7 +42,7 @@
   @include bold-body-type;
 }
 @mixin type-subheading {
-   @include subheading-font-size;
+  @include subheading-font-size;
   @include bold-body-type;
 }
 @mixin type-content {

@@ -26,3 +26,30 @@ table.detail {
 .table-wrap {
   white-space: normal;
 }
+
+.uxs-table {
+  @include body-type;
+  @include content-font-size;
+
+  &--detail {
+    @include detail-font-size;
+  }
+
+  &__row {}
+
+  &__heading {}
+
+  &__cell {
+    &--section {
+      padding-top: rem-size($baseline);
+    }
+
+    &--numeric {
+      text-align: right;
+    }
+
+    &--highlight {
+      @include bold-body-type;
+    }
+  }
+}
