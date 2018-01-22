@@ -3,6 +3,7 @@
   color     : $c-white;
   overflow  : auto;
   position  : relative;
+  width     : 100%;
 
   &__image {
     background-color   : $c-primary;
@@ -33,6 +34,6 @@
   }
 
   &__title {
-    margin: rem-size($baseline*5) rem-size($baseline*.5) rem-size($baseline*.5) rem-size($baseline*2);
+    margin: rem-size($baseline*5) rem-size($baseline*.5) rem-size($baseline*1) rem-size($baseline*2);
   }
 }

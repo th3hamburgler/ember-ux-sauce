@@ -128,6 +128,7 @@
   @include align-modifiers;
   @include background-color-modifiers;
   @include color-modifiers;
+  margin-bottom: rem-size($baseline);
 }
 
 .detail {
@@ -135,6 +136,7 @@
   @include align-modifiers;
   @include background-color-modifiers;
   @include color-modifiers;
+  margin-bottom: rem-size($baseline);
 }
 
 .content,

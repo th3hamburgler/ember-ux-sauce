@@ -1,0 +1,19 @@
+{{#uxs-window splash=true image="https://placeimg.com/2560/1600/any/grayscale"}}
+
+  {{#uxs-pane splash=true}}
+
+    {{uxs-heading "Login" align="center"}}
+
+    {{#uxs-form model=model as |form|}}
+
+      {{form.control label="Username" name="username" type="text" autocomplete="username"}}
+
+      {{form.control label="Password" name="password" type="password" autocomplete="password"}}
+
+      {{form.submit "Login"}}
+
+    {{/uxs-form}}
+
+  {{/uxs-pane}}
+
+{{/uxs-window}}
