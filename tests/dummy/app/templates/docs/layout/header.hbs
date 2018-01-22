@@ -1,6 +1,6 @@
 <h1>Header</h1>
 
-<p>The header component is used to frame your page layouts.</p>
+<p>The header component is used to frame your page layouts. It combines a toolbar with a page title.</p>
 
 <h2>Usage</h2>
 
@@ -8,14 +8,14 @@
 
   {{#demo.example name="header"}}
 
-    {{#uxs-header image="https://placeimg.com/2560/1600/any/grayscale" as |header|}}
+    {{#uxs-header as |header|}}
       {{#header.toolbar as |toolbar|}}
-        {{toolbar.back "back"}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
         {{toolbar.action "filter_list"}}
         {{toolbar.action "file_download"}}
         {{toolbar.action "search"}}
       {{/header.toolbar}}
-
       {{header.title "Page Title"}}
     {{/uxs-header}}
 
@@ -35,15 +35,30 @@
     <td>Alias of uxs-heading</td>
   </tr>
   <tr>
-    <td>content</td>
-    <td>Alias of uxs-content</td>
-  </tr>
-  <tr>
-    <td>button</td>
-    <td>Alias of uxs-button</td>
-  </tr>
-  <tr>
-    <td>button-link</td>
-    <td>Alias of uxs-button-link</td>
+    <td>toolbar</td>
+    <td>Alias of uxs-toolbar</td>
   </tr>
 </table>
+
+<h2>With an image background</h2>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="header-image"}}
+
+    {{#uxs-header image="https://placeimg.com/2560/1600/any/grayscale" as |header|}}
+      {{#header.toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/header.toolbar}}
+      {{header.title "Page Title"}}
+    {{/uxs-header}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "header-image.hbs"}}
+
+{{/docs-demo}}

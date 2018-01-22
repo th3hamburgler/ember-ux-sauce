@@ -137,6 +137,28 @@
   @include color-modifiers;
 }
 
+.content,
+.detail {
+  a {
+    @include bold-body-type;
+    @include transition-all;
+    @include link;
+  }
+
+  b,
+  em,
+  strong {
+    @include bold-body-type;
+    color          : inherit;
+    text-decoration: none;
+    font-style     : normal;
+  }
+
+  i {
+    font-style: italic;
+  }
+}
+
 .uxs-ol,
 .uxs-ul {
   list-style-position: inside;

@@ -1,31 +1,39 @@
-p {
-  @extend .content;
-  margin-bottom: rem-size($baseline);
-}
+// p {
+//   @extend .content;
+//   margin-bottom: rem-size($baseline);
+// }
+//
 
 a {
-  @include bold-body-type;
-  @include transition-all;
-  @include link;
-}
-
-b,
-em,
-strong {
-  @include bold-body-type;
   color          : inherit;
-  text-decoration: none;
   font-style     : normal;
-}
+  text-decoration: none;
 
-i {
-  font-style: italic;
+  &:active,
+  &:hover {
+    color          : inherit;
+    font-style     : normal;
+    text-decoration: none;
+  }
 }
-
-code {
-  background-color: $c-light;
-  border          : 1px solid $c-mid;
-  border-radius   : rem-size(3px);
-  color           : $c-error;
-  padding         : rem-size(($baseline - $s-medium - 1px) / 2);
-}
+//
+// b,
+// em,
+// strong {
+//   @include bold-body-type;
+//   color          : inherit;
+//   text-decoration: none;
+//   font-style     : normal;
+// }
+//
+// i {
+//   font-style: italic;
+// }
+//
+// code {
+//   background-color: $c-light;
+//   border          : 1px solid $c-mid;
+//   border-radius   : rem-size(3px);
+//   color           : $c-error;
+//   padding         : rem-size(($baseline - $s-medium - 1px) / 2);
+// }
