@@ -37,6 +37,8 @@ Router.map(function() {
       this.route('app');
       this.route('navbar');
       this.route('navs');
+      this.route('window');
+      this.route('pane');
       this.route('hero');
       this.route('toolbar');
       this.route('header');

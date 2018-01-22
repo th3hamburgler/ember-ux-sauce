@@ -1,0 +1,92 @@
+<h1>Pane</h1>
+
+<p>The pane components are used unside a window to present horizontal content.</p>
+
+<h2>Splash Layout</h2>
+
+<p>The splash layouts pane will position content in the middle of the window. This layout is also perfect for using a splash image for the background.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="splash-layout"}}
+
+    {{#uxs-window image="https://placeimg.com/2560/1600/any/grayscale"}}
+      {{#uxs-pane splash=true}}
+        {{uxs-subheading "Splash"}}
+      {{/uxs-pane}}
+    {{/uxs-window}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "splash-layout.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Single Layout</h2>
+
+<p>The single layout places content in one large padded pane.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="single-layout"}}
+
+    {{#uxs-window}}
+      {{#uxs-pane single=true class="bg-p5"}}
+        {{uxs-subheading "Single"}}
+      {{/uxs-pane}}
+    {{/uxs-window}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "single-layout.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Two Column Layout</h2>
+
+<p>The main pane will take up 2/3 of the window width a side pane taking up the rest.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="two-col-layout"}}
+
+    {{#uxs-window}}
+      {{#uxs-pane main=true class="bg-p5"}}
+        {{uxs-subheading "Main"}}
+      {{/uxs-pane}}
+      {{#uxs-pane aside=true class="bg-p4"}}
+        {{uxs-subheading "Aside"}}
+      {{/uxs-pane}}
+    {{/uxs-window}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "two-col-layout.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Three Column Layout</h2>
+
+<p>Three even panes 1/3 of the window width.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="three-col-layout"}}
+
+    {{#uxs-window}}
+      {{#uxs-pane index=true class="bg-p5"}}
+        {{uxs-subheading "Index"}}
+      {{/uxs-pane}}
+      {{#uxs-pane detail=true class="bg-p4"}}
+        {{uxs-subheading "Detail"}}
+      {{/uxs-pane}}
+      {{#uxs-pane aside=true class="bg-p3"}}
+        {{uxs-subheading "Aside"}}
+      {{/uxs-pane}}
+    {{/uxs-window}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "three-col-layout.hbs"}}
+
+{{/docs-demo}}

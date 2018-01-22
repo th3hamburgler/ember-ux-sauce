@@ -6,6 +6,9 @@ import {
   computed
 } from '@ember/object';
 import {
+  bool
+} from '@ember/object/computed';
+import {
   get
 } from '@ember/object';
 
@@ -15,6 +18,7 @@ export default Component.extend(BEMComponent, Testable, {
   base: 'uxs-window',
   layout,
   // Computed
+  splash: bool('image'),
   backgroundImage: computed('image', function() {
     let image = get(this, 'image');
     if (image) {

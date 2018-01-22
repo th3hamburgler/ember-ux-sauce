@@ -28,10 +28,9 @@
   }
 
   &__pane {
-    background: $c-white;
-    padding   : rem-size($baseline*0.5);
+    padding: rem-size($baseline*0.5);
 
-    &--full {
+    &--single {
       width: 100%;
     }
 
@@ -40,10 +39,11 @@
     }
 
     &--splash {
-      padding      : rem-size($baseline);
-      margin-bottom: rem-size($baseline*2);
-      max-width    : $max-width-content;
-      width        : 40%;
+      background: $c-white;
+      padding   : rem-size($baseline);
+      margin    : rem-size($baseline*2) 0;
+      max-width : $max-width-content;
+      width     : 40%;
     }
 
     &--aside,

@@ -1,0 +1,39 @@
+<h1>Window</h1>
+
+<p>The window component is used to present horizontal content blocks as "panes".</p>
+
+<h2>Usage</h2>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="window"}}
+
+    {{#uxs-window}}
+      <div class="p bg-p3 ac fg">Col 1</div>
+      <div class="p bg-p4 ac fg">Col 2</div>
+      <div class="p bg-p3 ac fg">Col 3</div>
+    {{/uxs-window}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "window.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Usage</h2>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="splash-window"}}
+
+    {{#uxs-window image="https://placeimg.com/2560/1600/any/grayscale"}}
+      <div class="p c-p5 ac fg">Col 1</div>
+      <div class="p c-p5 ac fg">Col 2</div>
+      <div class="p c-p5 ac fg">Col 3</div>
+    {{/uxs-window}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "splash-window.hbs"}}
+
+{{/docs-demo}}
