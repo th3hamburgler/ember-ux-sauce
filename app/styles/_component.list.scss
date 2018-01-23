@@ -1,0 +1,74 @@
+.uxs-list {}
+
+.uxs-list-item {
+  align-items   : center;
+  display       : flex;
+  flex-direction: row;
+  padding       : rem-size($baseline * 0.5) rem-size($baseline * 0.5);
+
+  &--bordered {
+    border-bottom: rem-size(1px) solid $c-light;
+    //padding-bottom: rem-size(($baseline * 0.5)-1px);
+  }
+
+  &--one-line {
+    height: rem-size($baseline * 2);
+  }
+
+  &--two-lines {
+    height: rem-size($baseline * 3);
+  }
+
+  &--three-lines {
+    height: rem-size($baseline * 4);
+  }
+
+  &__body {
+    flex: 1;
+  }
+
+  &__aside {
+    &:first-child {
+      margin-right: rem-size($baseline*.5);
+    }
+
+    &:last-child {
+      margin-left: rem-size($baseline*.5);
+    }
+  }
+
+  &__avatar {}
+
+  &__content,
+  &__detail {
+    margin-bottom: 0;
+  }
+
+  &__detail {
+    line-height: rem-size($baseline*.75);
+  }
+}
+
+.uxs-avatar {
+  width: rem-size($baseline*2);
+
+  &--round {
+    border-radius: 100%;
+  }
+
+  &--small {
+    width: rem-size($baseline*1);
+  }
+
+  &--large {
+    width: rem-size($baseline*3);
+  }
+
+  &--giant {
+    width: rem-size($baseline*3);
+  }
+
+  &--huge {
+    width: rem-size($baseline*3);
+  }
+}

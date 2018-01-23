@@ -28,6 +28,9 @@ Router.map(function() {
       this.route('fieldsets');
       this.route('rows');
     });
+    this.route('components', function() {
+      this.route('lists')
+    });
     this.route('icons');
     this.route('typography', function() {
       this.route('lists');

@@ -1,0 +1,126 @@
+<h1>Lists</h1>
+
+<p>Lists are used to display collections of records.</p>
+
+<h2>Simple Usage</h2>
+
+<p>This is a simple list containing just a title for each item.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="lists"}}
+
+    {{#uxs-list as |list|}}
+      {{#each items as |i|}}
+        {{#list.item as |item|}}
+          {{item.title i.title}}
+        {{/list.item}}
+      {{/each}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "lists.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Adding more content</h2>
+
+<p>This is a list contains some meta data and includes a bottom border. By defining the lines & border property on the list component, these properties are passed to each item and will set the height and bottom-border.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="bordered-list"}}
+
+    {{#uxs-list lines=2 bordered=true as |list|}}
+      {{#each items as |i|}}
+        {{#list.item as |item|}}
+          {{#item.content}}
+            {{item.title i.title}}
+            {{item.content i.location}}
+          {{/item.content}}
+        {{/list.item}}
+      {{/each}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "bordered-list.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Avatars and Actions</h2>
+
+<p>This is a list that includes some horizontal layout for the avatar and item. We use the aside and body contextual components to split up each items layout.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="action-list"}}
+
+    {{#uxs-list lines=3 bordered=true as |list|}}
+      {{#each items as |i|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatar "https://placeimg.com/100/100/any" round=true}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title i.title}}
+            {{item.detail i.location}}
+            {{item.detail i.email}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action "keyboard_arrow_right"}}
+          {{/item.aside}}
+        {{/list.item}}
+      {{/each}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "action-list.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Contextual Components</h2>
+
+<p>The <b>List</b> component has the following child components:</p>
+
+<table class="docs-args-table">
+  <tr>
+    <td>item</td>
+    <td>Alias of uxs-list-item</td>
+  </tr>
+</table>
+
+<p>The <b>List Item</b> component has the following child components:</p>
+
+<table class="docs-args-table">
+  <tr>
+    <td>aside</td>
+    <td>Alias of uxs-div, used to seperate horizontal layout blocks</td>
+  </tr>
+  <tr>
+    <td>body</td>
+    <td>Alias of uxs-div, used to seperate horizontal layout blocks, unlike aside, this component will grow to fill the available width</td>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>Alias of uxs-subheading</td>
+  </tr>
+  <tr>
+    <td>content</td>
+    <td>Alias of uxs-content</td>
+  </tr>
+  <tr>
+    <td>detail</td>
+    <td>Alias of uxs-detail</td>
+  </tr>
+  <tr>
+    <td>avatar</td>
+    <td>Alias of uxs-avatar</td>
+  </tr>
+  <tr>
+    <td>action</td>
+    <td>Alias of uxs-icon</td>
+  </tr>
+</table>
