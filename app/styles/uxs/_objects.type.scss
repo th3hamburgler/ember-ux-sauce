@@ -190,6 +190,7 @@
   &__term {
     @include type-detail;
     @include bold-body-type;
+    margin: 0;
   }
 
   &__description {
