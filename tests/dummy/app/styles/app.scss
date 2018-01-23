@@ -1,8 +1,8 @@
 /***
  * Namespace uxs styles so we do not leak into the docs
  */
-@import 'include.tools';
-@import "settings.variables";
+@import 'uxs/include.tools';
+@import 'uxs/settings.variables';
 
 html {
   height: 100%;
@@ -23,14 +23,14 @@ html {
   background: $c-white;
   color     : $c-dark;
   height    : 100%;
-  @import 'include.base';
-  @import 'include.vendor';
-  @import 'include.elements';
-  @import 'include.objects';
-  @import 'include.components';
-  @import 'include.trumps';
+  @import 'uxs/include.base';
+  @import 'uxs/include.vendor';
+  @import 'uxs/include.elements';
+  @import 'uxs/include.objects';
+  @import 'uxs/include.components';
+  @import 'uxs/include.trumps';
 }
-@import 'include.vendor';
+@import 'uxs/include.vendor';
 
 .docs-args-table {
   margin: 16px 0;
