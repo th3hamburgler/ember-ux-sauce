@@ -56,6 +56,10 @@
     border-radius: 100%;
   }
 
+  &--border {
+    border: rem-size(1px) solid $c-light;
+  }
+
   &--small {
     width: rem-size($baseline*1);
   }
@@ -64,11 +68,11 @@
     width: rem-size($baseline*3);
   }
 
-  &--giant {
-    width: rem-size($baseline*3);
+  &--huge {
+    width: rem-size($baseline*4);
   }
 
-  &--huge {
-    width: rem-size($baseline*3);
+  &--giant {
+    width: rem-size($baseline*6);
   }
 }

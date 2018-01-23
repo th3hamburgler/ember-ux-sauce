@@ -29,9 +29,10 @@ Router.map(function() {
       this.route('rows');
     });
     this.route('components', function() {
-      this.route('lists')
+      this.route('lists');
+      this.route('avatars');
+      this.route('icons');
     });
-    this.route('icons');
     this.route('typography', function() {
       this.route('lists');
       this.route('tables');

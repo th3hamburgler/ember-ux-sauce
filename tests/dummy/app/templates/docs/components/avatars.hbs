@@ -1,0 +1,44 @@
+<h1>Avatars</h1>
+
+<p>Avatars are used to display images of users or resources.</p>
+
+<h2>Simple Usage</h2>
+
+<p>Avatars come in different shapes & sizes.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="avatars"}}
+
+    {{uxs-avatar "https://placeimg.com/100/100/people" size=size border=border round=round}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "avatars.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Properties</h2>
+
+<p>Now explore the various properties available in this component:</p>
+
+<table class="docs-args-table">
+  <tr>
+    <td>size<span class="req">*</span></td>
+    <td>{{input placeholder="Size" value=size}}</td>
+    <td><em>String</em></td>
+  </tr>
+  <tr>
+    <td colspan="3">Possible Values: small, medium, large, huge, giant</td>
+  </tr>
+  <tr>
+    <td>round</td>
+    <td>{{docs-toggle value=round}}</td>
+    <td><em>Boolean</em></td>
+  </tr>
+  <tr>
+    <td>border</td>
+    <td>{{docs-toggle value=border}}</td>
+    <td><em>Boolean</em></td>
+  </tr>
+</table>
