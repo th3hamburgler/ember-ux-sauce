@@ -47,50 +47,50 @@ $baseline: 25px!default; //
 /*
  * Colors https://coolors.co/1c77c3-141414-5fad56-eca400-db3a34
  */
-$c-dark: #141414;
-$c-grey: shade-light($c-dark, 5, 15);
-$c-mid: shade-light($c-dark, 10, 15);
-$c-light: shade-light($c-dark, 14, 15);
-$c-white: rgb(255,255,255);
+$c-dark: #141414!default;
+$c-grey: shade-light($c-dark, 5, 15)!default;
+$c-mid: shade-light($c-dark, 10, 15)!default;
+$c-light: shade-light($c-dark, 14, 15)!default;
+$c-white: rgb(255,255,255)!default;
 /* Aliases */
-$c-sk-back: $c-mid;
-$c-sk-front: $c-light;
-$c-sk-light: lighten($c-sk-front, 2%);
+$c-sk-back: $c-mid!default;
+$c-sk-front: $c-light!default;
+$c-sk-light: lighten($c-sk-front, 2%)!default;
 /* Primary */
-$c-primary: #1C77C3;
-$c-primary-1: $c-primary;
-$c-primary-2: shade-light($c-primary, 1);
-$c-primary-3: shade-light($c-primary, 2);
-$c-primary-4: shade-light($c-primary, 3);
-$c-primary-5: shade-light($c-primary, 4);
+$c-primary: #1C77C3!default;
+$c-primary-1: $c-primary!default;
+$c-primary-2: shade-light($c-primary, 1)!default;
+$c-primary-3: shade-light($c-primary, 2)!default;
+$c-primary-4: shade-light($c-primary, 3)!default;
+$c-primary-5: shade-light($c-primary, 4)!default;
 /* Accent */
-$c-accent: #8F3985;
-$c-accent-1: $c-accent;
-$c-accent-2: shade-light($c-accent, 1);
-$c-accent-3: shade-light($c-accent, 2);
-$c-accent-4: shade-light($c-accent, 3);
-$c-accent-5: shade-light($c-accent, 4);
+$c-accent: #8F3985!default;
+$c-accent-1: $c-accent!default;
+$c-accent-2: shade-light($c-accent, 1)!default;
+$c-accent-3: shade-light($c-accent, 2)!default;
+$c-accent-4: shade-light($c-accent, 3)!default;
+$c-accent-5: shade-light($c-accent, 4)!default;
 /* Success */
-$c-success: #5FAD56;
-$c-success-1: $c-success;
-$c-success-2: shade-light($c-success, 1);
-$c-success-3: shade-light($c-success, 2);
-$c-success-4: shade-light($c-success, 3);
-$c-success-5: shade-light($c-success, 4);
+$c-success: #5FAD56!default;
+$c-success-1: $c-success!default;
+$c-success-2: shade-light($c-success, 1)!default;
+$c-success-3: shade-light($c-success, 2)!default;
+$c-success-4: shade-light($c-success, 3)!default;
+$c-success-5: shade-light($c-success, 4)!default;
 /* Alert */
-$c-error: #DB3A34;
-$c-error-1: $c-error;
-$c-error-2: shade-light($c-error, 1);
-$c-error-3: shade-light($c-error, 2);
-$c-error-4: shade-light($c-error, 3);
-$c-error-5: shade-light($c-error, 4);
+$c-error: #DB3A34!default;
+$c-error-1: $c-error!default;
+$c-error-2: shade-light($c-error, 1)!default;
+$c-error-3: shade-light($c-error, 2)!default;
+$c-error-4: shade-light($c-error, 3)!default;
+$c-error-5: shade-light($c-error, 4)!default;
 /* Warning */
-$c-warning: #ECA400;
-$c-warning-1: $c-warning;
-$c-warning-2: shade-light($c-warning, 1);
-$c-warning-3: shade-light($c-warning, 2);
-$c-warning-4: shade-light($c-warning, 3);
-$c-warning-5: shade-light($c-warning, 4);
+$c-warning: #ECA400!default;
+$c-warning-1: $c-warning!default;
+$c-warning-2: shade-light($c-warning, 1)!default;
+$c-warning-3: shade-light($c-warning, 2)!default;
+$c-warning-4: shade-light($c-warning, 3)!default;
+$c-warning-5: shade-light($c-warning, 4)!default;
 /*
  * Buttons
  */
