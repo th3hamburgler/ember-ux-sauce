@@ -18,11 +18,16 @@ html {
 
 .docs-demo-example,
 .uxs {
+  height: 100%;
+}
+
+.docs-demo-example,
+.uxs,
+.uxs-ns {
   @include body-type;
   @include content-font-size;
   background: $c-white;
   color     : $c-dark;
-  height    : 100%;
   @import 'uxs/include.base';
   @import 'uxs/include.vendor';
   @import 'uxs/include.elements';

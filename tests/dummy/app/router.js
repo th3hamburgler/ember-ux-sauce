@@ -32,6 +32,7 @@ Router.map(function() {
       this.route('lists');
       this.route('avatars');
       this.route('icons');
+      this.route('menus');
     });
     this.route('typography', function() {
       this.route('lists');
