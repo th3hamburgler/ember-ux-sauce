@@ -56,15 +56,6 @@ $ember-power-select-multiple-option-line-height: rem-size($baseline*1.5);
 @import "../ember-power-select";
 @import "../ember-basic-dropdown";
 
-.uxs-menu {
-  border : rem-size(1px) solid $c-light;
-  padding: rem-size($baseline*0.5) 0;
-
-  &__item {
-    padding: 0 rem-size($baseline*0.5);
-  }
-}
-
 :focus {
   outline: none;
 }

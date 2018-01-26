@@ -2,7 +2,188 @@
 
 <h2>Simple Usage</h2>
 
-<p>This is a simple menu with a button trigger.</p>
+<p>Two simple examples. The menu widths adjusts to accommodate the content in keyline increments.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="menu"}}
+
+    <div class="f fr">
+      <div class="mr">
+        {{#uxs-menu as |menu|}}
+          {{menu.item "Maps"}}
+          {{menu.item "Books"}}
+          {{menu.item "Flights"}}
+          {{menu.item "Apps"}}
+        {{/uxs-menu}}
+      </div>
+      <div class="mr">
+        {{#uxs-menu as |menu|}}
+          {{menu.item "Refresh"}}
+          {{menu.item "Help & Feedback"}}
+          {{menu.item "Settings"}}
+          {{menu.item "Sign out"}}
+        {{/uxs-menu}}
+      </div>
+    </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet "menu.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Disabled Items</h2>
+
+<p>The disabled property disables a Menu Item. The Divider can be used to separate MenuItems.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="menu-disabled"}}
+
+    <div class="f fr">
+      <div class="mr">
+        {{#uxs-menu as |menu|}}
+          {{menu.item "Back"}}
+          {{menu.item "Forward" disabled=true}}
+          {{menu.divider}}
+          {{menu.item "Recently Closed" disabled=true}}
+          {{menu.item "Google" disabled=true}}
+          {{menu.item "YouTube"}}
+        {{/uxs-menu}}
+      </div>
+      <div class="mr">
+        {{#uxs-menu as |menu|}}
+          {{menu.item "Undo"}}
+          {{menu.item "Redo" disabled=true}}
+          {{menu.divider}}
+          {{menu.item "Cut" disabled=true}}
+          {{menu.item "Copy" disabled=true}}
+          {{menu.item "Paste"}}
+        {{/uxs-menu}}
+      </div>
+    </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet "menu-disabled.hbs"}}
+
+{{/docs-demo}}
+
+
+<h2>Icons</h2>
+
+<p>Menu items supports icons through the leftIcon and rightIcon attributes.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="menu-icons"}}
+
+    <div class="f fr">
+      <div class="mr">
+        {{#uxs-menu hasLeftIcon=true as |menu|}}
+
+          {{menu.item "Preview" leftIcon="visibility"}}
+          {{menu.item "Share" leftIcon="person_add"}}
+          {{menu.item "Get Links" disabled=true  leftIcon="link"}}
+          {{menu.divider}}
+          {{menu.item "Make Copy" leftIcon="content_copy"}}
+          {{menu.item "Download" leftIcon="file_download"}}
+          {{menu.divider}}
+          {{menu.item "YouTube" leftIcon="delete"}}
+        {{/uxs-menu}}
+      </div>
+      <div class="mr">
+        {{#uxs-menu hasRightIcon=true as |menu|}}
+          {{menu.item "Clear Config"}}
+          {{menu.item "New Config" disabled=true rightIcon="person_add"}}
+          {{menu.item "Project" rightIcon="settings"}}
+          {{menu.item "Workspace" rightIcon="settings"}}
+          {{menu.item "Bold" rightIcon="format_bold"}}
+          {{menu.item "Italic" rightIcon="format_italic"}}
+        {{/uxs-menu}}
+      </div>
+    </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet "menu-icons.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Secondary Text</h2>
+
+<p>Menu Items support a secondaryText attribute.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="menu-secondary-text"}}
+
+    <div class="f fr">
+      <div class="mr">
+        {{#uxs-menu hasSecondaryText=true as |menu|}}
+          {{menu.item "Bold" rightIcon="format_italic"}}
+          {{menu.item "Italic" secondaryText="⌘I"}}
+          {{menu.item "Underline" secondaryText="⌘U"}}
+          {{menu.item "Strikethrough" secondaryText="Alt+Shift+5"}}
+          {{menu.item "Superscript" secondaryText="⌘."}}
+          {{menu.item "Subscript" secondaryText="⌘,"}}
+          {{menu.divider}}
+          {{menu.item "Clear Formatting" secondaryText="⌘/"}}
+        {{/uxs-menu}}
+      </div>
+      <div class="mr">
+        {{#uxs-menu hasSecondaryText=true as |menu|}}
+          {{menu.item "Open" secondaryText="Cmd + O"}}
+          {{menu.item "Paste in place" secondaryText="Shift + V"}}
+          {{menu.item "Research" secondaryText="Opt + Shift + Cmd + I"}}
+        {{/uxs-menu}}
+      </div>
+    </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet "menu-secondary-text.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Subheadings</h2>
+
+<p>Menu Items can include subheadings to split up items.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="menu-subheadings"}}
+
+    <div class="f fr">
+
+      <div class="mr">
+        {{#uxs-menu hasLeftIcon=true as |menu|}}
+          {{menu.subheading "Sort by"}}
+          {{menu.item "Age"}}
+          {{menu.item "Surname" leftIcon="arrow_upward"}}
+          {{menu.item "Location"}}
+        {{/uxs-menu}}
+      </div>
+      <div>
+        {{#uxs-menu hasLeftIcon=true as |menu|}}
+          {{menu.subheading "Filter by"}}
+          {{menu.item "Age"}}
+          {{menu.item "Surname" leftIcon="done"}}
+          {{menu.item "Location"}}
+        {{/uxs-menu}}
+      </div>
+    </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet "menu-subheadings.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Dropdown Menu</h2>
+
+<p>You can use the basic dropdown component to display menus in your app.</p>
 
 {{#docs-demo as |demo|}}
 
@@ -29,7 +210,7 @@
 {{/docs-demo}}
 
 
-<h2>Simple Usage</h2>
+<h2>Icon Dropdown Menu</h2>
 
 <p>This is a menu with an icon trigger.</p>
 

@@ -1,0 +1,20 @@
+{{yield (hash
+  subheading=(component "uxs-subheading" base="uxs-menu__subheading")
+  item=(
+    component
+    "uxs-nav-item"
+    base="uxs-menu__item"
+    hasRightIcon=hasRightIcon
+    hasLeftIcon=hasLeftIcon
+    hasSecondaryText=hasSecondaryText
+  )
+  link=(
+    component
+    "uxs-nav-link"
+    base="uxs-menu__item"
+    hasRightIcon=hasRightIcon
+    hasLeftIcon=hasLeftIcon
+    hasSecondaryText=hasSecondaryText
+  )
+  divider=(component "uxs-div" class=(bem b "divider" m))
+)}}

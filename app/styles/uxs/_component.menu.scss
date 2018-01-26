@@ -1,0 +1,79 @@
+.uxs-menu {
+  @include card-shadow(1);
+  border : rem-size(1px) solid $c-light;
+  display: table-cell; // grow to content width
+  padding: rem-size(($baseline*0.5)-1) 0;
+
+  &__subheading {
+    @include type-subheading;
+    border-bottom: 1px solid $c-light;
+    line-height  : rem-size(($baseline*1.5)-1px);
+    padding      : 0 rem-size($baseline*0.75);
+  }
+
+  &__item {
+    @include transition-all;
+    cursor     : pointer;
+    border     : none;
+    // font-weight: 300;
+    list-style : none;
+    line-height: rem-size($baseline*1.5);
+    padding    : 0 rem-size($baseline*0.75);
+    display    : flex;
+    align-items: center;
+
+    &:hover {
+      background-color: $c-light;
+    }
+
+    &--disabled {
+      color: $c-mid;
+
+      &:hover {
+        background-color: transparent;
+        cursor          : default;
+      }
+    }
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  &__left,
+  &__right {
+    min-height: rem-size($baseline);
+    min-width : rem-size($baseline*2);
+  }
+
+  &__left {
+    text-align: left;
+  }
+
+  &__right {
+    text-align: right;
+  }
+
+  &__icon {
+    line-height: rem-size($baseline*1.5);
+
+    &--left {
+      // margin-right: rem-size($baseline*0.75);
+    }
+
+    &--right {
+      // margin-left: rem-size($baseline*1.5);
+    }
+  }
+
+  &__secondary-text {
+    margin-left: rem-size($baseline*1.5);
+  }
+
+  &__divider {
+    background-color: $c-light;
+    height          : rem-size(1px);
+    margin          : rem-size(($baseline/2)-0.5) 0;
+    width           : 100%;
+  }
+}
