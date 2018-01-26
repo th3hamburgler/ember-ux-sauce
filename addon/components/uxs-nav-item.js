@@ -21,12 +21,6 @@ const NavItem = Component.extend(BEMComponent, Clickable, Testable, {
   },
   // Computed
   showRightIcon: computed('hasRightIcon', 'rightIcon', 'hasSecondaryText', 'secondaryText', function() {
-    Ember.Logger.log({
-      hasRightIcon: get(this, 'hasRightIcon'),
-      rightIcon: get(this, 'rightIcon'),
-      hasSecondaryText: get(this, 'hasSecondaryText'),
-      secondaryText: get(this, 'secondaryText')
-    });
     return get(this, 'hasRightIcon') || get(this, 'rightIcon') || get(this, 'hasSecondaryText') || get(this, 'secondaryText');
   }),
   showLeftIcon: computed('hasLeftIcon', 'leftIcon', function() {
