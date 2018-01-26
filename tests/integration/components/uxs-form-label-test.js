@@ -17,7 +17,7 @@ test('it renders', function(assert) {
 
   assert.equal($label.prop("tagName"), 'LABEL', 'Has correct tag name');
   assert.equal($label.text().trim(), 'Username', 'Has correct text');
-  assert.equal($label.attr("class"), 'uxs-form__label ember-view', true, 'Has correct classes');
+  assert.equal($label.attr("class"), 'uxs uxs-form__label ember-view', true, 'Has correct classes');
 });
 
 test('it renders a required label', function(assert) {
@@ -31,11 +31,11 @@ test('it renders a required label', function(assert) {
 
   assert.equal($label.prop("tagName"), 'LABEL', 'Has correct tag name');
   assert.equal($label.text().trim(), 'Username', 'Has correct text');
-  assert.equal($label.attr("class"), 'uxs-form__label uxs-form__label--required ember-view', true, 'Has correct classes');
+  assert.equal($label.attr("class"), 'uxs uxs-form__label uxs-form__label--required ember-view', true, 'Has correct classes');
 
   // change error
 
   this.set('error', true);
 
-  assert.equal($label.attr("class"), 'uxs-form__label uxs-form__label--error uxs-form__label--required ember-view', true, 'Has correct classes');
+  assert.equal($label.attr("class"), 'uxs uxs-form__label uxs-form__label--error uxs-form__label--required ember-view', true, 'Has correct classes');
 });

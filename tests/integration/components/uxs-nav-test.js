@@ -34,6 +34,6 @@ test('it renders a default nav', function(assert) {
   assert.equal($item.text().trim(), 'Nav Item');
   assert.equal($link.text().trim(), 'Nav Link');
 
-  assert.equal($nav.attr("class"), 'uxs-nav uxs-nav--left ember-view', true, 'Has correct classes');
+  assert.equal($nav.attr("class"), 'uxs uxs-nav uxs-nav--left ember-view', true, 'Has correct classes');
 
 });

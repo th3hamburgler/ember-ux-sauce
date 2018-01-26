@@ -2509,9 +2509,9 @@ ember-basic-dropdown@^1.0.0-beta.0:
     ember-cli-htmlbars "^2.0.3"
     ember-native-dom-helpers "^0.5.10"
 
-"ember-bem-sauce@github:sauce-consultants/ember-bem-sauce#e3919ab75e1a8c009c10f071334abfa44c0c6ce2":
+"ember-bem-sauce@github:sauce-consultants/ember-bem-sauce#0.9.0":
   version "0.0.0"
-  resolved "https://codeload.github.com/sauce-consultants/ember-bem-sauce/tar.gz/e3919ab75e1a8c009c10f071334abfa44c0c6ce2"
+  resolved "https://codeload.github.com/sauce-consultants/ember-bem-sauce/tar.gz/cd595b702de533e83aafbfe34f6c664b76b4748c"
   dependencies:
     ember-cli-babel "^6.3.0"
 

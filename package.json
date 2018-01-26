@@ -19,7 +19,7 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "ember-bem-sauce": "github:sauce-consultants/ember-bem-sauce#e3919ab75e1a8c009c10f071334abfa44c0c6ce2",
+    "ember-bem-sauce": "github:sauce-consultants/ember-bem-sauce#0.9.0",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-moment-shim": "^3.5.0",

@@ -25,7 +25,7 @@ test('it renders a default form', function(assert) {
 
   assert.equal($form.text().trim(), 'template block text');
 
-  assert.equal($form.attr("class"), 'uxs-form ember-view', true, 'Has correct classes');
+  assert.equal($form.attr("class"), 'uxs uxs-form ember-view', true, 'Has correct classes');
 });
 
 test('it renders a form with a contextual control', function(assert) {
@@ -46,7 +46,7 @@ test('it renders a form with a contextual control', function(assert) {
 
   assert.equal($input.val(), 'bar');
 
-  assert.equal($form.attr("class"), 'uxs-form ember-view', true, 'Has correct classes');
+  assert.equal($form.attr("class"), 'uxs uxs-form ember-view', true, 'Has correct classes');
 });
 
 test('it submits a form with a contextual control button', function(assert) {

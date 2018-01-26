@@ -31,7 +31,7 @@ test('it renders a default input', function(assert) {
 
   assert.equal($input.prop("tagName"), 'DIV', 'Has correct tag name');
   assert.equal($input.text().trim(), 'Miguel', 'Has correct value');
-  assert.equal($input.attr("class"), 'uxs-form__input uxs-form__input--dropdown ember-view', 'Has correct classes');
+  assert.equal($input.attr("class"), 'uxs uxs-form__input uxs-form__input--dropdown ember-view', 'Has correct classes');
 
   // open the dropdown
   clickTrigger(selector);

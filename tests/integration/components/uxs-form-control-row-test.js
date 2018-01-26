@@ -22,11 +22,11 @@ test('it renders a default row', function(assert) {
   let $row = this.$('[data-test-uxs-form__control-row="my-row"]');
 
   assert.equal($row.text().trim(), '');
-  assert.equal($row.attr("class"), 'uxs-form__control-row uxs-form__control-row--inline ember-view', 'Has correct classes');
+  assert.equal($row.attr("class"), 'uxs uxs-form__control-row uxs-form__control-row--inline ember-view', 'Has correct classes');
 
   this.set('disabled', true);
 
-  assert.equal($row.attr("class"), 'uxs-form__control-row uxs-form__control-row--disabled uxs-form__control-row--inline ember-view', 'Has correct classes');
+  assert.equal($row.attr("class"), 'uxs uxs-form__control-row uxs-form__control-row--disabled uxs-form__control-row--inline ember-view', 'Has correct classes');
 
 });
 
@@ -44,12 +44,12 @@ test('it renders a row with a contextual input', function(assert) {
 
   let $input = this.$('[data-test-uxs-form__input="foo"]');
 
-  assert.equal($input.attr("class"), 'ember-text-field uxs-form__input uxs-form__input--inline uxs-form__input--text ember-view', 'Has correct classes');
+  assert.equal($input.attr("class"), 'ember-text-field uxs uxs-form__input uxs-form__input--inline uxs-form__input--text ember-view', 'Has correct classes');
   assert.equal($input.val(), 'bar', 'Has correct value');
 
   this.set('disabled', true);
 
-  assert.equal($input.attr("class"), 'ember-text-field uxs-form__input uxs-form__input--disabled uxs-form__input--inline uxs-form__input--text ember-view', 'Has correct classes');
+  assert.equal($input.attr("class"), 'ember-text-field uxs uxs-form__input uxs-form__input--disabled uxs-form__input--inline uxs-form__input--text ember-view', 'Has correct classes');
 
 });
 
@@ -67,12 +67,12 @@ test('it renders a row with a contextual textarea', function(assert) {
 
   let $input = this.$('[data-test-uxs-form__input="foo"]');
 
-  assert.equal($input.attr("class"), 'ember-text-area uxs-form__input uxs-form__input--inline uxs-form__input--textarea ember-view', 'Has correct classes');
+  assert.equal($input.attr("class"), 'ember-text-area uxs uxs-form__input uxs-form__input--inline uxs-form__input--textarea ember-view', 'Has correct classes');
   assert.equal($input.val(), 'bar', 'Has correct value');
 
   this.set('disabled', true);
 
-  assert.equal($input.attr("class"), 'ember-text-area uxs-form__input uxs-form__input--disabled uxs-form__input--inline uxs-form__input--textarea ember-view', 'Has correct classes');
+  assert.equal($input.attr("class"), 'ember-text-area uxs uxs-form__input uxs-form__input--disabled uxs-form__input--inline uxs-form__input--textarea ember-view', 'Has correct classes');
 
 });
 
@@ -86,12 +86,12 @@ test('it renders a row with a contextual icon', function(assert) {
 
   let $icon = this.$('[data-test-uxs-form__icon="my-row"]');
 
-  assert.equal($icon.attr("class"), 'uxs-form__icon uxs-form__icon--black uxs-form__icon--inline uxs-form__icon--prefix ember-view', 'Has correct icon classes');
+  assert.equal($icon.attr("class"), 'uxs uxs-form__icon uxs-form__icon--black uxs-form__icon--inline uxs-form__icon--prefix ember-view', 'Has correct icon classes');
   assert.equal($icon.text().trim(), 'add', 'Has correct icon value');
 
   this.set('disabled', true);
 
-  assert.equal($icon.attr("class"), 'uxs-form__icon uxs-form__icon--black uxs-form__icon--disabled uxs-form__icon--inline uxs-form__icon--prefix ember-view', 'Has correct updated icon classes');
+  assert.equal($icon.attr("class"), 'uxs uxs-form__icon uxs-form__icon--black uxs-form__icon--disabled uxs-form__icon--inline uxs-form__icon--prefix ember-view', 'Has correct updated icon classes');
 
 });
 
@@ -105,12 +105,12 @@ test('it renders a row with a contextual button', function(assert) {
 
   let $input = this.$('[data-test-uxs-button="my-row"]');
 
-  assert.equal($input.attr("class"), 'uxs-button uxs-button--inline uxs-button--primary ember-view', 'Has correct classes');
+  assert.equal($input.attr("class"), 'uxs uxs-button uxs-button--inline uxs-button--primary ember-view', 'Has correct classes');
   assert.equal($input.text().trim(), 'Save', 'Has correct value');
 
   this.set('disabled', true);
 
-  assert.equal($input.attr("class"), 'uxs-button uxs-button--disabled uxs-button--inline uxs-button--primary ember-view', 'Has correct classes');
+  assert.equal($input.attr("class"), 'uxs uxs-button uxs-button--disabled uxs-button--inline uxs-button--primary ember-view', 'Has correct classes');
 
 });
 
@@ -124,12 +124,12 @@ test('it renders a row with a contextual button link', function(assert) {
 
   let $input = this.$('[data-test-uxs-button="my-row"]');
 
-  assert.equal($input.attr("class"), 'uxs-button uxs-button--inline uxs-button--primary ember-view', 'Has correct classes');
+  assert.equal($input.attr("class"), 'uxs uxs-button uxs-button--inline uxs-button--primary ember-view', 'Has correct classes');
   assert.equal($input.text().trim(), 'Docs', 'Has correct value');
 
   this.set('disabled', true);
 
-  assert.equal($input.attr("class"), 'disabled uxs-button uxs-button--disabled uxs-button--inline uxs-button--primary ember-view', 'Has correct disabled classes');
+  assert.equal($input.attr("class"), 'disabled uxs uxs-button uxs-button--disabled uxs-button--inline uxs-button--primary ember-view', 'Has correct disabled classes');
 
 });
 
@@ -152,7 +152,7 @@ test('it renders a date control bound to a model property', function(assert) {
 
   assert.equal($input.prop("tagName"), 'INPUT', 'Has correct tag name');
   assert.equal($input.val(), '28/06/83', 'Has correct value');
-  assert.equal($input.attr("class"), 'uxs-form__input uxs-form__input--date uxs-form__input--inline ember-view flatpickr-input', 'Has correct classes');
+  assert.equal($input.attr("class"), 'uxs uxs-form__input uxs-form__input--date uxs-form__input--inline ember-view flatpickr-input', 'Has correct classes');
 
   // change the value
   setFlatpickrDate(selector, newDate);
@@ -181,7 +181,7 @@ test('it renders a date control bound to a model property', function(assert) {
 
   assert.equal($input.prop("tagName"), 'INPUT', 'Has correct tag name');
   assert.equal($input.val(), '28/06/83 21:30', 'Has correct value');
-  assert.equal($input.attr("class"), 'uxs-form__input uxs-form__input--datetime uxs-form__input--inline ember-view flatpickr-input', 'Has correct classes');
+  assert.equal($input.attr("class"), 'uxs uxs-form__input uxs-form__input--datetime uxs-form__input--inline ember-view flatpickr-input', 'Has correct classes');
 
   // change the value
   setFlatpickrDate(selector, newDate);
@@ -210,7 +210,7 @@ test('it renders a time control bound to a model property', function(assert) {
 
   assert.equal($input.prop("tagName"), 'INPUT', 'Has correct tag name');
   assert.equal($input.val(), '21:30', 'Has correct value');
-  assert.equal($input.attr("class"), 'uxs-form__input uxs-form__input--inline uxs-form__input--time ember-view flatpickr-input', 'Has correct classes');
+  assert.equal($input.attr("class"), 'uxs uxs-form__input uxs-form__input--inline uxs-form__input--time ember-view flatpickr-input', 'Has correct classes');
 
   // change the value
   setFlatpickrDate(selector, newDate);

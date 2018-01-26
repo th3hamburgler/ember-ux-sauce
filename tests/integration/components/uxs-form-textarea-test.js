@@ -18,7 +18,7 @@ test('it renders a default textarea', function(assert) {
 
   assert.equal($textarea.prop("tagName"), 'TEXTAREA', 'Has correct tag name');
   assert.equal($textarea.val(), 'foo', 'Has correct value');
-  assert.equal($textarea.attr("class"), 'ember-text-area uxs-form__input uxs-form__input--textarea ember-view', true, 'Has correct classes');
+  assert.equal($textarea.attr("class"), 'ember-text-area uxs uxs-form__input uxs-form__input--textarea ember-view', true, 'Has correct classes');
 
   // change the value
   $textarea.val('bar').change();
@@ -36,7 +36,7 @@ test('it renders a numeric textarea', function(assert) {
 
   assert.equal($textarea.prop("tagName"), 'TEXTAREA', 'Has correct tag name');
   assert.equal($textarea.val(), 42, 'Has correct value');
-  assert.equal($textarea.attr("class"), 'ember-text-area uxs-form__input uxs-form__input--disabled uxs-form__input--textarea ember-view', true, 'Has correct classes');
+  assert.equal($textarea.attr("class"), 'ember-text-area uxs uxs-form__input uxs-form__input--disabled uxs-form__input--textarea ember-view', true, 'Has correct classes');
   assert.equal($textarea[0].hasAttribute('aria-disabled'), true, 'has aria disabled attr');
   assert.equal($textarea[0].hasAttribute('disabled'), true, 'has disabled attr');
 });

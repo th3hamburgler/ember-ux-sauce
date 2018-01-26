@@ -17,7 +17,7 @@ test('it renders', function(assert) {
 
   assert.equal($error.prop("tagName"), 'DIV', 'Has correct tag name');
   assert.equal($error.text().trim(), 'Oooh, that\'s not good', 'Has correct text');
-  assert.equal($error.attr("class"), 'uxs-form__error ember-view', true, 'Has correct classes');
+  assert.equal($error.attr("class"), 'uxs uxs-form__error ember-view', true, 'Has correct classes');
 });
 
 test('it renders a disabled error', function(assert) {
@@ -30,5 +30,5 @@ test('it renders a disabled error', function(assert) {
 
   assert.equal($error.prop("tagName"), 'DIV', 'Has correct tag name');
   assert.equal($error.text().trim(), 'Oooh, that\'s not good', 'Has correct text');
-  assert.equal($error.attr("class"), 'uxs-form__error uxs-form__error--disabled ember-view', true, 'Has correct classes');
+  assert.equal($error.attr("class"), 'uxs uxs-form__error uxs-form__error--disabled ember-view', true, 'Has correct classes');
 });

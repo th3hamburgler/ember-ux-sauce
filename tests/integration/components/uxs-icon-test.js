@@ -17,7 +17,7 @@ test('it renders a default icon', function(assert) {
 
   assert.equal($icon.prop("tagName"), 'DIV', 'Has correct tag name');
   assert.equal($icon.text().trim(), 'add', 'Has correct text');
-  assert.equal($icon.attr("class"), 'uxs-icon uxs-icon--black ember-view', 'Has correct classes');
+  assert.equal($icon.attr("class"), 'uxs uxs-icon uxs-icon--black ember-view', 'Has correct classes');
 });
 
 test('it renders a disabled icon', function(assert) {
@@ -34,7 +34,7 @@ test('it renders a disabled icon', function(assert) {
 
   assert.equal($icon.prop("tagName"), 'DIV', 'Has correct tag name');
   assert.equal($icon.text().trim(), 'add', 'Has correct text');
-  assert.equal($icon.attr("class"), 'uxs-icon uxs-icon--black uxs-icon--disabled uxs-icon--primary ember-view', true, 'Has correct classes');
+  assert.equal($icon.attr("class"), 'uxs uxs-icon uxs-icon--black uxs-icon--disabled uxs-icon--primary ember-view', true, 'Has correct classes');
 
   // change error
 
@@ -44,5 +44,5 @@ test('it renders a disabled icon', function(assert) {
   this.set('error', true);
   this.set('warning', true);
 
-  assert.equal($icon.attr("class"), 'uxs-icon uxs-icon--accent uxs-icon--black uxs-icon--error uxs-icon--warning ember-view', true, 'Has correct classes');
+  assert.equal($icon.attr("class"), 'uxs uxs-icon uxs-icon--accent uxs-icon--black uxs-icon--error uxs-icon--warning ember-view', true, 'Has correct classes');
 });

@@ -16,7 +16,7 @@ test('it renders a default button', function(assert) {
 
   assert.equal($button.text().trim(), 'My Button');
 
-  assert.equal($button.attr("class"), 'uxs-button uxs-button--primary ember-view', true, 'Has correct classes');
+  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--primary ember-view', true, 'Has correct classes');
 
 });
 
@@ -28,12 +28,12 @@ test('it renders a button with different styles', function(assert) {
 
   let $button = this.$('[data-test-uxs-button="my-button"]');
 
-  assert.equal($button.attr("class"), 'uxs-button uxs-button--primary ember-view', 'Has correct classes');
+  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--primary ember-view', 'Has correct classes');
 
   // Update style
   this.set('style', 'accent');
 
-  assert.equal($button.attr("class"), 'uxs-button uxs-button--accent ember-view', 'Has correct classes after update');
+  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--accent ember-view', 'Has correct classes after update');
 
 });
 
@@ -45,7 +45,7 @@ test('it renders an inline button', function(assert) {
 
   let $button = this.$('[data-test-uxs-button="my-button"]');
 
-  assert.equal($button.attr("class"), 'uxs-button uxs-button--inline uxs-button--primary ember-view', true, 'Has correct classes');
+  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--inline uxs-button--primary ember-view', true, 'Has correct classes');
 });
 
 test('it renders a mini button', function(assert) {
@@ -56,7 +56,7 @@ test('it renders a mini button', function(assert) {
 
   let $button = this.$('[data-test-uxs-button="my-button"]');
 
-  assert.equal($button.attr("class"), 'uxs-button uxs-button--mini uxs-button--primary ember-view', true, 'Has correct classes');
+  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--mini uxs-button--primary ember-view', true, 'Has correct classes');
 });
 
 test('it renders a naked button', function(assert) {
@@ -67,7 +67,7 @@ test('it renders a naked button', function(assert) {
 
   let $button = this.$('[data-test-uxs-button="my-button"]');
 
-  assert.equal($button.attr("class"), 'uxs-button uxs-button--naked uxs-button--primary ember-view', true, 'Has correct classes');
+  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--naked uxs-button--primary ember-view', true, 'Has correct classes');
 });
 
 test('it renders a selected button', function(assert) {
@@ -78,7 +78,7 @@ test('it renders a selected button', function(assert) {
 
   let $button = this.$('[data-test-uxs-button="my-button"]');
 
-  assert.equal($button.attr("class"), 'uxs-button uxs-button--primary uxs-button--selected ember-view', true, 'Has correct classes');
+  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--primary uxs-button--selected ember-view', true, 'Has correct classes');
 });
 
 test('test button accesibility', function(assert) {

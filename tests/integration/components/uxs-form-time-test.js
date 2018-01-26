@@ -27,7 +27,7 @@ test('it renders a default time input', function(assert) {
 
   assert.equal($input.prop("tagName"), 'INPUT', 'Has correct tag name');
   assert.equal($input.val(), '21:30', 'Has correct value');
-  assert.equal($input.attr("class"), 'uxs-form__input uxs-form__input--time ember-view flatpickr-input', 'Has correct classes');
+  assert.equal($input.attr("class"), 'uxs uxs-form__input uxs-form__input--time ember-view flatpickr-input', 'Has correct classes');
 
   // change the value
   setFlatpickrDate(selector, newDate);
@@ -54,7 +54,7 @@ test('it renders a model bound time input', function(assert) {
 
   assert.equal($input.prop("tagName"), 'INPUT', 'Has correct tag name');
   assert.equal($input.val(), '21:30', 'Has correct value');
-  assert.equal($input.attr("class"), 'uxs-form__input uxs-form__input--time ember-view flatpickr-input', 'Has correct classes');
+  assert.equal($input.attr("class"), 'uxs uxs-form__input uxs-form__input--time ember-view flatpickr-input', 'Has correct classes');
 
   // change the value
   setFlatpickrDate(selector, newDate);

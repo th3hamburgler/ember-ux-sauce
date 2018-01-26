@@ -19,7 +19,7 @@ test('it renders', function(assert) {
 
   assert.equal($warning.prop("tagName"), 'DIV', 'Has correct tag name');
   assert.equal($warning.text().trim(), 'Oooh, that\'s not good', 'Has correct text');
-  assert.equal($warning.attr("class"), 'uxs-form__warning ember-view', true, 'Has correct classes');
+  assert.equal($warning.attr("class"), 'uxs uxs-form__warning ember-view', true, 'Has correct classes');
 });
 
 test('it renders a disabled warning', function(assert) {
@@ -32,5 +32,5 @@ test('it renders a disabled warning', function(assert) {
 
   assert.equal($warning.prop("tagName"), 'DIV', 'Has correct tag name');
   assert.equal($warning.text().trim(), 'Oooh, that\'s not good', 'Has correct text');
-  assert.equal($warning.attr("class"), 'uxs-form__warning uxs-form__warning--disabled ember-view', true, 'Has correct classes');
+  assert.equal($warning.attr("class"), 'uxs uxs-form__warning uxs-form__warning--disabled ember-view', true, 'Has correct classes');
 });

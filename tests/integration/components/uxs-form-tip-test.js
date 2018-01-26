@@ -17,7 +17,7 @@ test('it renders', function(assert) {
 
   assert.equal($tip.prop("tagName"), 'DIV', 'Has correct tag name');
   assert.equal($tip.text().trim(), 'How about I tell you a little story', 'Has correct text');
-  assert.equal($tip.attr("class"), 'uxs-form__tip ember-view', true, 'Has correct classes');
+  assert.equal($tip.attr("class"), 'uxs uxs-form__tip ember-view', true, 'Has correct classes');
 });
 
 test('it renders a required tip', function(assert) {
@@ -33,7 +33,7 @@ test('it renders a required tip', function(assert) {
 
   assert.equal($tip.prop("tagName"), 'DIV', 'Has correct tag name');
   assert.equal($tip.text().trim(), 'How about I tell you a little story', 'Has correct text');
-  assert.equal($tip.attr("class"), 'uxs-form__tip uxs-form__tip--required ember-view', true, 'Has correct classes');
+  assert.equal($tip.attr("class"), 'uxs uxs-form__tip uxs-form__tip--required ember-view', true, 'Has correct classes');
 
   // change error
 
@@ -41,5 +41,5 @@ test('it renders a required tip', function(assert) {
   this.set('warning', true);
   this.set('success', true);
 
-  assert.equal($tip.attr("class"), 'uxs-form__tip uxs-form__tip--error uxs-form__tip--required uxs-form__tip--success uxs-form__tip--warning ember-view', true, 'Has correct classes');
+  assert.equal($tip.attr("class"), 'uxs uxs-form__tip uxs-form__tip--error uxs-form__tip--required uxs-form__tip--success uxs-form__tip--warning ember-view', true, 'Has correct classes');
 });

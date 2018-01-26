@@ -16,7 +16,7 @@ test('it renders a default button', function(assert) {
 
   assert.equal($group.text().trim(), '');
 
-  assert.equal($group.attr("class"), 'uxs-button-group ember-view', 'Has correct classes');
+  assert.equal($group.attr("class"), 'uxs uxs-button-group ember-view', 'Has correct classes');
 
 });
 
@@ -34,7 +34,7 @@ test('it renders a block group with buttons', function(assert) {
 
   assert.equal($buttons.length, 2, 'Has correct classes');
 
-  assert.equal($group.attr("class"), 'uxs-button-group ember-view', 'Has correct classes');
+  assert.equal($group.attr("class"), 'uxs uxs-button-group ember-view', 'Has correct classes');
 
 });
 
@@ -55,7 +55,7 @@ test('it renders an inline group with buttons', function(assert) {
 
   assert.equal($buttons.length, 2, 'Has correct classes');
 
-  assert.equal($group.attr("class"), 'uxs-button-group uxs-button-group--inline uxs-button-group--right ember-view', 'Has correct classes');
+  assert.equal($group.attr("class"), 'uxs uxs-button-group uxs-button-group--inline uxs-button-group--right ember-view', 'Has correct classes');
 
 });
 
@@ -76,6 +76,6 @@ test('it renders a mini disabled group', function(assert) {
 
   assert.equal($buttons.length, 2, 'Has correct classes');
 
-  assert.equal($group.attr("class"), 'uxs-button-group uxs-button-group--disabled uxs-button-group--mini ember-view', 'Has correct classes');
+  assert.equal($group.attr("class"), 'uxs uxs-button-group uxs-button-group--disabled uxs-button-group--mini ember-view', 'Has correct classes');
 
 });
