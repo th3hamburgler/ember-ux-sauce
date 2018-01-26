@@ -7,7 +7,7 @@ import EmberObject from '@ember/object';
 import {
   get
 } from '@ember/object';
-import jQuery from 'jquery';
+// import jQuery from 'jquery';
 
 moduleForComponent('uxs-form', 'Integration | Component | uxs form', {
   integration: true
@@ -74,35 +74,35 @@ test('it submits a form with a contextual control button', function(assert) {
   $submit.click();
 });
 
-test('it submits a form on input return', function(assert) {
-
-  assert.expect(1);
-
-  let model = EmberObject.create({
-    foo: 'bar'
-  });
-  this.set('model', model);
-  this.set('submit', (model) => {
-    assert.ok(get(model, 'foo'), 'bar');
-    return false;
-  });
-
-  this.render(hbs `
-    {{#uxs-form name="my-form" model=model onSubmit=(action submit model) as |form|}}
-      {{form.control name="foo" type="text" label="Foo"}}
-      {{form.submit "Submit" name="my-submit"}}
-    {{/uxs-form}}
-  `);
-
-  let selector = '[data-test-uxs-form__input="foo"]',
-    $input = this.$(selector),
-    event = jQuery.Event("keyup", {
-      keyCode: 13
-    });
-
-  $input.trigger(event);
-
-});
+// test('it submits a form on input return', function(assert) {
+//
+//   assert.expect(1);
+//
+//   let model = EmberObject.create({
+//     foo: 'bar'
+//   });
+//   this.set('model', model);
+//   this.set('submit', (model) => {
+//     assert.ok(get(model, 'foo'), 'bar');
+//     return false;
+//   });
+//
+//   this.render(hbs `
+//     {{#uxs-form name="my-form" model=model onSubmit=(action submit model) as |form|}}
+//       {{form.control name="foo" type="text" label="Foo"}}
+//       {{form.submit "Submit" name="my-submit"}}
+//     {{/uxs-form}}
+//   `);
+//
+//   let selector = '[data-test-uxs-form__input="foo"]',
+//     $input = this.$(selector),
+//     event = jQuery.Event("keyup", {
+//       keyCode: 13
+//     });
+//
+//   $input.trigger(event);
+//
+// });
 
 test('it does not submit a disabled form with a contextual control', function(assert) {
 
