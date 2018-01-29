@@ -26,8 +26,8 @@ html {
 .uxs-ns {
   @include body-type;
   @include content-font-size;
-  background: $c-white;
-  color     : $c-dark;
+  // background: $c-white;
+  // color     : $c-dark;
   @import 'uxs/include.base';
   @import 'uxs/include.vendor';
   @import 'uxs/include.elements';

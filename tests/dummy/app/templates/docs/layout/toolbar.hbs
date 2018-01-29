@@ -14,7 +14,7 @@
         {{toolbar.spacer}}
         {{toolbar.action "filter_list"}}
         {{toolbar.action "file_download"}}
-        {{toolbar.action "search"}}
+        {{toolbar.action "delete"}}
       {{/uxs-toolbar}}
 
   {{/demo.example}}
@@ -45,3 +45,24 @@
     <td>Alias of uxs-icon</td>
   </tr>
 </table>
+
+<h2>Toolbar Search</h2>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="toolbar-search" theme="accent"}}
+
+      {{#uxs-toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.title "Toolbar"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.search value=searchTerm}}
+      {{/uxs-toolbar}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "toolbar-search.hbs"}}
+
+{{/docs-demo}}
