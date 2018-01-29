@@ -1,11 +1,23 @@
 .uxs-icon {
   @include transition-all;
   @extend .material-icons;
-  cursor: pointer;
+  cursor  : pointer;
+  position: relative;
+  width   : rem-size($baseline);
 
   &:focus,
   &:hover {
-    color: darken($c-grey, 10%);
+    &::before {
+      $size           : rem-size($baseline*1.25);
+      border-radius   : 100%;
+      background-color: rgba($c-white, 0.1);
+      content         : '';
+      height          : $size;
+      left            : rem-size($baseline*.125*-1);
+      position        : absolute;
+      top             : rem-size($baseline*.125*-1);
+      width           : $size;
+    }
   }
 
   &--white {
@@ -13,7 +25,9 @@
 
     &:focus,
     &:hover {
-      // color: $c-primary;
+      &::before {
+        background-color: rgba($c-white, 0.1);
+      }
     }
   }
 
@@ -22,7 +36,9 @@
 
     &:focus,
     &:hover {
-      color: $c-primary-3;
+      &::before {
+        background-color: rgba($c-primary, 0.1);
+      }
     }
   }
 
@@ -31,22 +47,36 @@
 
     &:focus,
     &:hover {
-      color: $c-error-3;
+      &::before {
+        background-color: rgba($c-error, 0.1);
+      }
     }
-  }
-  /**
-   * White
-   */
-  &--white {
-    background-color: $c-light;
-    color           : $c-dark;
   }
   /**
    * Gray
    */
   &--gray {
-    background-color: $c-grey;
-    color           : $c-white;
+    color: $c-grey;
+
+    &:focus,
+    &:hover {
+      &::before {
+        background-color: rgba($c-grey, 0.1);
+      }
+    }
+  }
+  /**
+   * Black
+   */
+  &--black {
+    color: $c-dark;
+
+    &:focus,
+    &:hover {
+      &::before {
+        background-color: rgba($c-dark, 0.1);
+      }
+    }
   }
 }
 
