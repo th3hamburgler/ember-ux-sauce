@@ -1,12 +1,13 @@
 import Component from '@ember/component';
 import layout from '../templates/components/uxs-list-item';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
+import Clickable from 'ember-ux-sauce/mixins/clickable';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import {
   equal
 } from '@ember/object/computed';
 
-export default Component.extend(BEMComponent, Testable, {
+export default Component.extend(BEMComponent, Clickable, Testable, {
   base: 'uxs-list-item',
   layout,
   // Computed
