@@ -11,9 +11,9 @@
   {{#demo.example name="lists"}}
 
     {{#uxs-list as |list|}}
-      {{#each items as |i|}}
+      {{#each items as |thing|}}
         {{#list.item as |item|}}
-          {{item.title i.title}}
+          {{item.title thing.title}}
         {{/list.item}}
       {{/each}}
     {{/uxs-list}}
@@ -33,11 +33,11 @@
   {{#demo.example name="bordered-list"}}
 
     {{#uxs-list lines=2 bordered=true as |list|}}
-      {{#each items as |i|}}
+      {{#each items as |thing|}}
         {{#list.item as |item|}}
           {{#item.content}}
-            {{item.title i.title}}
-            {{item.content i.location}}
+            {{item.title thing.title}}
+            {{item.content thing.location}}
           {{/item.content}}
         {{/list.item}}
       {{/each}}
@@ -58,15 +58,15 @@
   {{#demo.example name="action-list"}}
 
     {{#uxs-list lines=3 bordered=true as |list|}}
-      {{#each items as |i|}}
+      {{#each items as |thing|}}
         {{#list.item as |item|}}
           {{#item.aside}}
             {{item.avatar "https://placeimg.com/100/100/any" round=true}}
           {{/item.aside}}
           {{#item.body}}
-            {{item.title i.title}}
-            {{item.detail i.location}}
-            {{item.detail i.email}}
+            {{item.title thing.title}}
+            {{item.detail thing.location}}
+            {{item.detail thing.email}}
           {{/item.body}}
           {{#item.aside}}
             {{item.action "keyboard_arrow_right"}}
@@ -78,6 +78,43 @@
   {{/demo.example}}
 
   {{demo.snippet "action-list.hbs"}}
+
+{{/docs-demo}}
+
+<h2>List Subheadings</h2>
+
+<p>Often you'll want to break up list items into sections using subheadings. The uxs-list-subheading component will only render if the subheading has changed from the item before. Use it in conjunction with an ordered response</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="list-subheadings"}}
+
+    {{#uxs-list lines=3 bordered=true as |list|}}
+
+      {{#each items as |thing|}}
+
+        {{list.subheading thing.location}}
+
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatar "https://placeimg.com/100/100/any" round=true}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title thing.title}}
+            {{item.detail thing.location}}
+            {{item.detail thing.email}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action "keyboard_arrow_right"}}
+          {{/item.aside}}
+        {{/list.item}}
+
+      {{/each}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "list-subheadings.hbs"}}
 
 {{/docs-demo}}
 
