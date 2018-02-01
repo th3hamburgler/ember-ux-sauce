@@ -20,12 +20,15 @@ const Subheading = Component.extend(BEMComponent, {
   layout,
   tagName: '',
   // Computed
-  showSubheading: computed('text', function() {
+  showSubheading: computed('text', 'sort', function() {
     let text = get(this, 'text'),
-      currentValue = get(this, 'subheadingState.value');
+      sort = get(this, 'sort'),
+      currentValue = get(this, 'subheadingState.value'),
+      currentSort = get(this, 'subheadingState.sort');
 
-    if (text !== currentValue) {
+    if (text !== currentValue || sort !== currentSort) {
       set(this, 'subheadingState.value', text);
+      set(this, 'subheadingState.sort', sort);
       return true;
     }
   }),
@@ -37,7 +40,7 @@ const Subheading = Component.extend(BEMComponent, {
 });
 
 Subheading.reopenClass({
-  positionalParams: ['text'],
+  positionalParams: ['text', 'sort'],
 });
 
 export default Subheading;
