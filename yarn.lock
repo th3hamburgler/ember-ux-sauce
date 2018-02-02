@@ -3,8 +3,8 @@
 
 
 "@ember/test-helpers@^0.7.9":
-  version "0.7.13"
-  resolved "https://registry.yarnpkg.com/@ember/test-helpers/-/test-helpers-0.7.13.tgz#89523a101b5bd731e9dcaf7d0c57155b6386a4e3"
+  version "0.7.16"
+  resolved "https://registry.yarnpkg.com/@ember/test-helpers/-/test-helpers-0.7.16.tgz#73a4acf4c7d1b92ce866f4c9e40c9723da4cf1e8"
   dependencies:
     broccoli-funnel "^2.0.1"
     ember-cli-babel "^6.10.0"
@@ -14,11 +14,11 @@
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@glimmer/di/-/di-0.2.0.tgz#73bfd4a6ee4148a80bf092e8a5d29bcac9d4ce7e"
 
-"@glimmer/interfaces@^0.29.10":
-  version "0.29.10"
-  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.29.10.tgz#7744451ca329a42c62b08fa460808bccbddeb2ab"
+"@glimmer/interfaces@^0.30.5":
+  version "0.30.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.30.5.tgz#9fd391ff4b9e4b29cf56495a2c3f5f660e45497a"
   dependencies:
-    "@glimmer/wire-format" "^0.29.10"
+    "@glimmer/wire-format" "^0.30.5"
 
 "@glimmer/resolver@^0.4.1":
   version "0.4.2"
@@ -26,24 +26,24 @@
   dependencies:
     "@glimmer/di" "^0.2.0"
 
-"@glimmer/syntax@^0.29.10":
-  version "0.29.10"
-  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.29.10.tgz#2a074223fc3b42d49c8b9345684a80b5133dc030"
+"@glimmer/syntax@^0.30.5":
+  version "0.30.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.30.5.tgz#763a631fccdb5ee2468269becd215752fc2361cc"
   dependencies:
-    "@glimmer/interfaces" "^0.29.10"
-    "@glimmer/util" "^0.29.10"
+    "@glimmer/interfaces" "^0.30.5"
+    "@glimmer/util" "^0.30.5"
     handlebars "^4.0.6"
     simple-html-tokenizer "^0.4.1"
 
-"@glimmer/util@^0.29.10":
-  version "0.29.10"
-  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.29.10.tgz#8662daf273ffef9254b8d943d39aa396ed7225a5"
+"@glimmer/util@^0.30.5":
+  version "0.30.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.30.5.tgz#97f3dcd4029f713c503371e1608e129a833a70e1"
 
-"@glimmer/wire-format@^0.29.10":
-  version "0.29.10"
-  resolved "https://registry.yarnpkg.com/@glimmer/wire-format/-/wire-format-0.29.10.tgz#90e82f67a6325468d6fee4f8dd7affc1070a9557"
+"@glimmer/wire-format@^0.30.5":
+  version "0.30.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/wire-format/-/wire-format-0.30.5.tgz#17d79a320b931950ac03887733e56ecc7bbd0a06"
   dependencies:
-    "@glimmer/util" "^0.29.10"
+    "@glimmer/util" "^0.30.5"
 
 abab@^1.0.0:
   version "1.0.4"
@@ -68,8 +68,8 @@ accepts@~1.3.4:
     negotiator "0.6.1"
 
 ace-builds@^1.2.8:
-  version "1.2.9"
-  resolved "https://registry.yarnpkg.com/ace-builds/-/ace-builds-1.2.9.tgz#2947fb47a881005e914e3dd8d095b6e84e5e5216"
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/ace-builds/-/ace-builds-1.3.0.tgz#9245a414d0b2ee039ee01f5b97a6d9f10cf436fa"
 
 acorn-globals@^1.0.4:
   version "1.0.9"
@@ -1083,8 +1083,8 @@ binary-extensions@^1.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.11.0.tgz#46aa1751fb6a2f93ee5e689bb1087d4b14c6c205"
 
 "binaryextensions@1 || 2":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/binaryextensions/-/binaryextensions-2.0.0.tgz#e597d1a7a6a3558a2d1c7241a16c99965e6aa40f"
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/binaryextensions/-/binaryextensions-2.1.1.tgz#3209a51ca4a4ad541a3b8d3d6a6d5b83a2485935"
 
 blank-object@^1.0.1:
   version "1.0.2"
@@ -1234,8 +1234,8 @@ broccoli-autoprefixer@^5.0.0:
     postcss "^6.0.1"
 
 broccoli-babel-transpiler@^5.6.2:
-  version "5.7.2"
-  resolved "https://registry.yarnpkg.com/broccoli-babel-transpiler/-/broccoli-babel-transpiler-5.7.2.tgz#756c30544775144e984333b7115f42c916ba08e0"
+  version "5.7.3"
+  resolved "https://registry.yarnpkg.com/broccoli-babel-transpiler/-/broccoli-babel-transpiler-5.7.3.tgz#f0c0f07ca95f3f7a2e974930c477a57f28ddd647"
   dependencies:
     babel-core "^5.0.0"
     broccoli-funnel "^1.0.0"
@@ -1249,8 +1249,8 @@ broccoli-babel-transpiler@^5.6.2:
     workerpool "^2.2.1"
 
 broccoli-babel-transpiler@^6.0.0, broccoli-babel-transpiler@^6.1.2:
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/broccoli-babel-transpiler/-/broccoli-babel-transpiler-6.1.2.tgz#26019c045b5ea3e44cfef62821302f9bd483cabd"
+  version "6.1.3"
+  resolved "https://registry.yarnpkg.com/broccoli-babel-transpiler/-/broccoli-babel-transpiler-6.1.3.tgz#f70553d832083b2cbec843e8268210e0c283e6e9"
   dependencies:
     babel-core "^6.14.0"
     broccoli-funnel "^1.0.0"
@@ -1378,7 +1378,7 @@ broccoli-file-creator@^1.0.0, broccoli-file-creator@^1.1.1:
     rsvp "~3.0.6"
     symlink-or-copy "^1.0.1"
 
-broccoli-filter@^1.2.2, broccoli-filter@^1.2.3:
+broccoli-filter@^1.2.2, broccoli-filter@^1.2.3, broccoli-filter@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/broccoli-filter/-/broccoli-filter-1.2.4.tgz#409afb94b9a3a6da9fac8134e91e205f40cc7330"
   dependencies:
@@ -2467,16 +2467,16 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
 
 editions@^1.1.1:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/editions/-/editions-1.3.3.tgz#0907101bdda20fac3cbe334c27cbd0688dc99a5b"
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/editions/-/editions-1.3.4.tgz#3662cb592347c3168eb8e498a0ff73271d67f50b"
 
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 electron-to-chromium@^1.3.30:
-  version "1.3.31"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.31.tgz#00d832cba9fe2358652b0c48a8816c8e3a037e9f"
+  version "1.3.32"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.32.tgz#11d0684c0840e003c4be8928f8ac5f35dbc2b4e6"
 
 ember-ace@^1.2.0:
   version "1.2.0"
@@ -2517,42 +2517,45 @@ ember-basic-dropdown@^1.0.0-beta.0:
 
 "ember-cli-addon-docs@github:ember-learn/ember-cli-addon-docs":
   version "0.0.0"
-  resolved "https://codeload.github.com/ember-learn/ember-cli-addon-docs/tar.gz/b398206cf976127d68174157f20c7294b9afc489"
+  resolved "https://codeload.github.com/ember-learn/ember-cli-addon-docs/tar.gz/664f3e01529c6df8cbf198e9ea6c6b3efcc3a4f5"
   dependencies:
-    "@glimmer/syntax" "^0.29.10"
+    "@glimmer/syntax" "^0.30.5"
     broccoli-caching-writer "^3.0.3"
+    broccoli-filter "^1.2.4"
+    broccoli-funnel "^2.0.1"
     broccoli-merge-trees "^2.0.0"
     broccoli-stew "^1.5.0"
     ember-ace "^1.2.0"
     ember-cli-autoprefixer "^0.8.1"
-    ember-cli-babel "^6.8.2"
-    ember-cli-clipboard "^0.8.0"
+    ember-cli-babel "^6.11.0"
+    ember-cli-clipboard "^0.8.1"
     ember-cli-htmlbars "^2.0.3"
-    ember-cli-sass "^7.0.0"
+    ember-cli-sass "7.1.3"
     ember-code-snippet "^2.0.0"
     ember-component-css "^0.3.5"
-    ember-data "^2.0.0"
+    ember-data "^2.18.0"
     ember-href-to "^1.15.1"
-    ember-keyboard "^2.3.0"
-    ember-modal-dialog yapplabs/ember-modal-dialog#a14f0a33c1c7cc9d7a77f86512732b920a8befe8
+    ember-keyboard "^3.0.0"
+    ember-modal-dialog "^2.4.1"
     ember-router-scroll "^0.4.0"
-    ember-svg-jar "^0.11.1"
+    ember-svg-jar "^0.12.0"
     ember-truth-helpers "^2.0.0"
-    fs-extra "^4.0.2"
+    execa "^0.9.0"
+    fs-extra "^5.0.0"
     git-repo-info "^1.4.1"
-    git-repo-version "^0.4.1"
+    git-repo-version "^1.0.2"
     highlightjs "^9.10.0"
     hosted-git-info "^2.5.0"
     html-entities "^1.2.1"
-    inflected "^2.0.2"
-    liquid-fire "^0.29.0"
-    liquid-tether pzuraq/liquid-tether#5f06902ac8fd198491cece74bac0e1f804f3e490
-    lunr "^2.1.4"
-    marked "^0.3.6"
+    inflected "^2.0.3"
+    liquid-fire "^0.29.1"
+    liquid-tether "^2.0.6"
+    lunr "^2.1.5"
+    marked "^0.3.12"
     minimatch "^3.0.4"
     quick-temp "^0.1.8"
     resolve "^1.5.0"
-    striptags "^3.1.0"
+    striptags "^3.1.1"
     yuidoc-to-jsonapi "^0.4.1"
     yuidocjs "^0.10.2"
 
@@ -2601,7 +2604,7 @@ ember-cli-broccoli-sane-watcher@^2.0.4:
     rsvp "^3.0.18"
     sane "^1.1.1"
 
-ember-cli-clipboard@^0.8.0:
+ember-cli-clipboard@^0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/ember-cli-clipboard/-/ember-cli-clipboard-0.8.1.tgz#59f8eb6ba471a7668dff592fcebb7b06014240dd"
   dependencies:
@@ -2773,7 +2776,16 @@ ember-cli-qunit@^4.1.1:
     ember-cli-babel "^6.8.1"
     ember-qunit "^3.3.0"
 
-ember-cli-sass@^7.0.0, ember-cli-sass@^7.1.3:
+ember-cli-sass@7.1.3:
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/ember-cli-sass/-/ember-cli-sass-7.1.3.tgz#d4a418d68bb513c40270b88576bd2cf07301fdf2"
+  dependencies:
+    broccoli-funnel "^1.0.0"
+    broccoli-merge-trees "^1.1.0"
+    broccoli-sass-source-maps "^2.1.0"
+    ember-cli-version-checker "^1.0.2"
+
+ember-cli-sass@^7.1.3:
   version "7.1.4"
   resolved "https://registry.yarnpkg.com/ember-cli-sass/-/ember-cli-sass-7.1.4.tgz#cbe823b5bd7d686b11ab61169fda4f3e993456fd"
   dependencies:
@@ -2962,8 +2974,8 @@ ember-component-css@^0.3.5:
     walk-sync "^0.3.2"
 
 ember-concurrency@^0.8.12:
-  version "0.8.13"
-  resolved "https://registry.yarnpkg.com/ember-concurrency/-/ember-concurrency-0.8.13.tgz#e2e28255bf3835278ff8046cdb65240655a4c301"
+  version "0.8.14"
+  resolved "https://registry.yarnpkg.com/ember-concurrency/-/ember-concurrency-0.8.14.tgz#4017133e5fbb9d088082ef6ab5b91839ed33107b"
   dependencies:
     babel-core "^6.24.1"
     ember-cli-babel "^6.8.2"
@@ -2982,7 +2994,7 @@ ember-cp-validations@^3.5.1:
     exists-sync "0.0.4"
     walk-sync "^0.3.1"
 
-ember-data@^2.0.0:
+ember-data@^2.18.0:
   version "2.18.0"
   resolved "https://registry.yarnpkg.com/ember-data/-/ember-data-2.18.0.tgz#8e374e540ea7c3b101983eb51cd0beedaa4d230d"
   dependencies:
@@ -3089,9 +3101,9 @@ ember-inflector@^2.0.0:
   dependencies:
     ember-cli-babel "^6.0.0"
 
-ember-keyboard@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/ember-keyboard/-/ember-keyboard-2.3.0.tgz#6a210ccfc3ad8ca19e73cbef291ed2a0afd08ad0"
+ember-keyboard@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ember-keyboard/-/ember-keyboard-3.0.0.tgz#4f85ad4f8f91e54c4d646229fbb3aca6bcb4261f"
   dependencies:
     ember-cli-babel "^6.8.2"
 
@@ -3119,9 +3131,9 @@ ember-maybe-import-regenerator@^0.1.5:
     ember-cli-babel "^6.0.0-beta.4"
     regenerator-runtime "^0.9.5"
 
-ember-modal-dialog@yapplabs/ember-modal-dialog#a14f0a33c1c7cc9d7a77f86512732b920a8befe8:
-  version "2.3.0"
-  resolved "https://codeload.github.com/yapplabs/ember-modal-dialog/tar.gz/a14f0a33c1c7cc9d7a77f86512732b920a8befe8"
+ember-modal-dialog@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/ember-modal-dialog/-/ember-modal-dialog-2.4.1.tgz#8dec3e13aa7f6172f7ffb83a94d02251cd4d6e66"
   dependencies:
     ember-cli-babel "^6.8.2"
     ember-cli-htmlbars "^2.0.1"
@@ -3260,9 +3272,9 @@ ember-string-ishtmlsafe-polyfill@^2.0.0:
   dependencies:
     ember-cli-version-checker "^1.2.0"
 
-ember-svg-jar@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/ember-svg-jar/-/ember-svg-jar-0.11.1.tgz#94c01ec429eff6a7c40ba3ac48d098e4df521491"
+ember-svg-jar@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/ember-svg-jar/-/ember-svg-jar-0.12.0.tgz#558253e7b6f2617e1d04aa13fb2bb6c6c1924020"
   dependencies:
     broccoli-caching-writer "^2.3.1"
     broccoli-funnel "^1.0.1"
@@ -3271,7 +3283,7 @@ ember-svg-jar@^0.11.1:
     broccoli-svg-optimizer "^1.0.2"
     broccoli-symbolizer "^0.5.0"
     cheerio "^0.20.0"
-    ember-cli-babel "^6.0.0"
+    ember-cli-babel "^6.6.0"
     lodash "^4.13.1"
     mkdirp "^0.5.1"
     path-posix "^1.0.0"
@@ -3638,6 +3650,18 @@ exec-sh@^0.2.0:
 execa@^0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-0.8.0.tgz#d8d76bbc1b55217ed190fd6dd49d3c774ecfc8da"
+  dependencies:
+    cross-spawn "^5.0.1"
+    get-stream "^3.0.0"
+    is-stream "^1.1.0"
+    npm-run-path "^2.0.0"
+    p-finally "^1.0.0"
+    signal-exit "^3.0.0"
+    strip-eof "^1.0.0"
+
+execa@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-0.9.0.tgz#adb7ce62cf985071f60580deb4a88b9e34712d01"
   dependencies:
     cross-spawn "^5.0.1"
     get-stream "^3.0.0"
@@ -4068,9 +4092,17 @@ fs-extra@^2.0.0:
     graceful-fs "^4.1.2"
     jsonfile "^2.1.0"
 
-fs-extra@^4.0.0, fs-extra@^4.0.2:
+fs-extra@^4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
+fs-extra@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^4.0.0"
@@ -4176,15 +4208,11 @@ git-repo-info@^1.1.2, git-repo-info@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/git-repo-info/-/git-repo-info-1.4.1.tgz#2a072823254aaf62fcf0766007d7b6651bd41943"
 
-git-repo-info@~1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/git-repo-info/-/git-repo-info-1.2.0.tgz#43d8513e04a24dd441330a2f7c6655a709fdbaf2"
-
-git-repo-version@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/git-repo-version/-/git-repo-version-0.4.1.tgz#75fab9a0a4ec8470755b0eea7fdaa6f9d41453bf"
+git-repo-version@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/git-repo-version/-/git-repo-version-1.0.2.tgz#2c8e9bee5d970cafc0dd58480f9dc56d9afe8e4f"
   dependencies:
-    git-repo-info "~1.2.0"
+    git-repo-info "^1.4.1"
 
 glob-base@^0.3.0:
   version "0.3.0"
@@ -4285,8 +4313,8 @@ global-prefix@^1.0.1:
     which "^1.2.14"
 
 globals@^11.0.1:
-  version "11.1.0"
-  resolved "https://registry.yarnpkg.com/globals/-/globals-11.1.0.tgz#632644457f5f0e3ae711807183700ebf2e4633e4"
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-11.3.0.tgz#e04fdb7b9796d8adac9c8f64c14837b2313378b0"
 
 globals@^6.4.0:
   version "6.4.1"
@@ -4635,7 +4663,7 @@ indexof@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/indexof/-/indexof-0.0.1.tgz#82dc336d232b9062179d05ab3293a66059fd435d"
 
-inflected@^2.0.2:
+inflected@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inflected/-/inflected-2.0.3.tgz#d16e166d0c10b5bdd7e741228e08733410ebfc8d"
 
@@ -4988,8 +5016,8 @@ jquery@^3.2.1:
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
 js-base64@^2.1.8, js-base64@^2.1.9:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.2.tgz#1896da010ef8862f385d8887648e9b6dc4a7a2e9"
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.3.tgz#2e545ec2b0f2957f41356510205214e98fad6582"
 
 js-reporters@1.2.1:
   version "1.2.1"
@@ -5193,7 +5221,7 @@ linkify-it@~1.2.0:
   dependencies:
     uc.micro "^1.0.1"
 
-liquid-fire@^0.29.0:
+liquid-fire@^0.29.1:
   version "0.29.1"
   resolved "https://registry.yarnpkg.com/liquid-fire/-/liquid-fire-0.29.1.tgz#bcfea12db65799def263721a2b9dd6142d426bdf"
   dependencies:
@@ -5208,9 +5236,9 @@ liquid-fire@^0.29.0:
     match-media "^0.2.0"
     velocity-animate ">= 0.11.8"
 
-liquid-tether@pzuraq/liquid-tether#5f06902ac8fd198491cece74bac0e1f804f3e490:
-  version "2.0.5"
-  resolved "https://codeload.github.com/pzuraq/liquid-tether/tar.gz/5f06902ac8fd198491cece74bac0e1f804f3e490"
+liquid-tether@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/liquid-tether/-/liquid-tether-2.0.6.tgz#16b3de94522c70d6635c4ee3fada2d5d0fc396cc"
   dependencies:
     broccoli-funnel "^1.1.0"
     broccoli-merge-trees "^1.2.4"
@@ -5687,7 +5715,7 @@ lru-cache@^4.0.1:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
-lunr@^2.1.4:
+lunr@^2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/lunr/-/lunr-2.1.5.tgz#826601ccaeac29148e224154b34760faf4d81b70"
 
@@ -5747,7 +5775,7 @@ markdown-it@^8.3.0, markdown-it@^8.3.1:
     mdurl "^1.0.1"
     uc.micro "^1.0.3"
 
-marked@^0.3.6:
+marked@^0.3.12:
   version "0.3.12"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.12.tgz#7cf25ff2252632f3fe2406bde258e94eee927519"
 
@@ -6671,8 +6699,8 @@ raw-body@~1.1.0:
     string_decoder "0.10"
 
 rc@^1.1.7:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.4.tgz#a0f606caae2a3b862bbd0ef85482c0125b315fa3"
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.5.tgz#275cd687f6e3b36cc756baa26dfee80a790301fd"
   dependencies:
     deep-extend "~0.4.0"
     ini "~1.3.0"
@@ -7617,7 +7645,7 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-striptags@^3.1.0:
+striptags@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/striptags/-/striptags-3.1.1.tgz#c8c3e7fdd6fb4bb3a32a3b752e5b5e3e38093ebd"
 
@@ -7765,8 +7793,8 @@ text-table@~0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
 
 "textextensions@1 || 2":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.1.0.tgz#1be0dc2a0dc244d44be8a09af6a85afb93c4dbc3"
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.2.0.tgz#38ac676151285b658654581987a0ce1a4490d286"
 
 through@^2.3.6, through@^2.3.8, through@~2.3.8:
   version "2.3.8"
@@ -7912,12 +7940,12 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
 uc.micro@^1.0.0, uc.micro@^1.0.1, uc.micro@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.3.tgz#7ed50d5e0f9a9fb0a573379259f2a77458d50192"
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.5.tgz#0c65f15f815aa08b560a61ce8b4db7ffc3f45376"
 
 uglify-es@^3.1.3:
-  version "3.3.8"
-  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.3.8.tgz#f2c68e6cff0d0f9dc9577e4da207151c2e753b7e"
+  version "3.3.9"
+  resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.3.9.tgz#0c1c4f0700bed8dbc124cdb304d2592ca203e677"
   dependencies:
     commander "~2.13.0"
     source-map "~0.6.1"

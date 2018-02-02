@@ -2,16 +2,16 @@
  * Type
  */
 @mixin body-type() {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
+  font-family: $type-body-family;
+  font-weight: $type-body-weight;
 }
 @mixin light-body-type() {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-family: $type-light-family;
+  font-weight: $type-light-weight;
 }
 @mixin bold-body-type() {
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
+  font-family: $type-bold-family;
+  font-weight: $type-bold-weight;
 }
 /*
  * Type sizes
