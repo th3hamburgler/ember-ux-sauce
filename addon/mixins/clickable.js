@@ -5,6 +5,9 @@ import {
 import {
   get
 } from '@ember/object';
+import {
+  bool
+} from '@ember/object/computed';
 /**
   A mixin to add click support to a component.
   @class Clickable
@@ -48,5 +51,11 @@ export default Mixin.create({
     if (!this.get('disabled') && action) {
       action();
     }
+  },
+  hasClickAction: bool('onClick'),
+  // Methods
+  init() {
+    this._super(...arguments);
+    this.registerModifiers(['hasClickAction:clickable'])
   },
 });
