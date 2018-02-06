@@ -11,6 +11,7 @@
 }
 
 .uxs-list-item {
+  @include trans;
   align-items   : center;
   display       : flex;
   flex-direction: row;
@@ -19,6 +20,10 @@
   &--bordered {
     border-bottom: rem-size(1px) solid $c-light;
     //padding-bottom: rem-size(($baseline * 0.5)-1px);
+  }
+
+  &--clickable {
+    cursor: pointer;
   }
 
   &--one-line {
@@ -33,8 +38,16 @@
     height: rem-size($baseline * 4);
   }
 
+  &:hover {
+    background-color: rgba($c-light, .2);
+  }
+
   &__body {
     flex: 1;
+
+    &--clickable {
+      cursor: pointer;
+    }
   }
 
   &__aside {
@@ -44,6 +57,10 @@
 
     &:last-child {
       margin-left: rem-size($baseline*.5);
+    }
+
+    &--clickable {
+      cursor: pointer;
     }
   }
 

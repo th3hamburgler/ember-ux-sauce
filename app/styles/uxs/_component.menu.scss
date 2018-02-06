@@ -14,8 +14,9 @@
   &__item {
     @include transition-all;
     cursor     : pointer;
+    color      : $c-dark;
     border     : none;
-    // font-weight: 300;
+    font-weight: 300;
     list-style : none;
     line-height: rem-size($baseline*1.5);
     padding    : 0 rem-size($baseline*0.75);
