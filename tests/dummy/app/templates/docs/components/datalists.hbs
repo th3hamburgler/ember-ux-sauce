@@ -1,0 +1,24 @@
+<h1>Datalist</h1>
+
+<p>Datalist are used to display record details, think of them as readonly form controls.</p>
+
+<h2>Simple Usage</h2>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="datalists"}}
+
+    {{#uxs-datalist bordered=true as |list|}}
+      {{list.item label="Name" value="Frida Wardlaw"}}
+      {{list.item label="GID" value="0123456789"}}
+      {{list.item label="Job Title" value="Kid"}}
+      {{list.item label="Email" value=null empty="No Email"}}
+      {{list.item label="Last Login" value="20/01/18" tip="This is the last time the user accessed the system"}}
+      {{list.item label="Nothing" value=null }}
+    {{/uxs-datalist}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "datalists.hbs"}}
+
+{{/docs-demo}}
