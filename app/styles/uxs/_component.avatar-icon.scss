@@ -1,0 +1,20 @@
+.uxs-icon-avatar {
+  @extend .material-icons;
+  $size           : rem-size($baseline*2);
+  align-items     : center;
+  background-color: $c-primary;
+  color           : $c-white;
+  display         : block;
+  height          : $size;
+  line-height     : $size;
+  text-align      : center;
+  width           : $size;
+
+  &--round {
+    border-radius: 100%;
+  }
+
+  &--selected {
+    background-color: $c-accent;
+  }
+}
