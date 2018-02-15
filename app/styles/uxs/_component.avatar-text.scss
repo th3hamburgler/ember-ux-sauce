@@ -1,0 +1,16 @@
+.uxs-text-avatar {
+  $size           : rem-size($baseline*2);
+  align-items     : center;
+  background-color: $c-primary;
+  color           : $c-white;
+  display         : flex;
+  flex-direction  : column;
+  height          : $size;
+  justify-content : space-around;
+  line-height     : $size;
+  width           : $size;
+
+  &--round {
+    border-radius: 100%;
+  }
+}
