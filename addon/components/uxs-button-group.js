@@ -12,7 +12,7 @@ import layout from '../templates/components/uxs-button-group';
 export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   // Attribues
   base: 'uxs-button-group',
-  debugBem: true,
+  debugBem: false,
   layout,
   // Computed
   isAlignCenter: equal('align', 'center'),
