@@ -1,6 +1,7 @@
 .uxs-header {
   background: $c-primary;
   color     : $c-white;
+  min-height: rem-size($baseline*10);
   overflow  : auto;
   position  : relative;
   width     : 100%;
@@ -24,7 +25,7 @@
     z-index : 2;
 
     &--with-image {
-      background: rgba($c-dark, .5);
+      background-color: transparent;
     }
   }
 
@@ -34,6 +35,14 @@
   }
 
   &__title {
-    margin: rem-size($baseline*5) rem-size($baseline*.5) rem-size($baseline*1) rem-size($baseline*2);
+    @include text-truncate;
+    @include type-heading;
+    font-weight: 300;
+    margin     : rem-size($baseline*5) rem-size($baseline*.5) rem-size($baseline*1) rem-size($baseline*1.5);
+    @include mq(tablet) {
+      font-size  : rem-size($s-huge);
+      line-height: rem-size($baseline*2);
+      font-weight: 100;
+    }
   }
 }
