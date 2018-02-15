@@ -78,6 +78,11 @@
       }
     }
   }
+
+  &--disabled {
+    cursor : not-allowed;
+    opacity: 0.4;
+  }
 }
 
 .uxs-form__icon {
