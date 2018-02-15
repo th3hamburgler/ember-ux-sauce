@@ -38,7 +38,7 @@
   }
 }
 @mixin input-base {
-   @include transition-all;
+  @include transition-all;
   @extend .content;
   /* Remove Native Style */
   -webkit-appearance: none;
@@ -72,28 +72,43 @@
   }
   @if $level == 1 {
     box-shadow: 0 1px*$y 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  }
-  @else if $level == 2 {
+  } @else 
+  if $level == 2 {
     box-shadow: 0 3px*$y 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  }
-  @else if $level == 3 {
+  } @else 
+  if $level == 3 {
     box-shadow: 0 10px*$y 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  }
-  @else if $level == 4 {
+  } @else 
+  if $level == 4 {
     box-shadow: 0 14px*$y 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
-  @else if $level == 5 {
+  } @else 
+  if $level == 5 {
     box-shadow: 0 19px*$y 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   }
 }
 @mixin mq($width, $type: min) {
-   @if map_has_key($breakpoints, $width){
+  @if map_has_key($breakpoints, $width) {
     $width: map_get($breakpoints, $width);
     @if $type == min {
       $width: $width + 1px;
     }
     @media only screen and (#{$type}-width: $width) {
-       @content;
+      @content;
     }
+  }
+}
+@mixin mq-portrait() {
+  @media all and (orientation:portrait) {
+    @content;
+  }
+}
+@mixin mq-landscape() {
+  @media all and (orientation:landscape) {
+    @content;
+  }
+}
+@mixin mq-retina() {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    @content;
   }
 }
