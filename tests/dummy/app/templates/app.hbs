@@ -3,16 +3,31 @@
   {{#uxs-app fixedNav=true}}
 
     {{#uxs-navbar fixed=true name="AppName" as |bar|}}
-      {{#bar.logo}}{{/bar.logo}}
-      {{#bar.nav as |nav|}}
-        {{nav.link "Docs" "docs"}}
-        {{nav.link "Api" "docs"}}
-        {{nav.link "Dashboard" "app.dash"}}
-        {{nav.link "Splash" "app.splash"}}
-        {{nav.link "Single" "app.single"}}
-        {{nav.link "Double" "app.double"}}
-        {{nav.link "Triple" "app.triple"}}
-      {{/bar.nav}}
+      {{#bar.desktopNav as |nav|}}
+        {{#nav.nav as |nav|}}
+          {{nav.link "Docs" "docs"}}
+          {{nav.link "Api" "docs"}}
+          {{nav.link "Dashboard" "app.dash"}}
+          {{nav.link "Splash" "app.splash"}}
+          {{nav.link "Single" "app.single"}}
+          {{nav.link "Double" "app.double"}}
+          {{nav.link "Triple" "app.triple"}}
+          {{!-- {{nav.item "Triple" rightIcon="book"}} --}}
+        {{/nav.nav}}
+      {{/bar.desktopNav}}
+      {{#bar.mobileNav as |nav|}}
+        {{uxs-subheading "AppName" align="center"}}
+        {{#nav.nav as |nav|}}
+          {{nav.link "Docs" "docs"}}
+          {{nav.link "Api" "docs"}}
+          {{nav.link "Dashboard" "app.dash"}}
+          {{nav.link "Splash" "app.splash"}}
+          {{nav.link "Single" "app.single"}}
+          {{nav.link "Double" "app.double"}}
+          {{nav.link "Triple" "app.triple" rightIcon="book"}}
+          {{!-- {{nav.item "Triple" rightIcon="book"}} --}}
+        {{/nav.nav}}
+      {{/bar.mobileNav}}
     {{/uxs-navbar}}
 
     {{outlet}}

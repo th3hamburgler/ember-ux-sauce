@@ -1,7 +1,10 @@
 .uxs-navbar {
-  border-bottom  : rem-size(1px) solid $c-light;
+  background     : $c-primary;
+  border-bottom  : rem-size(1px) solid $c-white;
   box-shadow     : 0 2px 2px 0 rgba($c-light,0.125);
+  color          : $c-white;
   display        : flex;
+  flex-direction : row-reverse;
   flex-direction : row;
   justify-content: space-between;
   max-height     : rem-size($baseline*2);
@@ -9,27 +12,91 @@
   position       : sticky;
   top            : 0;
   z-index        : 5;
+  @include mq(tablet-wide) {
+    flex-direction: row;
+  }
 
   &--fixed {
-    background: $c-white;
-    left      : 0;
-    position  : fixed;
-    top       : 0;
-    width     : 100%;
+    left    : 0;
+    position: fixed;
+    top     : 0;
+    width   : 100%;
+  }
+
+  &__toggle {
+    color      : $c-white;
+    $size      : rem-size(($baseline*2)-1);
+    height     : $size;
+    line-height: $size;
+    text-align : center;
+    width      : rem-size($baseline*2);
+    @include mq(tablet-wide) {
+      display   : none;
+      visibility: none;
+    }
   }
 
   &__logo {
     @include type-content;
     line-height: rem-size($baseline*2);
-    margin     : 0 rem-size($baseline*0.5);
+    flex       : 1 1 auto;
+    margin     : 0 rem-size($baseline*2) 0 0;
+    max-width  : none;
+    text-align : center;
+    @include mq(tablet-wide) {
+      flex  : none;
+      margin: 0 rem-size($baseline*0.5);
+    }
 
     &:hover {
-      color: $c-grey;
+      opacity: 0.8;
+      color  : $c-white;
+    }
+  }
+
+  &__desktop {
+    display   : none;
+    visibility: hidden;
+    @include mq(tablet-wide) {
+      display   : block;
+      visibility: visible;
+    }
+  }
+
+  &__mobile {
+    @include mq(tablet-wide) {
+      display   : none;
+      visibility: hidden;
     }
   }
 
   &__nav {
-    margin  : rem-size($baseline*0.5);
-    overflow: hidden;
+    @include content-font-size;
+    margin: rem-size($baseline*0.5);
+
+    &--desktop {
+      @include detail-font-size;
+    }
+
+    .uxs-nav__item {
+      margin-bottom: rem-size($baseline*0.5);
+    }
+  }
+
+  &__drawer {
+    animation : slideInLeft 0.5s;
+    background: $c-primary;
+    color     : $c-white;
+    width     : 80%;
+    max-width : $max-width-content;
+    height    : 100vh;
+    padding   : rem-size($baseline*0.5);
+    overflow  : auto;
+  }
+
+  &__drawer-overlay {
+    animation : fadeIn 0.5s;
+    background: rgba($c-dark,0.8);
+    cursor    : pointer;
   }
 }

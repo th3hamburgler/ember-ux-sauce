@@ -7,6 +7,7 @@ export default Component.extend(BEMComponent, Testable, {
   // Attributes
   base: 'uxs-navbar',
   layout,
+  toggleIcon: 'menu',
   // Methods
   init() {
     this.registerModifiers(['fixed'])

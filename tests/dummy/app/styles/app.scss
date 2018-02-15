@@ -20,20 +20,16 @@ html {
   height: 100%;
 }
 @import 'uxs/settings.variables';
-@import 'uxs/include.tools';
-
-.docs-demo-example,
-.uxs,
-.uxs-ns {
-  @import 'uxs/include.base';
-  @import 'uxs/include.vendor';
-  @import 'uxs/include.elements';
-  @import 'uxs/include.objects';
-  @import 'uxs/include.components';
-  @import 'uxs/include.trumps';
-  @include body-type;
-  @include content-font-size;
-}
+@import 'uxs/include.tools'; // .docs-demo-example,
+// .uxs,
+// .uxs-ns {
+@import 'uxs/include.base';
+@import 'uxs/include.vendor';
+@import 'uxs/include.elements'; // @include body-type;
+// @include content-font-size; // }
+@import 'uxs/include.objects';
+@import 'uxs/include.components';
+@import 'uxs/include.trumps';
 @import 'uxs/include.vendor';
 
 .docs-args-table {

@@ -55,6 +55,7 @@ $ember-power-select-multiple-option-padding: 0 4px;
 $ember-power-select-multiple-option-line-height: rem-size($baseline*1.5);
 @import "../ember-power-select";
 @import "../ember-basic-dropdown";
+@import "../ember-modal-dialog/ember-modal-structure";
 
 :focus {
   outline: none;

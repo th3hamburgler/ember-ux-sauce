@@ -1,0 +1,13 @@
+{{#if isShowingNav}}
+  {{#tether-dialog
+    close=(action (mut isShowingNav) false)
+    containerClass="uxs-navbar__drawer"
+    overlayClass="uxs-navbar__drawer-overlay"
+    wrapperClass="uxs-navbar__drawer-wrapper"
+    attachment='middle left'
+    targetAttachment='middle left'}}
+    {{yield (hash
+      nav=(component "uxs-nav" class="uxs-navbar__nav uxs-navbar__nav--mobile" align="left" horizontal=false)
+    )}}
+  {{/tether-dialog}}
+{{/if}}

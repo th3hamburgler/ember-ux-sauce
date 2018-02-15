@@ -27,9 +27,11 @@
     "ember-composable-helpers": "^2.1.0",
     "ember-cp-validations": "^3.5.1",
     "ember-flatpickr": "^2.3.0",
+    "ember-modal-dialog": "^2.4.1",
     "ember-power-select": "^2.0.0-beta.0",
     "ember-prop-types": "^6.0.1",
     "ember-test-selectors": "^0.3.8",
+    "ember-tether": "^1.0.0-beta.1",
     "reset-css": "^2.2.1"
   },
   "devDependencies": {

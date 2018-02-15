@@ -3309,6 +3309,14 @@ ember-test-selectors@^0.3.8:
     ember-cli-babel "^6.8.2"
     ember-cli-version-checker "^2.0.0"
 
+ember-tether@^1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/ember-tether/-/ember-tether-1.0.0-beta.1.tgz#81b3e47f7e2620db4b71381cd56e1a4dce2fe236"
+  dependencies:
+    ember-cli-babel "^6.0.0"
+    ember-cli-node-assets "^0.2.2"
+    tether "^1.4.0"
+
 ember-text-measurer@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/ember-text-measurer/-/ember-text-measurer-0.4.0.tgz#a676195378d4eb4c1617678c2d198a2344b4d12b"

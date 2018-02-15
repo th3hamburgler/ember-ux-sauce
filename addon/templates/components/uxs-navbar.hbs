@@ -1,3 +1,9 @@
+{{uxs-icon
+  toggleIcon
+  class=(bem base "toggle" m)
+  onClick=(action (mut isShowingNav) true)
+}}
+
 {{#if title}}
   {{#uxs-navbar-logo}}{{title}}{{/uxs-navbar-logo}}
 {{/if}}
@@ -5,4 +11,6 @@
 {{yield (hash
     logo=(component "uxs-navbar-logo")
     nav=(component "uxs-nav" horizontal=true class="uxs-navbar__nav" align="right")
+    mobileNav=(component "uxs-navbar/mobile-nav" isShowingNav=isShowingNav)
+    desktopNav=(component "uxs-navbar/desktop-nav")
 )}}
