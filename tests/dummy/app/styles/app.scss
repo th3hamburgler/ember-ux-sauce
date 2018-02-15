@@ -1,8 +1,7 @@
 /***
  * Namespace uxs styles so we do not leak into the docs
  */
-@import 'uxs/include.tools';
-@import 'uxs/settings.variables';
+@import 'uxs/tools.functions';
 
 html {
   height: 100%;
@@ -20,20 +19,20 @@ html {
 .uxs-ns {
   height: 100%;
 }
+@import 'uxs/settings.variables';
+@import 'uxs/include.tools';
 
 .docs-demo-example,
 .uxs,
 .uxs-ns {
-  @include body-type;
-  @include content-font-size;
-  // background: $c-white;
-  // color     : $c-dark;
   @import 'uxs/include.base';
   @import 'uxs/include.vendor';
   @import 'uxs/include.elements';
   @import 'uxs/include.objects';
   @import 'uxs/include.components';
   @import 'uxs/include.trumps';
+  @include body-type;
+  @include content-font-size;
 }
 @import 'uxs/include.vendor';
 
