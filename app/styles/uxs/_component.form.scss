@@ -1,4 +1,8 @@
 .uxs-form {
+  &--white {
+    color: $c-white;
+  }
+
   &__control-row {
     display       : flex;
     flex-direction: row;

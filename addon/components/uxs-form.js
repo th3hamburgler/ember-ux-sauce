@@ -12,6 +12,9 @@ import {
 import PropTypeMixin, {
   PropTypes
 } from 'ember-prop-types';
+import {
+  equal
+} from '@ember/object/computed';
 
 export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   // Attributes
@@ -20,6 +23,8 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   layout,
   novalidate: true,
   tagName: 'form',
+  // Computed
+  isWhite: equal('style', 'white'),
   // Events
   submit(e) {
     e.preventDefault();
@@ -39,6 +44,8 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   // Methods
   init() {
     this._super(...arguments);
+
+    this.registerModifiers(['isWhite:white']);
     set(this, 'propTypes', {
       validateOnFocus: PropTypes.boolean,
     });
