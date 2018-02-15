@@ -1,0 +1,45 @@
+.uxs-pagination {
+  background-color: $c-light;
+  display         : flex;
+  flex-direction  : row;
+  height          : rem-size($baseline*2);
+  padding         : rem-size($baseline*.5);
+  justify-content : space-between;
+  width           : 100%;
+  @include mq(tablet) {
+    height : rem-size($baseline*3);
+    padding: rem-size($baseline);
+  }
+
+  &__controls,
+  &__info,
+  &__result-limit {
+    max-width: none;
+  }
+
+  &__result-limit {
+    display       : flex;
+    flex-direction: row;
+  }
+
+  &__info,
+  &__label {
+    margin-bottom: 0;
+  }
+
+  &__size {
+    margin     : 0 0 0 rem-size($baseline*0.5);
+    height     : rem-size($baseline);
+    line-height: rem-size($baseline);
+  }
+
+  &__info {
+    @include text-truncate;
+    @include mq(tablet) {
+      padding: 0 rem-size($baseline*1);
+    }
+    flex: 1 1 auto;
+  }
+
+  &__controls {}
+}

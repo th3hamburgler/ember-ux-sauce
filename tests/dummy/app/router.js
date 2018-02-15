@@ -30,6 +30,7 @@ Router.map(function() {
     });
     this.route('components', function() {
       this.route('lists');
+      this.route('pagination');
       this.route('datalists');
       this.route('avatars');
       this.route('icons');

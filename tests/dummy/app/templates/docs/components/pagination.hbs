@@ -1,0 +1,25 @@
+<h1>Pagination</h1>
+
+<p>The pagination component provides control for a paginated json api response.</p>
+
+<h2>Simple Usage</h2>
+
+<p>This example calls a controller action with the current page size and results.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="pagination"}}
+
+    {{uxs-pagination-controls
+      size=25
+      page=2
+      total=250
+      onChange=(action "paginateResults")
+    }}
+
+  {{/demo.example}}
+
+  {{demo.snippet "pagination.hbs"}}
+  {{demo.snippet "pagination.js"}}
+
+{{/docs-demo}}

@@ -1,0 +1,27 @@
+<label class={{bem b "result-limit" m}}>
+  {{uxs-detail "Results per page" class=(bem b "label" m)}}
+  <select onchange={{action "changeSize"}} class={{bem b "size" m}}>
+    <option selected={{eq size 10}}>10</option>
+    <option selected={{eq size 25}}>25</option>
+    <option selected={{eq size 50}}>50</option>
+    <option selected={{eq size 100}}>100</option>
+  </select>
+</label>
+
+{{uxs-detail (concat "Showing " start " - " end " of " total) class=(bem b "info" m)}}
+
+<div class={{bem b "controls" m}}>
+  {{uxs-icon
+    "keyboard_arrow_left"
+    inline=true
+    disabled=isPreviousButtonDisabled
+    onClick=(action "changePage" (dec page))
+  }}
+
+  {{uxs-icon
+    "keyboard_arrow_right"
+    inline=true
+    disabled=isNextButtonDisabled
+    onClick=(action "changePage" (inc page))
+  }}
+</div>
