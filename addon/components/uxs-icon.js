@@ -5,11 +5,12 @@ import Component from '@ember/component';
 import layout from '../templates/components/uxs-icon';
 import Buttonable from 'ember-ux-sauce/mixins/buttonable';
 import Clickable from 'ember-ux-sauce/mixins/clickable';
+import Styleable from 'ember-ux-sauce/mixins/styleable';
 import {
   set
 } from '@ember/object';
 
-const FormTip = Component.extend(Buttonable, Clickable, {
+const FormTip = Component.extend(Buttonable, Clickable, Styleable, {
   // Attributes
   base: 'uxs-icon',
   layout,

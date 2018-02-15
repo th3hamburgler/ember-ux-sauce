@@ -1,8 +1,16 @@
 .uxs-menu {
-  @include card-shadow(1);
-  border : rem-size(1px) solid $c-light;
-  display: table-cell; // grow to content width
-  padding: rem-size(($baseline*0.5)-1) 0;
+  &--bordered {
+    @include card-shadow(1);
+    border : rem-size(1px) solid $c-light;
+    display: table-cell; // grow to content width
+    padding: rem-size(($baseline*0.5)-1) 0;
+  }
+
+  &--horizontal {
+    display       : flex;
+    flex-direction: row;
+    max-width     : none;
+  }
 
   &__subheading {
     @include type-subheading;
@@ -24,7 +32,25 @@
     align-items: center;
 
     &:hover {
-      background-color: $c-light;
+      background-color: rgba($c-dark,0.2);
+    }
+
+    &.active {
+      font-weight: 700;
+    }
+
+    &--white {
+      color: $c-white;
+    }
+
+    &--horizontal {
+      // display     : inline-block;
+      margin-right: rem-size($baseline*0.5);
+      padding     : 0 rem-size($baseline*0.25);
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     &--disabled {
@@ -44,7 +70,7 @@
   &__left,
   &__right {
     min-height: rem-size($baseline);
-    min-width : rem-size($baseline*2);
+    min-width : rem-size($baseline);
   }
 
   &__left {
@@ -56,14 +82,15 @@
   }
 
   &__icon {
+    display    : block;
     line-height: rem-size($baseline*1.5);
 
     &--left {
-      // margin-right: rem-size($baseline*0.75);
+      margin-right: rem-size($baseline*0.25);
     }
 
     &--right {
-      // margin-left: rem-size($baseline*1.5);
+      margin-left: rem-size($baseline*0.25);
     }
   }
 
@@ -76,5 +103,13 @@
     height          : rem-size(1px);
     margin          : rem-size(($baseline/2)-0.5) 0;
     width           : 100%;
+
+    &--horizontal {
+      // display    : inline-block;
+      line-height: rem-size($baseline);
+      height     : rem-size($baseline);
+      margin     : 0 rem-size(($baseline/2)-0.5) 0 0;
+      width      : rem-size(1px);
+    }
   }
 }

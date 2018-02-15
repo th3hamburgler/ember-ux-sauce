@@ -56,6 +56,7 @@
 
   &__desktop {
     display   : none;
+    padding   : rem-size($baseline *0.25);
     visibility: hidden;
     @include mq(tablet-wide) {
       display   : block;
@@ -70,19 +71,6 @@
     }
   }
 
-  &__nav {
-    @include content-font-size;
-    margin: rem-size($baseline*0.5);
-
-    &--desktop {
-      @include detail-font-size;
-    }
-
-    .uxs-nav__item {
-      margin-bottom: rem-size($baseline*0.5);
-    }
-  }
-
   &__drawer {
     animation : slideInLeft 0.5s;
     background: $c-primary;
@@ -90,7 +78,7 @@
     width     : 80%;
     max-width : $max-width-content;
     height    : 100vh;
-    padding   : rem-size($baseline*0.5);
+    padding   : rem-size($baseline*0.5) rem-size($baseline*0.25);
     overflow  : auto;
   }
 

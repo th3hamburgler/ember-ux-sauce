@@ -2,19 +2,21 @@
   subheading=(component "uxs-subheading" base="uxs-menu__subheading")
   item=(
     component
-    "uxs-nav-item"
-    base="uxs-menu__item"
+    "uxs-menu/item"
     hasRightIcon=hasRightIcon
     hasLeftIcon=hasLeftIcon
     hasSecondaryText=hasSecondaryText
+    style=style
+    horizontal=horizontal
   )
   link=(
     component
-    "uxs-nav-link"
-    base="uxs-menu__item"
+    "uxs-menu/link"
     hasRightIcon=hasRightIcon
     hasLeftIcon=hasLeftIcon
     hasSecondaryText=hasSecondaryText
+    style=style
+    horizontal=horizontal
   )
-  divider=(component "uxs-div" class=(bem b "divider" m))
+  divider=(component "uxs-div" class=(bem b "divider" m) style=style horizontal=horizontal)
 )}}

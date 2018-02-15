@@ -1,24 +1,17 @@
-import Component from '@ember/component';
-import layout from '../templates/components/uxs-nav-item';
-import Clickable from 'ember-ux-sauce/mixins/clickable';
+import LinkComponent from '@ember/routing/link-component';
+import layout from '../../templates/components/uxs-menu/link';
+import Styleable from 'ember-ux-sauce/mixins/styleable';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import {
-  computed
-} from '@ember/object';
-import {
+  computed,
   get
 } from '@ember/object';
 
-const NavItem = Component.extend(BEMComponent, Clickable, Testable, {
+export default LinkComponent.extend(BEMComponent, Styleable, Testable, {
   // Attributes
-  base: 'uxs-nav__item',
+  base: 'uxs-menu__item',
   layout,
-  // Methods
-  init() {
-    this._super(...arguments);
-    this.registerModifiers(['disabled']);
-  },
   // Computed
   showRightIcon: computed('hasRightIcon', 'rightIcon', 'hasSecondaryText', 'secondaryText', function() {
     return get(this, 'hasRightIcon') || get(this, 'rightIcon') || get(this, 'hasSecondaryText') || get(this, 'secondaryText');
@@ -26,10 +19,12 @@ const NavItem = Component.extend(BEMComponent, Clickable, Testable, {
   showLeftIcon: computed('hasLeftIcon', 'leftIcon', function() {
     return get(this, 'hasLeftIcon') || get(this, 'leftIcon');
   }),
+  // Methods
+  init() {
+    this.registerModifiers([
+      'detail',
+      'horizontal',
+    ])
+    this._super(...arguments);
+  },
 });
-
-NavItem.reopenClass({
-  positionalParams: ['textLabel']
-});
-
-export default NavItem;

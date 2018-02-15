@@ -56,6 +56,6 @@ export default Mixin.create({
   // Methods
   init() {
     this._super(...arguments);
-    this.registerModifiers(['hasClickAction:clickable'])
+    this.registerModifiers(['disabled', 'hasClickAction:clickable'])
   },
 });
