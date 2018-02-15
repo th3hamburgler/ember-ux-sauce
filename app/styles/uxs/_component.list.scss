@@ -1,7 +1,11 @@
 .uxs-list {
   &__subheading {
     @include type-subheading;
-    padding: rem-size($baseline*.75) 0 rem-size($baseline*0.25);
+    padding: rem-size($baseline*.75) rem-size($baseline*0.5) rem-size($baseline*0.25);
+    @include mq(tablet-wide) {
+      padding-left : rem-size($baseline*1);
+      padding-right: rem-size($baseline*1);
+    }
 
     &--bordered {
       border-bottom: rem-size(1px) solid $c-light;
@@ -16,6 +20,10 @@
   display       : flex;
   flex-direction: row;
   padding       : rem-size($baseline * 0.5) rem-size($baseline * 0.5);
+  @include mq(tablet-wide) {
+    padding-left : rem-size($baseline*1);
+    padding-right: rem-size($baseline*1);
+  }
 
   &--bordered {
     border-bottom: rem-size(1px) solid $c-light;
