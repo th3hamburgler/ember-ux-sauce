@@ -1,0 +1,22 @@
+<h1>Preamble</h1>
+
+<p>This component can be used to display some key info to a user before the main content is displayed.</p>
+
+<h2>Simple Usage</h2>
+
+<p>Let's look at a basic example with an icon and text message.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="preamble"}}
+
+    {{#uxs-preamble as |pre|}}
+      {{pre.icon "date_range"}}
+      {{pre.content "Grey squares denotes employee is scheduled to work a shift on that date."}}
+    {{/uxs-preamble}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "preamble.hbs"}}
+
+{{/docs-demo}}

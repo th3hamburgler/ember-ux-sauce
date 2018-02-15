@@ -1,0 +1,31 @@
+.uxs-preamble {
+  background    : $c-light;
+  display       : flex;
+  flex-direction: row;
+  padding       : rem-size($baseline*0.5);
+  width         : 100%;
+  @include mq(tablet) {
+    padding: rem-size($baseline);
+  }
+
+  &__icon {
+    align-items : center;
+    color       : $c-grey;
+    display     : flex;
+    margin-right: rem-size($baseline*0.5);
+    @include mq(tablet) {
+      margin-right: rem-size($baseline);
+    }
+  }
+
+  &__content {
+    @include type-detail;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include mq(tablet) {
+      @include type-content;
+    }
+  }
+}
