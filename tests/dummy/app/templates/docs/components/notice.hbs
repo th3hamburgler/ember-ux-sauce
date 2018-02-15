@@ -1,0 +1,24 @@
+<h1>Notice</h1>
+
+<p>This component can be used to display notices to the use in a variaty of styles...</p>
+
+<h2>Simple Usage</h2>
+
+<p>Let's look at a basic example of a notice.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="notice"}}
+
+    {{uxs-notice "This is a standard notice"}}
+    {{uxs-notice "This is a primary notice" style="primary"}}
+    {{uxs-notice "This is a error notice" style="error"}}
+    {{uxs-notice "This is a warning notice" style="warning"}}
+    {{uxs-notice "This is a accent notice" style="accent"}}
+    {{uxs-notice "This is a very very very long notice and the text will be truncated if it exceeds the sixty character length"}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "notice.hbs"}}
+
+{{/docs-demo}}

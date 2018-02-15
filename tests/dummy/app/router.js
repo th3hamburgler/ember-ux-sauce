@@ -36,6 +36,7 @@ Router.map(function() {
       this.route('icons');
       this.route('menus');
       this.route('preamble');
+      this.route('notice');
     });
     this.route('typography', function() {
       this.route('lists');

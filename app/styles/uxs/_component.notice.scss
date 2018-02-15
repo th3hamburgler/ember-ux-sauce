@@ -1,0 +1,29 @@
+.uxs-notice {
+  @include type-content;
+  @include text-truncate;
+  background   : $c-mid;
+  padding      : rem-size($baseline*0.5);
+  margin-bottom: rem-size($baseline);
+  clear        : both;
+  width        : 100%;
+
+  &--warning {
+    background: $c-warning;
+    color     : $c-white;
+  }
+
+  &--error {
+    background: $c-error;
+    color     : $c-white;
+  }
+
+  &--primary {
+    background: $c-primary;
+    color     : $c-white;
+  }
+
+  &--accent {
+    background: $c-accent;
+    color     : $c-white;
+  }
+}
