@@ -6,6 +6,7 @@
   margin-bottom: rem-size($baseline);
   clear        : both;
   width        : 100%;
+  color        : $c-white;
 
   &--warning {
     background: $c-warning;
