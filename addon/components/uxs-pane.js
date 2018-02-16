@@ -18,6 +18,7 @@ export default Component.extend(BEMComponent, Testable, {
       'main',
       'single',
       'splash',
+      'padded',
     ]);
   },
 });
