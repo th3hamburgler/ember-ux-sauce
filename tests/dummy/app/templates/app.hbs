@@ -4,7 +4,7 @@
 
     {{#uxs-navbar fixed=true name="AppName" as |bar|}}
       {{#bar.desktopNav as |nav|}}
-        {{#nav.menu as |menu|}}
+        {{#nav.menu detail=true as |menu|}}
           {{menu.link "Docs" "docs" rightIcon="book"}}
           {{menu.link "Api" "docs"}}
           {{menu.link "Dashboard" "app.dash"}}

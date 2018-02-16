@@ -6,6 +6,10 @@
     padding: rem-size(($baseline*0.5)-1) 0;
   }
 
+  &--detail {
+    @include detail-font-size;
+  }
+
   &--horizontal {
     display       : flex;
     flex-direction: row;
