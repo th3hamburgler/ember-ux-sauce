@@ -1,7 +1,7 @@
 {{#if showLeftIcon}}
 <div class={{bem "uxs-menu" "left" m}}>
   {{#if leftIcon}}
-    {{uxs-icon leftIcon class=(concat (bem "uxs-menu" "icon" m) " uxs-menu__icon--left")}}
+    {{uxs-icon leftIcon style=style class=(concat (bem "uxs-menu" "icon" m) " uxs-menu__icon--left")}}
   {{/if}}
 </div>
 {{/if}}
@@ -11,7 +11,7 @@
 {{#if showRightIcon}}
 <div class={{bem "uxs-menu" "right" m}}>
   {{#if rightIcon}}
-    {{uxs-icon rightIcon class=(concat (bem "uxs-menu" "icon" m) " uxs-menu__icon--right")}}
+    {{uxs-icon rightIcon style=style class=(concat (bem "uxs-menu" "icon" m) " uxs-menu__icon--right")}}
   {{/if}}
   {{#if secondaryText}}
     <div class={{bem "uxs-menu" "secondary-text" m}}>{{secondaryText}}</div>
