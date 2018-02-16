@@ -14,6 +14,7 @@ export default Component.extend(BEMComponent, Styleable, Testable, {
     this.registerModifiers([
       'detail',
       'horizontal',
+      'bordered',
     ])
     this._super(...arguments);
   },
@@ -21,6 +22,7 @@ export default Component.extend(BEMComponent, Styleable, Testable, {
     return {
       align: 'left',
       detail: false,
+      bordered: true,
     };
   },
 });
