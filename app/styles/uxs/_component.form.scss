@@ -125,7 +125,7 @@
 
   &__error,
   &__warning {
-    @extend .content;
+    @include type-content;
     @include transition-all;
     @include text-truncate($max-width-content);
     animation  : slideIn $transition-duration 1;
@@ -134,6 +134,9 @@
     line-height: rem-size($baseline*1.5);
     clear      : both;
     width      : 100%;
+    @include mq(tablet, 'max') {
+      @include type-detail;
+    }
   }
 
   &__error {
