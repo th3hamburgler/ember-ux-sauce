@@ -74,7 +74,7 @@
     &--date,
     &--datetime,
     &--time {
-      padding: rem-size(($baseline*.25) - 2px) !important;
+      padding: rem-size(($baseline*.25) - 1px) rem-size(($baseline*.25) - 2px);
     }
 
     &--error:not([type=checkbox]):not([type=radio]) {
