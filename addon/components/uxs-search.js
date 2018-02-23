@@ -3,8 +3,12 @@ import layout from '../templates/components/uxs-search';
 // import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import {
+  get,
   set
 } from '@ember/object';
+import {
+  isEmpty
+} from '@ember/utils';
 
 export default Component.extend(BEMComponent, {
   // Attributes
@@ -17,6 +21,12 @@ export default Component.extend(BEMComponent, {
   init() {
     this._super(...arguments);
     this.registerModifiers(['showSearch:open']);
+  },
+  didReceiveAttrs() {
+    this._super(...arguments);
+    if (!isEmpty(get(this, 'value'))) {
+      set(this, 'showSearch', true);
+    }
   },
   // Actions
   actions: {
