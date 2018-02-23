@@ -3,6 +3,9 @@ import layout from '../templates/components/uxs-menu';
 import Styleable from 'ember-ux-sauce/mixins/styleable';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
+import {
+  set
+} from '@ember/object';
 
 export default Component.extend(BEMComponent, Styleable, Testable, {
   // Attributes
@@ -25,4 +28,11 @@ export default Component.extend(BEMComponent, Styleable, Testable, {
       bordered: true,
     };
   },
+  // Actions
+  actions: {
+    closeMobileNav() {
+      set(this, 'isShowingNav', false);
+      return true
+    }
+  }
 });
