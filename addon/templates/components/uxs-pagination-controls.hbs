@@ -1,5 +1,5 @@
 <label class={{bem b "result-limit" m}}>
-  {{uxs-detail "Results per page" class=(bem b "label" m)}}
+  {{uxs-detail resultsText class=(bem b "label" m)}}
   <select onchange={{action "changeSize"}} class={{bem b "size" m}}>
     <option selected={{eq size 10}}>10</option>
     <option selected={{eq size 25}}>25</option>
@@ -8,7 +8,7 @@
   </select>
 </label>
 
-{{uxs-detail (concat "Showing " start " - " end " of " total) class=(bem b "info" m)}}
+{{uxs-detail (concat countPrefix start " - " end " of " total) class=(bem b "info" m)}}
 
 <div class={{bem b "controls" m}}>
   {{uxs-icon

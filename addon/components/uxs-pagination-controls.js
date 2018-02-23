@@ -13,6 +13,8 @@ export default Component.extend(BEMComponent, Testable, {
   // Attributes
   base: 'uxs-pagination',
   layout,
+  resultsText: "Results per page",
+  countPrefix: "",
   // Computed
   pages: computed('total', 'size', function() {
     return get(this, 'total') / get(this, 'size');
