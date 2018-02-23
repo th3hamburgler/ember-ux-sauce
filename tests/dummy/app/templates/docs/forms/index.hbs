@@ -19,7 +19,7 @@
 
       {{/form.control}}
 
-      {{form.control label="Email" name="email" type="email"}}
+      {{form.control label="Email" name="email" type="email" tip="Valid emails only please."}}
 
       {{#form.control label="Gender" as |control|}}
         {{#control.dropdown
@@ -36,7 +36,7 @@
 
       {{form.control label="Biography" name="bio" type="textarea" rows=5}}
 
-      {{#form.control label="Date of Birth" name="dateOfBirth" type="date" as |control|}}
+      {{#form.control label="Date of Birth" tip="Consectetur consectetur mattis vestibulum potenti vestibulum metus viverra etiam quis ullamcorper venenatis urna mollis mauris et quis viverra bibendum nam." name="dateOfBirth" type="date" as |control|}}
 
         {{#control.row as |row|}}
           {{row.icon 'date_range' prefix=true}}

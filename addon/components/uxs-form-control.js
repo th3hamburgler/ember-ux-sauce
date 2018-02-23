@@ -23,8 +23,12 @@ import layout from '../templates/components/uxs-form-control';
 export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   // Attributes
   base: 'uxs-form__control',
+  classNameBindings: ['typeClass'],
   layout,
   // Computed
+  typeClass: computed('base', 'type', function() {
+    return `${get(this, 'base')}--${get(this, 'type')}`;
+  }),
   hasError: bool('error'),
   hasTextInput: computed('type', function() {
     let textInputs = A([

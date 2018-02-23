@@ -13,8 +13,8 @@
     display      : block;
     margin-bottom: rem-size($baseline*.5);
     overflow     : hidden;
-    padding-bottom:: rem-size($baseline*1.5);
     position     : relative;
+    min-height   : rem-size($baseline*4.5);
 
     &--inline {
       @include mq(tablet) {
@@ -69,12 +69,17 @@
     &--time,
     &--url {
       @include input-base;
+      margin-bottom: 0;
     }
 
     &--date,
     &--datetime,
     &--time {
       padding: rem-size(($baseline*.25) - 1px) rem-size(($baseline*.25) - 2px);
+    }
+
+    &--dropdown {
+      margin-bottom: 0;
     }
 
     &--error:not([type=checkbox]):not([type=radio]) {
@@ -113,9 +118,8 @@
   }
 
   &__error,
-  &__tip,
   &__warning {
-    bottom  : 1px;
+    top     : rem-size($baseline*3);
     position: absolute;
   }
 
@@ -125,7 +129,7 @@
     @include transition-all;
     @include text-truncate($max-width-content);
     animation  : slideIn $transition-duration 1;
-    //margin     : rem-size($baseline*0.5) 0 0;
+    margin     : 0;
     padding    : 0 rem-size($baseline*0.5);
     line-height: rem-size($baseline*1.5);
     clear      : both;
@@ -148,10 +152,28 @@
     clear    : both;
     padding  : 0;
     max-width: $max-width-content;
+    margin   : 0;
 
     &--toggle {
       padding   : 0 rem-size(30px) rem-size($baseline*0.5);
       margin-top: rem-size($baseline*-0.5);
     }
+
+    &--error {
+      visibility: hidden;
+    }
+  }
+}
+
+.uxs-form__control--textarea {
+  .uxs-form__error,
+  .uxs-form__warning {
+    top     : auto;
+    position: relative;
+  }
+
+  .uxs-form__tip--error {
+    display   : none;
+    visibility: hidden;
   }
 }

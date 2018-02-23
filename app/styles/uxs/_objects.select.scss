@@ -8,6 +8,7 @@ body {
     border-radius   : 0;
     color           : $c-white;
     font-weight     : 700;
+    margin-bottom   : 0;
     min-height      : rem-size($baseline*1.5);
     padding         : rem-size(($baseline*.25) - 1px) rem-size(($baseline*.75) - 1px);
     @include input-glow {
