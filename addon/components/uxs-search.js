@@ -24,6 +24,7 @@ export default Component.extend(BEMComponent, {
   },
   didReceiveAttrs() {
     this._super(...arguments);
+    // If we have a search term, set the showSearch state
     if (!isEmpty(get(this, 'value'))) {
       set(this, 'showSearch', true);
     }
@@ -35,6 +36,8 @@ export default Component.extend(BEMComponent, {
     },
     closeSearch() {
       set(this, 'showSearch', false);
+      // Remove search term on close
+      set(this, 'value', '');
     }
   }
 });
