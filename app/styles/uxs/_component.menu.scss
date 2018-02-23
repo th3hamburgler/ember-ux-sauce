@@ -1,3 +1,7 @@
+body.ember-tether-enabled {
+  overflow: hidden;
+}
+
 .uxs-menu {
   &--bordered {
     @include card-shadow(1);
