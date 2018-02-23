@@ -136,6 +136,7 @@
     width      : 100%;
     @include mq(tablet, 'max') {
       @include type-detail;
+      max-width: $max-width-content;
     }
   }
 
