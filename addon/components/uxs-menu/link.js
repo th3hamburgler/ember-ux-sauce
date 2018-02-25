@@ -5,7 +5,8 @@ import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import {
   computed,
-  get
+  get,
+  set
 } from '@ember/object';
 
 export default LinkComponent.extend(BEMComponent, Styleable, Testable, {
@@ -26,5 +27,11 @@ export default LinkComponent.extend(BEMComponent, Styleable, Testable, {
       'horizontal',
     ])
     this._super(...arguments);
+  },
+  click() {
+    this._super(...arguments);
+    if (get(this, 'showingModal') === true) {
+      set(this, 'showingModal', false);
+    }
   },
 });

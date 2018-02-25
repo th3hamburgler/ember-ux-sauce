@@ -8,7 +8,8 @@ import {
   computed
 } from '@ember/object';
 import {
-  get
+  get,
+  set
 } from '@ember/object';
 
 const NavItem = Component.extend(BEMComponent, Clickable, Styleable, Testable, {
@@ -29,6 +30,12 @@ const NavItem = Component.extend(BEMComponent, Clickable, Styleable, Testable, {
       'horizontal',
     ])
     this._super(...arguments);
+  },
+  click() {
+    this._super(...arguments);
+    if (get(this, 'showingModal') === true) {
+      set(this, 'showingModal', false);
+    }
   },
 });
 
