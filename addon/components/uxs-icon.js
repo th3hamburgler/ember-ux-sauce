@@ -32,7 +32,7 @@ const FormTip = Component.extend(Buttonable, Clickable, Styleable, {
   },
   getDefaultProps() {
     return {
-      style: 'black',
+      style: null,
     };
   },
 });
