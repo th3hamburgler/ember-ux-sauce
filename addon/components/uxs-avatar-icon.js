@@ -2,11 +2,12 @@ import Component from '@ember/component';
 import layout from '../templates/components/uxs-avatar-icon';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import Testable from 'ember-ux-sauce/mixins/testable';
+import Styleable from 'ember-ux-sauce/mixins/styleable';
 import {
   equal,
 } from '@ember/object/computed';
 
-const IconAvatar = Component.extend(BEMComponent, Testable, {
+const IconAvatar = Component.extend(BEMComponent, Styleable, Testable, {
   base: 'uxs-icon-avatar',
   layout,
   // Computed
