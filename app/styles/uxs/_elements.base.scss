@@ -21,9 +21,14 @@ html {
 }
 
 .ember-application {
-  height: 100%;
+  min-height: 100vh!important;
+  height    : auto!important;
+  overflow  : auto!important;
 
   > .ember-view {
-    height: 100%;
+    &:not(.liquid-destination) {
+      min-height: 100vh!important;
+      height    : auto!important;
+    }
   }
 }

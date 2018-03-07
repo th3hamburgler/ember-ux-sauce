@@ -5,17 +5,7 @@ html {
   min-height: 100vh;
 }
 // Disable the close icon on inputs in IE
+
 ::-ms-clear {
   display: none;
-}
-
-.ember-application {
-  min-height: 100vh!important;
-  height    : auto!important;
-  overflow  : auto!important;
-
-  > .ember-view {
-    min-height: 100vh!important;
-    height    : auto!important;
-  }
 }
