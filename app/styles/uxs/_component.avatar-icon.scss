@@ -17,4 +17,32 @@
   &--selected {
     background-color: $c-accent;
   }
+
+  &--small {
+    $size      : rem-size($baseline*1);
+    line-height: $size;
+    height     : $size;
+    width      : $size;
+  }
+
+  &--large {
+    $size      : rem-size($baseline*3);
+    line-height: $size;
+    height     : $size;
+    width      : $size;
+  }
+
+  &--huge {
+    $size      : rem-size($baseline*4);
+    line-height: $size;
+    height     : $size;
+    width      : $size;
+  }
+
+  &--giant {
+    $size      : rem-size($baseline*6);
+    line-height: $size;
+    height     : $size;
+    width      : $size;
+  }
 }
