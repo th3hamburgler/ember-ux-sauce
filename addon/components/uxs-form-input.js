@@ -30,6 +30,9 @@ export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testabl
   isTel: equal('type', 'tel'),
   isText: equal('type', 'text'),
   isURL: equal('type', 'url'),
+  isWeek: equal('type', 'week'),
+  isMonth: equal('type', 'month'),
+  isYear: equal('type', 'year'),
   // Methods
   init() {
     this._super(...arguments);
@@ -54,6 +57,9 @@ export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testabl
       'isTel:tel',
       'isText:text',
       'isURL:url',
+      'isWeek:week',
+      'isMonth:month',
+      'isYear:year',
       'warning',
     ]);
   },
@@ -79,7 +85,7 @@ export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testabl
    */
   initPropTypes() {
     set(this, 'propTypes', {
-      type: PropTypes.oneOf(['email', 'hidden', 'number', 'password', 'search', 'tel', 'text', 'url']),
+      type: PropTypes.oneOf(['email', 'hidden', 'number', 'password', 'search', 'tel', 'text', 'url', 'week', 'month', 'year']),
       disabled: PropTypes.boolean,
       error: PropTypes.boolean,
       success: PropTypes.boolean,

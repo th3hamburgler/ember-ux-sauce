@@ -58,9 +58,11 @@
   }
 
   &__input {
+    ,
     &--date,
     &--datetime,
     &--email,
+    &--month,
     &--number,
     &--password,
     &--search,
@@ -68,7 +70,9 @@
     &--text,
     &--textarea,
     &--time,
-    &--url {
+    &--url,
+    &--week,
+    &--year {
       @include input-base;
       margin: 0;
     }
