@@ -1,101 +1,100 @@
-import Component from '@ember/component';
-import layout from '../templates/components/uxs-form';
-import Testable from 'ember-ux-sauce/mixins/testable';
-import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
-import {
-  get,
-  set,
-} from '@ember/object';
-import {
-  computed
-} from '@ember/object';
 import PropTypeMixin, {
   PropTypes
 } from 'ember-prop-types';
 import {
+  defineProperty,
+  set
+} from '@ember/object';
+import {
+  alias,
+  oneWay
+} from '@ember/object/computed';
+import Accessible from 'ember-ux-sauce/mixins/accessible';
+import Testable from 'ember-ux-sauce/mixins/testable';
+import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
+import TextField from '@ember/component/text-field';
+import {
   equal
 } from '@ember/object/computed';
 
-export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
+
+export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testable, {
   // Attributes
-  attributeBindings: ['novalidate'],
-  base: 'uxs-form',
-  layout,
-  novalidate: true,
-  tagName: 'form',
+  base: 'uxs-form__input',
   // Computed
-  isWhite: equal('style', 'white'),
-  // Events
-  submit(e) {
-    e.preventDefault();
-    if (!get(this, 'disabled')) {
-      let action = get(this, 'onSubmit'),
-        results = this.validate();
-      if (results === true && action) {
-        action();
-      } else {
-        let invalidAction = get(this, 'onInvalid');
-        if (invalidAction) {
-          invalidAction(results);
-        }
-      }
-    }
-  },
+  isEmail: equal('type', 'email'),
+  isWeek: equal('type', 'week'),
+  isMonth: equal('type', 'month'),
+  isYear: equal('type', 'year'),
+  isHidden: equal('type', 'hidden'),
+  isNumber: equal('type', 'number'),
+  isPassword: equal('type', 'password'),
+  isSearch: equal('type', 'search'),
+  isTel: equal('type', 'tel'),
+  isText: equal('type', 'text'),
+  isURL: equal('type', 'url'),
   // Methods
   init() {
     this._super(...arguments);
+    this.initModifiers();
+    this.initModelComputedProperties();
+    this.initPropTypes()
+  },
+  /**
+   * Set the properties to bind to BEM modifier classes
+   */
+  initModifiers() {
+    this.registerModifiers([
+      'disabled',
+      'isEmail:email',
+      'error',
+      'isHidden:hidden',
+      'inline',
+      'isNumber:number',
+      'isPassword:password',
+      'isSearch:search',
+      'success',
+      'isTel:tel',
+      'isText:text',
+      'isURL:url',
+      'warning',
+      'isWeek:week',
+      'isMonth:month',
+      'isYear:year',
+    ]);
+  },
+  /**
+   * If this control has a model and name defined
+   * we create an alias for the bound value.
+   * We also create a one way computed property to
+   * read the current validation state of the property.
+   */
+  initModelComputedProperties() {
+    let model = this.get('model'),
+      propName = this.get('name');
 
-    this.registerModifiers(['isWhite:white']);
+    if (model && propName) {
+      defineProperty(this, 'validator', oneWay(`model.validations.attrs.${propName}`));
+      // map the value to mode.property - this can be overridden by passing value
+      // property into this component
+      defineProperty(this, 'value', alias(`model.${propName}`));
+    }
+  },
+  /**
+   * Set the prop type definitions
+   */
+  initPropTypes() {
     set(this, 'propTypes', {
-      validateOnFocus: PropTypes.boolean,
+      type: PropTypes.oneOf(['email', 'hidden', 'number', 'password', 'search', 'tel', 'text', 'url', 'week', 'month', 'year']),
+      disabled: PropTypes.boolean,
+      error: PropTypes.boolean,
+      success: PropTypes.boolean,
+      warning: PropTypes.boolean,
     });
   },
   getDefaultProps() {
     return {
-      validateOnFocus: true,
+      type: 'text',
     };
   },
-  /**
-   * Validate child form control components
-   **/
-  validate: function() {
-    let errorMessages = [],
-      formControls = this.get('childFormControls');
-
-    formControls.forEach(
-      function(formControl) {
-        if (formControl.get('validator') && !formControl.get('validator.isValid')) {
-          let errors = {
-            name: formControl.get('name'),
-            messages: formControl.get('validator.errors').mapBy('message'),
-            message: formControl.get('validator.errors').mapBy('message').join(', '),
-          };
-          errorMessages.push(errors);
-        }
-        formControl.set('didValidate', true);
-      }
-    );
-
-    if (errorMessages.length !== 0) {
-      return errorMessages;
-    }
-    return true;
-  },
-  /**
-   * Find all child form components to be validated
-   **/
-  childFormControls: computed('childViews', function() {
-    let findChildFormControls = function(thisComponent) {
-      let childViews = thisComponent.get('childViews'),
-        childFormControls = childViews.filter((childView) => {
-          return childView.element.className.match('uxs-form__control') ? true : false;
-        });
-      // look for nested children
-      // childViews.forEach(function(childView) {
-      //   childFormControls.addObjects(findChildFormControls(childView));
-      // });
-      return childFormControls;
-    };
-    return findChildFormControls(this);
-  }),
 });
