@@ -1,7 +1,7 @@
 {
   "name": "ember-ux-sauce",
   "version": "0.1.8",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "A Collection of UI components for ember",
   "keywords": [
     "ember-addon"
   ],
@@ -30,6 +30,7 @@
     "ember-modal-dialog": "^2.4.1",
     "ember-power-select": "^2.0.0-beta.0",
     "ember-prop-types": "^6.0.1",
+    "ember-svg-jar": "^0.12.0",
     "ember-test-selectors": "^0.3.8",
     "ember-tether": "^1.0.0-beta.1",
     "reset-css": "^2.2.1"
