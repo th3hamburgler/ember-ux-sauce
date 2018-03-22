@@ -5,6 +5,6 @@
 <div class="{{bem b "body" m}}">
 {{yield (hash
   toolbar=(component "uxs-toolbar" class=(bem b "toolbar" m))
-  title=(component "uxs-heading" class=(bem b "title" m))
+  title=(component "uxs-heading" base=(concat b "__title"))
 )}}
 </div>
