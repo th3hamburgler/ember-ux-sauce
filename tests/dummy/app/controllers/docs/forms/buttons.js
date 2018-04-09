@@ -10,7 +10,7 @@ export default Controller.extend({
   naked: false,
   name: 'my-button',
   selected: false,
-  style: 'primary',
+  style: '',
   // Actions
   // BEGIN-SNIPPET button-action
   actions: {

@@ -144,6 +144,13 @@
     }
   }
 }
+@mixin border-color-modifiers($colors:$defaultColors) {
+  @each $modifier, $color in $colors {
+    &--#{$modifier} {
+      border-color: $color;
+    }
+  }
+}
 @mixin size-modifiers($sizes:$defaultSizes, $line-heights:$defaultLineHights, $mod:0) {
   @each $modifier, $size in $sizes {
     &--#{$modifier} {

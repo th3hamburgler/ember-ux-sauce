@@ -1,15 +1,48 @@
 .uxs-notice {
   @include type-content;
   @include background-color-modifiers();
-  background   : $c-mid;
-  padding      : rem-size($baseline*0.5);
-  margin-bottom: rem-size($baseline);
-  clear        : both;
-  max-width    : 100%;
-  color        : $c-white;
-  width        : 100%;
+  background     : $c-mid;
+  clear          : both;
+  color          : $c-white;
+  display        : flex;
+  flex-direction : row;
+  margin-bottom  : rem-size($baseline);
+  max-width      : 100%;
+  padding        : rem-size($baseline*0.5);
+  width          : 100%;
+  align-items    : flex-start;
+  justify-content: space-between;
 
   &--truncated {
     @include text-truncate
   }
+
+  &--has-text {
+    display: block;
+  }
+}
+
+.uxs-notice__text {
+  flex: 1 1 auto;
+
+  &--truncated {
+    @include text-truncate
+  }
+}
+
+.uxs-notice__icon {
+  @extend .uxs-icon;
+  flex-basis: auto;
+
+  &--prefix {
+    margin-right: rs(0.5);
+  }
+
+  &--suffix {
+    margin-left: rs(0.5);
+  }
+}
+
+.uxs-notice__button {
+  @extend .uxs-button;
 }
