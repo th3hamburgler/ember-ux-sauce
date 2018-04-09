@@ -7,12 +7,12 @@
   // text-transform: uppercase;
   margin-right: rem-size($baseline*0.25);
   padding     : 0 rem-size($baseline*0.375);
+  @include background-color-modifiers();
 
   &--rounded {
     border-radius: rem-size($baseline*0.75);
   }
-  @include background-color-modifiers();
-  // @include size-modifiers($mod:1px);
+
   &--tiny {
     font-size    : $s-tiny;
     line-height  : rs(0.5);

@@ -2,9 +2,8 @@ import Component from '@ember/component';
 import layout from '../templates/components/uxs-pill';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import Testable from '../mixins/testable';
-import Styleable from '../mixins/styleable';
 
-const Pill = Component.extend(BEMComponent, Styleable, Testable, {
+const Pill = Component.extend(BEMComponent, Testable, {
   base: 'uxs-pill',
   layout,
   // Methods

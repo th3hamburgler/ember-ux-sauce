@@ -10,15 +10,37 @@
 
   {{#demo.example name="notice"}}
 
-    {{uxs-notice "This is a standard notice"}}
-    {{uxs-notice "This is a primary notice" style="primary"}}
-    {{uxs-notice "This is a error notice" style="error"}}
-    {{uxs-notice "This is a warning notice" style="warning"}}
-    {{uxs-notice "This is a accent notice" style="accent"}}
-    {{uxs-notice "This is a very very very long notice and the text will be truncated if it exceeds the sixty character length"}}
+    {{uxs-notice text style=style truncated=truncated}}
+    {{uxs-notice "This is a primary notice" style="primary" truncated=truncated}}
+    {{uxs-notice "This is a error notice" style="error" truncated=truncated}}
+    {{uxs-notice "This is a warning notice" style="warning" truncated=truncated}}
+    {{uxs-notice "This is a accent notice" style="accent" truncated=truncated}}
+    {{uxs-notice "This is a very very very long notice and the text will be truncated if it exceeds the sixty character length" style=style truncated=truncated}}
 
   {{/demo.example}}
 
   {{demo.snippet "notice.hbs"}}
 
 {{/docs-demo}}
+
+<h2>Properties</h2>
+
+<p>Now explore the various properties available in this component:</p>
+
+<table class="docs-args-table">
+  <tr>
+    <td>text<span class="req">*</span></td>
+    <td>{{input placeholder="Pill Text" value=text}}</td>
+    <td><em>String</em></td>
+  </tr>
+  <tr>
+    <td>style</td>
+    <td>{{input placeholder="Style" value=style}}</td>
+    <td><em>String</em></td>
+  </tr>
+  <tr>
+    <td>truncated</td>
+    <td>{{docs-toggle value=truncated}}</td>
+    <td><em>Boolean</em></td>
+  </tr>
+</table>
