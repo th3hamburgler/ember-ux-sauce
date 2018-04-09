@@ -1,55 +1,3 @@
-@mixin align-modifiers {
-  &--left {
-    text-align: left;
-  }
-
-  &--right {
-    text-align: right;
-  }
-
-  &--center {
-    text-align: center;
-  }
-
-  &--justify {
-    text-align: justify;
-  }
-}
-@mixin color-modifiers {
-  &--c-primary {
-    color: $c-primary;
-  }
-
-  &--c-accent {
-    color: $c-accent;
-  }
-
-  &--c-alert {
-    color: $c-error;
-  }
-
-  &--c-warning {
-    color: $c-warning;
-  }
-}
-@mixin background-color-modifiers {
-  &--bg-primary {
-    background-color: $c-primary;
-  }
-
-  &--bg-accent {
-    background-color: $c-accent;
-  }
-
-  &--bg-alert {
-    background-color: $c-error;
-  }
-
-  &--bg-warning {
-    background-color: $c-warning;
-  }
-}
-
 .italic {
   font-style: italic;
 }
@@ -103,7 +51,7 @@
   @include type-heading;
   @include align-modifiers;
   @include background-color-modifiers;
-  @include color-modifiers;
+  @include text-color-modifiers;
 
   &--giant {
     font-size  : rem-size($s-giant);
@@ -120,14 +68,14 @@
   @include type-subheading;
   @include align-modifiers;
   @include background-color-modifiers;
-  @include color-modifiers;
+  @include text-color-modifiers;
 }
 
 .content {
   @include type-content;
   @include align-modifiers;
   @include background-color-modifiers;
-  @include color-modifiers;
+  @include text-color-modifiers;
   margin-bottom: rem-size($baseline);
 }
 
@@ -135,7 +83,7 @@
   @include type-detail;
   @include align-modifiers;
   @include background-color-modifiers;
-  @include color-modifiers;
+  @include text-color-modifiers;
   margin-bottom: rem-size($baseline);
 }
 

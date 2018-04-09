@@ -16,6 +16,12 @@ a {
     text-decoration: none;
   }
 }
+
+.clear:after {
+  content: "";
+  display: table;
+  clear  : both;
+}
 //
 // b,
 // em,

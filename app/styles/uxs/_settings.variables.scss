@@ -5,6 +5,10 @@
  @namespace Styles
  @public
 */
+/*
+ * Sizes
+ */
+$baseline: 25px!default; //
 /**
  Is this a high contrast theme
  ---
@@ -44,13 +48,26 @@ $s-large: 29.124px!default;
 $s-medium: 18px!default;
 $s-small: 11.125px!default;
 $s-tiny: 6.876px!default;
+/* Sizes used as style modifiers */
+$defaultSizes: (
+  "giant" : $s-giant,
+  "huge"  : $s-huge,
+  "large" : $s-large,
+  "medium": $s-medium,
+  "small" : $s-small,
+  "tiny"  : $s-tiny,
+);
+$defaultLineHights: (
+  "giant" : $baseline*3,
+  "huge"  : $baseline*2,
+  "large" : $baseline*2,
+  "medium": $baseline*1,
+  "small" : $baseline*1,
+  "tiny"  : $baseline*1,
+);
 $s-sk-medium: 15px!default;
 $max-width-content: rem-size(480px)!default;
 $max-width-detail: rem-size(320px)!default;
-/*
- * Sizes
- */
-$baseline: 25px!default; //
 /*
  * Colors https://coolors.co/1c77c3-141414-5fad56-eca400-db3a34
  */
@@ -98,6 +115,16 @@ $c-warning-2: shade-light($c-warning, 1)!default;
 $c-warning-3: shade-light($c-warning, 2)!default;
 $c-warning-4: shade-light($c-warning, 3)!default;
 $c-warning-5: shade-light($c-warning, 4)!default;
+/* Colors used as style modifiers */
+$defaultColors: (
+  "primary": $c-primary,
+  "accent" : $c-accent,
+  "success": $c-success,
+  "error"  : $c-error,
+  "warning": $c-warning,
+);
+/* The lightness a color should exceed to require a dark contrast color*/
+$contrast-threshold: 60!default;
 /*
  * Buttons
  */

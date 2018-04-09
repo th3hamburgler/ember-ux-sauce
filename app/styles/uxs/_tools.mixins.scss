@@ -112,3 +112,47 @@
     @content;
   }
 }
+@mixin align-modifiers {
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--justify {
+    text-align: justify;
+  }
+}
+@mixin text-color-modifiers($colors:$defaultColors, $prefix:'c-') {
+  @each $modifier, $color in $colors {
+    &--#{$prefix}#{$modifier} {
+      color: $color;
+    }
+  }
+}
+@mixin background-color-modifiers($colors:$defaultColors) {
+  @each $modifier, $color in $colors {
+    &--#{$modifier} {
+      background-color: $color;
+      color           : contrast-color($color);
+    }
+  }
+}
+@mixin size-modifiers($sizes:$defaultSizes, $line-heights:$defaultLineHights, $mod:0) {
+  @each $modifier, $size in $sizes {
+    &--#{$modifier} {
+      font-size: rem-size($size - $mod);
+    }
+  }
+  @each $modifier, $height in $line-heights {
+    &--#{$modifier} {
+      line-height: rem-size($height - $mod);
+    }
+  }
+}
