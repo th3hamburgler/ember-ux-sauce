@@ -8,7 +8,7 @@
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="button"}}
+  {{#demo.example name="button" class="bg-p"}}
     {{uxs-button
       text
       disabled=disabled
@@ -59,6 +59,28 @@
       inline=inline
       loading=loading
       style="error"
+      mini=mini
+      naked=naked
+      name=name
+      selected=selected
+    }}
+    {{uxs-button
+      "Dark Button"
+      disabled=disabled
+      inline=inline
+      loading=loading
+      style="dark"
+      mini=mini
+      naked=naked
+      name=name
+      selected=selected
+    }}
+    {{uxs-button
+      "White Button"
+      disabled=disabled
+      inline=inline
+      loading=loading
+      style="white"
       mini=mini
       naked=naked
       name=name

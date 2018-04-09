@@ -122,6 +122,8 @@ $defaultColors: (
   "success": $c-success,
   "error"  : $c-error,
   "warning": $c-warning,
+  "dark"   : $c-dark,
+  "white"  : $c-white,
 );
 /* The lightness a color should exceed to require a dark contrast color*/
 $contrast-threshold: 60!default;

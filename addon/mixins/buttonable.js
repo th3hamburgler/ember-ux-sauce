@@ -28,18 +28,20 @@ export default Mixin.create(Accessible, BEMComponent, PropTypeMixin, Testable, {
     mini: PropTypes.bool,
     naked: PropTypes.bool,
     selected: PropTypes.bool,
-    style: PropTypes.oneOf(['accent', 'black', 'gray', 'primary', 'white']),
+    prefix: PropTypes.bool,
+    suffix: PropTypes.bool,
+    style: PropTypes.string,
     text: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,
     ]),
   },
   // Computed
-  isAccent: equal('style', 'accent'),
-  isBlack: equal('style', 'black'),
-  isGray: equal('style', 'gray'),
-  isPrimary: equal('style', 'primary'),
-  isWhite: equal('style', 'white'),
+  // isAccent: equal('style', 'accent'),
+  // isBlack: equal('style', 'black'),
+  // isGray: equal('style', 'gray'),
+  // isPrimary: equal('style', 'primary'),
+  // isWhite: equal('style', 'white'),
   /**
    * Alias for the aria accesibility label
    */
@@ -60,17 +62,16 @@ export default Mixin.create(Accessible, BEMComponent, PropTypeMixin, Testable, {
   init() {
     this._super(...arguments);
     this.registerModifiers([
-      'isAccent:accent',
-      'isBlack:black',
       'disabled',
       'inline',
-      'isGray:gray',
       'loading',
       'mini',
       'naked',
-      'isPrimary:primary',
       'selected',
-      'isWhite:white',
+      '*style',
+      '*size',
+      'prefix',
+      'suffix',
     ]);
   },
   /**
@@ -78,7 +79,7 @@ export default Mixin.create(Accessible, BEMComponent, PropTypeMixin, Testable, {
    */
   getDefaultProps() {
     return {
-      style: 'primary',
+      style: null,
       loadingText: 'Loading…',
     };
   },

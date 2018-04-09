@@ -8,7 +8,7 @@
   flex-direction : row;
   margin-bottom  : rem-size($baseline);
   max-width      : 100%;
-  padding        : rem-size($baseline*0.5);
+  padding        : 0 rem-size($baseline*0.5);
   width          : 100%;
   align-items    : flex-start;
   justify-content: space-between;
@@ -19,11 +19,13 @@
 
   &--has-text {
     display: block;
+    padding: rem-size($baseline*0.5);
   }
 }
 
 .uxs-notice__text {
-  flex: 1 1 auto;
+  flex   : 1 1 auto;
+  padding: rem-size($baseline*0.5) 0;
 
   &--truncated {
     @include text-truncate
@@ -33,6 +35,7 @@
 .uxs-notice__icon {
   @extend .uxs-icon;
   flex-basis: auto;
+  padding   : rem-size($baseline*0.5) 0;
 
   &--prefix {
     margin-right: rs(0.5);
@@ -44,5 +47,12 @@
 }
 
 .uxs-notice__button {
-  @extend .uxs-button;
+  // @extend .uxs-button;
+  &--prefix {
+    margin-right: rs(0.5);
+  }
+
+  &--suffix {
+    margin-left: rs(0.5);
+  }
 }

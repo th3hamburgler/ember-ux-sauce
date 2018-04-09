@@ -44,3 +44,63 @@
     <td><em>Boolean</em></td>
   </tr>
 </table>
+
+<h2>Usage with Icons</h2>
+
+<p>You can also intergrate icons in a notice.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="notice"}}
+
+    {{#uxs-notice style="primary" truncated=truncated as |notice|}}
+      {{notice.icon "info" prefix=true}}
+      {{notice.text "This notice has a prefix icon"}}
+    {{/uxs-notice}}
+
+    {{#uxs-notice style="accent" truncated=truncated as |notice|}}
+      {{notice.text "This notice has a suffix icon"}}
+      {{notice.icon "cancel" suffix=true}}
+    {{/uxs-notice}}
+
+    {{#uxs-notice style="warning" truncated=truncated as |notice|}}
+      {{notice.icon "warning" prefix=true}}
+      {{notice.text "This notice has two icons"}}
+      {{notice.icon "cancel" suffix=true}}
+    {{/uxs-notice}}
+
+    {{#uxs-notice style="error" truncated=truncated as |notice|}}
+      {{notice.icon "warning" prefix=true}}
+      {{notice.text "This notice has an icon but also a long passage of text that may or may not be truncated."}}
+      {{notice.icon "cancel" suffix=true}}
+    {{/uxs-notice}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "notice.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Usage with Links</h2>
+
+<p>Links & buttons can be included in a notice.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="notice"}}
+
+    {{#uxs-notice style="primary" truncated=truncated as |notice|}}
+      {{notice.link "home" "docs"}}
+      {{notice.text "This notice has a prefix link"}}
+    {{/uxs-notice}}
+
+    {{#uxs-notice style="accent" truncated=truncated as |notice|}}
+      {{notice.text "This notice has a suffix button"}}
+      {{notice.button "close"}}
+    {{/uxs-notice}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "notice.hbs"}}
+
+{{/docs-demo}}

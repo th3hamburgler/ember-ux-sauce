@@ -1,1 +1,30 @@
-{{text}}{{yield}}
+{{text}}
+{{yield (hash
+  icon=(
+    component
+    "uxs-icon"
+    base=(concat b "__icon")
+    class=(bem b "icon" m)
+  )
+  link=(
+    component
+    "uxs-button-link"
+    naked=true
+    inline=true
+    style="white"
+    class=(bem b "button" m)
+  )
+  button=(
+    component
+    "uxs-button"
+    naked=true
+    inline=true
+    style="white"
+    class=(bem b "button" m)
+  )
+  text=(
+    component
+    "uxs-text"
+    class=(bem b "text" m)
+  )
+)}}

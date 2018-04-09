@@ -1,9 +1,10 @@
 .uxs-icon {
   @include transition-all;
   @extend .material-icons;
-  cursor  : pointer;
-  position: relative;
-  width   : rem-size($baseline);
+  cursor    : pointer;
+  position  : relative;
+  text-align: center;
+  width     : rem-size($baseline);
 
   &:focus,
   &:hover {

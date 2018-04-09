@@ -45,12 +45,6 @@
   &.selected {
     background-color: $btn-selected-background;
     color           : $c-grey;
-
-    &:focus,
-    &:hover {
-      background-color: $c-white;
-      color           : $c-grey;
-    }
   }
 
   &--loading {
@@ -106,6 +100,12 @@
 
   &--inline.uxs-button--naked {
     padding: 0 rs(0.25);
+  }
+
+  &--inline.active,
+  &--inline.selected,
+  &--inline.uxs-button--selected {
+    background-color: transparent;
   }
 }
 
