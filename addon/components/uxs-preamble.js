@@ -6,6 +6,14 @@ import Styleable from 'ember-ux-sauce/mixins/styleable';
 import Clickable from 'ember-ux-sauce/mixins/clickable';
 
 export default Component.extend(BEMComponent, Clickable, Styleable, Testable, {
+  // Attributes
   base: 'uxs-preamble',
   layout,
+  // Methods
+  init() {
+    this._super(...arguments);
+    this.registerModifiers([
+      '*style',
+    ]);
+  },
 });
