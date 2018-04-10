@@ -5,84 +5,64 @@
   position  : relative;
   text-align: center;
   width     : rem-size($baseline);
+  @include text-color-modifiers($prefix:'');
 
   &:focus,
   &:hover {
+    opacity: 0.8;
+
     &::before {
-      $size           : rem-size($baseline*1.25);
+      $size           : rs(1.25);
       border-radius   : 100%;
       background-color: rgba($c-white, 0.1);
       content         : '';
       height          : $size;
-      left            : rem-size($baseline*.125*-1);
+      left            : rs(-0.125);
       position        : absolute;
-      top             : rem-size($baseline*.125*-1);
+      top             : rs(-0.125);
+      min-width       : rs(1);
+      min-height      : rs(1);
       width           : $size;
     }
   }
 
-  &--white {
-    color: $c-white;
-
-    &:focus,
-    &:hover {
-      &::before {
-        background-color: rgba($c-white, 0.1);
-      }
-    }
-  }
-
-  &--primary {
-    color: $c-primary;
-
-    &:focus,
-    &:hover {
-      &::before {
-        background-color: rgba($c-primary, 0.1);
-      }
-    }
-  }
-
-  &--accent {
-    color: $c-error;
-
-    &:focus,
-    &:hover {
-      &::before {
-        background-color: rgba($c-error, 0.1);
-      }
-    }
-  }
-  /**
-   * Gray
-   */
-  &--gray {
-    color: $c-grey;
-
-    &:focus,
-    &:hover {
-      &::before {
-        background-color: rgba($c-grey, 0.1);
-      }
-    }
-  }
-  /**
-   * Black
-   */
-  &--black {
-    color: $c-dark;
-
-    &:focus,
-    &:hover {
-      &::before {
-        background-color: rgba($c-dark, 0.1);
-      }
-    }
+  &--inline {
+    float: left;
   }
 
   &--disabled {
+    opacity: 0.6;
     cursor : not-allowed;
-    opacity: 0.4;
+
+    &:focus,
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  // @include font-size-modifiers($defaultLineHights);
+  @include line-height-modifiers;
+  $sizes    : (
+    "giant" : $baseline*4.0,
+    "huge"  : $baseline*3.0,
+    "large" : $baseline*2.0,
+    "medium": $baseline*1.0,
+    "small" : $baseline*0.75,
+    "tiny"  : $baseline*0.7,
+  );
+  @each $modifier, $size in $sizes {
+    &--#{$modifier} {
+      font-size: rem-size($size);
+      width    : rem-size($size);
+
+      &:focus::before,
+      &:hover::before {
+        $size : rem-size($size+(0.25*$baseline));
+        height: $size;
+        // left  : rs(0.125,1);
+        // top   : rs(0.125,1);
+        width : $size;
+      }
+    }
   }
 }
 
@@ -106,6 +86,10 @@
 
   &--suffix {
     border-left: 0;
+  }
+
+  &__icon~.uxs-form__icon {
+    margin-left: 0;
   }
 }
 //
@@ -137,8 +121,4 @@
 //     border-radius: 0;
 //     color        : $c-white;
 //   }
-// }
-//
-// &__icon~.form__icon {
-//   margin-left: 0;
 // }

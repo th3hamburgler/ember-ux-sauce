@@ -37,11 +37,17 @@ $transition-timing-function: cubic-bezier(.4,0,.2,1)!default;
  * Typeography
  */
 $type-body-family: 'Lato', sans-serif!default;
-$type-body-weight: 700!default;
+$type-body-weight: 400!default;
 $type-light-family: 'Lato', sans-serif!default;
 $type-light-weight: 300!default;
 $type-bold-family: 'Lato', sans-serif!default;
 $type-bold-weight: 700!default;
+/* Weights used as modifiers*/
+$defaultWeights: (
+  "bold"  : 700,
+  "normal": 400,
+  "light" : 300,
+);
 $s-giant: 76.244px!default;
 $s-huge: 47.123px!default;
 $s-large: 29.124px!default;
@@ -58,8 +64,8 @@ $defaultSizes: (
   "tiny"  : $s-tiny,
 );
 $defaultLineHights: (
-  "giant" : $baseline*3,
-  "huge"  : $baseline*2,
+  "giant" : $baseline*4,
+  "huge"  : $baseline*3,
   "large" : $baseline*2,
   "medium": $baseline*1,
   "small" : $baseline*1,

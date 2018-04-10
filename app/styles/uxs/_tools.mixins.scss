@@ -151,15 +151,24 @@
     }
   }
 }
-@mixin size-modifiers($sizes:$defaultSizes, $line-heights:$defaultLineHights, $mod:0) {
+@mixin font-size-modifiers($sizes:$defaultSizes, $mod:0) {
   @each $modifier, $size in $sizes {
     &--#{$modifier} {
       font-size: rem-size($size - $mod);
     }
   }
+}
+@mixin line-height-modifiers($line-heights:$defaultLineHights, $mod:0) {
   @each $modifier, $height in $line-heights {
     &--#{$modifier} {
       line-height: rem-size($height - $mod);
+    }
+  }
+}
+@mixin weight-modifiers($weights:$defaultWeights) {
+  @each $modifier, $weight in $weights {
+    &--#{$modifier} {
+      font-weight: $weight;
     }
   }
 }
