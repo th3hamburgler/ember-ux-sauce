@@ -39,7 +39,6 @@
       opacity: 0.6;
     }
   }
-  // @include font-size-modifiers($defaultLineHights);
   @include line-height-modifiers;
   $sizes    : (
     "giant" : $baseline*4.0,
@@ -58,8 +57,6 @@
       &:hover::before {
         $size : rem-size($size+(0.25*$baseline));
         height: $size;
-        // left  : rs(0.125,1);
-        // top   : rs(0.125,1);
         width : $size;
       }
     }

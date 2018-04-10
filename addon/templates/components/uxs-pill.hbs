@@ -1,1 +1,7 @@
+{{#if hasPrefixIcon}}
+  {{uxs-icon prefixIcon class=(bem b "icon" m) prefix=true}}
+{{/if}}
 {{text}}{{yield}}
+{{#if hasSuffixIcon}}
+  {{uxs-icon suffixIcon class=(bem b "icon" m) suffix=true}}
+{{/if}}

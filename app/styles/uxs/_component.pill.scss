@@ -4,7 +4,6 @@
   float       : left;
   background  : $c-mid;
   color       : $c-white;
-  // text-transform: uppercase;
   margin-right: rem-size($baseline*0.25);
   padding     : 0 rem-size($baseline*0.375);
   @include background-color-modifiers();
@@ -12,82 +11,83 @@
   &--rounded {
     border-radius: rem-size($baseline*0.75);
   }
-
-  &--tiny {
-    font-size    : $s-tiny;
-    line-height  : rs(0.5);
-    margin-bottom: rs(0.25);
-    margin-top   : rs(0.25);
-    margin-right : rs(0.25);
-    padding      : 0 rs(0.25);
-  }
-
-  &--tiny.uxs-pill--rounded {
-    border-radius: (0.25);
+  @include font-size-modifiers;
+  $sizes      : (
+    "giant" : $baseline*4.0,
+    "huge"  : $baseline*3.0,
+    "large" : $baseline*2.0,
+    "medium": $baseline*1.0,
+    "small" : $baseline*0.75,
+    "tiny"  : $baseline*0.675,
+  );
+  @each $modifier, $size in $sizes {
+    &--#{$modifier} {
+      line-height  : rem-size($size - 2px);
+      border-radius: rem-size($size);
+      padding      : 0 rem-size($size*0.5);
+      margin-bottom: rem-size(1px);
+      margin-top   : rem-size(1px);
+    }
   }
 
   &--small {
-    font-size    : $s-small;
-    line-height  : rs(0.875);
-    margin-bottom: rs(0.0625);
-    margin-top   : rs(0.0625);
-    margin-right : rs(0.25);
-    padding      : 0 rs(0.375);
-  }
-
-  &--small.uxs-pill--rounded {
-    border-radius: rs(0.5);
-  }
-
-  &--medium {
-    font-size    : $s-medium;
-    line-height  : rs(1.5);
-    margin-bottom: rs(0.25);
-    margin-top   : rs(0.25);
-    margin-right : rs(0.5);
-    padding      : 0 rs(0.5);
-  }
-
-  &--medium.uxs-pill--rounded {
-    border-radius: rs(1);
-  }
-
-  &--large {
-    font-size    : $s-large;
-    line-height  : rs(1.75);
-    margin-bottom: rs(0.125);
+    line-height  : rs(0.75);
     margin-top   : rs(0.125);
-    margin-right : rs(0.25);
-    padding      : 0 rs(0.75);
+    margin-bottom: rs(0.125);
   }
 
-  &--large.uxs-pill--rounded {
-    border-radius: rs(1);
+  &--tiny {
+    line-height  : rs(0.675);
+    margin-top   : rs(0.1625);
+    margin-bottom: rs(0.1625);
   }
 
-  &--huge {
-    font-size    : $s-huge;
-    line-height  : rs(2.5);
-    margin-bottom: rs(0.25);
-    margin-top   : rs(0.25);
-    margin-right : rs(0.5);
-    padding      : 0 rs(1);
+  &--with-prefix-icon,
+  &--with-suffix-icon {
+    display: flex;
   }
 
-  &--huge.uxs-pill--rounded {
-    border-radius: rs(2);
+  &--with-prefix-icon {
+    padding-left: rem-size(2px);
   }
 
-  &--giant {
-    font-size    : $s-giant;
-    line-height  : rs(4);
-    margin-bottom: rs(0.5);
-    margin-top   : rs(0.5);
-    margin-right : rs(1);
-    padding      : 0 rs(2);
+  &--with-suffix-icon {
+    padding-right: rem-size(2px);
+  }
+}
+
+.uxs-pill__icon {
+  color : $c-white;
+
+  &.uxs-icon--prefix {
+    margin-right: rs(0.125);
   }
 
-  &--giant.uxs-pill--rounded {
-    border-radius: rs(3);
+  &.uxs-icon--suffix {
+    margin-left: rs(0.125);
+  }
+
+  &--white {
+    color: $c-dark;
+  }
+
+  &:focus::before,
+  &:hover::before {
+    display: none;
+  }
+  $sizes: (
+    "giant" : $baseline*4.0,
+    "huge"  : $baseline*3.0,
+    "large" : $baseline*2.0,
+    "medium": $baseline*1.0,
+    "small" : $baseline*0.75,
+    "tiny"  : $baseline*0.675,
+  );
+  @each $modifier, $size in $sizes {
+    &--#{$modifier} {
+      line-height: rem-size($size);
+      font-size  : rem-size($size - 2px);
+      width      : rem-size($size - 2px);
+    }
   }
 }
