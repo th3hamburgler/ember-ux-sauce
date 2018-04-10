@@ -3,7 +3,7 @@ import Controller from '@ember/controller';
 export default Controller.extend({
   // Attributes
   icon: 'check',
-  style: 'primary',
+  style: '',
   disabled: false,
   size: 'small',
   // Actions
