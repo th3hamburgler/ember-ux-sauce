@@ -1,21 +1,21 @@
 .uxs-button {
-  @include text-truncate;
-  @include transition-all;
-  @extend .content;
+  -webkit-appearance: none;
   background-color  : $c-grey;
   border            : rem-size(1px) solid $c-grey;
   color             : $c-white;
   cursor            : pointer;
   display           : block;
-  line-height       : rs(1.5);
   font-weight       : 400;
-  padding           : 0;
+  line-height       : rs(1.5);
   margin            : rs(0.5, 1px) 0;
   max-width         : $max-width-content;
   min-height        : rs(1.5);
+  padding           : 0;
   text-align        : center;
   width             : rs(12);
-  -webkit-appearance: none;
+  @include text-truncate;
+  @include transition-all;
+  @extend .content;
   @include input-glow {
     box-shadow: 0 0 0.5rem $c-grey;
   };
@@ -28,8 +28,9 @@
   }
 
   &--disabled {
-    opacity: 0.6;
-    cursor : not-allowed;
+    cursor        : not-allowed;
+    pointer-events: none;
+    opacity       : 0.6;
 
     &:focus,
     &:hover {
@@ -64,8 +65,8 @@
   &--inline {
     display  : inline-block;
     margin   : rs(0.25) rs(0.25) rs(0.25) 0;
-    padding  : 0 rs(1.0);
     max-width: fit-content;
+    padding  : 0 rs(1.0);
     width    : auto;
 
     &:last-child {
@@ -75,8 +76,8 @@
 
   &--naked {
     background    : transparent;
-    color         : $c-grey;
     border        : none;
+    color         : $c-grey;
     font-weight   : bold;
     padding       : 0 rm(0.25);
     text-transform: uppercase;
@@ -94,8 +95,8 @@
   }
 
   &--inline.uxs-button--mini {
-    padding: 0 rs(0.5);
     margin : 0 rs(0.125) 0 0;
+    padding: 0 rs(0.5);
   }
 
   &--inline.uxs-button--naked {
@@ -113,10 +114,10 @@
   background    : $c-primary;
   display       : flex;
   flex-direction: column;
-  padding       : rem-size($baseline*0) rem-size(($baseline*.75) - 1px);
-  overflow      : hidden;
-  max-width     : $max-width-content;
   margin        : 0 auto;
+  max-width     : $max-width-content;
+  overflow      : hidden;
+  padding       : rem-size($baseline*0) rem-size(($baseline*.75) - 1px);
   width         : 100%;
 
   &--center {
@@ -143,7 +144,7 @@
   &__item {
     margin-left : auto;
     margin-right: auto;
-    width       : auto;
+    width       : 100%;
 
     &:not(.uxs-button-group__item--inline) {
       margin-bottom: 0;
