@@ -101,3 +101,35 @@
   {{demo.snippet 'form-control-custom.hbs'}}
 
 {{/docs-demo}}
+
+
+<h2>Compact Controls</h2>
+
+<p>Setting compact to true takes up less space.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="form-control-compact"}}
+    {{uxs-form-control
+      disabled=disabled
+      type="text"
+      name="my-control"
+      placeholder="Placeholder Text"
+      warning=warning
+      error=error
+      compact=true
+    }}
+    {{uxs-form-control
+      disabled=disabled
+      type="text"
+      name="my-other-control"
+      placeholder="Placeholder Text"
+      warning=warning
+      error=error
+      compact=true
+    }}
+  {{/demo.example}}
+
+  {{demo.snippet 'form-control-compact.hbs'}}
+
+{{/docs-demo}}

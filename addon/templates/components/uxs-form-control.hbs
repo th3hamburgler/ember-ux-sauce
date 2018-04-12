@@ -9,6 +9,8 @@
     type=type
     value=value
     disabled=disabled
+    placeholder=placeholder
+    readonly=readonly
   }}
 {{/if}}
 {{#if hasTextArea}}
@@ -17,12 +19,12 @@
 
 {{yield (hash
   label=(component    "uxs-form-label"        name=name disabled=disabled)
-  input=(component    "uxs-form-input"        model=model name=name disabled=disabled value=value)
-  textarea=(component "uxs-form-textarea"     model=model name=name disabled=disabled value=value)
-  dropdown=(component "uxs-form-dropdown"     model=model name=name disabled=disabled value=value)
-  date=(component     "uxs-form-date"         model=model name=name disabled=disabled)
-  datetime=(component "uxs-form-datetime"     model=model name=name disabled=disabled inlineInput=inline)
-  time=(component     "uxs-form-time"         model=model name=name disabled=disabled inlineInput=inline)
+  input=(component    "uxs-form-input"        model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly)
+  textarea=(component "uxs-form-textarea"     model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly)
+  dropdown=(component "uxs-form-dropdown"     model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly)
+  date=(component     "uxs-form-date"         model=model name=name disabled=disabled placeholder=placeholder readonly=readonly)
+  datetime=(component "uxs-form-datetime"     model=model name=name disabled=disabled placeholder=placeholder readonly=readonly inlineInput=inline)
+  time=(component     "uxs-form-time"         model=model name=name disabled=disabled placeholder=placeholder readonly=readonly inlineInput=inline)
   row=(component      "uxs-form-control-row"  model=model name=name disabled=disabled)
   tip=(component      "uxs-form-tip"          name=name disabled=disabled error=hasValidationError)
   warning=(component  "uxs-form-warning"      name=name disabled=disabled error=hasValidationError)

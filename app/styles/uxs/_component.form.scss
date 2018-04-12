@@ -26,6 +26,10 @@
       }
     }
 
+    &--compact {
+      min-height: 0;
+    }
+
     &--inline-mobile {
       margin-right: rem-size($baseline*.5);
 

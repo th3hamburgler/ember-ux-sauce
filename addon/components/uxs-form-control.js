@@ -54,11 +54,17 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   init() {
     this.registerModifiers([
       'disabled',
+      'compact',
+      '*style',
+      '*size',
     ]);
     this._super(...arguments);
     set(this, 'propTypes', {
       text: PropTypes.string,
+      style: PropTypes.string,
+      size: PropTypes.string,
       validateOnFocus: PropTypes.boolean,
+      compact: PropTypes.boolean,
     });
     this.initValidator();
   },
