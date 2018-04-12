@@ -67,6 +67,17 @@ body {
     };
   }
 
+  .ember-power-select-clear-btn {
+    $size      : rem-size(($baseline*1.5)-2);
+    color      : $c-grey;
+    line-height: $size;
+    text-align : center;
+    height     : $size;
+    width      : rem-size($baseline*1.5);
+    top        : 0;
+    right      : $size;
+  }
+
   .ember-power-select-dropdown {
     border       : 1px solid $c-primary;
     border-top   : 0;
