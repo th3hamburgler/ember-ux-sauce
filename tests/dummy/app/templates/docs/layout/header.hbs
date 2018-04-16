@@ -105,6 +105,17 @@
       {{header.title "Dark Header"}}
     {{/uxs-header}}
 
+    {{#uxs-header style="grey" as |header|}}
+      {{#header.toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/header.toolbar}}
+      {{header.title "Grey Header"}}
+    {{/uxs-header}}
+
     {{#uxs-header style="white" as |header|}}
       {{#header.toolbar as |toolbar|}}
         {{toolbar.back "arrow_back"}}

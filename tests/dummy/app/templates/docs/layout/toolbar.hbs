@@ -66,3 +66,90 @@
   {{demo.snippet "toolbar-search.hbs"}}
 
 {{/docs-demo}}
+
+
+<h2>Styles</h2>
+
+<p>You can customise the look of your toolbar with the style attribute.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="toolbar-styles"}}
+
+      {{#uxs-toolbar style="primary" as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.title "Primary Bar"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.search}}
+      {{/uxs-toolbar}}
+
+      {{#uxs-toolbar style="accent" as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.title "Accent Bar"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.search}}
+      {{/uxs-toolbar}}
+
+      {{#uxs-toolbar style="dark" as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.title "Dark Bar"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.search}}
+      {{/uxs-toolbar}}
+
+      {{#uxs-toolbar style="grey" as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.title "Grey Bar"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.search}}
+      {{/uxs-toolbar}}
+
+      {{#uxs-toolbar style="white" as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.title "White Bar"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.search}}
+      {{/uxs-toolbar}}
+
+      {{#uxs-toolbar style="success" as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.title "Success Bar"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.search}}
+      {{/uxs-toolbar}}
+
+      {{#uxs-toolbar style="warning" as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.title "Warning Bar"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.search}}
+      {{/uxs-toolbar}}
+
+      {{#uxs-toolbar style="error" as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.title "Error Bar"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.search}}
+      {{/uxs-toolbar}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "toolbar-styles.hbs"}}
+
+{{/docs-demo}}

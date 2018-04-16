@@ -1,4 +1,7 @@
 .uxs-search {
+  display       : flex;
+  flex-direction: row;
+
   &__close {
     margin: 0;
   }

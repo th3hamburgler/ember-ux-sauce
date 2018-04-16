@@ -1,9 +1,8 @@
 .uxs-toolbar {
-  background    : $c-primary;
-  color         : $c-white;
   display       : flex;
   flex-direction: row;
   padding       : rem-size($baseline*0.5);
+  @include background-color-modifiers();
 
   &__title {
     margin        : 0;
@@ -25,5 +24,16 @@
   &__action {
     margin-left: rem-size($baseline*0.25);
     line-height: rem-size($baseline);
+  }
+
+  &__search {
+    &--white {
+      // durty hack - bem no like
+      .uxs-search__close,
+      .uxs-search__input {
+        border-bottom-color: $c-dark;
+        color              : $c-dark;
+      }
+    }
   }
 }

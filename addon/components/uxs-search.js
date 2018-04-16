@@ -20,7 +20,7 @@ export default Component.extend(BEMComponent, {
   closeIcon: 'close',
   layout,
   searchIcon: 'search',
-  tagName: '',
+  // tagName: '',
   // Methods
   init() {
     this._super(...arguments);

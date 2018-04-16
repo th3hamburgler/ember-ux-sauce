@@ -12,4 +12,12 @@ export default Component.extend(Textable, {
       '*style'
     ]);
   },
+  /**
+   * Init any property defaults
+   */
+  getDefaultProps() {
+    return {
+      style: 'primary',
+    };
+  },
 });
