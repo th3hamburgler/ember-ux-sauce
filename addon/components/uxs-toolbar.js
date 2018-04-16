@@ -5,4 +5,11 @@ import Textable from '../mixins/textable';
 export default Component.extend(Textable, {
   base: 'uxs-toolbar',
   layout,
+  // Methods
+  init() {
+    this._super(...arguments);
+    this.registerModifiers([
+      '*style'
+    ]);
+  },
 });

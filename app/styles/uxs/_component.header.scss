@@ -1,13 +1,13 @@
 .uxs-header {
-  background: $c-primary;
   color     : $c-white;
   min-height: rem-size($baseline*10);
   overflow  : auto;
   position  : relative;
   width     : 100%;
+  @include background-color-modifiers();
 
   &__image {
-    background-color   : $c-primary;
+    @include background-color-modifiers();
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;

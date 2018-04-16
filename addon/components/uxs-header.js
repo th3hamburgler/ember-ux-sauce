@@ -8,6 +8,17 @@ export default Component.extend(Textable, {
   // Methods
   init() {
     this._super(...arguments);
-    this.registerModifiers(['image:with-image']);
+    this.registerModifiers([
+      'image:with-image',
+      '*style'
+    ]);
+  },
+  /**
+   * Init any property defaults
+   */
+  getDefaultProps() {
+    return {
+      style: 'primary',
+    };
   },
 });

@@ -62,3 +62,95 @@
   {{demo.snippet "header-image.hbs"}}
 
 {{/docs-demo}}
+
+
+<h2>Styles</h2>
+
+<p>You can customise the look of your header with the style attribute.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="header-styles"}}
+
+    {{#uxs-header style="primary" as |header|}}
+      {{#header.toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/header.toolbar}}
+      {{header.title "Primary Header"}}
+    {{/uxs-header}}
+
+    {{#uxs-header style="accent" as |header|}}
+      {{#header.toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/header.toolbar}}
+      {{header.title "Accent Header"}}
+    {{/uxs-header}}
+
+    {{#uxs-header style="dark" as |header|}}
+      {{#header.toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/header.toolbar}}
+      {{header.title "Dark Header"}}
+    {{/uxs-header}}
+
+    {{#uxs-header style="white" as |header|}}
+      {{#header.toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/header.toolbar}}
+      {{header.title "White Header"}}
+    {{/uxs-header}}
+
+    {{#uxs-header style="success" as |header|}}
+      {{#header.toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/header.toolbar}}
+      {{header.title "Success Header"}}
+    {{/uxs-header}}
+
+    {{#uxs-header style="warning" as |header|}}
+      {{#header.toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/header.toolbar}}
+      {{header.title "Warning Header"}}
+    {{/uxs-header}}
+
+    {{#uxs-header style="error" as |header|}}
+      {{#header.toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/header.toolbar}}
+      {{header.title "Error Header"}}
+    {{/uxs-header}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "header-styles.hbs"}}
+
+{{/docs-demo}}
