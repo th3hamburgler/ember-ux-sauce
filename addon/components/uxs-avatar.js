@@ -27,11 +27,13 @@ const Avatar = Component.extend(BEMComponent, Testable, {
       'huge',
       'giant',
       'round',
+      '*style'
     ]);
   },
   getDefaultProps() {
     return {
       size: 'medium',
+      style: null
     };
   },
 });

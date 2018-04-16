@@ -146,6 +146,180 @@
 
 {{/docs-demo}}
 
+<h2>Styles Usage</h2>
+
+<p>You can customise the look of your lists with the style attribute.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="lists-styles" class="bg-dark"}}
+
+    {{#uxs-list style="primary" lines=3 bordered=true as |list|}}
+      {{#list.item as |item|}}
+        {{#item.aside}}
+          {{item.avatarText 1 round=true}}
+        {{/item.aside}}
+        {{#item.body}}
+          {{item.title "Primary List"}}
+          {{item.detail "foo"}}
+          {{item.detail "bar"}}
+        {{/item.body}}
+        {{#item.aside}}
+          {{item.action "invert_colors"}}
+        {{/item.aside}}
+      {{/list.item}}
+    {{/uxs-list}}
+
+    {{#uxs-list style="accent" lines=3 bordered=true as |list|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatarText 2 round=true}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title "Accent List"}}
+            {{item.detail "foo"}}
+            {{item.detail "bar"}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action "invert_colors"}}
+          {{/item.aside}}
+        {{/list.item}}
+    {{/uxs-list}}
+
+    {{#uxs-list style="dark" lines=3 bordered=true as |list|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatarText 2 round=true}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title "Dark List"}}
+            {{item.detail "foo"}}
+            {{item.detail "bar"}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action "invert_colors"}}
+          {{/item.aside}}
+        {{/list.item}}
+    {{/uxs-list}}
+
+    {{#uxs-list style="grey" lines=3 bordered=true as |list|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatarText 2 round=true}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title "Grey List"}}
+            {{item.detail "foo"}}
+            {{item.detail "bar"}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action "invert_colors"}}
+          {{/item.aside}}
+        {{/list.item}}
+    {{/uxs-list}}
+
+    {{#uxs-list style="mid" lines=3 bordered=true as |list|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatarText 2 round=true}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title "Mid List"}}
+            {{item.detail "foo"}}
+            {{item.detail "bar"}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action "invert_colors"}}
+          {{/item.aside}}
+        {{/list.item}}
+    {{/uxs-list}}
+
+    {{#uxs-list style="light" lines=3 bordered=true as |list|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatarText 2 round=true}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title "Light List"}}
+            {{item.detail "foo"}}
+            {{item.detail "bar"}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action "invert_colors"}}
+          {{/item.aside}}
+        {{/list.item}}
+    {{/uxs-list}}
+
+    {{#uxs-list style="white" lines=3 bordered=true as |list|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatarText 2 round=true}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title "White List"}}
+            {{item.detail "foo"}}
+            {{item.detail "bar"}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action "invert_colors"}}
+          {{/item.aside}}
+        {{/list.item}}
+    {{/uxs-list}}
+
+    {{#uxs-list style="success" lines=3 bordered=true as |list|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatarText 2 round=true}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title "Success List"}}
+            {{item.detail "foo"}}
+            {{item.detail "bar"}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action "invert_colors"}}
+          {{/item.aside}}
+        {{/list.item}}
+    {{/uxs-list}}
+
+    {{#uxs-list style="warning" lines=3 bordered=true as |list|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatarText 2 round=true}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title "Warning List"}}
+            {{item.detail "foo"}}
+            {{item.detail "bar"}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action "invert_colors"}}
+          {{/item.aside}}
+        {{/list.item}}
+    {{/uxs-list}}
+
+    {{#uxs-list style="error" lines=3 bordered=true as |list|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatarText 2 round=true}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title "Error List"}}
+            {{item.detail "foo"}}
+            {{item.detail "bar"}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action "invert_colors"}}
+          {{/item.aside}}
+        {{/list.item}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "lists-styles.hbs"}}
+
+{{/docs-demo}}
+
 <h2>List Subheadings</h2>
 
 <p>Often you'll want to break up list items into sections using subheadings. The uxs-list-subheading component will only render if the subheading has changed from the item before. Use it in conjunction with an ordered response</p>

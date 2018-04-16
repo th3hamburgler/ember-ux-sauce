@@ -11,6 +11,15 @@ export default Component.extend(BEMComponent, Testable, {
     this._super(...arguments);
     this.registerModifiers([
       'bordered',
+      '*style'
     ]);
+  },
+  /**
+   * Init any property defaults
+   */
+  getDefaultProps() {
+    return {
+      style: 'white',
+    };
   },
 });

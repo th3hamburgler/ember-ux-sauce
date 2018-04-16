@@ -26,11 +26,13 @@ const TextAvatar = Component.extend(BEMComponent, Styleable, Testable, {
       'huge',
       'giant',
       'round',
+      '*style'
     ]);
   },
   getDefaultProps() {
     return {
       size: 'medium',
+      style: 'dark',
     };
   },
 });

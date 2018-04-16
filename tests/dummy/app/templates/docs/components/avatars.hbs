@@ -42,3 +42,28 @@
     <td><em>Boolean</em></td>
   </tr>
 </table>
+
+<h2>Styles Usage</h2>
+
+<p>You can customise the look of your lists with the style attribute.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="avatar-styles" class="bg-dark"}}
+
+    {{uxs-avatar "http://api.faceholder.io/faces?id=0" style="primary" round=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=1" style="accent" round=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=2" style="dark" round=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=3" style="grey" round=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=4" style="mid" round=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=5" style="light" round=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=6" style="white" round=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=7" style="success" round=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=8" style="warning" round=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=9" style="error" round=true}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "avatar-styles.hbs"}}
+
+{{/docs-demo}}
