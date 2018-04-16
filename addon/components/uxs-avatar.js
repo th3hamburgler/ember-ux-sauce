@@ -33,7 +33,7 @@ const Avatar = Component.extend(BEMComponent, Testable, {
   getDefaultProps() {
     return {
       size: 'medium',
-      style: null
+      style: 'dark',
     };
   },
 });

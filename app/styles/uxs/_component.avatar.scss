@@ -2,6 +2,7 @@
   @include background-color-modifiers();
   display: block;
   width  : rem-size($baseline*2);
+  height : rem-size($baseline*2);
 
   &--round {
     border-radius: 100%;

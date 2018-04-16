@@ -27,11 +27,13 @@ const IconAvatar = Component.extend(BEMComponent, Styleable, Testable, {
       'giant',
       'round',
       'selected',
+      '*style'
     ]);
   },
   getDefaultProps() {
     return {
       size: 'medium',
+      style: 'dark',
     };
   },
 });
