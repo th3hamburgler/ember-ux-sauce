@@ -112,6 +112,24 @@
         {{toolbar.search}}
       {{/uxs-toolbar}}
 
+      {{#uxs-toolbar style="mid" as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.title "Mid Bar"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.search}}
+      {{/uxs-toolbar}}
+
+      {{#uxs-toolbar style="light" as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.title "White Bar"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.search}}
+      {{/uxs-toolbar}}
+
       {{#uxs-toolbar style="white" as |toolbar|}}
         {{toolbar.back "arrow_back"}}
         {{toolbar.title "White Bar"}}

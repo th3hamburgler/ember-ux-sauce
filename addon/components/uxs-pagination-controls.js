@@ -15,6 +15,19 @@ export default Component.extend(BEMComponent, Testable, {
   layout,
   resultsText: "Results per page",
   countPrefix: "",
+  // Methods
+  init() {
+    this._super(...arguments);
+    this.registerModifiers(['*style']);
+  },
+  /**
+   * Init any property defaults
+   */
+  getDefaultProps() {
+    return {
+      style: 'light',
+    };
+  },
   // Computed
   pages: computed('total', 'size', function() {
     return get(this, 'total') / get(this, 'size');

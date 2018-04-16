@@ -116,6 +116,28 @@
       {{header.title "Grey Header"}}
     {{/uxs-header}}
 
+    {{#uxs-header style="mid" as |header|}}
+      {{#header.toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/header.toolbar}}
+      {{header.title "Mid Header"}}
+    {{/uxs-header}}
+
+    {{#uxs-header style="light" as |header|}}
+      {{#header.toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/header.toolbar}}
+      {{header.title "Light Header"}}
+    {{/uxs-header}}
+
     {{#uxs-header style="white" as |header|}}
       {{#header.toolbar as |toolbar|}}
         {{toolbar.back "arrow_back"}}

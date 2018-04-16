@@ -27,6 +27,8 @@
   }
 
   &__search {
+    &--light,
+    &--mid,
     &--white {
       // durty hack - bem no like
       .uxs-search__close,

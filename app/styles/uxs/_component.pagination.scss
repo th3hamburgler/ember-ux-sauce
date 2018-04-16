@@ -1,11 +1,12 @@
 .uxs-pagination {
-  background-color: $c-light;
-  display         : flex;
-  flex-direction  : row;
-  height          : rem-size($baseline*2);
-  padding         : rem-size($baseline*.5);
-  justify-content : space-between;
-  width           : 100%;
+  // background-color: $c-light;
+  @include background-color-modifiers();
+  display        : flex;
+  flex-direction : row;
+  height         : rem-size($baseline*2);
+  padding        : rem-size($baseline*.5);
+  justify-content: space-between;
+  width          : 100%;
   @include mq(tablet) {
     height : rem-size($baseline*3);
     padding: rem-size($baseline);
