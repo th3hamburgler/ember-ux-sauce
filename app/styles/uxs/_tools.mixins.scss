@@ -56,14 +56,14 @@
     opacity: 0.4;
   };
   @include input-glow {
-    box-shadow: 0 0 0.5rem $c-primary-4;
+    box-shadow: 0 0 0.5rem;
   };
 }
 @mixin drop-shadow {
-  box-shadow: 4px 4px 3px rgba($c-dark,0.1);
+  box-shadow: 4px 4px 3px;
 
   &:hover {
-    box-shadow: 4px 4px 6px rgba($c-dark,0.15);
+    box-shadow: 4px 4px 6px;
   }
 }
 @mixin card-shadow ($level, $down:true) {

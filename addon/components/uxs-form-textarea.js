@@ -38,6 +38,7 @@ export default TextArea.extend(Accessible, BEMComponent, PropTypeMixin, Testable
       'inline',
       'textarea',
       'warning',
+      '*style',
     ]);
   },
   /**
