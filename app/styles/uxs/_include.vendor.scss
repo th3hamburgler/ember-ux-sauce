@@ -58,8 +58,10 @@ $ember-power-select-multiple-option-line-height: ($baseline*1.5);
 @import "../ember-basic-dropdown";
 @import "../ember-modal-dialog/ember-modal-structure";
 
-:focus {
-  outline: none;
+.uxs-form__input {
+  &--dropdown {
+    max-width: $max-width-content;
+  }
 }
 
 .ember-power-select-status-icon {
