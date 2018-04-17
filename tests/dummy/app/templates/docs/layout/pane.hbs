@@ -90,3 +90,67 @@
   {{demo.snippet "three-col-layout.hbs"}}
 
 {{/docs-demo}}
+
+<h2>Properties</h2>
+
+<p>Now explore the various properties available in this component:</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="layout-demo"}}
+
+    {{#uxs-window}}
+      {{#uxs-pane padded=padded type=type style=style}}
+        {{uxs-subheading "Subheading"}}
+        {{uxs-content "Nullam scelerisque a a a posuere posuere sociosqu vulputate a eu nostra ut donec per amet etiam sapien cum ullamcorper pretium. Rutrum est dui faucibus vulputate a ligula torquent duis ad accumsan sed suspendisse velit consequat at varius."}}
+      {{/uxs-pane}}
+    {{/uxs-window}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "layout-demo.hbs"}}
+
+{{/docs-demo}}
+
+<table class="docs-args-table">
+  <tr>
+    <td>type</td>
+    <td>{{input placeholder="Type" value=type}}</td>
+    <td><em>String</em> (aside, detail, full, index, main, single, splash)</td>
+  </tr>
+  <tr>
+    <td>padded</td>
+    <td>{{docs-toggle value=padded}}</td>
+    <td><em>Boolean</em></td>
+  </tr>
+  <tr>
+    <td>style</td>
+    <td>{{input placeholder="Style" value=style}}</td>
+    <td><em>String</em></td>
+  </tr>
+</table>
+
+<h2>Styles Usage</h2>
+
+<p>You can customise the look of your panes with the style attribute.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="layout-styles"}}
+
+    {{#each styles as |style|}}
+
+      {{#uxs-window}}
+        {{#uxs-pane single=true style=style padded=true}}
+          {{uxs-subheading (concat (capitalize style) " Style")}}
+          {{uxs-content "Nullam scelerisque a a a posuere posuere sociosqu vulputate a eu nostra ut donec per amet etiam sapien cum ullamcorper pretium. Rutrum est dui faucibus vulputate a ligula torquent duis ad accumsan sed suspendisse velit consequat at varius."}}
+        {{/uxs-pane}}
+      {{/uxs-window}}
+
+    {{/each}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "layout-styles.hbs"}}
+
+{{/docs-demo}}

@@ -19,6 +19,7 @@
   }
 
   &__pane {
+    @include background-color-modifiers();
     padding: 0;
 
     &--padded {
