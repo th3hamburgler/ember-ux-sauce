@@ -117,7 +117,7 @@
       {{#each darkStyles as |style|}}
 
         <div class="mb">
-          {{uxs-form-input value=value style=style placeholder=(concat (capitalize style))}}
+          {{uxs-form-input value=value style=style placeholder=(concat (capitalize style) " Style")}}
         </div>
 
       {{/each}}
@@ -126,7 +126,7 @@
     {{#each lightStyles as |style|}}
 
       <div class="mb">
-        {{uxs-form-input value=value style=style placeholder=(concat (capitalize style))}}
+        {{uxs-form-input value=value style=style placeholder=(concat (capitalize style) " Style")}}
       </div>
 
     {{/each}}
