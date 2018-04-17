@@ -112,6 +112,31 @@ $ember-power-select-multiple-option-line-height: ($baseline*1.5);
   }
 }
 
+.ember-power-select-multiple-options {
+  min-height   : $ember-power-select-multiple-option-line-height;
+  margin-bottom: 0!important;
+  padding      : 0 rem-size(1px);
+}
+
+.ember-power-select-trigger-multiple-input {
+  line-height: $ember-power-select-multiple-option-line-height;
+  padding    : 0 rs(0.5, 1);
+}
+
+.ember-power-select-multiple-option {
+  border     : none;
+  line-height: rs(1.25);
+  margin     : rs(0.125) rs(0.0625); //rem-size(2px) rem-size(1px);
+  padding    : 0 rs(.5) 0 0;
+}
+
+.ember-power-select-multiple-remove-btn {
+  display   : inline-block;
+  text-align: center;
+  width     : rs(0.25);
+  margin    : 0 rs(0.25);
+}
+
 .uxs-form__input {
   @each $modifier, $color in $defaultColors {
     &--#{$modifier} {
@@ -123,6 +148,11 @@ $ember-power-select-multiple-option-line-height: ($baseline*1.5);
 
       .ember-power-select-status-icon {
         border-color: $color transparent transparent transparent;
+      }
+
+      .ember-power-select-multiple-option {
+        background-color: $color;
+        color           : contrast-color($color);
       }
     }
   }

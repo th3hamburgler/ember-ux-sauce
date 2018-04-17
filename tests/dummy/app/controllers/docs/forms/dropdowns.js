@@ -7,6 +7,7 @@ import {
 export default Controller.extend({
   // Attributes
   name: 'Miguel',
+  names: null,
   // Computed
   darkStyles: computed(function() {
     return [
@@ -29,7 +30,8 @@ export default Controller.extend({
   // Methods
   init() {
     this._super(...arguments);
-    set(this, 'names', ['Stefan', 'Miguel', 'Tomster', 'Pluto']);
+    set(this, 'nameOptions', ['Stefan', 'Miguel', 'Tomster', 'Pluto']);
+    set(this, 'names', ['Miguel', 'Pluto']);
   },
   // Actions
   actions: {

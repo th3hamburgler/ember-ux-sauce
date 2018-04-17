@@ -16,7 +16,7 @@
 
     {{#uxs-form-dropdown
       selected=name
-      options=names
+      options=nameOptions
       onchange=(action (mut name))
       name="my-dropdown"
       as |name|
@@ -60,13 +60,28 @@
             style=style
             placeholder=(concat (capitalize style) " Style")
             selected=name
-            options=names
+            options=nameOptions
             onchange=(action (mut name))
             name="my-dropdown"
             as |name|
           }}
             {{name}}
           {{/uxs-form-dropdown}}
+        </div>
+        <div class="mb">
+          {{#uxs-form-dropdown-multiple
+            allowClear=true
+            searchPlaceholder="Search Options"
+            style=style
+            placeholder=(concat (capitalize style) " Style")
+            selected=names
+            options=nameOptions
+            onchange=(action (mut names))
+            name="my-dropdown"
+            as |name|
+          }}
+            {{name}}
+          {{/uxs-form-dropdown-multiple}}
         </div>
 
       {{/each}}
@@ -81,13 +96,28 @@
           style=style
           placeholder=(concat (capitalize style) " Style")
           selected=name
-          options=names
+          options=nameOptions
           onchange=(action (mut name))
           name="my-dropdown"
           as |name|
         }}
           {{name}}
         {{/uxs-form-dropdown}}
+      </div>
+      <div class="mb">
+        {{#uxs-form-dropdown-multiple
+          allowClear=true
+          searchPlaceholder="Search Options"
+          style=style
+          placeholder=(concat (capitalize style) " Style")
+          selected=names
+          options=nameOptions
+          onchange=(action (mut names))
+          name="my-dropdown"
+          as |name|
+        }}
+          {{name}}
+        {{/uxs-form-dropdown-multiple}}
       </div>
 
     {{/each}}
