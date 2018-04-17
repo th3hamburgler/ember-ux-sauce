@@ -35,7 +35,7 @@ const Subheading = Component.extend(BEMComponent, {
   // Methods
   init() {
     this._super(...arguments);
-    this.registerModifiers(['bordered', ]);
+    this.registerModifiers(['bordered', '*style']);
   },
 });
 

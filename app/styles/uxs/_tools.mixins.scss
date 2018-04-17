@@ -159,9 +159,9 @@
     }
   }
 }
-@mixin contrast-border-color-modifiers($colors:$defaultColors, $dark-color:$c-dark, $light-color:$c-white) {
+@mixin contrast-border-color-modifiers($colors:$defaultColors, $dark-color:$c-dark, $light-color:$c-white, $prefix:'') {
   @each $modifier, $color in $colors {
-    &--#{$modifier} {
+    &--#{$prefix}#{$modifier} {
       border-color: contrast-color($color, $dark-color, $light-color);
     }
   }

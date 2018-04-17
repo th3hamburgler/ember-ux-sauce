@@ -23,13 +23,6 @@ export default Component.extend(BEMComponent, Clickable, Testable, {
     if (!isEmpty(style)) {
       return `parent-${style}`;
     }
-    // if (!isEmpty(style)) {
-    //   if (['mid', 'light', 'white'].indexOf(style) !== -1) {
-    //     return 'dark';
-    //   } else {
-    //     return 'white';
-    //   }
-    // }
   }),
   hasOneLine: equal('lines', 1),
   hasTwoLines: equal('lines', 2),
