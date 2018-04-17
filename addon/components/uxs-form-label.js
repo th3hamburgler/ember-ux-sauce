@@ -19,6 +19,7 @@ const FormLabel = Component.extend(BEMComponent, PropTypeMixin, Testable, {
       'required',
       'success',
       'warning',
+      '*style'
     ]);
     this._super(...arguments);
     this.set('propTypes', {

@@ -1,5 +1,5 @@
 {{#if hasLabel}}
-  {{uxs-form-label label name=name disabled=disabled}}
+  {{uxs-form-label label name=name disabled=disabled style=style}}
 {{/if}}
 {{#if hasTextInput}}
   {{uxs-form-input
@@ -11,21 +11,22 @@
     disabled=disabled
     placeholder=placeholder
     readonly=readonly
+    style=style
   }}
 {{/if}}
 {{#if hasTextArea}}
-  {{uxs-form-textarea model=model name=name type=type value=value disabled=disabled}}
+  {{uxs-form-textarea model=model name=name type=type value=value disabled=disabled style=style}}
 {{/if}}
 
 {{yield (hash
-  label=(component    "uxs-form-label"        name=name disabled=disabled)
-  input=(component    "uxs-form-input"        model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly)
-  textarea=(component "uxs-form-textarea"     model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly)
-  dropdown=(component "uxs-form-dropdown"     model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly)
-  date=(component     "uxs-form-date"         model=model name=name disabled=disabled placeholder=placeholder readonly=readonly)
-  datetime=(component "uxs-form-datetime"     model=model name=name disabled=disabled placeholder=placeholder readonly=readonly inlineInput=inline)
-  time=(component     "uxs-form-time"         model=model name=name disabled=disabled placeholder=placeholder readonly=readonly inlineInput=inline)
-  row=(component      "uxs-form-control-row"  model=model name=name disabled=disabled)
+  label=(component    "uxs-form-label"        name=name disabled=disabled style=style)
+  input=(component    "uxs-form-input"        model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly style=style)
+  textarea=(component "uxs-form-textarea"     model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly style=style)
+  dropdown=(component "uxs-form-dropdown"     model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly style=style)
+  date=(component     "uxs-form-date"         model=model name=name disabled=disabled placeholder=placeholder readonly=readonly style=style)
+  datetime=(component "uxs-form-datetime"     model=model name=name disabled=disabled placeholder=placeholder readonly=readonly inlineInput=inline style=style)
+  time=(component     "uxs-form-time"         model=model name=name disabled=disabled placeholder=placeholder readonly=readonly inlineInput=inline style=style)
+  row=(component      "uxs-form-control-row"  model=model name=name disabled=disabled style=style)
   tip=(component      "uxs-form-tip"          name=name disabled=disabled error=hasValidationError)
   warning=(component  "uxs-form-warning"      name=name disabled=disabled error=hasValidationError)
   error=(component    "uxs-form-error"        name=name disabled=disabled)

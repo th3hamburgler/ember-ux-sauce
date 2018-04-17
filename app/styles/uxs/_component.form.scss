@@ -41,6 +41,7 @@
 
   &__label {
     @extend .subheading;
+    @include text-color-modifiers($prefix:'');
     @include transition-all;
     transition-property: color;
     text-transform     : uppercase;
@@ -48,16 +49,17 @@
     margin-bottom      : rem-size($baseline*0.5);
     letter-spacing     : 1px;
 
-    &--error {
+    &--warning {
       color: $c-warning;
     }
 
-    &--alert {
+    &--alert,
+    &--error {
       color: $c-error;
     }
 
     &--disabled {
-      color: $c-grey;
+      opacity: 0.4;
     }
   }
 
@@ -94,15 +96,7 @@
     &--dropdown {
       margin-bottom: 0;
     }
-    // &--error:not([type=checkbox]):not([type=radio]) {
-    //   border-color: $c-warning;
-    //   color       : $c-warning;
-    // }
-    //
-    // &--alert:not([type=checkbox]):not([type=radio]) {
-    //   border-color: $c-error;
-    //   color       : $c-error;
-    // }
+
     &--disabled:not([type=checkbox]):not([type=radio]),
     &:disabled:not([type=checkbox]):not([type=radio]) {
       cursor      : not-allowed;
@@ -153,12 +147,12 @@
   }
 
   &__error {
-    background-color: $c-warning;
+    background-color: $c-error;
     color           : $c-white;
   }
 
   &__warning {
-    background-color: $c-error;
+    background-color: $c-warning;
     color           : $c-white;
   }
 

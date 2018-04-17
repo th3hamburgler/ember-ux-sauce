@@ -1,4 +1,7 @@
 import Controller from '@ember/controller';
+import {
+  computed
+} from '@ember/object';
 
 export default Controller.extend({
   // Attributes
@@ -9,4 +12,23 @@ export default Controller.extend({
   tip: 'This is a hint',
   warning: '',
   error: '',
+  // Computed
+  darkStyles: computed(function() {
+    return [
+      'primary',
+      'accent',
+      'dark',
+      'grey',
+      'success',
+      'warning',
+      'error',
+    ];
+  }),
+  lightStyles: computed(function() {
+    return [
+      'mid',
+      'light',
+      'white',
+    ];
+  }),
 });
