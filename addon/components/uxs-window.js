@@ -30,6 +30,7 @@ export default Component.extend(BEMComponent, Testable, {
     this._super(...arguments);
     this.registerModifiers([
       'splash',
+      '*style',
     ]);
   },
 });

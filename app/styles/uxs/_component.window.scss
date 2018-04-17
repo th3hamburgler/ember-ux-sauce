@@ -1,4 +1,5 @@
 .uxs-window {
+  @include background-color-modifiers();
   display       : flex;
   flex-direction: column-reverse;
   padding       : 0;
