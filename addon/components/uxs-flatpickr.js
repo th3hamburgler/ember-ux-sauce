@@ -42,6 +42,7 @@ export default FlatPickr.extend(Accessible, BEMComponent, Testable, {
       'inlineInput:inline',
       'isTime:time',
       'warning',
+      '*style'
     ]);
   },
   /**
