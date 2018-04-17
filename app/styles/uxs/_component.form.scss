@@ -62,6 +62,11 @@
   }
 
   &__input {
+    @include contrast-background-color-modifiers($prefix:'');
+    @include border-color-modifiers();
+    @include text-color-modifiers($prefix:'');
+    border-color: $c-light;
+
     &--date,
     &--datetime,
     &--email,
@@ -89,17 +94,15 @@
     &--dropdown {
       margin-bottom: 0;
     }
-
-    &--error:not([type=checkbox]):not([type=radio]) {
-      border-color: $c-warning;
-      color       : $c-warning;
-    }
-
-    &--alert:not([type=checkbox]):not([type=radio]) {
-      border-color: $c-error;
-      color       : $c-error;
-    }
-
+    // &--error:not([type=checkbox]):not([type=radio]) {
+    //   border-color: $c-warning;
+    //   color       : $c-warning;
+    // }
+    //
+    // &--alert:not([type=checkbox]):not([type=radio]) {
+    //   border-color: $c-error;
+    //   color       : $c-error;
+    // }
     &--disabled:not([type=checkbox]):not([type=radio]),
     &:disabled:not([type=checkbox]):not([type=radio]) {
       cursor      : not-allowed;

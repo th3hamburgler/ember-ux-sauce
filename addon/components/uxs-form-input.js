@@ -46,6 +46,7 @@ export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testabl
   initModifiers() {
     this.registerModifiers([
       'disabled',
+      '*style',
       'isEmail:email',
       'error',
       'isHidden:hidden',

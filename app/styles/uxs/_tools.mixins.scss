@@ -44,15 +44,16 @@
   -webkit-appearance: none;
   -moz-appearance   : none;
   appearance        : none;
-  background-color  : $c-white;
-  border            : 1px solid $c-primary;
+  border-width      : 1px;
+  border-style      : solid;
   border-radius     : 0;
-  color             : $c-dark;
   display           : block;
   padding           : rem-size(($baseline*.25) - 1px) rem-size(($baseline*.5) - 1px);
   width             : 100%;
   @include input-placeholder() {
-    color: $c-mid;
+    // color: $c-mid;
+    color  : inherit;
+    opacity: 0.4;
   };
   @include input-glow {
     box-shadow: 0 0 0.5rem $c-primary-4;

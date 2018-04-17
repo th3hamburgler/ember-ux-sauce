@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import Ember from 'ember';
 import {
+  computed,
   set
 } from '@ember/object';
 
@@ -15,6 +16,25 @@ export default Controller.extend({
   max: null,
   step: null,
   type: 'text',
+  // Computed
+  darkStyles: computed(function() {
+    return [
+      'primary',
+      'accent',
+      'dark',
+      'grey',
+      'success',
+      'warning',
+      'error',
+    ];
+  }),
+  lightStyles: computed(function() {
+    return [
+      'mid',
+      'light',
+      'white',
+    ];
+  }),
   // Methods
   init() {
     this._super(...arguments);
