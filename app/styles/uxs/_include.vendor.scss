@@ -61,6 +61,7 @@ $ember-power-select-multiple-option-line-height: ($baseline*1.5);
 .uxs-form__input {
   &--dropdown {
     max-width: $max-width-content;
+    min-width: rs(4);
   }
 }
 

@@ -45,7 +45,7 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   init() {
     this._super(...arguments);
 
-    this.registerModifiers(['isWhite:white']);
+    this.registerModifiers(['isWhite:white', '*style']);
     set(this, 'propTypes', {
       validateOnFocus: PropTypes.boolean,
     });

@@ -27,13 +27,13 @@
   datetime=(component "uxs-form-datetime"     model=model name=name disabled=disabled placeholder=placeholder readonly=readonly inlineInput=inline style=style)
   time=(component     "uxs-form-time"         model=model name=name disabled=disabled placeholder=placeholder readonly=readonly inlineInput=inline style=style)
   row=(component      "uxs-form-control-row"  model=model name=name disabled=disabled style=style)
-  tip=(component      "uxs-form-tip"          name=name disabled=disabled error=hasValidationError)
+  tip=(component      "uxs-form-tip"          name=name disabled=disabled error=hasValidationError style=style)
   warning=(component  "uxs-form-warning"      name=name disabled=disabled error=hasValidationError)
   error=(component    "uxs-form-error"        name=name disabled=disabled)
 )}}
 
 {{#if hasTip}}
-  {{uxs-form-tip tip name=name disabled=disabled error=hasValidationError}}
+  {{uxs-form-tip tip name=name disabled=disabled error=hasValidationError style=style}}
 {{/if}}
 {{#if hasWarning}}
   {{uxs-form-warning warning name=name disabled=disabled error=hasValidationError}}

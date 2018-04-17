@@ -145,7 +145,6 @@
 
     <div class="p">
       {{#each darkStyles as |style|}}
-
         {{uxs-form-control
           label=(concat (capitalize style) " Style")
           disabled=disabled
@@ -156,12 +155,10 @@
           error=error
           style=style
         }}
-
       {{/each}}
     </div>
     <div class="bg-dark p">
     {{#each lightStyles as |style|}}
-
         {{uxs-form-control
           label=(concat (capitalize style) " Style")
           disabled=disabled
@@ -172,7 +169,6 @@
           error=error
           style=style
         }}
-
     {{/each}}
     </div>
 

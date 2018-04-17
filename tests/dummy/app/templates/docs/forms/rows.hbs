@@ -124,3 +124,91 @@
   {{demo.snippet 'form-row-icon.hbs'}}
 
 {{/docs-demo}}
+
+
+<h2>Styles Usage</h2>
+
+<p>You can customise the look of your rows with the style attribute. In this example the style attribute is inherited by the row from uxs-form.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="form-row-styles"}}
+
+    <div class="p">
+      {{#each darkStyles as |style|}}
+
+        {{#uxs-form style=style model=model as |form|}}
+          {{#form.control
+            label="Email"
+            name="email"
+            tip="Please enter your email address"
+            as |control|
+          }}
+            {{#control.row as |row|}}
+              {{row.icon "email" prefix=true}}
+              {{row.input placeholder="Email"}}
+            {{/control.row}}
+          {{/form.control}}
+          {{#form.control
+            label="Phone Number"
+            name="phone"
+            tip="Please enter your phone number including an international code"
+            as |control|
+          }}
+            {{#control.row as |row|}}
+              {{row.input placeholder="+00 0000 000000"}}
+              {{row.icon "phone" suffix=true}}
+            {{/control.row}}
+          {{/form.control}}
+          {{#form.control}}
+            {{#form.row as |row|}}
+              {{row.input name="search" type="search" placeholder="Enter your search term"}}
+              {{row.button (capitalize style) name="go"}}
+            {{/form.row}}
+          {{/form.control}}
+        {{/uxs-form}}
+
+      {{/each}}
+    </div>
+    <div class="bg-dark p">
+    {{#each lightStyles as |style|}}
+
+      {{#uxs-form style=style model=model as |form|}}
+        {{#form.control
+          label="Email"
+          name="email"
+          tip="Please enter your email address"
+          as |control|
+        }}
+          {{#control.row as |row|}}
+            {{row.icon "email" prefix=true}}
+            {{row.input placeholder="Email"}}
+          {{/control.row}}
+        {{/form.control}}
+        {{#form.control
+          label="Phone Number"
+          name="phone"
+          tip="Please enter your phone number including an international code"
+          as |control|
+        }}
+          {{#control.row as |row|}}
+            {{row.input placeholder="+00 0000 000000"}}
+            {{row.icon "phone" suffix=true}}
+          {{/control.row}}
+        {{/form.control}}
+        {{#form.control}}
+          {{#form.row as |row|}}
+            {{row.input name="search" type="search" placeholder="Enter your search term"}}
+            {{row.button (capitalize style) name="go"}}
+          {{/form.row}}
+        {{/form.control}}
+      {{/uxs-form}}
+
+    {{/each}}
+    </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet "form-row-styles.hbs"}}
+
+{{/docs-demo}}

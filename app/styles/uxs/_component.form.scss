@@ -158,6 +158,7 @@
 
   &__tip {
     @extend .detail;
+    @include contrast-text-color-modifiers();
     @include transition-all;
     clear    : both;
     padding  : 0;

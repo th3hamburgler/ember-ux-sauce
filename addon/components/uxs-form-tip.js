@@ -21,6 +21,7 @@ const FormTip = Component.extend(BEMComponent, PropTypeMixin, Testable, {
       'required',
       'success',
       'warning',
+      '*style'
     ]);
     this._super(...arguments);
     set(this, 'propTypes', {

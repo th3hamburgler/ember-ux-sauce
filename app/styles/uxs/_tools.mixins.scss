@@ -167,6 +167,13 @@
     }
   }
 }
+@mixin contrast-text-color-modifiers($colors:$defaultColors, $dark-color:$c-dark, $light-color:$c-white, $prefix:'') {
+  @each $modifier, $color in $colors {
+    &--#{$prefix}#{$modifier} {
+      color: contrast-color(contrast-color($color, $dark-color, $light-color));
+    }
+  }
+}
 @mixin border-color-modifiers($colors:$defaultColors) {
   @each $modifier, $color in $colors {
     &--#{$modifier} {
