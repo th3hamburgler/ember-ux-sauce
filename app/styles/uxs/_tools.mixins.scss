@@ -144,11 +144,11 @@
     }
   }
 }
-@mixin contrast-background-color-modifiers($colors:$defaultColors) {
+@mixin contrast-background-color-modifiers($colors:$defaultColors, $dark-color:$c-dark, $light-color:$c-white, $prefix:'parent-') {
   @each $modifier, $color in $colors {
-    &--parent-#{$modifier} {
-      background-color: contrast-color($color);
-      color           : contrast-color(contrast-color($color));
+    &--#{$prefix}#{$modifier} {
+      background-color: contrast-color($color,$dark-color, $light-color);
+      color           : contrast-color(contrast-color($color),$dark-color, $light-color);
     }
   }
 }

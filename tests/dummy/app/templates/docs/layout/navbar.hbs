@@ -11,11 +11,11 @@
   {{#demo.example name="navbar"}}
 
     {{#uxs-navbar title=title fixed=fixed as |bar|}}
-      {{#bar.nav as |nav|}}
+      {{#bar.menu as |nav|}}
         {{nav.item "Home"}}
         {{nav.item "Account"}}
         {{nav.item "Logout"}}
-      {{/bar.nav}}
+      {{/bar.menu}}
     {{/uxs-navbar}}
 
   {{/demo.example}}
@@ -41,3 +41,37 @@
     <td><em>Boolean</em></td>
   </tr>
 </table>
+
+<h2>Styles Usage</h2>
+
+<p>You can customise the look of your navbar with the style attribute.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="navbar-styles"}}
+
+    {{#each styles as |style|}}
+
+      {{#uxs-navbar
+        style=style
+        title=(capitalize (concat style " Navbar"))
+        as |bar|
+      }}
+
+        {{#bar.desktopNav as |nav|}}
+          {{#nav.menu detail=true as |menu|}}
+            {{menu.link "Home"}}
+            {{menu.item "Account"}}
+            {{menu.item "Logout"}}
+          {{/nav.menu}}
+        {{/bar.desktopNav}}
+
+      {{/uxs-navbar}}
+
+    {{/each}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "navbar-styles.hbs"}}
+
+{{/docs-demo}}

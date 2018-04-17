@@ -237,3 +237,42 @@
   {{demo.snippet "button-menus.hbs"}}
 
 {{/docs-demo}}
+
+
+<h2>Styles Usage</h2>
+
+<p>You can customise the look of your menu with the style attribute.</p>
+
+{{#docs-demo class="bg-dark" as |demo|}}
+
+  {{#demo.example name="menu-styles"}}
+
+    {{#each styles as |style|}}
+
+        {{#uxs-menu style=style class="mb" horizontal=true as |menu|}}
+          {{menu.item (capitalize (concat style " Menu"))}}
+          {{menu.item "Disabled Item" disabled=true}}
+          {{menu.divider}}
+          {{menu.link "Docs" "docs"}}
+          {{menu.link "App" "app"}}
+        {{/uxs-menu}}
+
+    {{/each}}
+
+    {{#each styles as |style|}}
+
+        {{#uxs-menu class="mb" style=style horizontal=false as |menu|}}
+          {{menu.item (capitalize (concat style " Menu"))}}
+          {{menu.item "Disabled Item" disabled=true}}
+          {{menu.divider}}
+          {{menu.link "Docs" "docs"}}
+          {{menu.link "App" "app"}}
+        {{/uxs-menu}}
+        <br>
+
+    {{/each}}
+  {{/demo.example}}
+
+  {{demo.snippet "menu-styles.hbs"}}
+
+{{/docs-demo}}

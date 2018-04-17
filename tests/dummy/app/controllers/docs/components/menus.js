@@ -4,10 +4,6 @@ import {
 } from '@ember/object';
 
 export default Controller.extend({
-  // Attributes
-  title: 'AppName',
-  fixed: false,
-  // Computed
   styles: computed(function() {
     return [
       'primary',

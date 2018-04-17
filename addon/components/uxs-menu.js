@@ -18,6 +18,7 @@ export default Component.extend(BEMComponent, Styleable, Testable, {
       'detail',
       'horizontal',
       'bordered',
+      '*style'
     ])
     this._super(...arguments);
   },
@@ -26,6 +27,7 @@ export default Component.extend(BEMComponent, Styleable, Testable, {
       align: 'left',
       detail: false,
       bordered: true,
+      style: null,
     };
   },
   // Actions
