@@ -18,18 +18,18 @@ export default Component.extend(BEMComponent, Clickable, Testable, {
   base: 'uxs-list-item',
   layout,
   // Computed
-  contrastStyle: computed('style', function() {
+  parentStyle: computed('style', function() {
     const style = get(this, 'style');
     if (!isEmpty(style)) {
-      if (['mid', 'light', 'white'].indexOf(style) !== -1) {
-        Ember.Logger.log('dark ' + style);
-        return 'dark';
-      } else {
-        Ember.Logger.log('white ' + style);
-        return 'white';
-      }
-      Ember.Logger.log('empty ' + style);
+      return `parent-${style}`;
     }
+    // if (!isEmpty(style)) {
+    //   if (['mid', 'light', 'white'].indexOf(style) !== -1) {
+    //     return 'dark';
+    //   } else {
+    //     return 'white';
+    //   }
+    // }
   }),
   hasOneLine: equal('lines', 1),
   hasTwoLines: equal('lines', 2),
@@ -39,6 +39,7 @@ export default Component.extend(BEMComponent, Clickable, Testable, {
     this._super(...arguments);
     this.registerModifiers([
       'bordered',
+      '*style',
       'hasOneLine:one-line',
       'hasTwoLines:two-lines',
       'hasThreeLines:three-lines',

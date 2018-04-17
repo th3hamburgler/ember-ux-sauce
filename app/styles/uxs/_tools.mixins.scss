@@ -144,6 +144,28 @@
     }
   }
 }
+@mixin contrast-background-color-modifiers($colors:$defaultColors) {
+  @each $modifier, $color in $colors {
+    &--parent-#{$modifier} {
+      background-color: contrast-color($color);
+      color           : contrast-color(contrast-color($color));
+    }
+  }
+}
+@mixin border-color-modifiers($colors:$defaultColors) {
+  @each $modifier, $color in $colors {
+    &--#{$modifier} {
+      border-color: $color;
+    }
+  }
+}
+@mixin contrast-border-color-modifiers($colors:$defaultColors, $dark-color:$c-dark, $light-color:$c-white) {
+  @each $modifier, $color in $colors {
+    &--#{$modifier} {
+      border-color: contrast-color($color, $dark-color, $light-color);
+    }
+  }
+}
 @mixin border-color-modifiers($colors:$defaultColors) {
   @each $modifier, $color in $colors {
     &--#{$modifier} {
