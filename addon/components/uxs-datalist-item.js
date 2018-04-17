@@ -21,6 +21,6 @@ export default Component.extend(BEMComponent, Testable, {
   // Methods
   init() {
     this._super(...arguments);
-    this.registerModifiers(['bordered']);
+    this.registerModifiers(['bordered', '*style']);
   },
 });

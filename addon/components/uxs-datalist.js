@@ -4,6 +4,12 @@ import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 
 export default Component.extend(BEMComponent, Testable, {
+  // Attributes
   base: 'uxs-datalist',
-  layout
+  layout,
+  // Methods
+  init() {
+    this._super(...arguments);
+    this.registerModifiers(['*style']);
+  },
 });

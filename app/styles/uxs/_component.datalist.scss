@@ -1,11 +1,16 @@
 .uxs-datalist {
+  @include text-color-modifiers($prefix:'');
+
   &__item {
-    margin-bottom: rem-size($baseline*1);
+    border-bottom-color: $c-light;
+    margin-bottom      : rem-size($baseline*1);
+    @include contrast-border-color-modifiers($dark-color:rgba($c-light,0.4), $light-color:rgba($c-dark,0.4),$prefix:'');
 
     &--bordered {
-      border-bottom : rem-size(1px) solid $c-light;
-      padding-bottom: rem-size(($baseline*0.5));
-      margin-bottom : rem-size(($baseline*0.5)-1px);
+      border-bottom-width: rem-size(1px);
+      border-bottom-style: solid;
+      padding-bottom     : rem-size(($baseline*0.5));
+      margin-bottom      : rem-size(($baseline*0.5)-1px);
     }
   }
 
