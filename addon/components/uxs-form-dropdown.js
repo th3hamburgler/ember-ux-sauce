@@ -6,6 +6,10 @@ import {
   defineProperty,
 } from '@ember/object';
 import {
+  computed,
+  get
+} from '@ember/object';
+import {
   alias,
   oneWay,
 } from '@ember/object/computed';
@@ -15,6 +19,20 @@ export default PowerSelect.extend(Accessible, BEMComponent, Testable, {
   base: 'uxs-form__input',
   isDropdown: true,
   tagName: 'div',
+  // Computed
+  dropdownClass: computed('style', function() {
+    const classNames = [],
+      base = 'uxs-form__dropdown',
+      style = get(this, 'style');
+
+    classNames.push(base);
+
+    if (style) {
+      classNames.push(`${base}--${style}`);
+    }
+
+    return classNames.join(' ');
+  }),
   // Methods
   init() {
     this._super(...arguments);
@@ -29,6 +47,7 @@ export default PowerSelect.extend(Accessible, BEMComponent, Testable, {
       'error',
       'inline',
       'warning',
+      '*style',
     ]);
   },
 

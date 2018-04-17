@@ -27,8 +27,7 @@ body.ember-tether-enabled {
 @import 'uxs/include.tools'; // .docs-demo-example,
 //
 
-.uxs,
-.uxs-ns {
+.uxs {
   @import 'uxs/include.base';
   @import 'uxs/include.vendor';
   @import 'uxs/include.elements'; // @include body-type;

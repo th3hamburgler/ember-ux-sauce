@@ -39,3 +39,62 @@
     <td><em>String</em></td>
   </tr>
 </table>
+
+
+
+<h2>Styles Usage</h2>
+
+<p>You can customise the look of your dropdown with the style attribute.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="form-dropdown-styles"}}
+
+    <div class="p">
+      {{#each darkStyles as |style|}}
+
+        <div class="mb">
+          {{#uxs-form-dropdown
+            allowClear=true
+            searchPlaceholder="Search Options"
+            style=style
+            placeholder=(concat (capitalize style) " Style")
+            selected=name
+            options=names
+            onchange=(action (mut name))
+            name="my-dropdown"
+            as |name|
+          }}
+            {{name}}
+          {{/uxs-form-dropdown}}
+        </div>
+
+      {{/each}}
+    </div>
+    <div class="bg-dark p">
+    {{#each lightStyles as |style|}}
+
+      <div class="mb">
+        {{#uxs-form-dropdown
+          allowClear=true
+          searchPlaceholder="Search Options"
+          style=style
+          placeholder=(concat (capitalize style) " Style")
+          selected=name
+          options=names
+          onchange=(action (mut name))
+          name="my-dropdown"
+          as |name|
+        }}
+          {{name}}
+        {{/uxs-form-dropdown}}
+      </div>
+
+    {{/each}}
+    </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet "form-dropdown-styles.hbs"}}
+
+{{/docs-demo}}
