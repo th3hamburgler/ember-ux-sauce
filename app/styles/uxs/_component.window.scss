@@ -11,7 +11,6 @@
 
   &--splash {
     align-items        : center;
-    background-color   : $c-primary;
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : cover;
@@ -45,11 +44,10 @@
     }
 
     &--splash {
-      background: $c-white;
-      padding   : rem-size($baseline);
-      margin    : rem-size($baseline*2) 0;
-      max-width : $max-width-content;
-      width     : 90%;
+      padding  : rem-size($baseline);
+      margin   : rem-size($baseline*2) 0;
+      max-width: $max-width-content;
+      width    : 90%;
       @include mq(tablet) {
         width: 40%;
       }

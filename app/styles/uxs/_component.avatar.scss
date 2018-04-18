@@ -1,4 +1,5 @@
 .uxs-avatar {
+  @include contrast-background-color-modifiers();
   @include background-color-modifiers();
   display: block;
   width  : rem-size($baseline*2);

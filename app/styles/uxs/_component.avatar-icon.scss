@@ -1,5 +1,6 @@
 .uxs-icon-avatar {
   @extend .material-icons;
+  @include contrast-background-color-modifiers();
   @include background-color-modifiers();
   $size      : rem-size($baseline*2);
   align-items: center;
