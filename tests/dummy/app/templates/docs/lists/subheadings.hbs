@@ -1,0 +1,85 @@
+<h1>List Subheadings</h1>
+
+<p>Subheadings are used to group list items. You can group a flat model collection with an addon like <a href="https://github.com/scottwernervt/ember-cli-group-by">ember-cli-group-by</a>.</p>
+
+
+<h2>Example</h2>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="list-subheadings"}}
+
+    {{#uxs-list lines=3 bordered=true as |list|}}
+      {{list.subheading "Subheading"}}
+      {{#list.item as |item|}}
+        {{#item.aside}}
+          {{item.avatar "https://placeimg.com/100/100/any" round=true}}
+        {{/item.aside}}
+        {{#item.body}}
+          {{item.title "Filtered Item"}}
+          {{item.detail "Notice how the list avatar"}}
+          {{item.detail "matches the notice icon"}}
+        {{/item.body}}
+        {{#item.aside}}
+          {{item.action "keyboard_arrow_right"}}
+        {{/item.aside}}
+      {{/list.item}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "list-subheadings.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Styles Usage</h2>
+
+<p>You can customise the look of your list subheadings by passing the style attribute to the list-subheading component. The default style will be either dark or white text depending on what contrasts with the parents list style.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="list-subheading-styles"}}
+
+    {{#uxs-list lines=3 bordered=true as |list|}}
+
+      <div class="bg-white">
+        {{#each darkStyles as |style|}}
+
+          {{list.subheading (capitalize style) style=style}}
+
+        {{/each}}
+      </div>
+      <div class="bg-dark">
+        {{#each lightStyles as |style|}}
+
+          {{list.subheading (capitalize style) style=style}}
+
+        {{/each}}
+      </div>
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+{{/docs-demo}}
+
+<h2>Properties</h2>
+
+<p>The uxs-list-subheading component has the following properties:</p>
+
+<table class="docs-args-table">
+  <tr>
+    <td>text<span class="req">*</span></td>
+    <td>The subheading text. This can be passed in as the first positional parameter.</td>
+    <td><em>String</em></td>
+  </tr>
+  <tr>
+    <td>bordered</td>
+    <td>Adds a border to the bottom of the list item. <em>Default: false</em></td>
+    <td><em>Boolean</em></td>
+  </tr>
+  <tr>
+    <td>style</td>
+    <td>Defined the color/style of the list. Default: white</td>
+    <td><em>String</em></td>
+  </tr>
+</table>

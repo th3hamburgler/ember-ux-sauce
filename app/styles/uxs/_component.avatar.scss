@@ -5,7 +5,7 @@
   width  : rem-size($baseline*2);
   height : rem-size($baseline*2);
 
-  &--round {
+  &--rounded {
     border-radius: 100%;
   }
 
@@ -15,18 +15,30 @@
   }
 
   &--small {
-    width: rem-size($baseline*1);
+    $size      : rem-size($baseline*1);
+    line-height: $size;
+    height     : $size;
+    width      : $size;
   }
 
   &--large {
-    width: rem-size($baseline*3);
+    $size      : rem-size($baseline*3);
+    line-height: $size;
+    height     : $size;
+    width      : $size;
   }
 
   &--huge {
-    width: rem-size($baseline*4);
+    $size      : rem-size($baseline*4);
+    line-height: $size;
+    height     : $size;
+    width      : $size;
   }
 
   &--giant {
-    width: rem-size($baseline*6);
+    $size      : rem-size($baseline*6);
+    line-height: $size;
+    height     : $size;
+    width      : $size;
   }
 }

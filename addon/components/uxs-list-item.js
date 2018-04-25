@@ -41,6 +41,7 @@ export default Component.extend(BEMComponent, Clickable, Testable, {
   getDefaultProps() {
     return {
       lines: 1,
+      bordered: false,
     };
   },
 });

@@ -34,6 +34,8 @@ export default Component.extend(BEMComponent, Testable, {
   getDefaultProps() {
     return {
       style: 'white',
+      bordered: false,
+      lines: 1,
     };
   },
 });

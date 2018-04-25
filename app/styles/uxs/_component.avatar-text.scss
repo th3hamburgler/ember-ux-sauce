@@ -10,8 +10,8 @@
   line-height    : $size;
   width          : $size;
 
-  &--round {
-    border-radius: $size;
+  &--rounded {
+    border-radius: 100%;
   }
 
   &--border {
@@ -22,6 +22,7 @@
   &--small {
     $size      : rem-size($baseline*1);
     line-height: $size;
+    font-size  : $s-small;
     height     : $size;
     width      : $size;
   }
@@ -29,6 +30,7 @@
   &--large {
     $size      : rem-size($baseline*3);
     line-height: $size;
+    font-size  : $s-large;
     height     : $size;
     width      : $size;
   }
@@ -36,6 +38,7 @@
   &--huge {
     $size      : rem-size($baseline*4);
     line-height: $size;
+    font-size  : $s-huge;
     height     : $size;
     width      : $size;
   }
@@ -43,6 +46,7 @@
   &--giant {
     $size      : rem-size($baseline*6);
     line-height: $size;
+    font-size  : $s-giant;
     height     : $size;
     width      : $size;
   }

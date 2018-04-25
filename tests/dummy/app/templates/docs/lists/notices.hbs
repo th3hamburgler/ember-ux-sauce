@@ -1,0 +1,60 @@
+<h1>List Notices</h1>
+
+<p>Lists can be used to hightlight a list in certain contexts. e.g. an active filter.</p>
+
+<h2>Example</h2>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="list-notices"}}
+
+    {{#uxs-list lines=3 bordered=true as |list|}}
+      {{list.notice
+        "Displaying Filtered Results"
+        icon="filter_list"
+        actionText="Clear"
+        onClick=(action "noticeAction")
+      }}
+      {{#list.item as |item|}}
+        {{#item.aside}}
+          {{item.avatar "https://placeimg.com/100/100/any" round=true}}
+        {{/item.aside}}
+        {{#item.body}}
+          {{item.title "Filtered Item"}}
+          {{item.detail "Notice how the list avatar"}}
+          {{item.detail "matches the notice icon"}}
+        {{/item.body}}
+        {{#item.aside}}
+          {{item.action "keyboard_arrow_right"}}
+        {{/item.aside}}
+      {{/list.item}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "list-notices.hbs"}}
+
+{{/docs-demo}}
+
+
+<h2>Styles Usage</h2>
+
+<p>You can customise the look of your list notices by passing the style attribute to the list-subheading component.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="list-notice-styles"}}
+    {{#each styles as |style|}}
+
+      {{uxs-list-notice
+        "Displaying Filtered Results"
+        icon="filter_list"
+        actionText="Clear"
+        onClick=(action "noticeAction")
+        style=style
+      }}
+
+    {{/each}}
+  {{/demo.example}}
+
+{{/docs-demo}}

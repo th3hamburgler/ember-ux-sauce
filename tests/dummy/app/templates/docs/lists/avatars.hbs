@@ -1,0 +1,137 @@
+<h1>List Avatars</h1>
+
+<p>Avatars are used to display a graphical representation of a resource.</p>
+
+<h2>Image Avatars</h2>
+
+<p>Images avatars display an image url.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="image-avatars"}}
+
+    {{uxs-avatar "http://api.faceholder.io/faces?id=small" size="small" rounded=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=medium" size="medium" rounded=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=large" size="large" rounded=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=huge" size="huge" rounded=true}}
+    {{uxs-avatar "http://api.faceholder.io/faces?id=giant" size="giant" rounded=true}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "image-avatars.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Text Avatars</h2>
+
+<p>Text Avatars display a text string.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="text-avatars"}}
+
+    {{uxs-avatar-text "JW" size="small" rounded=true}}
+    {{uxs-avatar-text "99" size="medium" rounded=true}}
+    {{uxs-avatar-text "42" size="large" rounded=true}}
+    {{uxs-avatar-text "AD" size="huge" rounded=true}}
+    {{uxs-avatar-text "10" size="giant" rounded=true}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "text-avatars.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Icon Avatars</h2>
+
+<p>Icon Avatars display an icon.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="icon-avatars"}}
+
+    {{uxs-avatar-icon "star" size="small" rounded=true}}
+    {{uxs-avatar-icon "star" size="medium" rounded=true}}
+    {{uxs-avatar-icon "star" size="large" rounded=true}}
+    {{uxs-avatar-icon "star" size="huge" rounded=true}}
+    {{uxs-avatar-icon "star" size="giant" rounded=true}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "icon-avatars.hbs"}}
+
+{{/docs-demo}}
+
+
+<h2>Styles Usage</h2>
+
+<p>You can customise the look of your list avatars by passing the style attribute to the avatar component. The default style will be either dark or white text depending on what contrasts with the parents list style.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="avatar-styles"}}
+
+    <div class="bg-white">
+      {{#each darkStyles as |style|}}
+        <div class="f fr">
+          {{uxs-avatar "http://api.faceholder.io/faces?id=0" style=style rounded=true}}
+          {{uxs-avatar-text "AA" style=style rounded=true}}
+          {{uxs-avatar-icon "invert_colors" style=style rounded=true}}
+        </div>
+      {{/each}}
+    </div>
+    <div class="bg-dark">
+      {{#each lightStyles as |style|}}
+        <div class="f fr">
+          {{uxs-avatar (concat "http://api.faceholder.io/faces?id=" style) style=style rounded=true}}
+          {{uxs-avatar-text "AA" style=style rounded=true}}
+          {{uxs-avatar-icon "invert_colors" style=style rounded=true}}
+        </div>
+      {{/each}}
+    </div>
+
+  {{/demo.example}}
+
+{{/docs-demo}}
+
+<h2>Properties</h2>
+
+<p>The uxs-avatar, uxs-avatar-icon & uxs-avatar-text components have the following properties:</p>
+
+<table class="docs-args-table">
+  <tr>
+    <td>src<span class="req">*</span></td>
+    <td>The image path for uxs-avatar, This can be passed in as the first positional parameter.</td>
+    <td><em>String</em></td>
+  </tr>
+  <tr>
+    <td>icon<span class="req">*</span></td>
+    <td>The icon name/path for uxs-avatar-icon, This can be passed in as the first positional parameter.</td>
+    <td><em>String</em></td>
+  </tr>
+  <tr>
+    <td>text<span class="req">*</span></td>
+    <td>The avatar text for uxs-avatar-text, This can be passed in as the first positional parameter.</td>
+    <td><em>String</em></td>
+  </tr>
+  <tr>
+    <td>bordered</td>
+    <td>Adds a border to the bottom of the list item. <em>Default: false</em></td>
+    <td><em>Boolean</em></td>
+  </tr>
+  <tr>
+    <td>rounded</td>
+    <td>Display a round avatar. <em>Default: false</em></td>
+    <td><em>Boolean</em></td>
+  </tr>
+  <tr>
+    <td>style</td>
+    <td>Define the color/style of the list. Default: 'dark'</td>
+    <td><em>String</em></td>
+  </tr>
+  <tr>
+    <td>size</td>
+    <td>Define the size of the avatar. Default: 'medium'</td>
+    <td><em>String</em></td>
+  </tr>
+</table>

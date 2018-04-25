@@ -1,12 +1,62 @@
+<h1>List Items</h1>
 
+<p>List items are used to render each item of you list. The items tend to contain 1 - 3 "columns" of data. These could be an avatar, text or actions.</p>
+
+<h2>Basic Example</h2>
+
+<p>This is a simple list containing just a title for each item.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="list-items"}}
+
+    {{#uxs-list as |list|}}
+      {{#each items as |thing|}}
+        {{#list.item as |item|}}
+          {{item.title thing.title}}
+        {{/list.item}}
+      {{/each}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "list-lists.hbs"}}
+
+{{/docs-demo}}
+
+<h2>Adding more content</h2>
+
+<p>This is a list contains some meta data and includes a bottom border. By defining the lines & border property on the list component, these properties are passed to each item and will set the height and bottom-border.</p>
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="list-items-bordered"}}
+
+    {{#uxs-list lines=2 bordered=true as |list|}}
+      {{#each items as |thing|}}
+        {{#list.item as |item|}}
+          {{#item.content}}
+            {{item.title thing.title}}
+            {{item.content thing.location}}
+          {{/item.content}}
+        {{/list.item}}
+      {{/each}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "list-items-bordered.hbs"}}
+
+{{/docs-demo}}
 
 <h2>Avatars and Actions</h2>
 
 <p>This is a list that includes some horizontal layout for the avatar and item. We use the aside and body contextual components to split up each items layout.</p>
+<p>There is a variaty of avatar components you can use in lists including: image, text and icon avatars. See the {{link-to "avatars page" "docs.lists.avatars"}} for details.</p>
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="action-list"}}
+  {{#demo.example name="list-items-aside"}}
 
     {{#uxs-list lines=3 bordered=true as |list|}}
       {{#each items as |thing|}}
@@ -28,82 +78,17 @@
 
   {{/demo.example}}
 
-  {{demo.snippet "action-list.hbs"}}
-
-{{/docs-demo}}
-
-<h2>Icon Avatars</h2>
-
-<p>You can use icons for the list items avatar.</p>
-
-{{#docs-demo as |demo|}}
-
-  {{#demo.example name="icon-avatar-list"}}
-
-    {{#uxs-list lines=3 bordered=true as |list|}}
-      {{#each items as |thing|}}
-        {{#list.item as |item|}}
-          {{#item.aside}}
-            {{item.avatarIcon "face" round=true}}
-          {{/item.aside}}
-          {{#item.body}}
-            {{item.title thing.title}}
-            {{item.detail thing.location}}
-            {{item.detail thing.email}}
-          {{/item.body}}
-          {{#item.aside}}
-            {{item.action "keyboard_arrow_right"}}
-          {{/item.aside}}
-        {{/list.item}}
-      {{/each}}
-    {{/uxs-list}}
-
-  {{/demo.example}}
-
-  {{demo.snippet "icon-avatar-list.hbs"}}
-
-{{/docs-demo}}
-
-
-<h2>Text Avatars</h2>
-
-<p>You can use text for the list items avatar too.</p>
-
-{{#docs-demo as |demo|}}
-
-  {{#demo.example name="icon-avatar-list"}}
-
-    {{#uxs-list lines=3 bordered=true as |list|}}
-      {{#each items as |thing|}}
-        {{#list.item as |item|}}
-          {{#item.aside}}
-            {{item.avatarText thing.count round=true}}
-          {{/item.aside}}
-          {{#item.body}}
-            {{item.title thing.title}}
-            {{item.detail thing.location}}
-            {{item.detail thing.email}}
-          {{/item.body}}
-          {{#item.aside}}
-            {{item.action "keyboard_arrow_right"}}
-          {{/item.aside}}
-        {{/list.item}}
-      {{/each}}
-    {{/uxs-list}}
-
-  {{/demo.example}}
-
-  {{demo.snippet "icon-avatar-list.hbs"}}
+  {{demo.snippet "list-items-aside.hbs"}}
 
 {{/docs-demo}}
 
 <h2>Styles Usage</h2>
 
-<p>You can customise the look of your lists with the style attribute.</p>
+<p>You can customise the look of your list items by passing the style attribute to the list-item component, this will override any style passed to the parent list.</p>
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="lists-styles" class="bg-dark"}}
+  {{#demo.example name="list-items-styles" class="bg-dark"}}
 
     {{#each styles as |style|}}
 
@@ -154,64 +139,61 @@
 
   {{/demo.example}}
 
-  {{demo.snippet "lists-styles.hbs"}}
-
 {{/docs-demo}}
 
-<h2>List Notices</h2>
+<h2>Properties</h2>
 
+<p>The uxs-list-item component has the following properties:</p>
 
-{{#docs-demo as |demo|}}
+<table class="docs-args-table">
+  <tr>
+    <td>style</td>
+    <td>Defined the color/style of the list.</td>
+    <td><em>String</em></td>
+  </tr>
+  <tr>
+    <td>bordered</td>
+    <td>Adds a border to the bottom of the list item. <em>Default: false</em></td>
+    <td><em>Boolean</em></td>
+  </tr>
+  <tr>
+    <td>disabled</td>
+    <td>Disables the list item, will stop any action being fired. <em>Default: false</em></td>
+    <td><em>Boolean</em></td>
+  </tr>
+  <tr>
+    <td>lines</td>
+    <td>Fixes the height to accomodate 1-3 lines of content in the body. <em>Default: 1</em></td>
+    <td><em>Number (1-3)</em></td>
+  </tr>
+</table>
 
-  {{#demo.example name="list-notices"}}
+<h2>Actions</h2>
 
+<p>The uxs-list-item component has the following actions:</p>
 
-    {{#uxs-list lines=3 bordered=true as |list|}}
-      {{list.notice
-        "Displaying Filtered Results"
-        icon="filter_list"
-        actionText="Clear"
-        onClick=(action "noticeAction")
-      }}
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{item.avatar "https://placeimg.com/100/100/any" round=true}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "Filtered Item"}}
-          {{item.detail "Notice how the list avatar"}}
-          {{item.detail "matches the notice icon"}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.action "keyboard_arrow_right"}}
-        {{/item.aside}}
-      {{/list.item}}
-    {{/uxs-list}}
-
-  {{/demo.example}}
-
-  {{demo.snippet "list-notices.hbs"}}
-
-{{/docs-demo}}
-
-
-{{#docs-demo as |demo|}}
-
-  {{#demo.example name="list-notice-styles"}}
-    {{#each styles as |style|}}
-
-      {{uxs-list-notice
-        "Displaying Filtered Results"
-        icon="filter_list"
-        actionText="Clear"
-        onClick=(action "noticeAction")
-        style=style
-      }}
-
-    {{/each}}
-  {{/demo.example}}
-
-{{/docs-demo}}
+<table class="docs-args-table">
+  <tr>
+    <td>list-item</td>
+    <td>onClick</td>
+    <td>Fired on list item component click.</td>
+  </tr>
+  <tr>
+    <td>list-item.aside</td>
+    <td>onClick</td>
+    <td>Fired on list item aside component click.</td>
+  </tr>
+  <tr>
+    <td>list-item.body</td>
+    <td>onClick</td>
+    <td>Fired on list item body component click.</td>
+  </tr>
+  <tr>
+    <td>list-item.action</td>
+    <td>onClick</td>
+    <td>Fired on list item action component click.</td>
+  </tr>
+</table>
 
 
 <h2>Contextual Components</h2>
@@ -241,7 +223,15 @@
   </tr>
   <tr>
     <td>avatar</td>
-    <td>Alias of {{link-to "uxs-avatar" "docs.components.avatars"}}</td>
+    <td>Alias of {{link-to "uxs-avatar" "docs.lists.avatars"}}</td>
+  </tr>
+  <tr>
+    <td>avatarIcon</td>
+    <td>Alias of {{link-to "uxs-avatar-icon" "docs.lists.avatars"}}</td>
+  </tr>
+  <tr>
+    <td>avatarText</td>
+    <td>Alias of {{link-to "uxs-avatar-text" "docs.lists.avatars"}}</td>
   </tr>
   <tr>
     <td>action</td>

@@ -28,6 +28,12 @@ Router.map(function() {
       this.route('fieldsets');
       this.route('rows');
     });
+    this.route('lists', function() {
+      this.route('items');
+      this.route('avatars');
+      this.route('subheadings');
+      this.route('notices');
+    })
     this.route('components', function() {
       this.route('lists');
       this.route('pagination');

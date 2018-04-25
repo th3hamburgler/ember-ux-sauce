@@ -1,0 +1,20 @@
+.uxs-list {
+  &__subheading {
+    @include type-subheading;
+    @include text-color-modifiers($prefix:'');
+    @include contrast-border-color-modifiers($dark-color:rgba($c-dark,0.4), $light-color:rgba($c-white,0.4),$prefix:'parent-');
+    border-color  : $c-light;
+    padding       : rem-size($baseline*.75) rem-size($baseline*0.5) rem-size($baseline*0.25);
+    text-transform: uppercase;
+    @include mq(tablet-wide) {
+      padding-left : rem-size($baseline*1);
+      padding-right: rem-size($baseline*1);
+    }
+
+    &--bordered {
+      border-bottom-style: solid;
+      border-bottom-width: rem-size(1px);
+      line-height        : rem-size($baseline - 1);
+    }
+  }
+}

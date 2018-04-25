@@ -3,43 +3,23 @@
 {{#docs-viewer as |viewer|}}
 
  {{#viewer.nav as |nav|}}
+
     {{nav.item 'Introduction' 'docs.index'}}
     {{nav.item 'Patterns' 'docs.patterns'}}
     {{nav.item 'Quickstart' 'docs.quickstart'}}
+
     {{nav.item 'Settings' 'docs.settings.index'}}
     {{#nav.subnav as |nav|}}
       {{nav.item 'Colors' 'docs.settings.colors'}}
       {{nav.item 'Typography' 'docs.settings.typography'}}
     {{/nav.subnav}}
+
     {{nav.item 'Typography' 'docs.typography.index'}}
     {{#nav.subnav as |nav|}}
       {{nav.item 'Lists' 'docs.typography.lists'}}
       {{nav.item 'Tables' 'docs.typography.tables'}}
     {{/nav.subnav}}
-    {{nav.item 'Components' 'docs.components'}}
-    {{#nav.subnav as |nav|}}
-      {{nav.item 'Lists' 'docs.components.lists'}}
-      {{nav.item 'Pagination' 'docs.components.pagination'}}
-      {{nav.item 'Datalists' 'docs.components.datalists'}}
-      {{nav.item 'Avatars' 'docs.components.avatars'}}
-      {{nav.item 'Icons' 'docs.components.icons'}}
-      <del>{{nav.item 'Subheaders' 'docs.components'}}</del>
-      {{nav.item 'Menus' 'docs.components.menus'}}
-      <del>{{nav.item 'Tooltips' 'docs.components'}}</del>
-      {{nav.item 'Preamble' 'docs.components.preamble'}}
-      {{nav.item 'Notice' 'docs.components.notice'}}
-      {{nav.item 'Pills' 'docs.components.pills'}}
-    {{/nav.subnav}}
-    {{nav.item 'Layout' 'docs.layout.index'}}
-    {{#nav.subnav as |nav|}}
-      {{nav.item 'App' 'docs.layout.app'}}
-      {{nav.item 'Window' 'docs.layout.window'}}
-      {{nav.item 'Pane' 'docs.layout.pane'}}
-      {{nav.item 'Navbar' 'docs.layout.navbar'}}
-      {{nav.item 'Hero' 'docs.layout.hero'}}
-      {{nav.item 'Toolbar' 'docs.layout.toolbar'}}
-      {{nav.item 'Header' 'docs.layout.header'}}
-    {{/nav.subnav}}
+
     {{nav.item 'Forms' 'docs.forms.index'}}
     {{#nav.subnav as |nav|}}
       {{nav.item 'Buttons' 'docs.forms.buttons'}}
@@ -55,6 +35,41 @@
       {{nav.item 'Control Rows' 'docs.forms.rows'}}
       <del>{{nav.item 'Fieldsets' 'docs.forms.fieldsets'}}</del>
     {{/nav.subnav}}
+
+    {{nav.item 'Lists' 'docs.lists'}}
+    {{#nav.subnav as |nav|}}
+      {{nav.item 'Items' 'docs.lists.items'}}
+      {{nav.item 'Avatars' 'docs.lists.avatars'}}
+      {{nav.item 'Subheadings' 'docs.lists.subheadings'}}
+      {{nav.item 'Notices' 'docs.lists.notices'}}
+    {{/nav.subnav}}
+
+    {{nav.item 'Components' 'docs.components'}}
+    {{#nav.subnav as |nav|}}
+      {{!-- {{nav.item 'Lists' 'docs.components.lists'}} --}}
+      {{nav.item 'Pagination' 'docs.components.pagination'}}
+      {{nav.item 'Datalists' 'docs.components.datalists'}}
+      {{!-- {{nav.item 'Avatars' 'docs.components.avatars'}} --}}
+      {{nav.item 'Icons' 'docs.components.icons'}}
+      <del>{{nav.item 'Subheaders' 'docs.components'}}</del>
+      {{nav.item 'Menus' 'docs.components.menus'}}
+      <del>{{nav.item 'Tooltips' 'docs.components'}}</del>
+      {{nav.item 'Preamble' 'docs.components.preamble'}}
+      {{nav.item 'Notice' 'docs.components.notice'}}
+      {{nav.item 'Pills' 'docs.components.pills'}}
+    {{/nav.subnav}}
+
+    {{nav.item 'Layout' 'docs.layout.index'}}
+    {{#nav.subnav as |nav|}}
+      {{nav.item 'App' 'docs.layout.app'}}
+      {{nav.item 'Window' 'docs.layout.window'}}
+      {{nav.item 'Pane' 'docs.layout.pane'}}
+      {{nav.item 'Navbar' 'docs.layout.navbar'}}
+      {{nav.item 'Hero' 'docs.layout.hero'}}
+      {{nav.item 'Toolbar' 'docs.layout.toolbar'}}
+      {{nav.item 'Header' 'docs.layout.header'}}
+    {{/nav.subnav}}
+
     {{nav.item 'Demo App' 'app'}}
  {{/viewer.nav}}
 
