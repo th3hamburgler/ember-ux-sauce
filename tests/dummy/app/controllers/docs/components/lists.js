@@ -39,4 +39,9 @@ export default Controller.extend({
       'error',
     ];
   }),
+  actions: {
+    noticeAction() {
+      window.alert("List Notice Hit");
+    },
+  },
 });
