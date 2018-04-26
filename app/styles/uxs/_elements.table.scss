@@ -1,4 +1,5 @@
 table {
+  @extend .content;
   margin     : 0 auto rem-size($baseline);
   display    : block;
   overflow-x : auto;
@@ -8,7 +9,6 @@ table {
 
 td,
 th {
-  @extend .content;
   @include text-truncate;
   text-align : left;
   line-height: rem-size($baseline);

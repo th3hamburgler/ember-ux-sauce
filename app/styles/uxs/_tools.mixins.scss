@@ -9,6 +9,9 @@
 @mixin transition-all {
   transition: all $transition-duration $transition-timing-function;
 }
+@mixin transition ($what) {
+  transition: $what $transition-duration $transition-timing-function;
+}
 @mixin input-placeholder {
   &.placeholder {
     @content;

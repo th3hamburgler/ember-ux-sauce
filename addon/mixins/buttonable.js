@@ -2,7 +2,6 @@ import {
   computed
 } from '@ember/object';
 import {
-  equal,
   alias
 } from '@ember/object/computed';
 import Mixin from '@ember/object/mixin';

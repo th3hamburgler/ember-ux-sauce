@@ -31,13 +31,40 @@ table.detail {
   @include body-type;
   @include content-font-size;
 
+  &--record {
+    border-collapse: collapse;
+    table-layout   : fixed;
+    width          : 100%;
+    white-space    : nowrap;
+  }
+
   &--detail {
     @include detail-font-size;
   }
 
-  &__row {}
+  &__row {
+    &--record {
+      @include transition(background);
 
-  &__heading {}
+      &:hover:not(:first-child) {
+        background : $c-light;
+        cursor     : pointer;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__heading {
+    &--record {
+      border-bottom : rem-size(1px) solid $c-light;
+      color         : $c-mid;
+      padding-bottom: rs(1.0);
+    }
+
+    &--numeric {
+      text-align: right;
+    }
+  }
 
   &__cell {
     &--section {
@@ -50,6 +77,25 @@ table.detail {
 
     &--highlight {
       @include bold-body-type;
+    }
+
+    &--record {
+      border-bottom: rem-size(1px) solid $c-light;
+      line-height  : rs(2.0);
+    }
+  }
+
+  &__cell,
+  &__heading {
+    &--record {
+      white-space  : nowrap;
+      overflow     : hidden;
+      text-overflow: ellipsis;
+      width        : auto;
+    }
+
+    &--small {
+      width: rs(1.5);
     }
   }
 }
