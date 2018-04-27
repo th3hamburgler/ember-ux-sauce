@@ -34,6 +34,8 @@ table.detail {
   &--record {
     border-collapse: collapse;
     table-layout   : fixed;
+    margin         : 0;
+    max-width      : none;
     width          : 100%;
     white-space    : nowrap;
   }
@@ -96,6 +98,14 @@ table.detail {
 
     &--small {
       width: rs(1.5);
+    }
+
+    &:first-child {
+      padding-left: rs(0.5);
+    }
+
+    &:last-child {
+      padding-right: rs(0.5);
     }
   }
 }
