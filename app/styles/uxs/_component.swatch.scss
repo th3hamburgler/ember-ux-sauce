@@ -2,7 +2,12 @@
   border        : 1px solid $c-light;
   display       : flex;
   flex-direction: row;
+  flex-wrap     : wrap;
   margin        : rem-size(-2px);
+  @include mq(tablet) {
+    flex-direction: row;
+    flex-wrap     : nowrap;
+  }
 
   &__item {
     // @include drop-shadow;
@@ -11,13 +16,17 @@
     flex-direction : column;
     justify-content: flex-end;
     height         : rem-size(($baseline*6)-2px);
-    flex           : 1;
+    width          : 50%;
     padding        : rem-size($baseline*.25);
     position       : relative;
+    @include mq(tablet) {
+      width: auto;
+      flex : 1;
+    }
   }
 
   &__var {
-    @extend .detail;
+    @include type-detail;
     display: block;
   }
 }
