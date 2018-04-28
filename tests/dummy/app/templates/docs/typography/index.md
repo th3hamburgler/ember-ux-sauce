@@ -1,12 +1,12 @@
-<h1>Typography</h1>
+# Typography
 
-<p>Common typography components.</p>
+Common typography components.
 
-<h2>Headings</h2>
+## Headings
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="headings"}}
+  {{#demo.example name="headings.hbs"}}
 
     {{uxs-heading
       "Heading Text"
@@ -45,11 +45,11 @@
   </tr>
 </table>
 
-<h2>Subheadings</h2>
+## Subheadings
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="subheadings"}}
+  {{#demo.example name="subheadings.hbs"}}
 
     {{uxs-subheading
       "Subheading Text"
@@ -63,11 +63,11 @@
 
 {{/docs-demo}}
 
-<h2>Content Text</h2>
+## Content Text
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="contents"}}
+  {{#demo.example name="contents.hbs"}}
 
     {{#uxs-content
       align=align
@@ -80,16 +80,13 @@
 
 {{/docs-demo}}
 
-<h2>Detail Text</h2>
+## Detail Text
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="details"}}
+  {{#demo.example name="details.hbs"}}
 
-    {{#uxs-detail
-      align=align
-      style=style
-    }}Lacinia et parturient mus quam cum bibendum ut ut consequat mi at a a viverra sociosqu scelerisque ligula a class. Parturient eu donec ullamcorper vestibulum fermentum dui penatibus ullamcorper mi a nascetur vestibulum a nostra consectetur a pulvinar dignissim integer fermentum laoreet leo condimentum dapibus hac scelerisque. Lacus dis vitae a sapien parturient inceptos sociis etiam a at ac eros mus eu est nam mi curabitur urna malesuada lacus metus malesuada vitae. Neque vestibulum a eros auctor venenatis adipiscing adipiscing parturient ornare nisl gravida adipiscing litora inceptos adipiscing praesent in porta a morbi lectus porttitor mattis at elit.{{/uxs-detail}}
+    {{#uxs-detail align=align style=style}}Lacinia et parturient mus quam cum bibendum ut ut consequat mi at a a viverra sociosqu scelerisque ligula a class. Parturient eu donec ullamcorper vestibulum fermentum dui penatibus ullamcorper mi a nascetur vestibulum a nostra consectetur a pulvinar dignissim integer fermentum laoreet leo condimentum dapibus hac scelerisque. Lacus dis vitae a sapien parturient inceptos sociis etiam a at ac eros mus eu est nam mi curabitur urna malesuada lacus metus malesuada vitae. Neque vestibulum a eros auctor venenatis adipiscing adipiscing parturient ornare nisl gravida adipiscing litora inceptos adipiscing praesent in porta a morbi lectus porttitor mattis at elit.{{/uxs-detail}}
 
   {{/demo.example}}
 

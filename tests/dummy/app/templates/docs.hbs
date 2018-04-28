@@ -1,94 +1,79 @@
-<div class="font-sans text-black leading-normal">
-  {{!-- <div class="bg-red-light text-white py-2 text-sm font-bold shadow-inner">
-    <div class="docs-container">
-      WARNING: AddonDocs is currently unstable. Check back soon for updates.
-    </div>
-  </div> --}}
+{{#docs-header as |header|}}
+  {{#header.link 'sandbox'}}
+    Sandbox
+  {{/header.link}}
+{{/docs-header}}
 
-  {{#docs-header as |header|}}
-    {{#header.link "app"}}
-      App Demo
-    {{/header.link}}
-  {{/docs-header}}
+{{#docs-viewer as |viewer|}}
+  {{#viewer.nav as |nav|}}
 
-  {{#docs-viewer as |viewer|}}
+    {{nav.item "Introduction" "docs.index"}}
+    {{nav.item "Patterns" "docs.patterns"}}
+    {{nav.item "Quickstart" "docs.quickstart"}}
 
-   {{#viewer.nav as |nav|}}
+    {{nav.section "Settings"}}
 
-      {{nav.item "Introduction" "docs.index"}}
-      {{nav.item "Patterns" "docs.patterns"}}
-      {{nav.item "Quickstart" "docs.quickstart"}}
+    {{nav.item "Colors" "docs.settings.colors"}}
+    {{nav.item "Type" "docs.settings.typography"}}
 
-      {{nav.section "Settings"}}
+    {{nav.section "Basics"}}
 
-      {{nav.item "Colors" "docs.settings.colors"}}
-      {{nav.item "Type" "docs.settings.typography"}}
+    {{nav.item "Typography" "docs.typography.index"}}
+    {{nav.item "Lists" "docs.typography.lists"}}
+    {{nav.item "Tables" "docs.typography.tables"}}
 
-      {{nav.section "Basics"}}
+    {{nav.section "Forms"}}
 
-      {{nav.item "Typography" "docs.typography.index"}}
-      {{nav.item "Lists" "docs.typography.lists"}}
-      {{nav.item "Tables" "docs.typography.tables"}}
-
-      {{nav.section "Forms"}}
-
-      {{nav.item "Form" "docs.forms.index"}}
-      {{nav.item "Buttons" "docs.forms.buttons"}}
-      {{nav.item "Button Links" "docs.forms.button-links"}}
-      {{nav.item "Button Groups" "docs.forms.button-groups"}}
-      {{nav.item "Controls" "docs.forms.controls"}}
-      {{nav.item "Inputs" "docs.forms.inputs"}}
-      {{nav.item "Date & Time Inputs" "docs.forms.date-time-inputs"}}
-      {{nav.item "Textareas" "docs.forms.textareas"}}
-      {{nav.item "Dropdowns" "docs.forms.dropdowns"}}
-      {{nav.item "Toggle Controls" "docs.forms.toggles"}}
-      {{nav.item "Validation" "docs.forms.validation"}}
-      {{nav.item "Control Rows" "docs.forms.rows"}}
-      <del>{{nav.item "Fieldsets" "docs.forms.fieldsets"}}</del>
+    {{nav.item "Form" "docs.forms.index"}}
+    {{nav.item "Buttons" "docs.forms.buttons"}}
+    {{nav.item "Button Links" "docs.forms.button-links"}}
+    {{nav.item "Button Groups" "docs.forms.button-groups"}}
+    {{nav.item "Controls" "docs.forms.controls"}}
+    {{nav.item "Inputs" "docs.forms.inputs"}}
+    {{nav.item "Date & Time Inputs" "docs.forms.date-time-inputs"}}
+    {{nav.item "Textareas" "docs.forms.textareas"}}
+    {{nav.item "Dropdowns" "docs.forms.dropdowns"}}
+    {{nav.item "Toggle Controls" "docs.forms.toggles"}}
+    {{nav.item "Validation" "docs.forms.validation"}}
+    {{nav.item "Control Rows" "docs.forms.rows"}}
+    <del>{{nav.item "Fieldsets" "docs.forms.fieldsets"}}</del>
 
 
-      {{nav.section "Lists"}}
+    {{nav.section "Lists"}}
 
-      {{nav.item "Items" "docs.lists.items"}}
-      {{nav.item "Avatars" "docs.lists.avatars"}}
-      {{nav.item "Subheadings" "docs.lists.subheadings"}}
-      {{nav.item "Notices" "docs.lists.notices"}}
+    {{nav.item "Items" "docs.lists.items"}}
+    {{nav.item "Avatars" "docs.lists.avatars"}}
+    {{nav.item "Subheadings" "docs.lists.subheadings"}}
+    {{nav.item "Notices" "docs.lists.notices"}}
 
-      {{nav.section "Components"}}
+    {{nav.section "Components"}}
 
-      {{nav.item "Pagination" "docs.components.pagination"}}
-      {{nav.item "Datalists" "docs.components.datalists"}}
-      {{nav.item "Icons" "docs.components.icons"}}
-      <del>{{nav.item "Subheaders" "docs.components"}}</del>
-      {{nav.item "Menus" "docs.components.menus"}}
-      <del>{{nav.item "Tooltips" "docs.components"}}</del>
-      {{nav.item "Preamble" "docs.components.preamble"}}
-      {{nav.item "Notice" "docs.components.notice"}}
-      {{nav.item "Pills" "docs.components.pills"}}
+    {{nav.item "Pagination" "docs.components.pagination"}}
+    {{nav.item "Datalists" "docs.components.datalists"}}
+    {{nav.item "Icons" "docs.components.icons"}}
+    <del>{{nav.item "Subheaders" "docs.components"}}</del>
+    {{nav.item "Menus" "docs.components.menus"}}
+    <del>{{nav.item "Tooltips" "docs.components"}}</del>
+    {{nav.item "Preamble" "docs.components.preamble"}}
+    {{nav.item "Notice" "docs.components.notice"}}
+    {{nav.item "Pills" "docs.components.pills"}}
 
 
-      {{nav.section "Layout" "docs.layout.index"}}
+    {{nav.section "Layout" "docs.layout.index"}}
 
-      {{nav.item "App" "docs.layout.app"}}
-      {{nav.item "Window" "docs.layout.window"}}
-      {{nav.item "Pane" "docs.layout.pane"}}
-      {{nav.item "Navbar" "docs.layout.navbar"}}
-      {{nav.item "Hero" "docs.layout.hero"}}
-      {{nav.item "Toolbar" "docs.layout.toolbar"}}
-      {{nav.item "Header" "docs.layout.header"}}
+    {{nav.item "App" "docs.layout.app"}}
+    {{nav.item "Window" "docs.layout.window"}}
+    {{nav.item "Pane" "docs.layout.pane"}}
+    {{nav.item "Navbar" "docs.layout.navbar"}}
+    {{nav.item "Hero" "docs.layout.hero"}}
+    {{nav.item "Toolbar" "docs.layout.toolbar"}}
+    {{nav.item "Header" "docs.layout.header"}}
 
-   {{/viewer.nav}}
+ {{/viewer.nav}}
 
-   {{#viewer.main}}
-     <div class="docs-container">
-       <div class="docs-section">
-         {{outlet}}
-       </div>
-     </div>
-   {{/viewer.main}}
+  {{#viewer.main}}
+    {{outlet}}
+  {{/viewer.main}}
 
-  {{/docs-viewer}}
-
-  {{docs-keyboard-shortcuts}}
-{{! END-SNIPPET }}
-</div>
+{{/docs-viewer}}
+{{!-- END-SNIPPET --}}
