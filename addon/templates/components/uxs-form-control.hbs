@@ -12,6 +12,9 @@
     placeholder=placeholder
     readonly=readonly
     style=style
+    max=max
+    min=min
+    step=step
   }}
 {{/if}}
 {{#if hasTextArea}}
@@ -20,8 +23,8 @@
 
 {{yield (hash
   label=(component    "uxs-form-label"        name=name disabled=disabled style=style)
-  input=(component    "uxs-form-input"        model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly style=style)
-  textarea=(component "uxs-form-textarea"     model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly style=style)
+  input=(component    "uxs-form-input"        model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly style=style max=max min=min step=step)
+  textarea=(component "uxs-form-textarea"     model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly style=style rows=rows cols=cols)
   dropdown=(component "uxs-form-dropdown"     model=model name=name disabled=disabled value=value placeholder=placeholder readonly=readonly style=style)
   date=(component     "uxs-form-date"         model=model name=name disabled=disabled placeholder=placeholder readonly=readonly style=style)
   datetime=(component "uxs-form-datetime"     model=model name=name disabled=disabled placeholder=placeholder readonly=readonly inlineInput=inline style=style)
