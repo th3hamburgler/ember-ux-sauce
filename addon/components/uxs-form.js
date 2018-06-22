@@ -88,7 +88,11 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
     let findChildFormControls = function(thisComponent) {
       let childViews = thisComponent.get('childViews'),
         childFormControls = childViews.filter((childView) => {
-          return childView.element.className.match('uxs-form__control') ? true : false;
+          if (childView.element) {
+            return childView.element.className.match('uxs-form__control') ? true : false;
+          } else {
+            return false;
+          }
         });
       // look for nested children
       // childViews.forEach(function(childView) {
