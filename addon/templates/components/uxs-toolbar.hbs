@@ -1,6 +1,7 @@
 {{yield (hash
   back=(component "uxs-icon"  class=(bem b "back" m) style="white")
-  title=(component "uxs-subheading" class=(bem b "title" m))
+  title=(component "uxs-subheading" base=(concat b "__title"))
+  detail=(component "uxs-detail" base=(concat b "__detail"))
   spacer=(component "uxs-div" class=(bem b "spacer" m))
   action=(component "uxs-icon"  class=(bem b "action" m) style="white")
   search=(component "uxs-search"  class=(bem b "action" m) style="white")

@@ -1,7 +1,7 @@
-{{uxs-icon searchIcon style=style class=(bem b "open" m) onClick=(action "openSearch")}}
+{{uxs-icon searchIcon svg=svg style=style class=(bem b "open" m) onClick=(action "openSearch")}}
 <div class="{{bem b 'wrapper' m}}">
   {{#if showSearch}}
-    {{uxs-form-input class=(bem b "input" m) value=value}}
-    {{uxs-icon closeIcon style=style class=(bem b "close" m) onClick=(action "closeSearch")}}
+    {{uxs-form-input class=(bem b "input" m) value=value key-up=(action "onChange")}}
+    {{uxs-icon closeIcon svg=svg style=style class=(bem b "close" m) onClick=(action "closeSearch")}}
   {{/if}}
 </div>

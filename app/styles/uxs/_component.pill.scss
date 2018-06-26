@@ -1,0 +1,93 @@
+.uxs-pill {
+  @include body-type;
+  display     : block;
+  float       : left;
+  background  : $c-mid;
+  color       : $c-white;
+  // text-transform: uppercase;
+  margin-right: rem-size($baseline*0.25);
+  padding     : 0 rem-size($baseline*0.375);
+
+  &--rounded {
+    border-radius: rem-size($baseline*0.75);
+  }
+  @include background-color-modifiers();
+  // @include size-modifiers($mod:1px);
+  &--tiny {
+    font-size    : $s-tiny;
+    line-height  : rs(0.5);
+    margin-bottom: rs(0.25);
+    margin-top   : rs(0.25);
+    margin-right : rs(0.25);
+    padding      : 0 rs(0.25);
+  }
+
+  &--tiny.uxs-pill--rounded {
+    border-radius: (0.25);
+  }
+
+  &--small {
+    font-size    : $s-small;
+    line-height  : rs(0.875);
+    margin-bottom: rs(0.0625);
+    margin-top   : rs(0.0625);
+    margin-right : rs(0.25);
+    padding      : 0 rs(0.375);
+  }
+
+  &--small.uxs-pill--rounded {
+    border-radius: rs(0.5);
+  }
+
+  &--medium {
+    font-size    : $s-medium;
+    line-height  : rs(1.5);
+    margin-bottom: rs(0.25);
+    margin-top   : rs(0.25);
+    margin-right : rs(0.5);
+    padding      : 0 rs(0.5);
+  }
+
+  &--medium.uxs-pill--rounded {
+    border-radius: rs(1);
+  }
+
+  &--large {
+    font-size    : $s-large;
+    line-height  : rs(1.75);
+    margin-bottom: rs(0.125);
+    margin-top   : rs(0.125);
+    margin-right : rs(0.25);
+    padding      : 0 rs(0.75);
+  }
+
+  &--large.uxs-pill--rounded {
+    border-radius: rs(1);
+  }
+
+  &--huge {
+    font-size    : $s-huge;
+    line-height  : rs(2.5);
+    margin-bottom: rs(0.25);
+    margin-top   : rs(0.25);
+    margin-right : rs(0.5);
+    padding      : 0 rs(1);
+  }
+
+  &--huge.uxs-pill--rounded {
+    border-radius: rs(2);
+  }
+
+  &--giant {
+    font-size    : $s-giant;
+    line-height  : rs(4);
+    margin-bottom: rs(0.5);
+    margin-top   : rs(0.5);
+    margin-right : rs(1);
+    padding      : 0 rs(2);
+  }
+
+  &--giant.uxs-pill--rounded {
+    border-radius: rs(3);
+  }
+}

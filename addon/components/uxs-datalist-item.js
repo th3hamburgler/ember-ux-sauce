@@ -16,7 +16,7 @@ export default Component.extend(BEMComponent, Testable, {
   hasLabel: bool('label'),
   hasValue: bool('value'),
   hasEmpty: and('isNull', 'empty'),
-  hasTip: bool('label'),
+  hasTip: bool('tip'),
   isNull: not('hasValue'),
   // Methods
   init() {

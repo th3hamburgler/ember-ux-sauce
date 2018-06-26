@@ -47,6 +47,12 @@ export default Component.extend(BEMComponent, {
       set(this, 'showSearch', false);
       // Remove search term on close
       set(this, 'value', '');
+    },
+    onChange(value){
+      let action = get(this, 'onChange');
+      if(action) {
+        return action(value);
+      }
     }
   }
 });

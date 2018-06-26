@@ -27,6 +27,9 @@
   $remValue: ($value/16);
   @return #{$remValue}rem;
 }
+@function rs($ratio, $mod:0) {
+  @return rem-size(($ratio*$baseline)-$mod);
+}
 /**
  * shade-light
  * ---
@@ -54,4 +57,15 @@
 @function shade-dark($base-color, $step, $steps:5) {
   $luminosity-factor: (lightness($base-color)) / $steps;
   @return darken($base-color, $luminosity-factor*$step);
+}
+/**
+ * Take a color and calulate the best contrast color
+ * for it.
+ */
+@function contrast-color($color, $dark-color:$c-dark, $light-color:$c-white) {
+  @if (lightness($color) > $contrast-threshold) {
+    @return $dark-color; // Lighter backgorund, return dark color
+  } @else {
+    @return $light-color; // Darker background, return light color
+  }
 }
