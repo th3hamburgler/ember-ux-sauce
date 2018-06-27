@@ -133,7 +133,8 @@ $defaultColors: (
   "mid"    : $c-mid,
   "light"  : $c-light,
   "white"  : $c-white,
-);
+)
+!default;
 /* The lightness a color should exceed to require a dark contrast color*/
 $contrast-threshold: 60!default;
 /*
