@@ -1,6 +1,6 @@
 .uxs-text {
   @include font-size-modifiers;
   @include line-height-modifiers;
-  @include text-color-modifiers($prefix:'');
+  @include text-color-modifiers($prefix:'c-');
   @include weight-modifiers;
 }
