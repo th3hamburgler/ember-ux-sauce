@@ -107,7 +107,6 @@
 
     &--inline {
       margin-right: rem-size($baseline*.5);
-      width       : auto;
       flex        : 1;
 
       &:last-of-type {

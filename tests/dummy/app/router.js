@@ -59,21 +59,29 @@ Router.map(function() {
       this.route('header');
     });
     this.route('api', function() {
-      this.route('class', {
-        path: '/:class_id'
+      this.route('item', {
+        path: '/*path'
       });
     });
   });
 
-  this.route('app', function() {
-    this.route('dash', {
-      path: '/'
+  this.route('sandbox', function() {
+    this.route('api', function() {
+      this.route('item', {
+        path: '/*path'
+      });
     });
-    this.route('splash');
-    this.route('single');
-    this.route('double');
-    this.route('triple');
   });
+
+  // this.route('app', function() {
+  //   this.route('dash', {
+  //     path: '/'
+  //   });
+  //   this.route('splash');
+  //   this.route('single');
+  //   this.route('double');
+  //   this.route('triple');
+  // });
 
   this.route('not-found', {
     path: '/*path'

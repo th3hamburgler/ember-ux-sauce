@@ -1,13 +1,12 @@
-<h1>Settings</h1>
+# Settings
 
-<p>The following variables are available to customise.</p>
+The following type variables are available to customise.
 
-<h2>Font Sizes</h2>
-
+## Font Sizes
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="font-sizes"}}
+  {{#demo.example name="font-sizes.hbs"}}
 
     <h1 class="s-g">Giant / 76.244px</h1>
     <h1 class="s-h">Huge / 47.123px</h1>
@@ -21,11 +20,11 @@
 
 {{/docs-demo}}
 
-<h2>Type Settings</h2>
+## Type Settings
 
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="types"}}
+  {{#demo.example name="types.hbs"}}
 
     <h1 class="t-h">Heavy Type orci etiam platea parturient lectus urna a id in adipiscing proin interdum vel dis pretium ut at condimentum nisl in suspendisse urna auctor hac venenatis.</h1>
     <h1 class="t-m">Medium Type orci etiam platea parturient lectus urna a id in adipiscing proin interdum vel dis pretium ut at condimentum nisl in suspendisse urna auctor hac venenatis.</h1>

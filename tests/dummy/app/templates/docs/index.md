@@ -1,3 +1,3 @@
 # Introduction
 
-This is my new addon, and it rocks!
+This is UX Sauce
