@@ -1,5 +1,5 @@
 {{#if svg}}
-  {{svg-jar icon class=(bem b "svg" m)}}
+  {{svg-jar this.icon class=(bem b "svg" m)}}
 {{else}}
-  {{icon}}{{yield}}
+  {{this.icon}}{{yield}}
 {{/if}}
