@@ -1,39 +1,36 @@
-<div class='font-sans text-black leading-normal'>
-  {{!-- <div class='bg-red-light text-white py-2 text-sm font-bold shadow-inner'>
-    <div class="docs-container">
-      WARNING: AddonDocs is currently unstable. Check back soon for updates.
+{{docs-header}}
+
+{{docs-hero
+  logo='ember'
+  slimHeading='Ember'
+  strongHeading='UXSauce'
+  byline='Common components and patterns for ember apps'}}
+
+{{#docs-demo as |demo|}}
+
+<div class='docs-container docs-md'>
+
+  <section class='docs-max-w-md docs-mx-auto docs-pb-8'>
+
+    <h2 class='docs-flex docs-items-center docs-mt-8 docs-h2'>
+      {{svg-jar 'logo-horizontal' width=40 height=16
+        class='mr-2'}}
+      Motivation
+    </h2>
+
+    <aside>Looking for the quickstart? {{docs-link 'Click here' 'docs.quickstart'}}.</aside>
+
+    <p>This Addon aims to provice the basic componets found in most Ember projects at Sauce. These components share common api's and also at common css styleguide.</p>
+
+    <p>The styleguide in the addon is designed to be customisable to suit each project. Customisation can start from tweaking fonts and colors all the way to spacing and vertical rhythm.</p>
+
+    <div class="docs-my-16 docs-text-right">
+      {{#link-to 'docs' class='docs-bg-grey-darkest hover:docs-bg-black docs-text-white docs-py-2 docs-px-4 docs-no-underline docs-rounded'}}
+        Read the docs →
+      {{/link-to}}
     </div>
-  </div> --}}
 
-  {{#docs-header as |header|}}
-    {{#header.link 'app'}}
-      App Demo
-    {{/header.link}}
-  {{/docs-header}}
-
-  {{docs-hero
-    logo='ember'
-    slimHeading='Ember'
-    strongHeading='UXSauce'
-    byline='Common components and patterns for ember apps'}}
-
-    <div class='docs-container docs-md'>
-      <section class='max-w-md mx-auto pb-8'>
-        <h2 class='flex items-center mt-8 docs-h2'>
-          {{svg-jar 'logo-horizontal' width=40 height=16
-            class='mr-2'}}
-          Motivation
-        </h2>
-        <aside>Looking for the quickstart? {{docs-link 'Click here' 'docs.quickstart'}}.</aside>
-        <p>This Addon aims to provice the basic componets found in most Ember projects at Sauce. These components share common api's and also at common css styleguide.</p>
-        <p>The styleguide in the addon is designed to be customisable to suit each project. Customisation can start from tweaking fonts and colors all the way to spacing and vertical rhythm.</p>
-
-        <div class="my-16 text-right">
-          {{#link-to 'docs' class='bg-grey-darkest hover:bg-black text-white py-2 px-4 no-underline rounded'}}
-            Read the docs →
-          {{/link-to}}
-        </div>
-    </section>
-  </div>
-
+  </section>
 </div>
+
+{{/docs-demo}}

@@ -1,13 +1,9 @@
-{{#docs-header as |header|}}
-  {{#header.link 'sandbox'}}
-    Sandbox
-  {{/header.link}}
-{{/docs-header}}
-
 {{#docs-viewer as |viewer|}}
+
   {{#viewer.nav as |nav|}}
 
-    {{nav.item "Introduction" "docs.index"}}
+    {{nav.section "Introduction"}}
+
     {{nav.item "Patterns" "docs.patterns"}}
     {{nav.item "Quickstart" "docs.quickstart"}}
 
@@ -68,12 +64,14 @@
     {{nav.item "Hero" "docs.layout.hero"}}
     {{nav.item "Toolbar" "docs.layout.toolbar"}}
     {{nav.item "Header" "docs.layout.header"}}
-
- {{/viewer.nav}}
+  {{/viewer.nav}}
 
   {{#viewer.main}}
-    {{outlet}}
+    <div class="docs-container">
+      <div class="docs-section">
+        {{outlet}}
+      </div>
+    </div>
   {{/viewer.main}}
 
 {{/docs-viewer}}
-{{!-- END-SNIPPET --}}
