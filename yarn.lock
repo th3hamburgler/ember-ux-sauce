@@ -3685,9 +3685,9 @@ ember-power-select@^2.0.0-beta.0:
     ember-text-measurer "^0.4.0"
     ember-truth-helpers "^2.0.0"
 
-ember-prop-types@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/ember-prop-types/-/ember-prop-types-6.0.1.tgz#8b7a9a7c58bfe4aba7af5b7340c6df9c4c9c7e5e"
+ember-prop-types@^7.0.5:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/ember-prop-types/-/ember-prop-types-7.0.4.tgz#8e8055b8c483009d49057b95497e7dfdcc69231f"
   dependencies:
     ember-cli-babel "^5.1.7"
     ember-get-config "0.2.2"
