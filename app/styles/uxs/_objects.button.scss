@@ -9,7 +9,6 @@
   line-height       : rs(1.5);
   margin            : rs(0.5, 1px) 0;
   max-width         : $max-width-content;
-  min-height        : rs(1.5);
   padding           : 0;
   text-align        : center;
   width             : rs(12);
@@ -21,10 +20,41 @@
   };
   @include background-color-modifiers();
   @include border-color-modifiers();
-
+  @include font-size-modifiers;
+  // @include line-height-modifiers;
   &:focus,
   &:hover {
     opacity: 0.8;
+  }
+  // Sizes
+  &--giant {
+    line-height: rs(5, 2);
+    width      : rs(24);
+  }
+
+  &--huge {
+    line-height: rs(2.5, 2);
+    width      : rs(20);
+  }
+
+  &--large {
+    line-height: rs(2, 2);
+    width      : rs(16);
+  }
+
+  &--medium {
+    line-height: rs(1.5, 2);
+    width      : rs(12);
+  }
+
+  &--small {
+    line-height: rs(1, 2);
+    width      : rs(6);
+  }
+
+  &--tiny {
+    line-height: rs(.75, 2);
+    width      : rs(4);
   }
 
   &--disabled {
