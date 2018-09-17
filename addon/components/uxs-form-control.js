@@ -67,6 +67,7 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
       compact: PropTypes.boolean,
     });
     this.initValidator();
+    this.initModelErrors();
   },
   getDefaultProps() {
     return {
@@ -80,6 +81,12 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
     if (get(this, 'model')) {
       let propName = get(this, 'name');
       defineProperty(this, 'validator', oneWay(`model.validations.attrs.${propName}`));
+    }
+  },
+  initModelErrors() {
+    if (get(this, 'model')) {
+      let propName = get(this, 'name');
+      defineProperty(this, 'modelErrors', oneWay(`model.errors.${propName}`));
     }
   },
   // Events

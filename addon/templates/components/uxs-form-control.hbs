@@ -44,10 +44,16 @@
 {{#if hasError}}
   {{uxs-form-error error name=name disabled=disabled}}
 {{/if}}
-{{#if hasValidationError}}
-  {{uxs-form-error
-    (v-get model name 'message')
-    name=name
-    disabled=disabled
-  }}
+{{#if modelErrors.length}}
+  {{#each modelErrors as |modelError|}}
+    {{uxs-form-error modelError.message name=modelError.attribute disabled=disabled}}
+  {{/each}}
+{{else}}
+  {{#if hasValidationError}}
+    {{uxs-form-error
+      (v-get model name 'message')
+      name=name
+      disabled=disabled
+    }}
+  {{/if}}
 {{/if}}
