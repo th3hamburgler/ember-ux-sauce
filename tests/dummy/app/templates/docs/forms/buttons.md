@@ -10,7 +10,11 @@ Let's look at a basic example. You can play around with some of the arguments in
 
 ## Actions
 
-Finally, this component fires an action on tap/click. Actions are passed as [closure actions](https://dockyard.com/blog/2015/10/29/ember-best-practice-stop-bubbling-and-use-closure-actions). The action will not be fired if the component is disabled.
+The button component fires an action on tap/click. Actions are passed as [closure actions](https://dockyard.com/blog/2015/10/29/ember-best-practice-stop-bubbling-and-use-closure-actions).
+
+The action will not be fired if the component is disabled or in a loading state.
+
+{{docs/uxs-button/action-demo}}
 
 ## Stock Style Examples
 

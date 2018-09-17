@@ -1,0 +1,13 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='button-action-demo.hbs'}}
+
+    {{uxs-button "HIT ME ONCE" name="hit-me" onClick=(action "buttonPressed" "hit-me-1")}}
+    {{uxs-button "HIT ME TWICE" name="hit-me" onClick=(action "buttonPressed" "hit-me-2") disabled=true}}
+    {{uxs-button "HIT ME THRICE" name="hit-me" onClick=(action "buttonPressed" "hit-me-3") }}
+
+  {{/demo.example}}
+
+  {{demo.snippet 'button-action-demo.hbs'}}
+  {{demo.snippet 'button-action-demo.js'}}
+{{/docs-demo}}
