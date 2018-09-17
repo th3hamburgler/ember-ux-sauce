@@ -1,14 +1,12 @@
 # Buttons
 
-The button component is used for clickable actions.
+The button component is used for clickable actions. This could be to submit a form or to trigger an ember action.
 
 ## Usage
 
-Let's look at a basic example
+Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](/docs/api/components/uxs-button)
 
-## Properties
-
-Now explore the various properties available in this component
+{{docs/uxs-button/basic-demo}}
 
 ## Actions
 

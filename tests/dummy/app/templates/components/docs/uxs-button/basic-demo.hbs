@@ -1,0 +1,181 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='basic-demo.hbs'}}
+
+    {{uxs-button
+      text
+      disabled=disabled
+      inline=inline
+      loading=loading
+      loadingText=loadingText
+      naked=naked
+      size=size
+      style=style
+    }}
+
+  {{/demo.example}}
+
+  <table class="docs-table-auto docs-m-4 docs-w-full">
+    <tr>
+      <td class="docs-w-32">
+        <label
+          class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
+          for="button-text"
+        >Text</label>
+      </td>
+      <td>
+        {{input
+          class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
+          id="button-text"
+          placeholder="Button Text"
+          value=text
+        }}
+      </td>
+      <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
+    </tr>
+    <tr>
+      <td class="docs-w-32">
+        <label
+          class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
+          for="button-disabled"
+        >Disabled</label>
+      </td>
+      <td>
+        <label class="docs-py-3 docs-md:w-2/3 docs-block docs-text-grey docs-font-bold">
+          {{input checked=disabled class="docs-mr-2 docs-leading-tight" type="checkbox"}}
+          <span class="docs-text-sm">
+            {{disabled}}
+          </span>
+        </label>
+      </td>
+      <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">Boolean</em></td>
+    </tr>
+    <tr>
+      <td class="docs-w-32">
+        <label
+          class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
+          for="button-inline"
+        >Inline</label>
+      </td>
+      <td>
+        <label class="docs-py-3 docs-md:w-2/3 docs-block docs-text-grey docs-font-bold">
+          {{input checked=inline class="docs-mr-2 docs-leading-tight" type="checkbox"}}
+          <span class="docs-text-sm">
+            {{inline}}
+          </span>
+        </label>
+      </td>
+      <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">Boolean</em></td>
+    </tr><tr>
+      <td class="docs-w-32">
+        <label
+          class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
+          for="button-loading"
+        >Loading</label>
+      </td>
+      <td>
+        <label class="docs-py-3 docs-md:w-2/3 docs-block docs-text-grey docs-font-bold">
+          {{input checked=loading class="docs-mr-2 docs-leading-tight" type="checkbox"}}
+          <span class="docs-text-sm">
+            {{loading}}
+          </span>
+        </label>
+      </td>
+      <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">Boolean</em></td>
+    </tr>
+    <tr>
+      <td class="docs-w-32">
+        <label
+          class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
+          for="button-loading-text"
+        >Loading Text</label>
+      </td>
+      <td>
+        {{input
+          class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
+          id="button-loading-text"
+          placeholder="Loading..."
+          value=loadingText
+        }}
+      </td>
+      <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
+    </tr>
+    <tr>
+      <td class="docs-w-32">
+        <label
+          class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
+          for="button-naked"
+        >Naked</label>
+      </td>
+      <td>
+        <label class="docs-py-3 docs-md:w-2/3 docs-block docs-text-grey docs-font-bold">
+          {{input checked=naked class="docs-mr-2 docs-leading-tight" type="checkbox"}}
+          <span class="docs-text-sm">
+            {{naked}}
+          </span>
+        </label>
+      </td>
+      <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">Boolean</em></td>
+    </tr>
+    <tr>
+      <td class="docs-w-32">
+        <label
+          class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
+          for="button-style"
+        >Style</label>
+      </td>
+      <td>
+        {{input
+          class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
+          id="button-style"
+          placeholder="Style"
+          value=style
+          list="styles"
+        }}
+      </td>
+      <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
+    </tr>
+    <tr>
+      <td class="docs-w-32">
+        <label
+          class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
+          for="button-size"
+        >Size</label>
+      </td>
+      <td>
+        {{input
+          class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
+          id="button-size"
+          placeholder="Size"
+          value=size
+          list="sizes"
+        }}
+      </td>
+      <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
+    </tr>
+
+  </table>
+
+  <datalist id="styles">
+    <option value="primary"/>
+    <option value="accent"/>
+    <option value="warning"/>
+    <option value="error"/>
+    <option value="dark"/>
+    <option value="grey"/>
+    <option value="mid"/>
+    <option value="light"/>
+    <option value="white"/>
+  </datalist>
+
+  <datalist id="sizes">
+    <option value="giant"/>
+    <option value="huge"/>
+    <option value="large"/>
+    <option value="medium"/>
+    <option value="small"/>
+    <option value="tiny"/>
+  </datalist>
+
+  {{demo.snippet 'basic-demo.hbs'}}
+{{/docs-demo}}
