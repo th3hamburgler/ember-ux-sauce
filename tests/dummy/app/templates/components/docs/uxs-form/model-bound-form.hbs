@@ -1,16 +1,12 @@
-<h1>Form</h1>
-
-<h2>Common Model bound form</h2>
-
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="form-demo"}}
+  {{#demo.example name='model-bound-form.hbs'}}
 
     {{#uxs-form onSubmit=(action "save" model) model=model as |form|}}
 
       {{form.control label="Title" name="title" type="text"}}
 
-      {{#form.control label="Name" name="name" as |control|}}
+      {{#form.control label="Name" name="name" tip="To show inline fields we use a form row" as |control|}}
 
         {{#control.row as |row|}}
           {{row.input name="firstName"}}
@@ -21,22 +17,9 @@
 
       {{form.control label="Email" name="email" type="email" tip="Valid emails only please."}}
 
-      {{#form.control label="Gender" as |control|}}
-        {{#control.dropdown
-          selected=model.gender
-          options=genders
-          allowClear=true
-          onchange=(action (mut model.gender))
-          as |gender|
-        }}
-          {{gender}}
-        {{/control.dropdown}}
-
-      {{/form.control}}
-
       {{form.control label="Biography" name="bio" type="textarea" rows=5}}
 
-      {{#form.control label="Date of Birth" tip="Consectetur consectetur mattis vestibulum potenti vestibulum metus viverra etiam quis ullamcorper venenatis urna mollis mauris et quis viverra bibendum nam." name="dateOfBirth" type="date" as |control|}}
+      {{#form.control label="Date of Birth" tip="We're using a form row here to include a prefix date icon, it's not required but does give a better user experience." name="dateOfBirth" as |control|}}
 
         {{#control.row as |row|}}
           {{row.icon 'date_range' prefix=true}}
@@ -44,6 +27,7 @@
             onChange=(action (mut model.dateOfBirth))
           }}
         {{/control.row}}
+
       {{/form.control}}
 
       {{#form.control label="Date Time" name="datetime" as |control|}}
@@ -59,13 +43,13 @@
       {{/form.control}}
 
       {{form.submit "Save"}}
+
       {{form.link "Back" "docs"}}
 
     {{/uxs-form}}
 
   {{/demo.example}}
 
-  {{demo.snippet 'form-demo.hbs'}}
-  {{demo.snippet 'form-demo.js'}}
-
+  {{demo.snippet 'model-bound-form.hbs'}}
+  {{demo.snippet 'model-bound-form.js'}}
 {{/docs-demo}}
