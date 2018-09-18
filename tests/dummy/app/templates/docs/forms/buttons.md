@@ -16,6 +16,12 @@ The action will not be fired if the component is disabled or in a loading state.
 
 {{docs/uxs-button/action-demo}}
 
+## Inline Buttons
+
+By default buttons will be displayed as block items. To set them as inline pass true to the _inline_ argument.
+
+{{docs/uxs-button/inline-demo}}
+
 ## Stock Style Examples
 
 Here's an example of the button in all it's stock styles:
