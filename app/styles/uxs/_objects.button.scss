@@ -7,6 +7,7 @@
   display           : block;
   font-weight       : 400;
   line-height       : rs(1.5, 2);
+  text-decoration   : none;
   margin            : rs(0.5, 1px) 0;
   max-width         : $max-width-content;
   padding           : 0;
@@ -93,12 +94,12 @@
   }
 
   &--inline {
-    display  : inline-block;
-    // margin   : rs(0.25) rs(0.25) rs(0.25) 0;
-    margin   : 0 rs(0.25) 0 0;
-    max-width: fit-content;
-    padding  : 0 rs(1.0);
-    width    : auto;
+    display       : inline-block;
+    margin        : 0 rs(0.25) 0 0;
+    max-width     : fit-content;
+    padding       : 0 rs(1.0);
+    vertical-align: middle;
+    width         : auto;
 
     &:last-child {
       margin-right: 0;

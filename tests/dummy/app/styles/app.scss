@@ -43,3 +43,7 @@ body.ember-tether-enabled {
   @import 'uxs/include.components';
   @import 'uxs/include.vendor';
 }
+
+.docs-md p {
+  line-height: 25px;
+}
