@@ -107,7 +107,7 @@
 
   &--naked {
     background    : transparent;
-    border        : none;
+    border-color  : transparent;
     color         : $c-grey;
     font-weight   : bold;
     padding       : 0 rm(0.25);
