@@ -1,0 +1,36 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='all-avatar-sizes.hbs'}}
+
+  <div>
+    <div class="f fr">
+      {{uxs-avatar "http://api.faceholder.io/faces?id=giant" size="giant" rounded=true}}
+      {{uxs-avatar-text "AB" size="giant" rounded=true}}
+      {{uxs-avatar-icon "invert_colors" size="giant" rounded=true}}
+    </div>
+    <div class="f fr">
+      {{uxs-avatar "http://api.faceholder.io/faces?id=huge" size="huge" rounded=true}}
+      {{uxs-avatar-text "BC" size="huge" rounded=true}}
+      {{uxs-avatar-icon "accessible" size="huge" rounded=true}}
+    </div>
+    <div class="f fr">
+      {{uxs-avatar "http://api.faceholder.io/faces?id=large" size="large" rounded=true}}
+      {{uxs-avatar-text "CD" size="large" rounded=true}}
+      {{uxs-avatar-icon "hourglass_full" size="large" rounded=true}}
+    </div>
+    <div class="f fr">
+      {{uxs-avatar "http://api.faceholder.io/faces?id=medium" size="medium" rounded=true}}
+      {{uxs-avatar-text "DE" size="medium" rounded=true}}
+      {{uxs-avatar-icon "fingerprint" size="medium" rounded=true}}
+    </div>
+    <div class="f fr">
+      {{uxs-avatar "http://api.faceholder.io/faces?id=small" size="small" rounded=true}}
+      {{uxs-avatar-text "EF" size="small" rounded=true}}
+      {{uxs-avatar-icon "today" size="small" rounded=true}}
+    </div>
+  </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet 'all-avatar-sizes.hbs'}}
+{{/docs-demo}}

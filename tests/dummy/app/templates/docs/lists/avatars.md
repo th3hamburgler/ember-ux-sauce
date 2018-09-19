@@ -6,23 +6,33 @@ Avatars are used to display infomation in a square or circle.
 
 Use images avatars to display an image.
 
-{{docs/uxs-avatars/image-demo}}
+{{docs/uxs-avatar/image-demo}}
 
 ## Text Avatars
 
 Use Text Avatars to display text data
 
-{{docs/uxs-avatars/text-demo}}
+{{docs/uxs-avatar/text-demo}}
 
 ## Icon Avatars
 
 Use Icon Avatars to display icons.
 
-{{docs/uxs-avatars/icon-demo}}
+{{docs/uxs-avatar/icon-demo}}
 
-## Styles Usage
+## Stock Styles Examples
 
-You can customise the look of your list avatars by passing the style attribute to the avatar component. The default style will be either dark or white text depending on what contrasts with the parents list style.
+Here's an example of the avatars in all stock styles:
+
+When used in lists the default style will be either dark or white text depending on what contrasts with the parents list style.
+
+{{docs/uxs-avatar/all-styles}}
+
+## Stock Size Examples
+
+Here's an example of the avatars in all stock sizes:
+
+{{docs/uxs-avatar/all-sizes}}
 
 {{args-table/size-options}}
 {{args-table/style-options}}
