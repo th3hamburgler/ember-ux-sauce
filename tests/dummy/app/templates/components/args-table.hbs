@@ -1,5 +1,9 @@
-<table class="docs-table-auto docs-m-4 docs-w-full">
+<nav class="docs-demo__snippets-nav docs-py-2 docs-px-4 docs-font-medium docs-bg-grey-lighter docs-tracking-tight">
+  <div class="docs-mr-4 docs-text-sm docs-no-underline outline-none hover:docs-text-grey-darkest docs-text-grey-darkest">Component arguments</div>
+</nav>
+
+<table class="docs-table-auto docs-w-full docs-mb-4">
   {{yield (hash
-    row=(component "args-table/row")
+    row=(component "args-table/row" namespace=namespace)
   )}}
 </table>
