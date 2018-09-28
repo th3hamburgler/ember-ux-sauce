@@ -1,0 +1,69 @@
+.uxs-tabs {
+  $border-size    : 2px;
+  background-color: $c-grey;
+  box-shadow      : 0 rs(0.125) rs(0.125) rgba($c-dark,0.3);
+  display         : flex;
+  flex-direction  : row;
+  @include background-color-modifiers();
+
+  &--left {
+    justify-content: flex-start;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+
+  &__item {
+    -webkit-appearance: none;
+    background-color  : rgba($c-dark, 0);
+    border-bottom     : rem-size($border-size) solid transparent;
+    color             : $c-white;
+    cursor            : pointer;
+    display           : block;
+    font-weight       : 400;
+    line-height       : rs(1);
+    text-decoration   : none;
+    margin            : 0;
+    padding           : rs(.5,1px) 0;
+    text-align        : center;
+    text-transform    : uppercase;
+    flex              : 1 0 auto;
+    opacity           : 0.8;
+    @include text-truncate;
+    @include transition-all;
+    @extend .content;
+    max-width         : rs(8);
+
+    &:focus,
+    &:hover {
+      background-color: rgba($c-dark, 0.3);
+      color           : $c-white!important;
+      opacity         : 1;
+    }
+
+    &--active,
+    &.active {
+      border-bottom-color: $c-white;
+      opacity            : 1;
+    }
+
+    &--disabled {
+      cursor        : not-allowed;
+      pointer-events: none;
+      opacity       : 0.4;
+
+      &:focus,
+      &:hover {
+        opacity: 0.6;
+      }
+      @if $high-contrast {
+        text-decoration: line-through;
+      }
+    }
+  }
+}

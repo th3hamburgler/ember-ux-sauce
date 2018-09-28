@@ -111,7 +111,7 @@ const Button = Component.extend(Buttonable, Clickable, PropTypeMixin, {
   /**
     Set the style of the button.
 
-    UXS ships with the following stock styles: secondary, warning, error, dark, grey, mid, light & white.
+    UXS ships with the following stock styles: primary, accent, warning, error, dark, grey, mid, light & white.
 
     You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-style_
 

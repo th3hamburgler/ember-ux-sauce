@@ -36,6 +36,12 @@ Router.map(function() {
       this.route('subheadings');
       this.route('notices');
     })
+    this.route('navigation', function() {
+      this.route('tabs', function() {
+        this.route('dogs');
+        this.route('cats');
+      });
+    })
     this.route('components', function() {
       this.route('lists');
       this.route('pagination');
