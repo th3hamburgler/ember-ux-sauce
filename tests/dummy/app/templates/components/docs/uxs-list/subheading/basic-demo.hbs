@@ -1,0 +1,28 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='basic-list-subheading.hbs'}}
+
+    {{uxs-list-subheading title bordered=bordered style=style}}
+
+  {{/demo.example}}
+
+  {{demo.snippet 'basic-list-subheading.hbs'}}
+
+  {{#args-table "tabs" as |table|}}
+    {{#table.row "bordered" as |row|}}
+      {{row.label "Bordered"}}
+      {{row.checkbox bordered}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "title" as |row|}}
+      {{row.label "Title"}}
+      {{row.input title}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+{{/docs-demo}}
