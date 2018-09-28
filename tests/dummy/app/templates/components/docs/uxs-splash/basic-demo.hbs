@@ -1,0 +1,27 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='basic-splash.hbs'}}
+
+    {{#uxs-splash align=align style=style as |splash|}}
+      {{splash.icon "inbox"}}
+      {{splash.title "Inbox Zero"}}
+      {{splash.text "Congratulations, you have no more email!"}}
+    {{/uxs-splash}}
+
+  {{/demo.example}}
+
+  {{demo.snippet 'basic-splash.hbs'}}
+
+  {{#args-table "tabs" as |table|}}
+    {{#table.row "align" as |row|}}
+      {{row.label "Align"}}
+      {{row.input align options="align-directions"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+{{/docs-demo}}

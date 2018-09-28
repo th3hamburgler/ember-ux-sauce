@@ -4,6 +4,7 @@
   box-shadow      : 0 rs(0.125) rs(0.125) rgba($c-dark,0.3);
   display         : flex;
   flex-direction  : row;
+  width           : 100%;
   @include background-color-modifiers();
 
   &--left {

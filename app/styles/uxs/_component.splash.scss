@@ -1,0 +1,38 @@
+.uxs-splash {
+  align-items    : center;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  margin         : rs(2) auto;
+  max-width      : $max-width-content;
+  padding        : rs(1);
+
+  &__icon {
+    $size      : rs(6);
+    @extend .uxs-icon;
+    color      : $c-grey;
+    margin     : 0 0 rs(0.5);
+    font-size  : $size;
+    line-height: $size;
+    width      : $size;
+  }
+
+  &__title {
+    @extend .subheading;
+    color : $c-grey;
+    margin: 0 0 rs(0.5);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    @extend .content;
+    color: $c-grey;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
