@@ -7,6 +7,21 @@
   max-width      : $max-width-content;
   padding        : rs(1);
 
+  &--left {
+    margin-left : 0;
+    margin-right: auto;
+  }
+
+  &--center {
+    margin-left : auto;
+    margin-right: auto;
+  }
+
+  &--right {
+    margin-left : auto;
+    margin-right: 0;
+  }
+
   &__icon {
     $size      : rs(6);
     @extend .uxs-icon;
@@ -34,5 +49,11 @@
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  &__icon,
+  &__text,
+  &__title {
+    @include text-color-modifiers($prefix:'');
   }
 }
