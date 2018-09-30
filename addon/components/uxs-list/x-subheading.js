@@ -1,13 +1,11 @@
 import Component from '@ember/component';
-import layout from '../templates/components/uxs-list-subheading';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
+import layout from '../../templates/components/uxs-list/x-subheading';
 import {
   inject as service
 } from '@ember/service';
 import {
-  computed
-} from '@ember/object';
-import {
+  computed,
   get,
   set
 } from '@ember/object';
@@ -16,13 +14,27 @@ import {
   A component to render a list subheading component
 
   ```hbs
-  {{uxs-list-subheading "My Subheading"}}
+  {{#uxs-list as |list|}}
+    {{list.subheading "My Subheading"}}
+  {{/uxs-list}}
+
+  {{#uxs-list as |list|}}
+    {{#list.subheading as |subheading}}
+      {{subheading.icon "add"}}
+      {{subheading.text  "My Subheading"}}
+      {{subheading.toggle value=toggled onToggle=(action (mut toggled))}}
+    {{/list.subheading}}
+  {{/uxs-list}}
+
   ```
   @class UXS List Subheading
   @public
   @yield {Hash} subheading
+  @yield {Component} subheading.icon
+  @yield {Component} subheading.text
+  @yield {Component} subheading.toggle
 */
-const Subheading = Component.extend(BEMComponent, {
+export default Component.extend(BEMComponent, {
   // Service
   subheadingState: service('uxs-list-subheading-cache'),
   // Attributes
@@ -34,7 +46,7 @@ const Subheading = Component.extend(BEMComponent, {
    */
   base: 'uxs-list__subheading',
   layout,
-  tagName: '',
+  tagName: 'div',
   // Arguments
   /**
     Should the subheading have a border?
@@ -58,6 +70,20 @@ const Subheading = Component.extend(BEMComponent, {
     @public
    */
   style: null,
+  /**
+    Set this to true if you are using the yielded components.
+
+    @argument yield
+    @type     boolean
+    @default  false
+    @public
+   */
+  yield: false,
+  // Methods
+  init() {
+    this._super(...arguments);
+    this.registerModifiers(['bordered', '*style']);
+  },
   // Computed
   showSubheading: computed('text', 'sort', function() {
     let text = get(this, 'text'),
@@ -71,15 +97,6 @@ const Subheading = Component.extend(BEMComponent, {
       return true;
     }
   }),
-  // Methods
-  init() {
-    this._super(...arguments);
-    this.registerModifiers(['bordered', '*style']);
-  },
-});
-
-Subheading.reopenClass({
+}).reopenClass({
   positionalParams: ['text', 'sort'],
 });
-
-export default Subheading;

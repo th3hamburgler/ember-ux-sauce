@@ -1,0 +1,63 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='yield-list-subheading.hbs'}}
+
+    {{#uxs-list lines=3 as |list|}}
+
+      {{#list.subheading bordered=bordered style=style yield=true as |subheading|}}
+        {{subheading.icon "swap_vert" size="medium"}}
+        {{subheading.text title}}
+        {{subheading.toggle value=toggled onToggle=(action (mut toggled))}}
+      {{/list.subheading}}
+
+      {{#list.item as |item|}}
+        {{#item.aside}}
+          {{item.avatar "https://placeimg.com/100/100/any?i=1" round=true}}
+        {{/item.aside}}
+        {{#item.body}}
+          {{item.title "Item One"}}
+          {{item.detail "Elementum integer parturient suspendisse."}}
+          {{item.detail "A suspendisse semper"}}
+        {{/item.body}}
+        {{#item.aside}}
+          {{item.action "keyboard_arrow_right"}}
+        {{/item.aside}}
+      {{/list.item}}
+
+      {{#list.item as |item|}}
+        {{#item.aside}}
+          {{item.avatar "https://placeimg.com/100/100/any?i=2" round=true}}
+        {{/item.aside}}
+        {{#item.body}}
+          {{item.title "Item One"}}
+          {{item.detail "Facilisi libero quam hac amet."}}
+          {{item.detail "Dui ultrices dis et a hendrerit"}}
+        {{/item.body}}
+        {{#item.aside}}
+          {{item.action "keyboard_arrow_right"}}
+        {{/item.aside}}
+      {{/list.item}}
+
+    {{/uxs-list}}
+  {{/demo.example}}
+
+  {{demo.snippet 'yield-list-subheading.hbs'}}
+
+  {{#args-table "yield-list-subheading" as |table|}}
+    {{#table.row "bordered" as |row|}}
+      {{row.label "Bordered"}}
+      {{row.checkbox bordered}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "title" as |row|}}
+      {{row.label "Title"}}
+      {{row.input title}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+{{/docs-demo}}

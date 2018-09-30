@@ -2,13 +2,20 @@
 
   {{#demo.example name='basic-list-subheading.hbs'}}
 
-    {{uxs-list-subheading title bordered=bordered style=style}}
-
+    {{#uxs-list as |list|}}
+      {{list.subheading title bordered=bordered style=style}}
+      {{#list.item as |item|}}
+        {{item.content "List Item One"}}
+      {{/list.item}}
+      {{#list.item as |item|}}
+        {{item.content "List Item Two"}}
+      {{/list.item}}
+    {{/uxs-list}}
   {{/demo.example}}
 
   {{demo.snippet 'basic-list-subheading.hbs'}}
 
-  {{#args-table "tabs" as |table|}}
+  {{#args-table "basic-list-subheading" as |table|}}
     {{#table.row "bordered" as |row|}}
       {{row.label "Bordered"}}
       {{row.checkbox bordered}}
