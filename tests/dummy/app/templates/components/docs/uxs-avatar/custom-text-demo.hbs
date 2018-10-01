@@ -1,18 +1,20 @@
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="image-demo.hbs"}}
+  {{#demo.example name="custom-text-demo.hbs"}}
 
-    {{uxs-avatar
-      "https://api.faceholder.io/faces"
+    {{#uxs-avatar-text
       bordered=borderd
       rounded=rounded
       size=size
-      style=style
+      style=style as |avatar|
     }}
+      {{avatar.large "99"}}
+      {{avatar.small "THINGS"}}
+    {{/uxs-avatar-text}}
 
   {{/demo.example}}
 
-  {{#args-table "image-avatar" as |table|}}
+  {{#args-table "custom-text-avatar" as |table|}}
     {{#table.row "bordered" as |row|}}
       {{row.label "Bordered"}}
       {{row.checkbox bordered}}
@@ -35,6 +37,6 @@
     {{/table.row}}
   {{/args-table}}
 
-  {{demo.snippet "image-demo.hbs"}}
+  {{demo.snippet "custom-text-demo.hbs"}}
 
 {{/docs-demo}}

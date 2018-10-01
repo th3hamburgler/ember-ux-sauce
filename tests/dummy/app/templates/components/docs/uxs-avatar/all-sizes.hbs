@@ -7,26 +7,46 @@
       {{uxs-avatar "http://api.faceholder.io/faces?id=giant" size="giant" rounded=true}}
       {{uxs-avatar-text "AB" size="giant" rounded=true}}
       {{uxs-avatar-icon "invert_colors" size="giant" rounded=true}}
+      {{#uxs-avatar-text size="giant" rounded=true as |avatar|}}
+        {{avatar.large "958"}}
+        {{avatar.small "THINGS"}}
+      {{/uxs-avatar-text}}
     </div>
     <div class="f fr">
       {{uxs-avatar "http://api.faceholder.io/faces?id=huge" size="huge" rounded=true}}
       {{uxs-avatar-text "BC" size="huge" rounded=true}}
       {{uxs-avatar-icon "accessible" size="huge" rounded=true}}
+      {{#uxs-avatar-text size="huge" rounded=true as |avatar|}}
+        {{avatar.large "100k"}}
+        {{avatar.small "THINGS"}}
+      {{/uxs-avatar-text}}
     </div>
     <div class="f fr">
       {{uxs-avatar "http://api.faceholder.io/faces?id=large" size="large" rounded=true}}
       {{uxs-avatar-text "CD" size="large" rounded=true}}
       {{uxs-avatar-icon "hourglass_full" size="large" rounded=true}}
+      {{#uxs-avatar-text size="large" rounded=true as |avatar|}}
+        {{avatar.large "560m"}}
+        {{avatar.small "THINGS"}}
+      {{/uxs-avatar-text}}
     </div>
     <div class="f fr">
       {{uxs-avatar "http://api.faceholder.io/faces?id=medium" size="medium" rounded=true}}
       {{uxs-avatar-text "DE" size="medium" rounded=true}}
       {{uxs-avatar-icon "fingerprint" size="medium" rounded=true}}
+      {{#uxs-avatar-text size="medium" rounded=true as |avatar|}}
+        {{avatar.large "100k"}}
+        {{avatar.small "THINGS"}}
+      {{/uxs-avatar-text}}
     </div>
     <div class="f fr">
       {{uxs-avatar "http://api.faceholder.io/faces?id=small" size="small" rounded=true}}
       {{uxs-avatar-text "EF" size="small" rounded=true}}
       {{uxs-avatar-icon "today" size="small" rounded=true}}
+      {{#uxs-avatar-text size="small" rounded=true as |avatar|}}
+        {{avatar.large "10"}}
+        {{avatar.small "THINGS"}}
+      {{/uxs-avatar-text}}
     </div>
   </div>
 

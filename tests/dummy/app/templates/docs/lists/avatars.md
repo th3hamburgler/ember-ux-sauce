@@ -8,17 +8,23 @@ Use images avatars to display an image.
 
 {{docs/uxs-avatar/image-demo}}
 
+## Icon Avatars
+
+Use Icon Avatars to display icons.
+
+{{docs/uxs-avatar/icon-demo}}
+
 ## Text Avatars
 
 Use Text Avatars to display text data
 
 {{docs/uxs-avatar/text-demo}}
 
-## Icon Avatars
+## Custom Text Avatars
 
-Use Icon Avatars to display icons.
+Use Text Avatars to display text data
 
-{{docs/uxs-avatar/icon-demo}}
+{{docs/uxs-avatar/custom-text-demo}}
 
 ## Stock Styles Examples
 
