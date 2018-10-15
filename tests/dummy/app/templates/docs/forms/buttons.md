@@ -33,3 +33,6 @@ Here's an example of the button in all it's stock styles:
 Here's an example of the button in all it's stock sizes:
 
 {{docs/uxs-button/all-sizes}}
+
+{{args-table/size-options}}
+{{args-table/style-options}}

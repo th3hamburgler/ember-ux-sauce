@@ -28,12 +28,13 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
     this._super(...arguments);
 
     this.registerModifiers([
-      'isAlignCenter:center',
+      '*align',
       'disabled',
       'inline',
-      'isAlignLeft:left',
-      'mini',
-      'isAlignRight:right',
+      'padded',
+      'row',
+      '*size',
+      '*style',
     ]);
 
     this.set('propTypes', {

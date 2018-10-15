@@ -1,0 +1,49 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='button-group-basic-demo.hbs'}}
+
+    {{#uxs-button-group
+      align=align
+      disabled=disabled
+      padded=padded
+      row=row
+      style=style
+      as |group|
+    }}
+      {{group.button "Save" style="primary"}}
+      {{group.button "Save & Publish" style="primary"}}
+      {{group.link "Cancel" "docs.forms.buttons" style="warning"}}
+    {{/uxs-button-group}}
+
+  {{/demo.example}}
+
+  {{#args-table "button-group" as |table|}}
+    {{#table.row "align" as |row|}}
+      {{row.label "Align"}}
+      {{row.input align options="align"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "padded" as |row|}}
+      {{row.label "Padded"}}
+      {{row.checkbox padded}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "isRow" as |trow|}}
+      {{trow.label "Row"}}
+      {{trow.checkbox row}}
+      {{trow.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "size" as |row|}}
+      {{row.label "Styles"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet 'button-group-basic-demo.hbs'}}
+{{/docs-demo}}
