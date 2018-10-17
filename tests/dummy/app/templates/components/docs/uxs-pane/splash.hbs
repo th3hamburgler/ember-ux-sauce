@@ -1,0 +1,31 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="splash-pane.hbs"}}
+
+  {{#uxs-window image="https://placeimg.com/2560/1600/any/grayscale"}}
+    {{#uxs-pane splash=true style=style padded=padded}}
+      {{uxs-heading "Splash Pane"}}
+      {{#uxs-content}}
+      Turpis in eros morbi scelerisque nisl condimentum ut ultricies scelerisque sociosqu venenatis cum parturient id eleifend sodales vitae rutrum sociosqu accumsan.
+      {{/uxs-content}}
+    {{/uxs-pane}}
+  {{/uxs-window}}
+
+  {{/demo.example}}
+
+  {{#args-table "splash-pane" as |table|}}
+    {{#table.row "padded" as |row|}}
+      {{row.label "Padded"}}
+      {{row.checkbox padded}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "splash-pane.hbs"}}
+
+{{/docs-demo}}

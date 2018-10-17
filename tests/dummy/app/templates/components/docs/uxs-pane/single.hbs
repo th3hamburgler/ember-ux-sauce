@@ -1,0 +1,34 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="single-pane.hbs"}}
+
+  {{#uxs-window}}
+    {{#uxs-pane single=true style=style padded=padded}}
+      {{uxs-heading "Single Pane"}}
+      {{#uxs-content}}
+      Turpis in eros morbi scelerisque nisl condimentum ut ultricies scelerisque sociosqu venenatis cum parturient id eleifend sodales vitae rutrum sociosqu accumsan.
+      {{/uxs-content}}
+      {{#uxs-content}}
+      Bibendum etiam at nascetur morbi proin tristique quam aenean dictumst vestibulum odio proin bibendum leo scelerisque ullamcorper dui.
+      {{/uxs-content}}
+    {{/uxs-pane}}
+  {{/uxs-window}}
+
+  {{/demo.example}}
+
+  {{#args-table "single-pane" as |table|}}
+    {{#table.row "padded" as |row|}}
+      {{row.label "Padded"}}
+      {{row.checkbox padded}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "single-pane.hbs"}}
+
+{{/docs-demo}}

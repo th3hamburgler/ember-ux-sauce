@@ -1,0 +1,48 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="split-pane.hbs"}}
+
+  {{#uxs-window}}
+    {{#uxs-pane split=true style=paneOneStyle padded=padded}}
+      {{uxs-heading "Pane One"}}
+      {{#uxs-content}}
+      Turpis in eros morbi scelerisque nisl condimentum ut ultricies scelerisque sociosqu venenatis cum parturient id eleifend sodales vitae rutrum sociosqu accumsan.
+      {{/uxs-content}}
+      {{#uxs-content}}
+      Bibendum etiam at nascetur morbi proin tristique quam aenean dictumst vestibulum odio proin bibendum leo scelerisque ullamcorper dui.
+      {{/uxs-content}}
+    {{/uxs-pane}}
+    {{#uxs-pane split=true style=paneTwoStyle padded=padded}}
+      {{uxs-heading "Pane Two"}}
+      {{#uxs-content}}
+      Turpis in eros morbi scelerisque nisl condimentum ut ultricies scelerisque sociosqu venenatis cum parturient id eleifend sodales vitae rutrum sociosqu accumsan.
+      {{/uxs-content}}
+      {{#uxs-content}}
+      Bibendum etiam at nascetur morbi proin tristique quam aenean dictumst vestibulum odio proin bibendum leo scelerisque ullamcorper dui.
+      {{/uxs-content}}
+    {{/uxs-pane}}
+  {{/uxs-window}}
+
+  {{/demo.example}}
+
+  {{#args-table "split-pane" as |table|}}
+    {{#table.row "padded" as |row|}}
+      {{row.label "Padded"}}
+      {{row.checkbox padded}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "paneOneStyle" as |row|}}
+      {{row.label "Pane One Style"}}
+      {{row.input paneOneStyle options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "paneTwoStyle" as |row|}}
+      {{row.label "Pane Two Style"}}
+      {{row.input paneTwoStyle options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "split-pane.hbs"}}
+
+{{/docs-demo}}

@@ -1,7 +1,7 @@
 .uxs-window {
   @include background-color-modifiers();
   display       : flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   padding       : 0;
   flex          : 1 1 auto;
   width         : 100%;
@@ -29,6 +29,7 @@
       }
     }
 
+    &--full,
     &--single {
       width: 100%;
     }
@@ -60,10 +61,6 @@
       }
     }
 
-    &--full {
-      width: 100%;
-    }
-
     &--aside,
     &--detail,
     &--index {
@@ -84,13 +81,49 @@
     }
 
     &--aside {
-      background: $c-primary-2;
-      width     : 100%;
+      width: 100%;
       @include mq(tablet) {
         width: 33.3%;
       }
       @include mq(desktop) {
         width: 25%;
+      }
+    }
+    @include mq(tablet, 'max') {
+      &--mobile-order-1 {
+        order: 1;
+      }
+
+      &--mobile-order-2 {
+        order: 2;
+      }
+
+      &--mobile-order-3 {
+        order: 3;
+      }
+
+      &--mobile-order-4 {
+        order: 4;
+      }
+
+      &--mobile-order-5 {
+        order: 5;
+      }
+
+      &--mobile-order-6 {
+        order: 6;
+      }
+
+      &--mobile-order-7 {
+        order: 7;
+      }
+
+      &--mobile-order-8 {
+        order: 8;
+      }
+
+      &--mobile-order-9 {
+        order: 9;
       }
     }
   }

@@ -1,0 +1,45 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="main-aside-pane.hbs"}}
+
+  {{#uxs-window}}
+    {{#uxs-pane main=true style=mainStyle padded=padded}}
+      {{uxs-heading "Main Pane"}}
+      {{#uxs-content}}
+      Turpis in eros morbi scelerisque nisl condimentum ut ultricies scelerisque sociosqu venenatis cum parturient id eleifend sodales vitae rutrum sociosqu accumsan.
+      {{/uxs-content}}
+      {{#uxs-content}}
+      Bibendum etiam at nascetur morbi proin tristique quam aenean dictumst vestibulum odio proin bibendum leo scelerisque ullamcorper dui.
+      {{/uxs-content}}
+    {{/uxs-pane}}
+    {{#uxs-pane aside=true style=asideStyle padded=padded}}
+      {{uxs-heading "Aside"}}
+      {{uxs-button "Action 1"}}
+      {{uxs-button "Action 2"}}
+      {{uxs-button "Action 3"}}
+    {{/uxs-pane}}
+  {{/uxs-window}}
+
+  {{/demo.example}}
+
+  {{#args-table "main-aside-pane" as |table|}}
+    {{#table.row "padded" as |row|}}
+      {{row.label "Padded"}}
+      {{row.checkbox padded}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "mainStyle" as |row|}}
+      {{row.label "Main Style"}}
+      {{row.input mainStyle options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "asideStyle" as |row|}}
+      {{row.label "Main Style"}}
+      {{row.input asideStyle options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "main-aside-pane.hbs"}}
+
+{{/docs-demo}}

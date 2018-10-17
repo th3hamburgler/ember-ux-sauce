@@ -1,0 +1,64 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="threes-pane.hbs"}}
+
+  {{#uxs-window}}
+    {{#uxs-pane index=true style=indexStyle padded=padded}}
+      {{uxs-heading "Index"}}
+      {{#uxs-list bordered=true as |list|}}
+        {{#list.item as |item|}}
+          {{item.title "Item One"}}
+        {{/list.item}}
+        {{#list.item as |item|}}
+          {{item.title "Item Two"}}
+        {{/list.item}}
+        {{#list.item as |item|}}
+          {{item.title "Item Three"}}
+        {{/list.item}}
+      {{/uxs-list}}
+    {{/uxs-pane}}
+    {{#uxs-pane detail=true style=detailStyle padded=padded}}
+      {{uxs-heading "Detail"}}
+      {{#uxs-content}}
+      Turpis in eros morbi scelerisque nisl condimentum ut ultricies scelerisque sociosqu venenatis cum parturient id eleifend sodales vitae rutrum sociosqu accumsan.
+      {{/uxs-content}}
+      {{#uxs-content}}
+      Bibendum etiam at nascetur morbi proin tristique quam aenean dictumst vestibulum odio proin bibendum leo scelerisque ullamcorper dui.
+      {{/uxs-content}}
+    {{/uxs-pane}}
+    {{#uxs-pane aside=true style=asideStyle padded=padded}}
+      {{uxs-heading "Aside"}}
+      {{uxs-button "Action 1"}}
+      {{uxs-button "Action 2"}}
+      {{uxs-button "Action 3"}}
+    {{/uxs-pane}}
+  {{/uxs-window}}
+
+  {{/demo.example}}
+
+  {{#args-table "threes-pane" as |table|}}
+    {{#table.row "padded" as |row|}}
+      {{row.label "Padded"}}
+      {{row.checkbox padded}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "indexStyle" as |row|}}
+      {{row.label "Index Style"}}
+      {{row.input indexStyle options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "detailStyle" as |row|}}
+      {{row.label "Detail Style"}}
+      {{row.input detailStyle options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "asideStyle" as |row|}}
+      {{row.label "Main Style"}}
+      {{row.input asideStyle options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "threes-pane.hbs"}}
+
+{{/docs-demo}}
