@@ -40,27 +40,8 @@
   }
 
   &__label {
-    @extend .subheading;
-    @include text-color-modifiers($prefix:'');
-    @include transition-all;
-    transition-property: color;
-    text-transform     : uppercase;
-    display            : block;
-    margin-bottom      : rem-size($baseline*0.5);
-    letter-spacing     : 1px;
-
-    &--warning {
-      color: $c-warning;
-    }
-
-    &--alert,
-    &--error {
-      color: $c-error;
-    }
-
-    &--disabled {
-      opacity: 0.4;
-    }
+    @include label;
+    margin-bottom: rem-size($baseline*0.5);
   }
 
   &__input {

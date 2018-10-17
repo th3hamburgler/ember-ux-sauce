@@ -15,8 +15,7 @@
   }
 
   &__label {
-    @include type-subheading;
-    // margin-bottom: rem-size($baseline*0.25);
+    @include label
   }
 
   &__row {

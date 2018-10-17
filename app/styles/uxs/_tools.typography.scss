@@ -76,3 +76,26 @@
     border-bottom-color: $hover-color;
   }
 }
+@mixin label {
+  @include type-subheading;
+  @include bold-body-type;
+  @include text-color-modifiers($prefix:'');
+  @include transition-all;
+  transition-property: color;
+  text-transform     : uppercase;
+  display            : block;
+  letter-spacing     : 1px;
+
+  &--warning {
+    color: $c-warning;
+  }
+
+  &--alert,
+  &--error {
+    color: $c-error;
+  }
+
+  &--disabled {
+    opacity: 0.4;
+  }
+}
