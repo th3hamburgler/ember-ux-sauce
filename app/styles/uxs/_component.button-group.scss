@@ -29,22 +29,24 @@
   }
 
   &--row {
-    flex-direction: row;
+    @include mq(tablet) {
+      flex-direction: row;
 
-    .uxs-button-group__item,
-    .uxs-button-group__item:last-child {
-      margin-bottom: 0;
-    }
-
-    > * {
-      margin: 0 rs(0.25);
-
-      &:first-child {
-        margin-left: 0;
+      .uxs-button-group__item,
+      .uxs-button-group__item:last-child {
+        margin-bottom: 0;
       }
 
-      &:last-child {
-        margin-right: 0;
+      > * {
+        margin: 0 rs(0.25);
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
