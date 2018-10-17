@@ -23,7 +23,7 @@
     padding: 0;
 
     &--padded {
-      padding: rem-size($baseline*0.5);
+      padding: rem-size($baseline*1) rem-size($baseline*0.5);
       @include mq(tablet) {
         padding: rem-size($baseline*1);
       }
