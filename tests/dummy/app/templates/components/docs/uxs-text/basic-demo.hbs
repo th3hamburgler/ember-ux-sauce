@@ -1,0 +1,51 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='text-basic-demo.hbs'}}
+
+    {{uxs-text
+      text
+      align=align
+      color=color
+      size=size
+      style=style
+      weight=weight
+    }}
+
+  {{/demo.example}}
+
+  {{#args-table "text-basic-demo" as |table|}}
+    {{#table.row "text" as |row|}}
+      {{row.label "Text"}}
+      {{row.input text}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "align" as |row|}}
+      {{row.label "Align"}}
+      {{row.input align options="align-directions"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "color" as |row|}}
+      {{row.label "Color"}}
+      {{row.input color options="colors"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "size" as |row|}}
+      {{row.label "Size"}}
+      {{row.input size options="sizes"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "weight" as |row|}}
+      {{row.label "Weight"}}
+      {{row.input weight options="weights"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet 'text-basic-demo.hbs'}}\
+
+{{/docs-demo}}
