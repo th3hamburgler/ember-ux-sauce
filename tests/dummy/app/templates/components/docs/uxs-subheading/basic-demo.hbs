@@ -1,8 +1,8 @@
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name='text-basic-demo.hbs'}}
+  {{#demo.example name='subheading-basic-demo.hbs'}}
 
-    {{uxs-text
+    {{uxs-subheading
       text
       align=align
       color=color
@@ -13,7 +13,7 @@
 
   {{/demo.example}}
 
-  {{#args-table "text-basic-demo" as |table|}}
+  {{#args-table "subheading-basic-demo" as |table|}}
     {{#table.row "text" as |row|}}
       {{row.label "Text"}}
       {{row.input text}}
@@ -29,11 +29,6 @@
       {{row.input color options="colors"}}
       {{row.type "String"}}
     {{/table.row}}
-    {{#table.row "size" as |row|}}
-      {{row.label "Size"}}
-      {{row.input size options="sizes"}}
-      {{row.type "String"}}
-    {{/table.row}}
     {{#table.row "style" as |row|}}
       {{row.label "Style"}}
       {{row.input style options="styles"}}
@@ -46,6 +41,6 @@
     {{/table.row}}
   {{/args-table}}
 
-  {{demo.snippet 'text-basic-demo.hbs'}}
+  {{demo.snippet 'subheading-basic-demo.hbs'}}
 
 {{/docs-demo}}

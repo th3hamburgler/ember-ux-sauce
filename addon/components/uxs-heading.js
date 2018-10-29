@@ -11,7 +11,7 @@ import Textable from '../mixins/textable';
   {{#uxs-heading}}Lorem ipsum dolar"{{/uxs-heading}}
   ```
 
-  @class Heading
+  @class UXSHeading
 */
 export default Component.extend(Textable, {
   //
@@ -66,9 +66,16 @@ export default Component.extend(Textable, {
     The text align direction, "left", "center", "right" or "justified". Defaults to no alignment (inheret)
 
     @argument align
+    @default  null
     @type     String
   */
-  align: null,
+
+  /**
+    Adds a color modifier to the component. Standard options are "white", "light", "mid", "grey", "dark", "primary", "accent", "success", "warning"  or "error". Defaults to no style (inheret).
+
+    @argument color
+    @type String
+  */
 
   /**
   The name of the component. This property also defaults to the value for test selectors.<br/>
@@ -80,10 +87,17 @@ export default Component.extend(Textable, {
   */
 
   /**
-    Adds a style modifier to the component. Standard options are "white", "light", "mid", "grey", "dark", "primary", "accent", "success", "warning"  or "error". Defaults to no style (inheret)
-    Default values will set the text color.
+    Adds a style modifier to the component. Standard options are "white", "light", "mid", "grey", "dark", "primary", "accent", "success", "warning"  or "error". Defaults to no style (inheret).
 
     @argument style
+    @type String
+  */
+
+  /**
+    Define the size of the component. Standard options are "giant", "huge", "large", "medium", "small", or "tiny". Defaults to no size (inhered)
+
+    @argument size
+    @default null
     @type String
   */
 

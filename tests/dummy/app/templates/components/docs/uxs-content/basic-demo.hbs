@@ -1,0 +1,47 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='content-basic-demo.hbs'}}
+
+    {{#uxs-content
+      align=align
+      color=color
+      size=size
+      style=style
+      weight=weight
+    }}Suspendisse mattis in mollis a a sociosqu gravida ultricies consectetur id sagittis quisque adipiscing lobortis integer ac suspendisse congue at praesent et condimentum phasellus morbi feugiat sed. Suspendisse natoque elementum nisl adipiscing ad quis sem ut aliquam cum purus ac condimentum a a eget curae ridiculus a parturient sed.{{/uxs-content}}
+    {{#uxs-content
+      align=align
+      color=color
+      size=size
+      style=style
+      weight=weight
+    }}In a inceptos maecenas sit sit non parturient a non nunc maecenas netus in sapien scelerisque.Viverra habitasse id adipiscing montes parturient sagittis a ridiculus nec molestie vestibulum quisque ultrices varius ante nec adipiscing. Metus sem fames nulla vestibulum ad sapien adipiscing condimentum a ut ac sociosqu dui fermentum a gravida dis.{{/uxs-content}}
+
+  {{/demo.example}}
+
+  {{#args-table "content-basic-demo" as |table|}}
+    {{#table.row "align" as |row|}}
+      {{row.label "Align"}}
+      {{row.input align options="align-directions"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "color" as |row|}}
+      {{row.label "Color"}}
+      {{row.input color options="colors"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "weight" as |row|}}
+      {{row.label "Weight"}}
+      {{row.input weight options="weights"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet 'content-basic-demo.hbs'}}
+
+{{/docs-demo}}

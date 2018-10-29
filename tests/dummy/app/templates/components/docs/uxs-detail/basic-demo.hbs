@@ -1,24 +1,25 @@
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name='text-basic-demo.hbs'}}
+  {{#demo.example name='detail-basic-demo.hbs'}}
 
-    {{uxs-text
-      text
+    {{#uxs-detail
       align=align
       color=color
       size=size
       style=style
       weight=weight
-    }}
+    }}Dictum vulputate consectetur condimentum ornare vel a lobortis a a elementum aptent cursus nisi nam vestibulum eu est. Vestibulum vivamus a ante enim condimentum ut ipsum adipiscing molestie turpis ut malesuada phasellus scelerisque condimentum phasellus lectus adipiscing sit penatibus parturient ridiculus vivamus ligula a.{{/uxs-detail}}
+    {{#uxs-detail
+      align=align
+      color=color
+      size=size
+      style=style
+      weight=weight
+    }}Vulputate vel a urna et eu blandit suspendisse condimentum elementum adipiscing condimentum a leo parturient suspendisse nunc aptent non dis eget id ultricies nam.{{/uxs-detail}}
 
   {{/demo.example}}
 
-  {{#args-table "text-basic-demo" as |table|}}
-    {{#table.row "text" as |row|}}
-      {{row.label "Text"}}
-      {{row.input text}}
-      {{row.type "String"}}
-    {{/table.row}}
+  {{#args-table "detail-basic-demo" as |table|}}
     {{#table.row "align" as |row|}}
       {{row.label "Align"}}
       {{row.input align options="align-directions"}}
@@ -27,11 +28,6 @@
     {{#table.row "color" as |row|}}
       {{row.label "Color"}}
       {{row.input color options="colors"}}
-      {{row.type "String"}}
-    {{/table.row}}
-    {{#table.row "size" as |row|}}
-      {{row.label "Size"}}
-      {{row.input size options="sizes"}}
       {{row.type "String"}}
     {{/table.row}}
     {{#table.row "style" as |row|}}
@@ -46,6 +42,6 @@
     {{/table.row}}
   {{/args-table}}
 
-  {{demo.snippet 'text-basic-demo.hbs'}}
+  {{demo.snippet 'detail-basic-demo.hbs'}}
 
 {{/docs-demo}}
