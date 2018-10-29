@@ -58,8 +58,8 @@
 /*
  * Misc type mixins
  */
-@mixin text-truncate($truncation-boundary:100%) {
-  max-width    : $truncation-boundary;
+@mixin text-truncate($boundary:100%) {
+  max-width    : $boundary;
   white-space  : nowrap;
   overflow     : hidden;
   text-overflow: ellipsis;

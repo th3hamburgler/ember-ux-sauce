@@ -34,6 +34,24 @@ The following shows the default sizes we define in the uxs settings. All of thes
       "tiny"  : $s-tiny,
     );
 
+### Line Heights
+
+Line hights are set to increments of the baseline size (25px).
+
+The default values are shown below:
+
+    /** The grid height used thoughout the system **/
+    $baseline: 25px!default;
+    /* Line heights of defined sizes */
+    $defaultLineHights: (
+      "giant" : $baseline*4,
+      "huge"  : $baseline*3,
+      "large" : $baseline*2,
+      "medium": $baseline*1,
+      "small" : $baseline*1,
+      "tiny"  : $baseline*1,
+    );
+
 {{docs/uxs-text/sizes-demo}}
 
 ## Type Weights
@@ -76,3 +94,74 @@ Applying a style to the _uxs-type_ component will apply a background color to th
 To define a specific type text color you can use the _color_ argument.
 
 {{docs/uxs-text/colors-demo}}
+
+## SCSS Mixins
+
+When you need to create your own custom css styles or modifiers you can use the following mixins to keep things consistant.
+
+<table class="docs-w-full docs-text-left docs-table-collapse">
+  <thead>
+    <tr>
+      <th class="docs-text-sm docs-font-semibold docs-text-grey-darker docs-p-2 docs-bg-grey-lightest">Mixin</th>
+      <th class="docs-text-sm docs-font-semibold docs-text-grey-darker docs-p-2 docs-bg-grey-lightest">Description</th>
+    </tr>
+  </thead>
+  <tbody class="align-baseline">
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">body-type</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">Set type and weight to default style</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">light-body-type</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">Set type and weight to light style</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">bold-body-type</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">Set type and weight to bold style</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">heading-font-size</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">Sets the size and height of text for headings.</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">subheading-font-size</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">Sets the size and height of text for subheadings.</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">content-font-size</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">Sets the size and height of text for content text.</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">detail-font-size</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-light docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">Sets the size and height of text for detail text.</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">type-heading</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">As well as size and height, also sets weight and style for headings.</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">type-subheading</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">As well as size and height, also sets weight and style for subheadings.</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">type-content</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">As well as size and height, also sets weight and style for content text.</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">type-detail</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">As well as size and height, also sets weight and style for detail text.</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">truncate-text</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">Truncate text to one line. ($boundary:100%)</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">link</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">Style text as a link. ($color:$c-dark, $hover-color:$c-primary)</td>
+    </tr>
+    <tr>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-purple-dark docs-whitespace-no-wrap">label</td>
+      <td class="docs-p-2 docs-border-t docs-border-grey-lighter docs-font-mono docs-text-xs docs-text-blue-dark docs-whitespace-pre">Style text as a label.</td>
+    </tr>
+  </tbody>
+</table>

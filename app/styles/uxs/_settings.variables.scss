@@ -8,7 +8,8 @@
 /*
  * Sizes
  */
-$baseline: 25px!default; //
+/** The grid height used thoughout the system **/
+$baseline: 25px!default;
 /**
  Is this a high contrast theme
  ---
@@ -64,7 +65,9 @@ $defaultSizes: (
   "medium": $s-medium,
   "small" : $s-small,
   "tiny"  : $s-tiny,
-);
+)
+!default;
+/* Line heights of defined sizes */
 $defaultLineHights: (
   "giant" : $baseline*4,
   "huge"  : $baseline*3,
@@ -72,7 +75,8 @@ $defaultLineHights: (
   "medium": $baseline*1,
   "small" : $baseline*1,
   "tiny"  : $baseline*1,
-);
+)
+!default;
 $s-sk-medium: 15px!default;
 $max-width-content: rem-size(480px)!default;
 $max-width-detail: rem-size(320px)!default;
