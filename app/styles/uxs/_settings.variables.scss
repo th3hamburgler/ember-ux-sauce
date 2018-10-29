@@ -33,27 +33,29 @@ $breakpoints: (
  */
 $transition-duration: 0.2s!default;
 $transition-timing-function: cubic-bezier(.4,0,.2,1)!default;
-/*
- * Typeography
- */
+/** Typographic weights **/
 $type-body-family: 'Lato', sans-serif!default;
 $type-body-weight: 400!default;
 $type-light-family: 'Lato', sans-serif!default;
 $type-light-weight: 300!default;
 $type-bold-family: 'Lato', sans-serif!default;
 $type-bold-weight: 700!default;
-/* Weights used as modifiers*/
+/** Hash of sizes used thoughout system as modifiers **/
 $defaultWeights: (
   "bold"  : 700,
   "normal": 400,
   "light" : 300,
 );
-$s-giant: 76.244px!default;
-$s-huge: 47.123px!default;
-$s-large: 29.124px!default;
-$s-medium: 18px!default;
-$s-small: 11.125px!default;
-$s-tiny: 6.876px!default;
+/* Base Sizes */
+$type-scale: 1.618!default;
+$type-base: 18px!default;
+/* Our default 6 sizes */
+$s-giant: scale($type-base, 3, $type-scale)!default;
+$s-huge: scale($type-base, 2, $type-scale)!default;
+$s-large: scale($type-base, 1, $type-scale)!default;
+$s-medium: $type-base!default;
+$s-small: scale($type-base, -1, $type-scale)!default;
+$s-tiny: scale($type-base, -2, $type-scale)!default;
 /* Sizes used as style modifiers */
 $defaultSizes: (
   "giant" : $s-giant,

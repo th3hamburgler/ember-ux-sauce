@@ -8,9 +8,6 @@ import Mixin from '@ember/object/mixin';
 import {
   dasherize
 } from '@ember/string';
-import PropTypeMixin, {
-  PropTypes
-} from 'ember-prop-types';
 import Accessible from 'ember-ux-sauce/mixins/accessible';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
@@ -18,23 +15,11 @@ import {
   get
 } from '@ember/object';
 
-export default Mixin.create(Accessible, BEMComponent, PropTypeMixin, Testable, {
+export default Mixin.create(Accessible, BEMComponent, Testable, {
   // Attributes
   attributeBindings: ['type'],
   base: 'uxs-button',
-  propTypes: {
-    inline: PropTypes.bool,
-    mini: PropTypes.bool,
-    naked: PropTypes.bool,
-    selected: PropTypes.bool,
-    prefix: PropTypes.bool,
-    suffix: PropTypes.bool,
-    style: PropTypes.string,
-    text: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.func,
-    ]),
-  },
+  loadingText: 'Loading…',
   // Computed
   // isAccent: equal('style', 'accent'),
   // isBlack: equal('style', 'black'),
@@ -72,14 +57,5 @@ export default Mixin.create(Accessible, BEMComponent, PropTypeMixin, Testable, {
       'prefix',
       'suffix',
     ]);
-  },
-  /**
-   * Init any property defaults
-   */
-  getDefaultProps() {
-    return {
-      style: null,
-      loadingText: 'Loading…',
-    };
   },
 });

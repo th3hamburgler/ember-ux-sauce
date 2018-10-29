@@ -1,23 +1,23 @@
 import Mixin from '@ember/object/mixin';
-import PropTypeMixin, {
-  PropTypes
-} from 'ember-prop-types';
+import {
+  computed,
+  get
+} from '@ember/object';
 
-export default Mixin.create(PropTypeMixin, {
+export default Mixin.create({
   // Attributes
   align: null,
+  // Computed
+  _color: computed('color', function() {
+    return `c-${get(this, 'color')}`;
+  }),
   // Methods
   init() {
     this._super(...arguments);
     this.registerModifiers([
       '*style',
+      '*_color'
     ]);
-    this.set('propTypes', {
-      style: PropTypes.oneOfType([
-        PropTypes.null,
-        PropTypes.string,
-      ]),
-    });
   },
   registerModifiers: function() {
     if (this._super) {

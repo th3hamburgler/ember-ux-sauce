@@ -1,12 +1,6 @@
 import Component from '@ember/component';
 import layout from '../templates/components/uxs-text';
 import Textable from '../mixins/textable';
-import {
-  set
-} from '@ember/object';
-import {
-  PropTypes
-} from 'ember-prop-types';
 
 /**
   A typographic component to render text
@@ -17,14 +11,14 @@ import {
   {{#uxs-text}}Lorem ipsum dolar"{{/uxs-text}}
   ```
 
-  @class Text
+  @class UXSText
 */
 export default Component.extend(Textable, {
   //
   // Properties
   // ---------
   /**
-    The BEM base name for this component: "uxs-heading"
+    The BEM base name for this component: "uxs-text"
 
     @property base
     @type     String
@@ -72,9 +66,16 @@ export default Component.extend(Textable, {
     The text align direction, "left", "center", "right" or "justified". Defaults to no alignment (inheret)
 
     @argument align
+    @default  null
     @type     String
   */
-  align: null,
+
+  /**
+    Adds a color modifier to the component. Standard options are "white", "light", "mid", "grey", "dark", "primary", "accent", "success", "warning"  or "error". Defaults to no style (inheret).
+
+    @argument color
+    @type String
+  */
 
   /**
   The name of the component. This property also defaults to the value for test selectors.<br/>
@@ -86,25 +87,17 @@ export default Component.extend(Textable, {
   */
 
   /**
-    Adds a style modifier to the component. Standard options are "white", "light", "mid", "grey", "dark", "primary", "accent", "success", "warning"  or "error". Defaults to no style (inheret)
-    Default values will set the text color.
-
-    @argument size
-    @type String
-  */
-
-  /**
-    Adds a style modifier to the component. Standard options are "white", "light", "mid", "grey", "dark", "primary", "accent", "success", "warning"  or "error". Defaults to no style (inheret)
-    Default values will set the text color.
+    Adds a style modifier to the component. Standard options are "white", "light", "mid", "grey", "dark", "primary", "accent", "success", "warning"  or "error". Defaults to no style (inheret).
 
     @argument style
     @type String
   */
 
   /**
-    The text weight, "light", "normal", "bold" or "heavy". Defaults to null (inheret)
+    Define the size of the component. Standard options are "giant", "huge", "large", "medium", "small", or "tiny". Defaults to no size (inhered)
 
-    @argument weight
+    @argument size
+    @default null
     @type String
   */
 
@@ -116,29 +109,14 @@ export default Component.extend(Textable, {
     @type String
   */
   text: '',
-  //
-  // Methods
-  // -------
-  init() {
-    this._super(...arguments);
-    this.registerModifiers([
-      '*size',
-      '*weight',
-    ]);
 
-    set(this, 'propTypes', {
-      size: PropTypes.string,
-      style: PropTypes.string,
-      weight: PropTypes.string,
-    });
-  },
-  getDefaultProps() {
-    return {
-      size: '',
-      style: '',
-      weight: '',
-    };
-  },
+  /**
+    Define the weight of the component. Standard options are "bold", "medium" or "light". Defaults to no weight (inhered)
+
+    @argument weight
+    @default null
+    @type String
+  */
 }).reopenClass({
   positionalParams: ['text'],
 });

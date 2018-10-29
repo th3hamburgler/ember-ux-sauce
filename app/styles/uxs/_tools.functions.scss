@@ -31,6 +31,28 @@
   @return rem-size(($ratio*$baseline)-$mod);
 }
 /**
+ * scale
+ * ---
+ * Scales a base value
+ *
+ * @param  {string}   $pixels description
+ * @return {string}           description
+ */
+@function scale($base, $multipler, $scale) {
+  $value: $base;
+  @if ($multipler > 0) {
+    @for $var from 1 through $multipler {
+      $value: $value*$scale;
+    }
+  } @else {
+    $multipler: $multipler*-1;
+    @for $var from 1 through $multipler {
+      $value: $value/$scale;
+    }
+  }
+  @return $value;
+}
+/**
  * shade-light
  * ---
  * Take a color and lighten it by equal intervals
