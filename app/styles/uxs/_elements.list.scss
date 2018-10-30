@@ -1,7 +1,7 @@
 dl,
 ol,
 ul {
-  @extend .content;
+  @include type-content;
   margin-bottom: rem-size($baseline);
 }
 
@@ -14,7 +14,7 @@ dl {}
 
 dt {
   @include bold-body-type;
-  @extend .detail;
+  @include type-detail;
 }
 
 dd {

@@ -1,0 +1,45 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='dl-basic-demo.hbs'}}
+
+    {{#uxs-dl
+      color=color
+      size=size
+      style=style
+      weight=weight
+      as |list|
+    }}
+      {{list.term "Coffee"}}
+      {{list.description "Black hot drink"}}
+      {{list.term "Milk"}}
+      {{list.description "White cold drink"}}
+    {{/uxs-dl}}
+
+  {{/demo.example}}
+
+  {{#args-table "dl-basic-demo" as |table|}}
+    {{#table.row "color" as |row|}}
+      {{row.label "Color"}}
+      {{row.input color options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "size" as |row|}}
+      {{row.label "Size"}}
+      {{row.input size options="sizes"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "weight" as |row|}}
+      {{row.label "Weight"}}
+      {{row.input weight options="weights"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet 'dl-basic-demo.hbs'}}
+
+{{/docs-demo}}

@@ -113,6 +113,17 @@
   }
 }
 
+.uxs-dl,
+.uxs-ol,
+.uxs-ul {
+  @include background-color-modifiers;
+  @include font-size-modifiers;
+  @include line-height-modifiers;
+  @include text-color-modifiers;
+  @include type-content;
+  @include weight-modifiers;
+}
+
 .uxs-ol,
 .uxs-ul {
   list-style-position: inside;
