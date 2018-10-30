@@ -52,6 +52,7 @@
   @include align-modifiers;
   @include background-color-modifiers;
   @include text-color-modifiers;
+  @include weight-modifiers;
 
   &--giant {
     font-size  : rem-size($s-giant);
@@ -69,6 +70,7 @@
   @include align-modifiers;
   @include background-color-modifiers;
   @include text-color-modifiers;
+  @include weight-modifiers;
 }
 
 .content {
@@ -76,6 +78,7 @@
   @include align-modifiers;
   @include background-color-modifiers;
   @include text-color-modifiers;
+  @include weight-modifiers;
   margin-bottom: rem-size($baseline);
 }
 
@@ -84,6 +87,7 @@
   @include align-modifiers;
   @include background-color-modifiers;
   @include text-color-modifiers;
+  @include weight-modifiers;
   margin-bottom: rem-size($baseline);
 }
 
