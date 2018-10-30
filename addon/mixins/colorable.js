@@ -9,7 +9,10 @@ export default Mixin.create({
   align: null,
   // Computed
   _color: computed('color', function() {
-    return `c-${get(this, 'color')}`;
+    const color = get(this, 'color');
+    if (color) {
+      return `c-${color}`;
+    }
   }),
   // Methods
   init() {
