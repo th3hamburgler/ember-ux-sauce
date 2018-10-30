@@ -1,0 +1,72 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='table-record-demo.hbs'}}
+
+    {{#uxs-table
+      color=color
+      fullWidth=fullWidth
+      padding=padding
+      size=size
+      style=style
+      record=true
+      as |table|
+    }}
+      {{#table.row as |row|}}
+        {{row.heading "#" small=true numeric=true}}
+        {{row.heading "First Name"}}
+        {{row.heading "Last Name"}}
+        {{row.heading "Handle"}}
+      {{/table.row}}
+      {{#table.row as |row|}}
+        {{row.cell "1" small=true numeric=true}}
+        {{row.cell "Mark"}}
+        {{row.cell "Otto"}}
+        {{row.cell "@mdo"}}
+      {{/table.row}}
+      {{#table.row highlight=true as |row|}}
+        {{row.cell "2" small=true numeric=true}}
+        {{row.cell "Jacob"}}
+        {{row.cell "Thornton"}}
+        {{row.cell "@fat"}}
+      {{/table.row}}
+      {{#table.row as |row|}}
+        {{row.cell "33" small=true numeric=true}}
+        {{row.cell "Larry"}}
+        {{row.cell "Loooooongnameason"}}
+        {{row.cell "@twitter"}}
+      {{/table.row}}
+    {{/uxs-table}}
+
+  {{/demo.example}}
+
+  {{#args-table "table-record-demo" as |table|}}
+    {{#table.row "color" as |row|}}
+      {{row.label "Color"}}
+      {{row.input color options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "fullWidth" as |row|}}
+      {{row.label "Full Width"}}
+      {{row.checkbox fullWidth}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "padding" as |row|}}
+      {{row.label "Padding"}}
+      {{row.checkbox padding}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "size" as |row|}}
+      {{row.label "Size"}}
+      {{row.input size options="sizes"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet 'table-record-demo.hbs'}}
+
+{{/docs-demo}}

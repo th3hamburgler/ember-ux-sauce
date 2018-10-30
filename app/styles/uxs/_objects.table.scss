@@ -28,8 +28,12 @@ table.detail {
 }
 
 .uxs-table {
+  @include background-color-modifiers;
   @include body-type;
   @include content-font-size;
+  @include font-size-modifiers;
+  @include line-height-modifiers;
+  @include text-color-modifiers;
 
   &--record {
     border-collapse: collapse;
@@ -38,6 +42,22 @@ table.detail {
     max-width      : none;
     width          : 100%;
     white-space    : nowrap;
+  }
+
+  &--padding {
+    tr:first-child td,
+    tr:first-child th {
+      padding-top: rs(0.5);
+    }
+
+    tr:last-child td,
+    tr:last-child th {
+      padding-bottom: rs(0.5);
+    }
+  }
+
+  &--full-width {
+    width: 100%;
   }
 
   &--detail {

@@ -9,6 +9,6 @@ export default Component.extend(Textable, {
   // Methods
   init() {
     this._super(...arguments);
-    this.registerModifiers(['section', 'highlight']);
+    this.registerModifiers(['section', 'highlight', 'record']);
   },
 });

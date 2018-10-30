@@ -1,16 +1,14 @@
-<h1>Tables</h1>
-
-<p>Table all the things!</p>
-
-<h2>Tabular Data Example</h2>
-
-<p>This example shows using tables to represent data. Rows can be grouped by sections and certain rows highlighted.</p>
-
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="tables"}}
+  {{#demo.example name='table-basic-demo.hbs'}}
 
-    {{#uxs-table as |table|}}
+    {{#uxs-table
+      color=color
+      fullWidth=fullWidth
+      padding=padding
+      size=size
+      style=style
+      as |table|}}
       {{#table.row as |row|}}
         {{row.heading "Food"}}
         {{row.heading "Caloires (g)" numeric=true}}
@@ -57,47 +55,34 @@
 
   {{/demo.example}}
 
-  {{demo.snippet "tables.hbs"}}
+  {{#args-table "table-basic-demo" as |table|}}
+    {{#table.row "color" as |row|}}
+      {{row.label "Color"}}
+      {{row.input color options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "fullWidth" as |row|}}
+      {{row.label "Full Width"}}
+      {{row.checkbox fullWidth}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "padding" as |row|}}
+      {{row.label "Padding"}}
+      {{row.checkbox padding}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "size" as |row|}}
+      {{row.label "Size"}}
+      {{row.input size options="sizes"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
 
-{{/docs-demo}}
-
-<h2>Record Tables</h2>
-
-<p>This is a more traditional use of tables to represent a collection of resoruces. This should be used in place of a uxs-list where appropriate.</p>
-
-{{#docs-demo as |demo|}}
-
-  {{#demo.example name="record-tables"}}
-
-    {{#uxs-table style="record" as |table|}}
-      {{#table.row as |row|}}
-        {{row.heading "#" small=true numeric=true}}
-        {{row.heading "First Name"}}
-        {{row.heading "Last Name"}}
-        {{row.heading "Handle"}}
-      {{/table.row}}
-      {{#table.row as |row|}}
-        {{row.cell "1" small=true numeric=true}}
-        {{row.cell "Mark"}}
-        {{row.cell "Otto"}}
-        {{row.cell "@mdo"}}
-      {{/table.row}}
-      {{#table.row highlight=true as |row|}}
-        {{row.cell "2" small=true numeric=true}}
-        {{row.cell "Jacob"}}
-        {{row.cell "Thornton"}}
-        {{row.cell "@fat"}}
-      {{/table.row}}
-      {{#table.row as |row|}}
-        {{row.cell "33" small=true numeric=true}}
-        {{row.cell "Larry"}}
-        {{row.cell "Loooooongnameason"}}
-        {{row.cell "@twitter"}}
-      {{/table.row}}
-    {{/uxs-table}}
-
-  {{/demo.example}}
-
-  {{demo.snippet "record-tables.hbs"}}
+  {{demo.snippet 'table-basic-demo.hbs'}}
 
 {{/docs-demo}}

@@ -9,7 +9,7 @@ const Cell = Component.extend(Textable, {
   // Methods
   init() {
     this._super(...arguments);
-    this.registerModifiers(['highlight', 'small', 'numeric', 'section']);
+    this.registerModifiers(['highlight', 'small', 'numeric', 'section', 'record']);
   },
 });
 
