@@ -1,27 +1,41 @@
 # ember-ux-sauce
 
-This README outlines the details of collaborating on this Ember addon.
+[Short description of the addon.]
 
 ## Installation
 
-- `git clone <repository-url>` this repository
-- `cd ember-ux-sauce`
-- `npm install`
+-   `git clone <repository-url>` this repository
+-   `cd ember-ux-sauce`
+-   `npm install`
 
-## Running
+## Usage
 
-- `ember serve`
-- Visit your app at <http://localhost:4200>.
+[Longer description of how to use the addon in apps.]
 
-## Running Tests
+## Contributing
 
-- `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-- `ember test`
-- `ember test --server`
+### Installation
 
-## Building
+-   `git clone <repository-url>`
+-   `cd my-addon`
+-   `npm install`
+    > > > > > > > b1c0f39... message
 
-- `ember build`
+### Linting
+
+-   `npm run lint:hbs`
+-   `npm run lint:js`
+-   `npm run lint:js -- --fix`
+
+### Running tests
+
+-   `ember test` – Runs the test suite on the current Ember version
+-   `ember test --server` – Runs the test suite in "watch mode"
+-   `ember try:each` – Runs the test suite against multiple Ember versions
+
+### Running the dummy application
+
+-   `ember build`
 
 For more information on using ember-cli, visit <https://ember-cli.com/>.
 
@@ -33,8 +47,15 @@ Once that's done, you can checkout the branch you want to create the gh-page fro
 
 Then run ember github-pages:commit --message "some commit message" in order to rebuild gh-pages branch.
 
-```
-git checkout master
-ember github-pages:commit --message "Initial gh-pages release"
-git push origin gh-pages:gh-pages
-```
+    git checkout master
+    ember github-pages:commit --message "Initial gh-pages release"
+    git push origin gh-pages:gh-pages
+
+-   `ember serve`
+-   Visit the dummy application at <http://localhost:4200>.
+
+For more information on using ember-cli, visit <https://ember-cli.com/>.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).

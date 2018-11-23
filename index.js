@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-ux-sauce',
+  name: require('./package').name,
   setupPreprocessorRegistry(type, registry) {
     if (!this.isDevelopingAddon()) {
       const cpValidationsAddon = this.addons.find(addon => addon.name === 'ember-cp-validations');
