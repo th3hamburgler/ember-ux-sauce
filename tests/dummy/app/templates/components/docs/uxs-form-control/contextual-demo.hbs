@@ -1,0 +1,43 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='form-control-contextual-demo.hbs'}}
+
+    {{#uxs-form-control style=style disabled=disabled as |control|}}
+      {{control.label label}}
+      {{control.input value=value}}
+      {{control.tip tip}}
+    {{/uxs-form-control}}
+
+  {{/demo.example}}
+
+  {{#args-table "form-control-contextual-demo" as |table|}}
+    {{#table.row "label" as |row|}}
+      {{row.label "Label"}}
+      {{row.input label}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "tip" as |row|}}
+      {{row.label "Tip"}}
+      {{row.input tip}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "type" as |row|}}
+      {{row.label "Type"}}
+      {{row.input type options="form-types"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "value" as |row|}}
+      {{row.label "Value"}}
+      {{row.input value}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet 'form-control-contextual-demo.hbs'}}
+
+{{/docs-demo}}

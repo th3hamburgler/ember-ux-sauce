@@ -1,0 +1,47 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='form-control-basic-demo.hbs'}}
+
+    {{uxs-form-control
+      disabled=disabled
+      label=label
+      name="my-control"
+      style=style
+      tip=tip
+      type=type
+      value=value
+    }}
+
+  {{/demo.example}}
+
+  {{#args-table "form-control-basic-demo" as |table|}}
+    {{#table.row "label" as |row|}}
+      {{row.label "Label"}}
+      {{row.input label}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "tip" as |row|}}
+      {{row.label "Tip"}}
+      {{row.input tip}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "type" as |row|}}
+      {{row.label "Type"}}
+      {{row.input type options="form-types"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "value" as |row|}}
+      {{row.label "Value"}}
+      {{row.input value}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet 'form-control-basic-demo.hbs'}}
+
+{{/docs-demo}}
