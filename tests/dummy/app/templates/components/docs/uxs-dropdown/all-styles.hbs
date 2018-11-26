@@ -1,0 +1,122 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='form-dropdown-basic-demo.hbs'}}
+
+    {{#uxs-form-dropdown
+      onchange=(action (mut name))
+      options=nameOptions
+      selected=name
+      placeholder="DEFAULT"
+      class="mb"
+
+      as |name|
+    }}
+      {{name}}
+    {{/uxs-form-dropdown}}
+    {{#uxs-form-dropdown
+      onchange=(action (mut name))
+      options=nameOptions
+      selected=name
+      placeholder="PRIMARY"
+      style="primary"
+      class="mb"
+      as |name|
+    }}
+      {{name}}
+    {{/uxs-form-dropdown}}
+    {{#uxs-form-dropdown
+      onchange=(action (mut name))
+      options=nameOptions
+      selected=name
+      placeholder="ACCENT"
+      style="accent"
+      class="mb"
+      as |name|
+    }}
+      {{name}}
+    {{/uxs-form-dropdown}}
+    {{#uxs-form-dropdown
+      onchange=(action (mut name))
+      options=nameOptions
+      selected=name
+      placeholder="WARNING"
+      style="warning"
+      class="mb"
+      as |name|
+    }}
+      {{name}}
+    {{/uxs-form-dropdown}}
+    {{#uxs-form-dropdown
+      onchange=(action (mut name))
+      options=nameOptions
+      selected=name
+      placeholder="ERROR"
+      style="error"
+      class="mb"
+      as |name|
+    }}
+      {{name}}
+    {{/uxs-form-dropdown}}
+    {{#uxs-form-dropdown
+      onchange=(action (mut name))
+      options=nameOptions
+      selected=name
+      placeholder="DARK"
+      style="dark"
+      class="mb"
+      as |name|
+    }}
+      {{name}}
+    {{/uxs-form-dropdown}}
+    {{#uxs-form-dropdown
+      onchange=(action (mut name))
+      options=nameOptions
+      selected=name
+      placeholder="GREY"
+      style="grey"
+      class="mb"
+      as |name|
+    }}
+      {{name}}
+    {{/uxs-form-dropdown}}
+    {{#uxs-form-dropdown
+      onchange=(action (mut name))
+      options=nameOptions
+      selected=name
+      placeholder="MID"
+      style="mid"
+      class="mb"
+      as |name|
+    }}
+      {{name}}
+    {{/uxs-form-dropdown}}
+    {{#uxs-form-dropdown
+      onchange=(action (mut name))
+      options=nameOptions
+      selected=name
+      placeholder="LIGHT"
+      style="light"
+      class="mb"
+      as |name|
+    }}
+      {{name}}
+    {{/uxs-form-dropdown}}
+    {{#uxs-form-dropdown
+      onchange=(action (mut name))
+      options=nameOptions
+      selected=name
+      placeholder="WHITE"
+      style="white"
+      class="mb"
+      as |name|
+    }}
+      {{name}}
+    {{/uxs-form-dropdown}}
+
+    <div class="mt detail">Selected: <b>{{name}}</b></div>
+
+  {{/demo.example}}
+
+  {{demo.snippet 'form-dropdown-basic-demo.hbs'}}
+
+{{/docs-demo}}
