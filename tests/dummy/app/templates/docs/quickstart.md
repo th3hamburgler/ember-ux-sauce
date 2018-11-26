@@ -6,7 +6,7 @@ This quickstart guide will get you going with a docs site for your brand new add
 
     yarn add ember-ux-sauce
 
-2 - **Install ember-cli-sass**
+2 - **<del>Install ember-cli-sass</del>** (now listed as a dependency of this addon)
 
     yarn add ember-cli-sass
 
@@ -14,18 +14,7 @@ This quickstart guide will get you going with a docs site for your brand new add
 
     @import "uxs";
 
-4 - **Include reset css** in ember-cli-build.js
-
-    let app = new EmberApp(defaults, {
-      // ...
-      sassOptions: {
-        includePaths: [
-          'node_modules/reset-css'
-        ],
-      },
-    });
-
-5 - **Restart Ember Server**
+4 - **Restart Ember Server**
 
 # Customising Sass
 
