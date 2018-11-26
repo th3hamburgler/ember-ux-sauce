@@ -9,16 +9,13 @@
  * Components – specific UI components.
  * Utilities – utilities and helper classes - override anything before!
  */
-@import "ember-power-select";
-@import "ember-basic-dropdown";
-@import "ember-modal-dialog/ember-modal-structure";
 /* */
 @import "uxs/tools.functions";
-@import 'uxs/settings.variables';
-@import 'uxs/include.base';
-@import 'uxs/include.tools';
-@import 'uxs/include.vendor';
-@import 'uxs/include.elements';
-@import 'uxs/include.objects';
-@import 'uxs/include.components';
-@import 'uxs/include.trumps';
+@import "uxs/settings.variables";
+@import "uxs/include.base";
+@import "uxs/include.tools";
+@import "uxs/include.vendor";
+@import "uxs/include.elements";
+@import "uxs/include.objects";
+@import "uxs/include.components";
+@import "uxs/include.trumps";
