@@ -1,0 +1,47 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name='form-input-basic-demo.hbs'}}
+
+    {{uxs-form-input
+      disabled=disabled
+      enter=(action "enterPressed" value)
+      inline=inline
+      placeholder=placeholder
+      style=style
+      type=type
+      value=value
+    }}
+
+  {{/demo.example}}
+
+  {{#args-table "form-input-basic-demo" as |table|}}
+    {{#table.row "disabled" as |row|}}
+      {{row.label "disabled"}}
+      {{row.checkbox disabled}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "inline" as |row|}}
+      {{row.label "inline"}}
+      {{row.checkbox inline}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "type" as |row|}}
+      {{row.label "Type"}}
+      {{row.input type options=form-types}}
+      {{row.type "String"}}
+    {{/table.row}}
+      {{#table.row "value" as |row|}}
+        {{row.label "Value"}}
+        {{row.input value}}
+        {{row.type "String"}}
+      {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet 'form-input-basic-demo.hbs'}}
+
+{{/docs-demo}}

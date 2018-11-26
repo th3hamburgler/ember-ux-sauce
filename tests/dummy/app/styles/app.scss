@@ -37,6 +37,7 @@ body.ember-tether-enabled {
 .ember-application {
   @import 'uxs/include.objects';
   @import 'uxs/include.components';
+  @import 'uxs/include.trumps';
   @import 'uxs/include.vendor';
 }
 
