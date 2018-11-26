@@ -8,10 +8,6 @@ Let's look at a basic example with two way binding on the value and an action on
 
 {{docs/uxs-form-input/basic-demo}}
 
-## Further Usage
-
-This example includes futher attributes to control the input:
-
 ## Styles Usage
 
 You can customise the look of your input with the style attribute.

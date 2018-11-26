@@ -1,12 +1,14 @@
-<h1>Form Textareas</h1>
+# Form Textareas
 
-<p>The form textarea component extends from embers <em>textarea</em> component. As such you can pass any of the standard <a href="https://guides.emberjs.com/v2.18.0/templates/input-helpers/#toc_text-areas">textarea attributes</a></p>
+The form textarea component extends from embers _textarea_ component. As such you can pass any of the standard [textarea attributes](https://guides.emberjs.com/v2.18.0/templates/input-helpers/#toc_text-areas)
 
-<h2>Basic Usage</h2>
+## Basic Usage
 
-<p>Let's look at a basic example with two way binding on the value and an action on pressing enter</p>
+Let's look at a basic example with two way binding on the value and an action on pressing enter
 
-{{#docs-demo as |demo|}}
+{{docs/uxs-form-textarea/basic-demo}}
+
+<!-- {{#docs-demo as |demo|}}
 
   {{#demo.example name="form-textarea"}}
     {{uxs-form-textarea value=value enter=(action "enterPressed" value)}}
@@ -15,20 +17,11 @@
   {{demo.snippet 'form-textarea.hbs'}}
   {{demo.snippet 'form-textarea-action.js'}}
 
-{{/docs-demo}}
+{{/docs-demo}} -->
 
-<table class="docs-args-table">
-  <tr>
-    <td>label</td>
-    <td>{{input placeholder="Value" value=value}}</td>
-    <td><em>String</em></td>
-  </tr>
-</table>
+<!-- <h2>Further Usage</h2>
 
-
-<h2>Further Usage</h2>
-
-<p>This example includes futher attributes to control the input:</p>
+This example includes futher attributes to control the input:
 
 {{#docs-demo as |demo|}}
 
@@ -109,12 +102,21 @@
   </tr>
 </table>
 
+-->
 
+## Styles Usage
 
-<h2>Styles Usage</h2>
+You can customise the look of your textarea with the style attribute.
 
-<p>You can customise the look of your textarea with the style attribute.</p>
+{{docs/uxs-form-textarea/all-styles}}
 
+{{args-table/align-options}}
+{{args-table/form-type-options}}
+{{args-table/size-options}}
+{{args-table/style-options}}
+{{args-table/weight-options}}
+
+<!--
 {{#docs-demo as |demo|}}
 
   {{#demo.example name="form-textarea-styles"}}
@@ -150,4 +152,4 @@
 
   {{demo.snippet "form-textarea-styles.hbs"}}
 
-{{/docs-demo}}
+{{/docs-demo}} -->
