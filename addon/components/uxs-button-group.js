@@ -2,9 +2,6 @@ import Component from '@ember/component';
 import {
   equal
 } from '@ember/object/computed';
-import PropTypeMixin, {
-  PropTypes
-} from 'ember-prop-types';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import layout from '../templates/components/uxs-button-group';
@@ -32,7 +29,7 @@ import layout from '../templates/components/uxs-button-group';
   @yield {Component} group.button
   @yield {Component} group.link
 */
-export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
+export default Component.extend(BEMComponent, Testable, {
   // Attribues
   /**
     The base css class name 'uxs-tabs'
@@ -119,15 +116,6 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
       '*style',
     ]);
 
-    this.set('propTypes', {
-      align: PropTypes.oneOfType([
-        PropTypes.null,
-        PropTypes.string,
-      ]),
-      disabled: PropTypes.bool,
-      inline: PropTypes.bool,
-      mini: PropTypes.bool,
-    });
   },
   /**
    * Init any property defaults

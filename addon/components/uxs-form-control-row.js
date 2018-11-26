@@ -1,13 +1,7 @@
 import Component from '@ember/component';
-import {
-  PropTypes
-} from 'ember-prop-types';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import layout from '../templates/components/uxs-form-control-row';
-import {
-  set,
-} from '@ember/object';
 
 export default Component.extend(BEMComponent, Testable, {
   // Attributes
@@ -21,8 +15,5 @@ export default Component.extend(BEMComponent, Testable, {
       'disabled',
       'inline',
     ]);
-    set(this, 'propTypes', {
-      inline: PropTypes.boolean,
-    });
   },
 });

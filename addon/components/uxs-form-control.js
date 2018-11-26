@@ -13,14 +13,11 @@ import {
   equal,
   oneWay,
 } from '@ember/object/computed';
-import PropTypeMixin, {
-  PropTypes
-} from 'ember-prop-types';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import layout from '../templates/components/uxs-form-control';
 
-export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
+export default Component.extend(BEMComponent, Testable, {
   // Attributes
   base: 'uxs-form__control',
   classNameBindings: ['typeClass'],
@@ -59,13 +56,6 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
       '*size',
     ]);
     this._super(...arguments);
-    set(this, 'propTypes', {
-      text: PropTypes.string,
-      style: PropTypes.string,
-      size: PropTypes.string,
-      validateOnFocus: PropTypes.boolean,
-      compact: PropTypes.boolean,
-    });
     this.initValidator();
     this.initModelErrors();
   },

@@ -6,12 +6,6 @@ import Styleable from 'ember-ux-sauce/mixins/styleable';
 import {
   alias
 } from '@ember/object/computed';
-import {
-  set
-} from '@ember/object';
-import {
-  PropTypes
-} from 'ember-prop-types';
 
 export default LinkComponent.extend(Buttonable, Clickable, Styleable, {
   // Attributes
@@ -30,14 +24,6 @@ export default LinkComponent.extend(Buttonable, Clickable, Styleable, {
       'prefix',
       'suffix',
       'warning',
-    ])
-    set(this, 'propTypes', {
-      icon: PropTypes.string,
-    });
-  },
-  getDefaultProps() {
-    return {
-      style: null,
-    };
+    ]);
   },
 });

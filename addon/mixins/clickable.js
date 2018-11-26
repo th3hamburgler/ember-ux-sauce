@@ -1,8 +1,5 @@
 import Mixin from '@ember/object/mixin';
 import {
-  PropTypes
-} from 'ember-prop-types';
-import {
   get
 } from '@ember/object';
 import {
@@ -24,19 +21,6 @@ export default Mixin.create({
     @public
   */
   onClick: null,
-  /**
-   * Mixins Property Managment config
-   *
-   @property propTypes
-   @type     {Object}
-   @private
-   */
-  propTypes: {
-    action: PropTypes.oneOfType([
-      PropTypes.null,
-      PropTypes.func,
-    ]),
-  },
   /**
     Add a role to the item for accessibility
     @property role

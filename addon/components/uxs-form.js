@@ -4,19 +4,15 @@ import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import {
   get,
-  set,
 } from '@ember/object';
 import {
   computed
 } from '@ember/object';
-import PropTypeMixin, {
-  PropTypes
-} from 'ember-prop-types';
 import {
   equal
 } from '@ember/object/computed';
 
-export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
+export default Component.extend(BEMComponent, Testable, {
   // Attributes
   attributeBindings: ['novalidate'],
   base: 'uxs-form',
@@ -44,16 +40,7 @@ export default Component.extend(BEMComponent, PropTypeMixin, Testable, {
   // Methods
   init() {
     this._super(...arguments);
-
     this.registerModifiers(['isWhite:white', '*style']);
-    set(this, 'propTypes', {
-      validateOnFocus: PropTypes.boolean,
-    });
-  },
-  getDefaultProps() {
-    return {
-      validateOnFocus: true,
-    };
   },
   /**
    * Validate child form control components

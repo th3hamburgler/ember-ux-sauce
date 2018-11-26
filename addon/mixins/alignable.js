@@ -1,16 +1,12 @@
 import Mixin from '@ember/object/mixin';
-import PropTypeMixin, {
-  PropTypes
-} from 'ember-prop-types';
 /**
   Add text-align arguments to a component
 
   @class Accessible
   @namespace Mixins
 */
-export default Mixin.create(PropTypeMixin, {
+export default Mixin.create({
   // Attributes
-
   /**
     The text align direction, "left", "center", "right" or "justified". Defaults to no alignment (inheret)
 
@@ -25,24 +21,10 @@ export default Mixin.create(PropTypeMixin, {
     this.registerModifiers([
       '*align',
     ]);
-    this.set('propTypes', {
-      align: PropTypes.oneOfType([
-        PropTypes.null,
-        PropTypes.string,
-      ]),
-    });
   },
   registerModifiers: function() {
     if (this._super) {
       this._super(...arguments);
     }
-  },
-  /**
-   * Init any property defaults
-   */
-  getDefaultProps() {
-    return {
-      align: 'left',
-    };
   },
 });

@@ -8,9 +8,6 @@ module.exports = function(defaults) {
       theme: 'material_blue'
     },
     sassOptions: {
-      includePaths: [
-        'node_modules/reset-css'
-      ],
       outputPaths: {
         app: {
           css: {

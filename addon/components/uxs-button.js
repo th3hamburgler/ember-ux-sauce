@@ -2,9 +2,6 @@ import Component from '@ember/component';
 import layout from '../templates/components/uxs-button';
 import Buttonable from 'ember-ux-sauce/mixins/buttonable';
 import Clickable from 'ember-ux-sauce/mixins/clickable';
-import PropTypeMixin, {
-  PropTypes
-} from 'ember-prop-types';
 
 /**
   A component to render a simple button
@@ -15,7 +12,7 @@ import PropTypeMixin, {
   @class UXS Button
   @public
 */
-const Button = Component.extend(Buttonable, Clickable, PropTypeMixin, {
+const Button = Component.extend(Buttonable, Clickable, {
   // Attributes
   layout,
   tagName: 'button',
@@ -132,14 +129,6 @@ const Button = Component.extend(Buttonable, Clickable, PropTypeMixin, {
     @public
    */
   text: null,
-  // Methods
-  init() {
-    this._super(...arguments);
-    this.get('propTypes', {
-      loading: PropTypes.bool,
-      loadingText: PropTypes.string,
-    });
-  },
 });
 
 Button.reopenClass({

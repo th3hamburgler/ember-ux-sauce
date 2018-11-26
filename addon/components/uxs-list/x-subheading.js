@@ -92,6 +92,7 @@ export default Component.extend(BEMComponent, {
       currentSort = get(this, 'subheadingState.sort');
 
     if (text !== currentValue || sort !== currentSort) {
+      // Side Effect - Bad!
       set(this, 'subheadingState.value', text);
       set(this, 'subheadingState.sort', sort);
       return true;

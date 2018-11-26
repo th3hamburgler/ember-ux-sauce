@@ -1,9 +1,5 @@
-import PropTypeMixin, {
-  PropTypes
-} from 'ember-prop-types';
 import {
   defineProperty,
-  set
 } from '@ember/object';
 import {
   alias,
@@ -15,7 +11,7 @@ import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import layout from '../templates/components/uxs-form-textarea';
 import TextArea from '@ember/component/text-area';
 
-export default TextArea.extend(Accessible, BEMComponent, PropTypeMixin, Testable, {
+export default TextArea.extend(Accessible, BEMComponent, Testable, {
   // Attributes
   base: 'uxs-form__input',
   layout,
@@ -57,27 +53,5 @@ export default TextArea.extend(Accessible, BEMComponent, PropTypeMixin, Testable
       // property into this component
       defineProperty(this, 'value', alias(`model.${propName}`));
     }
-  },
-  /**
-   * Set the prop type definitions
-   */
-  initPropTypes() {
-    set(this, 'propTypes', {
-      rows: PropTypes.number,
-      cols: PropTypes.number,
-      placeholder: PropTypes.string,
-      disabled: PropTypes.boolean,
-      maxlength: PropTypes.number,
-      tabindex: PropTypes.number,
-      wrap: PropTypes.boolean,
-      readonly: PropTypes.boolean,
-      autofocus: PropTypes.boolean,
-      spellcheck: PropTypes.boolean,
-    });
-  },
-  getDefaultProps() {
-    return {
-      rows: 6,
-    };
   },
 });

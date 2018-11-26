@@ -1,9 +1,5 @@
-import PropTypeMixin, {
-  PropTypes
-} from 'ember-prop-types';
 import {
   defineProperty,
-  set
 } from '@ember/object';
 import {
   alias,
@@ -17,10 +13,10 @@ import {
   equal
 } from '@ember/object/computed';
 
-
-export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testable, {
+export default TextField.extend(Accessible, BEMComponent, Testable, {
   // Attributes
   base: 'uxs-form__input',
+  type: 'text',
   // Computed
   isEmail: equal('type', 'email'),
   isHidden: equal('type', 'hidden'),
@@ -38,7 +34,6 @@ export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testabl
     this._super(...arguments);
     this.initModifiers();
     this.initModelComputedProperties();
-    this.initPropTypes()
   },
   /**
    * Set the properties to bind to BEM modifier classes
@@ -80,22 +75,5 @@ export default TextField.extend(Accessible, BEMComponent, PropTypeMixin, Testabl
       // property into this component
       defineProperty(this, 'value', alias(`model.${propName}`));
     }
-  },
-  /**
-   * Set the prop type definitions
-   */
-  initPropTypes() {
-    set(this, 'propTypes', {
-      type: PropTypes.oneOf(['email', 'hidden', 'number', 'password', 'search', 'tel', 'text', 'url', 'week', 'month', 'year']),
-      disabled: PropTypes.boolean,
-      error: PropTypes.boolean,
-      success: PropTypes.boolean,
-      warning: PropTypes.boolean,
-    });
-  },
-  getDefaultProps() {
-    return {
-      type: 'text',
-    };
   },
 });
