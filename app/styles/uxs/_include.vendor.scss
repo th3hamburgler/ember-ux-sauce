@@ -53,10 +53,7 @@ $ember-power-select-focus-outline: null;
 $ember-power-select-trigger-ltr-padding: 0 (($baseline*1.5)-2px) 0 0;
 $ember-power-select-trigger-rtl-padding: 0 0 0 ($baseline*0.5);
 $ember-power-select-multiple-option-padding: 0 ($baseline*0.125);
-$ember-power-select-multiple-option-line-height: ($baseline*1.5); // #TODO - Add back
-// // @import "../ember-power-select";
-// @import "../ember-basic-dropdown";
-// @import "../ember-modal-dialog/ember-modal-structure";
+$ember-power-select-multiple-option-line-height: ($baseline*1.5); // @import "../ember-power-select";
 
 .uxs-form__input {
   &--dropdown {
