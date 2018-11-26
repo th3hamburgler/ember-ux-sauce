@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "ember-basic-dropdown": "^1.0.4",
+    "ember-bem-sauce": "^0.9.3",
     "ember-cli-babel": "^6.16.0",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-sass": "^8.0.1",

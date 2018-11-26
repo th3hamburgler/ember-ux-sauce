@@ -36,6 +36,10 @@ This is a very minimal dropdown. That means that it is agnostic about what it is
 
 It is intended to be a building block for more complex components but is perfectly usable. It is by example the addon on which ember-power-select or ember-paper's menu component are built upon.
 
+### [ember-bem-sauce](https://github.com/sauce-consultants/ember-bem-sauce)
+
+ember-bem-sauce helps you write BEM components. Make your templates cleaner with the help of the bem helper and the bem component mixin. By defining all your components modifiers in one place you will dry up your template files.
+
 ### [ember-composable-helpers](https://github.com/DockYard/ember-composable-helpers)
 
 Composable helpers for Ember that enables more declarative templating.

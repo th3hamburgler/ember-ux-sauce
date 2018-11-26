@@ -3490,6 +3490,12 @@ ember-basic-dropdown@^1.0.0, ember-basic-dropdown@^1.0.4:
     ember-cli-htmlbars "^3.0.0"
     ember-maybe-in-element "^0.2.0"
 
+ember-bem-sauce@^0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/ember-bem-sauce/-/ember-bem-sauce-0.9.3.tgz#edfb75aebc02614f42ad7a560c3b61722aa83b53"
+  dependencies:
+    ember-cli-babel "^6.3.0"
+
 ember-cli-addon-docs-esdoc@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/ember-cli-addon-docs-esdoc/-/ember-cli-addon-docs-esdoc-0.2.1.tgz#fcb2f1792f1bd4d6a5df8205f7b6e555abbcd1b9"
