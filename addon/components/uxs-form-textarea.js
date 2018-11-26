@@ -22,7 +22,6 @@ export default TextArea.extend(Accessible, BEMComponent, Testable, {
     this._super(...arguments);
     this.initModifiers();
     this.initModelComputedProperties();
-    this.initPropTypes()
   },
   /**
    * Set the properties to bind to BEM modifier classes
