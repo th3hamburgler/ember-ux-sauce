@@ -1,4 +1,11 @@
 .uxs-button {
+  @include content-font-size;
+  @include light-body-type;
+  @include text-truncate;
+  @include transition-all;
+  @include input-glow {
+    box-shadow: 0 0 0.5rem $c-grey;
+  };
   -webkit-appearance: none;
   background-color  : $c-grey;
   border            : rem-size(1px) solid $c-grey;
@@ -13,12 +20,6 @@
   padding           : 0;
   text-align        : center;
   width             : rs(12);
-  @include text-truncate;
-  @include transition-all;
-  @extend .content;
-  @include input-glow {
-    box-shadow: 0 0 0.5rem $c-grey;
-  };
   @include background-color-modifiers();
   @include border-color-modifiers();
   @include font-size-modifiers;
