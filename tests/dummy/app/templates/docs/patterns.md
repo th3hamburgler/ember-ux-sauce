@@ -48,6 +48,10 @@ Composable helpers for Ember that enables more declarative templating.
 
 moment.js template helpers and computed property macros for Ember
 
+### [ember-cli-string-helpers](https://github.com/romulomachado/ember-cli-string-helpers)
+
+Set of the String helpers extracted from DockYard's ember-composable-helpers.
+
 ### [ember-cli-sass](https://github.com/aexmachina/ember-cli-sass)
 
 ember-cli-sass uses Dart Sass to preprocess your ember-cli app's files and provides support for source maps and include paths. It provides support for the common use case for Ember.js projects:
