@@ -20,6 +20,10 @@
   }
 
   &__item {
+    @include body-type;
+    @include content-font-size;
+    @include text-truncate;
+    @include transition-all;
     -webkit-appearance: none;
     background-color  : rgba($c-dark, 0);
     border-bottom     : rem-size($border-size) solid transparent;
@@ -35,9 +39,6 @@
     text-transform    : uppercase;
     flex              : 1 0 auto;
     opacity           : 0.8;
-    @include text-truncate;
-    @include transition-all;
-    @extend .content;
     max-width         : rs(8);
 
     &:focus,
