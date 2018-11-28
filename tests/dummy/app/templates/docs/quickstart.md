@@ -6,7 +6,7 @@ This quickstart guide will get you going with a docs site for your brand new add
 
     yarn add ember-ux-sauce
 
-2 - **<del>Install ember-cli-sass</del>** (now listed as a dependency of this addon)
+2 - **Install ember-cli-sass**
 
     yarn add ember-cli-sass
 
