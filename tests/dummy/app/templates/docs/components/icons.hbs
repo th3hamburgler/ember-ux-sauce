@@ -31,26 +31,28 @@
 <p>Now explore the various properties available in this component:</p>
 
 <table class="docs-args-table">
-  <tr>
-    <td>icon<span class="req">*</span></td>
-    <td>{{input placeholder="Icon" value=icon}}</td>
-    <td><em>String</em></td>
-  </tr>
-  <tr>
-    <td>style</td>
-    <td>{{input placeholder="Style" value=style}}</td>
-    <td><em>String</em></td>
-  </tr>
-  <tr>
-    <td>size</td>
-    <td>{{input placeholder="Size" value=size}}</td>
-    <td><em>String</em></td>
-  </tr>
-  <tr>
-    <td>disabled</td>
-    <td>{{docs-toggle value=disabled}}</td>
-    <td><em>Boolean</em></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td>icon<span class="req">*</span></td>
+      <td>{{input placeholder="Icon" value=icon}}</td>
+      <td><em>String</em></td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>{{input placeholder="Style" value=style}}</td>
+      <td><em>String</em></td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>{{input placeholder="Size" value=size}}</td>
+      <td><em>String</em></td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>{{docs-toggle value=disabled}}</td>
+      <td><em>Boolean</em></td>
+    </tr>
+  </tbody>
 </table>
 
 <h2>Icons Sizes</h2>
@@ -106,7 +108,7 @@
 
   {{#demo.example name="icon-actions"}}
 
-    {{uxs-icon "done" onClick=(action 'save' "done")}}
+    {{uxs-icon "done" onClick=(action "save" "done")}}
 
   {{/demo.example}}
 

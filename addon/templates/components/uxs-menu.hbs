@@ -1,26 +1,39 @@
-{{yield (hash
-  subheading=(component "uxs-subheading" base="uxs-menu__subheading")
-  item=(
-    component
-    "uxs-menu/item"
-    hasRightIcon=hasRightIcon
-    hasLeftIcon=hasLeftIcon
-    hasSecondaryText=hasSecondaryText
-    detail=detail
-    style=style
-    horizontal=horizontal
-    showingModal=isShowingNav
+{{yield
+  (
+    hash
+    subheading=(
+      component
+      "uxs-subheading"
+      base="uxs-menu__subheading"
+    )
+    item=(
+      component
+      "uxs-menu/item"
+      hasRightIcon=hasRightIcon
+      hasLeftIcon=hasLeftIcon
+      hasSecondaryText=hasSecondaryText
+      detail=detail
+      style=style
+      horizontal=horizontal
+      showingModal=isShowingNav
+    )
+    link=(
+      component
+      "uxs-menu/link"
+      hasRightIcon=hasRightIcon
+      hasLeftIcon=hasLeftIcon
+      hasSecondaryText=hasSecondaryText
+      detail=detail
+      style=style
+      horizontal=horizontal
+      showingModal=isShowingNav
+    )
+    divider=(
+      component
+      "uxs-div"
+      class=(bem b "divider" m)
+      style=style
+      horizontal=horizontal
+    )
   )
-  link=(
-    component
-    "uxs-menu/link"
-    hasRightIcon=hasRightIcon
-    hasLeftIcon=hasLeftIcon
-    hasSecondaryText=hasSecondaryText
-    detail=detail
-    style=style
-    horizontal=horizontal
-    showingModal=isShowingNav
-  )
-  divider=(component "uxs-div" class=(bem b "divider" m) style=style horizontal=horizontal)
-)}}
+}}

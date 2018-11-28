@@ -8,7 +8,17 @@
   </select>
 </label>
 
-{{uxs-detail (concat countPrefix start " - " end " of " total) class=(bem b "info" m)}}
+{{uxs-detail
+  (
+    concat
+    countPrefix start
+    " - "
+    end
+    " of "
+    total
+  )
+  class=(bem b "info" m)
+}}
 
 <div class={{bem b "controls" m}}>
   {{uxs-icon

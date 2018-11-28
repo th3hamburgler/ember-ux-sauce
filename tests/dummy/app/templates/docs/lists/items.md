@@ -1,10 +1,10 @@
-<h1>List Items</h1>
+# List Items
 
-<p>List items are used to render each item of you list. The items tend to contain 1 - 3 "columns" of data. These could be an avatar, text or actions.</p>
+List items are used to render each item of you list. The items tend to contain 1 - 3 "columns" of data. These could be an avatar, text or actions.
 
-<h2>Basic Example</h2>
+## Basic Example
 
-<p>This is a simple list containing just a title for each item.</p>
+This is a simple list containing just a title for each item.
 
 {{#docs-demo as |demo|}}
 
@@ -24,9 +24,9 @@
 
 {{/docs-demo}}
 
-<h2>Adding more content</h2>
+## Adding more content
 
-<p>This is a list contains some meta data and includes a bottom border. By defining the lines & border property on the list component, these properties are passed to each item and will set the height and bottom-border.</p>
+This is a list contains some meta data and includes a bottom border. By defining the lines & border property on the list component, these properties are passed to each item and will set the height and bottom-border.
 
 {{#docs-demo as |demo|}}
 
@@ -49,10 +49,10 @@
 
 {{/docs-demo}}
 
-<h2>Avatars and Actions</h2>
+## Avatars and Actions
 
-<p>This is a list that includes some horizontal layout for the avatar and item. We use the aside and body contextual components to split up each items layout.</p>
-<p>There is a variaty of avatar components you can use in lists including: image, text and icon avatars. See the {{link-to "avatars page" "docs.lists.avatars"}} for details.</p>
+This is a list that includes some horizontal layout for the avatar and item. We use the aside and body contextual components to split up each items layout.
+There is a variaty of avatar components you can use in lists including: image, text and icon avatars. See the {{link-to "avatars page" "docs.lists.avatars"}} for details.
 
 {{#docs-demo as |demo|}}
 
@@ -82,9 +82,9 @@
 
 {{/docs-demo}}
 
-<h2>Styles Usage</h2>
+\## Styles Usage
 
-<p>You can customise the look of your list items by passing the style attribute to the list-item component, this will override any style passed to the parent list.</p>
+You can customise the look of your list items by passing the style attribute to the list-item component, this will override any style passed to the parent list.
 
 {{#docs-demo as |demo|}}
 
@@ -141,9 +141,9 @@
 
 {{/docs-demo}}
 
-<h2>Properties</h2>
+## Properties
 
-<p>The uxs-list-item component has the following properties:</p>
+The uxs-list-item component has the following properties:
 
 <table class="docs-args-table">
   <tr>
@@ -168,9 +168,9 @@
   </tr>
 </table>
 
-<h2>Actions</h2>
+## Actions
 
-<p>The uxs-list-item component has the following actions:</p>
+The uxs-list-item component has the following actions:
 
 <table class="docs-args-table">
   <tr>
@@ -195,10 +195,9 @@
   </tr>
 </table>
 
+## Contextual Components
 
-<h2>Contextual Components</h2>
-
-<p>The <b>List Item</b> component has the following child components:</p>
+The <b>List Item</b> component has the following child components:
 
 <table class="docs-args-table">
   <tr>

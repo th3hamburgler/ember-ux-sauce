@@ -1,18 +1,21 @@
-{{yield (hash
-  body=(
-    component
-    "uxs-div"
-    class=(bem b "body" m)
+{{yield
+  (
+    hash
+    body=(
+      component
+      "uxs-div"
+      class=(bem b "body" m)
+    )
+    icon=(
+      component
+      "uxs-icon"
+      base=(concat b "__icon")
+      class=(bem b "icon" m)
+    )
+    content=(
+      component
+      "uxs-content"
+      class=(bem b "content" m)
+    )
   )
-  icon=(
-    component
-    "uxs-icon"
-    base=(concat b "__icon")
-    class=(bem b "icon" m)
-  )
-  content=(
-    component
-    "uxs-content"
-    class=(bem b "content" m)
-  )
-)}}
+}}

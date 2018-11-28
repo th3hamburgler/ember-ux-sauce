@@ -1,12 +1,17 @@
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name='model-bound-form.hbs'}}
+  {{#demo.example name="model-bound-form.hbs"}}
 
     {{#uxs-form onSubmit=(action "save" model) model=model as |form|}}
 
       {{form.control label="Title" name="title" type="text"}}
 
-      {{#form.control label="Name" name="name" tip="To show inline fields we use a form row" as |control|}}
+      {{#form.control
+        label="Name"
+        name="name"
+        tip="To show inline fields we use a form row"
+      as |control|
+      }}
 
         {{#control.row as |row|}}
           {{row.input name="firstName"}}
@@ -15,14 +20,29 @@
 
       {{/form.control}}
 
-      {{form.control label="Email" name="email" type="email" tip="Valid emails only please."}}
+      {{form.control
+        label="Email"
+        name="email"
+        type="email"
+        tip="Valid emails only please."
+      }}
 
-      {{form.control label="Biography" name="bio" type="textarea" rows=5}}
+      {{form.control
+        label="Biography"
+        name="bio"
+        type="textarea"
+        rows=5
+      }}
 
-      {{#form.control label="Date of Birth" tip="We're using a form row here to include a prefix date icon, it's not required but does give a better user experience." name="dateOfBirth" as |control|}}
+      {{#form.control
+        label="Date of Birth"
+        tip="We're using a form row here to include a prefix date icon, it's not required but does give a better user experience."
+        name="dateOfBirth"
+      as |control|
+      }}
 
         {{#control.row as |row|}}
-          {{row.icon 'date_range' prefix=true}}
+          {{row.icon "date_range" prefix=true}}
           {{row.date
             onChange=(action (mut model.dateOfBirth))
           }}
@@ -30,13 +50,21 @@
 
       {{/form.control}}
 
-      {{#form.control label="Date Time" name="datetime" as |control|}}
+      {{#form.control
+        label="Date Time"
+        name="datetime"
+      as |control|
+      }}
         {{control.datetime
           onChange=(action (mut model.datetime))
         }}
       {{/form.control}}
 
-      {{#form.control label="Time" name="time" as |control|}}
+      {{#form.control
+        label="Time"
+        name="time"
+      as |control|
+      }}
         {{control.time
           onChange=(action (mut model.time))
         }}
@@ -50,6 +78,6 @@
 
   {{/demo.example}}
 
-  {{demo.snippet 'model-bound-form.hbs'}}
-  {{demo.snippet 'model-bound-form.js'}}
+  {{demo.snippet "model-bound-form.hbs"}}
+  {{demo.snippet "model-bound-form.js"}}
 {{/docs-demo}}

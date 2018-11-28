@@ -1,6 +1,6 @@
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name='table-basic-demo.hbs'}}
+  {{#demo.example name="table-basic-demo.hbs"}}
 
     {{#uxs-table
       color=color
@@ -8,7 +8,8 @@
       padding=padding
       size=size
       style=style
-      as |table|}}
+    as |table|
+    }}
       {{#table.row as |row|}}
         {{row.heading "Food"}}
         {{row.heading "Caloires (g)" numeric=true}}
@@ -83,6 +84,6 @@
     {{/table.row}}
   {{/args-table}}
 
-  {{demo.snippet 'table-basic-demo.hbs'}}
+  {{demo.snippet "table-basic-demo.hbs"}}
 
 {{/docs-demo}}

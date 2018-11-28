@@ -21,7 +21,7 @@
         name="name"
         tip="Please enter you name curabitur diam sodales gravida quis adipiscing libero elementum"
         disabled=disabled
-        as |control|
+      as |control|
       }}
 
         {{#control.row as |row|}}
@@ -29,7 +29,7 @@
             selected=model.title
             options=titles
             onchange=(action (mut model.title))
-            as |title|
+          as |title|
           }}
             {{title}}
           {{/row.dropdown}}
@@ -43,16 +43,18 @@
 
   {{/demo.example}}
 
-  {{demo.snippet 'form-row-inputs.hbs'}}
+  {{demo.snippet "form-row-inputs.hbs"}}
 
 {{/docs-demo}}
 
 <table class="docs-args-table">
-  <tr>
-    <td>disabled</td>
-    <td>{{docs-toggle value=disabled}}</td>
-    <td><em>Boolean</em></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td>disabled</td>
+      <td>{{docs-toggle value=disabled}}</td>
+      <td><em>Boolean</em></td>
+    </tr>
+  </tbody>
 </table>
 
 
@@ -75,7 +77,7 @@
 
   {{/demo.example}}
 
-  {{demo.snippet 'form-row-button.hbs'}}
+  {{demo.snippet "form-row-button.hbs"}}
 
 {{/docs-demo}}
 
@@ -93,7 +95,7 @@
         label="Email"
         name="email"
         tip="Please enter your email address"
-        as |control|
+      as |control|
       }}
 
         {{#control.row as |row|}}
@@ -107,7 +109,7 @@
         label="Phone Number"
         name="phone"
         tip="Please enter your phone number including an international code"
-        as |control|
+      as |control|
       }}
 
         {{#control.row as |row|}}
@@ -121,7 +123,7 @@
 
   {{/demo.example}}
 
-  {{demo.snippet 'form-row-icon.hbs'}}
+  {{demo.snippet "form-row-icon.hbs"}}
 
 {{/docs-demo}}
 
@@ -142,7 +144,7 @@
             label="Email"
             name="email"
             tip="Please enter your email address"
-            as |control|
+          as |control|
           }}
             {{#control.row as |row|}}
               {{row.icon "email" prefix=true}}
@@ -153,7 +155,7 @@
             label="Phone Number"
             name="phone"
             tip="Please enter your phone number including an international code"
-            as |control|
+          as |control|
           }}
             {{#control.row as |row|}}
               {{row.input placeholder="+00 0000 000000"}}
@@ -171,40 +173,40 @@
       {{/each}}
     </div>
     <div class="bg-dark p">
-    {{#each lightStyles as |style|}}
+      {{#each lightStyles as |style|}}
 
-      {{#uxs-form style=style model=model as |form|}}
-        {{#form.control
-          label="Email"
-          name="email"
-          tip="Please enter your email address"
+        {{#uxs-form style=style model=model as |form|}}
+          {{#form.control
+            label="Email"
+            name="email"
+            tip="Please enter your email address"
           as |control|
-        }}
-          {{#control.row as |row|}}
-            {{row.icon "email" prefix=true}}
-            {{row.input placeholder="Email"}}
-          {{/control.row}}
-        {{/form.control}}
-        {{#form.control
-          label="Phone Number"
-          name="phone"
-          tip="Please enter your phone number including an international code"
+          }}
+            {{#control.row as |row|}}
+              {{row.icon "email" prefix=true}}
+              {{row.input placeholder="Email"}}
+            {{/control.row}}
+          {{/form.control}}
+          {{#form.control
+            label="Phone Number"
+            name="phone"
+            tip="Please enter your phone number including an international code"
           as |control|
-        }}
-          {{#control.row as |row|}}
-            {{row.input placeholder="+00 0000 000000"}}
-            {{row.icon "phone" suffix=true}}
-          {{/control.row}}
-        {{/form.control}}
-        {{#form.control}}
-          {{#form.row as |row|}}
-            {{row.input name="search" type="search" placeholder="Enter your search term"}}
-            {{row.button (capitalize style) name="go"}}
-          {{/form.row}}
-        {{/form.control}}
-      {{/uxs-form}}
+          }}
+            {{#control.row as |row|}}
+              {{row.input placeholder="+00 0000 000000"}}
+              {{row.icon "phone" suffix=true}}
+            {{/control.row}}
+          {{/form.control}}
+          {{#form.control}}
+            {{#form.row as |row|}}
+              {{row.input name="search" type="search" placeholder="Enter your search term"}}
+              {{row.button (capitalize style) name="go"}}
+            {{/form.row}}
+          {{/form.control}}
+        {{/uxs-form}}
 
-    {{/each}}
+      {{/each}}
     </div>
 
   {{/demo.example}}

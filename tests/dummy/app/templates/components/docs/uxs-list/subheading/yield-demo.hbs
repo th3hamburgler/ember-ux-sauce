@@ -1,10 +1,15 @@
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name='yield-list-subheading.hbs'}}
+  {{#demo.example name="yield-list-subheading.hbs"}}
 
     {{#uxs-list lines=3 as |list|}}
 
-      {{#list.subheading bordered=bordered style=style yield=true as |subheading|}}
+      {{#list.subheading
+        bordered=bordered
+        style=style
+        yield=true
+      as |subheading|
+      }}
         {{subheading.icon "swap_vert" size="medium"}}
         {{subheading.text title}}
         {{subheading.toggle value=toggled onToggle=(action (mut toggled))}}
@@ -41,7 +46,7 @@
     {{/uxs-list}}
   {{/demo.example}}
 
-  {{demo.snippet 'yield-list-subheading.hbs'}}
+  {{demo.snippet "yield-list-subheading.hbs"}}
 
   {{#args-table "yield-list-subheading" as |table|}}
     {{#table.row "bordered" as |row|}}

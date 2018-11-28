@@ -2,11 +2,25 @@
 
   {{#demo.example name="form-validation"}}
 
-    {{#uxs-form onSubmit=(action "login" model) model=model as |form|}}
+    {{#uxs-form
+      onSubmit=(action "login" model)
+      model=model
+    as |form|
+    }}
 
-      {{form.control label="Username" name="username" type="text" autocomplete="username"}}
+      {{form.control
+        label="Username"
+        name="username"
+        type="text"
+        autocomplete="username"
+      }}
 
-      {{form.control label="Password" name="password" type="password" autocomplete="password"}}
+      {{form.control
+        label="Password"
+        name="password"
+        type="password"
+        autocomplete="password"
+      }}
 
       {{form.submit "Login"}}
 
@@ -14,8 +28,8 @@
 
   {{/demo.example}}
 
-  {{demo.snippet 'form-validation.hbs'}}
-  {{demo.snippet 'form-validation-route.js' label='route.js'}}
-  {{demo.snippet 'form-validation.js'}}
+  {{demo.snippet "form-validation.hbs"}}
+  {{demo.snippet "form-validation-route.js" label="route.js"}}
+  {{demo.snippet "form-validation.js"}}
 
 {{/docs-demo}}

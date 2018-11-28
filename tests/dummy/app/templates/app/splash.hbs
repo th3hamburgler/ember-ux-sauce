@@ -6,9 +6,19 @@
 
     {{#uxs-form model=model as |form|}}
 
-      {{form.control label="Username" name="username" type="text" autocomplete="username"}}
+      {{form.control
+        label="Username"
+        name="username"
+        type="text"
+        autocomplete="username"
+      }}
 
-      {{form.control label="Password" name="password" type="password" autocomplete="password"}}
+      {{form.control
+        label="Password"
+        name="password"
+        type="password"
+        autocomplete="password"
+      }}
 
       {{form.submit "Login"}}
 

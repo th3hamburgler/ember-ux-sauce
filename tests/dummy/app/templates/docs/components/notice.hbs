@@ -15,7 +15,11 @@
     {{uxs-notice "This is a error notice" style="error" truncated=truncated}}
     {{uxs-notice "This is a warning notice" style="warning" truncated=truncated}}
     {{uxs-notice "This is a accent notice" style="accent" truncated=truncated}}
-    {{uxs-notice "This is a very very very long notice and the text will be truncated if it exceeds the sixty character length" style=style truncated=truncated}}
+    {{uxs-notice
+      "This is a very very very long notice and the text will be truncated if it exceeds the sixty character length"
+      style=style
+      truncated=truncated
+    }}
 
   {{/demo.example}}
 
@@ -28,21 +32,23 @@
 <p>Now explore the various properties available in this component:</p>
 
 <table class="docs-args-table">
-  <tr>
-    <td>text<span class="req">*</span></td>
-    <td>{{input placeholder="Pill Text" value=text}}</td>
-    <td><em>String</em></td>
-  </tr>
-  <tr>
-    <td>style</td>
-    <td>{{input placeholder="Style" value=style}}</td>
-    <td><em>String</em></td>
-  </tr>
-  <tr>
-    <td>truncated</td>
-    <td>{{docs-toggle value=truncated}}</td>
-    <td><em>Boolean</em></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td>text<span class="req">*</span></td>
+      <td>{{input placeholder="Pill Text" value=text}}</td>
+      <td><em>String</em></td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>{{input placeholder="Style" value=style}}</td>
+      <td><em>String</em></td>
+    </tr>
+    <tr>
+      <td>truncated</td>
+      <td>{{docs-toggle value=truncated}}</td>
+      <td><em>Boolean</em></td>
+    </tr>
+  </tbody>
 </table>
 
 <h2>Usage with Icons</h2>
@@ -71,7 +77,9 @@
 
     {{#uxs-notice style="error" truncated=truncated as |notice|}}
       {{notice.icon "warning" prefix=true}}
-      {{notice.text "This notice has an icon but also a long passage of text that may or may not be truncated."}}
+      {{notice.text
+        "This notice has an icon but also a long passage of text that may or may not be truncated."
+      }}
       {{notice.icon "cancel" suffix=true}}
     {{/uxs-notice}}
 

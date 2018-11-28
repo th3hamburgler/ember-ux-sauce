@@ -30,16 +30,18 @@
 <p>Now explore the various properties available in this component:</p>
 
 <table class="docs-args-table">
-  <tr>
-    <td>title</td>
-    <td>{{input placeholder="App Title" value=title}}</td>
-    <td><em>String</em></td>
-  </tr>
-  <tr>
-    <td>fixed</td>
-    <td>{{docs-toggle value=fixed}}</td>
-    <td><em>Boolean</em></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td>{{input placeholder="App Title" value=title}}</td>
+      <td><em>String</em></td>
+    </tr>
+    <tr>
+      <td>fixed</td>
+      <td>{{docs-toggle value=fixed}}</td>
+      <td><em>Boolean</em></td>
+    </tr>
+  </tbody>
 </table>
 
 <h2>Styles Usage</h2>
@@ -55,7 +57,7 @@
       {{#uxs-navbar
         style=style
         title=(capitalize (concat style " Navbar"))
-        as |bar|
+      as |bar|
       }}
 
         {{#bar.desktopNav as |nav|}}

@@ -1,10 +1,10 @@
 {{#if image}}
-  <div style="background-image:url({{image}})" class="{{bem b "image" m}}"></div>
+  {{uxs-header/background image=image style=style}}
 {{/if}}
 
-<div class="{{bem b "body" m}}">
-{{yield (hash
-  toolbar=(component "uxs-toolbar" style=style class=(bem b "toolbar" m))
-  title=(component "uxs-heading" style=style base=(concat b "__title"))
-)}}
+<div class={{bem b "body" m}}>
+  {{yield
+    (hash toolbar=(component "uxs-toolbar" style=style class=(bem b "toolbar"
+  m)) title=(component "uxs-heading" style=style base=(concat b "__title")) )
+  }}
 </div>

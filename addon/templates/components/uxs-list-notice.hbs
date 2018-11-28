@@ -1,9 +1,18 @@
 {{#if hasIcon}}
-  {{uxs-icon this.icon class=(bem "uxs-list" "notice-icon" m)}}
+  {{uxs-icon
+    this.icon
+    class=(bem "uxs-list" "notice-icon" m)
+  }}
 {{/if}}
 {{#if hasText}}
   <div class={{bem "uxs-list" "notice-text" m}}>{{text}}</div>
 {{/if}}
 {{#if hasAction}}
-  <div class={{bem "uxs-list" "notice-action" m}} {{action "action"}}>{{actionText}}</div>
+  <div
+    class={{bem "uxs-list" "notice-action" m}}
+    role="button"
+    {{action "action"}}
+  >
+    {{actionText}}
+  </div>
 {{/if}}

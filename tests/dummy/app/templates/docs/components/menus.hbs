@@ -249,26 +249,26 @@
 
     {{#each styles as |style|}}
 
-        {{#uxs-menu style=style class="mb" horizontal=true as |menu|}}
-          {{menu.item (capitalize (concat style " Menu"))}}
-          {{menu.item "Disabled Item" disabled=true}}
-          {{menu.divider}}
-          {{menu.link "Docs" "docs"}}
-          {{menu.link "App" "app"}}
-        {{/uxs-menu}}
+      {{#uxs-menu style=style class="mb" horizontal=true as |menu|}}
+        {{menu.item (capitalize (concat style " Menu"))}}
+        {{menu.item "Disabled Item" disabled=true}}
+        {{menu.divider}}
+        {{menu.link "Docs" "docs"}}
+        {{menu.link "App" "app"}}
+      {{/uxs-menu}}
 
     {{/each}}
 
     {{#each styles as |style|}}
 
-        {{#uxs-menu class="mb" style=style horizontal=false as |menu|}}
-          {{menu.item (capitalize (concat style " Menu"))}}
-          {{menu.item "Disabled Item" disabled=true}}
-          {{menu.divider}}
-          {{menu.link "Docs" "docs"}}
-          {{menu.link "App" "app"}}
-        {{/uxs-menu}}
-        <br>
+      {{#uxs-menu class="mb" style=style horizontal=false as |menu|}}
+        {{menu.item (capitalize (concat style " Menu"))}}
+        {{menu.item "Disabled Item" disabled=true}}
+        {{menu.divider}}
+        {{menu.link "Docs" "docs"}}
+        {{menu.link "App" "app"}}
+      {{/uxs-menu}}
+      <br>
 
     {{/each}}
   {{/demo.example}}

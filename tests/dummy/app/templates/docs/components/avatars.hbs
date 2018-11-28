@@ -10,7 +10,12 @@
 
   {{#demo.example name="avatars"}}
 
-    {{uxs-avatar "https://placeimg.com/100/100/people" size=size border=border round=round}}
+    {{uxs-avatar
+      "https://placeimg.com/100/100/people"
+      size=size
+      border=border
+      round=round
+    }}
 
   {{/demo.example}}
 
@@ -23,24 +28,26 @@
 <p>Now explore the various properties available in this component:</p>
 
 <table class="docs-args-table">
-  <tr>
-    <td>size<span class="req">*</span></td>
-    <td>{{input placeholder="Size" value=size}}</td>
-    <td><em>String</em></td>
-  </tr>
-  <tr>
-    <td colspan="3">Possible Values: small, medium, large, huge, giant</td>
-  </tr>
-  <tr>
-    <td>round</td>
-    <td>{{docs-toggle value=round}}</td>
-    <td><em>Boolean</em></td>
-  </tr>
-  <tr>
-    <td>border</td>
-    <td>{{docs-toggle value=border}}</td>
-    <td><em>Boolean</em></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td>size<span class="req">*</span></td>
+      <td>{{input placeholder="Size" value=size}}</td>
+      <td><em>String</em></td>
+    </tr>
+    <tr>
+      <td colspan="3">Possible Values: small, medium, large, huge, giant</td>
+    </tr>
+    <tr>
+      <td>round</td>
+      <td>{{docs-toggle value=round}}</td>
+      <td><em>Boolean</em></td>
+    </tr>
+    <tr>
+      <td>border</td>
+      <td>{{docs-toggle value=border}}</td>
+      <td><em>Boolean</em></td>
+    </tr>
+  </tbody>
 </table>
 
 <h2>Styles Usage</h2>

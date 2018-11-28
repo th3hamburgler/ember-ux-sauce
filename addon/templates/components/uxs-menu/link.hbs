@@ -1,20 +1,28 @@
 {{#if showLeftIcon}}
-<div class={{bem "uxs-menu" "left" m}}>
-  {{#if leftIcon}}
-    {{uxs-icon leftIcon style=style class=(concat (bem "uxs-menu" "icon" m) " uxs-menu__icon--left")}}
-  {{/if}}
-</div>
+  <div class={{bem "uxs-menu" "left" m}}>
+    {{#if leftIcon}}
+      {{uxs-icon
+        leftIcon
+        style=style
+        class=(concat (bem "uxs-menu" "icon" m) " uxs-menu__icon--left")
+      }}
+    {{/if}}
+  </div>
 {{/if}}
 <div class={{bem "uxs-menu" "text" m}}>
   {{linkTitle}}{{yield}}
 </div>
 {{#if showRightIcon}}
-<div class={{bem "uxs-menu" "right" m}}>
-  {{#if rightIcon}}
-    {{uxs-icon rightIcon style=style class=(concat (bem "uxs-menu" "icon" m) " uxs-menu__icon--right")}}
-  {{/if}}
-  {{#if secondaryText}}
-    <div class={{bem "uxs-menu" "secondary-text" m}}>{{secondaryText}}</div>
-  {{/if}}
-</div>
+  <div class={{bem "uxs-menu" "right" m}}>
+    {{#if rightIcon}}
+      {{uxs-icon
+        rightIcon
+        style=style
+        class=(concat (bem "uxs-menu" "icon" m) " uxs-menu__icon--right")
+      }}
+    {{/if}}
+    {{#if secondaryText}}
+      <div class={{bem "uxs-menu" "secondary-text" m}}>{{secondaryText}}</div>
+    {{/if}}
+  </div>
 {{/if}}

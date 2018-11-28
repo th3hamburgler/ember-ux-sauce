@@ -1,14 +1,16 @@
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name='text-align.hbs'}}
+  {{#demo.example name="text-align.hbs"}}
 
     {{uxs-text "Left align" align="left" class="mb"}}
     {{uxs-text "Center align" align="center" class="mb"}}
     {{uxs-text "Right align" align="right" class="mb"}}
-    {{uxs-text "Justified orci etiam platea parturient lectus urna a id in adipiscing proin interdum vel dis pretium ut at condimentum nisl in suspendisse urna auctor hac venenatis." align="justified" class="mb"}}
+    {{#uxs-text align="justified" class="mb"}}
+      Justified orci etiam platea parturient lectus urna a id in adipiscing proin interdum vel dis pretium ut at condimentum nisl in suspendisse urna auctor hac venenatis.
+    {{/uxs-text}}
 
   {{/demo.example}}
 
-  {{demo.snippet 'text-align.hbs'}}
+  {{demo.snippet "text-align.hbs"}}
 
 {{/docs-demo}}

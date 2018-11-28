@@ -1,6 +1,6 @@
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name='basic-tabs.hbs'}}
+  {{#demo.example name="basic-tabs.hbs"}}
 
     {{#uxs-tabs align=align disabled=disabled style=style as |tab|}}
       {{tab.link "Dog" "docs.navigation.tabs.dogs"}}
@@ -10,7 +10,7 @@
 
   {{/demo.example}}
 
-  {{demo.snippet 'basic-tabs.hbs'}}
+  {{demo.snippet "basic-tabs.hbs"}}
 
   {{#args-table "tabs" as |table|}}
     {{#table.row "align" as |row|}}
@@ -18,15 +18,15 @@
       {{row.input align options="align-directions"}}
       {{row.type "String"}}
     {{/table.row}}
-      {{#table.row "disabled" as |row|}}
-        {{row.label "Disabled"}}
-        {{row.checkbox disabled}}
-        {{row.type "Boolean"}}
-      {{/table.row}}
-      {{#table.row "style" as |row|}}
-        {{row.label "Style"}}
-        {{row.input style options="styles"}}
-        {{row.type "String"}}
-      {{/table.row}}
+    {{#table.row "disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
   {{/args-table}}
 {{/docs-demo}}

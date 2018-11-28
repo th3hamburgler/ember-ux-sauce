@@ -2,37 +2,37 @@
 
   {{#demo.example name="threes-pane.hbs"}}
 
-  {{#uxs-window}}
-    {{#uxs-pane index=true style=indexStyle padded=padded}}
-      {{uxs-heading "Index"}}
-      {{#uxs-list bordered=true as |list|}}
-        {{#list.item as |item|}}
-          {{item.title "Item One"}}
-        {{/list.item}}
-        {{#list.item as |item|}}
-          {{item.title "Item Two"}}
-        {{/list.item}}
-        {{#list.item as |item|}}
-          {{item.title "Item Three"}}
-        {{/list.item}}
-      {{/uxs-list}}
-    {{/uxs-pane}}
-    {{#uxs-pane detail=true style=detailStyle padded=padded}}
-      {{uxs-heading "Detail"}}
-      {{#uxs-content}}
-      Turpis in eros morbi scelerisque nisl condimentum ut ultricies scelerisque sociosqu venenatis cum parturient id eleifend sodales vitae rutrum sociosqu accumsan.
-      {{/uxs-content}}
-      {{#uxs-content}}
-      Bibendum etiam at nascetur morbi proin tristique quam aenean dictumst vestibulum odio proin bibendum leo scelerisque ullamcorper dui.
-      {{/uxs-content}}
-    {{/uxs-pane}}
-    {{#uxs-pane aside=true style=asideStyle padded=padded}}
-      {{uxs-heading "Aside"}}
-      {{uxs-button "Action 1"}}
-      {{uxs-button "Action 2"}}
-      {{uxs-button "Action 3"}}
-    {{/uxs-pane}}
-  {{/uxs-window}}
+    {{#uxs-window}}
+      {{#uxs-pane index=true style=indexStyle padded=padded}}
+        {{uxs-heading "Index"}}
+        {{#uxs-list bordered=true as |list|}}
+          {{#list.item as |item|}}
+            {{item.title "Item One"}}
+          {{/list.item}}
+          {{#list.item as |item|}}
+            {{item.title "Item Two"}}
+          {{/list.item}}
+          {{#list.item as |item|}}
+            {{item.title "Item Three"}}
+          {{/list.item}}
+        {{/uxs-list}}
+      {{/uxs-pane}}
+      {{#uxs-pane detail=true style=detailStyle padded=padded}}
+        {{uxs-heading "Detail"}}
+        {{#uxs-content}}
+          Turpis in eros morbi scelerisque nisl condimentum ut ultricies scelerisque sociosqu venenatis cum parturient id eleifend sodales vitae rutrum sociosqu accumsan.
+        {{/uxs-content}}
+        {{#uxs-content}}
+          Bibendum etiam at nascetur morbi proin tristique quam aenean dictumst vestibulum odio proin bibendum leo scelerisque ullamcorper dui.
+        {{/uxs-content}}
+      {{/uxs-pane}}
+      {{#uxs-pane aside=true style=asideStyle padded=padded}}
+        {{uxs-heading "Aside"}}
+        {{uxs-button "Action 1"}}
+        {{uxs-button "Action 2"}}
+        {{uxs-button "Action 3"}}
+      {{/uxs-pane}}
+    {{/uxs-window}}
 
   {{/demo.example}}
 

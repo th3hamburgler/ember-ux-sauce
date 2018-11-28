@@ -1,26 +1,35 @@
-{{yield (hash
-  item=(component "uxs-li"
-    name=name
-    disabled=disabled
-    size=size
-    base="uxs-ul__item"
+{{yield
+  (
+    hash
+    item=(
+      component
+      "uxs-li"
+      name=name
+      disabled=disabled
+      size=size
+      base="uxs-ul__item"
+    )
+    ol=(
+      component
+      "uxs-ol"
+      name=name
+      color=color
+      disabled=disabled
+      size=size
+      style=style
+      weight=weight
+      class="uxs-ul__sublist"
+    )
+    ul=(
+      component
+      "uxs-ul"
+      name=name
+      color=color
+      disabled=disabled
+      size=size
+      style=style
+      weight=weight
+      class="uxs-ul__sublist"
+    )
   )
-  ol=(component "uxs-ol"
-    name=name
-    color=color
-    disabled=disabled
-    size=size
-    style=style
-    weight=weight
-    class="uxs-ul__sublist"
-  )
-  ul=(component "uxs-ul"
-    name=name
-    color=color
-    disabled=disabled
-    size=size
-    style=style
-    weight=weight
-    class="uxs-ul__sublist"
-  )
-)}}
+}}

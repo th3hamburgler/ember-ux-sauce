@@ -1,20 +1,25 @@
-{{yield (hash
-  heading=(
-    component "uxs-table-heading"
-    name=name
-    highlight=highlight
-    section=section
-    disabled=disabled
-    style=style
-    record=record
+{{yield
+  (
+    hash
+    heading=(
+      component
+      "uxs-table-heading"
+      name=name
+      highlight=highlight
+      section=section
+      disabled=disabled
+      style=style
+      record=record
+    )
+    cell=(
+      component
+      "uxs-table-cell"
+      name=name
+      highlight=highlight
+      section=section
+      disabled=disabled
+      style=style
+      record=record
+    )
   )
-  cell=(
-    component "uxs-table-cell"
-    name=name
-    highlight=highlight
-    section=section
-    disabled=disabled
-    style=style
-    record=record
-  )
-)}}
+}}

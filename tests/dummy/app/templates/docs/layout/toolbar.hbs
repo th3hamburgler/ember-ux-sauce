@@ -8,14 +8,14 @@
 
   {{#demo.example name="toolbar" theme="accent"}}
 
-      {{#uxs-toolbar as |toolbar|}}
-        {{toolbar.back "arrow_back"}}
-        {{toolbar.title "Toolbar"}}
-        {{toolbar.spacer}}
-        {{toolbar.action "filter_list"}}
-        {{toolbar.action "file_download"}}
-        {{toolbar.action "delete"}}
-      {{/uxs-toolbar}}
+    {{#uxs-toolbar as |toolbar|}}
+      {{toolbar.back "arrow_back"}}
+      {{toolbar.title "Toolbar"}}
+      {{toolbar.spacer}}
+      {{toolbar.action "filter_list"}}
+      {{toolbar.action "file_download"}}
+      {{toolbar.action "delete"}}
+    {{/uxs-toolbar}}
 
   {{/demo.example}}
 
@@ -28,22 +28,24 @@
 <p>The Hero component has the following child components:</p>
 
 <table class="docs-args-table">
-  <tr>
-    <td>back</td>
-    <td>Alias of uxs-icon</td>
-  </tr>
-  <tr>
-    <td>title</td>
-    <td>Alias of uxs-subheading</td>
-  </tr>
-  <tr>
-    <td>spacer</td>
-    <td>Alias of uxs-div</td>
-  </tr>
-  <tr>
-    <td>action</td>
-    <td>Alias of uxs-icon</td>
-  </tr>
+  <tbody>
+    <tr>
+      <td>back</td>
+      <td>Alias of uxs-icon</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>Alias of uxs-subheading</td>
+    </tr>
+    <tr>
+      <td>spacer</td>
+      <td>Alias of uxs-div</td>
+    </tr>
+    <tr>
+      <td>action</td>
+      <td>Alias of uxs-icon</td>
+    </tr>
+  </tbody>
 </table>
 
 <h2>Toolbar Search</h2>
@@ -52,21 +54,20 @@
 
   {{#demo.example name="toolbar-search" theme="accent"}}
 
-      {{#uxs-toolbar as |toolbar|}}
-        {{toolbar.back "arrow_back"}}
-        {{toolbar.title (concat "Toolbar: " searchTerm)}}
-        {{toolbar.spacer}}
-        {{toolbar.action "filter_list"}}
-        {{toolbar.action "file_download"}}
-        {{toolbar.search value=searchTerm}}
-      {{/uxs-toolbar}}
+    {{#uxs-toolbar as |toolbar|}}
+      {{toolbar.back "arrow_back"}}
+      {{toolbar.title (concat "Toolbar: " searchTerm)}}
+      {{toolbar.spacer}}
+      {{toolbar.action "filter_list"}}
+      {{toolbar.action "file_download"}}
+      {{toolbar.search value=searchTerm}}
+    {{/uxs-toolbar}}
 
   {{/demo.example}}
 
   {{demo.snippet "toolbar-search.hbs"}}
 
 {{/docs-demo}}
-
 
 <h2>Styles</h2>
 
@@ -76,95 +77,95 @@
 
   {{#demo.example name="toolbar-styles"}}
 
-      {{#uxs-toolbar style="primary" as |toolbar|}}
-        {{toolbar.back "arrow_back"}}
-        {{toolbar.title "Primary Bar"}}
-        {{toolbar.spacer}}
-        {{toolbar.action "filter_list"}}
-        {{toolbar.action "file_download"}}
-        {{toolbar.search}}
-      {{/uxs-toolbar}}
+    {{#uxs-toolbar style="primary" as |toolbar|}}
+      {{toolbar.back "arrow_back"}}
+      {{toolbar.title "Primary Bar"}}
+      {{toolbar.spacer}}
+      {{toolbar.action "filter_list"}}
+      {{toolbar.action "file_download"}}
+      {{toolbar.search}}
+    {{/uxs-toolbar}}
 
-      {{#uxs-toolbar style="accent" as |toolbar|}}
-        {{toolbar.back "arrow_back"}}
-        {{toolbar.title "Accent Bar"}}
-        {{toolbar.spacer}}
-        {{toolbar.action "filter_list"}}
-        {{toolbar.action "file_download"}}
-        {{toolbar.search}}
-      {{/uxs-toolbar}}
+    {{#uxs-toolbar style="accent" as |toolbar|}}
+      {{toolbar.back "arrow_back"}}
+      {{toolbar.title "Accent Bar"}}
+      {{toolbar.spacer}}
+      {{toolbar.action "filter_list"}}
+      {{toolbar.action "file_download"}}
+      {{toolbar.search}}
+    {{/uxs-toolbar}}
 
-      {{#uxs-toolbar style="dark" as |toolbar|}}
-        {{toolbar.back "arrow_back"}}
-        {{toolbar.title "Dark Bar"}}
-        {{toolbar.spacer}}
-        {{toolbar.action "filter_list"}}
-        {{toolbar.action "file_download"}}
-        {{toolbar.search}}
-      {{/uxs-toolbar}}
+    {{#uxs-toolbar style="dark" as |toolbar|}}
+      {{toolbar.back "arrow_back"}}
+      {{toolbar.title "Dark Bar"}}
+      {{toolbar.spacer}}
+      {{toolbar.action "filter_list"}}
+      {{toolbar.action "file_download"}}
+      {{toolbar.search}}
+    {{/uxs-toolbar}}
 
-      {{#uxs-toolbar style="grey" as |toolbar|}}
-        {{toolbar.back "arrow_back"}}
-        {{toolbar.title "Grey Bar"}}
-        {{toolbar.spacer}}
-        {{toolbar.action "filter_list"}}
-        {{toolbar.action "file_download"}}
-        {{toolbar.search}}
-      {{/uxs-toolbar}}
+    {{#uxs-toolbar style="grey" as |toolbar|}}
+      {{toolbar.back "arrow_back"}}
+      {{toolbar.title "Grey Bar"}}
+      {{toolbar.spacer}}
+      {{toolbar.action "filter_list"}}
+      {{toolbar.action "file_download"}}
+      {{toolbar.search}}
+    {{/uxs-toolbar}}
 
-      {{#uxs-toolbar style="mid" as |toolbar|}}
-        {{toolbar.back "arrow_back"}}
-        {{toolbar.title "Mid Bar"}}
-        {{toolbar.spacer}}
-        {{toolbar.action "filter_list"}}
-        {{toolbar.action "file_download"}}
-        {{toolbar.search}}
-      {{/uxs-toolbar}}
+    {{#uxs-toolbar style="mid" as |toolbar|}}
+      {{toolbar.back "arrow_back"}}
+      {{toolbar.title "Mid Bar"}}
+      {{toolbar.spacer}}
+      {{toolbar.action "filter_list"}}
+      {{toolbar.action "file_download"}}
+      {{toolbar.search}}
+    {{/uxs-toolbar}}
 
-      {{#uxs-toolbar style="light" as |toolbar|}}
-        {{toolbar.back "arrow_back"}}
-        {{toolbar.title "White Bar"}}
-        {{toolbar.spacer}}
-        {{toolbar.action "filter_list"}}
-        {{toolbar.action "file_download"}}
-        {{toolbar.search}}
-      {{/uxs-toolbar}}
+    {{#uxs-toolbar style="light" as |toolbar|}}
+      {{toolbar.back "arrow_back"}}
+      {{toolbar.title "White Bar"}}
+      {{toolbar.spacer}}
+      {{toolbar.action "filter_list"}}
+      {{toolbar.action "file_download"}}
+      {{toolbar.search}}
+    {{/uxs-toolbar}}
 
-      {{#uxs-toolbar style="white" as |toolbar|}}
-        {{toolbar.back "arrow_back"}}
-        {{toolbar.title "White Bar"}}
-        {{toolbar.spacer}}
-        {{toolbar.action "filter_list"}}
-        {{toolbar.action "file_download"}}
-        {{toolbar.search}}
-      {{/uxs-toolbar}}
+    {{#uxs-toolbar style="white" as |toolbar|}}
+      {{toolbar.back "arrow_back"}}
+      {{toolbar.title "White Bar"}}
+      {{toolbar.spacer}}
+      {{toolbar.action "filter_list"}}
+      {{toolbar.action "file_download"}}
+      {{toolbar.search}}
+    {{/uxs-toolbar}}
 
-      {{#uxs-toolbar style="success" as |toolbar|}}
-        {{toolbar.back "arrow_back"}}
-        {{toolbar.title "Success Bar"}}
-        {{toolbar.spacer}}
-        {{toolbar.action "filter_list"}}
-        {{toolbar.action "file_download"}}
-        {{toolbar.search}}
-      {{/uxs-toolbar}}
+    {{#uxs-toolbar style="success" as |toolbar|}}
+      {{toolbar.back "arrow_back"}}
+      {{toolbar.title "Success Bar"}}
+      {{toolbar.spacer}}
+      {{toolbar.action "filter_list"}}
+      {{toolbar.action "file_download"}}
+      {{toolbar.search}}
+    {{/uxs-toolbar}}
 
-      {{#uxs-toolbar style="warning" as |toolbar|}}
-        {{toolbar.back "arrow_back"}}
-        {{toolbar.title "Warning Bar"}}
-        {{toolbar.spacer}}
-        {{toolbar.action "filter_list"}}
-        {{toolbar.action "file_download"}}
-        {{toolbar.search}}
-      {{/uxs-toolbar}}
+    {{#uxs-toolbar style="warning" as |toolbar|}}
+      {{toolbar.back "arrow_back"}}
+      {{toolbar.title "Warning Bar"}}
+      {{toolbar.spacer}}
+      {{toolbar.action "filter_list"}}
+      {{toolbar.action "file_download"}}
+      {{toolbar.search}}
+    {{/uxs-toolbar}}
 
-      {{#uxs-toolbar style="error" as |toolbar|}}
-        {{toolbar.back "arrow_back"}}
-        {{toolbar.title "Error Bar"}}
-        {{toolbar.spacer}}
-        {{toolbar.action "filter_list"}}
-        {{toolbar.action "file_download"}}
-        {{toolbar.search}}
-      {{/uxs-toolbar}}
+    {{#uxs-toolbar style="error" as |toolbar|}}
+      {{toolbar.back "arrow_back"}}
+      {{toolbar.title "Error Bar"}}
+      {{toolbar.spacer}}
+      {{toolbar.action "filter_list"}}
+      {{toolbar.action "file_download"}}
+      {{toolbar.search}}
+    {{/uxs-toolbar}}
 
   {{/demo.example}}
 

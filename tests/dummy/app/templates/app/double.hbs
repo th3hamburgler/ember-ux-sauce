@@ -20,7 +20,13 @@
   {{/uxs-pane}}
 
   {{#uxs-pane aside=true padded=true}}
-    {{#uxs-button-group align=align disabled=disabled inline=inline mini=mini as |group|}}
+    {{#uxs-button-group
+      align=align
+      disabled=disabled
+      inline=inline
+      mini=mini
+    as |group|
+    }}
       {{group.button "Save"}}
       {{group.button "Save & Publish"}}
       {{group.link "Cancel" "docs.forms.buttons"}}

@@ -13,7 +13,11 @@
       {{list.item label="GID" value="0123456789"}}
       {{list.item label="Job Title" value="Kid"}}
       {{list.item label="Email" value=null empty="No Email"}}
-      {{list.item label="Last Login" value="20/01/18" tip="This is the last time the user accessed the system"}}
+      {{list.item
+        label="Last Login"
+        value="20/01/18"
+        tip="This is the last time the user accessed the system"
+      }}
       {{list.item label="Nothing" value=null }}
     {{/uxs-datalist}}
 
@@ -42,13 +46,11 @@
       {{/each}}
     </div>
     <div class="bg-dark p">
-    {{#each lightStyles as |style|}}
-
-      {{#uxs-datalist style=style bordered=true as |list|}}
-        {{list.item label="Style" value=(capitalize style)}}
-      {{/uxs-datalist}}
-
-    {{/each}}
+      {{#each lightStyles as |style|}}
+        {{#uxs-datalist style=style bordered=true as |list|}}
+          {{list.item label="Style" value=(capitalize style)}}
+        {{/uxs-datalist}}
+      {{/each}}
     </div>
 
   {{/demo.example}}

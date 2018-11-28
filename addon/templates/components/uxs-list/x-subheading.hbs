@@ -1,9 +1,12 @@
 {{#if yield}}
-  {{yield (hash
-    icon=(component "uxs-icon" base=(concat b "-icon"))
-    text=(component "uxs-text" text base=(concat b "-text"))
-    toggle=(component "x-toggle" theme="ios" class=(bem "uxs-list" "subheading-toggle" m))
-  )}}
+  {{yield
+    (
+      hash
+      icon=(component "uxs-icon" base=(concat b "-icon"))
+      text=(component "uxs-text" text base=(concat b "-text"))
+      toggle=(component "x-toggle" theme="ios" class=(bem "uxs-list" "subheading-toggle" m))
+    )
+  }}
 {{else}}
   {{#if showSubheading}}
     {{text}}{{yield}}
