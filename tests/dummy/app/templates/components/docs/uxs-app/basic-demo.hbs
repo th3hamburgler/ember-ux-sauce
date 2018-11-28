@@ -1,0 +1,21 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="app-demo"}}
+
+    {{#uxs-app fixedNav=fixedNav}}
+      Content...
+    {{/uxs-app}}
+
+  {{/demo.example}}
+
+  {{#args-table "text-basic-demo" as |table|}}
+    {{#table.row "fixedNav" as |row|}}
+      {{row.label "Fixed Nav"}}
+      {{row.checkbox fixedNav}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "app.hbs"}}
+
+{{/docs-demo}}
