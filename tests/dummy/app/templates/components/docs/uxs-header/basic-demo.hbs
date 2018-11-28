@@ -1,0 +1,32 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="header-basic-demo.hbs"}}
+
+    {{#uxs-header style=style as |header|}}
+      {{#header.toolbar as |toolbar|}}
+        {{toolbar.back "arrow_back"}}
+        {{toolbar.spacer}}
+        {{toolbar.action "filter_list"}}
+        {{toolbar.action "file_download"}}
+        {{toolbar.action "search"}}
+      {{/header.toolbar}}
+      {{header.title title}}
+    {{/uxs-header}}
+
+  {{/demo.example}}
+
+  {{#args-table "text-basic-demo" as |table|}}
+    {{#table.row "title" as |row|}}
+      {{row.label "Title"}}
+      {{row.input title}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "header-basic-demo.hbs"}}
+{{/docs-demo}}

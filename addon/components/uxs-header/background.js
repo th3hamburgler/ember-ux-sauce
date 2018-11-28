@@ -7,7 +7,7 @@ import {
 
 export default Component.extend(BEMComponent, {
   // Attributes
-  attributeBindings: ['style:cssStyles'],
+  attributeBindings: ['cssStyles:style'],
   base: 'uxs-header__image',
   // Methods
   init() {
