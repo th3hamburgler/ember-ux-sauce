@@ -1,3 +1,4 @@
+import { findAll } from '@ember/test-helpers';
 import {
   moduleForComponent,
   test
@@ -36,7 +37,7 @@ test('it renders a default input', function(assert) {
   // open the dropdown
   clickTrigger(selector);
 
-  assert.equal(this.$('.ember-power-select-dropdown .ember-power-select-option').length, 4, 'Dropdown is rendered');
+  assert.equal(findAll('.ember-power-select-dropdown .ember-power-select-option').length, 4, 'Dropdown is rendered');
 
   // select a new version
   selectChoose(selector, "Tomster");

@@ -1,3 +1,4 @@
+import { find } from '@ember/test-helpers';
 import {
   moduleForComponent,
   test
@@ -11,5 +12,5 @@ moduleForComponent('uxs-navbar', 'Integration | Component | uxs navbar', {
 test('it renders', function(assert) {
   this.render(hbs `{{uxs-navbar title="MyApp"}}`);
 
-  assert.equal(this.$().text().trim(), 'MyApp');
+  assert.equal(find('*').textContent.trim(), 'MyApp');
 });
