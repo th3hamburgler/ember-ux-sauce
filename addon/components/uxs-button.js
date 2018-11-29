@@ -80,7 +80,7 @@ const Button = Component.extend(Buttonable, Clickable, {
     @default  null
     @public
    */
-  name: null,
+  name: true,
   /**
     Set's the button style to a selected state.
 
