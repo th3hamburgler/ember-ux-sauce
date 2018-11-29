@@ -1,18 +1,27 @@
 {{#if hasIcon}}
   {{uxs-icon
     this.icon
+    testSelectorName="uxs-list-notice-icon"
     class=(bem "uxs-list" "notice-icon" m)
   }}
 {{/if}}
 {{#if hasText}}
-  <div class={{bem "uxs-list" "notice-text" m}}>{{text}}</div>
+  {{uxs-text text base="uxs-list__notice-text" m=m}}
+  {{!-- <div class={{bem "uxs-list" "notice-text" m}}>{{text}}</div> --}}
 {{/if}}
 {{#if hasAction}}
-  <div
+  {{uxs-button
+    actionText
+    base="uxs-list__notice-action"
+    role="button"
+    m=m
+    onClick=(action "action")
+  }}
+  {{!-- <div
     class={{bem "uxs-list" "notice-action" m}}
     role="button"
     {{action "action"}}
   >
     {{actionText}}
-  </div>
+  </div> --}}
 {{/if}}
