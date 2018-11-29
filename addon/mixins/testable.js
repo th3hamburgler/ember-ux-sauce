@@ -9,6 +9,9 @@ import {
 } from '@ember/utils';
 import Mixin from '@ember/object/mixin';
 import Ember from 'ember';
+import {
+  dasherize
+} from '@ember/string';
 
 /**
   A mixin to add ember test selectors to a component.
@@ -66,7 +69,11 @@ export default Mixin.create({
   _defineAttributeBindings() {
     // Get existing bindings
     let attributeBindings = this.get('attributeBindings'),
-      selector = this.get('testSelectorName');
+      selector = dasherize(this.get('testSelectorName'));
+
+    // turn BEM selectors into dasherised strings
+    selector = selector.replace('--', '-');
+    selector = selector.replace('__', '-');
 
     if (isEmpty(selector)) {
       Ember.Logger.warn(`Missing testSelectorName from Testable commponent. Please define "base".`);
