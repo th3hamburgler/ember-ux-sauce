@@ -1,0 +1,42 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="list-notices-basic.hbs"}}
+
+    {{#uxs-list lines=3 bordered=true as |list|}}
+      {{list.notice
+        text
+        style=style
+      }}
+      {{#list.item as |item|}}
+        {{#item.aside}}
+          {{item.avatar "https://placeimg.com/100/100/any" round=true}}
+        {{/item.aside}}
+        {{#item.body}}
+          {{item.title "Filtered Item"}}
+          {{item.detail "Notice how the list avatar"}}
+          {{item.detail "matches the notice icon"}}
+        {{/item.body}}
+        {{#item.aside}}
+          {{item.action "keyboard_arrow_right"}}
+        {{/item.aside}}
+      {{/list.item}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{#args-table "list-notice-basic-demo" as |table|}}
+    {{#table.row "text" as |row|}}
+      {{row.label "Text"}}
+      {{row.input text}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "list-notices-basic.hbs"}}
+
+{{/docs-demo}}
