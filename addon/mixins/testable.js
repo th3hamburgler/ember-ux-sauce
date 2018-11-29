@@ -74,6 +74,8 @@ export default Mixin.create({
     // turn BEM selectors into dasherised strings
     selector = selector.replace('--', '-');
     selector = selector.replace('__', '-');
+    // remove prefix
+    selector = selector.replace('uxs-', '');
 
     if (isEmpty(selector)) {
       Ember.Logger.warn(`Missing testSelectorName from Testable commponent. Please define "base".`);
