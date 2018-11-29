@@ -7,7 +7,6 @@
 {{/if}}
 {{#if hasText}}
   {{uxs-text text base="uxs-list__notice-text" m=m}}
-  {{!-- <div class={{bem "uxs-list" "notice-text" m}}>{{text}}</div> --}}
 {{/if}}
 {{#if hasAction}}
   {{uxs-button
@@ -17,11 +16,4 @@
     m=m
     onClick=(action "action")
   }}
-  {{!-- <div
-    class={{bem "uxs-list" "notice-action" m}}
-    role="button"
-    {{action "action"}}
-  >
-    {{actionText}}
-  </div> --}}
 {{/if}}
