@@ -1,0 +1,20 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="list-items-content-demo.hbs"}}
+
+    {{#uxs-list lines=2 bordered=true as |list|}}
+      {{#each items as |thing|}}
+        {{#list.item as |item|}}
+          {{#item.content}}
+            {{item.title thing.title}}
+            {{item.content thing.location}}
+          {{/item.content}}
+        {{/list.item}}
+      {{/each}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "list-items-content-demo.hbs"}}
+
+{{/docs-demo}}
