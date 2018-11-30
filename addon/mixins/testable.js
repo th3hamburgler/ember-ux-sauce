@@ -15,6 +15,11 @@ import {
 
 /**
   A mixin to add ember test selectors to a component.
+
+  This mixin adds an attribute binding to the component to produce a [test selector](https://github.com/simplabs/ember-test-selectors).
+
+  By default these attributes are removed in production builds
+  
   @class Testable
   @namespace Mixins
   @public
@@ -42,17 +47,24 @@ export default Mixin.create({
   // Computed
   testSelectorValue: alias('name'),
   /**
-    The base property is used as the value for test selectors.<br/>
-    For example the foo-component would have the following selector:
+    By default a components base property is used as the value for test selectors.
+    e.g.
     ```
     {{foo-component base="foo"}}
 
     [data-test-foo]
     ```
 
-    **NOTE:** The base property is also used by the bem-component mixin. If you need test selector base to differ you can set _testSelectorName_ instead.
-    @property base
-    @default  true
+    If you want the test selector to differ you can set it's testSelectorName
+    e.g
+    ```
+    {{foo-component base="foo" testSelectorName="bar"}}
+
+    [data-test-bar]
+    ```
+
+    @property testSelectorName
+    @default  null
     @type     {(string)}
     @public
   */
