@@ -1,0 +1,26 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="pagination-basic-demo.hbs"}}
+
+    {{uxs-pagination-controls
+      size=model.meta.size
+      page=model.meta.page
+      total=model.meta.total
+      style=style
+      onChange=(action "paginateResults")
+    }}
+
+  {{/demo.example}}
+
+  {{#args-table "pagination-basic-demo" as |table|}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "pagination-basic-demo.hbs"}}
+  {{demo.snippet "pagination-basic-demo.js"}}
+
+{{/docs-demo}}

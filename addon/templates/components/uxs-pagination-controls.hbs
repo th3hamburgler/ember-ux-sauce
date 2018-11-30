@@ -1,6 +1,14 @@
 <label class={{bem b "result-limit" m}}>
-  {{uxs-detail resultsText class=(bem b "label" m)}}
-  <select onchange={{action "changeSize"}} class={{bem b "size" m}}>
+  {{uxs-detail
+    resultsLabel
+    testSelectorName="data-test-pagination-label"
+    class=(bem b "label" m)
+  }}
+  <select
+    onchange={{action "changeSize"}}
+    class={{bem b "size" m}}
+    data-test-pagination-size={{name}}
+  >
     <option selected={{eq size 10}}>10</option>
     <option selected={{eq size 25}}>25</option>
     <option selected={{eq size 50}}>50</option>
@@ -9,15 +17,9 @@
 </label>
 
 {{uxs-detail
-  (
-    concat
-    countPrefix start
-    " - "
-    end
-    " of "
-    total
-  )
+  resultsText
   class=(bem b "info" m)
+  testSelectorName="data-test-pagination-result-limit"
 }}
 
 <div class={{bem b "controls" m}}>
@@ -26,6 +28,7 @@
     inline=true
     disabled=isPreviousButtonDisabled
     onClick=(action "changePage" (dec page))
+    testSelectorName="data-test-pagination-prev"
   }}
 
   {{uxs-icon
@@ -33,5 +36,6 @@
     inline=true
     disabled=isNextButtonDisabled
     onClick=(action "changePage" (inc page))
+    testSelectorName="data-test-pagination-next"
   }}
 </div>

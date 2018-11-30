@@ -9,26 +9,143 @@ import {
   computed
 } from '@ember/object';
 
+/**
+  Used to provide controlls to change page or size of paginated data
+
+  ```hbs
+  {{uxs-pagination-controls
+    size=model.meta.size
+    page=model.meta.page
+    total=model.meta.total
+    style=style
+    onChange=(action "paginateResults")
+  }}
+  ```
+
+  @class UXSPaginatonControls
+*/
 export default Component.extend(BEMComponent, Testable, {
-  // Attributes
-  base: 'uxs-pagination',
   layout,
-  resultsText: "Results per page",
+  //
+  // Arguments
+  // ---------
+  /**
+    The name of the component, will be used as the value for all test selectors.
+    If set to false the test selector is not rendered.
+
+    @argument name
+    @default  true
+    @type     {(boolean,string)}
+    @public
+  */
+  name: true,
+  /**
+    The BEM base name for this component
+
+    @argument base
+    @type     String
+    @default  "uxs-list__notice"
+    @public
+   */
+  base: 'uxs-pagination',
+  /**
+    The text of the pagination label
+
+    @argument resultsLabel
+    @type     String
+    @default  "Results per page"
+    @public
+   */
+  resultsLabel: "Results per page",
+  /**
+    Add any text to the start of the "1 - 25 of 360" text.
+
+    e.g. "Showing 1 - 25 of 360"
+
+    @argument countPrefix
+    @type     String
+    @default  ""
+    @public
+   */
   countPrefix: "",
+  /**
+    Add any text to the end of the "1 - 25 of 360" text.
+
+    e.g. "1 - 25 of 360 aliens"
+
+    @argument countSuffix
+    @type     String
+    @default  ""
+    @public
+   */
+  countSuffix: "",
+  /**
+    Set the style of the component.
+
+    UXS ships with the following stock styles: primary, accent, warning, error, dark, grey, mid, light & white.
+
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-style_
+
+    @argument style
+    @type     String
+    @default  "light"
+    @public
+   */
+  style: "light",
+  /**
+    The size of a "page"
+
+    @argument size
+    @type     Int
+    @default  null
+    @public
+   */
+  size: null,
+  /**
+    The index of the current page
+
+    @argument page
+    @type     Int
+    @default  null
+    @public
+   */
+  page: null,
+  /**
+    The total number of records
+
+    @argument total
+    @type     Int
+    @default  null
+    @public
+   */
+  total: null,
+  /**
+    This event is fired when the user changes the page size
+
+    @argument changeSize
+    @default  null
+    @type     Action
+    @public
+  */
+  changeSize: null,
+  /**
+    This event is fired when the next and prev buttons are clicked
+
+    @argument changePage
+    @default  null
+    @type     Action
+    @public
+  */
+  changePage: null,
   // Methods
   init() {
     this._super(...arguments);
     this.registerModifiers(['*style']);
   },
-  /**
-   * Init any property defaults
-   */
-  getDefaultProps() {
-    return {
-      style: 'light',
-    };
-  },
   // Computed
+  resultsText: computed('countPrefix', 'start', 'end', 'total', 'countSuffix', function() {
+    return `${get(this, 'countPrefix')} ${get(this, 'start')} - ${get(this, 'end')} of ${get(this, 'total')} ${get(this, 'countSuffix')}`;
+  }),
   pages: computed('total', 'size', function() {
     return get(this, 'total') / get(this, 'size');
   }),
