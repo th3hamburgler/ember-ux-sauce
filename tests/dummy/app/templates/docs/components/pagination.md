@@ -25,3 +25,9 @@ This component provides the following test selectors.
 ### data-test-pagination-next
 
 {{args-table/style-options}}
+
+## All the styles
+
+Behold.
+
+{{docs/uxs-pagination/all-styles}}

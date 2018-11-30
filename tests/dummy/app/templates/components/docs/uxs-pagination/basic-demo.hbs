@@ -7,6 +7,9 @@
       page=model.meta.page
       total=model.meta.total
       style=style
+      resultsLabel=resultsLabel
+      countPrefix=countPrefix
+      countSuffix=countSuffix
       onChange=(action "paginateResults")
     }}
 
@@ -16,6 +19,21 @@
     {{#table.row "style" as |row|}}
       {{row.label "Style"}}
       {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "resultsLabel" as |row|}}
+      {{row.label "Label"}}
+      {{row.input resultsLabel}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "countPrefix" as |row|}}
+      {{row.label "Prefix"}}
+      {{row.input countPrefix}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "countSuffix" as |row|}}
+      {{row.label "Suffix"}}
+      {{row.input countSuffix}}
       {{row.type "String"}}
     {{/table.row}}
   {{/args-table}}

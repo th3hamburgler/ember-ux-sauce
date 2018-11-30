@@ -120,23 +120,15 @@ export default Component.extend(BEMComponent, Testable, {
    */
   total: null,
   /**
-    This event is fired when the user changes the page size
+    This event is fired when the user changes the page size or the next and prev
+    buttons are clicked
 
-    @argument changeSize
+    @argument onChange
     @default  null
     @type     Action
     @public
   */
-  changeSize: null,
-  /**
-    This event is fired when the next and prev buttons are clicked
-
-    @argument changePage
-    @default  null
-    @type     Action
-    @public
-  */
-  changePage: null,
+  onChange: null,
   // Methods
   init() {
     this._super(...arguments);

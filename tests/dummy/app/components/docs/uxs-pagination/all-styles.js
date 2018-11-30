@@ -1,14 +1,12 @@
 import Component from '@ember/component';
 import EmberObject from '@ember/object';
+import styles from '../../../utils/consts/styles';
 import {
   computed
 } from '@ember/object';
 
 export default Component.extend({
-  style: "light",
-  resultsLabel: "Results per page",
-  countPrefix: "",
-  countSuffix: "",
+  styles: styles,
   // Computed
   model: computed(function() {
     return new EmberObject({
@@ -20,7 +18,7 @@ export default Component.extend({
     });
   }),
   // Actions
-  // BEGIN-SNIPPET pagination-basic-demo.js
+  // BEGIN-SNIPPET pagination-all-styles-demo.js
   actions: {
     paginateResults(pagination) {
       window.alert(`page = ${pagination.page},  size = ${pagination.size}`);
