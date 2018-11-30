@@ -22,7 +22,7 @@ import {
   }}
   ```
 
-  @class UXSPaginatonControls
+  @class UXSPaginationControls
 */
 export default Component.extend(BEMComponent, Testable, {
   layout,
