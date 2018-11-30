@@ -10,6 +10,7 @@ const FormTip = Component.extend(Buttonable, Clickable, {
   style: null,
   disabled: false,
   size: 'medium',
+  name: true,
   // Methods
   init() {
     this._super(...arguments);
