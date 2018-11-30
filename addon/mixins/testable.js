@@ -56,11 +56,30 @@ export default Mixin.create({
     @type     {(string)}
     @public
   */
-  testSelectorName: alias('base'),
+  testSelectorName: null,
   // Methods
   init() {
     this._super(...arguments);
     this._defineAttributeBindings();
+  },
+  /**
+   * Find the test selector value for this element
+   */
+  _getTestSelectorName() {
+    let selector = this.get('testSelectorName');
+
+    if (isEmpty(selector)) {
+      selector = this.get('base');
+    }
+
+    selector = dasherize(selector);
+    // turn BEM selectors into dasherised strings
+    selector = selector.replace('--', '-');
+    selector = selector.replace('__', '-');
+    // remove prefix
+    selector = selector.replace('uxs-', '');
+
+    return selector;
   },
   /**
    * Add a attributeBindings computed property
@@ -69,13 +88,7 @@ export default Mixin.create({
   _defineAttributeBindings() {
     // Get existing bindings
     let attributeBindings = this.get('attributeBindings'),
-      selector = dasherize(this.get('testSelectorName'));
-
-    // turn BEM selectors into dasherised strings
-    selector = selector.replace('--', '-');
-    selector = selector.replace('__', '-');
-    // remove prefix
-    selector = selector.replace('uxs-', '');
+      selector = this._getTestSelectorName();
 
     if (isEmpty(selector)) {
       Ember.Logger.warn(`Missing testSelectorName from Testable commponent. Please define "base".`);
