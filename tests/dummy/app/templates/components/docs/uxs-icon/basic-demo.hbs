@@ -1,0 +1,34 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="icon-basic-demo.hbs"}}
+
+    {{uxs-icon icon style=style size=size disabled=disabled}}
+
+  {{/demo.example}}
+
+  {{#args-table "icon-basic-demo" as |table|}}
+    {{#table.row "icon" as |row|}}
+      {{row.label "Icon"}}
+      {{row.input icon}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "size" as |row|}}
+      {{row.label "Size"}}
+      {{row.input size options="sizes"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "icon-basic-demo.hbs"}}
+
+{{/docs-demo}}
