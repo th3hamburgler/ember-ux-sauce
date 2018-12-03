@@ -44,7 +44,7 @@ export default Component.extend(BEMComponent, Testable, {
 
     @argument base
     @type     String
-    @default  "uxs-list__notice"
+    @default  "uxs-pagination"
     @public
    */
   base: 'uxs-pagination',

@@ -1,0 +1,41 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="datalist-item-demo.hbs"}}
+
+    {{#uxs-datalist as |list|}}
+      {{list.item
+        label=label
+        value=value
+        tip=tip
+        empty=empty
+      }}
+    {{/uxs-datalist}}
+
+  {{/demo.example}}
+
+  {{#args-table "datalist-item-demo" as |table|}}
+    {{#table.row "label" as |row|}}
+      {{row.label "Label"}}
+      {{row.input label}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "value" as |row|}}
+      {{row.label "Value"}}
+      {{row.input value}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "tip" as |row|}}
+      {{row.label "Tip"}}
+      {{row.input tip}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "empty" as |row|}}
+      {{row.label "Empty"}}
+      {{row.input empty}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "datalist-item-demo.hbs"}}
+
+{{/docs-demo}}

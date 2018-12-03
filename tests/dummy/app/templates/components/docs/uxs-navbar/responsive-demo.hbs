@@ -1,0 +1,43 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="navbar-responsive-demo.hbs"}}
+
+    {{#uxs-navbar style=style title=title fixed=fixed as |bar|}}
+
+      {{#bar.desktopNav as |nav|}}
+        {{nav.item "Home"}}
+        {{nav.item "Account"}}
+        {{nav.item "Logout"}}
+      {{/bar.desktopNav}}
+
+      {{#bar.mobileNav as |nav|}}
+        {{nav.item "Home"}}
+        {{nav.item "Account"}}
+        {{nav.item "Logout"}}
+      {{/bar.mobileNav}}
+
+    {{/uxs-navbar}}
+
+  {{/demo.example}}
+
+  {{#args-table "text-basic-demo" as |table|}}
+    {{#table.row "title" as |row|}}
+      {{row.label "Title"}}
+      {{row.input title}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "fixed" as |row|}}
+      {{row.label "Fixed"}}
+      {{row.checkbox fixed}}
+      {{row.type "Bolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "navbar-responsive-demo.hbs"}}
+
+{{/docs-demo}}

@@ -8,4 +8,10 @@ The example below shows common usage of the nav bar with an embeded _navigation 
 
 {{docs/uxs-navbar/basic-demo}}
 
+## Responsive Navigation
+
+This example shows using the mobile and desktop navigation components to provide a responsive menu.
+
+{{docs/uxs-navbar/responsive-demo}}
+
 {{args-table/style-options}}

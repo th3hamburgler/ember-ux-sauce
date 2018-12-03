@@ -1,0 +1,35 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="datalist-basic-demo.hbs"}}
+
+    {{#uxs-datalist bordered=bordered style=style as |list|}}
+      {{list.item label="Name" value="Frida Wardlaw"}}
+      {{list.item label="GID" value="0123456789"}}
+      {{list.item label="Job Title" value="Kid"}}
+      {{list.item label="Email" value=null empty="No Email"}}
+      {{list.item
+        label="Last Login"
+        value="20/01/18"
+        tip="This is the last time the user accessed the system"
+      }}
+      {{list.item label="Nothing" value=null }}
+    {{/uxs-datalist}}
+
+  {{/demo.example}}
+
+  {{#args-table "datalist-basic-demo" as |table|}}
+    {{#table.row "bordered" as |row|}}
+      {{row.label "Bordered"}}
+      {{row.checkbox bordered}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "datalist-basic-demo.hbs"}}
+
+{{/docs-demo}}

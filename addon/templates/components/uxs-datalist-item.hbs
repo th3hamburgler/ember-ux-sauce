@@ -1,14 +1,30 @@
 {{#if hasLabel}}
-  <div class={{bem "uxs-datalist" "label" m}}>{{label}}</div>
+  {{uxs-form-label label base="uxs-datalist__label"}}
 {{/if}}
-<div class={{bem "uxs-datalist" "row" m}}>
+{{#uxs-div
+  testSelectorName="uxs-datalist-row"
+  base="uxs-datalist__row"
+  m=m
+}}
   {{#if hasValue}}
-    <div class={{bem "uxs-datalist" "value" m}}>{{value}}</div>
+    {{#uxs-div
+      testSelectorName="uxs-datalist-value"
+      base="uxs-datalist__value"
+      m=m
+    }}
+      {{value}}
+    {{/uxs-div}}
   {{else if hasEmpty}}
-    <div class={{bem "uxs-datalist" "value" m}}>{{empty}}</div>
+    {{#uxs-div
+      testSelectorName="uxs-datalist-value"
+      base="uxs-datalist__value"
+      m=m
+    }}
+      <div class={{bem "uxs-datalist" "value" m}}>{{empty}}</div>
+    {{/uxs-div}}
   {{/if}}
   {{yield}}
-</div>
+{{/uxs-div}}
 {{#if hasTip}}
-  <div class={{bem "uxs-datalist" "tip" m}}>{{tip}}</div>
+  {{uxs-form-tip tip base="uxs-datalist__tip"}}
 {{/if}}

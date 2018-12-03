@@ -1,0 +1,15 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="datalist-all-styles.hbs"}}
+
+    {{#each styles as |style|}}
+      {{#uxs-datalist style=style bordered=true as |list|}}
+        {{list.item label="Style" value=(capitalize style)}}
+      {{/uxs-datalist}}
+    {{/each}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "datalist-all-styles.hbs"}}
+
+{{/docs-demo}}
