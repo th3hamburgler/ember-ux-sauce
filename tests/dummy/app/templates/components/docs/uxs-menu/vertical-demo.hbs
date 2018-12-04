@@ -1,0 +1,46 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="menu-vertical-demo.hbs"}}
+
+    <div class="f fr">
+      <div class="mr">
+        {{#uxs-menu align=align detail=detail style=style as |menu|}}
+          {{menu.item "Maps"}}
+          {{menu.item "Books"}}
+          {{menu.item "Flights"}}
+          {{menu.item "Apps"}}
+        {{/uxs-menu}}
+      </div>
+      <div class="mr">
+        {{#uxs-menu align=align detail=detail style=style as |menu|}}
+          {{menu.item "Refresh"}}
+          {{menu.item "Help & Feedback"}}
+          {{menu.item "Settings"}}
+          {{menu.item "Sign out"}}
+        {{/uxs-menu}}
+      </div>
+    </div>
+
+  {{/demo.example}}
+
+  {{#args-table "menu-vertical-demo" as |table|}}
+    {{#table.row "align" as |row|}}
+      {{row.label "Align"}}
+      {{row.input align options="align-directions"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "detail" as |row|}}
+      {{row.label "Detail"}}
+      {{row.checkbox detail}}
+      {{row.type "Bolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "menu-vertical-demo.hbs"}}
+
+{{/docs-demo}}

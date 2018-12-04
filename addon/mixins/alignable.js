@@ -2,7 +2,7 @@ import Mixin from '@ember/object/mixin';
 /**
   Add text-align arguments to a component
 
-  @class Accessible
+  @class Alignable
   @namespace Mixins
 */
 export default Mixin.create({

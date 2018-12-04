@@ -20,12 +20,36 @@ body.ember-tether-enabled {
     @include detail-font-size;
   }
 
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
   &--horizontal {
     display       : flex;
     flex-direction: row;
     max-width     : none;
     padding-left  : rs(.5,1);
     padding-right : rs(.5,1);
+
+    &.uxs-menu--left {
+      justify-content: flex-start;
+    }
+
+    &.uxs-menu--right {
+      justify-content: flex-end;
+    }
+
+    &.uxs-menu--center {
+      justify-content: center;
+    }
   }
 
   &__subheading {
