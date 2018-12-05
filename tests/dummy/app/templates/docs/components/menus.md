@@ -53,83 +53,17 @@ Secondary Text is only supported on left aligned & vertical menus.
 
 ## Subheadings
 
-Menu Items can include subheadings to split up items.
+Menu Items can include subheadings to split up items. Subheadings are not clickable.
+
+View the subheading api [api page](/docs/api/components/uxs-subheading)
+
+{{docs/uxs-menu/subheading-demo}}
 
 ## Dropdown Menu
 
 Move to seperate page.
 
 <!--
-
-## Secondary Text
-
-Menu Items support a secondaryText attribute.
-
-{{#docs-demo as |demo|}}
-
-  {{#demo.example name="menu-secondary-text"}}
-
-    <div class="f fr">
-      <div class="mr">
-        {{#uxs-menu hasSecondaryText=true as |menu|}}
-          {{menu.item "Bold" rightIcon="format_italic"}}
-          {{menu.item "Italic" secondaryText="⌘I"}}
-          {{menu.item "Underline" secondaryText="⌘U"}}
-          {{menu.item "Strikethrough" secondaryText="Alt+Shift+5"}}
-          {{menu.item "Superscript" secondaryText="⌘."}}
-          {{menu.item "Subscript" secondaryText="⌘,"}}
-          {{menu.divider}}
-          {{menu.item "Clear Formatting" secondaryText="⌘/"}}
-        {{/uxs-menu}}
-      </div>
-      <div class="mr">
-        {{#uxs-menu hasSecondaryText=true as |menu|}}
-          {{menu.item "Open" secondaryText="Cmd + O"}}
-          {{menu.item "Paste in place" secondaryText="Shift + V"}}
-          {{menu.item "Research" secondaryText="Opt + Shift + Cmd + I"}}
-        {{/uxs-menu}}
-      </div>
-    </div>
-
-  {{/demo.example}}
-
-  {{demo.snippet "menu-secondary-text.hbs"}}
-
-{{/docs-demo}}
-
-## Subheadings
-
-Menu Items can include subheadings to split up items.
-
-{{#docs-demo as |demo|}}
-
-  {{#demo.example name="menu-subheadings"}}
-
-    <div class="f fr">
-
-      <div class="mr">
-        {{#uxs-menu hasLeftIcon=true as |menu|}}
-          {{menu.subheading "Sort by"}}
-          {{menu.item "Age"}}
-          {{menu.item "Surname" leftIcon="arrow_upward"}}
-          {{menu.item "Location"}}
-        {{/uxs-menu}}
-      </div>
-      <div>
-        {{#uxs-menu hasLeftIcon=true as |menu|}}
-          {{menu.subheading "Filter by"}}
-          {{menu.item "Age"}}
-          {{menu.item "Surname" leftIcon="done"}}
-          {{menu.item "Location"}}
-        {{/uxs-menu}}
-      </div>
-    </div>
-
-  {{/demo.example}}
-
-  {{demo.snippet "menu-subheadings.hbs"}}
-
-{{/docs-demo}}
 
 ## Dropdown Menu
 

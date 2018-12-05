@@ -1,0 +1,38 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="menu-subheading-demo.hbs"}}
+
+    {{#uxs-menu
+      hasRightIcon=true
+      detail=detail
+      style=style
+    as |menu|
+    }}
+      {{menu.subheading "Sort by"}}
+      {{menu.item "Age"}}
+      {{menu.item "Surname" rightIcon="arrow_upward"}}
+      {{menu.item "Location"}}
+      {{menu.subheading "Filter by"}}
+      {{menu.item "Age"}}
+      {{menu.item "Surname" rightIcon="done"}}
+      {{menu.item "Location"}}
+    {{/uxs-menu}}
+
+  {{/demo.example}}
+
+  {{#args-table "menu-subheading-demo" as |table|}}
+    {{#table.row "detail" as |row|}}
+      {{row.label "Detail"}}
+      {{row.checkbox detail}}
+      {{row.type "Bolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "menu-subheading-demo.hbs"}}
+
+{{/docs-demo}}
