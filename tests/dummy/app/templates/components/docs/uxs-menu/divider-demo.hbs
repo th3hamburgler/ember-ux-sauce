@@ -1,0 +1,49 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="menu-divider-demo.hbs"}}
+
+    {{#uxs-menu
+      horizontal=horizontal
+      align=align
+      detail=detail
+      style=style
+    as |menu|
+    }}
+      {{menu.item "Users"}}
+      {{menu.item "Locations"}}
+      {{menu.divider}}
+      {{menu.item "Things"}}
+      {{menu.item "Widgets"}}
+      {{menu.divider}}
+      {{menu.item "Account"}}
+      {{menu.item "Logout"}}
+    {{/uxs-menu}}
+
+  {{/demo.example}}
+
+  {{#args-table "menu-divider-demo" as |table|}}
+    {{#table.row "align" as |row|}}
+      {{row.label "Align"}}
+      {{row.input align options="align-directions"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "detail" as |row|}}
+      {{row.label "Detail"}}
+      {{row.checkbox detail}}
+      {{row.type "Bolean"}}
+    {{/table.row}}
+    {{#table.row "horizontal" as |row|}}
+      {{row.label "Horizontal"}}
+      {{row.checkbox horizontal}}
+      {{row.type "Bolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "menu-divider-demo.hbs"}}
+
+{{/docs-demo}}

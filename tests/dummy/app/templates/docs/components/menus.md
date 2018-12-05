@@ -16,42 +16,44 @@ This example shows a menu rendered horizontally
 
 {{docs/uxs-menu/horizontal-demo}}
 
-<!-- ## Disabled Items
+## Menu Items
 
-The disabled property disables a Menu Item. The Divider can be used to separate MenuItems.
+The menu yeilds two components for handling items.
 
-{{#docs-demo as |demo|}}
+-   Use _item_ if you want to bind an action to the item - [api page](/docs/api/components/uxs-menu/item)
+-   Use _link_ if you want to transition to another route - [api page](/docs/api/components/uxs-menu/route)
 
-  {{#demo.example name="menu-disabled"}}
+The following demo shows both in use as well as a disabled state for individual items.
 
-    <div class="f fr">
-      <div class="mr">
-        {{#uxs-menu as |menu|}}
-          {{menu.item "Back"}}
-          {{menu.item "Forward" disabled=true}}
-          {{menu.divider}}
-          {{menu.item "Recently Closed" disabled=true}}
-          {{menu.item "Google" disabled=true}}
-          {{menu.item "YouTube"}}
-        {{/uxs-menu}}
-      </div>
-      <div class="mr">
-        {{#uxs-menu as |menu|}}
-          {{menu.item "Undo"}}
-          {{menu.item "Redo" disabled=true}}
-          {{menu.divider}}
-          {{menu.item "Cut" disabled=true}}
-          {{menu.item "Copy" disabled=true}}
-          {{menu.item "Paste"}}
-        {{/uxs-menu}}
-      </div>
-    </div>
+{{docs/uxs-menu/item-demo}}
 
-  {{/demo.example}}
+## Icons
 
-  {{demo.snippet "menu-disabled.hbs"}}
+Menu items & links support icons through the _leftIcon_ and _rightIcon_ attributes.
 
-{{/docs-demo}}
+You can pass true to _hasLeftIcon_ & _hasRightIcon_ on the menu to ensure items without icons inherit the relevant padding.
+
+{{docs/uxs-menu/icon-demo}}
+
+## Dividers
+
+Menus can include dividers to seperate items. These work on both vertical and horizontal menus.
+
+{{docs/uxs-menu/divider-demo}}
+
+## Secondary Text
+
+Menu Items support a secondaryText attribute.
+
+## Subheadings
+
+Menu Items can include subheadings to split up items.
+
+## Dropdown Menu
+
+Move to seperate page.
+
+<!--
 
 ## Icons
 

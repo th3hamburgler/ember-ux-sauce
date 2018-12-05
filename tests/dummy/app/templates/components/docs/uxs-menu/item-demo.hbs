@@ -1,0 +1,39 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="menu-item-demo.hbs"}}
+
+    {{#uxs-menu horizontal=horizontal align=align detail=detail style=style as |menu|}}
+      {{menu.item "Item"}}
+      {{menu.item "Disabled Item" disabled=true}}
+      {{menu.link "Link" "docs.quickstart"}}
+      {{menu.link "Disabled Link" "docs.quickstart" disabled=true}}
+    {{/uxs-menu}}
+
+  {{/demo.example}}
+
+  {{#args-table "menu-item-demo" as |table|}}
+    {{#table.row "align" as |row|}}
+      {{row.label "Align"}}
+      {{row.input align options="align-directions"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "detail" as |row|}}
+      {{row.label "Detail"}}
+      {{row.checkbox detail}}
+      {{row.type "Bolean"}}
+    {{/table.row}}
+    {{#table.row "horizontal" as |row|}}
+      {{row.label "Horizontal"}}
+      {{row.checkbox horizontal}}
+      {{row.type "Bolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "menu-item-demo.hbs"}}
+
+{{/docs-demo}}

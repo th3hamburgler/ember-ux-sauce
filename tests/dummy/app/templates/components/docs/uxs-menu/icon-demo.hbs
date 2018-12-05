@@ -1,0 +1,70 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="menu-icon-demo.hbs"}}
+
+    <div class="f fr">
+      <div class="mr">
+        {{#uxs-menu
+          hasLeftIcon=true
+          horizontal=horizontal
+          align=align
+          detail=detail
+          style=style
+        as |menu|
+        }}
+          {{menu.item "Preview" leftIcon="visibility"}}
+          {{menu.item "Share" leftIcon="person_add"}}
+          {{menu.item "Get Links" disabled=true  leftIcon="link"}}
+          {{menu.item "Make Copy" leftIcon="content_copy"}}
+          {{menu.item "Download" leftIcon="file_download"}}
+          {{menu.item "YouTube" leftIcon="delete"}}
+          {{menu.item "Logout"}}
+        {{/uxs-menu}}
+      </div>
+      <div class="mr">
+        {{#uxs-menu
+          hasRightIcon=true
+          horizontal=horizontal
+          align=align
+          detail=detail
+          style=style
+        as |menu|
+        }}
+          {{menu.item "Clear Config"}}
+          {{menu.item "New Config" disabled=true rightIcon="person_add"}}
+          {{menu.item "Project" rightIcon="settings"}}
+          {{menu.item "Workspace" rightIcon="settings"}}
+          {{menu.item "Bold" rightIcon="format_bold"}}
+          {{menu.item "Italic" rightIcon="format_italic"}}
+        {{/uxs-menu}}
+      </div>
+    </div>
+
+  {{/demo.example}}
+
+  {{#args-table "menu-icon-demo" as |table|}}
+    {{#table.row "align" as |row|}}
+      {{row.label "Align"}}
+      {{row.input align options="align-directions"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "detail" as |row|}}
+      {{row.label "Detail"}}
+      {{row.checkbox detail}}
+      {{row.type "Bolean"}}
+    {{/table.row}}
+    {{#table.row "horizontal" as |row|}}
+      {{row.label "Horizontal"}}
+      {{row.checkbox horizontal}}
+      {{row.type "Bolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "menu-icon-demo.hbs"}}
+
+{{/docs-demo}}

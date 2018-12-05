@@ -86,6 +86,22 @@ export default Component.extend(BEMComponent, Alignable, Styleable, Testable, {
     @type Boolean
   */
   detail: false,
+  /**
+    If set to true the menu items & links will include a left padding to account for icons.
+
+    @argument hasLeftIcon
+    @default false
+    @type Boolean
+  */
+  hasLeftIcon: false,
+  /**
+    If set to true the menu items & links will include a right padding to account for icons.
+
+    @argument hasRightIcon
+    @default false
+    @type Boolean
+  */
+  hasRightIcon: false,
   // Methods
   init() {
     this.registerModifiers([
