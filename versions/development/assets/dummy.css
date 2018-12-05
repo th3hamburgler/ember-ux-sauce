@@ -3878,12 +3878,30 @@ body.ember-tether-enabled {
   font-size: 0.695302843rem;
   line-height: 1.5625rem;
 }
+.uxs .uxs-menu--left {
+  text-align: left;
+}
+.uxs .uxs-menu--right {
+  text-align: right;
+}
+.uxs .uxs-menu--center {
+  text-align: center;
+}
 .uxs .uxs-menu--horizontal {
   display: flex;
   flex-direction: row;
   max-width: none;
   padding-left: 0.71875rem;
   padding-right: 0.71875rem;
+}
+.uxs .uxs-menu--horizontal.uxs-menu--left {
+  justify-content: flex-start;
+}
+.uxs .uxs-menu--horizontal.uxs-menu--right {
+  justify-content: flex-end;
+}
+.uxs .uxs-menu--horizontal.uxs-menu--center {
+  justify-content: center;
 }
 .uxs .uxs-menu__subheading {
   font-size: 1.125rem;
@@ -10235,12 +10253,30 @@ body.ember-tether-enabled {
   font-size: 0.695302843rem;
   line-height: 1.5625rem;
 }
+.ember-application .uxs-menu--left {
+  text-align: left;
+}
+.ember-application .uxs-menu--right {
+  text-align: right;
+}
+.ember-application .uxs-menu--center {
+  text-align: center;
+}
 .ember-application .uxs-menu--horizontal {
   display: flex;
   flex-direction: row;
   max-width: none;
   padding-left: 0.71875rem;
   padding-right: 0.71875rem;
+}
+.ember-application .uxs-menu--horizontal.uxs-menu--left {
+  justify-content: flex-start;
+}
+.ember-application .uxs-menu--horizontal.uxs-menu--right {
+  justify-content: flex-end;
+}
+.ember-application .uxs-menu--horizontal.uxs-menu--center {
+  justify-content: center;
 }
 .ember-application .uxs-menu__subheading {
   font-size: 1.125rem;

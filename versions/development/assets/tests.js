@@ -8717,6 +8717,16 @@ define('dummy/tests/lint/app.lint-test', [], function () {
     assert.ok(true, 'components/docs/uxs-list/subheading/yield-demo.js should pass ESLint\n\n');
   });
 
+  QUnit.test('components/docs/uxs-menu/horizontal-demo.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/docs/uxs-menu/horizontal-demo.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/docs/uxs-menu/vertical-demo.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/docs/uxs-menu/vertical-demo.js should pass ESLint\n\n');
+  });
+
   QUnit.test('components/docs/uxs-navbar/basic-demo.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'components/docs/uxs-navbar/basic-demo.js should pass ESLint\n\n');
@@ -9300,6 +9310,46 @@ define('dummy/tests/lint/templates.template.lint-test', [], function () {
   QUnit.test('dummy/templates/components/docs/uxs-list/subheading/yield-demo.hbs', function (assert) {
     assert.expect(1);
     assert.ok(true, 'dummy/templates/components/docs/uxs-list/subheading/yield-demo.hbs should pass TemplateLint.\n\n');
+  });
+
+  QUnit.test('dummy/templates/components/docs/uxs-menu/divider-demo.hbs', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'dummy/templates/components/docs/uxs-menu/divider-demo.hbs should pass TemplateLint.\n\n');
+  });
+
+  QUnit.test('dummy/templates/components/docs/uxs-menu/dropdown-demo.hbs', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'dummy/templates/components/docs/uxs-menu/dropdown-demo.hbs should pass TemplateLint.\n\n');
+  });
+
+  QUnit.test('dummy/templates/components/docs/uxs-menu/horizontal-demo.hbs', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'dummy/templates/components/docs/uxs-menu/horizontal-demo.hbs should pass TemplateLint.\n\n');
+  });
+
+  QUnit.test('dummy/templates/components/docs/uxs-menu/icon-demo.hbs', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'dummy/templates/components/docs/uxs-menu/icon-demo.hbs should pass TemplateLint.\n\n');
+  });
+
+  QUnit.test('dummy/templates/components/docs/uxs-menu/item-demo.hbs', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'dummy/templates/components/docs/uxs-menu/item-demo.hbs should pass TemplateLint.\n\ndummy/templates/components/docs/uxs-menu/item-demo.hbs\n  5:16  error  Incorrect indentation of attribute \'horizontal\' beginning at L5:C16. Expected \'horizontal\' to be at L6:C6.  attribute-indentation\n  5:38  error  Incorrect indentation of attribute \'align\' beginning at L5:C38. Expected \'align\' to be at L7:C6.  attribute-indentation\n  5:50  error  Incorrect indentation of attribute \'detail\' beginning at L5:C50. Expected \'detail\' to be at L8:C6.  attribute-indentation\n  5:64  error  Incorrect indentation of attribute \'style\' beginning at L5:C64. Expected \'style\' to be at L9:C6.  attribute-indentation\n  5:75  error  Incorrect indentation of block params \'as |menu|}}\' beginning at L5:C75. Expecting the block params to be at L6:C4.  attribute-indentation\n  5:85  error  Incorrect indentation of close curly braces \'}}\' for the component \'{{uxs-menu}}\' beginning at L5:C85. Expected \'{{uxs-menu}}\' to be at L7:C4.  attribute-indentation\n');
+  });
+
+  QUnit.test('dummy/templates/components/docs/uxs-menu/secondary-text-demo.hbs', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'dummy/templates/components/docs/uxs-menu/secondary-text-demo.hbs should pass TemplateLint.\n\n');
+  });
+
+  QUnit.test('dummy/templates/components/docs/uxs-menu/subheading-demo.hbs', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'dummy/templates/components/docs/uxs-menu/subheading-demo.hbs should pass TemplateLint.\n\n');
+  });
+
+  QUnit.test('dummy/templates/components/docs/uxs-menu/vertical-demo.hbs', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'dummy/templates/components/docs/uxs-menu/vertical-demo.hbs should pass TemplateLint.\n\n');
   });
 
   QUnit.test('dummy/templates/components/docs/uxs-navbar/basic-demo.hbs', function (assert) {
