@@ -61,104 +61,11 @@ View the subheading api [api page](/docs/api/components/uxs-subheading)
 
 ## Dropdown Menu
 
-Move to seperate page.
+Most uses of uxs-menu will involve only displaying it on clicking the menu text/icon. UXS includes [ember-basic-dropdown](https://github.com/cibernox/ember-basic-dropdown) to use in this scenario.
 
-<!--
+You can use any component to act as your trigger (usually button, text or icon) and then include a uxs-menu in the dropdowns content.
 
-## Dropdown Menu
-
-You can use the basic dropdown component to display menus in your app.
-
-{{#docs-demo as |demo|}}
-
-  {{#demo.example name="button-menus"}}
-
-    {{#basic-dropdown as |dropdown|}}
-      {{#dropdown.trigger}}
-        {{uxs-button "Click Me"}}
-      {{/dropdown.trigger}}
-      {{#dropdown.content class="uxs-ns"}}
-        {{#uxs-menu as |menu|}}
-          {{#menu.item}}Normal nav item{{/menu.item}}
-          {{#menu.item}}And another{{/menu.item}}
-          {{menu.separator}}
-          {{#menu.link "docs.index"}}This one is a link{{/menu.link}}
-        {{/uxs-menu}}
-      {{/dropdown.content}}
-    {{/basic-dropdown}}
-
-  {{/demo.example}}
-
-  {{demo.snippet "button-menus.hbs"}}
-
-{{/docs-demo}}
-
-## Icon Dropdown Menu
-
-This is a menu with an icon trigger.
-
-{{#docs-demo as |demo|}}
-
-  {{#demo.example name="button-menus"}}
-
-    {{#basic-dropdown as |dropdown|}}
-      {{#dropdown.trigger}}
-        {{uxs-icon "filter_list"}}
-      {{/dropdown.trigger}}
-      {{#dropdown.content class="uxs-ns"}}
-        {{#uxs-menu as |menu|}}
-          {{#menu.item}}Normal nav item{{/menu.item}}
-          {{#menu.item}}And another{{/menu.item}}
-          {{menu.separator}}
-          {{#menu.link "docs.index"}}This one is a link{{/menu.link}}
-        {{/uxs-menu}}
-      {{/dropdown.content}}
-    {{/basic-dropdown}}
-
-  {{/demo.example}}
-
-  {{demo.snippet "button-menus.hbs"}}
-
-{{/docs-demo}}
-
-## Styles Usage
-
-You can customise the look of your menu with the style attribute.
-
-{{#docs-demo class="bg-dark" as |demo|}}
-
-  {{#demo.example name="menu-styles"}}
-
-    {{#each styles as |style|}}
-
-      {{#uxs-menu style=style class="mb" horizontal=true as |menu|}}
-        {{menu.item (capitalize (concat style " Menu"))}}
-        {{menu.item "Disabled Item" disabled=true}}
-        {{menu.divider}}
-        {{menu.link "Docs" "docs"}}
-        {{menu.link "App" "app"}}
-      {{/uxs-menu}}
-
-    {{/each}}
-
-    {{#each styles as |style|}}
-
-      {{#uxs-menu class="mb" style=style horizontal=false as |menu|}}
-        {{menu.item (capitalize (concat style " Menu"))}}
-        {{menu.item "Disabled Item" disabled=true}}
-        {{menu.divider}}
-        {{menu.link "Docs" "docs"}}
-        {{menu.link "App" "app"}}
-      {{/uxs-menu}}
-      <br>
-
-    {{/each}}
-
-  {{/demo.example}}
-
-  {{demo.snippet "menu-styles.hbs"}}
-
-{{/docs-demo}} -->
+{{docs/uxs-menu/dropdown-demo}}
 
 {{args-table/align-options}}
 {{args-table/size-options}}
