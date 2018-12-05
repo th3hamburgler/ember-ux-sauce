@@ -1,0 +1,33 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="menu-secondary-text-demo.hbs"}}
+
+    {{#uxs-menu
+      hasSecondaryText=true
+      detail=detail
+      style=style
+    as |menu|
+    }}
+      {{menu.item "Open"}}
+      {{menu.item "Paste in place" secondaryText="Shift + V"}}
+      {{menu.item "Research" secondaryText="Opt + Shift + Cmd + I"}}
+    {{/uxs-menu}}
+
+  {{/demo.example}}
+
+  {{#args-table "menu-secondary-text-demo" as |table|}}
+    {{#table.row "detail" as |row|}}
+      {{row.label "Detail"}}
+      {{row.checkbox detail}}
+      {{row.type "Bolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "menu-secondary-text-demo.hbs"}}
+
+{{/docs-demo}}

@@ -102,6 +102,14 @@ export default Component.extend(BEMComponent, Alignable, Styleable, Testable, {
     @type Boolean
   */
   hasRightIcon: false,
+  /**
+    If set to true the menu items & links will include padding to account for secondary text.
+
+    @argument hasSecondaryText
+    @default false
+    @type Boolean
+  */
+  hasSecondaryText: false,
   // Methods
   init() {
     this.registerModifiers([

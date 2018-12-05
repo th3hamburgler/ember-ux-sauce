@@ -43,7 +43,13 @@ Menus can include dividers to seperate items. These work on both vertical and ho
 
 ## Secondary Text
 
-Menu Items support a secondaryText attribute.
+Menu items & links support secondary text through the \__secondaryText_ attribute. This text will be displayed aligned right of the main text.
+
+You can pass true to _hasSecondaryText_ on the menu to ensure items without secondary text inherit the relevant padding.
+
+Secondary Text is only supported on left aligned & vertical menus.
+
+{{docs/uxs-menu/secondary-text-demo}}
 
 ## Subheadings
 
@@ -54,46 +60,6 @@ Menu Items can include subheadings to split up items.
 Move to seperate page.
 
 <!--
-
-## Icons
-
-Menu items supports icons through the leftIcon and rightIcon attributes.
-
-{{#docs-demo as |demo|}}
-
-  {{#demo.example name="menu-icons"}}
-
-    <div class="f fr">
-      <div class="mr">
-        {{#uxs-menu hasLeftIcon=true as |menu|}}
-
-          {{menu.item "Preview" leftIcon="visibility"}}
-          {{menu.item "Share" leftIcon="person_add"}}
-          {{menu.item "Get Links" disabled=true  leftIcon="link"}}
-          {{menu.divider}}
-          {{menu.item "Make Copy" leftIcon="content_copy"}}
-          {{menu.item "Download" leftIcon="file_download"}}
-          {{menu.divider}}
-          {{menu.item "YouTube" leftIcon="delete"}}
-        {{/uxs-menu}}
-      </div>
-      <div class="mr">
-        {{#uxs-menu hasRightIcon=true as |menu|}}
-          {{menu.item "Clear Config"}}
-          {{menu.item "New Config" disabled=true rightIcon="person_add"}}
-          {{menu.item "Project" rightIcon="settings"}}
-          {{menu.item "Workspace" rightIcon="settings"}}
-          {{menu.item "Bold" rightIcon="format_bold"}}
-          {{menu.item "Italic" rightIcon="format_italic"}}
-        {{/uxs-menu}}
-      </div>
-    </div>
-
-  {{/demo.example}}
-
-  {{demo.snippet "menu-icons.hbs"}}
-
-{{/docs-demo}}
 
 ## Secondary Text
 

@@ -114,6 +114,23 @@ const NavItem = Component.extend(BEMComponent, Clickable, Styleable, Testable, {
     @type     {string}
     @public
   */
+  /**
+    If set to true the item will include padding to account for secondary text.
+
+    @argument hasSecondaryText
+    @default false
+    @type Boolean
+  */
+  hasSecondaryText: false,
+  /**
+    Sets secondary text in the item
+
+    @argument secondaryText
+    @default  null
+    @type     String
+    @public
+  */
+  secondaryText: null,
   // Computed
   showRightIcon: computed('hasRightIcon', 'rightIcon', 'hasSecondaryText', 'secondaryText', function() {
     return get(this, 'hasRightIcon') || get(this, 'rightIcon') || get(this, 'hasSecondaryText') || get(this, 'secondaryText');

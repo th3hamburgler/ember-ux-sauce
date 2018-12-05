@@ -97,6 +97,23 @@ export default LinkComponent.extend(BEMComponent, Styleable, Testable, {
     @public
   */
   leftIcon: null,
+  /**
+    If set to true the link will include padding to account for secondary text.
+
+    @argument hasSecondaryText
+    @default false
+    @type Boolean
+  */
+  hasSecondaryText: false,
+  /**
+    Sets secondary text in the link
+
+    @argument secondaryText
+    @default  null
+    @type     String
+    @public
+  */
+  secondaryText: null,
   // Computed
   showRightIcon: computed('hasRightIcon', 'rightIcon', 'hasSecondaryText', 'secondaryText', function() {
     return get(this, 'hasRightIcon') || get(this, 'rightIcon') || get(this, 'hasSecondaryText') || get(this, 'secondaryText');
