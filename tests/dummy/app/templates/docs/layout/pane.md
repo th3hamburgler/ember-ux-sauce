@@ -2,7 +2,7 @@
 
 Pane components are used inside a window to layout content.
 
-To see a full api check out the [api page](/docs/api/components/uxs-pane)
+To see a full api check out the [api page](../api/components/uxs-pane)
 
 ## Splash Layout
 

@@ -2,7 +2,7 @@
 
 The pagination component provides control for a paginated json api response.
 
-To see a full list of arguments check out the [api page](/docs/api/components/uxs-pagination-controls)
+To see a full list of arguments check out the [api page](../api/components/uxs-pagination-controls)
 
 ## Basic Usage
 

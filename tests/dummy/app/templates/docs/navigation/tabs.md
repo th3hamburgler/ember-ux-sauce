@@ -4,7 +4,7 @@ Tabs organize content across different screens, data sets, and other interaction
 
 ## Usage
 
-Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](/docs/api/components/uxs-tabs)
+Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](../api/components/uxs-tabs)
 
 {{docs/uxs-tabs/basic-demo}}
 

@@ -2,7 +2,7 @@
 
 The icon component is used to render icons from the <a href="https://material.io/icons/">Material Icons</a> font library.
 
-To see a full list of arguments check out the [api page](/docs/api/components/uxs-icon)
+To see a full list of arguments check out the [api page](../api/components/uxs-icon)
 
 ## Simple Usage
 

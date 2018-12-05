@@ -2,7 +2,7 @@
 
 The uxs menu component is used to display lists of links and actions.
 
-To see a full list of arguments check out the [api page](/docs/api/components/uxs-menu)
+To see a full list of arguments check out the [api page](../api/components/uxs-menu)
 
 ## Simple Vertical Usage
 
@@ -20,8 +20,8 @@ This example shows a menu rendered horizontally
 
 The menu yeilds two components for handling items.
 
--   Use _item_ if you want to bind an action to the item - [api page](/docs/api/components/uxs-menu/item)
--   Use _link_ if you want to transition to another route - [api page](/docs/api/components/uxs-menu/route)
+-   Use _item_ if you want to bind an action to the item - [api page](../api/components/uxs-menu/item)
+-   Use _link_ if you want to transition to another route - [api page](../api/components/uxs-menu/route)
 
 The following demo shows both in use as well as a disabled state for individual items.
 
@@ -55,7 +55,7 @@ Secondary Text is only supported on left aligned & vertical menus.
 
 Menu Items can include subheadings to split up items. Subheadings are not clickable.
 
-View the subheading api [api page](/docs/api/components/uxs-subheading)
+View the subheading api [api page](../api/components/uxs-subheading)
 
 {{docs/uxs-menu/subheading-demo}}
 

@@ -4,7 +4,7 @@ The button component is used for clickable actions. This could be to submit a fo
 
 ## Usage
 
-Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](/docs/api/components/uxs-button)
+Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](../api/components/uxs-button)
 
 {{docs/uxs-button/basic-demo}}
 

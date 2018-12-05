@@ -4,7 +4,7 @@ Splash messages are a nice way to inform the user of a unique event in a friendl
 
 ## Usage
 
-Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](/docs/api/components/uxs-tabs)
+Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](../api/components/uxs-tabs)
 
 {{docs/uxs-splash/basic-demo}}
 

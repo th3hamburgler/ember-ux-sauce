@@ -4,7 +4,7 @@ Table all the things!
 
 ## Tabular Data Example
 
-This example shows using tables to represent tabular data. Rows can be grouped by sections and certain rows highlighted. To see a full list of arguments check out the [api page](/docs/api/components/uxs-table).
+This example shows using tables to represent tabular data. Rows can be grouped by sections and certain rows highlighted. To see a full list of arguments check out the [api page](../api/components/uxs-table).
 
 {{docs/uxs-table/basic-demo}}
 

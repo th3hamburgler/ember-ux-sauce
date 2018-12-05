@@ -2,7 +2,7 @@
 
 Datalist are used to display record details, think of them as readonly form controls.
 
-To see a full list of arguments check out the [api page](/docs/api/components/uxs-datalist)
+To see a full list of arguments check out the [api page](../api/components/uxs-datalist)
 
 ## Simple List Usage
 
@@ -12,7 +12,7 @@ To see a full list of arguments check out the [api page](/docs/api/components/ux
 
 A Datalist consists of items displaying a label and value. If the value is empty an "empty" string can be provided.
 
-To see a full list of arguments for items check out the [api page](/docs/api/components/uxs-datalist-item)
+To see a full list of arguments for items check out the [api page](../api/components/uxs-datalist-item)
 
 {{docs/uxs-datalist/item-demo}}
 

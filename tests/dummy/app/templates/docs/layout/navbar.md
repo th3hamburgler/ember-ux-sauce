@@ -1,6 +1,6 @@
 # Navbar
 
-The navbar component is used to render the main nav bar of your application. To see a full api check out the [api page](/docs/api/components/uxs-navbar)
+The navbar component is used to render the main nav bar of your application. To see a full api check out the [api page](../api/components/uxs-navbar)
 
 ## Usage
 

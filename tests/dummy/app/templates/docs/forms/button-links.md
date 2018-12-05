@@ -4,7 +4,7 @@ The button-link component is like the button component but extends the Ember [li
 
 ## Usage
 
-Let's look at a basic example. This button links to the quickstart route. You can play around with some of the arguments in this demo. To see a full list check out the [api page](/docs/api/components/uxs-button-link)
+Let's look at a basic example. This button links to the quickstart route. You can play around with some of the arguments in this demo. To see a full list check out the [api page](../api/components/uxs-button-link)
 
 {{docs/uxs-button-link/basic-demo}}
 

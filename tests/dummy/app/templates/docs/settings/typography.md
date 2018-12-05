@@ -2,7 +2,7 @@
 
 UX Sauce comes with a default typography system to present your design and content as clearly and efficiently as possible.
 
-You can use the base type component _uxs-type_ to present text around your application. The following page will demonstrate some of the arguments. To see a full list check out the [api page](/docs/api/components/uxs-text).
+You can use the base type component _uxs-type_ to present text around your application. The following page will demonstrate some of the arguments. To see a full list check out the [api page](../api/components/uxs-text).
 
 ## Type Sizes
 

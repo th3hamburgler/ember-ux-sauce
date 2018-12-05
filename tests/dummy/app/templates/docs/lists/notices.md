@@ -2,7 +2,7 @@
 
 Lists can be used to highlight a list in certain contexts. e.g. an active filter.
 
-To see a full list of arguments check out the [api page](/docs/api/components/uxs-list-notice)
+To see a full list of arguments check out the [api page](../api/components/uxs-list-notice)
 
 ## Usage
 
