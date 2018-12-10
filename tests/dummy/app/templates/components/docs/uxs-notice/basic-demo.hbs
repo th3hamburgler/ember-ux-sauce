@@ -1,0 +1,41 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="notice-basic-demo.hbs"}}
+
+    {{uxs-notice
+      text
+      style=style
+      truncated=truncated
+      disabled=disabled
+      onClick=(action "tapNotice")
+    }}
+
+  {{/demo.example}}
+
+  {{demo.snippet "notice-basic-demo.hbs"}}
+  {{demo.snippet "notice-basic-demo.js"}}
+
+  {{#args-table "notice-basic-demo" as |table|}}
+    {{#table.row "text" as |row|}}
+      {{row.label "Text"}}
+      {{row.input text}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "truncated" as |row|}}
+      {{row.label "Truncated"}}
+      {{row.checkbox truncated}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+  {{/args-table}}
+
+{{/docs-demo}}

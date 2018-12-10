@@ -1,0 +1,56 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="notice-icon-demo.hbs"}}
+
+    {{#uxs-notice
+      style=style
+      truncated=truncated
+      disabled=disabled
+    as |notice|
+    }}
+      {{notice.icon "info" prefix=true}}
+      {{notice.text "This notice has a prefix icon"}}
+    {{/uxs-notice}}
+    {{#uxs-notice
+      style=style
+      truncated=truncated
+      disabled=disabled
+    as |notice|
+    }}
+      {{notice.text "This notice has a suffix icon"}}
+      {{notice.icon "cancel" suffix=true}}
+    {{/uxs-notice}}
+    {{#uxs-notice
+      style=style
+      truncated=truncated
+      disabled=disabled
+    as |notice|
+    }}
+      {{notice.icon "info" prefix=true}}
+      {{notice.text "This notice has a two icons"}}
+      {{notice.icon "cancel" suffix=true}}
+    {{/uxs-notice}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "notice-icon-demo.hbs"}}
+
+  {{#args-table "notice-icon-demo" as |table|}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "truncated" as |row|}}
+      {{row.label "Truncated"}}
+      {{row.checkbox truncated}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+  {{/args-table}}
+
+{{/docs-demo}}

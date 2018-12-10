@@ -21,6 +21,12 @@
     display: block;
     padding: rem-size($baseline*0.5);
   }
+
+  &--disabled {
+    cursor        : not-allowed;
+    pointer-events: none;
+    opacity       : 0.6;
+  }
 }
 
 .uxs-notice__text {
@@ -47,7 +53,9 @@
 }
 
 .uxs-notice__button {
-  // @extend .uxs-button;
+  margin-bottom: rs(0.25);
+  margin-top   : rs(0.25);
+
   &--prefix {
     margin-right: rs(0.5);
   }
