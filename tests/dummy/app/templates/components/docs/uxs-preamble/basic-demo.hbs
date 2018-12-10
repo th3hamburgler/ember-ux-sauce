@@ -1,0 +1,35 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="preamble-basic-demo.hbs"}}
+
+    {{#uxs-preamble
+      style=style
+      disabled=disabled
+      onClick=(action "preamblePressed")
+    as |pre|
+    }}
+      {{pre.icon "date_range" prefix=true}}
+      {{pre.content
+        "This is a default preamble. Cursus venenatis enim adipiscing primis laoreet eros curae odio primis nisl a a ad euismod id adipiscing a torquent augue parturient aptent rhoncus parturient a aptent."
+      }}
+    {{/uxs-preamble}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "preamble-basic-demo.hbs"}}
+  {{demo.snippet "preamble-basic-demo.js"}}
+
+  {{#args-table "preamble-basic-demo" as |table|}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+  {{/args-table}}
+
+{{/docs-demo}}

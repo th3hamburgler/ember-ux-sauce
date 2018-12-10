@@ -1,0 +1,35 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="preamble-expanded-demo.hbs"}}
+
+    {{#uxs-preamble style=style disabled=disabled as |pre|}}
+      {{pre.icon "date_range" prefix=true}}
+      {{#pre.body}}
+        {{pre.content
+          "This is a custom preamble with buttons and detail text. Augue parturient aptent rhoncus parturient a aptent."
+        }}
+        {{pre.content
+          "Cursus venenatis enim adipiscing primis laoreet eros curae odio primis nisl a a ad euismod id adipiscing a torquent"
+        }}
+        {{uxs-button "Hit Me" }}
+      {{/pre.body}}
+    {{/uxs-preamble}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "preamble-expanded-demo.hbs"}}
+
+  {{#args-table "preamble-expanded-demo" as |table|}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+  {{/args-table}}
+
+{{/docs-demo}}
