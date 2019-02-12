@@ -10,6 +10,7 @@ import {
 
 export default Component.extend(BEMComponent, Clickable, Styleable, Testable, {
   base: 'uxs-div',
+  clear: false,
   layout,
   // Computed
   small: equal('size', 'small'),
@@ -21,6 +22,7 @@ export default Component.extend(BEMComponent, Clickable, Styleable, Testable, {
   init() {
     this._super(...arguments);
     this.registerModifiers([
+      'clear',
       'small',
       'medium',
       'large',
