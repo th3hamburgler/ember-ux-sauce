@@ -1,18 +1,26 @@
 .uxs-pill {
   @include body-type;
-  display     : block;
-  float       : left;
-  background  : $c-mid;
-  color       : $c-white;
-  margin-right: rem-size($baseline*0.25);
-  padding     : 0 rem-size($baseline*0.375);
+  border        : 2px solid $c-dark;
+  display       : flex;
+  flex-direction: row;
+  float         : left;
+  background    : $c-mid;
+  color         : $c-white;
+  margin-right  : rem-size($baseline*0.25);
+  padding       : 0 rem-size($baseline*0.5);
   @include background-color-modifiers();
 
   &--rounded {
     border-radius: rem-size($baseline*0.75);
   }
+
+  &--disabled {
+    cursor        : not-allowed;
+    pointer-events: none;
+    opacity       : 0.6;
+  }
   @include font-size-modifiers;
-  $sizes      : (
+  $sizes        : (
     "giant" : $baseline*4.0,
     "huge"  : $baseline*3.0,
     "large" : $baseline*2.0,
@@ -22,42 +30,42 @@
   );
   @each $modifier, $size in $sizes {
     &--#{$modifier} {
-      line-height  : rem-size($size - 2px);
-      border-radius: rem-size($size);
-      padding      : 0 rem-size($size*0.5);
+      line-height  : rem-size($size - 6px);
+      border-radius: rem-size($size - 2px);
+      padding      : 0 rs(0.5);
       margin-bottom: rem-size(1px);
       margin-top   : rem-size(1px);
     }
   }
-
-  &--small {
-    line-height  : rs(0.75);
-    margin-top   : rs(0.125);
-    margin-bottom: rs(0.125);
-  }
-
-  &--tiny {
-    line-height  : rs(0.675);
-    margin-top   : rs(0.1625);
-    margin-bottom: rs(0.1625);
-  }
-
+  //
+  // &--small {
+  //   line-height  : rs(0.75);
+  //   margin-top   : rs(0.125);
+  //   margin-bottom: rs(0.125);
+  // }
+  //
+  // &--tiny {
+  //   line-height  : rs(0.675);
+  //   margin-top   : rs(0.1625);
+  //   margin-bottom: rs(0.1625);
+  // }
   &--with-prefix-icon,
   &--with-suffix-icon {
     display: flex;
   }
 
   &--with-prefix-icon {
-    padding-left: rem-size(2px);
+    padding-left: 0;
   }
 
   &--with-suffix-icon {
-    padding-right: rem-size(2px);
+    padding-right: 0;
   }
 }
 
 .uxs-pill__icon {
-  color : $c-white;
+  color     : $c-white;
+  text-align: center;
 
   &.uxs-icon--prefix {
     margin-right: rs(0.125);
@@ -75,7 +83,7 @@
   &:hover::before {
     display: none;
   }
-  $sizes: (
+  $sizes    : (
     "giant" : $baseline*4.0,
     "huge"  : $baseline*3.0,
     "large" : $baseline*2.0,
@@ -86,8 +94,9 @@
   @each $modifier, $size in $sizes {
     &--#{$modifier} {
       line-height: rem-size($size);
-      font-size  : rem-size($size - 2px);
-      width      : rem-size($size - 2px);
+      font-size  : rem-size($size - 6px);
+      height     : rem-size($size - 6px);
+      width      : rem-size($size -6px);
     }
   }
 }

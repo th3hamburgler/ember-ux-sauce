@@ -1,0 +1,39 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="pill-multiple-demo.hbs"}}
+
+    {{#uxs-div clear=true}}
+      {{#each styles as |style|}}
+        {{uxs-pill
+          style
+          style=style
+          size=size
+          rounded=rounded
+          disabled=disabled
+        }}
+      {{/each}}
+    {{/uxs-div}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "pill-multiple-demo.hbs"}}
+
+  {{#args-table "pill-multiple-demo" as |table|}}
+    {{#table.row "size" as |row|}}
+      {{row.label "Size"}}
+      {{row.input size options="sizes"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "rounded" as |row|}}
+      {{row.label "Rounded"}}
+      {{row.checkbox rounded}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+  {{/args-table}}
+
+{{/docs-demo}}

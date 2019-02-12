@@ -2,14 +2,16 @@ import Component from '@ember/component';
 import layout from '../templates/components/uxs-pill';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import Testable from '../mixins/testable';
+import Clickable from '../mixins/clickable';
 import {
   bool
 } from '@ember/object/computed';
 
-const Pill = Component.extend(BEMComponent, Testable, {
+const Pill = Component.extend(BEMComponent, Clickable, Testable, {
   // Attributes
   base: 'uxs-pill',
   layout,
+  size: 'small',
   // Computed
   hasPrefixIcon: bool('prefixIcon'),
   hasSuffixIcon: bool('suffixIcon'),
@@ -23,13 +25,6 @@ const Pill = Component.extend(BEMComponent, Testable, {
       'hasPrefixIcon:with-prefix-icon',
       'hasSuffixIcon:with-suffix-icon',
     ]);
-  },
-  getDefaultProps() {
-    return {
-      size: 'small',
-      style: 'default',
-      rounded: true,
-    };
   },
 });
 

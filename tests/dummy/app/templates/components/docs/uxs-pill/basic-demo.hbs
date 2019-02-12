@@ -1,0 +1,49 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="pill-basic-demo.hbs"}}
+
+    {{#uxs-div clear=true}}
+      {{uxs-pill
+        text
+        style=style
+        size=size
+        rounded=rounded
+        disabled=disabled
+        onClick=(action "tapPill")
+      }}
+    {{/uxs-div}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "pill-basic-demo.hbs"}}
+  {{demo.snippet "pill-basic-demo.js"}}
+
+  {{#args-table "pill-basic-demo" as |table|}}
+    {{#table.row "text" as |row|}}
+      {{row.label "Text"}}
+      {{row.input text}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "size" as |row|}}
+      {{row.label "Size"}}
+      {{row.input size options="sizes"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "rounded" as |row|}}
+      {{row.label "Rounded"}}
+      {{row.checkbox rounded}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+  {{/args-table}}
+
+{{/docs-demo}}

@@ -1,0 +1,61 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="icon-basic-demo.hbs"}}
+
+    {{#uxs-div clear=true}}
+      {{uxs-pill
+        "prefix"
+        style=style
+        size=size
+        rounded=rounded
+        disabled=disabled
+        prefixIcon="check_circle"
+      }}
+      {{uxs-pill
+        "suffix"
+        style=style
+        size=size
+        rounded=rounded
+        disabled=disabled
+        suffixIcon="account_circle"
+      }}
+      {{uxs-pill
+        "both"
+        style=style
+        size=size
+        rounded=rounded
+        disabled=disabled
+        prefixIcon="add_circle"
+        suffixIcon="remove_circle"
+      }}
+    {{/uxs-div}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "icon-basic-demo.hbs"}}
+  {{demo.snippet "icon-basic-demo.js"}}
+
+  {{#args-table "icon-basic-demo" as |table|}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "size" as |row|}}
+      {{row.label "Size"}}
+      {{row.input size options="sizes"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "rounded" as |row|}}
+      {{row.label "Rounded"}}
+      {{row.checkbox rounded}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+  {{/args-table}}
+
+{{/docs-demo}}
