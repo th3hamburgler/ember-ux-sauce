@@ -17,7 +17,6 @@ export default Mixin.create({
   style: null,
   // Methods
   init() {
-    console.log("BOOP");
     this.registerModifiers([
       '*style',
     ]);
