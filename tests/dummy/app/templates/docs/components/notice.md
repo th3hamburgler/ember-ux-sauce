@@ -22,26 +22,6 @@ Links & buttons can also be included in a notice.
 
 {{docs/uxs-notice/button-demo}}
 
-<!-- {{#docs-demo as |demo|}}
-
-  {{#demo.example name="notice"}}
-
-    {{#uxs-notice style="primary" truncated=truncated as |notice|}}
-      {{notice.link "home" "docs"}}
-      {{notice.text "This notice has a prefix link"}}
-    {{/uxs-notice}}
-
-    {{#uxs-notice style="accent" truncated=truncated as |notice|}}
-      {{notice.text "This notice has a suffix button"}}
-      {{notice.button "close"}}
-    {{/uxs-notice}}
-
-  {{/demo.example}}
-
-  {{demo.snippet "notice.hbs"}}
-
-{{/docs-demo}} -->
-
 ## Testable Elements
 
 This component provides the following test selectors.
