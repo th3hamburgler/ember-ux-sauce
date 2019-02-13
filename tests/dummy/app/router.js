@@ -82,15 +82,16 @@ Router.map(function() {
     });
   });
 
-  // this.route('app', function() {
-  //   this.route('dash', {
-  //     path: '/'
-  //   });
-  //   this.route('splash');
-  //   this.route('single');
-  //   this.route('double');
-  //   this.route('triple');
-  // });
+  this.route('app', function() {
+    this.route('dash', {
+      path: '/'
+    });
+    this.route('splash');
+    this.route('single');
+    this.route('double');
+    this.route('triple');
+    this.route('complex');
+  });
 
   this.route('not-found', {
     path: '/*path'
