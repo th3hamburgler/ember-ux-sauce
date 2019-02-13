@@ -13,17 +13,6 @@
         tip="This is the last time the user accessed the system"
       }}
       {{list.item label="Nothing" value=null }}
-      {{list.item label="Address" value=(html-safe "C4DI,<br />124 Queen Street,<br />Hull,<br />HU1 1UU")}}
-
-      {{#list.item  empty=null as |item|}}
-        {{item.label "Address"}}
-        {{#item.group}}
-          {{#item.value}}126 Queen St{{/item.value}}
-          {{#item.value}}Hull{{/item.value}}
-          {{#item.value}}East Yorkshire{{/item.value}}
-          {{#item.value}}HU1 1UU{{/item.value}}
-        {{/item.group}}
-      {{/list.item}}
     {{/uxs-datalist}}
 
   {{/demo.example}}

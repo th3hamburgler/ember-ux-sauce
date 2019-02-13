@@ -1,0 +1,65 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="datalist-yeild-demo.hbs"}}
+
+    {{#uxs-datalist bordered=bordered style=style as |list|}}
+      {{#list.item empty=null as |item|}}
+        {{item.label "Name"}}
+        {{#item.row}}
+          {{#item.value}}Frida Wardlaw{{/item.value}}
+        {{/item.row}}
+      {{/list.item}}
+      {{#list.item empty=null as |item|}}
+        {{item.label "GID"}}
+        {{#item.row}}
+          {{#item.value}}0123456789{{/item.value}}
+        {{/item.row}}
+      {{/list.item}}
+      {{#list.item empty=null as |item|}}
+        {{item.label "Job Title"}}
+        {{#item.row}}
+          {{#item.value}}Kid{{/item.value}}
+        {{/item.row}}
+      {{/list.item}}
+      {{#list.item empty=null as |item|}}
+        {{item.label "Email"}}
+        {{#item.row}}
+          {{#item.empty}}No Email{{/item.empty}}
+        {{/item.row}}
+      {{/list.item}}
+      {{#list.item empty=null as |item|}}
+        {{item.label "Last Login"}}
+        {{#item.row}}
+          {{#item.value}}20/01/18{{/item.value}}
+        {{/item.row}}
+        {{item.tip "This is the last time the user accessed the system"}}
+      {{/list.item}}
+      {{#list.item  empty=null as |item|}}
+        {{item.label "Address"}}
+        {{#item.group}}
+          {{#item.value}}126 Queen St{{/item.value}}
+          {{#item.value}}Hull{{/item.value}}
+          {{#item.value}}East Yorkshire{{/item.value}}
+          {{#item.value}}HU1 1UU{{/item.value}}
+        {{/item.group}}
+      {{/list.item}}
+    {{/uxs-datalist}}
+
+  {{/demo.example}}
+
+  {{#args-table "datalist-yeild-demo" as |table|}}
+    {{#table.row "bordered" as |row|}}
+      {{row.label "Bordered"}}
+      {{row.checkbox bordered}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "datalist-yeild-demo.hbs"}}
+
+{{/docs-demo}}

@@ -8,6 +8,10 @@ To see a full list of arguments check out the [api page](../api/components/uxs-d
 
 {{docs/uxs-datalist/basic-demo}}
 
+## Yielding Child Components
+
+{{docs/uxs-datalist/yield-demo}}
+
 ## The Datalist Item
 
 A Datalist consists of items displaying a label and value. If the value is empty an "empty" string can be provided.
