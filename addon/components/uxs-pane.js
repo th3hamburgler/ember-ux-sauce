@@ -148,6 +148,7 @@ export default Component.extend(BEMComponent, Testable, {
       'main',
       'single',
       'splash',
+      'split',
       'padded',
       '*type',
       '*style',
