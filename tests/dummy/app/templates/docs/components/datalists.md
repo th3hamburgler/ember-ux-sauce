@@ -10,6 +10,8 @@ To see a full list of arguments check out the [api page](../api/components/uxs-d
 
 ## Yielding Child Components
 
+**NOTE:** To use yielded components you need to make sure the datalist items _empty_ property is set to null. This can be set on an individual _list.item_ or set as default on the _uxs-datalist_
+
 {{docs/uxs-datalist/yield-demo}}
 
 ## The Datalist Item

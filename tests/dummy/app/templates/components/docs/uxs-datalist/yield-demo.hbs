@@ -2,39 +2,39 @@
 
   {{#demo.example name="datalist-yeild-demo.hbs"}}
 
-    {{#uxs-datalist bordered=bordered style=style as |list|}}
-      {{#list.item empty=null as |item|}}
+    {{#uxs-datalist empty=null bordered=bordered style=style as |list|}}
+      {{#list.item as |item|}}
         {{item.label "Name"}}
         {{#item.row}}
           {{item.value "Frida Wardlaw"}}
         {{/item.row}}
       {{/list.item}}
-      {{#list.item empty=null as |item|}}
+      {{#list.item as |item|}}
         {{item.label "GID"}}
         {{#item.row}}
           {{item.value "0123456789"}}
         {{/item.row}}
       {{/list.item}}
-      {{#list.item empty=null as |item|}}
+      {{#list.item as |item|}}
         {{item.label "Job Title"}}
         {{#item.row}}
           {{item.value "Kid"}}
         {{/item.row}}
       {{/list.item}}
-      {{#list.item empty=null as |item|}}
+      {{#list.item as |item|}}
         {{item.label "Email"}}
         {{#item.row}}
           {{item.empty "No Email"}}
         {{/item.row}}
       {{/list.item}}
-      {{#list.item empty=null as |item|}}
+      {{#list.item as |item|}}
         {{item.label "Last Login"}}
         {{#item.row}}
           {{item.value "20/01/18"}}
         {{/item.row}}
         {{item.tip "This is the last time the user accessed the system"}}
       {{/list.item}}
-      {{#list.item  empty=null as |item|}}
+      {{#list.item  as |item|}}
         {{item.label "Address"}}
         {{#item.group}}
           {{item.value "126 Queen St"}}
