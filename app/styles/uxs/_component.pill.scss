@@ -1,13 +1,12 @@
 .uxs-pill {
   @include body-type;
-  border        : 2px solid $c-dark;
   display       : flex;
   flex-direction: row;
   float         : left;
   background    : $c-mid;
   color         : $c-white;
-  margin-right  : rem-size($baseline*0.25);
-  padding       : 0 rem-size($baseline*0.5);
+  margin-right  : rem-size(2px);
+  padding       : 0 4%;
   @include background-color-modifiers();
 
   &--rounded {
@@ -30,9 +29,8 @@
   );
   @each $modifier, $size in $sizes {
     &--#{$modifier} {
-      line-height  : rem-size($size - 6px);
-      border-radius: rem-size($size - 2px);
-      padding      : 0 rs(0.5);
+      line-height  : rem-size($size - 2px);
+      border-radius: rem-size($size);
       margin-bottom: rem-size(1px);
       margin-top   : rem-size(1px);
     }
