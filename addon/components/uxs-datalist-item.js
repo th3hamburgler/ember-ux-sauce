@@ -24,6 +24,13 @@ import {
   ```
 
   @class UXSDatalistItem
+  @yield {Hash} item
+  @yield {Component} item.row
+  @yield {Component} item.group
+  @yield {Component} item.label
+  @yield {Component} item.value
+  @yield {Component} item.empty
+  @yield {Component} item.tip
 */
 export default Component.extend(BEMComponent, Testable, {
   layout,
