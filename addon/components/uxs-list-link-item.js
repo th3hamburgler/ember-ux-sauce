@@ -1,8 +1,7 @@
-import Component from '@ember/component';
-import layout from '../templates/components/uxs-list-item';
+import LinkComponent from '@ember/routing/link-component';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
-import Clickable from 'ember-ux-sauce/mixins/clickable';
 import Testable from 'ember-ux-sauce/mixins/testable';
+import layout from '../templates/components/uxs-list-link-item';
 import {
   equal
 } from '@ember/object/computed';
@@ -14,7 +13,7 @@ import {
   isEmpty
 } from '@ember/utils';
 
-export default Component.extend(BEMComponent, Clickable, Testable, {
+export default LinkComponent.extend(BEMComponent, Testable, {
   base: 'uxs-list-item',
   layout,
   // Computed
