@@ -6,41 +6,41 @@
       {{#list.item empty=null as |item|}}
         {{item.label "Name"}}
         {{#item.row}}
-          {{#item.value}}Frida Wardlaw{{/item.value}}
+          {{item.value "Frida Wardlaw"}}
         {{/item.row}}
       {{/list.item}}
       {{#list.item empty=null as |item|}}
         {{item.label "GID"}}
         {{#item.row}}
-          {{#item.value}}0123456789{{/item.value}}
+          {{item.value "0123456789"}}
         {{/item.row}}
       {{/list.item}}
       {{#list.item empty=null as |item|}}
         {{item.label "Job Title"}}
         {{#item.row}}
-          {{#item.value}}Kid{{/item.value}}
+          {{item.value "Kid"}}
         {{/item.row}}
       {{/list.item}}
       {{#list.item empty=null as |item|}}
         {{item.label "Email"}}
         {{#item.row}}
-          {{#item.empty}}No Email{{/item.empty}}
+          {{item.empty "No Email"}}
         {{/item.row}}
       {{/list.item}}
       {{#list.item empty=null as |item|}}
         {{item.label "Last Login"}}
         {{#item.row}}
-          {{#item.value}}20/01/18{{/item.value}}
+          {{item.value "20/01/18"}}
         {{/item.row}}
         {{item.tip "This is the last time the user accessed the system"}}
       {{/list.item}}
       {{#list.item  empty=null as |item|}}
         {{item.label "Address"}}
         {{#item.group}}
-          {{#item.value}}126 Queen St{{/item.value}}
-          {{#item.value}}Hull{{/item.value}}
-          {{#item.value}}East Yorkshire{{/item.value}}
-          {{#item.value}}HU1 1UU{{/item.value}}
+          {{item.value "126 Queen St"}}
+          {{item.value "Hull"}}
+          {{item.value "East Yorkshire"}}
+          {{item.value "HU1 1UU"}}
         {{/item.group}}
       {{/list.item}}
     {{/uxs-datalist}}
