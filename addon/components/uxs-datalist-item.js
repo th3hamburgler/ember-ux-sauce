@@ -5,7 +5,8 @@ import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import {
   and,
   bool,
-  not
+  not,
+  or
 } from '@ember/object/computed';
 
 /**
@@ -106,10 +107,11 @@ export default Component.extend(BEMComponent, Testable, {
    */
   //
   // Computed
-  // 
+  //
   hasLabel: bool('label'),
   hasValue: bool('value'),
   hasEmpty: and('isNull', 'empty'),
+  hasContent: or('hasValue', 'hasEmpty'),
   hasTip: bool('tip'),
   isNull: not('hasValue'),
   // Methods

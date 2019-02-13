@@ -24,6 +24,12 @@
     padding-left  : rem-size($baseline*0.5);
   }
 
+  &__group {
+    display       : flex;
+    flex-direction: column;
+    padding-left  : rem-size($baseline*0.5);
+  }
+
   &__value {
     @include type-content;
   }
