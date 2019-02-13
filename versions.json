@@ -10,5 +10,17 @@
     "name": "development",
     "sha": "9e536642bc797a827778b081a840b422ff230dd1",
     "tag": null
+  },
+  "1.1.5": {
+    "path": "versions/1.1.5",
+    "name": "1.1.5",
+    "sha": "6579bbaf1606e65a2a81ba89f0f0bb128b87e34d",
+    "tag": "1.1.5"
+  },
+  "-latest": {
+    "path": "",
+    "name": "Latest",
+    "sha": "6579bbaf1606e65a2a81ba89f0f0bb128b87e34d",
+    "tag": "1.1.5"
   }
 }
