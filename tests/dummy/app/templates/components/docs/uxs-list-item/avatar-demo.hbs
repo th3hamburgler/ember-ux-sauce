@@ -17,6 +17,21 @@
             {{item.action "keyboard_arrow_right"}}
           {{/item.aside}}
         {{/list.item}}
+
+        {{#list.item as |item|}}
+          {{#item.aside-link "docs.index"}}
+            {{item.avatar "https://placeimg.com/100/100/any" round=true}}
+          {{/item.aside-link}}
+          {{#item.body-link "docs.index"}}
+            {{item.title thing.title}}
+            {{item.detail thing.location}}
+            {{item.detail thing.email}}
+          {{/item.body-link}}
+          {{#item.aside}}
+            {{item.action "keyboard_arrow_right"}}
+          {{/item.aside}}
+        {{/list.item}}
+
       {{/each}}
     {{/uxs-list}}
 

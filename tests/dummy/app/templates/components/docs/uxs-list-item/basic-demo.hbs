@@ -7,9 +7,9 @@
         {{#list.item as |item|}}
           {{item.title thing.title}}
         {{/list.item}}
-        {{#list.link-item "docs.index" as |item|}}
+        {{#list.item-link "docs.index" as |item|}}
           {{item.title "Link Item"}}
-        {{/list.link-item}}
+        {{/list.item-link}}
       {{/each}}
     {{/uxs-list}}
 
