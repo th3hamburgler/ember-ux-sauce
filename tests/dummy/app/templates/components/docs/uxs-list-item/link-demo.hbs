@@ -2,22 +2,41 @@
 
   {{#demo.example name="list-items-avatar-demo.hbs"}}
 
-    {{#uxs-list lines=3 bordered=true as |list|}}
+    {{#uxs-list lines=1 bordered=true as |list|}}
+
+      {{list.subheading "Linked Items"}}
+
       {{#each items as |thing|}}
+        {{#list.item-link "docs.index" as |item|}}
+          {{item.title thing.title}}
+        {{/list.item-link}}
+
+      {{/each}}
+
+    {{/uxs-list}}
+
+    {{#uxs-list lines=3 bordered=true as |list|}}
+
+      {{list.subheading "Linked Aside & Body"}}
+
+      {{#each items as |thing|}}
+
         {{#list.item as |item|}}
-          {{#item.aside}}
+          {{#item.aside-link "docs.index"}}
             {{item.avatar "https://placeimg.com/100/100/any" round=true}}
-          {{/item.aside}}
-          {{#item.body}}
+          {{/item.aside-link}}
+          {{#item.body-link "docs.index"}}
             {{item.title thing.title}}
             {{item.detail thing.location}}
             {{item.detail thing.email}}
-          {{/item.body}}
+          {{/item.body-link}}
           {{#item.aside}}
             {{item.action "keyboard_arrow_right"}}
           {{/item.aside}}
         {{/list.item}}
+
       {{/each}}
+
     {{/uxs-list}}
 
   {{/demo.example}}

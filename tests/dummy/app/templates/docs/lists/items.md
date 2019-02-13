@@ -20,3 +20,15 @@ This is a list that includes some horizontal layout for the avatar and item. We 
 There is a variaty of avatar components you can use in lists including: image, text and icon avatars. See the {{link-to "avatars page" "docs.lists.avatars"}} for details.
 
 {{docs/uxs-list-item/avatar-demo}}
+
+## Item Links
+
+Often you'll want to link your list items to other routes. the _uxs-list_ component yields out:
+
+-   _list.item-link_
+-   _list.aside-link_
+-   _list.body-link_
+
+Just treat the same as the non _link_ alternatives with the route name & any params passed in as positional params.
+
+{{docs/uxs-list-item/link-demo}}
