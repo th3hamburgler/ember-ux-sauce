@@ -39,6 +39,15 @@
 
 For more information on using ember-cli, visit <https://ember-cli.com/>.
 
+## Publishing a new version
+
+You'll need an npm login (<https://www.npmjs.com/signup>)
+
+-   Update version number in `package.json` e.g. 1.2.4
+-   Tag release with same version 1.2.4
+-   Login to your npm account `npm login`
+-   `npm publish`
+
 ## Updating docs
 
   ember deploy production
