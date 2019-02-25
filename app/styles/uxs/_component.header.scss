@@ -19,9 +19,10 @@
   }
 
   &__body {
-    position: relative;
-    overflow: auto;
-    z-index : 2;
+    min-height: rem-size($baseline*10);
+    overflow  : auto;
+    position  : relative;
+    z-index   : 2;
 
     &--with-image {
       background-color: transparent;
