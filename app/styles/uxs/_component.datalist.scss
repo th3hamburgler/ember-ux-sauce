@@ -4,6 +4,8 @@
   &__item {
     border-bottom-color: $c-light;
     margin-bottom      : rem-size($baseline*1);
+    max-width          : 100%;
+    overflow           : auto;
     @include contrast-border-color-modifiers($dark-color:rgba($c-light,0.4), $light-color:rgba($c-dark,0.4),$prefix:'');
 
     &--bordered {
