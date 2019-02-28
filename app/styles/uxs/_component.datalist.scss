@@ -17,7 +17,7 @@
   }
 
   &__label {
-    @include label
+    @include label @include text-truncate;
   }
 
   &__row {
@@ -34,9 +34,11 @@
 
   &__value {
     @include type-content;
+    @include text-truncate;
   }
 
   &__tip {
     @include type-detail;
+    @include text-truncate;
   }
 }

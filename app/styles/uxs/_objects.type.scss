@@ -9,6 +9,10 @@
 .link {
   @include link;
 }
+
+.truncate-text {
+  @include text-truncate;
+}
 /* Font Sizes */
 .s-g {
   font-size  : rem-size($s-giant);
