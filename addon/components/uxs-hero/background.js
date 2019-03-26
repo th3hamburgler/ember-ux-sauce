@@ -4,6 +4,9 @@ import {
   computed,
   get
 } from '@ember/object';
+import {
+  htmlSafe
+} from '@ember/string';
 
 export default Component.extend(BEMComponent, {
   // Attributes
@@ -20,7 +23,7 @@ export default Component.extend(BEMComponent, {
   cssStyles: computed('image', function() {
     const image = get(this, 'image');
     if (image) {
-      return `background-image:url(${image})`;
+      return htmlSafe(`background-image:url(${image})`);
     }
   }),
 });
