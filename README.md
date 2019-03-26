@@ -19,7 +19,6 @@
 -   `git clone <repository-url>`
 -   `cd my-addon`
 -   `npm install`
-    > > > > > > > b1c0f39... message
 
 ### Linting
 
