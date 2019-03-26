@@ -17,7 +17,8 @@
   }
 
   &__label {
-    @include label @include text-truncate;
+    @include label;
+    @include text-truncate;
   }
 
   &__row {
