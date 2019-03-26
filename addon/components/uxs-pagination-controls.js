@@ -136,7 +136,16 @@ export default Component.extend(BEMComponent, Testable, {
   },
   // Computed
   resultsText: computed('countPrefix', 'start', 'end', 'total', 'countSuffix', function() {
-    return `${get(this, 'countPrefix')} ${get(this, 'start')} - ${get(this, 'end')} of ${get(this, 'total')} ${get(this, 'countSuffix')}`;
+    const countPrefix = get(this, 'countPrefix'),
+      start = get(this, 'start'),
+      end = get(this, 'end'),
+      countSuffix = get(this, 'countSuffix');
+
+    if (start && end) {
+      return `${countPrefix} ${start} - ${end} of ${get(this, 'total')} ${countSuffix}`;
+    } else {
+      return '';
+    }
   }),
   pages: computed('total', 'size', function() {
     return get(this, 'total') / get(this, 'size');

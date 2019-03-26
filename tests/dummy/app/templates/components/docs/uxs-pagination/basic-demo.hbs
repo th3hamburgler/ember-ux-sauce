@@ -13,6 +13,12 @@
       onChange=(action "paginateResults")
     }}
 
+    {{uxs-pagination-controls
+      size=foo.size
+      page=foo.page
+      total=foo.total
+    }}
+
   {{/demo.example}}
 
   {{#args-table "pagination-basic-demo" as |table|}}
