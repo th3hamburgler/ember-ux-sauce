@@ -6,6 +6,7 @@ const Heading = Component.extend(Textable, {
   base: 'uxs-table__heading',
   layout,
   tagName: 'th',
+  attributeBindings: ['colspan'],
   // Methods
   init() {
     this._super(...arguments);

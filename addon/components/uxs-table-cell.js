@@ -6,6 +6,7 @@ const Cell = Component.extend(Textable, {
   base: 'uxs-table__cell',
   layout,
   tagName: 'td',
+  attributeBindings: ['colspan'],
   // Methods
   init() {
     this._super(...arguments);
