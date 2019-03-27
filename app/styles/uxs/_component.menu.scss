@@ -115,11 +115,13 @@ body.ember-tether-enabled {
   }
 
   &__left {
-    text-align: left;
+    margin-right: rs(0.25);
+    text-align  : left;
   }
 
   &__right {
-    text-align: right;
+    margin-left: rs(0.25);
+    text-align : right;
   }
 
   &__icon {
@@ -127,11 +129,11 @@ body.ember-tether-enabled {
     line-height: rem-size($baseline*1.5);
 
     &--left {
-      margin-right: rem-size($baseline*0.25);
+      // margin-right: rem-size($baseline*0.25);
     }
 
     &--right {
-      margin-left: rem-size($baseline*0.25);
+      // margin-left: rem-size($baseline*0.25);
     }
   }
 
