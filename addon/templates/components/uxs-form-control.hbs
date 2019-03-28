@@ -4,6 +4,7 @@
 {{#if hasTextInput}}
   {{uxs-form-input
     autocomplete=autocomplete
+    autoresize=autoresize
     model=model
     name=name
     type=type
@@ -19,6 +20,7 @@
 {{/if}}
 {{#if hasTextArea}}
   {{uxs-form-textarea
+    autoresize=autoresize
     model=model
     name=name
     type=type
@@ -41,6 +43,7 @@
     input=(
       component
       "uxs-form-input"
+      autoresize=autoresize
       model=model
       name=name
       disabled=disabled
@@ -55,6 +58,7 @@
     textarea=(
       component
       "uxs-form-textarea"
+      autoresize=autoresize
       model=model
       name=name
       disabled=disabled

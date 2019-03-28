@@ -191,3 +191,9 @@ $ember-power-select-multiple-option-line-height: ($baseline*1.5); // @import "..
     }
   }
 }
+
+.ember-basic-dropdown-trigger {
+  &:focus {
+    outline: none;
+  }
+}

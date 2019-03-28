@@ -1,9 +1,34 @@
 {{yield
   (
     hash
-    label=(component    "uxs-form-label"    name=name disabled=disabled inline=inline style=style)
-    input=(component    "uxs-form-input"    model=model name=name disabled=disabled inline=inline style=style)
-    textarea=(component "uxs-form-textarea" model=model name=name disabled=disabled inline=inline style=style)
+    label=(
+      component
+      "uxs-form-label"
+      name=name
+      disabled=disabled
+      inline=inline
+      style=style
+    )
+    input=(
+      component
+      "uxs-form-input"
+      autoresize=autoresize
+      model=model
+      name=name
+      disabled=disabled
+      inline=inline
+      style=style
+    )
+    textarea=(
+      component
+      "uxs-form-textarea"
+      autoresize=autoresize
+      model=model
+      name=name
+      disabled=disabled
+      inline=inline
+      style=style
+    )
     dropdown=(component "uxs-form-dropdown" model=model name=name disabled=disabled inline=inlinev)
     date=(component     "uxs-form-date"     model=model name=name disabled=disabled inlineInput=inline style=style)
     datetime=(component "uxs-form-datetime" model=model name=name disabled=disabled inlineInput=inline style=style)
