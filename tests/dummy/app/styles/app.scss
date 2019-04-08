@@ -1,6 +1,8 @@
 /***
  * Namespace uxs styles so we do not leak into the docs
  */
+$theme: "sauce";
+$font-family: 'proxima-nova';
 @import 'uxs/tools.functions';
 
 body.ember-tether-enabled {
@@ -43,4 +45,9 @@ body.ember-tether-enabled {
 
 .docs-md p {
   line-height: 25px;
+}
+
+.docs-mt-1,
+body > .ember-view {
+  margin-top: 0;
 }

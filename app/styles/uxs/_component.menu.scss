@@ -110,6 +110,7 @@ body.ember-tether-enabled {
 
   &__left,
   &__right {
+    display   : flex;
     min-height: rem-size($baseline);
     min-width : rem-size($baseline);
   }

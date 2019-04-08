@@ -140,10 +140,10 @@
     }
   }
 }
-@mixin background-color-modifiers($colors:$defaultColors) {
+@mixin background-color-modifiers($colors:$defaultColors, $opacity:1) {
   @each $modifier, $color in $colors {
     &--#{$modifier} {
-      background-color: $color;
+      background-color: rgba($color, $opacity);
       color           : contrast-color($color);
     }
   }

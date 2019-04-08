@@ -24,9 +24,7 @@
     position  : relative;
     z-index   : 2;
 
-    &--with-image {
-      background-color: transparent;
-    }
+    &--with-image {}
   }
 
   &__toolbar {
@@ -46,3 +44,6 @@
     }
   }
 }
+// Include theme partial to theme up
+$path: import-theme-partial('header');
+@import "component.header.ideal";

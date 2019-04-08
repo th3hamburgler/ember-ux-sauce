@@ -35,11 +35,12 @@ $breakpoints: (
 $transition-duration: 0.2s!default;
 $transition-timing-function: cubic-bezier(.4,0,.2,1)!default;
 /** Typographic weights **/
-$type-body-family: 'Lato', sans-serif!default;
+$font-family: 'Lato'!default;
+$type-body-family: $font-family, sans-serif!default;
 $type-body-weight: 400!default;
-$type-light-family: 'Lato', sans-serif!default;
+$type-light-family: $font-family, sans-serif!default;
 $type-light-weight: 300!default;
-$type-bold-family: 'Lato', sans-serif!default;
+$type-bold-family: $font-family, sans-serif!default;
 $type-bold-weight: 700!default;
 /** Hash of sizes used thoughout system as modifiers **/
 $defaultWeights: (

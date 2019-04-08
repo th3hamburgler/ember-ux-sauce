@@ -13,6 +13,10 @@
   }
   @return $number;
 }
+@function import-theme-partial($who, $what:'component') {
+  // @return "#{$what}.${who}.#{$theme}";
+  @return "#{$what}.${who}.sauce";
+}
 /**
  * rem-size
  * ---

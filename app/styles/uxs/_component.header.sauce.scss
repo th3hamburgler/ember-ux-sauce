@@ -1,0 +1,13 @@
+.uxs-header {
+  &__image {}
+
+  &__body {
+    &--with-image {
+      background-color: transparent;
+    }
+  }
+
+  &__toolbar {}
+
+  &__title {}
+}
