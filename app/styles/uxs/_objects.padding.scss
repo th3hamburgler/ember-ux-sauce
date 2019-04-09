@@ -2,21 +2,63 @@
  * padding helper classes
  */
 .p {
-  padding: rem-size($baseline);
+  padding: rs(1);
 }
 
 .pt {
-  padding-top: rem-size($baseline);
+  padding-top: rs(1);
 }
 
 .pr {
-  padding-right: rem-size($baseline);
+  padding-right: rs(1);
 }
 
 .pb {
-  padding-bottom: rem-size($baseline);
+  padding-bottom: rs(1);
 }
 
 .pl {
-  padding-left: rem-size($baseline);
+  padding-left: rs(1);
+}
+// Double
+
+.p2 {
+  padding: rs(2);
+}
+
+.pt2 {
+  padding-top: rs(2);
+}
+
+.pr2 {
+  padding-right: rs(2);
+}
+
+.pb2 {
+  padding-bottom: rs(2);
+}
+
+.pl2 {
+  padding-left: rs(2);
+}
+// Tripple
+
+.p3 {
+  padding: rs(3);
+}
+
+.pt3 {
+  padding-top: rs(3);
+}
+
+.pr3 {
+  padding-right: rs(3);
+}
+
+.pb3 {
+  padding-bottom: rs(3);
+}
+
+.pl3 {
+  padding-left: rs(3);
 }
