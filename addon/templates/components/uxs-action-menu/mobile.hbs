@@ -1,0 +1,13 @@
+{{!-- This dropdown menu is hidden on large devices --}}
+{{#basic-dropdown class="uxs-header__mobile-menu" as |dropdown|}}
+  {{#dropdown.trigger class="uxs-header__mobile-menu-trigger"}}
+    {{uxs-icon "more_vert" style="white"}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content class="uxs-header__mobile-menu-content"}}
+    {{#uxs-menu as |menu|}}
+      {{#each items as |params|}}
+        {{menu.link params=params}}
+      {{/each}}
+    {{/uxs-menu}}
+  {{/dropdown.content}}
+{{/basic-dropdown}}

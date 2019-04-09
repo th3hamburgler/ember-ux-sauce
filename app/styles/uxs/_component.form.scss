@@ -1,4 +1,11 @@
 .uxs-form {
+  &--padding {
+    padding: rs(0.5);
+    @include mq(tablet) {
+      padding: rs(0.5) rs(1);
+    }
+  }
+
   &--white {
     color: $c-white;
   }

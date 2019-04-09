@@ -3,6 +3,7 @@
   style="dark on-light"
 as |header|
 }}
+
   {{#header.toolbar as |toolbar|}}
     {{toolbar.back "arrow_back"}}
     {{toolbar.spacer}}
@@ -11,7 +12,7 @@ as |header|
     {{toolbar.action "search"}}
   {{/header.toolbar}}
   {{#header.title "People"}}
-    {{app/people-actions/mobile-list routes=(get-routes-for "person" "index")}}
+    {{uxs-action-menu/mobile routes=(get-routes-for "person" "index")}}
   {{/header.title}}
 
 {{/uxs-header}}
@@ -45,7 +46,7 @@ as |header|
     order=2
     class="lg:pt2 sm:hidden sm:invisible"
   }}
-    {{app/people-actions/desktop-list routes=(get-routes-for "person" "index")}}
+    {{uxs-action-menu/desktop routes=(get-routes-for "person" "index")}}
   {{/uxs-pane}}
 
 {{/uxs-window}}

@@ -1,0 +1,10 @@
+{{!-- This button group is hidden on small devices --}}
+{{#uxs-button-group
+  align="center"
+  class="sm:invisible sm:hidden"
+as |group|
+}}
+  {{#each items as |params|}}
+    {{group.link params=params}}
+  {{/each}}
+{{/uxs-button-group}}

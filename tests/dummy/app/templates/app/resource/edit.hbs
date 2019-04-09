@@ -7,7 +7,7 @@ as |header|
     {{toolbar.back "arrow_back"}}
     {{toolbar.spacer}}
   {{/header.toolbar}}
-  {{#header.title "View Person"}}
+  {{#header.title "Edit Person"}}
     {{uxs-action-menu/mobile routes=(get-routes-for "person" "resource")}}
   {{/header.title}}
 
@@ -28,24 +28,33 @@ as |header|
     {{/uxs-breadcrumb}}
 
 
-    {{#uxs-datalist as |list|}}
-      {{list.item
-        label="Name"
-        value=(concat model.first_name " " model.last_name)
+    {{#uxs-form model=model as |form|}}
+      {{form.control
+        label="First Name"
+        name="first_name"
+        type="text"
       }}
-      {{list.item
+      {{form.control
+        label="Last Name"
+        name="last_name"
+        type="text"
+      }}
+      {{form.control
         label="Email"
-        value=model.email
+        name="email"
+        type="text"
       }}
-      {{list.item
+      {{form.control
         label="Gender"
-        value=model.gender
+        name="gender"
+        type="text"
       }}
-      {{list.item
+      {{form.control
         label="IP Address"
-        value=model.ip_address
+        name="ip_address"
+        type="text"
       }}
-    {{/uxs-datalist}}
+    {{/uxs-form}}
 
   {{/uxs-pane}}
 

@@ -19,6 +19,7 @@ export default Component.extend(BEMComponent, Testable, {
   layout,
   novalidate: true,
   tagName: 'form',
+  padding: true,
   // Computed
   isWhite: equal('style', 'white'),
   // Events
@@ -40,7 +41,7 @@ export default Component.extend(BEMComponent, Testable, {
   // Methods
   init() {
     this._super(...arguments);
-    this.registerModifiers(['isWhite:white', '*style']);
+    this.registerModifiers(['isWhite:white', '*style', 'padding']);
   },
   /**
    * Validate child form control components
