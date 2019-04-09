@@ -1,0 +1,4 @@
+.uxs-navbar {
+  @include background-color-modifiers();
+  box-shadow: 0 2px 2px 0 rgba($c-light,0.125);
+}

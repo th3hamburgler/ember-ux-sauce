@@ -1,13 +1,10 @@
 .uxs-navbar {
-  @include background-color-modifiers();
-  // background     : $c-primary;
-  // border-bottom  : rem-size(1px) solid $c-white;
-  box-shadow     : 0 2px 2px 0 rgba($c-light,0.125);
   // color          : $c-white;
   display        : flex;
   flex-direction : row-reverse;
   flex-direction : row;
   justify-content: space-between;
+  height         : rem-size($baseline*2);
   max-height     : rem-size($baseline*2);
   overflow       : hidden;
   position       : sticky;
@@ -26,13 +23,16 @@
 
   &__toggle {
     // color      : $c-white;
-    $size      : rem-size(($baseline*2)-1);
-    height     : $size;
-    line-height: $size;
-    text-align : center;
-    width      : rem-size($baseline*2);
+    $size          : rem-size(($baseline*2)-1);
+    justify-content: center;
+    align-items    : center;
+    display        : flex!important;
+    height         : $size!important;
+    line-height    : $size;
+    text-align     : center;
+    width          : rem-size($baseline*2)!important;
     @include mq(tablet-wide) {
-      display   : none;
+      display   : none!important;
       visibility: none;
     }
   }
@@ -89,3 +89,6 @@
     cursor    : pointer;
   }
 }
+// Include theme partial to theme up
+$path: import-theme-partial('navbar');
+@import "component.navbar.ideal";

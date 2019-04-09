@@ -1,12 +1,16 @@
 .uxs-header {
-  border-bottom-left-radius : 50% 25px;
-  border-bottom-right-radius: 50% 25px;
+  background-color: $c-light;
 
-  &__image {}
+  &__image {
+    border-bottom-left-radius : 50% 25px;
+    border-bottom-right-radius: 50% 25px;
+  }
 
   &__body {
     // @include background-color-modifiers($opacity:0.9);
-    background: linear-gradient(180deg, rgba($c-dark,1) 0%, rgba($c-dark,1) 50px, rgba($c-dark,0.5) 100%);
+    background                : linear-gradient(180deg, rgba($c-dark,1) 0%, rgba($c-dark,1) 50px, rgba($c-dark,0.5) 100%);
+    border-bottom-left-radius : 50% 25px;
+    border-bottom-right-radius: 50% 25px;
 
     &--with-image {}
   }
