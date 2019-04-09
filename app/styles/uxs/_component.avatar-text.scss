@@ -134,3 +134,6 @@
     // margin-bottom: 12.5%;
   }
 }
+// Include theme partial to theme up
+$path: import-theme-partial('header');
+@import "component.avatar-text.ideal";
