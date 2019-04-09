@@ -3,7 +3,7 @@
   flex-direction: row;
   padding       : rs(0.5);
   @include background-color-modifiers();
-  @include mq(tablet-wide) {
+  @include mq(tablet) {
     padding: rs(0.5) rs(1);
   }
 

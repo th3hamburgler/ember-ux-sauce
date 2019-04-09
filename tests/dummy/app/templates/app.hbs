@@ -4,14 +4,14 @@
 
     {{#uxs-navbar fixed=true style="dark" name="App Demo" as |bar|}}
       {{#bar.desktopNav as |nav|}}
-        {{#nav.menu detail=true as |menu|}}
+        {{#nav.menu detail=true align="right" as |menu|}}
           {{menu.link "Docs" "docs" rightIcon="book"}}
           {{menu.link "Api" "docs"}}
           {{menu.link "Dashboard" "app.dash"}}
-          {{menu.link "Splash" "app.splash"}}
-          {{menu.link "Single" "app.single"}}
+          {{menu.link "People" "app.list"}}
+          {{!-- {{menu.link "Single" "app.single"}}
           {{menu.link "Double" "app.double"}}
-          {{menu.link "Triple" "app.triple"}}
+          {{menu.link "Triple" "app.triple"}} --}}
         {{/nav.menu}}
       {{/bar.desktopNav}}
       {{#bar.mobileNav as |nav|}}
@@ -20,10 +20,10 @@
           {{menu.link "Docs" "docs" rightIcon="book"}}
           {{menu.link "Api" "docs"}}
           {{menu.link "Dashboard" "app.dash"}}
-          {{menu.link "Splash" "app.splash"}}
-          {{menu.link "Single" "app.single"}}
+          {{menu.link "People" "app.list"}}
+          {{!-- {{menu.link "Single" "app.single"}}
           {{menu.link "Double" "app.double"}}
-          {{menu.link "Triple" "app.triple"}}
+          {{menu.link "Triple" "app.triple"}} --}}
         {{/nav.menu}}
       {{/bar.mobileNav}}
     {{/uxs-navbar}}

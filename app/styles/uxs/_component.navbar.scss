@@ -10,7 +10,7 @@
   position       : sticky;
   top            : 0;
   z-index        : 5;
-  @include mq(tablet-wide) {
+  @include mq(tablet) {
     flex-direction: row;
   }
 
@@ -31,7 +31,7 @@
     line-height    : $size;
     text-align     : center;
     width          : rem-size($baseline*2)!important;
-    @include mq(tablet-wide) {
+    @include mq(tablet) {
       display   : none!important;
       visibility: none;
     }
@@ -44,7 +44,7 @@
     margin     : 0 rem-size($baseline*2) 0 0;
     max-width  : none;
     text-align : center;
-    @include mq(tablet-wide) {
+    @include mq(tablet) {
       flex  : none;
       margin: 0 rem-size($baseline*0.5);
     }
@@ -59,14 +59,14 @@
     display   : none;
     padding   : rem-size($baseline *0.25);
     visibility: hidden;
-    @include mq(tablet-wide) {
+    @include mq(tablet) {
       display   : block;
       visibility: visible;
     }
   }
 
   &__mobile {
-    @include mq(tablet-wide) {
+    @include mq(tablet) {
       display   : none;
       visibility: hidden;
     }

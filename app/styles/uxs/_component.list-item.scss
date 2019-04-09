@@ -5,10 +5,10 @@
   border-color  : $c-light;
   display       : flex;
   flex-direction: row;
-  padding       : rem-size($baseline * 0.2) rem-size($baseline * 0.2);
-  @include mq(tablet-wide) {
-    padding-left : rem-size($baseline*1);
-    padding-right: rem-size($baseline*1);
+  padding       : rem-size($baseline * 0.2) rs(0.5);
+  @include mq(tablet) {
+    padding-left : rs(1);
+    padding-right: rs(1);
   }
 
   &--bordered {
