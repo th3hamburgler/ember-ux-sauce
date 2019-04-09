@@ -1,5 +1,19 @@
 .uxs-header {
-  background-color: $c-light;
+  &--on-white {
+    background-color: $c-white;
+  }
+
+  &--on-light {
+    background-color: $c-light;
+  }
+
+  &--on-grey {
+    background-color: $c-grey;
+  }
+
+  &--on-dark {
+    background-color: $c-dark;
+  }
 
   &__image {
     border-bottom-left-radius : 50% 25px;

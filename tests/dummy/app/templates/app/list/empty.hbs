@@ -1,4 +1,8 @@
-{{#uxs-header image="https://placeimg.com/2560/1600/any/grayscale" style="dark" as |header|}}
+{{#uxs-header
+  image="https://placeimg.com/2560/1600/any/grayscale"
+  style="dark on-light"
+as |header|
+}}
   {{#header.toolbar as |toolbar|}}
     {{toolbar.back "arrow_back"}}
     {{toolbar.spacer}}
@@ -6,7 +10,7 @@
     {{toolbar.action "file_download"}}
     {{toolbar.action "search"}}
   {{/header.toolbar}}
-  {{header.title "Widgets"}}
+  {{header.title "People"}}
 {{/uxs-header}}
 
 {{#uxs-window}}
@@ -14,29 +18,28 @@
   {{#uxs-pane main=true padded=false}}
 
     {{uxs-pagination-controls
-      size=100
+      size=25
       page=1
       total=250
       style="light"
     }}
 
-    {{#uxs-list as |list|}}
-      {{#each model as |person|}}
-        {{#list.item bordered=true lines=3 as |item|}}
-          {{#item.aside}}
-            {{item.avatar-text "JW" style="dark"}}
-          {{/item.aside}}
-          {{#item.body}}
-            {{item.title (concat person.first_name " " person.last_name)}}
-            {{item.detail person.email}}
-            {{item.detail person.gender}}
-          {{/item.body}}
-        {{/list.item}}
-      {{/each}}
+    {{#uxs-list grow=true}}
+
+      {{#uxs-splash
+        align="center"
+        style="dark"
+      as |splash|
+      }}
+        {{splash.icon "hourglass_empty"}}
+        {{splash.title "No People"}}
+        {{splash.text "It seems you don't have any people right now, hit the + button to start adding." align="center"}}
+      {{/uxs-splash}}
+
     {{/uxs-list}}
 
     {{uxs-pagination-controls
-      size=100
+      size=25
       page=1
       total=250
       style="light"
@@ -52,9 +55,10 @@
       mini=mini
     as |group|
     }}
-      {{group.button "Save"}}
-      {{group.button "Save & Publish"}}
-      {{group.link "Cancel" "docs.forms.buttons"}}
+      {{group.link "Populated List" "app.list.index"}}
+      {{group.link "Filtered List" "app.list.filtered"}}
+      {{group.link "Empty List" "app.list.empty"}}
+      {{group.link "Loading List" "app.list.loading"}}
     {{/uxs-button-group}}
   {{/uxs-pane}}
 

@@ -91,7 +91,12 @@ Router.map(function() {
     this.route('double');
     this.route('triple');
     this.route('complex');
-    this.route('list');
+    this.route('list', function() {
+      this.route('empty');
+      this.route('filtered');
+      this.route('loading');
+    });
+
   });
 
   this.route('not-found', {

@@ -1,0 +1,66 @@
+{{#uxs-header
+  image="https://placeimg.com/2560/1600/any/grayscale"
+  style="dark on-light"
+as |header|
+}}
+  {{#header.toolbar as |toolbar|}}
+    {{toolbar.back "arrow_back"}}
+    {{toolbar.spacer}}
+    {{toolbar.action "filter_list"}}
+    {{toolbar.action "file_download"}}
+    {{toolbar.action "search"}}
+  {{/header.toolbar}}
+  {{header.title "People"}}
+{{/uxs-header}}
+
+{{#uxs-window}}
+
+  {{#uxs-pane main=true padded=false}}
+
+    {{uxs-pagination-controls
+      size=25
+      page=1
+      total=250
+      style="light"
+    }}
+
+    {{#uxs-list grow=true as |list|}}
+      {{#each model as |person|}}
+        {{#list.item bordered=true lines=3 as |item|}}
+          {{#item.aside}}
+            {{item.avatar-text "JW" style="dark"}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title (concat person.first_name " " person.last_name)}}
+            {{item.detail person.email}}
+            {{item.detail person.gender}}
+          {{/item.body}}
+        {{/list.item}}
+      {{/each}}
+    {{/uxs-list}}
+
+    {{uxs-pagination-controls
+      size=25
+      page=1
+      total=250
+      style="light"
+    }}
+
+  {{/uxs-pane}}
+
+  {{#uxs-pane aside=true padded=true style="light"}}
+    {{#uxs-button-group
+      align=align
+      disabled=disabled
+      inline=inline
+      mini=mini
+    as |group|
+    }}
+      {{group.link "Populated List" "app.list.index"}}
+      {{group.link "Filtered List" "app.list.filtered"}}
+      {{group.link "Empty List" "app.list.empty"}}
+      {{group.link "Loading List" "app.list.loading"}}
+    {{/uxs-button-group}}
+  {{/uxs-pane}}
+
+{{/uxs-window}}
