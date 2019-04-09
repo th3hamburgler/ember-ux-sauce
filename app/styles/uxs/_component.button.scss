@@ -15,8 +15,8 @@
   font-weight       : 400;
   line-height       : rs(1.5, 2);
   text-decoration   : none;
-  margin            : rs(0.5, 1px) 0;
-  max-width         : $max-width-content;
+  margin            : rs(0.5, 1px) auto;
+  max-width         : 100%;
   padding           : 0;
   text-align        : center;
   width             : rs(12);
