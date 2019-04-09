@@ -18,6 +18,19 @@
     z-index            : 2;
   }
 
+  &__logo {
+    height    : rs(8);
+    text-align: center;
+
+    &-svg {
+      height: 100%;
+    }
+
+    &-img {
+      height: 100%;
+    }
+  }
+
   &__body {
     min-height: rem-size($baseline*10);
     overflow  : auto;
@@ -30,6 +43,7 @@
   &__toolbar {
     background: transparent;
     color     : inherit;
+    min-height: rs(2);
   }
 
   &__title {

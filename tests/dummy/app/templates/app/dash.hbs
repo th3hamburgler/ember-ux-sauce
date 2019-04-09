@@ -1,1 +1,18 @@
-<h1>Dashboard</h1>
+{{#uxs-header
+  image="https://placeimg.com/2560/1600/any/grayscale"
+  style="dark on-white"
+as |header|
+}}
+  {{#header.toolbar as |toolbar|}}
+    {{toolbar.spacer}}
+  {{/header.toolbar}}
+  {{header.logo "sauce-logo.large"}}
+{{/uxs-header}}
+
+{{#uxs-window}}
+
+  {{#uxs-pane main=true padded=false}}
+
+  {{/uxs-pane}}
+
+{{/uxs-window}}
