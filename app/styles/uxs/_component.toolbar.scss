@@ -1,8 +1,11 @@
 .uxs-toolbar {
   display       : flex;
   flex-direction: row;
-  padding       : rem-size($baseline*0.5);
+  padding       : rs(0.5);
   @include background-color-modifiers();
+  @include mq(tablet-wide) {
+    padding: rs(0.5) rs(1);
+  }
 
   &__title {
     margin        : 0;
