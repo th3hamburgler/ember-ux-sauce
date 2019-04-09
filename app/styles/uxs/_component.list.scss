@@ -1,3 +1,7 @@
 .uxs-list {
   @include background-color-modifiers();
+
+  &--grow {
+    flex: 1 1 auto;
+  }
 }

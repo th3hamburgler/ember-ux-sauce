@@ -20,7 +20,9 @@
 
   &__pane {
     @include background-color-modifiers();
-    padding: 0;
+    padding       : 0;
+    display       : flex;
+    flex-direction: column;
 
     &--padded {
       padding: rem-size($baseline*1) rem-size($baseline*0.5);
