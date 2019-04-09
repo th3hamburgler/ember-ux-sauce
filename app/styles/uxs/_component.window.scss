@@ -92,6 +92,9 @@
       }
     }
     @include mq(tablet, 'max') {
+      // flex to fill on mobile as panes are in one column;
+      flex: 1 1 auto;
+
       &--mobile-order-1 {
         order: 1;
       }

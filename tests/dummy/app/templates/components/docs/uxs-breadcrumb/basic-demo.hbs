@@ -1,0 +1,43 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="basic-breadcrumb.hbs"}}
+
+    {{#uxs-breadcrumb
+      align=align
+      disabled=disabled
+      style=style
+      detail=detail
+    as |crumb|
+    }}
+      {{crumb.link "Docs" "docs"}}
+      {{crumb.link "Navigation" "docs.navigation"}}
+      {{crumb.item "Breadcrumbs" onClick=(action "sayHello")}}
+    {{/uxs-breadcrumb}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "basic-breadcrumb.hbs"}}
+
+  {{#args-table "breadcrumb" as |table|}}
+    {{#table.row "align" as |row|}}
+      {{row.label "Align"}}
+      {{row.input align options="align-directions"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "detail" as |row|}}
+      {{row.label "Detail"}}
+      {{row.checkbox detail}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+{{/docs-demo}}

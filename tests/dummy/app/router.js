@@ -41,6 +41,7 @@ Router.map(function() {
         this.route('dogs');
         this.route('cats');
       });
+      this.route('breadcrumbs');
     })
     this.route('components', function() {
       this.route('lists');

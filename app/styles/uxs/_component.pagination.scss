@@ -3,13 +3,11 @@
   @include background-color-modifiers();
   display        : flex;
   flex-direction : row;
-  height         : rem-size($baseline*2);
-  padding        : rem-size($baseline*.5);
+  padding        : rs(0.5);
   justify-content: space-between;
   width          : 100%;
   @include mq(tablet) {
-    height : rem-size($baseline*3);
-    padding: rem-size($baseline);
+    padding: rs(.5) rs(1);
   }
 
   &__controls,
@@ -29,9 +27,9 @@
   }
 
   &__size {
-    margin     : 0 0 0 rem-size($baseline*0.5);
-    height     : rem-size($baseline);
-    line-height: rem-size($baseline);
+    @include detail-font-size;
+    margin: 0 0 0 rem-size($baseline*0.5);
+    height: rem-size($baseline);
   }
 
   &__info {

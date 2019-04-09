@@ -1,7 +1,7 @@
 .uxs-breadcrumb {
   @include text-color-modifiers();
   @include background-color-modifiers();
-  @include contrast-border-color-modifiers();
+  // @include contrast-border-color-modifiers();
   border-color  : $c-light;
   display       : flex;
   flex-direction: row;
@@ -11,22 +11,22 @@
   }
 
   &--left {
-    text-align: left;
+    justify-content: flex-start;
   }
 
   &--right {
-    text-align: right;
+    justify-content: flex-end;
   }
 
   &--center {
-    text-align: center;
+    justify-content: center;
   }
 
   &__item {
-    color         : $c-grey;
+    // color         : $c-grey;
     margin-right  : rs(1);
     position      : relative;
-    opacity       : 0.8;
+    opacity       : 0.5;
     text-transform: uppercase;
 
     &--detail {
