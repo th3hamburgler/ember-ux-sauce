@@ -54,6 +54,8 @@
   &__icon,
   &__text,
   &__title {
+    @include align-modifiers;
+    @include weight-modifiers;
     @include text-color-modifiers($prefix:'');
   }
 }
