@@ -4,10 +4,14 @@
   {{/dropdown.trigger}}
   {{#dropdown.content class="uxs-header__mobile-menu-content"}}
     {{#uxs-menu as |menu|}}
-      {{menu.link "Populated List" "app.list.index"}}
-      {{menu.link "Filtered List" "app.list.filtered"}}
-      {{menu.link "Empty List" "app.list.empty"}}
-      {{menu.link "Loading List" "app.list.loading"}}
+      {{#each routes as |item|}}
+        {{!-- Replace this with params argument--}}
+        {{#if model}}
+          {{menu.link item.title item.route model.id}}
+        {{else}}
+          {{menu.link item.title item.route}}
+        {{/if}}
+      {{/each}}
     {{/uxs-menu}}
   {{/dropdown.content}}
 {{/basic-dropdown}}

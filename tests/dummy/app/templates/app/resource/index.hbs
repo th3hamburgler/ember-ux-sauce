@@ -8,7 +8,10 @@ as |header|
     {{toolbar.spacer}}
   {{/header.toolbar}}
   {{#header.title "Person"}}
-    {{app/people-actions/mobile-list}}
+    {{app/people-actions/mobile-list
+      routes=(get-routes-for "person" "resource")
+      model=model
+    }}
   {{/header.title}}
 
 {{/uxs-header}}
@@ -28,7 +31,7 @@ as |header|
     {{/uxs-breadcrumb}}
 
 
-    {{#uxs-datalist class="p" as |list|}}
+    {{#uxs-datalist as |list|}}
       {{list.item
         label="Name"
         value=(concat model.first_name " " model.last_name)
@@ -49,8 +52,11 @@ as |header|
 
   {{/uxs-pane}}
 
-  {{#uxs-pane aside=true padded=true style="light" order=2 class="lg:pt2"}}
-    {{app/people-actions/desktop-list}}
+  {{#uxs-pane aside=true padded=true style="light" order=2 class="lg:pt2 sm:hidden sm:invisible"}}
+    {{app/people-actions/desktop-list
+      routes=(get-routes-for "person" "resource")
+      model=model
+    }}
   {{/uxs-pane}}
 
 {{/uxs-window}}

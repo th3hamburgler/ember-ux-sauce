@@ -1,5 +1,9 @@
 .uxs-datalist {
   @include text-color-modifiers($prefix:'');
+  padding: rs(0.5);
+  @include mq(tablet) {
+    padding: rs(0.5) rs(1);
+  }
 
   &__item {
     border-bottom-color: $c-light;

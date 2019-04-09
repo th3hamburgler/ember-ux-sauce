@@ -10,12 +10,14 @@ as |header|
     {{toolbar.action "file_download"}}
     {{toolbar.action "search"}}
   {{/header.toolbar}}
-  {{header.title "People"}}
+  {{#header.title "People"}}
+    {{app/people-actions/mobile-list routes=(get-routes-for "person" "index")}}
+  {{/header.title}}
 {{/uxs-header}}
 
 {{#uxs-window}}
 
-  {{#uxs-pane main=true padded=false}}
+  {{#uxs-pane main=true padded=false order=1}}
 
     {{uxs-pagination-controls
       size=25
@@ -35,8 +37,14 @@ as |header|
 
   {{/uxs-pane}}
 
-  {{#uxs-pane aside=true padded=true style="light" class="lg:pt2 sm:hidden"}}
-    {{app/people-actions/desktop-list}}
+  {{#uxs-pane
+    aside=true
+    padded=true
+    style="light"
+    order=2
+    class="lg:pt2 sm:hidden sm:invisible"
+  }}
+    {{app/people-actions/desktop-list routes=(get-routes-for "person" "index")}}
   {{/uxs-pane}}
 
 {{/uxs-window}}

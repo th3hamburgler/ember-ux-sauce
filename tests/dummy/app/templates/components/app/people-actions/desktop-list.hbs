@@ -4,8 +4,12 @@
   class="sm:invisible sm:hidden"
 as |group|
 }}
-  {{group.link "Populated List" "app.list.index"}}
-  {{group.link "Filtered List" "app.list.filtered"}}
-  {{group.link "Empty List" "app.list.empty"}}
-  {{group.link "Loading List" "app.list.loading"}}
+  {{#each routes as |item|}}
+    {{!-- Replace this with params argument--}}
+    {{#if model}}
+      {{group.link item.title item.route model.id}}
+    {{else}}
+      {{group.link item.title item.route}}
+    {{/if}}
+  {{/each}}
 {{/uxs-button-group}}

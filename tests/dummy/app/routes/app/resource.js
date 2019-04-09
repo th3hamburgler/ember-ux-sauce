@@ -179,7 +179,6 @@ export default Route.extend({
       "gender": "Male",
       "ip_address": "61.60.44.86"
     }];
-    console.log(params);
     return people[params.id];
   }
 

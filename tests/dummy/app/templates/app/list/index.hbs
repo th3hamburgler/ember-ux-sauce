@@ -11,7 +11,7 @@ as |header|
     {{toolbar.action "search"}}
   {{/header.toolbar}}
   {{#header.title "People"}}
-    {{app/people-actions/mobile-list}}
+    {{app/people-actions/mobile-list routes=(get-routes-for "person" "index")}}
   {{/header.title}}
 
 {{/uxs-header}}
@@ -38,8 +38,14 @@ as |header|
 
   {{/uxs-pane}}
 
-  {{#uxs-pane aside=true padded=true style="light" order=2 class="lg:pt2"}}
-    {{app/people-actions/desktop-list}}
+  {{#uxs-pane
+    aside=true
+    padded=true
+    style="light"
+    order=2
+    class="lg:pt2 sm:hidden sm:invisible"
+  }}
+    {{app/people-actions/desktop-list routes=(get-routes-for "person" "index")}}
   {{/uxs-pane}}
 
 {{/uxs-window}}
