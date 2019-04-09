@@ -1,3 +1,89 @@
+.invisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+@include mq(tablet) {
+  .lg\:invisible {
+    visibility: hidden;
+  }
+
+  .lg\:visible {
+    visibility: visible;
+  }
+
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:inline-block {
+    display: inline-block;
+  }
+
+  .lg\:inline {
+    display: inline;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+}
+@include mq(tablet, max) {
+  .sm\:invisible {
+    visibility: hidden;
+  }
+
+  .sm\:visible {
+    visibility: visible;
+  }
+
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:inline-block {
+    display: inline-block;
+  }
+
+  .sm\:inline {
+    display: inline;
+  }
+
+  .sm\:hidden {
+    display: none;
+  }
+
+  .sm\:flex {
+    display: flex;
+  }
+}
+
 .hidden {
   display: none!important;
 

@@ -49,10 +49,24 @@
   &__title {
     @include text-truncate;
     @include type-heading;
-    margin: rs(5) rs(1) rs(1);
-    @include mq(tablet-wide) {
+    margin  : rs(5) rs(0.5) rs(1);
+    position: relative;
+    @include mq(tablet) {
       font-size  : rem-size($s-huge);
       line-height: rem-size($baseline*2);
+      margin     : rs(5) rs(1) rs(1);
+    }
+  }
+
+  &__mobile-menu-trigger {
+    align-items    : center;
+    height         : rs(1.5);
+    top            : 0;
+    right          : 0;
+    justify-content: center;
+    position       : absolute;
+    @include mq(tablet) {
+      display: none;
     }
   }
 }

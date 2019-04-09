@@ -10,12 +10,15 @@ as |header|
     {{toolbar.action "file_download"}}
     {{toolbar.action "search"}}
   {{/header.toolbar}}
-  {{header.title "People"}}
+  {{#header.title "People"}}
+    {{app/people-actions/mobile-list}}
+  {{/header.title}}
+
 {{/uxs-header}}
 
 {{#uxs-window}}
 
-  {{#uxs-pane main=true padded=false}}
+  {{#uxs-pane main=true padded=false order=1}}
 
     {{uxs-pagination-controls
       size=25
@@ -24,20 +27,7 @@ as |header|
       style="light"
     }}
 
-    {{#uxs-list grow=true as |list|}}
-      {{#each model as |person|}}
-        {{#list.item bordered=true lines=3 as |item|}}
-          {{#item.aside}}
-            {{item.avatar-text "JW" style="dark"}}
-          {{/item.aside}}
-          {{#item.body}}
-            {{item.title (concat person.first_name " " person.last_name)}}
-            {{item.detail person.email}}
-            {{item.detail person.gender}}
-          {{/item.body}}
-        {{/list.item}}
-      {{/each}}
-    {{/uxs-list}}
+    {{app/people-list people=model}}
 
     {{uxs-pagination-controls
       size=25
@@ -48,19 +38,8 @@ as |header|
 
   {{/uxs-pane}}
 
-  {{#uxs-pane aside=true padded=true style="light" class="lg:pt3"}}
-    {{#uxs-button-group
-      align=align
-      disabled=disabled
-      inline=inline
-      mini=mini
-    as |group|
-    }}
-      {{group.link "Populated List" "app.list.index"}}
-      {{group.link "Filtered List" "app.list.filtered"}}
-      {{group.link "Empty List" "app.list.empty"}}
-      {{group.link "Loading List" "app.list.loading"}}
-    {{/uxs-button-group}}
+  {{#uxs-pane aside=true padded=true style="light" order=2 class="lg:pt3"}}
+    {{app/people-actions/desktop-list}}
   {{/uxs-pane}}
 
 {{/uxs-window}}

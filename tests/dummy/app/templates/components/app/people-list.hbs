@@ -1,0 +1,52 @@
+{{#uxs-list grow=true as |list|}}
+
+  {{#if filter}}
+
+    {{list.notice
+      "Displaying Filtered Results"
+      style="accent"
+      icon="filter_list"
+      actionText="Clear"
+    }}
+
+  {{/if}}
+
+  {{#each people as |person|}}
+
+    {{#list.item bordered=true lines=3 as |item|}}
+      {{#item.aside}}
+        {{item.avatar-text "JW" style="dark"}}
+      {{/item.aside}}
+      {{#item.body}}
+        {{item.title (concat person.first_name " " person.last_name)}}
+        {{item.detail person.email}}
+        {{item.detail person.gender}}
+      {{/item.body}}
+    {{/list.item}}
+
+  {{else if loading}}
+
+    {{#uxs-splash
+      align="center"
+      style="dark"
+    as |splash|
+    }}
+      {{splash.icon "loading" svg=true size="giant"}}
+      {{splash.title "Loading People"}}
+    {{/uxs-splash}}
+
+  {{else}}
+
+    {{#uxs-splash
+      align="center"
+      style="dark"
+    as |splash|
+    }}
+      {{splash.icon "hourglass_empty"}}
+      {{splash.title "No People"}}
+      {{splash.text "It seems you don't have any people right now, hit the + button to start adding." align="center"}}
+    {{/uxs-splash}}
+
+  {{/each}}
+
+{{/uxs-list}}

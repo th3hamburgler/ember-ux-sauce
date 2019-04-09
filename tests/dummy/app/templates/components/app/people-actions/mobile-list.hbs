@@ -1,0 +1,13 @@
+{{#basic-dropdown class="uxs-header__mobile-menu" as |dropdown|}}
+  {{#dropdown.trigger class="uxs-header__mobile-menu-trigger"}}
+    {{uxs-icon "more_vert" style="white"}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content class="uxs-header__mobile-menu-content"}}
+    {{#uxs-menu as |menu|}}
+      {{menu.link "Populated List" "app.list.index"}}
+      {{menu.link "Filtered List" "app.list.filtered"}}
+      {{menu.link "Empty List" "app.list.empty"}}
+      {{menu.link "Loading List" "app.list.loading"}}
+    {{/uxs-menu}}
+  {{/dropdown.content}}
+{{/basic-dropdown}}

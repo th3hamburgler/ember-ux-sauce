@@ -24,18 +24,7 @@ as |header|
       style="light"
     }}
 
-    {{#uxs-list grow=true}}
-
-      {{#uxs-splash
-        align="center"
-        style="dark"
-      as |splash|
-      }}
-        {{splash.icon "loading" svg=true size="giant"}}
-        {{splash.title "Loading People"}}
-      {{/uxs-splash}}
-
-    {{/uxs-list}}
+    {{app/people-list loading=true}}
 
     {{uxs-pagination-controls
       size=25
@@ -47,19 +36,7 @@ as |header|
   {{/uxs-pane}}
 
   {{#uxs-pane aside=true padded=true style="light" class="lg:pt3"}}
-
-    {{#uxs-button-group
-      align=align
-      disabled=disabled
-      inline=inline
-      mini=mini
-    as |group|
-    }}
-      {{group.link "Populated List" "app.list.index"}}
-      {{group.link "Filtered List" "app.list.filtered"}}
-      {{group.link "Empty List" "app.list.empty"}}
-      {{group.link "Loading List" "app.list.loading"}}
-    {{/uxs-button-group}}
+    {{app/people-actions/desktop-list}}
   {{/uxs-pane}}
 
 {{/uxs-window}}

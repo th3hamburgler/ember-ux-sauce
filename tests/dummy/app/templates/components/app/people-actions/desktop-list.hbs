@@ -1,0 +1,11 @@
+{{!-- This button group is hidden on small devices --}}
+{{#uxs-button-group
+  align="center"
+  class="sm:invisible sm:hidden"
+as |group|
+}}
+  {{group.link "Populated List" "app.list.index"}}
+  {{group.link "Filtered List" "app.list.filtered"}}
+  {{group.link "Empty List" "app.list.empty"}}
+  {{group.link "Loading List" "app.list.loading"}}
+{{/uxs-button-group}}
