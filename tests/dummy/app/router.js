@@ -92,9 +92,18 @@ Router.map(function() {
     this.route('triple');
     this.route('complex');
     this.route('list', function() {
+      // index
       this.route('empty');
       this.route('filtered');
       this.route('loading');
+    });
+    this.route('resource', {
+      path: 'resource/:id'
+    }, function() {
+      // index
+      this.route('edit');
+      this.route('related');
+      this.route('archive');
     });
 
   });

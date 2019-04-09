@@ -1,0 +1,53 @@
+.uxs-breadcrumb {
+  @include text-color-modifiers();
+  @include background-color-modifiers();
+  @include contrast-border-color-modifiers();
+  border-color  : $c-light;
+  display       : flex;
+  flex-direction: row;
+  padding       : rs(0.5);
+  @include mq(tablet) {
+    padding: rs(0.5) rs(1);
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &__item {
+    color         : $c-grey;
+    margin-right  : rs(1);
+    position      : relative;
+    opacity       : 0.8;
+    text-transform: uppercase;
+
+    &--detail {
+      @include detail-font-size;
+    }
+
+    &:after {
+      content   : '/';
+      position  : absolute;
+      text-align: center;
+      top       : 0;
+      right     : rs(-1);
+      width     : rs(1);
+    }
+
+    &:last-child {
+      opacity: 1;
+
+      &:after {
+        content: '';
+      }
+    }
+  }
+}

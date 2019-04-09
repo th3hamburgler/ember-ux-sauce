@@ -13,7 +13,13 @@
 
   {{#each people as |person|}}
 
-    {{#list.item bordered=true lines=3 as |item|}}
+    {{#list.item-link
+      "app.resource.index"
+      person
+      bordered=true
+      lines=3
+    as |item|
+    }}
       {{#item.aside}}
         {{item.avatar-text "JW" style="dark"}}
       {{/item.aside}}
@@ -22,7 +28,7 @@
         {{item.detail person.email}}
         {{item.detail person.gender}}
       {{/item.body}}
-    {{/list.item}}
+    {{/list.item-link}}
 
   {{else if loading}}
 

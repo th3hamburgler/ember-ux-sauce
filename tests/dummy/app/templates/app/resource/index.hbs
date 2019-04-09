@@ -1,0 +1,44 @@
+{{#uxs-header
+  image="https://placeimg.com/2560/1600/any/grayscale"
+  style="dark on-light"
+as |header|
+}}
+  {{#header.toolbar as |toolbar|}}
+    {{toolbar.back "arrow_back"}}
+    {{toolbar.spacer}}
+  {{/header.toolbar}}
+  {{#header.title "Person"}}
+    {{app/people-actions/mobile-list}}
+  {{/header.title}}
+
+{{/uxs-header}}
+
+{{#uxs-window}}
+
+  {{#uxs-pane main=true padded=false order=1}}
+
+    {{#uxs-breadcrumb
+      style="light"
+      detail=true
+    as |crumb|
+    }}
+      {{crumb.link "App" "app.dash"}}
+      {{crumb.link "People" "app.list.index"}}
+      {{crumb.item (concat model.first_name " " model.last_name)}}
+    {{/uxs-breadcrumb}}
+
+
+    {{#uxs-datalist class="p" as |list|}}
+      {{list.item
+        label="Name"
+        value=(concat model.first_name " " model.last_name)
+      }}
+    {{/uxs-datalist}}
+
+  {{/uxs-pane}}
+
+  {{#uxs-pane aside=true padded=true style="light" order=2 class="lg:pt2"}}
+    {{app/people-actions/desktop-list}}
+  {{/uxs-pane}}
+
+{{/uxs-window}}
