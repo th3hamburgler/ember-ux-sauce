@@ -40,6 +40,15 @@ const FormTip = Component.extend(Buttonable, Clickable, {
    */
   style: null,
   /**
+    Set to true to use an svg icon
+
+    @argument svg
+    @type     Boolean
+    @default  false
+    @public
+   */
+  svg: false,
+  /**
     Set to true to disable this component.
 
     This will activate it's disabled style and also prevent any actions from being fired and links working.

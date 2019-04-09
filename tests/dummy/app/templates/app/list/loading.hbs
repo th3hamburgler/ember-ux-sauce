@@ -19,8 +19,8 @@ as |header|
 
     {{uxs-pagination-controls
       size=25
-      page=1
-      total=0
+      page=null
+      total=null
       style="light"
     }}
 
@@ -31,17 +31,16 @@ as |header|
         style="dark"
       as |splash|
       }}
-        {{splash.icon "hourglass_empty"}}
-        {{splash.title "No People"}}
-        {{splash.text "It seems you don't have any people right now, hit the + button to start adding." align="center"}}
+        {{splash.icon "loading" svg=true size="giant"}}
+        {{splash.title "Loading People"}}
       {{/uxs-splash}}
 
     {{/uxs-list}}
 
     {{uxs-pagination-controls
       size=25
-      page=1
-      total=0
+      page=null
+      total=null
       style="light"
     }}
 

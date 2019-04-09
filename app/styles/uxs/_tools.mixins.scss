@@ -148,6 +148,15 @@
     }
   }
 }
+@mixin fill-color-modifiers($colors:$defaultColors, $prefix:'') {
+  @each $modifier, $color in $colors {
+    &--#{$prefix}#{$modifier} {
+      path {
+        fill: $color;
+      }
+    }
+  }
+}
 @mixin border-color-modifiers($colors:$defaultColors) {
   @each $modifier, $color in $colors {
     &--#{$modifier} {

@@ -61,4 +61,14 @@
       }
     }
   }
+
+  &__svg {
+    @include fill-color-modifiers;
+    @each $modifier, $size in $sizes {
+      &--#{$modifier} {
+        height: rem-size($size);
+        width : rem-size($size);
+      }
+    }
+  }
 }

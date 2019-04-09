@@ -23,13 +23,7 @@
   }
 
   &__icon {
-    $size      : rs(6);
-    @extend .uxs-icon;
-    color      : $c-grey;
-    margin     : 0 0 rs(0.5);
-    font-size  : $size;
-    line-height: $size;
-    width      : $size;
+    margin: 0 0 rs(0.5);
   }
 
   &__title {

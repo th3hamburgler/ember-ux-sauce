@@ -16,6 +16,16 @@ You can pass action closures to icons
 
 {{docs/uxs-icon/action-demo}}
 
+## SVG Icons
+
+The default source of icons is from googles font library. If you prefer you can use your own svg icons. UXS uses [ember-svg-jar](https://github.com/ivanvotti/ember-svg-jar) to manage svg assets.
+
+Just add the svg files to your public directory and visit the development server at _/ember-svg-jar/index.html_.
+
+To use svg icons set the _svg_ attribute to true and pass the path to the image as the first parameter
+
+{{docs/uxs-icon/svg-demo}}
+
 ## Testable Elements
 
 This component provides the following test selectors.
