@@ -8,6 +8,7 @@ import {
 
 export default Component.extend({
   layout,
+  style: 'dark',
   items: computed('routes', 'model.id', function() {
     const items = [],
       routes = get(this, 'routes'),
@@ -16,9 +17,10 @@ export default Component.extend({
     routes.forEach((route) => {
       const title = get(route, 'title'),
         routeName = get(route, 'route'),
-        queryParams = get(route, 'queryParams');
+        queryParams = get(route, 'queryParams'),
+        item = linkToParams(title, routeName, modelId, queryParams);
 
-      items.push(linkToParams(title, routeName, modelId, queryParams));
+      items.push(item);
     });
 
     return items;

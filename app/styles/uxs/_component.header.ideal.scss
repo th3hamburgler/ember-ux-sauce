@@ -21,10 +21,13 @@
   }
 
   &__body {
-    // @include background-color-modifiers($opacity:0.9);
-    background                : linear-gradient(180deg, rgba($c-dark,1) 0%, rgba($c-dark,1) 50px, rgba($c-dark,0.5) 100%);
     border-bottom-left-radius : 50% 25px;
     border-bottom-right-radius: 50% 25px;
+    @each $modifier, $color in $defaultColors {
+      &--#{$modifier} {
+        background: linear-gradient(180deg, rgba($color,1) 0%, rgba($color,1) 50px, rgba($color,0.5) 100%);
+      }
+    }
 
     &--with-image {}
   }

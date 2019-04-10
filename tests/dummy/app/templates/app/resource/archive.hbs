@@ -1,6 +1,6 @@
 {{#uxs-header
   image="https://placeimg.com/2560/1600/any/grayscale"
-  style="dark on-light"
+  style="error on-light"
 as |header|
 }}
   {{#header.toolbar as |toolbar|}}
@@ -41,7 +41,10 @@ as |header|
   {{/uxs-pane}}
 
   {{#uxs-pane aside=true padded=true style="light" order=2 class="lg:pt2 sm:hidden sm:invisible"}}
-    {{uxs-action-menu/desktop routes=(get-routes-for "person" "resource")}}
+    {{uxs-action-menu/desktop
+      routes=(get-routes-for "person" "resource")
+      style="error"
+    }}
   {{/uxs-pane}}
 
 {{/uxs-window}}
