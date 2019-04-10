@@ -27,25 +27,36 @@ as |header|
       {{crumb.item (concat "View " model.first_name " " model.last_name)}}
     {{/uxs-breadcrumb}}
 
+    {{#uxs-window}}
 
-    {{#uxs-datalist as |list|}}
-      {{list.item
-        label="Name"
-        value=(concat model.first_name " " model.last_name)
+      {{#uxs-pane
+        split=true
+        order=2
+        style="archive-form"
       }}
-      {{list.item
-        label="Email"
-        value=model.email
+        {{app/people-details model=model}}
+
+      {{/uxs-pane}}
+
+      {{#uxs-pane
+        padding=true
+        split=true
+        order=1
       }}
-      {{list.item
-        label="Gender"
-        value=model.gender
-      }}
-      {{list.item
-        label="IP Address"
-        value=model.ip_address
-      }}
-    {{/uxs-datalist}}
+
+        {{#uxs-callout as |callout|}}
+          {{callout.icon "info"}}
+          {{callout.title "Activate Account"}}
+          {{#callout.text}}
+            An invitation email was sent to {{model.email}} with an activation link.
+            This account needs to be activated
+          {{/callout.text}}
+          {{callout.button "Resend Email"}}
+        {{/uxs-callout}}
+
+      {{/uxs-pane}}
+
+    {{/uxs-window}}
 
   {{/uxs-pane}}
 

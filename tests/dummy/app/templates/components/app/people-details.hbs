@@ -1,0 +1,18 @@
+{{#uxs-datalist as |list|}}
+  {{list.item
+    label="Name"
+    value=(concat model.first_name " " model.last_name)
+  }}
+  {{list.item
+    label="Email"
+    value=model.email
+  }}
+  {{list.item
+    label="Gender"
+    value=model.gender
+  }}
+  {{list.item
+    label="IP Address"
+    value=model.ip_address
+  }}
+{{/uxs-datalist}}

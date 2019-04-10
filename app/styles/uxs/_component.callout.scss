@@ -1,0 +1,29 @@
+.uxs-callout {
+  @include background-color-modifiers;
+  display       : flex;
+  flex-direction: column;
+  margin        : rs(0.5);
+  padding       : rs(0.5);
+  max-width     : rs(13);
+  @include mq(tablet) {
+    margin : rs(1);
+    padding: rs(1);
+  }
+
+  &--left {
+    align-items: flex-start;
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--right {
+    align-items: flex-end;
+  }
+  // border-bottom-left-radius : 50% rs(0.5);
+  // border-bottom-right-radius: 50% rs(0.5);
+  *:last-child {
+    margin-bottom: 0;
+  }
+}

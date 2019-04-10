@@ -1,0 +1,28 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="basic-callout.hbs"}}
+
+    {{#uxs-callout align=align style=style as |callout|}}
+      {{callout.icon "inbox"}}
+      {{callout.title "Confirm Email Address"}}
+      {{callout.text "You have not yet confirmed your email address. You will need to activate it before you can access all features of this app."}}
+      {{callout.button "Resend Activation Email"}}
+    {{/uxs-callout}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "basic-callout.hbs"}}
+
+  {{#args-table "tabs" as |table|}}
+    {{#table.row "align" as |row|}}
+      {{row.label "Align"}}
+      {{row.input align options="align-directions"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+{{/docs-demo}}
