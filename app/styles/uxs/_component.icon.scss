@@ -1,6 +1,6 @@
 .uxs-icon {
   @include transition-all;
-  @extend .material-icons;
+  @include material-icon;
   cursor    : pointer;
   position  : relative;
   text-align: center;

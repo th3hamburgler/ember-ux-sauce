@@ -7,7 +7,7 @@ as |header|
     {{toolbar.back "arrow_back"}}
     {{toolbar.spacer}}
   {{/header.toolbar}}
-  {{#header.title "View Person"}}
+  {{#header.title "Archive Person"}}
     {{uxs-action-menu/mobile routes=(get-routes-for "person" "resource")}}
   {{/header.title}}
 
@@ -24,28 +24,19 @@ as |header|
     }}
       {{crumb.link "App" "app.dash"}}
       {{crumb.link "People" "app.list.index"}}
-      {{crumb.item (concat "View " model.first_name " " model.last_name)}}
+      {{crumb.item (concat "Archive " model.first_name " " model.last_name)}}
     {{/uxs-breadcrumb}}
 
+    {{#uxs-archive-form
+      model=model
+      cancelRoute="app.resource.index"
+    }}
 
-    {{#uxs-datalist as |list|}}
-      {{list.item
-        label="Name"
-        value=(concat model.first_name " " model.last_name)
-      }}
-      {{list.item
-        label="Email"
-        value=model.email
-      }}
-      {{list.item
-        label="Gender"
-        value=model.gender
-      }}
-      {{list.item
-        label="IP Address"
-        value=model.ip_address
-      }}
-    {{/uxs-datalist}}
+      {{#uxs-content}}This will archive the Person: <b>{{concat model.first_name " " model.last_name}}</b>.{{/uxs-content}}
+
+      {{#uxs-content}}This person will no longer appear in the system. All data will be archived and require a manual process to restore.{{/uxs-content}}
+
+    {{/uxs-archive-form}}
 
   {{/uxs-pane}}
 

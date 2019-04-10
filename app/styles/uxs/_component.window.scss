@@ -133,3 +133,29 @@
     }
   }
 }
+// Archive form overrides
+
+.uxs-window {
+  &__pane {
+    &--archive-form {}
+
+    &--archive-icon {
+      align-items    : center;
+      justify-content: flex-start;
+      flex           : none;
+      padding        : rs(1);
+      @include mq(tablet) {
+        flex   : 1 1 1 auto;
+        padding: rs(2) rs(0);
+      }
+    }
+  }
+}
+
+.uxs-icon {
+  &--archive-icon {
+    font-size  : rs(6);
+    line-height: rs(6);
+    width      : rs(6);
+  }
+}
