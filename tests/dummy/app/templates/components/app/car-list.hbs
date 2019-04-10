@@ -1,0 +1,58 @@
+{{#uxs-list grow=true as |list|}}
+
+  {{#if filter}}
+
+    {{list.notice
+      "Displaying Filtered Results"
+      style="accent"
+      icon="filter_list"
+      actionText="Clear"
+    }}
+
+  {{/if}}
+
+  {{#each cars as |car|}}
+
+    {{#list.item-link
+      "app.resource.index"
+      car
+      bordered=true
+      lines=3
+    as |item|
+    }}
+      {{#item.aside}}
+        {{item.avatar-text car.year style="dark"}}
+      {{/item.aside}}
+      {{#item.body}}
+        {{item.title (concat car.make " " car.model)}}
+        {{item.detail car.vin}}
+        {{item.detail car.color}}
+      {{/item.body}}
+    {{/list.item-link}}
+
+  {{else if loading}}
+
+    {{#uxs-splash
+      align="center"
+      style="dark"
+    as |splash|
+    }}
+      {{splash.icon "loading" svg=true size="giant"}}
+      {{splash.title "Loading Cars"}}
+    {{/uxs-splash}}
+
+  {{else}}
+
+    {{#uxs-splash
+      align="center"
+      style="dark"
+    as |splash|
+    }}
+      {{splash.icon "hourglass_empty"}}
+      {{splash.title "No Cars"}}
+      {{splash.text "It seems you don't have any cars right now, hit the + button to start adding." align="center"}}
+    {{/uxs-splash}}
+
+  {{/each}}
+
+{{/uxs-list}}

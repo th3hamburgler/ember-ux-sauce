@@ -1,0 +1,52 @@
+{{#uxs-header
+  image="https://placeimg.com/2560/1600/any/grayscale"
+  style="dark on-light"
+as |header|
+}}
+  {{#header.toolbar as |toolbar|}}
+    {{toolbar.back "arrow_back"}}
+    {{toolbar.spacer}}
+  {{/header.toolbar}}
+  {{#header.title "Persons Cars"}}
+    {{uxs-action-menu/mobile routes=(get-routes-for "person" "resource")}}
+  {{/header.title}}
+
+{{/uxs-header}}
+
+{{#uxs-window}}
+
+  {{#uxs-pane main=true padded=false order=1}}
+
+    {{#uxs-breadcrumb
+      style="light"
+      detail=true
+    as |crumb|
+    }}
+      {{crumb.link "App" "app.dash"}}
+      {{crumb.link "People" "app.list.index"}}
+      {{crumb.item (concat person.first_name " " person.last_name " Cars")}}
+    {{/uxs-breadcrumb}}
+
+    {{uxs-pagination-controls
+      size=25
+      page=1
+      total=50
+      style="white"
+    }}
+
+    {{app/car-list cars=cars}}
+
+    {{uxs-pagination-controls
+      size=25
+      page=1
+      total=50
+      style="light"
+    }}
+
+  {{/uxs-pane}}
+
+  {{#uxs-pane aside=true padded=true style="light" order=2 class="lg:pt2 sm:hidden sm:invisible"}}
+    {{uxs-action-menu/desktop routes=(get-routes-for "person" "resource")}}
+  {{/uxs-pane}}
+
+{{/uxs-window}}
