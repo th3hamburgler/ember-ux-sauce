@@ -54,6 +54,7 @@ export default Component.extend(BEMComponent, Testable, {
       'compact',
       '*style',
       '*size',
+      'rowControl:row-control',
     ]);
     this._super(...arguments);
     this.initValidator();

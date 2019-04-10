@@ -33,6 +33,18 @@
       }
     }
 
+    &--row-control {
+      flex        : 1 1 auto;
+      margin-right: rs(.5);
+      @include mq(tablet) {
+        margin-right: rs(1);
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
     &--compact {
       min-height: 0;
     }
@@ -49,6 +61,7 @@
   &__label {
     @include label;
     margin-bottom: rem-size($baseline*0.5);
+    min-height   : rs(1);
   }
 
   &__input {

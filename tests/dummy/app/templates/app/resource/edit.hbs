@@ -29,16 +29,21 @@ as |header|
 
 
     {{#uxs-form model=model as |form|}}
-      {{form.control
-        label="First Name"
-        name="first_name"
-        type="text"
-      }}
-      {{form.control
-        label="Last Name"
-        name="last_name"
-        type="text"
-      }}
+
+      {{#form.row as |row|}}
+        {{row.control
+          label="Name"
+          name="first_name"
+          type="text"
+        }}
+        {{row.control
+          hasLabel=true
+          label=""
+          name="last_name"
+          type="text"
+        }}
+      {{/form.row}}
+
       {{form.control
         label="Email"
         name="email"
@@ -54,6 +59,9 @@ as |header|
         name="ip_address"
         type="text"
       }}
+      {{form.submit "Save" style="primary"}}
+      {{form.link "Cancel" "app.resource.index" model.id}}
+
     {{/uxs-form}}
 
   {{/uxs-pane}}

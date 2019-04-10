@@ -1,6 +1,17 @@
 {{yield
   (
     hash
+
+    control=(
+      component
+      "uxs-form-control"
+      model=model
+      disabled=disabled
+      name=name
+      validateOnFocus=validateOnFocus
+      style=style
+      rowControl=true
+    )
     label=(
       component
       "uxs-form-label"
