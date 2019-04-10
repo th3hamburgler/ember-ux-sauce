@@ -21,9 +21,11 @@
   &--right {
     align-items: flex-end;
   }
-  // border-bottom-left-radius : 50% rs(0.5);
-  // border-bottom-right-radius: 50% rs(0.5);
+
   *:last-child {
     margin-bottom: 0;
   }
 }
+// Include theme partial to theme up
+$path: import-theme-partial('callout');
+@import "component.callout.ideal";
