@@ -13,31 +13,27 @@ as |header|
 
   {{#uxs-pane full=true padded=true style="dashboard"}}
 
-    <div class="uxs-tiles__group">
-      <div class="uxs-tiles__item uxs-tiles__item--medium"></div>
-      <div class="uxs-tiles__item uxs-tiles__item--medium"></div>
-      <div class="uxs-tiles__item uxs-tiles__item--medium"></div>
-    </div>
+    {{#uxs-tiles size="medium" style="light" as |row|}}
+      {{row.tile}}
+      {{row.tile}}
+      {{row.tile}}
+    {{/uxs-tiles}}
 
-    <div class="uxs-tiles__group uxs-tiles__group--scroll">
-      <div class="uxs-tiles__group-scroll">
-        <div class="uxs-tiles__item uxs-tiles__item--small"></div>
-        <div class="uxs-tiles__item uxs-tiles__item--small"></div>
-        <div class="uxs-tiles__item uxs-tiles__item--small"></div>
-        <div class="uxs-tiles__item uxs-tiles__item--small"></div>
-        <div class="uxs-tiles__item uxs-tiles__item--small"></div>
-        <div class="uxs-tiles__item uxs-tiles__item--small"></div>
-        <div class="uxs-tiles__item uxs-tiles__item--small"></div>
-        <div class="uxs-tiles__item uxs-tiles__item--small"></div>
-        <div class="uxs-tiles__item uxs-tiles__item--small"></div>
-      </div>
-    </div>
+    {{#uxs-tiles size="small" style="light" as |row|}}
+      {{row.tile}}
+      {{row.tile}}
+      {{row.tile}}
+      {{row.tile}}
+      {{row.tile}}
+      {{row.tile}}
+      {{row.tile}}
+      {{row.tile}}
+    {{/uxs-tiles}}
 
-    <div class="uxs-tiles__group">
-      <div class="uxs-tiles__item uxs-tiles__item--large"></div>
-      <div class="uxs-tiles__item uxs-tiles__item--large"></div>
-      <div class="uxs-tiles__item uxs-tiles__item--large"></div>
-    </div>
+    {{#uxs-tiles size="large" style="light" as |row|}}
+      {{row.tile}}
+      {{row.tile}}
+    {{/uxs-tiles}}
 
   {{/uxs-pane}}
 

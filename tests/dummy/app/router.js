@@ -110,7 +110,6 @@ Router.map(function() {
     });
 
   });
-  this.route('test');
   this.route('not-found', {
     path: '/*path'
   });

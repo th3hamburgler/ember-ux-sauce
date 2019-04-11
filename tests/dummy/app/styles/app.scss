@@ -51,23 +51,3 @@ body.ember-tether-enabled {
 body > .ember-view {
   margin-top: 0;
 }
-
-.scrolling-wrapper-flexbox {
-  display   : flex;
-  flex-wrap : nowrap;
-  overflow-x: auto;
-  padding   : 0 rs(0.5);
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  .card {
-    background: hotpink;
-    flex      : 0 0 auto;
-    padding   : rs(0.5);
-    height    : rs(6);
-    width     : rs(6);
-    margin    : rs(1) rs(0.5);
-  }
-}

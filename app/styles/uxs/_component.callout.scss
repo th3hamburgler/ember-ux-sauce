@@ -4,7 +4,7 @@
   flex-direction: column;
   margin        : rs(0.5);
   padding       : rs(0.5);
-  max-width     : rs(13);
+  max-width     : rs(15);
   @include mq(tablet) {
     margin : rs(1);
     padding: rs(1);
