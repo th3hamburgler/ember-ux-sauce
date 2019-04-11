@@ -10,6 +10,7 @@ const Router = AddonDocsRouter.extend({
 
 Router.map(function() {
   docsRoute(this, function() {
+
     this.route('patterns');
     this.route('quickstart');
     this.route('settings', function() {
@@ -109,7 +110,7 @@ Router.map(function() {
     });
 
   });
-
+  this.route('test');
   this.route('not-found', {
     path: '/*path'
   });
