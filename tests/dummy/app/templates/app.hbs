@@ -3,6 +3,8 @@
   {{#uxs-app fixedNav=true}}
 
     {{#uxs-navbar fixed=true style="dark" name="App Demo" as |bar|}}
+      {{bar.logo "sauce-logo.desktop" class="sm:hidden sm:invisible"}}
+      {{bar.logo "sauce-logo.mobile" class="lg:hidden lg:invisible"}}
       {{#bar.desktopNav as |nav|}}
         {{#nav.menu detail=true align="right" as |menu|}}
           {{menu.link "Docs" "docs" rightIcon="book"}}

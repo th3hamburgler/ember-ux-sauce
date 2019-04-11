@@ -38,7 +38,7 @@
   }
 
   &__logo {
-    @include type-content;
+    // @include type-content;
     line-height: rem-size($baseline*2);
     flex       : 1 1 auto;
     margin     : 0 rem-size($baseline*2) 0 0;
@@ -47,6 +47,16 @@
     @include mq(tablet) {
       flex  : none;
       margin: 0 rem-size($baseline*0.5);
+    }
+    height     : rs(2);
+    text-align : center;
+
+    &-svg {
+      height: 100%;
+    }
+
+    &-img {
+      height: 100%;
     }
 
     &:hover {

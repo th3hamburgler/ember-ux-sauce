@@ -1,0 +1,5 @@
+{{#if svg}}
+  {{svg-jar path class=(bem "uxs-navbar" "logo-svg" m)}}
+{{else}}
+  <img src={{path}} class={{bem "uxs-navbar" "logo-img" m}} alt={{alt}}>
+{{/if}}
