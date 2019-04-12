@@ -1,4 +1,10 @@
 .uxs-header {
+  @each $modifier, $color in $defaultColors {
+    &--#{$modifier} {
+      color: contrast-color($color);
+    }
+  }
+
   &--on-white {
     background-color: $c-white;
   }

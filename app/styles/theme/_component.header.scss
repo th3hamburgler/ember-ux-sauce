@@ -1,4 +1,6 @@
 .uxs-header {
+  @include background-color-modifiers();
+
   &__image {}
 
   &__body {

@@ -34,6 +34,7 @@ body.ember-tether-enabled {
   @import 'uxs/include.trumps';
   @import 'uxs/include.vendor';
   @include content-font-size;
+  @import "theme/include.theme";
 }
 
 .ember-application {

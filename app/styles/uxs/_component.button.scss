@@ -142,6 +142,3 @@
     background-color: transparent;
   }
 }
-// Include theme partial to theme up
-$path: import-theme-partial('button');
-@import "component.button.ideal";

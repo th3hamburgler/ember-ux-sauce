@@ -99,6 +99,3 @@
     cursor    : pointer;
   }
 }
-// Include theme partial to theme up
-$path: import-theme-partial('navbar');
-@import "component.navbar.ideal";

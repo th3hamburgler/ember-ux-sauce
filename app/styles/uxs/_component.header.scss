@@ -3,7 +3,6 @@
   overflow  : auto;
   position  : relative;
   width     : 100%;
-  @include background-color-modifiers();
 
   &__image {
     @include background-color-modifiers();
@@ -70,6 +69,3 @@
     }
   }
 }
-// Include theme partial to theme up
-$path: import-theme-partial('header');
-@import "component.header.ideal";
