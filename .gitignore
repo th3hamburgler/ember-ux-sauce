@@ -23,3 +23,7 @@ MODULE_REPORT.md
 /bower.json.ember-try
 /package.json.ember-try
 scratch.md
+
+
+# ignore test theme files
+/tests/dummy/app/styles/theme/*
