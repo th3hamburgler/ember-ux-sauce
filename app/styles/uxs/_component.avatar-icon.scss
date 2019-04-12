@@ -1,7 +1,5 @@
 .uxs-icon-avatar {
-  @extend .material-icons;
-  @include contrast-background-color-modifiers();
-  @include background-color-modifiers();
+  @include material-icon;
   $size      : rem-size($baseline*2);
   align-items: center;
   display    : block;
@@ -10,18 +8,11 @@
   text-align : center;
   width      : $size;
 
-  &--rounded {
-    border-radius: 100%;
-  }
+  &--rounded {}
 
-  &--border {
-    border: rem-size(1px) solid $c-light;
-    @include border-color-modifiers();
-  }
+  &--border {}
 
-  &--selected {
-    background-color: $c-accent;
-  }
+  &--selected {}
 
   &--small {
     $size      : rem-size($baseline*1);

@@ -1,4 +1,4 @@
-.uxs-text-avatar {
+.uxs-icon-avatar {
   @include contrast-background-color-modifiers();
   @include background-color-modifiers();
 
@@ -9,5 +9,9 @@
   &--border {
     border: rem-size(1px) solid $c-light;
     @include border-color-modifiers();
+  }
+
+  &--selected {
+    background-color: $c-accent;
   }
 }

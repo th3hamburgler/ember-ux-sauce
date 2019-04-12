@@ -1,6 +1,4 @@
 .uxs-text-avatar {
-  @include contrast-background-color-modifiers();
-  @include background-color-modifiers();
   $size          : rem-size($baseline*2);
   align-items    : center;
   display        : flex;
@@ -10,14 +8,9 @@
   line-height    : $size;
   width          : $size;
 
-  &--rounded {
-    border-radius: 100%;
-  }
+  &--rounded {}
 
-  &--border {
-    border: rem-size(1px) solid $c-light;
-    @include border-color-modifiers();
-  }
+  &--border {}
 
   &--small {
     $size      : rem-size($baseline*1);
