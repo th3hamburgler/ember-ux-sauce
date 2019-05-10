@@ -7,8 +7,11 @@ import {
 } from '@ember/object';
 
 export default Component.extend({
+  // Attributes
   layout,
-  items: computed('routes', 'model.id', function() {
+  loading: false,
+  // Computed
+  items: computed('routes', 'model.id', 'loading', function() {
     const items = [],
       routes = get(this, 'routes'),
       modelId = get(this, 'model.id');
@@ -16,9 +19,14 @@ export default Component.extend({
     routes.forEach((route) => {
       const title = get(route, 'title'),
         routeName = get(route, 'route'),
-        queryParams = get(route, 'queryParams');
+        queryParams = get(route, 'queryParams'),
+        params = linkToParams(title, routeName, modelId, queryParams);
 
-      items.push(linkToParams(title, routeName, modelId, queryParams));
+      items.push({
+        params,
+        disabled: route.disabled,
+        currentWhen: (route.currentWhen ? route.currentWhen : routeName)
+      });
     });
 
     return items;

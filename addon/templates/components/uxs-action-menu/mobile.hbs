@@ -5,9 +5,19 @@
   {{/dropdown.trigger}}
   {{#dropdown.content class="uxs-header__mobile-menu-content"}}
     {{#uxs-menu as |menu|}}
-      {{#each items as |params|}}
-        {{menu.link params=params}}
-      {{/each}}
+      {{#if loading}}
+        {{#each items as |item|}}
+          {{menu.item item.params.firstObject disabled=true}}
+        {{/each}}
+      {{else}}
+        {{#each items as |item|}}
+          {{menu.link
+            params=item.params
+            disabled=item.disabled
+            currentWhen=item.currentWhen
+          }}
+        {{/each}}
+      {{/if}}
     {{/uxs-menu}}
   {{/dropdown.content}}
 {{/basic-dropdown}}
