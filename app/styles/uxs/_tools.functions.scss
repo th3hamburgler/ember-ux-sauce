@@ -19,14 +19,31 @@
  * Convert pixels into rems
  * e.g. 160px = 10rem
  *
- * @param  {string}   $pixels description
- * @return {string}           description
+ * @param  {string}   $pixels Pixel amount to convert to rems
+ * @return {string}           Rem units
  */
 @function rem-size($pixels) {
   $value   : strip-unit($pixels);
   $remValue: ($value/16);
   @return #{$remValue}rem;
 }
+/**
+ * rs
+ * ---
+ * Take a grid number and convert to equivalent rem size
+ * e.g.
+ *   baseline = 8px (0.5rem)
+ *   rs(4)    = 32px (2rem)
+ *
+ * Second param can be used to modify size by pixel amount.
+ * e.g. to take into account for a 1px top and bottom border
+ * you would do:
+ *   rs(4, 2) = 30px (1.875rem)
+ *
+ * @param  {string}   $ratio  Amount of grid items to size to
+ * @param  {string}   $mod    Modifier pixel amount (by defult this is subtracted from the returned value)
+ * @return {string}
+ */
 @function rs($ratio, $mod:0) {
   @return rem-size(($ratio*$baseline)-$mod);
 }
