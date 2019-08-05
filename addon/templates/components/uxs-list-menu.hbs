@@ -1,0 +1,17 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger eventType="click"}}
+    {{uxs-icon "more_vert" style="gray"}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content class="uxs-ns"}}
+    {{#uxs-menu hasRightIcon=true as |menu|}}
+      {{#each items as |item|}}
+        {{menu.link
+          params=item.params
+          style=style
+          disabled=item.disabled
+          currentWhen=item.currentWhen
+        }}
+      {{/each}}
+    {{/uxs-menu}}
+  {{/dropdown.content}}
+{{/basic-dropdown}}

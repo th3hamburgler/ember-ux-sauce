@@ -13,22 +13,26 @@
 
   {{#each people as |person|}}
 
-    {{#list.item-link
-      "app.resource.index"
-      person
+    {{#list.item
       bordered=true
       lines=3
     as |item|
     }}
-      {{#item.aside}}
+      {{#item.aside-link "app.resource.index" person}}
         {{item.avatar-text "JW" style="dark"}}
-      {{/item.aside}}
-      {{#item.body}}
+      {{/item.aside-link}}
+      {{#item.body-link "app.resource.index" person}}
         {{item.title (concat person.first_name " " person.last_name)}}
         {{item.detail person.email}}
         {{item.detail person.gender}}
-      {{/item.body}}
-    {{/list.item-link}}
+      {{/item.body-link}}
+      {{#item.aside}}
+        {{uxs-list-menu
+          routes=(get-routes-for "person" "resource")
+          model=person
+        }}
+      {{/item.aside}}
+    {{/list.item}}
 
   {{else if loading}}
 

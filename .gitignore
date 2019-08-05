@@ -27,3 +27,4 @@ scratch.md
 
 # ignore test theme files
 /tests/dummy/app/styles/theme/*
+/tests/dummy/app/styles/*theme/*
