@@ -1,0 +1,29 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger}}
+    {{uxs-icon icon style='white'}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content class="uxs-ns"}}
+    {{#uxs-menu hasRightIcon=true as |menu|}}
+      {{menu.subheading subheading}}
+      {{#each options as |option|}}
+        {{menu.item
+          option.label
+          onClick=(action "onItemSelect" option.value)
+          rightIcon=(
+            if (
+              eq option.value selected
+            )
+            'arrow_upward'
+            (
+              if (
+                eq (concat "-" option.value)
+                selected
+              )
+              'arrow_downward' ''
+            )
+          )
+        }}
+      {{/each}}
+    {{/uxs-menu}}
+  {{/dropdown.content}}
+{{/basic-dropdown}}
