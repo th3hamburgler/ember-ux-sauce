@@ -23,11 +23,22 @@
   }
 
   &__item {
+    @include text-truncate;
     // color         : $c-grey;
-    margin-right  : rs(1);
+    padding-right : rs(0.75);
     position      : relative;
     opacity       : 0.5;
     text-transform: uppercase;
+    @include mq(tablet) {
+      padding-right: rs(1);
+    }
+    @include mq(tablet, max) {
+      display: none;
+
+      &:nth-last-child(-n+3) {
+        display: block;
+      }
+    }
 
     &--detail {
       @include detail-font-size;
@@ -38,8 +49,11 @@
       position  : absolute;
       text-align: center;
       top       : 0;
-      right     : rs(-1);
-      width     : rs(1);
+      right     : 0;
+      width     : rs(0.75);
+      @include mq(tablet) {
+        width: rs(1);
+      }
     }
 
     &:last-child {
