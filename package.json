@@ -1,10 +1,6 @@
 {
-  "name": "ember-ux-sauce",
-<<<<<<< HEAD
-  "version": "1.2.6",
-=======
-  "version": "1.2.5",
->>>>>>> origin/master
+  "name": "ember-ux-sauce", 
+  "version": "1.2.7", 
   "description": "A Collection of UI components for ember",
   "keywords": [
     "ember-addon"
