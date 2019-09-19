@@ -1,5 +1,11 @@
 {{#if hasLabel}}
-  {{uxs-form-label label name=name disabled=disabled style=style}}
+  {{uxs-form-label
+    label
+    name=name
+    disabled=disabled
+    style=style
+    error=hasError
+  }}
 {{/if}}
 {{#if hasTextInput}}
   {{uxs-form-input
@@ -16,6 +22,7 @@
     max=max
     min=min
     step=step
+    error=hasError
   }}
 {{/if}}
 {{#if hasTextArea}}
@@ -27,6 +34,7 @@
     value=value
     disabled=disabled
     style=style
+    error=hasError
   }}
 {{/if}}
 
@@ -39,6 +47,7 @@
       name=name
       disabled=disabled
       style=style
+      error=hasError
     )
     input=(
       component
@@ -54,6 +63,7 @@
       max=max
       min=min
       step=step
+      error=hasError
     )
     textarea=(
       component
@@ -68,6 +78,7 @@
       style=style
       rows=rows
       cols=cols
+      error=hasError
     )
     dropdown=(
       component
@@ -79,6 +90,7 @@
       placeholder=placeholder
       readonly=readonly
       style=style
+      error=hasError
     )
     date=(
       component
@@ -89,6 +101,7 @@
       placeholder=placeholder
       readonly=readonly
       style=style
+      error=hasError
     )
     datetime=(
       component
@@ -100,6 +113,7 @@
       readonly=readonly
       inlineInput=inline
       style=style
+      error=hasError
     )
     time=(
       component
@@ -111,6 +125,7 @@
       readonly=readonly
       inlineInput=inline
       style=style
+      error=hasError
     )
     row=(
       component
@@ -119,6 +134,7 @@
       name=name
       disabled=disabled
       style=style
+      error=hasError
     )
     tip=(
       component
@@ -127,13 +143,14 @@
       disabled=disabled
       error=hasValidationError
       style=style
+      error=hasError
     )
     warning=(
       component
       "uxs-form-warning"
       name=name
       disabled=disabled
-      error=hasValidationError
+      error=hasError
     )
     error=(
       component
@@ -158,7 +175,7 @@
     warning
     name=name
     disabled=disabled
-    error=hasValidationError
+    error=hasError
   }}
 {{/if}}
 {{#if hasError}}
@@ -168,6 +185,7 @@
     disabled=disabled
   }}
 {{/if}}
+
 {{#if modelErrors.length}}
   {{#each modelErrors as |modelError|}}
     {{uxs-form-error

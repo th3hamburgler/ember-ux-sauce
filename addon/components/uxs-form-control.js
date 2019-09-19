@@ -9,9 +9,11 @@ import {
   A
 } from '@ember/array';
 import {
+  alias,
   bool,
   equal,
   oneWay,
+  or
 } from '@ember/object/computed';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
@@ -26,7 +28,10 @@ export default Component.extend(BEMComponent, Testable, {
   typeClass: computed('base', 'type', function() {
     return `${get(this, 'base')}--${get(this, 'type')}`;
   }),
-  hasError: bool('error'),
+  hasError: or('hasAttrError', 'hasClientError'),
+  hasAttrError: bool('error'),
+  hasClientError: alias('hasValidationError'),
+  isError: oneWay('validator.isInvalid'),
   hasTextInput: computed('type', function() {
     let textInputs = A([
       'text', 'password', 'number', 'hidden', 'email', 'search', 'tel', 'url'
@@ -45,8 +50,6 @@ export default Component.extend(BEMComponent, Testable, {
     // only show warnings when user has finished editing
     return get(this, 'didValidate') && get(this, 'isWarning');
   }),
-  isError: oneWay('validator.isInvalid'),
-  //isWarning
   // Methods
   init() {
     this.registerModifiers([
@@ -54,6 +57,9 @@ export default Component.extend(BEMComponent, Testable, {
       'compact',
       '*style',
       '*size',
+      'hasError:error',
+      'hasWarning:warning',
+      'hasTip:tip',
       'rowControl:row-control',
     ]);
     this._super(...arguments);
