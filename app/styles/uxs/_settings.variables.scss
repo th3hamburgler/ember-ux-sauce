@@ -46,7 +46,8 @@ $type-bold-weight: 700!default;
 $defaultWeights: (
   "bold"  : 700,
   "normal": 400,
-  "light" : 300,
+  "light" : 300, // deprecated due to color clash
+  "thin"  : 300,
 )
 !default;
 /* Base Sizes */
