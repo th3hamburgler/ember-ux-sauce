@@ -1,16 +1,6 @@
 import Component from '@ember/component';
 import layout from '../templates/components/uxs-list-subheading';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
-import {
-  inject as service
-} from '@ember/service';
-import {
-  computed
-} from '@ember/object';
-import {
-  get,
-  set
-} from '@ember/object';
 
 /**
   A component to render a list subheading component
@@ -23,8 +13,6 @@ import {
   @yield {Hash} subheading
 */
 const Subheading = Component.extend(BEMComponent, {
-  // Service
-  subheadingState: service('uxs-list-subheading-cache'),
   // Attributes
   /**
     The base css class name 'uxs-list__subheading'
@@ -58,20 +46,6 @@ const Subheading = Component.extend(BEMComponent, {
     @public
    */
   style: null,
-  // Computed
-  showSubheading: computed('text', 'sort', function() {
-    let text = get(this, 'text'),
-      sort = get(this, 'sort'),
-      currentValue = get(this, 'subheadingState.value'),
-      currentSort = get(this, 'subheadingState.sort');
-
-    if (text !== currentValue || sort !== currentSort) {
-      // SIDE EFFECT - BAD
-      set(this, 'subheadingState.value', text);
-      set(this, 'subheadingState.sort', sort);
-      return true;
-    }
-  }),
   // Methods
   init() {
     this._super(...arguments);
