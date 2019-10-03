@@ -1,36 +1,28 @@
 import Mixin from '@ember/object/mixin';
-import {
-  computed
-} from '@ember/object';
-
 /**
-  Add a text align modifier to a component
+  A mixing to give grouped functionality to the component
 
-  @class Alignable
-  @namespace Mixins
+  @class Groupable
+  @public
 */
 export default Mixin.create({
-  // Attributes
   /**
-    The text align direction, "left", "center", "right" or "justified". Defaults to no alignment (inheret)
+    Set to true if this component is part of a group
 
-    @property align
-    @type String
+    @property grouped
+    @default  null
+    @type     Boolean
+    @public
   */
-  align: null,
+  grouped: false,
 
-  // Computed
-  alignModifier: computed('align', function() {
-    if (this.align) {
-      return `al-${this.align}`;
-    }
-  }),
-
+  //
   // Methods
+  //
   init() {
     this._super(...arguments);
     this.registerModifiers([
-      '*alignModifier',
+      'grouped'
     ]);
   },
   /**

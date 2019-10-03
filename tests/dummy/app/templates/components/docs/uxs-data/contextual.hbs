@@ -1,0 +1,56 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="data-contextual-demo.hbs"}}
+
+    {{#uxs-data
+      display=display
+      padded=padded
+      inset=inset
+    as |data|
+    }}
+      {{#data.item as |item|}}
+        {{item.label "Label"}}
+        {{item.value "Value"}}
+      {{/data.item}}
+      {{#data.item as |item|}}
+        {{item.label "Another Label"}}
+        {{item.value "Value with a tip"}}
+        {{item.tip "Here's the tip"}}
+      {{/data.item}}
+      {{#data.item as |item|}}
+        {{#item.label}}A Long Value{{/item.label}}
+        {{#item.value}}Scelerisque sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis ut ultricies cursus ornare tempus.Nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit massa in cras ipsum et adipiscing.Sed parturient id aenean.{{/item.value}}
+        {{#item.tip}}Here's a long tip nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit{{/item.tip}}
+      {{/data.item}}
+    {{/uxs-data}}
+
+  {{/demo.example}}
+
+  {{#args-table "data-contextual-demo" as |table|}}
+    {{#table.row "layout" as |row|}}
+      {{row.label "Layout"}}
+      {{row.input display options="data-layouts"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "padded" as |row|}}
+      {{row.label "Padded"}}
+      {{row.checkbox padded}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "inset" as |row|}}
+      {{row.label "Inset"}}
+      {{row.checkbox inset}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "data-contextual-demo.hbs"}}
+
+  <datalist id="data-layouts">
+    <option value="cell"/>
+    <option value="inline"/>
+    <option value="list"/>
+    <option value="table"/>
+  </datalist>
+
+{{/docs-demo}}

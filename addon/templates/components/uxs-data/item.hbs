@@ -1,0 +1,67 @@
+{{#if label}}
+  {{uxs-data/label
+    label
+    display=display
+    padded=padded
+    inset=inset
+    name=name
+  }}
+{{/if}}
+
+{{#if value}}
+  {{uxs-data/value
+    value
+    display=display
+    padded=padded
+    inset=inset
+    name=name
+  }}
+{{/if}}
+
+{{#if tip}}
+  {{uxs-data/tip
+    tip
+    display=display
+    padded=padded
+    inset=inset
+    name=name
+  }}
+{{/if}}
+
+{{yield
+  (
+    hash
+    label=(
+      component
+      "uxs-data/label"
+      display=display
+      padded=padded
+      inset=inset
+      name=name
+    )
+    value=(
+      component
+      "uxs-data/value"
+      display=display
+      padded=padded
+      inset=inset
+      name=name
+    )
+    group=(
+      component
+      "uxs-data/group"
+      display=display
+      padded=padded
+      inset=inset
+      name=name
+    )
+    tip=(
+      component
+      "uxs-data/tip"
+      display=display
+      padded=padded
+      inset=inset
+      name=name
+    )
+  )
+}}

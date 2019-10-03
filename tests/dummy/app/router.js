@@ -47,6 +47,7 @@ Router.map(function() {
     this.route('components', function() {
       this.route('lists');
       this.route('pagination');
+      this.route('data');
       this.route('datalists');
       this.route('avatars');
       this.route('icons');
@@ -85,6 +86,7 @@ Router.map(function() {
     });
   });
 
+  this.route('styleguide');
   this.route('app', function() {
     this.route('dash', {
       path: '/'

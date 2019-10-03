@@ -1,4 +1,8 @@
 import Mixin from '@ember/object/mixin';
+import {
+  computed
+} from '@ember/object';
+
 /**
   Add weight argument to a component
 
@@ -16,11 +20,18 @@ export default Mixin.create({
   */
   weight: null,
 
+  // Computed
+  weightModifier: computed('weight', function() {
+    if (this.weight) {
+      return `w-${this.weight}`;
+    }
+  }),
+
   // Methods
   init() {
     this._super(...arguments);
     this.registerModifiers([
-      '*weight',
+      '*weightModifier',
     ]);
   },
 });

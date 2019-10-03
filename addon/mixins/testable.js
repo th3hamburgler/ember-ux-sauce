@@ -19,13 +19,14 @@ import {
   This mixin adds an attribute binding to the component to produce a [test selector](https://github.com/simplabs/ember-test-selectors).
 
   By default these attributes are removed in production builds
-  
+
   @class Testable
   @namespace Mixins
   @public
 */
 export default Mixin.create({
   // Attributes
+
   /**
     The name property is used as the value for test selectors.<br/>
     For example the foo-component would have the following selector:
@@ -44,8 +45,7 @@ export default Mixin.create({
     @public
   */
   name: true,
-  // Computed
-  testSelectorValue: alias('name'),
+
   /**
     By default a components base property is used as the value for test selectors.
     e.g.
@@ -69,6 +69,9 @@ export default Mixin.create({
     @public
   */
   testSelectorName: null,
+
+  // Computed
+  testSelectorValue: alias('name'),
   // Methods
   init() {
     this._super(...arguments);
