@@ -88,12 +88,14 @@ export default Mixin.create({
     }
 
     selector = dasherize(selector);
-    // turn BEM selectors into dasherised strings
-    selector = selector.replace('--', '-');
-    selector = selector.replace('__', '-');
-    // remove prefix
-    selector = selector.replace('uxs-', '');
 
+    if (selector) {
+      // turn BEM selectors into dasherised strings
+      selector = selector.replace('--', '-');
+      selector = selector.replace('__', '-');
+      // remove prefix
+      selector = selector.replace('uxs-', '');
+    }
     return selector;
   },
   /**
