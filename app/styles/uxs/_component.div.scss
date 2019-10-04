@@ -4,7 +4,7 @@
   @include line-height-modifiers;
   @include text-color-modifiers($prefix:'c-');
   @include background-color-modifiers();
-  @include weight-modifiers;
+  @include font-weight-modifiers;
 
   &--clear:after {
     content: "";

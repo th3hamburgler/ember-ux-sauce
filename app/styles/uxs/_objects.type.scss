@@ -56,7 +56,7 @@
   @include align-modifiers;
   @include background-color-modifiers;
   @include text-color-modifiers;
-  @include weight-modifiers;
+  @include font-weight-modifiers;
 
   &--giant {
     font-size  : rem-size($s-giant);
@@ -74,7 +74,7 @@
   @include align-modifiers;
   @include background-color-modifiers;
   @include text-color-modifiers;
-  @include weight-modifiers;
+  @include font-weight-modifiers;
 }
 
 .content {
@@ -82,7 +82,7 @@
   @include align-modifiers;
   @include background-color-modifiers;
   @include text-color-modifiers;
-  @include weight-modifiers;
+  @include font-weight-modifiers;
   margin-bottom: rem-size($baseline);
 }
 
@@ -91,7 +91,7 @@
   @include align-modifiers;
   @include background-color-modifiers;
   @include text-color-modifiers;
-  @include weight-modifiers;
+  @include font-weight-modifiers;
   margin-bottom: rem-size($baseline);
 }
 
@@ -125,7 +125,7 @@
   @include line-height-modifiers;
   @include text-color-modifiers;
   @include type-content;
-  @include weight-modifiers;
+  @include font-weight-modifiers;
 }
 
 .uxs-ol,

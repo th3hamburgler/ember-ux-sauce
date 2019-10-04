@@ -13,5 +13,21 @@ export default function hasClasses(assert, element, classArray) {
     assert.equal(elementClasees.includes(className), true, `Has class ${className}`);
   }
 
-  assert.equal(elementClasees.length, classArray.length, `Has correct amount of classes ${classString}`);
+  const classDiff = arrayDiff(elementClasees, classArray);
+  let diffString = '';
+  if (classDiff) {
+    diffString = ". Missing: " + classDiff.join(" ");
+  }
+
+  assert.equal(
+    elementClasees.length,
+    classArray.length,
+    `Has correct amount of classes${diffString}`
+  );
+}
+
+function arrayDiff(arrA, arrB) {
+  return arrA
+    .filter(x => !arrB.includes(x))
+    .concat(arrB.filter(x => !arrA.includes(x)));
 }

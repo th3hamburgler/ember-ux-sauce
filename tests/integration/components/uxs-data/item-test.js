@@ -32,6 +32,18 @@ module('Integration | Component | uxs-data/item', function(hooks) {
     assert.equal(this.element.textContent.trim(), 'template block text');
   });
 
+  test('it has accessibility roles', async function(assert) {
+
+    await render(hbs `{{uxs-data/item "My Label" "My Value" "My Tip" name="my-data"}}`);
+
+    const item = this.element.querySelector('[data-test-data-item=my-data]'),
+      value = this.element.querySelector('[data-test-data-value=my-data]');
+
+    assert.equal(item.getAttribute('role'), 'listitem');
+    assert.equal(value.getAttribute('aria-label'), 'My Label');
+
+  });
+
   test('it renders uxs-data/item with label, value and tip', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });

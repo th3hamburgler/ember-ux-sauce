@@ -6,6 +6,8 @@
       display=display
       padded=padded
       inset=inset
+      style=style
+      color=color
     as |data|
     }}
       {{#data.item as |item|}}
@@ -50,15 +52,21 @@
       {{row.checkbox inset}}
       {{row.type "Boolean"}}
     {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Styles"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "color" as |row|}}
+      {{row.label "Color"}}
+      {{row.input color options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
   {{/args-table}}
 
   {{demo.snippet "data-groups-demo.hbs"}}
 
-  <datalist id="data-layouts">
-    <option value="cell"/>
-    <option value="inline"/>
-    <option value="list"/>
-    <option value="table"/>
-  </datalist>
+  {{args-table/data-layout-options}}
+  {{args-table/style-options}}
 
 {{/docs-demo}}

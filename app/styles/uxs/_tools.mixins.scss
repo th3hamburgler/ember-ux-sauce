@@ -133,10 +133,45 @@
     text-align: justify;
   }
 }
+/**
+ * Add text align modifer rules to a component
+ */
+@mixin text-align-modifiers($colors:$defaultColors, $prefix:'c-') {
+  &--al-left {
+    text-align: left;
+  }
+
+  &--al-right {
+    text-align: right;
+  }
+
+  &--al-center {
+    text-align: center;
+  }
+
+  &--al-justify {
+    text-align: justify;
+  }
+}
+/**
+ * Add text color modifer rules to a component
+ */
 @mixin text-color-modifiers($colors:$defaultColors, $prefix:'c-') {
   @each $modifier, $color in $colors {
-    &--#{$prefix}#{$modifier} {
+    &--c-#{$prefix}#{$modifier} {
       color: $color;
+    }
+  }
+}
+/**
+ * Add modifiers to set the background and text color of an element
+ */
+@mixin style-modifiers($colors:$defaultColors, $opacity:1) {
+  @each $modifier, $color in $colors {
+    &--#{$modifier} {
+      background-color: rgba($color, $opacity);
+      border-color    : contrast-color($color);
+      color           : contrast-color($color);
     }
   }
 }
@@ -195,7 +230,7 @@
 }
 @mixin font-size-modifiers($sizes:$defaultSizes, $mod:0) {
   @each $modifier, $size in $sizes {
-    &--#{$modifier} {
+    &--s-#{$modifier} {
       font-size: rem-size($size - $mod);
     }
   }
@@ -207,10 +242,15 @@
     }
   }
 }
-@mixin weight-modifiers($weights:$defaultWeights) {
+@mixin font-weight-modifiers($weights:$defaultWeights) {
   @each $modifier, $weight in $weights {
     &--#{$modifier} {
       font-weight: $weight;
     }
+  }
+}
+@mixin text-truncate-modifier($boundary:100%) {
+  &--truncate {
+    @include text-truncate($boundary);
   }
 }

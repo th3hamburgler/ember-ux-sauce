@@ -11,13 +11,14 @@ export default Mixin.create({
     'disabled',
     'disabled:aria-disabled',
     'label:aria-label',
+    'hidden:aria-hidden',
     'role',
   ],
   /**
     Prevents the action from firing when true
     @property disabled
     @default  null
-    @type     {boolean}
+    @type     Boolean
     @public
   */
   disabled: false,
@@ -25,15 +26,23 @@ export default Mixin.create({
     Sets the an aria-label attribute
     @property label
     @default  null
-    @type     {(string)}
+    @type     String
     @public
    */
   label: false,
   /**
+    Sets the an aria-hidden attribute
+    @property hidden
+    @default  false
+    @type     Boolean
+    @public
+   */
+  hidden: false,
+  /**
     Sets the role attribute
     @property role
     @default  null
-    @type     {(string)}
+    @type     String
     @public
    */
   role: false,

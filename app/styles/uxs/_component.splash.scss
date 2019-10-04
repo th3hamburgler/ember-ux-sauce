@@ -49,7 +49,7 @@
   &__text,
   &__title {
     @include align-modifiers;
-    @include weight-modifiers;
+    @include font-weight-modifiers;
     @include text-color-modifiers($prefix:'');
   }
 }

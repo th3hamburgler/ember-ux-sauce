@@ -1,4 +1,6 @@
 import Component from '@ember/component';
+import Accessible from 'ember-ux-sauce/mixins/accessible';
+import Colorable from 'ember-ux-sauce/mixins/colorable';
 import Datable from 'ember-ux-sauce/mixins/datable';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
@@ -24,7 +26,7 @@ import layout from '../../templates/components/uxs-data/item';
   @yield {Component} item.tip
   @yield {Component} item.group
 */
-export default Component.extend(BEMComponent, Datable, Testable, {
+export default Component.extend(Accessible, BEMComponent, Colorable, Datable, Testable, {
 
   /**
     The base css class name that the BEM Component
@@ -40,6 +42,16 @@ export default Component.extend(BEMComponent, Datable, Testable, {
    @type String
    */
   layout,
+
+  /**
+    Sets the role attribute
+    @property role
+    @default  listitem
+    @type     String
+    @see      accessible
+    @public
+   */
+  role: 'listitem',
 
   /**
     Shortcut to defining the label text of this item
@@ -81,6 +93,32 @@ export default Component.extend(BEMComponent, Datable, Testable, {
     @type     String
     @see      datable
     @public
+  */
+
+  /**
+    Set the color the components text.
+
+    UXS ships with the following stock colors: primary, accent, warning, error, dark, grey, mid, light & white. More can be added to the $defaultColors array.
+
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _--my-custom-style_
+
+    @property color
+    @default  null
+    @see      colorable
+    @type     String
+  */
+
+  /**
+    Set the style of the component.
+
+    UXS ships with the following stock styles: primary, accent, warning, error, dark, grey, mid, light & white. More can be added to the $defaultColors array. This will set the background color of the component and set a contrasting base color for the text
+
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _--my-custom-style_
+
+    @property style
+    @default  null
+    @see      colorable
+    @type     String
   */
 
   /**

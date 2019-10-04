@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 import Datable from 'ember-ux-sauce/mixins/datable';
 import Groupable from 'ember-ux-sauce/mixins/groupable';
+import Colorable from 'ember-ux-sauce/mixins/colorable';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import Textable from 'ember-ux-sauce/mixins/textable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
@@ -15,7 +16,7 @@ import layout from '../../templates/components/uxs-data/label';
   @class UXS Data Label
   @public
 */
-export default Component.extend(BEMComponent, Datable, Groupable, Testable, Textable, {
+export default Component.extend(BEMComponent, Colorable, Datable, Groupable, Testable, Textable, {
 
   //
   // Arguments
@@ -96,6 +97,19 @@ export default Component.extend(BEMComponent, Datable, Groupable, Testable, Text
   */
 
   /**
+    Set the style of the component.
+
+    UXS ships with the following stock styles: primary, accent, warning, error, dark, grey, mid, light & white. More can be added to the $defaultColors array. This will set the background color of the component and set a contrasting base color for the text
+
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _--my-custom-style_
+
+    @property style
+    @default null
+    @type String
+    @see      colorable
+  */
+
+  /**
     The text value for the label, this can be passed in at the first positional parameter
 
     @argument text
@@ -117,7 +131,7 @@ export default Component.extend(BEMComponent, Datable, Groupable, Testable, Text
   /**
     Define the weight of the component. Standard options are "bold", "medium" or "light". Defaults to no weight (inhered)
 
-    @argument    weight
+    @argument weight
     @default  null
     @type     String
     @see      weightable
