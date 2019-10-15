@@ -60,6 +60,8 @@ This approach we use groups to render multiple values like an html definition li
 
 ### Empty Values
 
+Data items will by default render a "n/a" value if you pass in an empty value e.g. "". You can customise the empty string by passing the _emptyString_ attribute to _uxs-data_, _/item_ or _value_.
+
 {{docs/uxs-data/empty}}
 
 ## Accessibility

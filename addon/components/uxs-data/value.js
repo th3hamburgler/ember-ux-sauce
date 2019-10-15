@@ -148,7 +148,6 @@ export default Component.extend(BEMComponent, Datable, Groupable, Testable, Text
   layout,
   // Computed
   computedText: computed('text', 'emptyText', function() {
-    window.console.log(this.text, isEmpty(this.text));
     if (isEmpty(this.text)) {
       return this.emptyText;
     }
