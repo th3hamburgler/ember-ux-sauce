@@ -1,0 +1,59 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="data-simple-demo.hbs"}}
+
+    {{#uxs-data
+      display=display
+      padded=padded
+      inset=inset
+      style=style
+      color=color
+    as |data|
+    }}
+      {{data.item "Field One" null}}
+      {{data.item "Field Two" "" "This item has an empty string value"}}
+      {{data.item "Field Three" 0 "A value of 0 should show"}}
+      {{data.item "Field Four" "false" "A string value of false should show"}}
+      {{data.item "Field Five" null "A custom empty string" emptyText="Nothing here"}}
+      {{#data.item "Field Six" as |item|}}
+        {{item.value "The value"}}
+        {{item.tip "A tip"}}
+      {{/data.item}}
+    {{/uxs-data}}
+
+  {{/demo.example}}
+
+  {{#args-table "datalist-basic-demo" as |table|}}
+    {{#table.row "layout" as |row|}}
+      {{row.label "Layout"}}
+      {{row.input display options="data-layouts"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "padded" as |row|}}
+      {{row.label "Padded"}}
+      {{row.checkbox padded}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "inset" as |row|}}
+      {{row.label "Inset"}}
+      {{row.checkbox inset}}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "style" as |row|}}
+      {{row.label "Styles"}}
+      {{row.input style options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "color" as |row|}}
+      {{row.label "Color"}}
+      {{row.input color options="styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  {{demo.snippet "data-simple-demo.hbs"}}
+
+  {{args-table/data-layout-options}}
+  {{args-table/style-options}}
+
+{{/docs-demo}}

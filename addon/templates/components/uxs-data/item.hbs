@@ -8,7 +8,10 @@
   }}
 {{/if}}
 
-{{#if value}}
+{{!--
+  Do not show inline value when the value is empty or is in block mode
+--}}
+{{#if (and (not hasBlock) (or value label))}}
   {{uxs-data/value
     value
     display=display
@@ -16,6 +19,7 @@
     inset=inset
     name=name
     label=label
+    emptyText=emptyText
   }}
 {{/if}}
 
@@ -47,6 +51,7 @@
       padded=padded
       inset=inset
       name=name
+      emptyText=emptyText
     )
     group=(
       component

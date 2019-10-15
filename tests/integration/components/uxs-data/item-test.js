@@ -32,6 +32,52 @@ module('Integration | Component | uxs-data/item', function(hooks) {
     assert.equal(this.element.textContent.trim(), 'template block text');
   });
 
+  test('it renders a uxs-data/item with empty value', async function(assert) {
+    let value;
+
+    // Test component detects null values
+    await render(hbs `{{uxs-data/item "My Label" "" "My Tip" name="my-data"}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), 'n/a');
+
+    await render(hbs `{{uxs-data/item "My Label" null "My Tip" name="my-data"}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), 'n/a');
+
+    await render(hbs `{{uxs-data/item "My Label"}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), 'n/a');
+
+    // Test component detects common non null values
+    await render(hbs `{{uxs-data/item "My Label" 0}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), '0');
+
+    await render(hbs `{{uxs-data/item "My Label" "false"}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), 'false');
+
+    // Test emptyText override
+    await render(hbs `{{uxs-data/item "My Label" "" emptyText="Got nuthing"}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), 'Got nuthing');
+
+    // Test empty does not show on block use
+    await render(hbs `
+    {{#uxs-data/item label="My Label" as |item|}}
+      {{item.value "Foo"}}
+    {{/uxs-data/item}}
+    `);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), 'Foo');
+
+    await render(hbs `{{#uxs-data/item}}{{/uxs-data/item}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.ok(!value);
+
+
+  });
+
   test('it has accessibility roles', async function(assert) {
 
     await render(hbs `{{uxs-data/item "My Label" "My Value" "My Tip" name="my-data"}}`);

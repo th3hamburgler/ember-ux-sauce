@@ -48,6 +48,16 @@ export default Component.extend(Accessible, BEMComponent, Colorable, Datable, Te
   role: 'list',
 
   /**
+    The text to return if the given value is empty
+
+    @argument text
+    @default  "n/a"
+    @type     String
+    @public
+  */
+  emptyText: 'n/a',
+
+  /**
     Defines the type of layout this data component is presented in
 
     UXS ships with the following display layouts: list, inline, tabel, cell

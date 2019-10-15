@@ -58,6 +58,10 @@ This approach we use groups to render multiple values like an html definition li
 
 {{docs/uxs-data/groups}}
 
+### Empty Values
+
+{{docs/uxs-data/empty}}
+
 ## Accessibility
 
 The data component includes the following accessibility features.

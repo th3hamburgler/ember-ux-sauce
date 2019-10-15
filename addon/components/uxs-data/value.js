@@ -5,6 +5,12 @@ import Testable from 'ember-ux-sauce/mixins/testable';
 import Textable from 'ember-ux-sauce/mixins/textable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import layout from '../../templates/components/uxs-data/value';
+import {
+  computed
+} from '@ember/object';
+import {
+  isEmpty
+} from '@ember/utils';
 
 /**
   A component to render a data value
@@ -106,6 +112,16 @@ export default Component.extend(BEMComponent, Datable, Groupable, Testable, Text
   text: "",
 
   /**
+    The text to return if the given value is empty
+
+    @argument text
+    @default  "n/a"
+    @type     String
+    @public
+  */
+  emptyText: "n/a",
+
+  /**
     Set to true to truncate the text to one line
 
     @argument truncate
@@ -130,6 +146,14 @@ export default Component.extend(BEMComponent, Datable, Groupable, Testable, Text
    @type      String
    */
   layout,
+  // Computed
+  computedText: computed('text', 'emptyText', function() {
+    window.console.log(this.text, isEmpty(this.text));
+    if (isEmpty(this.text)) {
+      return this.emptyText;
+    }
+    return this.text;
+  }),
 }).reopenClass({
   positionalParams: ['text'],
 });

@@ -32,6 +32,48 @@ module('Integration | Component | uxs-data/value', function(hooks) {
     assert.equal(this.element.textContent.trim(), 'My Value');
   });
 
+  test('it renders a uxs-data/value with empty value', async function(assert) {
+    let value;
+
+    // Test component detects null values
+    await render(hbs `{{uxs-data/value ""}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), 'n/a');
+
+    await render(hbs `{{uxs-data/value null}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), 'n/a');
+
+    await render(hbs `{{uxs-data/value}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), 'n/a');
+
+    // Test component detects common non null values
+    await render(hbs `{{uxs-data/value 0}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), '0');
+
+    await render(hbs `{{uxs-data/value "false"}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), 'false');
+
+    // Test emptyText override
+    await render(hbs `{{uxs-data/value "" emptyText="Got nuthing"}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), 'Got nuthing');
+
+    // Test empty does not show on block use
+    await render(hbs `{{#uxs-data/value}}Foo{{/uxs-data/value}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), 'Foo');
+
+    // Test empty does not show on block use
+    await render(hbs `{{#uxs-data/value}}{{/uxs-data/value}}`);
+    value = this.element.querySelector('[data-test-data-value]');
+    assert.equal(value.textContent.trim(), '');
+
+  })
+
   test('it renders a uxs-data/value with bem modifiers', async function(assert) {
 
     // Check default classes
