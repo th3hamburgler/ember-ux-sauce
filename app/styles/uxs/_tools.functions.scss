@@ -1,8 +1,7 @@
 /**
  * strip unit
  * ---
- * Remove the unit from a css string
- * e.g. 16px
+ * Removes any unit from a string and return the number
  *
  * @param  {string} $number a css unit string
  * @return {number}         number without unit
@@ -16,7 +15,7 @@
 /**
  * rem-size
  * ---
- * Convert pixels into rems
+ * Converts a pixel unit into rems
  * e.g. 160px = 10rem
  *
  * @param  {string}   $pixels Pixel amount to convert to rems
@@ -24,7 +23,7 @@
  */
 @function rem-size($pixels) {
   $value   : strip-unit($pixels);
-  $remValue: ($value/16);
+  $remValue: ($value/$root-fs);
   @return #{$remValue}rem;
 }
 /**
