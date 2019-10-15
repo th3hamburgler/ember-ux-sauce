@@ -13,9 +13,15 @@ Router.map(function() {
 
     this.route('patterns');
     this.route('quickstart');
+    this.route('changelog');
     this.route('settings', function() {
       this.route('colors');
       this.route('typography');
+    });
+    this.route('sass', function() {
+      this.route('variables');
+      this.route('mixins');
+      this.route('utilities');
     });
     this.route('forms', function() {
       this.route('buttons');
