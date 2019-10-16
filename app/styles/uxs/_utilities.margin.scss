@@ -1,0 +1,130 @@
+// Margin Spacing
+
+.m {
+  @each $modifier, $scale in $spacing-scale {
+    // All the margin
+    &-#{$modifier} {
+      margin: rs($scale * $defaultMargin);
+      @each $media, $mediaMargin in $margin {
+        @include mq($media) {
+          margin: rs($scale * $mediaMargin);
+        }
+      }
+    }
+    // Vertical (top & bottom)
+    &v-#{$modifier} {
+      margin-top   : rs($scale * $defaultMargin);
+      margin-bottom: rs($scale * $defaultMargin);
+      @each $media, $mediaMargin in $margin {
+        @include mq($media) {
+          margin-top   : rs($scale * $mediaMargin);
+          margin-bottom: rs($scale * $mediaMargin);
+        }
+      }
+    }
+    // Vertical (left & right)
+    &h-#{$modifier} {
+      margin-left : rs($scale * $defaultMargin);
+      margin-right: rs($scale * $defaultMargin);
+      @each $media, $mediaMargin in $margin {
+        @include mq($media) {
+          margin-left : rs($scale * $mediaMargin);
+          margin-right: rs($scale * $mediaMargin);
+        }
+      }
+    }
+    // Top
+    &t-#{$modifier} {
+      margin-top: rs($scale * $defaultMargin);
+      @each $media, $mediaMargin in $margin {
+        @include mq($media) {
+          margin-top: rs($scale * $mediaMargin);
+        }
+      }
+    }
+    // Right
+    &r-#{$modifier} {
+      margin-right: rs($scale * $defaultMargin);
+      @each $media, $mediaMargin in $margin {
+        @include mq($media) {
+          margin-right: rs($scale * $mediaMargin);
+        }
+      }
+    }
+    // Bottom
+    &b-#{$modifier} {
+      margin-bottom: rs($scale * $defaultMargin);
+      @each $media, $mediaMargin in $margin {
+        @include mq($media) {
+          margin-bottom: rs($scale * $mediaMargin);
+        }
+      }
+    }
+    // Left
+    &l-#{$modifier} {
+      margin-left: rs($scale * $defaultMargin);
+      @each $media, $mediaMargin in $margin {
+        @include mq($media) {
+          margin-left: rs($scale * $mediaMargin);
+        }
+      }
+    }
+  }
+}
+
+@if ($incDeprecated) {
+  .m {
+    margin: rem-size($baseline);
+
+    &--nm {
+      margin: 0;
+      @include mq(phone) {
+        margin: rem-size($baseline);
+      }
+    }
+  }
+
+  .mt {
+    margin-top: rem-size($baseline);
+
+    &--nm {
+      margin-to: 0;
+      @include mq(phone) {
+        margin-to: rem-size($baseline);
+      }
+    }
+  }
+
+  .mr {
+    margin-right: rem-size($baseline);
+
+    &--nm {
+      margin-right: 0;
+      @include mq(phone) {
+        margin-right: rem-size($baseline);
+      }
+    }
+  }
+
+  .mb {
+    margin-bottom: rem-size($baseline);
+
+    &--nm {
+      margin-bottom: 0;
+      @include mq(phone) {
+        margin-bottom: rem-size($baseline);
+      }
+    }
+  }
+
+  .ml {
+    margin-left: rem-size($baseline);
+
+    &--nm {
+      margin-left: 0;
+      @include mq(phone) {
+        margin-left: rem-size($baseline);
+      }
+    }
+  }
+}

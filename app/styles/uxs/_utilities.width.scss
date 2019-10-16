@@ -1,0 +1,19 @@
+// Width Spacing
+
+.w {
+  @each $modifier, $scale in $spacing-scale {
+    // All the width
+    &-#{$modifier} {
+      width: rs($scale * $defaultWidth);
+      @each $media, $mediaWidth in $width {
+        @include mq($media) {
+          width: rs($scale * $mediaWidth);
+        }
+      }
+    }
+  }
+
+  &-a {
+    width: auto;
+  }
+}

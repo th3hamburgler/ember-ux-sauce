@@ -8,6 +8,9 @@
 // 4. Typography
 // 5. Color Pallet
 
+// Include deprecated styles
+$incDeprecated: false!default;
+
 /* ----------- */
 /* 1. THE GRID  */
 /* ----------- */
@@ -18,16 +21,74 @@ $baseline: 25px!default;
 // The default browser font-size used to convert units to rem
 $root-fs: 16!default;
 
+// By default the spacing scale is shared by padding, margin, width & height
+// Defailt spacing applies to all media querys (mobile first)
+$defaultSpacing: 0.5!default;
+// The $spacing hash can be used to apply different spacing at
+// different media queries.
+$spacing: (
+  "tablet": 1,
+)
+!default;
+
+// UXS includes a comprehensive numeric spacing scale. One spacing
+// unit is equal to 1 $spacing unit at the relevant media query size
+$spacing-scale: (
+  "0" : 0,
+  "½" : 0.5,
+  "1" : 1,
+  "1½": 1.5,
+  "2" : 2,
+  "3" : 3,
+  "4" : 4,
+  "5" : 5,
+  "6" : 6,
+  "8" : 8,
+  "12": 12,
+  "16": 16,
+);
+
+// Default padding sizes, can be overriden from spacing
+$defaultPadding: $defaultSpacing;
+$padding: $spacing!default;
+
+// Default margin sizes, can be overriden from spacing
+// first item is the default (mobile first)
+$defaultMargin: $defaultSpacing;
+$margin: $spacing!default;
+
+// Default $width sizes, can be overriden from spacing
+// first item is the default (mobile first)
+$defaultWidth: $defaultSpacing;
+$width: $spacing!default;
+
+// Default margin sizes, can be overriden from spacing
+// first item is the default (mobile first)
+$defaultHeight: $defaultSpacing;
+$height: $spacing!default;
+
+// Default border-widths at different media sizes
+// first item is the default (mobile first)
+$border-width: (
+  "phone": 1px,
+)
+!default;
+
 /* ---------------- */
 /* 2. MEDIA QUERIES */
 /* ---------------- */
 
 $breakpoints: (
   "phone"       : 480px,
+  // xs
   "tablet"      : 768px,
+  // sm
   "tablet-wide" : 1024px,
+  // md
   "desktop"     : 1248px,
+  // lg
   "desktop-wide": 1440px
+  // xl
 )
 !default;
 
@@ -149,10 +210,7 @@ $c-grey: shade-light($c-dark, 5, 15)!default;
 $c-mid: shade-light($c-dark, 10, 15)!default;
 $c-light: shade-light($c-dark, 14, 15)!default;
 $c-white: rgb(255,255,255)!default;
-/* Aliases */
-$c-sk-back: $c-mid!default;
-$c-sk-front: $c-light!default;
-$c-sk-light: lighten($c-sk-front, 2%)!default;
+
 /* Primary */
 $c-primary: #1C77C3!default;
 $c-primary-1: $c-primary!default;
@@ -202,6 +260,11 @@ $defaultColors: (
   "white"  : $c-white,
 )
 !default;
+
+/* Aliases */
+$c-sk-back: $c-mid!default;
+$c-sk-front: $c-light!default;
+$c-sk-light: lighten($c-sk-front, 2%)!default;
 
 /* ------- */
 /* BUTTONS */

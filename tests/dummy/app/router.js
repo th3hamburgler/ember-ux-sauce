@@ -21,6 +21,7 @@ Router.map(function() {
     this.route('sass', function() {
       this.route('variables');
       this.route('mixins');
+      this.route('functions');
       this.route('utilities');
     });
     this.route('forms', function() {

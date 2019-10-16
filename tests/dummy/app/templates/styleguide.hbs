@@ -4,7 +4,16 @@
     {{#uxs-window as |window|}}
       {{#window.pane full=true padded=false}}
 
-        {{uxs-heading "Styleguide"}}
+        {{uxs-heading "Spacing"}}
+
+        <div class="w-0 h-0 bg-p">Test</div>
+        <div class="w-½ h-½ bg-p">Test</div>
+        <div class="w-1 h-1 bg-p">Test</div>
+        <div class="w-2 h-2 bg-p">Test</div>
+        <div class="w-4 h-4 bg-p">Test</div>
+        <div class="w-8 h-8 bg-p">Test</div>
+
+        {{!-- {{uxs-heading "Styleguide"}}
 
         {{uxs-subheading "List Data"}}
 
@@ -35,7 +44,7 @@
             {{/item.group}}
             {{item.tip "Here's the tip"}}
           {{/data.item}}
-        {{/uxs-data}}
+        {{/uxs-data}} --}}
 
         {{!-- {{uxs-subheading "Inline Data"}}
 

@@ -1,0 +1,33 @@
+// Height Spacing
+
+.h {
+  @each $modifier, $scale in $spacing-scale {
+    // All the height
+    &-#{$modifier} {
+      height: rs($scale * $defaultHeight);
+      @each $media, $mediaHeight in $height {
+        @include mq($media) {
+          height: rs($scale * $mediaHeight);
+        }
+      }
+    }
+  }
+
+  &-a {
+    height: auto;
+  }
+}
+
+.lh {
+  @each $modifier, $scale in $spacing-scale {
+    // All the height
+    &-#{$modifier} {
+      line-height: rs($scale * $defaultHeight);
+      @each $media, $mediaHeight in $height {
+        @include mq($media) {
+          line-height: rs($scale * $mediaHeight);
+        }
+      }
+    }
+  }
+}

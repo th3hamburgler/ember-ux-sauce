@@ -8,12 +8,25 @@ Each component has it's own subset of variables that can also be customised.
 
 ## 1. The Grid
 
+Futher info on spacing customisation & the utility helper classes can be found on [sass > utility classes](/docs/sass/utility-classes) page.
+
 ```
 // The grid baseline dimension used thoughout the app
 $baseline: 25px;
 
 // The default browser font-size used to convert units to rem
 $root-fs: 16px;
+
+// By default the spacing scale is shared by padding, margin, width & height
+// This default spacing applies to all media querys (mobile first)
+$defaultSpacing: 0.5!default;
+
+// The $spacing hash can be used to apply different spacing at
+// different media queries.
+$spacing: (
+  "tablet": 1,
+)
+!default;
 ```
 
 ## 2. Media Queries
@@ -171,5 +184,3 @@ $defaultColors: (
   "white"  : $c-white,
 )
 ```
-
-The lightness a color should exceed to require a dark contrast color

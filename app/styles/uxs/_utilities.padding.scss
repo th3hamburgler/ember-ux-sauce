@@ -1,0 +1,265 @@
+// Padding Spacing
+
+.p {
+  @each $modifier, $scale in $spacing-scale {
+    // All the padding
+    &-#{$modifier} {
+      padding: rs($scale * $defaultPadding);
+      @each $media, $mediaPadding in $padding {
+        @include mq($media) {
+          padding: rs($scale * $mediaPadding);
+        }
+      }
+    }
+    // Vertical (top & bottom)
+    &v-#{$modifier} {
+      padding-top   : rs($scale * $defaultPadding);
+      padding-bottom: rs($scale * $defaultPadding);
+      @each $media, $mediaPadding in $padding {
+        @include mq($media) {
+          padding-top   : rs($scale * $mediaPadding);
+          padding-bottom: rs($scale * $mediaPadding);
+        }
+      }
+    }
+    // Vertical (left & right)
+    &h-#{$modifier} {
+      padding-left : rs($scale * $defaultPadding);
+      padding-right: rs($scale * $defaultPadding);
+      @each $media, $mediaPadding in $padding {
+        @include mq($media) {
+          padding-left : rs($scale * $mediaPadding);
+          padding-right: rs($scale * $mediaPadding);
+        }
+      }
+    }
+    // Top
+    &t-#{$modifier} {
+      padding-top: rs($scale * $defaultPadding);
+      @each $media, $mediaPadding in $padding {
+        @include mq($media) {
+          padding-top: rs($scale * $mediaPadding);
+        }
+      }
+    }
+    // Right
+    &r-#{$modifier} {
+      padding-right: rs($scale * $defaultPadding);
+      @each $media, $mediaPadding in $padding {
+        @include mq($media) {
+          padding-right: rs($scale * $mediaPadding);
+        }
+      }
+    }
+    // Bottom
+    &b-#{$modifier} {
+      padding-bottom: rs($scale * $defaultPadding);
+      @each $media, $mediaPadding in $padding {
+        @include mq($media) {
+          padding-bottom: rs($scale * $mediaPadding);
+        }
+      }
+    }
+    // Left
+    &l-#{$modifier} {
+      padding-left: rs($scale * $defaultPadding);
+      @each $media, $mediaPadding in $padding {
+        @include mq($media) {
+          padding-left: rs($scale * $mediaPadding);
+        }
+      }
+    }
+  }
+}
+
+@if ($incDeprecated) {
+  .p {
+    padding: rs(1);
+  }
+
+  .pt {
+    padding-top: rs(1);
+  }
+
+  .pr {
+    padding-right: rs(1);
+  }
+
+  .pb {
+    padding-bottom: rs(1);
+  }
+
+  .pl {
+    padding-left: rs(1);
+  }
+  // Double
+
+  .p2 {
+    padding: rs(2);
+  }
+
+  .pt2 {
+    padding-top: rs(2);
+  }
+
+  .pr2 {
+    padding-right: rs(2);
+  }
+
+  .pb2 {
+    padding-bottom: rs(2);
+  }
+
+  .pl2 {
+    padding-left: rs(2);
+  }
+  // Tripple
+
+  .p3 {
+    padding: rs(3);
+  }
+
+  .pt3 {
+    padding-top: rs(3);
+  }
+
+  .pr3 {
+    padding-right: rs(3);
+  }
+
+  .pb3 {
+    padding-bottom: rs(3);
+  }
+
+  .pl3 {
+    padding-left: rs(3);
+  }
+  @include mq(tablet) {
+    /*
+   * padding helper classes
+   */
+    .lg\:p {
+      padding: rs(1);
+    }
+
+    .lg\:pt {
+      padding-top: rs(1);
+    }
+
+    .lg\:pr {
+      padding-right: rs(1);
+    }
+
+    .lg\:pb {
+      padding-bottom: rs(1);
+    }
+
+    .lg\:pl {
+      padding-left: rs(1);
+    }
+    // Double
+    .lg\:p2 {
+      padding: rs(2);
+    }
+
+    .lg\:pt2 {
+      padding-top: rs(2);
+    }
+
+    .lg\:pr2 {
+      padding-right: rs(2);
+    }
+
+    .lg\:pb2 {
+      padding-bottom: rs(2);
+    }
+
+    .lg\:pl2 {
+      padding-left: rs(2);
+    }
+    // Tripple
+    .lg\:p3 {
+      padding: rs(3);
+    }
+
+    .lg\:pt3 {
+      padding-top: rs(3);
+    }
+
+    .lg\:pr3 {
+      padding-right: rs(3);
+    }
+
+    .lg\:pb3 {
+      padding-bottom: rs(3);
+    }
+
+    .lg\:pl3 {
+      padding-left: rs(3);
+    }
+  }
+  @include mq(tablet, max) {
+    /*
+   * padding helper classes
+   */
+    .sm\:p {
+      padding: rs(1);
+    }
+
+    .sm\:pt {
+      padding-top: rs(1);
+    }
+
+    .sm\:pr {
+      padding-right: rs(1);
+    }
+
+    .sm\:pb {
+      padding-bottom: rs(1);
+    }
+
+    .sm\:pl {
+      padding-left: rs(1);
+    }
+    // Double
+    .sm\:p2 {
+      padding: rs(2);
+    }
+
+    .sm\:pt2 {
+      padding-top: rs(2);
+    }
+
+    .sm\:pr2 {
+      padding-right: rs(2);
+    }
+
+    .sm\:pb2 {
+      padding-bottom: rs(2);
+    }
+
+    .sm\:pl2 {
+      padding-left: rs(2);
+    }
+    // Tripple
+    .sm\:p3 {
+      padding: rs(3);
+    }
+
+    .sm\:pt3 {
+      padding-top: rs(3);
+    }
+
+    .sm\:pr3 {
+      padding-right: rs(3);
+    }
+
+    .sm\:pb3 {
+      padding-bottom: rs(3);
+    }
+
+    .sm\:pl3 {
+      padding-left: rs(3);
+    }
+  }
+}

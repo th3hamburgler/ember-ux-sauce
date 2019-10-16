@@ -9,3 +9,7 @@ Drop support for component tracking visibility of the component depending if the
 ### UXS Data
 
 New component to present readonly data
+
+## Sass files
+
+Many of the _object_ sass files have been renamed to _utilities_
