@@ -1,49 +1,72 @@
-/**
- Theme Settings
- ---
- @class Variables
- @namespace Styles
- @public
-*/
-/*
- * Sizes
- */
-/** The grid height used thoughout the system **/
+/* ------------ */
+/* UXS SETTINGS */
+/* ------------ */
+
+// 1. The Grid
+// 2. Media Queries
+// 3. Animations
+// 4. Typography
+// 5. Color Pallet
+
+/* ----------- */
+/* 1. THE GRID  */
+/* ----------- */
+
+// The grid baseline dimension used thoughout the app
 $baseline: 25px!default;
+
+// The default browser font-size used to convert units to rem
 $root-fs: 16!default;
-/**
- Is this a high contrast theme
- ---
- @property high-contrast
- @default  false
- @type     {(boolean)}
- @public
-*/
-$high-contrast: false!default;
-/*
- * Media Queries
- */
+
+/* ---------------- */
+/* 2. MEDIA QUERIES */
+/* ---------------- */
+
 $breakpoints: (
   "phone"       : 480px,
   "tablet"      : 768px,
   "tablet-wide" : 1024px,
   "desktop"     : 1248px,
   "desktop-wide": 1440px
-);
-/*
- * Animations
- */
+)
+!default;
+
+/* ------------- */
+/* 3. ANIMATIONS */
+/* ------------- */
+
+// The default time for css transition animations
 $transition-duration: 0.2s!default;
+
+// The default timing function for css transition animations
 $transition-timing-function: cubic-bezier(.4,0,.2,1)!default;
-/** Typographic weights **/
+
+/* ------------- */
+/* 4. TYPOGRAPHY */
+/* ------------- */
+
+// The default type face
 $font-family: 'Lato'!default;
+
+// The default typeface body text
 $type-body-family: $font-family, sans-serif!default;
+
+// The default weight for body text
 $type-body-weight: 400!default;
+
+// The default typeface light text
 $type-light-family: $font-family, sans-serif!default;
+
+// The default weight for light text
 $type-light-weight: 300!default;
+
+// The default typeface bold text
 $type-bold-family: $font-family, sans-serif!default;
+
+// The default weight for bold text
 $type-bold-weight: 700!default;
-/** Hash of sizes used thoughout system as modifiers **/
+
+// Hash of sizes used thoughout system as modifiers in our mixins
 $defaultWeights: (
   "bold"  : 700,
   "normal": 400,
@@ -51,17 +74,21 @@ $defaultWeights: (
   "thin"  : 300,
 )
 !default;
-/* Base Sizes */
-$type-scale: 1.618!default;
+
+// Our base font size to use with the scale
 $type-base: 18px!default;
-/* Our default 6 sizes */
+// A scale to use on our type sizes
+$type-scale: 1.618!default;
+
+// The default font-sizes
 $s-giant: scale($type-base, 3, $type-scale)!default;
 $s-huge: scale($type-base, 2, $type-scale)!default;
 $s-large: scale($type-base, 1, $type-scale)!default;
 $s-medium: $type-base!default;
 $s-small: scale($type-base, -1, $type-scale)!default;
 $s-tiny: scale($type-base, -2, $type-scale)!default;
-/* Sizes used as style modifiers */
+
+// Sizes used as style modifiers in our mixins
 $defaultSizes: (
   "giant" : $s-giant,
   "huge"  : $s-huge,
@@ -71,19 +98,49 @@ $defaultSizes: (
   "tiny"  : $s-tiny,
 )
 !default;
-/* Line heights of defined sizes */
+
+// The default line-heights - adhere to the grid!
+$lh-giant: rs(4)!default;
+$lh-huge: rs(3)!default;
+$lh-large: rs(2)!default;
+$lh-medium: rs(1)!default;
+$lh-small: rs(1)!default;
+$lh-tiny: rs(1)!default;
+
+// Line heights used as style modifiers in our mixins
 $defaultLineHights: (
-  "giant" : $baseline*4,
-  "huge"  : $baseline*3,
-  "large" : $baseline*2,
-  "medium": $baseline*1,
-  "small" : $baseline*1,
-  "tiny"  : $baseline*1,
+  "giant" : $lh-giant,
+  "huge"  : $lh-huge,
+  "large" : $lh-large,
+  "medium": $lh-medium,
+  "small" : $lh-small,
+  "tiny"  : $lh-tiny,
 )
 !default;
-$s-sk-medium: 15px!default;
-$max-width-content: rem-size(480px)!default;
-$max-width-detail: rem-size(320px)!default;
+
+// Anything from 45 to 75 characters is regarded as a satisfactory
+// length of line for a single-column page
+// The 66-character line (counting both letters and spaces) is ideal
+// http://mikeyanderson.com/optimal_characters_per_line
+
+// Max with for content sized text
+$max-width-small: rs(20)!default;
+$max-width-detail: $max-width-small; // deprecated var
+
+// Max with for detail sized text
+$max-width-medium: rs(13)!default;
+$max-width-content: $max-width-medium; // deprecated var
+
+/* --------------- */
+/* 5. COLOR PALLET */
+/* --------------- */
+
+// Is this a high contrast theme
+$high-contrast: false!default;
+
+// A colors lightness that when exceed will require a dark contrast
+$contrast-threshold: 60!default;
+
 /*
  * Colors https://coolors.co/1c77c3-141414-5fad56-eca400-db3a34
  */
@@ -145,8 +202,12 @@ $defaultColors: (
   "white"  : $c-white,
 )
 !default;
-/* The lightness a color should exceed to require a dark contrast color*/
-$contrast-threshold: 60!default;
+
+/* ------- */
+/* BUTTONS */
+/* ------- */
+// todo: move to button component scss file
+
 /*
  * Buttons
  */

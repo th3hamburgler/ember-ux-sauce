@@ -67,7 +67,6 @@ module('Integration | Component | uxs-data/value', function(hooks) {
     value = this.element.querySelector('[data-test-data-value]');
     assert.equal(value.textContent.trim(), 'Foo');
 
-    // Test empty does not show on block use
     await render(hbs `{{#uxs-data/value}}{{/uxs-data/value}}`);
     value = this.element.querySelector('[data-test-data-value]');
     assert.equal(value.textContent.trim(), '');
