@@ -1,51 +1,109 @@
-.t-heading-1 {
-  @include heading-1();
+.t-headline-1 {
+  @include headline-1;
 }
 
-.t-heading-2 {
-  @include heading-2();
+.t-headline-2 {
+  @include headline-2;
 }
 
-.t-heading-3 {
-  @include heading-3();
+.t-headline-3 {
+  @include headline-3;
 }
 
-.t-heading-4 {
-  @include heading-4();
+.t-headline-4 {
+  @include headline-4;
 }
 
-.t-heading-5 {
-  @include heading-5();
+.t-headline-5 {
+  @include headline-5;
 }
 
-.t-heading-6 {
-  @include heading-6();
+.t-headline-6 {
+  @include headline-6;
 }
 
 .t-subtitle-1 {
-  @include subtitle-1();
+  @include subtitle-1;
 }
 
 .t-subtitle-2 {
-  @include subtitle-2();
+  @include subtitle-2;
 }
 
 .t-body-1 {
-  @include body-1();
+  @include body-1;
 }
 
 .t-body-2 {
-  @include body-2();
+  @include body-2;
 }
 
 .t-button {
-  @include button();
+  @include button;
 }
 
 .t-caption {
-  @include caption();
+  @include caption;
 }
 
 .t-overline {
-  @include overline();
+  @include overline;
+}
+
+.headline {
+  &-1 {
+    @include headline-1;
+  }
+
+  &-2 {
+    @include headline-2;
+  }
+
+  &-3 {
+    @include headline-3;
+  }
+
+  &-4 {
+    @include headline-4;
+  }
+
+  &-5 {
+    @include headline-5;
+  }
+
+  &-6 {
+    @include headline-6;
+  }
+}
+
+.subtitle {
+  &-1 {
+    @include subtitle-1;
+  }
+
+  &-2 {
+    @include subtitle-2;
+  }
+}
+
+.body {
+  &-1 {
+    @include body-1;
+    margin-bottom: $lh-body-1;
+    max-width    : $max-width-medium;
+  }
+
+  &-2 {
+    @include body-2;
+    margin-bottom: $lh-body-2;
+    max-width    : $max-width-small;
+  }
+}
+
+.caption {
+  @include caption;
+}
+
+.overline {
+  @include overline;
 }

@@ -1,17 +1,17 @@
 import Component from '@ember/component';
-import layout from '../templates/components/uxs-content';
+import layout from '../templates/components/uxs-subtitle';
 import Textable from '../mixins/textable';
 import {
   computed
 } from '@ember/object';
 
 /**
-  A typographic component to render content text
+  A typographic component to render subtitle text
 
   ```hbs
-  {{uxs-content "Lorem ipsum dolar" 2}}
+  {{uxs-subtitle "Lorem ipsum dolar" 2}}
 
-  {{#uxs-content scale=2}}Lorem ipsum dolar"{{/uxs-content}}
+  {{#uxs-subtitle scale=2}}Lorem ipsum dolar"{{/uxs-subtitle}}
   ```
 
   @class UXSHeading
@@ -25,11 +25,11 @@ export default Component.extend(Textable, {
 
     @property base
     @type     String
-    @default  "content"
+    @default  "subtitle"
     @public
    */
   base: computed('scale', function() {
-    return `body-${this.scale}`;
+    return `subtitle-${this.scale}`;
   }),
 
   scale: 1,

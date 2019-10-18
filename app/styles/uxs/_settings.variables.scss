@@ -149,12 +149,12 @@ $type-scale: 1.618!default;
 
 // The default font-familys
 // - Headings
-$ff-heading-1: $font-family;
-$ff-heading-2: $font-family;
-$ff-heading-3: $font-family;
-$ff-heading-4: $font-family;
-$ff-heading-5: $font-family;
-$ff-heading-6: $font-family;
+$ff-headline-1: $font-family;
+$ff-headline-2: $font-family;
+$ff-headline-3: $font-family;
+$ff-headline-4: $font-family;
+$ff-headline-5: $font-family;
+$ff-headline-6: $font-family;
 // - Subtitles
 $ff-subtitle-1: $font-family;
 $ff-subtitle-2: $font-family;
@@ -168,12 +168,12 @@ $ff-overline: $font-family;
 
 // The default font-sizes
 // - Headings
-$fs-heading-1: rem-size(96px);
-$fs-heading-2: rem-size(60px);
-$fs-heading-3: rem-size(48px);
-$fs-heading-4: rem-size(34px);
-$fs-heading-5: rem-size(24px);
-$fs-heading-6: rem-size(20px);
+$fs-headline-1: rem-size(96px);
+$fs-headline-2: rem-size(60px);
+$fs-headline-3: rem-size(48px);
+$fs-headline-4: rem-size(34px);
+$fs-headline-5: rem-size(24px);
+$fs-headline-6: rem-size(20px);
 // - Subtitles
 $fs-subtitle-1: rem-size(16px);
 $fs-subtitle-2: rem-size(14px);
@@ -207,12 +207,12 @@ $defaultSizes: (
 
 // The default line-heights
 // - Headings
-$lh-heading-1: rem-size(96px);
-$lh-heading-2: rem-size(64px);
-$lh-heading-3: rem-size(56px);
-$lh-heading-4: rem-size(40px);
-$lh-heading-5: rem-size(32px);
-$lh-heading-6: rem-size(24px);
+$lh-headline-1: rem-size(96px);
+$lh-headline-2: rem-size(64px);
+$lh-headline-3: rem-size(56px);
+$lh-headline-4: rem-size(40px);
+$lh-headline-5: rem-size(32px);
+$lh-headline-6: rem-size(24px);
 // - Subtitles
 $lh-subtitle-1: rem-size(24px);
 $lh-subtitle-2: rem-size(24px);
@@ -246,12 +246,12 @@ $defaultLineHights: (
 
 // The default font-weights
 // - Headings
-$fw-heading-1: 300;
-$fw-heading-2: 300;
-$fw-heading-3: 400;
-$fw-heading-4: 400;
-$fw-heading-5: 400;
-$fw-heading-6: 500;
+$fw-headline-1: 300;
+$fw-headline-2: 300;
+$fw-headline-3: 400;
+$fw-headline-4: 400;
+$fw-headline-5: 400;
+$fw-headline-6: 500;
 // - Subtitles
 $fw-subtitle-1: 400;
 $fw-subtitle-2: 500;
@@ -265,12 +265,12 @@ $fw-overline: 400;
 
 // The default letter spacing
 // - Headings
-$ls-heading-1: rem-size(-1.5px);
-$ls-heading-2: rem-size(-0.5px);
-$ls-heading-3: rem-size(0px);
-$ls-heading-4: rem-size(0.25px);
-$ls-heading-5: rem-size(0px);
-$ls-heading-6: rem-size(0.15px);
+$ls-headline-1: rem-size(-1.5px);
+$ls-headline-2: rem-size(-0.5px);
+$ls-headline-3: rem-size(0px);
+$ls-headline-4: rem-size(0.25px);
+$ls-headline-5: rem-size(0px);
+$ls-headline-6: rem-size(0.15px);
 // - Subtitles
 $ls-subtitle-1: rem-size(0.15px);
 $ls-subtitle-2: rem-size(0.1px);
@@ -284,12 +284,12 @@ $ls-overline: rem-size(1.5px);
 
 // The default font case
 // - Headings
-$fc-heading-1: none;
-$fc-heading-2: none;
-$fc-heading-3: none;
-$fc-heading-4: none;
-$fc-heading-5: none;
-$fc-heading-6: none;
+$fc-headline-1: none;
+$fc-headline-2: none;
+$fc-headline-3: none;
+$fc-headline-4: none;
+$fc-headline-5: none;
+$fc-headline-6: none;
 // - Subtitles
 $fc-subtitle-1: none;
 $fc-subtitle-2: none;
@@ -302,12 +302,12 @@ $fc-caption: none;
 $fc-overline: uppercase;
 
 $defaultTypeScale: (
-  'heading-1' : ('size' : $fs-heading-1, 'height':$lh-heading-1, 'weight': $fw-heading-1, 'spaceing':$ls-heading-1, 'case' : $fc-heading-1),
-  'heading-2' : ('size' : $fs-heading-2, 'height':$lh-heading-2, 'weight': $fw-heading-2, 'spaceing':$ls-heading-2, 'case' : $fc-heading-2),
-  'heading-3' : ('size' : $fs-heading-3, 'height':$lh-heading-3, 'weight': $fw-heading-3, 'spaceing':$ls-heading-3, 'case' : $fc-heading-3),
-  'heading-4' : ('size' : $fs-heading-4, 'height':$lh-heading-4, 'weight': $fw-heading-4, 'spaceing':$ls-heading-4, 'case' : $fc-heading-4),
-  'heading-5' : ('size' : $fs-heading-5, 'height':$lh-heading-5, 'weight': $fw-heading-5, 'spaceing':$ls-heading-5, 'case' : $fc-heading-5),
-  'heading-6' : ('size' : $fs-heading-6, 'height':$lh-heading-6, 'weight': $fw-heading-6, 'spaceing':$ls-heading-6, 'case' : $fc-heading-6),
+  'headline-1': ('size' : $fs-headline-1, 'height':$lh-headline-1, 'weight': $fw-headline-1, 'spaceing':$ls-headline-1, 'case' : $fc-headline-1),
+  'headline-2': ('size' : $fs-headline-2, 'height':$lh-headline-2, 'weight': $fw-headline-2, 'spaceing':$ls-headline-2, 'case' : $fc-headline-2),
+  'headline-3': ('size' : $fs-headline-3, 'height':$lh-headline-3, 'weight': $fw-headline-3, 'spaceing':$ls-headline-3, 'case' : $fc-headline-3),
+  'headline-4': ('size' : $fs-headline-4, 'height':$lh-headline-4, 'weight': $fw-headline-4, 'spaceing':$ls-headline-4, 'case' : $fc-headline-4),
+  'headline-5': ('size' : $fs-headline-5, 'height':$lh-headline-5, 'weight': $fw-headline-5, 'spaceing':$ls-headline-5, 'case' : $fc-headline-5),
+  'headline-6': ('size' : $fs-headline-6, 'height':$lh-headline-6, 'weight': $fw-headline-6, 'spaceing':$ls-headline-6, 'case' : $fc-headline-6),
   'subtitle-1': ('size' : $fs-subtitle-1, 'height':$lh-subtitle-1, 'weight': $fw-subtitle-1, 'spaceing':$ls-subtitle-1, 'case' : $fc-subtitle-1),
   'subtitle-2': ('size' : $fs-subtitle-2, 'height':$lh-subtitle-2, 'weight': $fw-subtitle-2, 'spaceing':$ls-subtitle-2, 'case' : $fc-subtitle-2),
   'body-1'    : ('size' : $fs-body-1, 'height':$lh-body-1, 'weight': $fw-body-1, 'spaceing':$ls-body-1, 'case' : $fc-body-1),
@@ -324,11 +324,11 @@ $defaultTypeScale: (
 // http://mikeyanderson.com/optimal_characters_per_line
 
 // Max with for content sized text
-$max-width-small: rs(20)!default;
+$max-width-small: rs(54)!default;
 $max-width-detail: $max-width-small; // deprecated var
 
 // Max with for detail sized text
-$max-width-medium: rs(13)!default;
+$max-width-medium: rs(64)!default;
 $max-width-content: $max-width-medium; // deprecated var
 
 /* --------------- */
