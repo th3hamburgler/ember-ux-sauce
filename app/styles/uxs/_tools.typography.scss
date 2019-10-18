@@ -1,3 +1,120 @@
+@mixin heading-1() {
+  font-size     : $fs-heading-1;
+  font-family   : $ff-heading-1;
+  font-weight   : $fw-heading-1;
+  line-height   : $lh-heading-1;
+  letter-spacing: $ls-heading-1;
+  text-transform: $fc-heading-1;
+}
+
+@mixin heading-2() {
+  font-size     : $fs-heading-2;
+  font-family   : $ff-heading-2;
+  font-weight   : $fw-heading-2;
+  line-height   : $lh-heading-2;
+  letter-spacing: $ls-heading-2;
+  text-transform: $fc-heading-2;
+}
+
+@mixin heading-3() {
+  font-size     : $fs-heading-3;
+  font-family   : $ff-heading-3;
+  font-weight   : $fw-heading-3;
+  line-height   : $lh-heading-3;
+  letter-spacing: $ls-heading-3;
+  text-transform: $fc-heading-3;
+}
+
+@mixin heading-4() {
+  font-size     : $fs-heading-4;
+  font-family   : $ff-heading-4;
+  font-weight   : $fw-heading-4;
+  line-height   : $lh-heading-4;
+  letter-spacing: $ls-heading-4;
+  text-transform: $fc-heading-4;
+}
+
+@mixin heading-5() {
+  font-size     : $fs-heading-5;
+  font-family   : $ff-heading-5;
+  font-weight   : $fw-heading-5;
+  line-height   : $lh-heading-5;
+  letter-spacing: $ls-heading-5;
+  text-transform: $fc-heading-5;
+}
+
+@mixin heading-6() {
+  font-size     : $fs-heading-6;
+  font-family   : $ff-heading-6;
+  font-weight   : $fw-heading-6;
+  line-height   : $lh-heading-6;
+  letter-spacing: $ls-heading-6;
+  text-transform: $fc-heading-6;
+}
+
+@mixin subtitle-1() {
+  font-size     : $fs-subtitle-1;
+  font-family   : $ff-subtitle-1;
+  font-weight   : $fw-subtitle-1;
+  line-height   : $lh-subtitle-1;
+  letter-spacing: $ls-subtitle-1;
+  text-transform: $fc-subtitle-1;
+}
+
+@mixin subtitle-2() {
+  font-size     : $fs-subtitle-2;
+  font-family   : $ff-subtitle-2;
+  font-weight   : $fw-subtitle-2;
+  line-height   : $lh-subtitle-2;
+  letter-spacing: $ls-subtitle-2;
+  text-transform: $fc-subtitle-2;
+}
+
+@mixin body-1() {
+  font-size     : $fs-body-1;
+  font-family   : $ff-body-1;
+  font-weight   : $fw-body-1;
+  line-height   : $lh-body-1;
+  letter-spacing: $ls-body-1;
+  text-transform: $fc-body-1;
+}
+
+@mixin body-2() {
+  font-size     : $fs-body-2;
+  font-family   : $ff-body-2;
+  font-weight   : $fw-body-2;
+  line-height   : $lh-body-2;
+  letter-spacing: $ls-body-2;
+  text-transform: $fc-body-2;
+}
+
+@mixin button() {
+  font-size     : $fs-button;
+  font-family   : $ff-button;
+  font-weight   : $fw-button;
+  line-height   : $lh-button;
+  letter-spacing: $ls-button;
+  text-transform: $fc-button;
+}
+
+@mixin caption() {
+  font-size     : $fs-caption;
+  font-family   : $ff-caption;
+  font-weight   : $fw-caption;
+  line-height   : $lh-caption;
+  letter-spacing: $ls-caption;
+  text-transform: $fc-caption;
+}
+
+@mixin overline() {
+  font-size     : $fs-overline;
+  font-family   : $ff-overline;
+  font-weight   : $fw-overline;
+  line-height   : $lh-overline;
+  letter-spacing: $ls-overline;
+  text-transform: $fc-overline;
+}
+
 /*
  * Type
  */

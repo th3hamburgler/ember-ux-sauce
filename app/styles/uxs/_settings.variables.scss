@@ -2,32 +2,36 @@
 /* UXS SETTINGS */
 /* ------------ */
 
+// If true use 8px grid else 25px grid;
+$newGridDefault: true!default;
+
+// Include deprecated styles
+$incDeprecated: true!default;
+
 // 1. The Grid
 // 2. Media Queries
 // 3. Animations
 // 4. Typography
 // 5. Color Pallet
 
-// Include deprecated styles
-$incDeprecated: false!default;
-
 /* ----------- */
-/* 1. THE GRID  */
+/* 1. THE GRID */
 /* ----------- */
 
 // The grid baseline dimension used thoughout the app
-$baseline: 25px!default;
+// $baseline: 25px!default;
+$baseline: 8px!default;
 
 // The default browser font-size used to convert units to rem
 $root-fs: 16!default;
 
 // By default the spacing scale is shared by padding, margin, width & height
 // Defailt spacing applies to all media querys (mobile first)
-$defaultSpacing: 0.5!default;
+$defaultSpacing: 2!default;
 // The $spacing hash can be used to apply different spacing at
 // different media queries.
 $spacing: (
-  "tablet": 1,
+  "tablet": 2,
 )
 !default;
 
@@ -106,8 +110,10 @@ $transition-timing-function: cubic-bezier(.4,0,.2,1)!default;
 /* 4. TYPOGRAPHY */
 /* ------------- */
 
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap');
+
 // The default type face
-$font-family: 'Lato'!default;
+$font-family: 'Roboto', sans-serif;
 
 // The default typeface body text
 $type-body-family: $font-family, sans-serif!default;
@@ -141,7 +147,45 @@ $type-base: 18px!default;
 // A scale to use on our type sizes
 $type-scale: 1.618!default;
 
+// The default font-familys
+// - Headings
+$ff-heading-1: $font-family;
+$ff-heading-2: $font-family;
+$ff-heading-3: $font-family;
+$ff-heading-4: $font-family;
+$ff-heading-5: $font-family;
+$ff-heading-6: $font-family;
+// - Subtitles
+$ff-subtitle-1: $font-family;
+$ff-subtitle-2: $font-family;
+// - Body
+$ff-body-1: $font-family;
+$ff-body-2: $font-family;
+// - Misc
+$ff-button: $font-family;
+$ff-caption: $font-family;
+$ff-overline: $font-family;
+
 // The default font-sizes
+// - Headings
+$fs-heading-1: rem-size(96px);
+$fs-heading-2: rem-size(60px);
+$fs-heading-3: rem-size(48px);
+$fs-heading-4: rem-size(34px);
+$fs-heading-5: rem-size(24px);
+$fs-heading-6: rem-size(20px);
+// - Subtitles
+$fs-subtitle-1: rem-size(16px);
+$fs-subtitle-2: rem-size(14px);
+// - Body
+$fs-body-1: rem-size(16px);
+$fs-body-2: rem-size(14px);
+// - Misc
+$fs-button: rem-size(14px);
+$fs-caption: rem-size(12px);
+$fs-overline: rem-size(10px);
+
+// @if $incDeprecated == true {
 $s-giant: scale($type-base, 3, $type-scale)!default;
 $s-huge: scale($type-base, 2, $type-scale)!default;
 $s-large: scale($type-base, 1, $type-scale)!default;
@@ -159,7 +203,28 @@ $defaultSizes: (
   "tiny"  : $s-tiny,
 )
 !default;
+// }
 
+// The default line-heights
+// - Headings
+$lh-heading-1: rem-size(96px);
+$lh-heading-2: rem-size(64px);
+$lh-heading-3: rem-size(56px);
+$lh-heading-4: rem-size(40px);
+$lh-heading-5: rem-size(32px);
+$lh-heading-6: rem-size(24px);
+// - Subtitles
+$lh-subtitle-1: rem-size(24px);
+$lh-subtitle-2: rem-size(24px);
+// - Body
+$lh-body-1: rem-size(24px);
+$lh-body-2: rem-size(24px);
+// - Misc
+$lh-button: rem-size(24px);
+$lh-caption: rem-size(16px);
+$lh-overline: rem-size(16px);
+
+// @if $incDeprecated == true {
 // The default line-heights - adhere to the grid!
 $lh-giant: rs(4)!default;
 $lh-huge: rs(3)!default;
@@ -168,7 +233,6 @@ $lh-medium: rs(1)!default;
 $lh-small: rs(1)!default;
 $lh-tiny: rs(1)!default;
 
-// Line heights used as style modifiers in our mixins
 $defaultLineHights: (
   "giant" : $lh-giant,
   "huge"  : $lh-huge,
@@ -176,6 +240,81 @@ $defaultLineHights: (
   "medium": $lh-medium,
   "small" : $lh-small,
   "tiny"  : $lh-tiny,
+)
+!default;
+// }
+
+// The default font-weights
+// - Headings
+$fw-heading-1: 300;
+$fw-heading-2: 300;
+$fw-heading-3: 400;
+$fw-heading-4: 400;
+$fw-heading-5: 400;
+$fw-heading-6: 500;
+// - Subtitles
+$fw-subtitle-1: 400;
+$fw-subtitle-2: 500;
+// - Body
+$fw-body-1: 400;
+$fw-body-2: 400;
+// - Misc
+$fw-button: 500;
+$fw-caption: 400;
+$fw-overline: 400;
+
+// The default letter spacing
+// - Headings
+$ls-heading-1: rem-size(-1.5px);
+$ls-heading-2: rem-size(-0.5px);
+$ls-heading-3: rem-size(0px);
+$ls-heading-4: rem-size(0.25px);
+$ls-heading-5: rem-size(0px);
+$ls-heading-6: rem-size(0.15px);
+// - Subtitles
+$ls-subtitle-1: rem-size(0.15px);
+$ls-subtitle-2: rem-size(0.1px);
+// - Body
+$ls-body-1: rem-size(0.5px);
+$ls-body-2: rem-size(0.25px);
+// - Misc
+$ls-button: rem-size(1.25px);
+$ls-caption: rem-size(0.4px);
+$ls-overline: rem-size(1.5px);
+
+// The default font case
+// - Headings
+$fc-heading-1: none;
+$fc-heading-2: none;
+$fc-heading-3: none;
+$fc-heading-4: none;
+$fc-heading-5: none;
+$fc-heading-6: none;
+// - Subtitles
+$fc-subtitle-1: none;
+$fc-subtitle-2: none;
+// - Body
+$fc-body-1: none;
+$fc-body-2: none;
+// - Misc
+$fc-button: uppercase;
+$fc-caption: none;
+$fc-overline: uppercase;
+
+$defaultTypeScale: (
+  'heading-1' : ('size' : $fs-heading-1, 'height':$lh-heading-1, 'weight': $fw-heading-1, 'spaceing':$ls-heading-1, 'case' : $fc-heading-1),
+  'heading-2' : ('size' : $fs-heading-2, 'height':$lh-heading-2, 'weight': $fw-heading-2, 'spaceing':$ls-heading-2, 'case' : $fc-heading-2),
+  'heading-3' : ('size' : $fs-heading-3, 'height':$lh-heading-3, 'weight': $fw-heading-3, 'spaceing':$ls-heading-3, 'case' : $fc-heading-3),
+  'heading-4' : ('size' : $fs-heading-4, 'height':$lh-heading-4, 'weight': $fw-heading-4, 'spaceing':$ls-heading-4, 'case' : $fc-heading-4),
+  'heading-5' : ('size' : $fs-heading-5, 'height':$lh-heading-5, 'weight': $fw-heading-5, 'spaceing':$ls-heading-5, 'case' : $fc-heading-5),
+  'heading-6' : ('size' : $fs-heading-6, 'height':$lh-heading-6, 'weight': $fw-heading-6, 'spaceing':$ls-heading-6, 'case' : $fc-heading-6),
+  'subtitle-1': ('size' : $fs-subtitle-1, 'height':$lh-subtitle-1, 'weight': $fw-subtitle-1, 'spaceing':$ls-subtitle-1, 'case' : $fc-subtitle-1),
+  'subtitle-2': ('size' : $fs-subtitle-2, 'height':$lh-subtitle-2, 'weight': $fw-subtitle-2, 'spaceing':$ls-subtitle-2, 'case' : $fc-subtitle-2),
+  'body-1'    : ('size' : $fs-body-1, 'height':$lh-body-1, 'weight': $fw-body-1, 'spaceing':$ls-body-1, 'case' : $fc-body-1),
+  'body-2'    : ('size' : $fs-body-2, 'height':$lh-body-2, 'weight': $fw-body-2, 'spaceing':$ls-body-2, 'case' : $fc-body-2),
+  'button'    : ('size' : $fs-button, 'height':$lh-button, 'weight': $fw-button, 'spaceing':$ls-button, 'case' : $fc-button),
+  'caption'   : ('size' : $fs-caption, 'height':$lh-caption, 'weight': $fw-caption, 'spaceing':$ls-caption, 'case' : $fc-caption),
+  'overline'  : ('size' : $fs-overline, 'height':$lh-overline, 'weight': $fw-overline, 'spaceing':$ls-overline, 'case' : $fc-overline),
 )
 !default;
 

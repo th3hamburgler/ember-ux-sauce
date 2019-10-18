@@ -1,4 +1,4 @@
-$baseline: 8px;
+// $baseline: 8px;
 /* Item */
 $data-item-v-padding: 1.5!default; // baselines
 $data-item-h-padding: 1!default;
@@ -165,4 +165,4 @@ $data-tip-tt: $data-default-tt;
     @include text-truncate-modifier;
   }
 }
-$baseline: 25px;
+// $baseline: 25px;

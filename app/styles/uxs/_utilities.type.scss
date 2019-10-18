@@ -1,0 +1,51 @@
+.t-heading-1 {
+  @include heading-1();
+}
+
+.t-heading-2 {
+  @include heading-2();
+}
+
+.t-heading-3 {
+  @include heading-3();
+}
+
+.t-heading-4 {
+  @include heading-4();
+}
+
+.t-heading-5 {
+  @include heading-5();
+}
+
+.t-heading-6 {
+  @include heading-6();
+}
+
+.t-subtitle-1 {
+  @include subtitle-1();
+}
+
+.t-subtitle-2 {
+  @include subtitle-2();
+}
+
+.t-body-1 {
+  @include body-1();
+}
+
+.t-body-2 {
+  @include body-2();
+}
+
+.t-button {
+  @include button();
+}
+
+.t-caption {
+  @include caption();
+}
+
+.t-overline {
+  @include overline();
+}

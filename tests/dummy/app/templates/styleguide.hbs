@@ -2,20 +2,68 @@
   {{#uxs-app fixedNav=false}}
 
     {{#uxs-window as |window|}}
-      {{#window.pane full=true padded=false}}
+      {{#window.pane full=true padding=true}}
 
-        {{uxs-heading "Spacing"}}
+        <div class="p-3">
+
+          <p class="t-overline mb-3">Typography</p>
+
+          <h1 class="t-heading-1 mb-1">H1 / Roboto Light 96/96</h1>
+          <h2 class="t-heading-2 mb-1">H2 / Roboto Light 60/64</h2>
+          <h3 class="t-heading-3 mb-1">H3 / Roboto Regular 48/56</h3>
+          <h4 class="t-heading-4 mb-1">H4 / Roboto Regular 34/40</h4>
+          <h5 class="t-heading-5 mb-1">H5 / Roboto Regular 24/32</h5>
+          <h6 class="t-heading-6 mb-3">H6 / Roboto Medium 20/24</h6>
+
+          <h2 class="t-subtitle-1 mb-1">Subtitle 1 / Roboto Regular 16/24</h2>
+          <h2 class="t-subtitle-2 mb-3">Subtitle 2 / Roboto Medium 14/24</h2>
+
+          <p class="t-body-1 mb-1">Body 1 / Roboto Regular 16/24</p>
+          <p class="t-body-2 mb-3">Body 2 / Roboto Regular 14/24</p>
+
+          <p class="t-button mb-1">Button / Roboto Medium 14/24</p>
+          <p class="t-caption mb-1">Caption / Roboto Regular 12/16</p>
+          <p class="t-overline mb-1">Overline / Roboto Regular 10/16</p>
+        </div>
+
+        <div class="p-3">
+
+          <p class="t-overline mb-3">Type Components</p>
+
+          {{uxs-heading "Heading 1" 1}}
+          {{uxs-heading "Heading 2" 2}}
+          {{uxs-heading "Heading 3" 3}}
+          {{uxs-heading "Heading 4" 4}}
+          {{uxs-heading "Heading 5" 5}}
+          {{uxs-heading "Heading 6" 6}}
+
+          {{uxs-subtitle "Subtitle" 1}}
+          {{uxs-subtitle "Subtitle" 2}}
+
+          {{uxs-content "Orci a consectetur cras magna nunc in ac massa a lacus penatibus rutrum curae enim dui a quis id. Ut id mus dui curae accumsan aptent est imperdiet posuere ad aptent felis vestibulum fusce vestibulum commodo in rhoncus." 1}}
+
+          {{uxs-content "Scelerisque taciti litora adipiscing metus a ridiculus sed a feugiat accumsan dis augue facilisi a nec a arcu montes euismod gravida. Hac lectus sodales a natoque eros sit feugiat sit orci suspendisse dictum porta morbi porta metus aliquet at euismod a nibh a condimentum suspendisse porttitor." 2}}
+
+          {{uxs-button "Button"}}
+
+          {{uxs-caption "A vaption"}}
+
+          {{uxs-overline "Overline"}}
+
+        </div>
+
+        {{!-- {{uxs-heading "Spacing"}}
 
         <div class="w-0 h-0 bg-p">Test</div>
         <div class="w-½ h-½ bg-p">Test</div>
         <div class="w-1 h-1 bg-p">Test</div>
         <div class="w-2 h-2 bg-p">Test</div>
         <div class="w-4 h-4 bg-p">Test</div>
-        <div class="w-8 h-8 bg-p">Test</div>
+        <div class="w-8 h-8 bg-p">Test</div> --}}
 
-        {{!-- {{uxs-heading "Styleguide"}}
+        {{!-- {{uxs-heading "Styleguide" class="ph-1"}}
 
-        {{uxs-subheading "List Data"}}
+        {{uxs-subheading "List Data" class="ph-1"}}
 
         {{#uxs-data
           display="list"
@@ -44,9 +92,9 @@
             {{/item.group}}
             {{item.tip "Here's the tip"}}
           {{/data.item}}
-        {{/uxs-data}} --}}
+        {{/uxs-data}}
 
-        {{!-- {{uxs-subheading "Inline Data"}}
+        {{uxs-subheading "Inline Data"}}
 
         {{#uxs-data
           display="inline"
