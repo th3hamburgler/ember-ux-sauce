@@ -77,6 +77,7 @@
   line-height   : $lh-body-1;
   letter-spacing: $ls-body-1;
   text-transform: $fc-body-1;
+  max-width     : $max-width-medium;
 }
 
 @mixin body-2() {
@@ -86,6 +87,7 @@
   line-height   : $lh-body-2;
   letter-spacing: $ls-body-2;
   text-transform: $fc-body-2;
+  max-width     : $max-width-small;
 }
 
 @mixin button() {
@@ -113,6 +115,15 @@
   line-height   : $lh-overline;
   letter-spacing: $ls-overline;
   text-transform: $fc-overline;
+}
+@mixin label-type() {
+  @include body-2();
+}
+@mixin input-type() {
+  @include body-1();
+}
+@mixin helper-type() {
+  @include body-2();
 }
 
 /*

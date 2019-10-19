@@ -8,22 +8,22 @@
 
           {{uxs-overline "Typography" class="mv-2"}}
 
-          <h1 class="t-headline-1 mb-1">H1 / Roboto Light 96/96</h1>
-          <h2 class="t-headline-2 mb-1">H2 / Roboto Light 60/64</h2>
-          <h3 class="t-headline-3 mb-1">H3 / Roboto Regular 48/56</h3>
-          <h4 class="t-headline-4 mb-1">H4 / Roboto Regular 34/40</h4>
-          <h5 class="t-headline-5 mb-1">H5 / Roboto Regular 24/32</h5>
-          <h6 class="t-headline-6 mb-3">H6 / Roboto Medium 20/24</h6>
+          <h1 class="t-headline-1 mb-1">H1 / Rubik Light 96/96</h1>
+          <h2 class="t-headline-2 mb-1">H2 / Rubik Light 60/64</h2>
+          <h3 class="t-headline-3 mb-1">H3 / Rubik Regular 48/56</h3>
+          <h4 class="t-headline-4 mb-1">H4 / Rubik Regular 34/40</h4>
+          <h5 class="t-headline-5 mb-1">H5 / Rubik Regular 24/32</h5>
+          <h6 class="t-headline-6 mb-3">H6 / Rubik Medium 20/24</h6>
 
-          <h2 class="t-subtitle-1 mb-1">Subtitle 1 / Roboto Regular 16/24</h2>
-          <h2 class="t-subtitle-2 mb-3">Subtitle 2 / Roboto Medium 14/24</h2>
+          <h2 class="t-subtitle-1 mb-1">Subtitle 1 / Rubik Regular 16/24</h2>
+          <h2 class="t-subtitle-2 mb-3">Subtitle 2 / Rubik Medium 14/24</h2>
 
-          <p class="t-body-1 mb-1">Body 1 / Roboto Regular 16/24</p>
-          <p class="t-body-2 mb-3">Body 2 / Roboto Regular 14/24</p>
+          <p class="t-body-1 mb-1">Body 1 / Rubik Regular 16/24</p>
+          <p class="t-body-2 mb-3">Body 2 / Rubik Regular 14/24</p>
 
-          <p class="t-button mb-1">Button / Roboto Medium 14/24</p>
-          <p class="t-caption mb-1">Caption / Roboto Regular 12/16</p>
-          <p class="t-overline mb-1">Overline / Roboto Regular 10/16</p>
+          <p class="t-button mb-1">Button / Rubik Medium 14/24</p>
+          <p class="t-caption mb-1">Caption / Rubik Regular 12/16</p>
+          <p class="t-overline mb-1">Overline / Rubik Regular 10/16</p>
         </div>
 
         <div class="p-3">
@@ -57,6 +57,41 @@
           {{uxs-caption "A Caption" class="mb-1"}}
 
           {{uxs-overline "Overline" class="mb-3"}}
+
+        </div>
+
+        <div class="p-3">
+
+          {{uxs-overline "Data Lists" class="mv-2"}}
+
+          {{#uxs-data
+            display="list"
+            padded=false
+            inset=false
+          as |data|
+          }}
+            {{data.item "Label" "Value"}}
+            {{data.item "Another Label" "Value with a tip" "Here's the tip"}}
+            {{data.item "A Long Value" "Scelerisque sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis ut ultricies cursus ornare tempus.Nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit massa in cras ipsum et adipiscing.Sed parturient id aenean." "Here's a long tip nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit"}}
+            {{#data.item as |item|}}
+              {{item.label "Grouped Label"}}
+              {{#item.group as |group|}}
+                {{group.value "Value One"}}
+                {{group.value "Value Two"}}
+                {{group.value "Value Three"}}
+              {{/item.group}}
+              {{item.tip "Here's the tip"}}
+            {{/data.item}}
+            {{#data.item as |item|}}
+              {{item.label "More Groups"}}
+              {{#item.group as |group|}}
+                {{group.value "Value One"}}
+                {{group.value "Value Two sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis"}}
+                {{group.value "Value Three"}}
+              {{/item.group}}
+              {{item.tip "Here's the tip"}}
+            {{/data.item}}
+          {{/uxs-data}}
 
         </div>
 

@@ -74,25 +74,24 @@ $data-tip-tt: $data-default-tt;
   &__group {}
 
   &__label {
-    line-height   : rs($data-label-lh);
-    font-size     : $data-label-fs;
-    font-weight   : $data-label-fw;
-    text-transform: $data-label-tt;
+    // line-height   : rs($data-label-lh);
+    // font-size     : $data-label-fs;
+    // font-weight   : $data-label-fw;
+    // text-transform: $data-label-tt;
+    @include label-type();
   }
 
   &__value {
-    line-height   : rs($data-value-lh);
-    font-size     : $data-value-fs;
-    font-weight   : $data-value-fw;
-    padding-left  : rs($data-value-indent);
-    text-transform: $data-value-tt;
+    padding-left: rs($data-value-indent);
+    @include input-type();
   }
 
   &__tip {
-    line-height   : rs($data-tip-lh);
-    font-size     : $data-tip-fs;
-    font-weight   : $data-tip-fw;
-    text-transform: $data-tip-tt;
+    // line-height   : rs($data-tip-lh);
+    // font-size     : $data-tip-fs;
+    // font-weight   : $data-tip-fw;
+    // text-transform: $data-tip-tt;
+    @include helper-type();
   }
 
   &__group,
@@ -142,7 +141,7 @@ $data-tip-tt: $data-default-tt;
   }
 
   &__tip {
-    min-width: 100%;
+    // min-width: 100%;
   }
 
   &__group,
@@ -155,7 +154,7 @@ $data-tip-tt: $data-default-tt;
     @include text-color-modifiers();
   }
 
-  &__label,
+  // &__label,
   &__tip,
   &__value {
     /* Modifiers */

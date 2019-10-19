@@ -90,13 +90,11 @@
   &-1 {
     @include body-1;
     margin-bottom: $lh-body-1;
-    max-width    : $max-width-medium;
   }
 
   &-2 {
     @include body-2;
     margin-bottom: $lh-body-2;
-    max-width    : $max-width-small;
   }
 }
 
