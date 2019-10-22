@@ -5,6 +5,10 @@ import Colorable from '../mixins/colorable';
 import Sizable from '../mixins/sizeable';
 import Weightable from '../mixins/weightable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
+import {
+  computed
+} from '@ember/object';
+
 /**
   A mixing to give a common functionality to text components
 
@@ -70,13 +74,20 @@ export default Mixin.create(Accessible, Alignable, Colorable, Sizable, Weightabl
     @public
   */
 
+  typeMod: computed('type', function() {
+    if (this.type) {
+      return `ty-${this.type}`;
+    }
+  }),
+
   //
   // Methods
   //
   init() {
     this._super(...arguments);
     this.registerModifiers([
-      'truncate'
+      'truncate',
+      '*typeMod',
     ]);
   },
   /**

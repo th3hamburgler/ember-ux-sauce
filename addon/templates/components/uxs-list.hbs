@@ -1,4 +1,4 @@
-{{yield
+{{!-- {{yield
   (
     hash
     subheading=(
@@ -22,6 +22,20 @@
     item-link=(
       component
       "uxs-list-link-item"
+      bordered=bordered
+      lines=lines
+      style=style
+    )
+  )
+}} --}}
+
+
+{{yield
+  (
+    hash
+    item=(
+      component
+      "uxs-list/item"
       bordered=bordered
       lines=lines
       style=style

@@ -228,6 +228,18 @@
     }
   }
 }
+
+@mixin type-modifiers($types:$defaultTypeScale, $mod:0) {
+  @each $modifier, $type in $types {
+    &--ty-#{$modifier} {
+      font-size     : map-get($type,size);
+      line-height   : map-get($type,height);
+      font-weight   : map-get($type,weight);
+      letter-spacing: map-get($type,spaceing);
+      text-transform: map-get($type,case);
+    }
+  }
+}
 @mixin font-size-modifiers($sizes:$defaultSizes, $mod:0) {
   @each $modifier, $size in $sizes {
     &--s-#{$modifier} {

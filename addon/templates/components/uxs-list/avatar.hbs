@@ -1,0 +1,12 @@
+{{#if image}}
+  <img src="{{text}}" alt="{{alt}}" class={{bem b "img" m}}>
+{{else}}
+  {{text}}
+{{/if}}
+
+{{yield (
+  hash
+  small=(component "uxs-text" type="body-2")
+  medium=(component "uxs-text" type="body-1")
+  large=(component "uxs-text" type="headline-6")
+)}}
