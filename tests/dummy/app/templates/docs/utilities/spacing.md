@@ -1,4 +1,12 @@
-# Utility Classes
+# Spacing Classes
+
+The following classes are available to use to apply space to your designs. Utility classes will always override any component styles. They can be applied to raw html or ember components
+
+```
+<div class="p-5">This div has some padding</div>
+
+{{uxs-text "This text has some bottom margin" class="mb-2">
+```
 
 ## Spacing Scale
 

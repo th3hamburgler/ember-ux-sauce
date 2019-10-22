@@ -1,52 +1,83 @@
-/***
- * Namespace uxs styles so we do not leak into the docs
- */
-$theme: 'sauce';
-$font-family: 'proxima-nova';
-@import 'uxs/tools.functions';
-
+// /***
+//  * Namespace uxs styles so we do not leak into the docs
+//  */
+//
+// @import 'uxs/tools.functions';
+//
 body.ember-tether-enabled {
   overflow: hidden;
 }
-
-.ember-application {
-  height: 100%;
-
-  > .ember-view {
-    height: 100%;
-  }
-}
-
-.docs-demo-example,
-.uxs-ns {
-  height: 100%;
-}
-@import 'uxs/settings.variables';
-@import 'uxs/include.tools'; // .docs-demo-example,
 //
+// .ember-application {
+//   height: 100%;
+//
+//   > .ember-view {
+//     height: 100%;
+//   }
+// }
+//
+// .docs-demo-example,
+// .uxs-ns {
+//   height: 100%;
+// }
+// @import 'uxs/settings.variables';
+// @import 'uxs/include.tools'; // .docs-demo-example,
+// //
+//
+// .uxs {
+//
+//   @import 'uxs/include.base';
+//   @import 'uxs/include.vendor';
+//   @import 'uxs/include.elements'; // @include body-type;
+//   @import 'uxs/include.objects';
+//   @import 'uxs/include.components';
+//   @import 'uxs/include.trumps';
+//   @import 'uxs/include.vendor';
+//   font-size  : $fs-body-1;
+//   line-height: $lh-body-1;
+//
+//   @import "theme/include.theme";
+//
+// }
+//
+// .ember-application {
+//   @import 'uxs/include.objects';
+//   @import 'uxs/include.components';
+//   @import 'uxs/include.trumps';
+//   @import 'uxs/include.vendor';
+//   @import "theme/include.theme";
+// }
+//
+// .docs-md p {
+//   @include body-1;
+// }
+//
+// button,
+// input,
+// textarea {
+//   font-size  : $fs-body-1;
+//   line-height: $lh-body-1;
+//   outline    : none;
+//
+//   &:focus {
+//     outline: none;
+//   }
+// }
+
+$isDocs: true;
+
+@import "uxs/tools.functions";
+@import "uxs/settings.variables";
+@import "uxs/include.base";
+@import "uxs/include.tools";
+@import "uxs/include.vendor";
+@import "uxs/include.elements";
 
 .uxs {
-  @import 'uxs/include.base';
-  @import 'uxs/include.vendor';
-  @import 'uxs/include.elements'; // @include body-type;
-  @import 'uxs/include.objects';
-  @import 'uxs/include.components';
-  @import 'uxs/include.trumps';
-  @import 'uxs/include.vendor';
-  @include content-font-size;
-  @import "theme/include.theme";
-}
-
-.ember-application {
-  @import 'uxs/include.objects';
-  @import 'uxs/include.components';
-  @import 'uxs/include.trumps';
-  @import 'uxs/include.vendor';
-  @import "theme/include.theme";
-}
-
-.docs-md p {
-  line-height: 25px;
+  @import 'uxs/reset.scss';
+  @import "uxs/include.objects";
+  @import "uxs/include.components";
+  @import "uxs/include.trumps";
 }
 
 .docs-mt-1,

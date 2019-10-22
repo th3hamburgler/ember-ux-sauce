@@ -1,6 +1,38 @@
 // Padding Spacing
 
 .p {
+  // default is the spaceing at "1"
+  $default: map-get($spacing-scale, "1") * $defaultPadding;
+  // default padding
+  padding : rs($default);
+
+  // vertical padding
+  &v {
+    padding-top   : rs($default);
+    padding-bottom: rs($default);
+  }
+  // horizontal padding
+  &h {
+    padding-left : rs($default);
+    padding-right: rs($default);
+  }
+  // top padding
+  &t {
+    padding-top: rs($default);
+  }
+  // right padding
+  &r {
+    padding-right: rs($default);
+  }
+  // bottom padding
+  &b {
+    padding-bottom: rs($default);
+  }
+  // left padding
+  &l {
+    padding-left: rs($default);
+  }
+  // padding size modifiers
   @each $modifier, $scale in $spacing-scale {
     // All the padding
     &-#{$modifier} {
@@ -70,196 +102,9 @@
       }
     }
   }
-}
 
-@if ($incDeprecated) {
-  .p {
-    padding: rs(1);
-  }
+  /* ----------------- */
+  /* PADDING + BORDERS */
+  /* ----------------- */
 
-  .pt {
-    padding-top: rs(1);
-  }
-
-  .pr {
-    padding-right: rs(1);
-  }
-
-  .pb {
-    padding-bottom: rs(1);
-  }
-
-  .pl {
-    padding-left: rs(1);
-  }
-  // Double
-
-  .p2 {
-    padding: rs(2);
-  }
-
-  .pt2 {
-    padding-top: rs(2);
-  }
-
-  .pr2 {
-    padding-right: rs(2);
-  }
-
-  .pb2 {
-    padding-bottom: rs(2);
-  }
-
-  .pl2 {
-    padding-left: rs(2);
-  }
-  // Tripple
-
-  .p3 {
-    padding: rs(3);
-  }
-
-  .pt3 {
-    padding-top: rs(3);
-  }
-
-  .pr3 {
-    padding-right: rs(3);
-  }
-
-  .pb3 {
-    padding-bottom: rs(3);
-  }
-
-  .pl3 {
-    padding-left: rs(3);
-  }
-  @include mq(tablet) {
-    /*
-   * padding helper classes
-   */
-    .lg\:p {
-      padding: rs(1);
-    }
-
-    .lg\:pt {
-      padding-top: rs(1);
-    }
-
-    .lg\:pr {
-      padding-right: rs(1);
-    }
-
-    .lg\:pb {
-      padding-bottom: rs(1);
-    }
-
-    .lg\:pl {
-      padding-left: rs(1);
-    }
-    // Double
-    .lg\:p2 {
-      padding: rs(2);
-    }
-
-    .lg\:pt2 {
-      padding-top: rs(2);
-    }
-
-    .lg\:pr2 {
-      padding-right: rs(2);
-    }
-
-    .lg\:pb2 {
-      padding-bottom: rs(2);
-    }
-
-    .lg\:pl2 {
-      padding-left: rs(2);
-    }
-    // Tripple
-    .lg\:p3 {
-      padding: rs(3);
-    }
-
-    .lg\:pt3 {
-      padding-top: rs(3);
-    }
-
-    .lg\:pr3 {
-      padding-right: rs(3);
-    }
-
-    .lg\:pb3 {
-      padding-bottom: rs(3);
-    }
-
-    .lg\:pl3 {
-      padding-left: rs(3);
-    }
-  }
-  @include mq(tablet, max) {
-    /*
-   * padding helper classes
-   */
-    .sm\:p {
-      padding: rs(1);
-    }
-
-    .sm\:pt {
-      padding-top: rs(1);
-    }
-
-    .sm\:pr {
-      padding-right: rs(1);
-    }
-
-    .sm\:pb {
-      padding-bottom: rs(1);
-    }
-
-    .sm\:pl {
-      padding-left: rs(1);
-    }
-    // Double
-    .sm\:p2 {
-      padding: rs(2);
-    }
-
-    .sm\:pt2 {
-      padding-top: rs(2);
-    }
-
-    .sm\:pr2 {
-      padding-right: rs(2);
-    }
-
-    .sm\:pb2 {
-      padding-bottom: rs(2);
-    }
-
-    .sm\:pl2 {
-      padding-left: rs(2);
-    }
-    // Tripple
-    .sm\:p3 {
-      padding: rs(3);
-    }
-
-    .sm\:pt3 {
-      padding-top: rs(3);
-    }
-
-    .sm\:pr3 {
-      padding-right: rs(3);
-    }
-
-    .sm\:pb3 {
-      padding-bottom: rs(3);
-    }
-
-    .sm\:pl3 {
-      padding-left: rs(3);
-    }
-  }
 }

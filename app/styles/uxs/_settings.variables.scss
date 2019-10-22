@@ -1,6 +1,8 @@
 /* ------------ */
 /* UXS SETTINGS */
 /* ------------ */
+$isDocs: true!default;
+@import 'https://fonts.googleapis.com/css?family=Lato:300,400,700|Material+Icons';
 
 // If true use 8px grid else 25px grid;
 $newGridDefault: true!default;
@@ -96,6 +98,16 @@ $breakpoints: (
 )
 !default;
 
+$mediaModifiers: (
+  // phone is default so no need to add as a utility class modifier
+  // xs: 'phone',
+  sm: 'tablet',
+  md: 'tablet-wide',
+  lg: 'desktop',
+  xl: 'desktop-wide'
+)
+!default;
+
 /* ------------- */
 /* 3. ANIMATIONS */
 /* ------------- */
@@ -111,7 +123,7 @@ $transition-timing-function: cubic-bezier(.4,0,.2,1)!default;
 /* ------------- */
 
 // @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik:100,200,300,300i,400,400i,500,500i,600,700,700i800,900&display=swap');
 
 // The default type face
 $font-family: 'Rubik', sans-serif;

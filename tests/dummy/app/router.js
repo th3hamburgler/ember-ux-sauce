@@ -22,7 +22,10 @@ Router.map(function() {
       this.route('variables');
       this.route('mixins');
       this.route('functions');
-      this.route('utilities');
+    });
+    this.route('utilities', function() {
+      this.route('spacing');
+      this.route('typography');
     });
     this.route('forms', function() {
       this.route('buttons');

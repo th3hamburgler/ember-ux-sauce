@@ -1,3 +1,7 @@
+/* ------------- */
+/* 1. TYPOGRAPHY */
+/* ------------- */
+
 .t-headline-1 {
   @include headline-1;
 }
@@ -104,4 +108,111 @@
 
 .overline {
   @include overline;
+}
+
+/* --------------- */
+/* 2. FONT WEIGHTS */
+/* --------------- */
+
+$weights: (
+  hairline : 100,
+  thin     : 200,
+  light    : 300,
+  normal   : 400,
+  medium   : 500,
+  semibold : 600,
+  bold     : 700,
+  extrabold: 800,
+  black    : 900,
+);
+
+@each $modifier, $weight in $weights {
+  .fw-#{$modifier} {
+    font-weight: $weight;
+  }
+
+  .hover\:fw-#{$modifier}:hover {
+    font-weight: $weight;
+  }
+
+  .focus\:fw-#{$modifier}:focus {
+    font-weight: $weight;
+  }
+}
+
+/* ------------- */
+/* 3. TEXT ALIGN */
+/* ------------- */
+
+.ta {
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  &-justify {
+    text-align: justify;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}
+
+/* ------------------ */
+/* 3. TEXT DECORATION */
+/* ------------------ */
+
+$decorations: (
+  overline    : overline,
+  underline   : underline,
+  line-through: line-through,
+  none        : none,
+);
+
+@each $modifier, $decoration in $decorations {
+  .td-#{$modifier} {
+    text-decoration: $decoration;
+  }
+
+  .hover\:td-#{$modifier}:hover {
+    text-decoration: $decoration;
+  }
+
+  .focus\:td-#{$modifier}:focus {
+    text-decoration: $decoration;
+  }
+}
+
+.tt {
+  &-capitalize {
+    text-transform: capitalize;
+  }
+
+  &-lowercase {
+    text-transform: lowercase;
+  }
+
+  &-none {
+    text-transform: none;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.bw {
+  border-width: rem-size(1px);
+}
+
+.bc {
+  border-color: $c-light;
+}
+
+.bs {
+  border-style: solid;
 }

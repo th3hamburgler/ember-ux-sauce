@@ -1,8 +1,13 @@
 body {
-  @include body-type;
-  @include content-font-size;
+  // @include body-type;
+  // @include content-font-size;
   background: $c-white;
   color     : $c-dark;
+  @if $isDocs == false {
+    font-size  : $fs-body-1;
+    font-family: $font-family;
+    line-height: $lh-body-1;
+  }
 }
 
 *,
@@ -20,15 +25,17 @@ html {
   height: 100%;
 }
 
-.ember-application {
-  min-height: 100vh!important;
-  height    : auto!important;
-  overflow  : auto!important;
+@if $isDocs == false {
+  .ember-application {
+    min-height: 100vh!important;
+    height    : auto!important;
+    overflow  : auto!important;
 
-  > .ember-view {
-    &:not(.liquid-destination) {
-      min-height: 100vh!important;
-      height    : auto!important;
+    > .ember-view {
+      &:not(.liquid-destination) {
+        min-height: 100vh!important;
+        height    : auto!important;
+      }
     }
   }
 }

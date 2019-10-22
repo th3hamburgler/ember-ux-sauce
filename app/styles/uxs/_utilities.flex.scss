@@ -1,74 +1,449 @@
-.f {
-  display: flex;
+/* -------------------- */
+/* FLEX UTILITY CLASSES */
+/* -------------------- */
 
-  &--nm {
-    display: block;
-    @include mq(phone) {
-      display: flex;
+// 1. Flex Direction
+// 2. Flex Wrap
+// 3. Align Items
+// 4. Align Content
+// 5. Align Self
+// 6. Justify Content
+// 7. Flex
+// 8. Flex Grow
+// 9. Flex Shrink
+// 10. Order
+
+/* -------------- */
+/* FLEX DIRECTION */
+/* -------------- */
+
+// .fx-row
+// .fx-row-reverse
+// .fx-col
+// .fx-col-reverse
+
+.fx {
+  &-row {
+    display       : flex;
+    flex-direction: row;
+  }
+
+  &-row-reverse {
+    display       : flex;
+    flex-direction: row-reverse;
+  }
+
+  &-col {
+    display       : flex;
+    flex-direction: column;
+  }
+
+  &-col-reverse {
+    display       : flex;
+    flex-direction: column-reverse;
+  }
+}
+
+// - Examples -
+// .sm:fx-row
+// .md:fx-row-reverse
+// .lg:fx-col
+// .xl:fx-col-reverse
+
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:fx {
+      &-row {
+        display       : flex;
+        flex-direction: row;
+      }
+
+      &-row-reverse {
+        display       : flex;
+        flex-direction: row-reverse;
+      }
+
+      &-col {
+        display       : flex;
+        flex-direction: column;
+      }
+
+      &-col-reverse {
+        display       : flex;
+        flex-direction: column-reverse;
+      }
     }
   }
 }
 
-.fc {
-  @extend .f;
-  flex-direction: column;
+/* --------- */
+/* FLEX WRAP */
+/* --------- */
 
-  &--nm {
-    display: block;
-    @include mq(phone) {
-      display: flex;
+// .fx-no-wrap
+// .fx-wrap
+// .fx-wrap-reverse
+
+.fx-w {
+  &-no-wrap {
+    flex-wrap: nowrap;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  &-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+}
+
+// - Examples -
+// .sm:fx-no-wrap
+// .md:fx-wrap
+// .lg:fx-wrap-reverse
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:fx-w {
+      &-no-wrap {
+        flex-wrap: nowrap;
+      }
+
+      &-wrap {
+        flex-wrap: wrap;
+      }
+
+      &-wrap-reverse {
+        flex-wrap: wrap-reverse;
+      }
     }
   }
 }
 
-.fr {
-  @extend .f;
-  flex-direction: row;
+/* ----------- */
+/* ALIGN ITEMS */
+/* ----------- */
 
-  &--nm {
-    display: block;
-    @include mq(phone) {
-      display: flex;
+$alignItems: (
+  stretch : stretch,
+  start   : flex-start,
+  center  : center,
+  end     : flex-end,
+  baseline: baseline,
+)
+!default;
+
+// .fx-ai-stretch
+// .fx-ai-start
+// .fx-au-center
+// .fx-ai-end
+// .fx-ai-baseline
+.fx-ai {
+  @each $modifier, $align in $alignItems {
+    &-#{$modifier} {
+      align-items: $align;
+    }
+  }
+}
+// - Examples -
+// .sm:fx-ai-stretch
+// .md:fx-ai-start
+// .lg:fx-au-center
+// .xl:fx-ai-end
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:fx-ai {
+      @each $modifier, $align in $alignItems {
+        &-#{$modifier} {
+          align-items: $align;
+        }
+      }
     }
   }
 }
 
-.fg {
-  flex: 1 1 auto;
+/* ------------- */
+/* ALIGN CONTENT */
+/* ------------- */
+
+$alignContent: (
+  start  : flex-start,
+  center : center,
+  end    : flex-end,
+  between: space-between,
+  around : space-around,
+)
+!default;
+
+// .fx-ac-start
+// .fx-ac-center
+// .fx-ac-end
+// .fx-ac-between
+// .fx-ac-around
+.fx-ac {
+  @each $modifier, $align in $alignContent {
+    &-#{$modifier} {
+      align-content: $align;
+    }
+  }
 }
 
-.fw {
-  flex-wrap: wrap;
+// - Examples -
+// .sm:fx-ai-start
+// .md:fx-ai-center
+// .lg:fx-au-end
+// .xl:fx-ai-between
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:fx-ac {
+      @each $modifier, $align in $alignContent {
+        &-#{$modifier} {
+          align-items: $align;
+        }
+      }
+    }
+  }
 }
 
-.fj-c {
-  justify-content: center;
+/* ---------- */
+/* ALIGN SELF */
+/* ---------- */
+
+$alignSelf: (
+  auto   : auto,
+  start  : start,
+  center : center,
+  end    : flex-end,
+  stretch: stretch,
+)
+!default;
+
+// .fx-as-auto
+// .fx-as-start
+// .fx-as-center
+// .fx-as-end
+// .fx-as-stretch
+.fx-as {
+  @each $modifier, $align in $alignSelf {
+    &-#{$modifier} {
+      align-self: $align;
+    }
+  }
 }
 
-.fj-e {
-  justify-content: flex-end;
+// - Examples -
+// .sm:fx-as-auto
+// .md:fx-as-start
+// .lg:fx-as-center
+// .xl:fx-as-end
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:fx-as {
+      @each $modifier, $align in $alignSelf {
+        &-#{$modifier} {
+          align-self: $align;
+        }
+      }
+    }
+  }
 }
 
-.fj-s {
-  justify-content: flex-start;
+/* --------------- */
+/* JUSTIFY CONTENT */
+/* --------------- */
+
+$justifyContent: (
+  start  : flex-start,
+  center : center,
+  end    : flex-end,
+  between: space-between,
+  around : space-around,
+)
+!default;
+
+// .fx-jc-start
+// .fx-jc-center
+// .fx-jc-end
+// .fx-jc-between
+// .fx-jc-around
+
+.fx-jc {
+  @each $modifier, $justify in $justifyContent {
+    &-#{$modifier} {
+      justify-content: $justify;
+    }
+  }
 }
 
-.fj-a {
-  justify-content: space-around;
+// - Examples -
+// .sm:fx-jc-start
+// .md:fx-jc-center
+// .lg:fx-jc-end
+// .xl:fx-jc-between
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:fx-jc {
+      @each $modifier, $justify in $justifyContent {
+        &-#{$modifier} {
+          justify-content: $justify;
+        }
+      }
+    }
+  }
 }
 
-.fj-b {
-  justify-content: space-between;
+/* -------------- */
+/* FLEX           */
+/* -------------- */
+
+$flexShorthands: (
+  initial: 0 1 auto,
+  1      : 1 1 0,
+  auto   : 1 1 auto,
+  none   : none,
+)
+!default;
+
+// .fx-initial
+// .fx-1
+// .fx-auto
+// .fx-none
+.fx {
+  @each $modifier, $flex in $flexShorthands {
+    &-#{$modifier} {
+      flex: $flex;
+    }
+  }
 }
 
-.fa-c {
-  align-items: center;
+// - Examples -
+// .sm:fx-initial
+// .md:fx-1
+// .lg:fx-auto
+// .xl:fx-none
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:fx {
+      @each $modifier, $flex in $flexShorthands {
+        &-#{$modifier} {
+          flex: $flex;
+        }
+      }
+    }
+  }
 }
 
-.fa-s {
-  align-items: flex-start;
+/* --------- */
+/* FLEX GROW */
+/* --------- */
+
+// .fx-g
+// .fx-g-none
+.fx-g {
+  flex-grow: 1;
+
+  &-none {
+    flex-grow: 0;
+  }
 }
 
-.fa-e {
-  align-items: flex-end;
+// - Examples -
+// .sm:fx-g
+// .md:fx-g-none
+// .lg:fx-g
+// .xl:fx-g-none
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:fx-g {
+      flex-grow: 1;
+
+      &-none {
+        flex-grow: 0;
+      }
+    }
+  }
+}
+
+/* ----------- */
+/* FLEX SHRINK */
+/* ----------- */
+
+// .fx-s
+// .fx-s-none
+.fx-s {
+  flex-shrink: 1;
+
+  &-none {
+    flex-shrink: 0;
+  }
+}
+
+// - Examples -
+// .sm:fx-s
+// .md:fx-s-none
+// .lg:fx-s
+// .xl:fx-s-none
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:fx-s {
+      flex-shrink: 1;
+
+      &-none {
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+/* --------- */
+/* ORDER     */
+/* --------- */
+
+$flexOrders: (
+  first: -9999,
+  last : 9999,
+  none : 0,
+  1    : 1,
+  2    : 2,
+  3    : 3,
+  4    : 4,
+  5    : 5,
+  6    : 6,
+  7    : 7,
+  8    : 8,
+  9    : 9,
+)
+!default;
+
+// .fx-o-first
+// .fx-o-last
+// .fx-o-none
+// .fx-o-1
+// .fx-o-2
+// .fx-o-3
+// ...
+// .fx-o-9
+.fx-o {
+  @each $modifier, $order in $flexOrders {
+    &-#{$modifier} {
+      order: $order;
+    }
+  }
+}
+
+// - Examples -
+// .sm:fx-s
+// .md:fx-s-none
+// .lg:fx-s
+// .xl:fx-s-none
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:fx-o {
+      @each $modifier, $order in $flexOrders {
+        &-#{$modifier} {
+          order: $order;
+        }
+      }
+    }
+  }
 }

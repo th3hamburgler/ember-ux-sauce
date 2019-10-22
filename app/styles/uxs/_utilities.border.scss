@@ -1,0 +1,99 @@
+/* ---------------------- */
+/* BORDER UTILITY CLASSES */
+/* ---------------------- */
+
+// 1. Border Colors
+// 2. Border Styles
+// 3. Border Width
+
+$borderColor: $c-light!default;
+$borderStyle: solid!default;
+$borderWidth: 1px!default;
+
+$borderColors: $defaultColors!default;
+
+$borderStyles: (
+  solid : solid,
+  dashed: dashed,
+  dotted: dotted,
+  double: double,
+  none  : none,
+)
+!default;
+
+$borderWidths: (
+  0: 0,
+  1: 1,
+  2: 2,
+  4: 4,
+  8: 8,
+)
+!default;
+
+/* --------------- */
+/* 1. BORDER COLOR */
+/* --------------- */
+
+.bc {
+  // default color is light and is
+  // applied to all elements by default
+  border-color: $c-light;
+  // apply each color modifer
+  @each $modifier, $color in $borderColors {
+    &-#{$modifier} {
+      border-color: $color;
+    }
+  }
+}
+
+/* --------------- */
+/* 2. BORDER STYLE */
+/* --------------- */
+
+.bs {
+  // default style is solid and is
+  // applied to all elements by default
+  border-style: $borderStyle;
+  // apply each style modifer
+  @each $modifier, $style in $borderStyles {
+    &-#{$modifier} {
+      border-style: $style;
+    }
+  }
+}
+
+/* --------------- */
+/* 3. BORDER WIDTH */
+/* --------------- */
+.b {
+  // default width is 1px, this class will also
+  // activate the default style and color unless
+  // overridden by other classes
+  border-width: rem-size($borderWidth);
+  // vertical borders
+  &v {
+    border-top-width   : rem-size($borderWidth);
+    border-bottom-width: rem-size($borderWidth);
+  }
+  // horizontal border
+  &h {
+    border-left-width : rem-size($borderWidth);
+    border-right-width: rem-size($borderWidth);
+  }
+  // top border
+  &t {
+    border-top-width: rem-size($borderWidth);
+  }
+  // right border
+  &r {
+    border-right-width: rem-size($borderWidth);
+  }
+  // bottom border
+  &b {
+    border-bottom-width: rem-size($borderWidth);
+  }
+  // left border
+  &l {
+    border-left-width: rem-size($borderWidth);
+  }
+}
