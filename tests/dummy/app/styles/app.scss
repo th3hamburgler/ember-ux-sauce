@@ -90,3 +90,45 @@ body > .ember-view {
   }
 
 }
+
+.docs-var-table {
+  display     : table;
+  table-layout: auto;
+  font-family : $font-family-mono;
+  margin      : 32px 0;
+
+  td,
+  th {
+    padding    : rs(.5) rs(1);
+    line-height: rs(4,1);
+    font-size  : $fs-body-2;
+  }
+
+  th {
+    background         : rgba($c-primary, .1);
+    border-top-width   : rem-size(1px);
+    border-bottom-width: rem-size(1px);
+    border-color       : rgba($c-primary, .3);
+    color              : $c-grey;
+  }
+
+  td {
+    border-bottom-width: rem-size(1px);
+    border-color       : rgba($c-primary, .1);
+
+    &:first-child {
+      color: $c-accent;
+    }
+
+    &:last-child {
+      color: $c-primary;
+    }
+  }
+
+  tr:last-child {
+    td {
+      border-color: rgba($c-primary, .3);
+    }
+  }
+
+}

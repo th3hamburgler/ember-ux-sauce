@@ -1,7 +1,7 @@
 table {
-  @extend .content;
-  margin     : 0 auto rem-size($baseline);
-  line-height: rem-size($baseline);
+  // @extend .content;
+  // margin     : 0 auto rem-size($baseline);
+  // line-height: rem-size($baseline);
   display    : block;
   overflow-x : auto;
   white-space: nowrap;
@@ -10,15 +10,16 @@ table {
 
 td,
 th {
-  @include text-truncate;
-  text-align: left;
-  padding   : 0 rem-size($baseline*0.5);
+  // @include text-truncate;
+  text-align    : left;
+  vertical-align: top;
+  // padding   : 0 rem-size($baseline*0.5);
 
-  &:first-child {
-    padding-left: 0;
-  }
-
-  &:last-child {
-    padding-right: 0;
-  }
+  // &:first-child {
+  //   padding-left: 0;
+  // }
+  //
+  // &:last-child {
+  //   padding-right: 0;
+  // }
 }

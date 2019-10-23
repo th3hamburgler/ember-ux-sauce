@@ -1,0 +1,29 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="flex-wrap.hbs"}}
+    <div class="uxs">
+      <div class="fx-row fx-w-{{wrap}} bg-light pl-1 pt-1">
+        <div class="w-2/5 bg-mid p-2 mr-1 mb-1 ta-c fx-none">1</div>
+        <div class="w-2/5 bg-mid p-2 mr-1 mb-1 ta-c fx-none">2</div>
+        <div class="w-2/5 bg-mid p-2 mr-1 mb-1 ta-c fx-none">3</div>
+      </div>
+    </div>
+
+  {{/demo.example}}
+
+  {{#args-table "datalist-flex-wrap" as |table|}}
+    {{#table.row "layout" as |row|}}
+      {{row.label "Flex Wrap"}}
+      {{row.input wrap options="flex-wraps"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  <datalist id="flex-wraps">
+    <option value="no-wrap"/>
+    <option value="wrap"/>
+    <option value="wrap-reverse"/>
+  </datalist>
+
+  {{demo.snippet "flex-wrap.hbs"}}
+{{/docs-demo}}

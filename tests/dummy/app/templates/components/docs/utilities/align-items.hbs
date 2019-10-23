@@ -1,0 +1,31 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="align-items.hbs"}}
+    <div class="uxs">
+      <div class="h-8 fx-row fx-ai-{{align}} bg-light pl-1 pt-1">
+        <div class="bg-mid p-1 mr-1 mb-1 ta-c fx-1">1</div>
+        <div class="bg-mid p-1 mr-1 mb-1 ta-c fx-1">2</div>
+        <div class="bg-mid p-1 mr-1 mb-1 ta-c fx-1">3</div>
+      </div>
+    </div>
+
+  {{/demo.example}}
+
+  {{#args-table "datalist-align-items" as |table|}}
+    {{#table.row "layout" as |row|}}
+      {{row.label "Align Items"}}
+      {{row.input align options="align-itemss"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
+
+  <datalist id="align-itemss">
+    <option value="stretch"/>
+    <option value="start"/>
+    <option value="center"/>
+    <option value="end"/>
+    <option value="baseline"/>
+  </datalist>
+
+  {{demo.snippet "align-items.hbs"}}
+{{/docs-demo}}

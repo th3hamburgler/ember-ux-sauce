@@ -26,6 +26,7 @@ Router.map(function() {
     this.route('utilities', function() {
       this.route('spacing');
       this.route('typography');
+      this.route('flex');
     });
     this.route('forms', function() {
       this.route('buttons');
