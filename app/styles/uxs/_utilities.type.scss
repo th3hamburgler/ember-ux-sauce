@@ -140,25 +140,60 @@ $weights: (
   }
 }
 
+// - Examples -
+// .sm:ta-center
+// .md:ta-left
+// .lg:ta-right
+// .xl:ta-justify
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:fw {
+      @each $modifier, $weight in $weights {
+        &-#{$modifier} {
+          font-weight: $weight;
+        }
+      }
+    }
+  }
+}
+
 /* ------------- */
 /* 3. TEXT ALIGN */
 /* ------------- */
 
+$textAligns: (
+  center : center,
+  left   : left,
+  right  : right,
+  justify: justify,
+);
+
+// .ta-center
+// .ta-left
+// .ta-right
+// .ta-justify
 .ta {
-  &-center {
-    text-align: center;
+  @each $modifier, $align in $textAligns {
+    &-#{$modifier} {
+      text-align: $align;
+    }
   }
+}
 
-  &-left {
-    text-align: left;
-  }
-
-  &-justify {
-    text-align: justify;
-  }
-
-  &-right {
-    text-align: right;
+// - Examples -
+// .sm:ta-center
+// .md:ta-left
+// .lg:ta-right
+// .xl:ta-justify
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:ta {
+      @each $modifier, $align in $textAligns {
+        &-#{$modifier} {
+          text-align: $align;
+        }
+      }
+    }
   }
 }
 
@@ -173,11 +208,20 @@ $decorations: (
   none        : none,
 );
 
+// td-overline
+// td-underline
+// td-line-through
+// td-none
 @each $modifier, $decoration in $decorations {
   .td-#{$modifier} {
     text-decoration: $decoration;
   }
+}
 
+// - Examples -
+// .hover:td-overline
+// .focus:td-underline
+@each $modifier, $decoration in $decorations {
   .hover\:td-#{$modifier}:hover {
     text-decoration: $decoration;
   }
@@ -186,6 +230,33 @@ $decorations: (
     text-decoration: $decoration;
   }
 }
+
+// - Examples -
+// .sm:td-overline
+// .md:td-underline
+// .lg:td-line-through
+// .xl:td-none
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:td {
+      @each $modifier, $decoration in $decorations {
+        &-#{$modifier} {
+          text-direction: $decoration;
+        }
+      }
+    }
+  }
+}
+
+/* ------------------ */
+/* 4. TEXT TRANSFORM */
+/* ------------------ */
+$textTransforms: (
+  capitalize: capitalize,
+  lowercase : lowercase,
+  none      : none,
+  uppercase : uppercase,
+);
 
 .tt {
   &-capitalize {

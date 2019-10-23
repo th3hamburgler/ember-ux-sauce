@@ -91,6 +91,11 @@ body > .ember-view {
 
 }
 
+.docs-md :not(pre) > code {
+  background: rgba($c-accent,0.1);
+  color     : $c-accent;
+}
+
 .docs-var-table {
   display     : table;
   table-layout: auto;

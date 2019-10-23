@@ -2,100 +2,303 @@
 
 The following classes are available to use to apply typographic styles to your designs. Utility classes will always override any component styles. They can be applied to raw html or ember components
 
-```
-<div class="type-headline-2">This div has a headline style</div>
+## Typography
 
-{{uxs-text "This text is bold" class="fw-bold">
-```
+Utilities for setting the default typographic styles of text.
 
-## Font Weights
+### Typographic Classes
 
-Utilities for controlling the font weight of an element.
+<table class="docs-var-table">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Properties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.t-headline-1</td>
+      <td>
+        font: 300 96px/96px sans-serif;<br>
+        letter-spacing: -1.5px;<br>
+        text-transform: none;
+      </td>
+    </tr>
+    <tr>
+      <td>.t-headline-2</td>
+      <td>
+        font: 300 60px/64px sans-serif;<br>
+        letter-spacing: -0.5px;<br>
+        text-transform: none;
+      </td>
+    </tr>
+    <tr>
+      <td>.t-headline-3</td>
+      <td>
+        font: 400 48px/56px sans-serif;<br>
+        letter-spacing: 0;<br>
+        text-transform: none;
+      </td>
+    </tr>
+    <tr>
+      <td>.t-headline-4</td>
+      <td>
+        font: 400 34px/40px sans-serif;<br>
+        letter-spacing: 0.25px;<br>
+        text-transform: none;
+      </td>
+    </tr>
+    <tr>
+      <td>.t-headline-5</td>
+      <td>
+        font: 400 24px/32px sans-serif;<br>
+        letter-spacing: 0px;<br>
+        text-transform: none;
+      </td>
+    </tr>
+    <tr>
+      <td>.t-headline-6</td>
+      <td>
+        font: 500 20px/24px sans-serif;<br>
+        letter-spacing: 0.15px;<br>
+        text-transform: none;
+      </td>
+    </tr>
+    <tr>
+      <td>.t-subtitle-1</td>
+      <td>
+        font: 400 16px/24px sans-serif;<br>
+        letter-spacing: 0.15px;<br>
+        text-transform: none;
+      </td>
+    </tr>
+    <tr>
+      <td>.t-subtitle-2</td>
+      <td>
+        font: 500 14px/24px sans-serif;<br>
+        letter-spacing: 0.1px;<br>
+        text-transform: none;
+      </td>
+    </tr>
+    <tr>
+      <td>.t-body-1</td>
+      <td>
+        font: 400 16px/24px sans-serif;<br>
+        letter-spacing: 0.5px;<br>
+        text-transform: none;
+      </td>
+    </tr>
+    <tr>
+      <td>.t-body-2</td>
+      <td>
+        font: 400 14px/24px sans-serif;<br>
+        letter-spacing: 0.25px;<br>
+        text-transform: none;
+      </td>
+    </tr>
+    <tr>
+      <td>.t-button</td>
+      <td>
+        font: 500 14px/24px sans-serif;<br>
+        letter-spacing: 1.25px;<br>
+        text-transform: uppercase;
+      </td>
+    </tr>
+    <tr>
+      <td>.t-caption</td>
+      <td>
+        font: 500 12px/16px sans-serif;<br>
+        letter-spacing: 0.4px;<br>
+        text-transform: none;
+      </td>
+    </tr>
+    <tr>
+      <td>.t-overline</td>
+      <td>
+        font: 500 10px/16px sans-serif;<br>
+        letter-spacing: 1.5px;<br>
+        text-transform: uppercase;
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-{{uxs-caption ".fw-hairline"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="fw-hairline mb-1"}}
+## Font Weight
 
-{{uxs-caption ".fw-thin"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="fw-thin mb-1"}}
+Control the font weight of an element using the `.fw-{weight}` utilities.
 
-{{uxs-caption ".fw-light"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="fw-light mb-1"}}
+### Font Weight Classes
 
-{{uxs-caption ".fw-normal"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="fw-normal mb-1"}}
+<table class="docs-var-table">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Properties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.fw-hairline</td>
+      <td>font-weight: 100;</td>
+    </tr>
+    <tr>
+      <td>.fw-thin</td>
+      <td>font-weight: 200;</td>
+    </tr>
+    <tr>
+      <td>.fw-light</td>
+      <td>font-weight: 300;</td>
+    </tr>
+    <tr>
+      <td>.fw-normal</td>
+      <td>font-weight: 400;</td>
+    </tr>
+    <tr>
+      <td>.fw-medium</td>
+      <td>font-weight: 500;</td>
+    </tr>
+    <tr>
+      <td>.fw-semibold</td>
+      <td>font-weight: 600;</td>
+    </tr>
+    <tr>
+      <td>.fw-bold</td>
+      <td>font-weight: 700;</td>
+    </tr>
+    <tr>
+      <td>.fw-extrabold</td>
+      <td>font-weight: 800;</td>
+    </tr>
+    <tr>
+      <td>.fw-black</td>
+      <td>font-weight: 900;</td>
+    </tr>
+  </tbody>
+</table>
 
-{{uxs-caption ".fw-medium"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="fw-medium mb-1"}}
+### Responsive Font Weight
 
-{{uxs-caption ".fw-semibold"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="fw-semibold mb-1"}}
+To control the `font-weight` of an element at a specific breakpoint, add a `{screen}:` prefix to any existing `font weight` utility. For example, use `md:fw-bold` to apply the `fw-bold` utility at only medium screen sizes and above.
 
-{{uxs-caption ".fw-bold"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="fw-bold mb-1"}}
+### Font Weight Pseudo Classes
 
-{{uxs-caption ".fw-extrabold"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="fw-extrabold mb-1"}}
-
-{{uxs-caption ".fw-black"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="fw-black mb-1"}}
-
-### Hover Classes
-
-To control the font weight of an element on hover, add the hover: prefix to any existing style and decoration utility. For example, use hover:fw-bold to apply the fw-bold utility on hover.
-
-<div class="uxs w-full p bw hover:fw-bold">Hover over this text</div>
-
-### Focus Classes
-
-To control the font weight of an element on focus, add the focus: prefix to any existing style and decoration utility. For example, use focus:fw-bold to apply the fw-bold utility on focus.
-
-<input class="uxs type-body-1 w-full p bw focus:fw-bold" value="Focus me">
+To control the font weight of an element on hover or focus, add the `hover:` or `focus:` prefix to any existing style and decoration utility. For example, use `hover:fw-bold` to apply the `fw-bold` utility on hover and `focus:fw-light` to apply the `fw-light` utility on focus.
 
 ## Text Align
 
+### Text Align Classes
+
 Utilities for controlling the alignment of text.
 
-{{uxs-caption ".ta-left"}}
-{{uxs-text "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis fugit, enim molestiae praesentium eveniet, recusandae et error beatae facilis ex harum consequuntur, quia pariatur non. Doloribus illo, ullam blanditiis ab." class="ta-left mb-1"}}
+<table class="docs-var-table">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Properties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.ta-center</td>
+      <td>text-align: center;</td>
+    </tr>
+    <tr>
+      <td>.ta-left</td>
+      <td>text-align: left;</td>
+    </tr>
+    <tr>
+      <td>.ta-justify</td>
+      <td>text-align: justify;</td>
+    </tr>
+    <tr>
+      <td>.ta-right</td>
+      <td>text-align: right;</td>
+    </tr>
+  </tbody>
+</table>
 
-{{uxs-caption ".ta-center"}}
-{{uxs-text "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis fugit, enim molestiae praesentium eveniet, recusandae et error beatae facilis ex harum consequuntur, quia pariatur non. Doloribus illo, ullam blanditiis ab." class="ta-center mb-1"}}
+### Responsive Text Align
 
-{{uxs-caption ".ta-right"}}
-{{uxs-text "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis fugit, enim molestiae praesentium eveniet, recusandae et error beatae facilis ex harum consequuntur, quia pariatur non. Doloribus illo, ullam blanditiis ab." class="ta-right mb-1"}}
-
-{{uxs-caption ".ta-justify"}}
-{{uxs-text "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis fugit, enim molestiae praesentium eveniet, recusandae et error beatae facilis ex harum consequuntur, quia pariatur non. Doloribus illo, ullam blanditiis ab." class="ta-justify mb-1"}}
-
+To control the `text-align` of an element at a specific breakpoint, add a `{screen}:` prefix to any existing text align utility. For example, use `md:ta-right` to apply the `ta-right` utility at only medium screen sizes and above.
 
 ## Text Decoration
 
-Utilities for controlling the decoration of text.
+### Text Decoration Classes
 
-{{uxs-caption ".td-overline"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="td-overline mb-1"}}
+<table class="docs-var-table">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Properties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.td-overline</td>
+      <td>text-decoration: overline;</td>
+    </tr>
+    <tr>
+      <td>.td-underline</td>
+      <td>text-decoration: underline;</td>
+    </tr>
+    <tr>
+      <td>.td-line-through</td>
+      <td>text-decoration: line-through;</td>
+    </tr>
+    <tr>
+      <td>.td-none</td>
+      <td>text-decoration: none;</td>
+    </tr>
+  </tbody>
+</table>
 
-{{uxs-caption ".td-underline"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="td-underline mb-1"}}
+### Responsive Text Direction
 
-{{uxs-caption ".td-line-through"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="td-line-through mb-1"}}
+To control the `text-direction` of an element at a specific breakpoint, add a `{screen}:` prefix to any existing text direction utility. For example, use `md:td-line-through` to apply the `td-line-through` utility at only medium screen sizes and above.
 
-{{uxs-caption ".td-none"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="td-none mb-1"}}
+## Text Transform
 
-## Text transform
+Utilities for controlling the transformation of text.
 
-Utilities for transforming the case of text. Use the .tt-none to preserve the original casing.
+### Text Transform Classes
 
-{{uxs-caption ".tt-capitalize"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="tt-capitalize mb-1"}}
+<table class="docs-var-table">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Properties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.tt-capitalize</td>
+      <td>text-decoration: capitalize;</td>
+    </tr>
+    <tr>
+      <td>.tt-lowercase</td>
+      <td>text-decoration: lowercase;</td>
+    </tr>
+    <tr>
+      <td>.tt-none</td>
+      <td>text-decoration: none;</td>
+    </tr>
+    <tr>
+      <td>.tt-uppercase</td>
+      <td>text-decoration: uppercase;</td>
+    </tr>
+  </tbody>
+</table>
 
-{{uxs-caption ".tt-lowercase"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="tt-lowercase mb-1"}}
+### Responsive Text Transform
 
-{{uxs-caption ".tt-none"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="tt-none mb-1"}}
+To control the `text-transform` of an element at a specific breakpoint, add a `{screen}:` prefix to any existing text transform utility. For example, use `md:tt-uppercase` to apply the `ta-uppercase` utility at only medium screen sizes and above.
 
-{{uxs-caption ".tt-uppercase"}}
-{{uxs-text "The quick brown fox jumped over the lazy dog." class="tt-uppercase mb-1"}}
+
+## TODO
+
+- font-family
+- font-size
+- font-style
+- letter-spacing
+- line-height
+- placeholder color
