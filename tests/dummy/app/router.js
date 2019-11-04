@@ -25,6 +25,8 @@ Router.map(function() {
     });
     this.route('utilities', function() {
       this.route('spacing');
+      this.route('borders');
+      this.route('colors');
       this.route('typography');
       this.route('flex');
     });

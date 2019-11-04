@@ -24,7 +24,8 @@
 @function rem-size($pixels) {
   $value   : strip-unit($pixels);
   $remValue: ($value/$root-fs);
-  @return #{$remValue}rem;
+  // @return #{$remValue}rem;
+  @return #{$value}px;
 }
 /**
  * rs

@@ -1,0 +1,40 @@
+$opacities: (
+  100: 1,
+  80 : 0.8,
+  60 : 0.6,
+  40 : 0.4,
+  20 : 0.2,
+  0  : 0,
+)
+!default;
+
+// .op-100
+// .op-80
+// .op-60
+// .op-40
+// .op-20
+// .op-0
+.op {
+  @each $modifier, $opacity in $opacities {
+    &-#{$modifier} {
+      opacity: $opacity;
+    }
+  }
+}
+
+// - Examples -
+// .sm:op-100
+// .md:op-80
+// .lg:op-60
+// .xl:op-40
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:op {
+      @each $modifier, $opacity in $opacities {
+        &-#{$modifier} {
+          opacity: $opacity;
+        }
+      }
+    }
+  }
+}

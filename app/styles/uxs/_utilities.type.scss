@@ -259,20 +259,10 @@ $textTransforms: (
 );
 
 .tt {
-  &-capitalize {
-    text-transform: capitalize;
-  }
-
-  &-lowercase {
-    text-transform: lowercase;
-  }
-
-  &-none {
-    text-transform: none;
-  }
-
-  &-uppercase {
-    text-transform: uppercase;
+  @each $modifier, $transform in $textTransforms {
+    &-#{$modifier} {
+      text-transform: $transform;
+    }
   }
 }
 

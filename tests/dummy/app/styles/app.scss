@@ -125,7 +125,7 @@ body > .ember-view {
       color: $c-accent;
     }
 
-    &:last-child {
+    &:nth-child(2) {
       color: $c-primary;
     }
   }

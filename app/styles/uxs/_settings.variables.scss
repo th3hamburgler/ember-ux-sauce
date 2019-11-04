@@ -401,16 +401,17 @@ $c-warning-4: shade-light($c-warning, 3)!default;
 $c-warning-5: shade-light($c-warning, 4)!default;
 /* Colors used as style modifiers */
 $defaultColors: (
-  "primary": $c-primary,
-  "accent" : $c-accent,
-  "success": $c-success,
-  "error"  : $c-error,
-  "warning": $c-warning,
-  "dark"   : $c-dark,
-  "grey"   : $c-grey,
-  "mid"    : $c-mid,
-  "light"  : $c-light,
-  "white"  : $c-white,
+  "primary"    : $c-primary,
+  "accent"     : $c-accent,
+  "success"    : $c-success,
+  "error"      : $c-error,
+  "warning"    : $c-warning,
+  "dark"       : $c-dark,
+  "grey"       : $c-grey,
+  "mid"        : $c-mid,
+  "light"      : $c-light,
+  "white"      : $c-white,
+  "transparent": transparent,
 )
 !default;
 
