@@ -47,15 +47,8 @@ export default Mixin.create(Accessible, BEMComponent, Testable, {
     this._super(...arguments);
     this.registerModifiers([
       'disabled',
-      'inline',
       'loading',
-      'mini',
-      'naked',
       'selected',
-      '*style',
-      '*size',
-      'prefix',
-      'suffix',
     ]);
   },
 });

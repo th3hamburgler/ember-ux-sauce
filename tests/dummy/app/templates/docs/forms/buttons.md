@@ -1,12 +1,40 @@
 # Buttons
 
-The button component is used for clickable actions. This could be to submit a form or to trigger an ember action.
+The button and button-link components are used for actions. This could be to submit a form, trigger a custom ember action or in the case of button-link, navigate to a new route.
 
-## Usage
+To see a full list check out the [api page](../api/components/uxs-button)
 
-Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](../api/components/uxs-button)
+<!-- -->
 
-{{docs/uxs-button/basic-demo}}
+  ## Display Types
+
+  ### Contained
+
+  <div class="uxs">
+    {{uxs-button "Button"}}
+  </div>
+
+  ### Outlined
+
+  <div class="uxs">
+    {{uxs-button "Button" style="outlined"}}
+  </div>
+
+  ### Naked
+
+  <div class="uxs">
+    {{uxs-button "Button" style="naked"}}
+  </div>
+
+  ## Usage
+
+  Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](../api/components/uxs-button)
+
+  {{docs/uxs-button/basic-demo}}
+
+<!--
+
+
 
 ## Actions
 
@@ -36,3 +64,4 @@ Here's an example of the button in all it's stock sizes:
 
 {{args-table/size-options}}
 {{args-table/style-options}}
+-->

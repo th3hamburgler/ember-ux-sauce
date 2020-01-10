@@ -24,35 +24,35 @@ Control the border width of an element using the `.b-{size}` utilities.
       <td>.b-0</td>
       <td>border-width: 0px;</td>
       <td class="uxs">
-        <div class="pt-2 w-4 bg-light bc-primary b-0 fw-black ta-center"></div>
+        <div class="p w-4 bg-light bc-primary b-0 fw-black ta-center"></div>
       </td>
     </tr>
     <tr>
       <td>.b-1</td>
       <td>border-width: 1px;</td>
       <td class="uxs">
-        <div class="pt-2 w-4 bg-light bc-primary b-1 fw-black ta-center"></div>
+        <div class="p w-4 bg-light bc-primary b-1 fw-black ta-center"></div>
       </td>
     </tr>
     <tr>
       <td>.b-2</td>
       <td>border-width: 2px;</td>
       <td class="uxs">
-        <div class="pt-2 w-4 bg-light bc-primary b-2 fw-black ta-center"></div>
+        <div class="p w-4 bg-light bc-primary b-2 fw-black ta-center"></div>
       </td>
     </tr>
     <tr>
       <td>.b-4</td>
       <td>border-width: 4px;</td>
       <td class="uxs">
-        <div class="pt-2 w-4 bg-light bc-primary b-4 fw-black ta-center"></div>
+        <div class="p w-4 bg-light bc-primary b-4 fw-black ta-center"></div>
       </td>
     </tr>
     <tr>
       <td>.b-8</td>
       <td>border-width: 8px;</td>
       <td class="uxs">
-        <div class="pt-2 w-4 bg-light bc-primary b-8 fw-black ta-center"></div>
+        <div class="p w-4 bg-light bc-primary b-8 fw-black ta-center"></div>
       </td>
     </tr>
   </tbody>

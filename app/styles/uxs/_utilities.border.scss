@@ -160,15 +160,15 @@ $borderWidths: (
   }
 }
 
-@mixin border-padding-adjustment ($all:false, $top:false, $right:false, $bottom:false, $left:false, $padding) {
+@mixin border-padding-adjustment ($all:false, $top:false, $right:false, $bottom:false, $left:false, $padding, $borderMultiplier:1) {
   // padding: rs($default, $width);
   &.b {
     // default border widths
-    @include apply-padding($all, $top, $right, $bottom, $left, $padding, $borderWidth);
+    @include apply-padding($all, $top, $right, $bottom, $left, $padding, $borderWidth*$borderMultiplier);
     // Various border widths
     @each $modifier, $width in $borderWidths {
       &-#{$modifier} {
-        @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width);
+        @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width*$borderMultiplier);
       }
     }
   }
@@ -178,11 +178,11 @@ $borderWidths: (
     // account for padding if we have vertical padding
     @if ($top == true or $all == true) {
       // default border widths
-      @include apply-padding($top:true, $padding:$padding, $border: $borderWidth);
+      @include apply-padding($top:true, $padding:$padding, $border: $borderWidth*$borderMultiplier);
       // Various border widths
       @each $modifier, $width in $borderWidths {
         &-#{$modifier} {
-          @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width);
+          @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width*$borderMultiplier);
         }
       }
     }
@@ -192,7 +192,7 @@ $borderWidths: (
       // Various border widths
       @each $modifier, $width in $borderWidths {
         &-#{$modifier} {
-          @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width);
+          @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width*$borderMultiplier);
         }
       }
     }
@@ -201,21 +201,21 @@ $borderWidths: (
   &.bh {
     @if ($right == true or $all == true) {
       // default border widths
-      @include apply-padding($right:true, $padding:$padding, $border: $borderWidth);
+      @include apply-padding($right:true, $padding:$padding, $border: $borderWidth*$borderMultiplier);
       // Various border widths
       @each $modifier, $width in $borderWidths {
         &-#{$modifier} {
-          @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width);
+          @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width*$borderMultiplier);
         }
       }
     }
     @if ($left == true or $all == true) {
       // default border widths
-      @include apply-padding($left:true, $padding:$padding, $border: $borderWidth);
+      @include apply-padding($left:true, $padding:$padding, $border: $borderWidth*$borderMultiplier);
       // Various border widths
       @each $modifier, $width in $borderWidths {
         &-#{$modifier} {
-          @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width);
+          @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width*$borderMultiplier);
         }
       }
     }
@@ -224,11 +224,11 @@ $borderWidths: (
   &.bt {
     @if ($top == true or $all == true) {
       // default border widths
-      @include apply-padding($top:true, $padding:$padding, $border: $borderWidth/2);
+      @include apply-padding($top:true, $padding:$padding, $border: ($borderWidth/2)*$borderMultiplier);
       // Various border widths
       @each $modifier, $width in $borderWidths {
         &-#{$modifier} {
-          @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width/2);
+          @include apply-padding($all, $top, $right, $bottom, $left, $padding, ($width/2)*$borderMultiplier);
         }
       }
     }
@@ -237,11 +237,11 @@ $borderWidths: (
   &.br {
     @if ($right == true or $all == true) {
       // default border widths
-      @include apply-padding($right:true, $padding:$padding, $border: $borderWidth/2);
+      @include apply-padding($right:true, $padding:$padding, $border: ($borderWidth/2)*$borderMultiplier);
       // Various border widths
       @each $modifier, $width in $borderWidths {
         &-#{$modifier} {
-          @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width/2);
+          @include apply-padding($all, $top, $right, $bottom, $left, $padding, ($width/2)*$borderMultiplier);
         }
       }
     }
@@ -250,11 +250,11 @@ $borderWidths: (
   &.bb {
     @if ($bottom == true or $all == true) {
       // default border widths
-      @include apply-padding($bottom:true, $padding:$padding, $border: $borderWidth/2);
+      @include apply-padding($bottom:true, $padding:$padding, $border: ($borderWidth/2)*$borderMultiplier);
       // Various border widths
       @each $modifier, $width in $borderWidths {
         &-#{$modifier} {
-          @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width/2);
+          @include apply-padding($all, $top, $right, $bottom, $left, $padding, ($width/2)*$borderMultiplier);
         }
       }
     }
@@ -263,11 +263,11 @@ $borderWidths: (
   &.bl {
     @if ($left == true or $all == true) {
       // default border widths
-      @include apply-padding($left:true, $padding:$padding, $border:$borderWidth/2);
+      @include apply-padding($left:true, $padding:$padding, $border:($borderWidth/2)*$borderMultiplier);
       // Various border widths
       @each $modifier, $width in $borderWidths {
         &-#{$modifier} {
-          @include apply-padding($all, $top, $right, $bottom, $left, $padding, $width/2);
+          @include apply-padding($all, $top, $right, $bottom, $left, $padding, ($width/2)*$borderMultiplier);
         }
       }
     }
@@ -302,38 +302,14 @@ $borderWidths: (
   }
 }
 
-.ph {
-  // Default padding
-  $padding: map-get($spacing-scale, "1") * $defaultPadding;
-  @include border-padding-adjustment($left:true, $right:true, $padding: $padding);
-  // Various sizes
-  @each $modifier, $scale in $spacing-scale {
-    &-#{$modifier} {
-      @include border-padding-adjustment($left:true, $right:true, $padding:($scale * $defaultPadding));
-    }
-  }
-}
-
 .pt {
   // Default padding
   $padding: map-get($spacing-scale, "1") * $defaultPadding;
-  @include border-padding-adjustment($top:true, $padding: $padding);
+  @include border-padding-adjustment($top:true, $padding: $padding, $borderMultiplier:2);
   // Various sizes
   @each $modifier, $scale in $spacing-scale {
     &-#{$modifier} {
-      @include border-padding-adjustment($top:true, $padding:($scale * $defaultPadding));
-    }
-  }
-}
-
-.pr {
-  // Default padding
-  $padding: map-get($spacing-scale, "1") * $defaultPadding;
-  @include border-padding-adjustment($right:true, $padding: $padding);
-  // Various sizes
-  @each $modifier, $scale in $spacing-scale {
-    &-#{$modifier} {
-      @include border-padding-adjustment($right:true, $padding:($scale * $defaultPadding));
+      @include border-padding-adjustment($top:true, $padding:($scale * $defaultPadding), $borderMultiplier:2);
     }
   }
 }
@@ -341,23 +317,11 @@ $borderWidths: (
 .pb {
   // Default padding
   $padding: map-get($spacing-scale, "1") * $defaultPadding;
-  @include border-padding-adjustment($bottom:true, $padding: $padding);
+  @include border-padding-adjustment($bottom:true, $padding: $padding,$borderMultiplier:2);
   // Various sizes
   @each $modifier, $scale in $spacing-scale {
     &-#{$modifier} {
-      @include border-padding-adjustment($bottom:true, $padding:($scale * $defaultPadding));
-    }
-  }
-}
-
-.pl {
-  // Default padding
-  $padding: map-get($spacing-scale, "1") * $defaultPadding;
-  @include border-padding-adjustment($left:true, $padding: $padding);
-  // Various sizes
-  @each $modifier, $scale in $spacing-scale {
-    &-#{$modifier} {
-      @include border-padding-adjustment($left:true, $padding:($scale * $defaultPadding));
+      @include border-padding-adjustment($bottom:true, $padding:($scale * $defaultPadding), $borderMultiplier:2);
     }
   }
 }

@@ -27,16 +27,7 @@ const Button = Component.extend(Buttonable, Clickable, {
     @public
    */
   disabled: false,
-  /**
-    Set to true to enable the button to appear inline with other buttons or inline components.
-    The button will use the `inline-block` display property.
 
-    @argument inline
-    @type     Boolean
-    @default  false
-    @public
-   */
-  inline: false,
   /**
     Set to true if the button has already been pressed or should be disabled while another action takes place.
 
@@ -50,26 +41,7 @@ const Button = Component.extend(Buttonable, Clickable, {
     @public
    */
   loading: false,
-  /**
-    __Deprecated__
 
-    Use the _size="small"_ argument instead.
-
-    @argument mini
-    @type     Boolean
-    @default  false
-    @public
-   */
-  mini: null,
-  /**
-    Strip away any background styles and just display the buttons text.
-
-    @argument naked
-    @type     Boolean
-    @default  false
-    @public
-   */
-  naked: null,
   /**
     Add a custom name to your button, used for aria labels & test selectors.
 
@@ -93,31 +65,34 @@ const Button = Component.extend(Buttonable, Clickable, {
    */
   selected: null,
   /**
-    Set the size of the button. Default is medium.
-
-    UXS ships with the following stock sizes: giant, huge, large, medium, small, tiny.
-
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-massive-size_
-
-    @argument size
-    @type     String
-    @default  null
-    @public
-   */
-  size: null,
-  /**
     Set the style of the button.
 
-    UXS ships with the following stock styles: primary, accent, warning, error, dark, grey, mid, light & white.
+    UXS ships with the following styles:
+    - contained
+    - outlined
+    - naked
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-style_
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-style
 
-    @argument style
+    @argument color
     @type     String
     @default  null
     @public
    */
-  style: null,
+  style: 'contained',
+  /**
+    Set the color of the button.
+
+    UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
+
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-color_
+
+    @argument color
+    @type     String
+    @default  null
+    @public
+   */
+  color: null,
   /**
     The buttons text, this can be set as the first positional parameter.
 
@@ -129,6 +104,16 @@ const Button = Component.extend(Buttonable, Clickable, {
     @public
    */
   text: null,
+  // Methods
+  init() {
+    this._super(...arguments);
+    this.registerModifiers([
+      '*style',
+      '*color',
+      'selected',
+      '*radius'
+    ]);
+  },
 });
 
 Button.reopenClass({

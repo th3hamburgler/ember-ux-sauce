@@ -1,5 +1,6 @@
-{{#if loading}}
+<div class={{bem b "loading" m}}>
   {{loadingText}}
-{{else}}
+</div>
+<div class={{bem b "text" m}}>
   {{text}}{{yield}}
-{{/if}}
+</div>
