@@ -81,6 +81,20 @@ const Button = Component.extend(Buttonable, Clickable, {
    */
   style: 'contained',
   /**
+    Set the border radius of the button.
+
+    UXS ships with the following styles:
+    - square
+    - rounded
+    - round
+
+    @argument radius
+    @type     String
+    @default  null
+    @public
+   */
+  radius: 'rounded',
+  /**
     Set the color of the button.
 
     UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
@@ -92,7 +106,7 @@ const Button = Component.extend(Buttonable, Clickable, {
     @default  null
     @public
    */
-  color: null,
+  color: 'primary',
   /**
     The buttons text, this can be set as the first positional parameter.
 

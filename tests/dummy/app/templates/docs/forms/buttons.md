@@ -26,6 +26,26 @@ To see a full list check out the [api page](../api/components/uxs-button)
     {{uxs-button "Button" style="naked"}}
   </div>
 
+  ## Leading Icon
+
+  ### Contained
+
+  <div class="uxs">
+    {{uxs-button "Button" icon="star"}}
+  </div>
+
+  ### Outlined
+
+  <div class="uxs">
+    {{uxs-button "Button" icon="star" style="outlined"}}
+  </div>
+
+  ### Naked
+
+  <div class="uxs">
+    {{uxs-button "Button" icon="star" style="naked"}}
+  </div>
+
   ## Usage
 
   Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](../api/components/uxs-button)

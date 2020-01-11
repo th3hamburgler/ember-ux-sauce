@@ -5,6 +5,7 @@
     <div class="uxs">
       {{uxs-button
         text
+        icon=icon
         disabled=disabled
         loading=loading
         style=style
@@ -32,6 +33,25 @@
             id="button-text"
             placeholder="Button Text"
             value=text
+          }}
+        </td>
+        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
+      </tr>
+      <tr>
+        <td class="docs-w-32">
+          <label
+            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
+            for="button-text"
+          >
+            Icon
+          </label>
+        </td>
+        <td>
+          {{input
+            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
+            id="button-icon"
+            placeholder="Icon"
+            value=icon
           }}
         </td>
         <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>

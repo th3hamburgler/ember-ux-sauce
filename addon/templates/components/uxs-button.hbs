@@ -1,6 +1,13 @@
-<div class={{bem b "loading" m}}>
-  {{loadingText}}
-</div>
-<div class={{bem b "text" m}}>
-  {{text}}{{yield}}
+{{#if icon}}
+  <div class={{bem b "icon" m}}>
+    {{icon}}
+  </div>
+{{/if}}
+<div class={{bem b "body" m}}>
+  <div class={{bem b "loading" m}}>
+    {{loadingText}}
+  </div>
+  <div class={{bem b "text" m}}>
+    {{text}}{{yield}}
+  </div>
 </div>
