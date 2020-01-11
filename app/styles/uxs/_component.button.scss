@@ -1,4 +1,5 @@
 .uxs-button {
+  $self     : '.uxs-button';
   /* ############### *
    * Button Basics   *
    * ############### */
@@ -25,8 +26,13 @@
      * Default
      */
     @include elevation(1);
-    background-color: $c-primary;
-    color           : $c-light;
+    // Color modifiers
+    @each $modifier, $color in $defaultColors {
+      &#{$self}--#{$modifier} {
+        background-color: $color;
+        color           : contrast-color($color);
+      }
+    }
     /*
      * Hover/Focused/Selected
      */
@@ -57,11 +63,16 @@
     /*
      * Default
      */
-    border        : rem-size(1px) solid $c-primary;
-    color         : $c-primary;
     padding-top   : rs(1,1); // Account for border
     padding-bottom: rs(1,1); // size
 
+    // Color modifiers
+    @each $modifier, $color in $defaultColors {
+      &#{$self}--#{$modifier} {
+        border: rem-size(1px) solid $color;
+        color : $color;
+      }
+    }
     /*
      * Hover/Focused/Selected
      */
@@ -91,15 +102,25 @@
     /*
      * Default
      */
-    color: $c-primary;
+    // Color modifiers
+    @each $modifier, $color in $defaultColors {
+      &#{$self}--#{$modifier} {
+        color: $color;
+      }
+    }
 
     /*
      * Hover/Focused/Selected
      */
-    &--selected,
-    &:focus,
-    &:hover {
-      background-color: rgba($c-primary,0.2);
+    // Color modifiers
+    @each $modifier, $color in $defaultColors {
+      &#{$self}--#{$modifier} {
+        &#{$self}--selected,
+        &#{$self}:focus,
+        &#{$self}:hover {
+          background-color: rgba($color,0.2);
+        }
+      }
     }
 
     /*
@@ -111,7 +132,7 @@
 
       &:focus,
       &:hover {
-        background-color: transparent;
+        background-color: transparent!important;
       }
     }
   }
