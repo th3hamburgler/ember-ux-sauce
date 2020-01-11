@@ -1,15 +1,18 @@
 .uxs-button {
-  $self     : '.uxs-button';
+  $self             : '.uxs-button';
   /* ############### *
    * Button Basics   *
    * ############### */
   @include button;
-  cursor    : pointer;
-  padding   : rs(1) rs(2);
-  position  : relative;
-  transition: all 15ms cubic-bezier(0.4, 0, 0.2, 1);
-  height    : rs(5);
-  min-width : rs(16);
+  @include transition-all;
+  @include text-truncate;
+  cursor            : pointer;
+  padding           : rs(1) rs(2);
+  position          : relative;
+  height            : rs(5);
+  max-width         : 100%;
+  min-width         : rs(16);
+  -webkit-appearance: none;
 
   /* ################ *
    * Disabled Basics  *
@@ -152,6 +155,12 @@
     border-radius: rs(2.5);
   }
 
+  &--loading {
+    animation                : opacityPulse 3s ease-out;
+    animation-iteration-count: infinite;
+    opacity                  : 1;
+  }
+
   /* ############### *
    * Child Elements  *
    * ############### */
@@ -175,147 +184,3 @@
     }
   }
 }
-// .uxs-button {
-//   @include content-font-size;
-//   @include light-body-type;
-//   @include text-truncate;
-//   @include transition-all;
-//   @include input-glow {
-//     box-shadow: 0 0 0.5rem $c-grey;
-//   };
-//   -webkit-appearance: none;
-//   background-color  : $c-grey;
-//   border            : rem-size(1px) solid $c-grey;
-//   color             : $c-white;
-//   cursor            : pointer;
-//   display           : block;
-//   font-weight       : 400;
-//   line-height       : rs(1.5, 2);
-//   text-decoration   : none;
-//   margin            : rs(0.5, 1px) 0;
-//   max-width         : 100%;
-//   padding           : 0;
-//   text-align        : center;
-//   width             : rs(12);
-//   @include background-color-modifiers();
-//   @include border-color-modifiers();
-//   @include font-size-modifiers;
-//   // @include line-height-modifiers;
-//   &:focus,
-//   &:hover {
-//     opacity: 0.8;
-//   }
-//   // Sizes
-//   &--giant {
-//     line-height: rs(5, 2);
-//     width      : rs(24);
-//   }
-//
-//   &--huge {
-//     line-height: rs(2.5, 2);
-//     width      : rs(20);
-//   }
-//
-//   &--large {
-//     line-height: rs(2, 2);
-//     width      : rs(16);
-//   }
-//
-//   &--medium {
-//     line-height: rs(1.5, 2);
-//     width      : rs(12);
-//   }
-//
-//   &--small {
-//     line-height: rs(1, 2);
-//     width      : rs(6);
-//   }
-//
-//   &--tiny {
-//     line-height: rs(.75, 2);
-//     width      : rs(4);
-//   }
-//
-//   &--disabled {
-//     cursor        : not-allowed;
-//     pointer-events: none;
-//     opacity       : 0.6;
-//
-//     &:focus,
-//     &:hover {
-//       opacity: 0.6;
-//     }
-//     @if $high-contrast {
-//       text-decoration: line-through;
-//     }
-//   }
-//
-//   &--selected,
-//   &.active,
-//   &.selected {
-//     background-color: $btn-selected-background;
-//     color           : $c-grey;
-//   }
-//
-//   &--loading {
-//     animation                : opacityPulse 3s ease-out;
-//     animation-iteration-count: infinite;
-//     opacity                  : 1;
-//   }
-//
-//   &--mini {
-//     font-size  : rem-size($s-small);
-//     line-height: rs(1.0, 2px);
-//     max-width  : $max-width-content;
-//     min-height : rs(1.0, 2px);
-//     width      : rs(8);
-//   }
-//
-//   &--inline {
-//     display       : inline-block;
-//     margin        : 0 rs(0.25) 0 0;
-//     max-width     : fit-content;
-//     padding       : 0 rs(1.0);
-//     vertical-align: middle;
-//     width         : auto;
-//
-//     &:last-child {
-//       margin-right: 0;
-//     }
-//   }
-//
-//   &--naked {
-//     background    : transparent;
-//     border-color  : transparent;
-//     color         : $c-grey;
-//     font-weight   : bold;
-//     padding       : 0 rm(0.25);
-//     text-transform: uppercase;
-//     // width         : auto;
-//     @each $modifier, $color in $defaultColors {
-//       &.uxs-button--#{$modifier} {
-//         color: $color;
-//       }
-//     }
-//
-//     &:focus,
-//     &:hover {
-//       background-color: rgba($c-dark,0.05);
-//     }
-//   }
-//
-//   &--inline.uxs-button--mini {
-//     margin : 0 rs(0.125) 0 0;
-//     padding: 0 rs(0.5);
-//   }
-//
-//   &--inline.uxs-button--naked {
-//     padding: 0 rs(0.25);
-//   }
-//
-//   &--inline.active,
-//   &--inline.selected,
-//   &--inline.uxs-button--selected {
-//     background-color: transparent;
-//   }
-// }
