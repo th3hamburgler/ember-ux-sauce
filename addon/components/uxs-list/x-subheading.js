@@ -4,11 +4,6 @@ import layout from '../../templates/components/uxs-list/x-subheading';
 import {
   inject as service
 } from '@ember/service';
-import {
-  computed,
-  get,
-  set
-} from '@ember/object';
 
 /**
   A component to render a list subheading component
@@ -84,20 +79,6 @@ export default Component.extend(BEMComponent, {
     this._super(...arguments);
     this.registerModifiers(['bordered', '*style']);
   },
-  // Computed
-  showSubheading: computed('text', 'sort', function() {
-    let text = get(this, 'text'),
-      sort = get(this, 'sort'),
-      currentValue = get(this, 'subheadingState.value'),
-      currentSort = get(this, 'subheadingState.sort');
-
-    if (text !== currentValue || sort !== currentSort) {
-      // Side Effect - Bad!
-      set(this, 'subheadingState.value', text);
-      set(this, 'subheadingState.sort', sort);
-      return true;
-    }
-  }),
 }).reopenClass({
   positionalParams: ['text', 'sort'],
 });

@@ -1,6 +1,6 @@
 {{#basic-dropdown as |dropdown|}}
   {{#dropdown.trigger}}
-    {{uxs-icon icon style='white'}}
+    {{uxs-icon icon style="white"}}
   {{/dropdown.trigger}}
   {{#dropdown.content class="uxs-ns"}}
     {{#uxs-menu hasRightIcon=true as |menu|}}
@@ -13,13 +13,13 @@
             if (
               eq option.value selected
             )
-            'arrow_upward'
+            "arrow_upward"
             (
               if (
                 eq (concat "-" option.value)
                 selected
               )
-              'arrow_downward' ''
+              "arrow_downward" ""
             )
           )
         }}
