@@ -15,8 +15,6 @@ module('Integration | Component | uxs-fab', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
 
     await render(hbs `{{uxs-fab "my-icon"}}`);
 
@@ -64,5 +62,34 @@ module('Integration | Component | uxs-fab', function(hooks) {
       'uxs-fab--primary',
       'uxs-fab--loading',
     ]);
+  });
+
+  test('it renders a uxs-fab in a extend style', async function(assert) {
+    // Check state with just text
+    await render(hbs `{{uxs-fab "My Button" style="extended"}}`);
+
+    // Should have the following default classes
+    hasClasses(assert, this.element.querySelector('[data-test-fab]'), [
+      'uxs-fab',
+      'uxs-fab--extended',
+      'uxs-fab--primary',
+    ]);
+    assert.equal(this.element.querySelector('[data-test-fab-icon]'), null);
+    assert.equal(this.element.querySelector('[data-test-fab-text]').textContent.trim(), 'My Button');
+
+    // Check state with text and icon
+    await render(hbs `{{uxs-fab "My Button" "my-icon" style="extended"}}`);
+
+    // Should have the following default classes
+    hasClasses(assert, this.element.querySelector('[data-test-fab]'), [
+      'uxs-fab',
+      'uxs-fab--extended',
+      'uxs-fab--primary',
+    ]);
+
+    assert.ok(this.element.querySelector('[data-test-fab-icon]'));
+    assert.equal(this.element.querySelector('[data-test-fab-icon]').textContent.trim(), 'my-icon');
+    assert.equal(this.element.querySelector('[data-test-fab-text]').textContent.trim(), 'My Button');
+
   });
 });

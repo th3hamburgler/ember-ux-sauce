@@ -4,53 +4,59 @@ The button and button-link components are used for actions. This could be to sub
 
 To see a full list check out the [api page](../api/components/uxs-button)
 
-<!-- -->
+## Display Types
 
-  ## Display Types
+### Contained
 
-  ### Contained
+<div class="uxs">
+  {{uxs-button "Button"}}
+</div>
 
-  <div class="uxs">
-    {{uxs-button "Button"}}
-  </div>
+### Outlined
 
-  ### Outlined
+<div class="uxs">
+  {{uxs-button "Button" style="outlined"}}
+</div>
 
-  <div class="uxs">
-    {{uxs-button "Button" style="outlined"}}
-  </div>
+### Naked
 
-  ### Naked
+<div class="uxs">
+  {{uxs-button "Button" style="naked"}}
+</div>
 
-  <div class="uxs">
-    {{uxs-button "Button" style="naked"}}
-  </div>
+## Leading Icon
 
-  ## Leading Icon
+### Contained
 
-  ### Contained
+<div class="uxs">
+  {{uxs-button "Button" icon="star"}}
+</div>
 
-  <div class="uxs">
-    {{uxs-button "Button" icon="star"}}
-  </div>
+### Outlined
 
-  ### Outlined
+<div class="uxs">
+  {{uxs-button "Button" icon="star" style="outlined"}}
+</div>
 
-  <div class="uxs">
-    {{uxs-button "Button" icon="star" style="outlined"}}
-  </div>
+### Naked
 
-  ### Naked
+<div class="uxs">
+  {{uxs-button "Button" icon="star" style="naked"}}
+</div>
 
-  <div class="uxs">
-    {{uxs-button "Button" icon="star" style="naked"}}
-  </div>
+## Usage
 
-  ## Usage
+Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](../api/components/uxs-button)
 
-  Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](../api/components/uxs-button)
+{{docs/uxs-button/basic-demo}}
 
-  {{docs/uxs-button/basic-demo}}
+## Button Links
+
+Button links are available when you need a button to link to another route. The parameter pattern is the same at ember's built in [link-to component](https://guides.emberjs.com/release/templates/links/).
+
+<div class="uxs">
+  {{uxs-button-link "Button" "docs.buttons"}}
+</div>
 
 <!--
 
