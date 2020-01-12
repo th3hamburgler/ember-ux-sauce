@@ -1,8 +1,7 @@
 .uxs-button {
   $self             : '.uxs-button';
-  /* ############### *
-   * Button Basics   *
-   * ############### */
+
+  // Button Basics
   @include button;
   @include transition-all;
   @include text-truncate;

@@ -46,7 +46,6 @@ export default Mixin.create(Accessible, BEMComponent, Testable, {
   init() {
     this._super(...arguments);
     this.registerModifiers([
-      'disabled',
       'loading',
       'selected',
     ]);

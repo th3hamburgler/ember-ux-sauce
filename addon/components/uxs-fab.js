@@ -1,25 +1,37 @@
 import Component from '@ember/component';
-import layout from '../templates/components/uxs-button';
+import layout from '../templates/components/uxs-fab';
 import Buttonable from 'ember-ux-sauce/mixins/buttonable';
 import Clickable from 'ember-ux-sauce/mixins/clickable';
-export const BUTTON_STYLES = {
-  CONTAINED: 'contained',
-  OUTLINED: 'outlined',
-  NAKED: 'naked',
+import {
+  computed,
+  get
+} from '@ember/object';
+import {
+  bool,
+  equal
+} from '@ember/object/computed';
+import {
+  alias
+} from '@ember/object/computed';
+export const FAB_STYLES = {
+  REGULAR: 'regular',
+  MINI: 'mini',
+  EXTENDED: 'extended',
 };
 
 /**
   A component to render a simple button
 
   ```hbs
-  {{uxs-button "BUTTON TEXT"}}
+  {{uxs-button "icon"}}
   ```
-  @class UXS Button
+  @class UXS Fab
   @public
 */
-const Button = Component.extend(Buttonable, Clickable, {
+const Fab = Component.extend(Buttonable, Clickable, {
   // Attributes
   layout,
+  base: 'uxs-fab',
   tagName: 'button',
   /**
     Set to true to disable this button.
@@ -73,32 +85,18 @@ const Button = Component.extend(Buttonable, Clickable, {
     Set the style of the button.
 
     UXS ships with the following styles:
-    - contained
-    - outlined
-    - naked
+    - regular
+    - mini
+    - extended
 
     You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-style
 
-    @argument color
+    @argument style
     @type     String
     @default  null
     @public
    */
-  style: BUTTON_STYLES.CONTAINED,
-  /**
-    Set the border radius of the button.
-
-    UXS ships with the following styles:
-    - square
-    - rounded
-    - round
-
-    @argument radius
-    @type     String
-    @default  null
-    @public
-   */
-  radius: 'rounded',
+  style: 'regular',
   /**
     Set the color of the button.
 
@@ -122,7 +120,7 @@ const Button = Component.extend(Buttonable, Clickable, {
     @default  null
     @public
    */
-  text: null,
+  _text: null,
   // Methods
   init() {
     this._super(...arguments);
@@ -130,13 +128,38 @@ const Button = Component.extend(Buttonable, Clickable, {
       '*style',
       '*color',
       'selected',
-      '*radius'
     ]);
   },
+  // Computed
+  icon: computed('style', 'param1', 'param2', function() {
+    const style = get(this, 'style'),
+      p1 = get(this, 'param1'),
+      p2 = get(this, 'param2');
+
+    if (style === FAB_STYLES.EXTENDED) {
+      return p2;
+    } else {
+      return p1;
+    }
+  }),
+  text: computed('style', 'param1', 'param2', function() {
+    const style = get(this, 'style'),
+      p1 = get(this, 'param1'),
+      p2 = get(this, 'param2');
+
+    if (style === FAB_STYLES.EXTENDED) {
+      return p1;
+    } else {
+      return p2;
+    }
+  }),
+  showText: equal('style', FAB_STYLES.EXTENDED),
+  showIcon: bool('icon'),
+  loadingIcon: alias('icon'),
 });
 
-Button.reopenClass({
-  positionalParams: ['text'],
+Fab.reopenClass({
+  positionalParams: ['param1', 'param2'],
 });
 
-export default Button;
+export default Fab;

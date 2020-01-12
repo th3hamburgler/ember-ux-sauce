@@ -1,149 +1,79 @@
 import {
-  moduleForComponent,
+  module,
   test
+} from 'qunit';
+import {
+  setupRenderingTest
 } from 'ember-qunit';
+import {
+  render
+} from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import hasClasses from '../../helpers/has-classes';
 
-moduleForComponent('uxs-button', 'Integration | Component | uxs button', {
-  integration: true
-});
+module('Integration | Component | uxs-button', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders a default button', function(assert) {
+  test('it renders a uxs-button', async function(assert) {
 
-  this.render(hbs `{{uxs-button "My Button"}}`);
+    await render(hbs `{{uxs-button "My Button"}}`);
 
-  let $button = this.$('[data-test-uxs-button="my-button"]');
+    assert.equal(this.element.querySelector('[data-test-button-text]').textContent.trim(), "My Button");
 
-  assert.equal($button.text().trim(), 'My Button');
+    // Template block usage:
+    await render(hbs `
+      {{#uxs-button}}
+        My Button
+      {{/uxs-button}}
+    `);
 
-  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--primary ember-view', true, 'Has correct classes');
-
-});
-
-test('it renders a button with different styles', function(assert) {
-
-  this.set('style', 'primary');
-
-  this.render(hbs `{{uxs-button "My Button" style=style}}`);
-
-  let $button = this.$('[data-test-uxs-button="my-button"]');
-
-  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--primary ember-view', 'Has correct classes');
-
-  // Update style
-  this.set('style', 'accent');
-
-  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--accent ember-view', 'Has correct classes after update');
-
-});
-
-test('it renders an inline button', function(assert) {
-
-  this.set('inline', true);
-
-  this.render(hbs `{{uxs-button "My Button" inline=inline}}`);
-
-  let $button = this.$('[data-test-uxs-button="my-button"]');
-
-  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--inline uxs-button--primary ember-view', true, 'Has correct classes');
-});
-
-test('it renders a mini button', function(assert) {
-
-  this.set('mini', true);
-
-  this.render(hbs `{{uxs-button "My Button" mini=mini}}`);
-
-  let $button = this.$('[data-test-uxs-button="my-button"]');
-
-  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--mini uxs-button--primary ember-view', true, 'Has correct classes');
-});
-
-test('it renders a naked button', function(assert) {
-
-  this.set('naked', true);
-
-  this.render(hbs `{{uxs-button "My Button" naked=naked}}`);
-
-  let $button = this.$('[data-test-uxs-button="my-button"]');
-
-  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--naked uxs-button--primary ember-view', true, 'Has correct classes');
-});
-
-test('it renders a selected button', function(assert) {
-
-  this.set('selected', true);
-
-  this.render(hbs `{{uxs-button "My Button" selected=selected}}`);
-
-  let $button = this.$('[data-test-uxs-button="my-button"]');
-
-  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--primary uxs-button--selected ember-view', true, 'Has correct classes');
-});
-
-test('it renders a loading button', function(assert) {
-
-  this.set('loading', false);
-
-  this.render(hbs `{{uxs-button "My Button" loadingText="Busy" loading=loading}}`);
-
-  let $button = this.$('[data-test-uxs-button="my-button"]');
-
-  assert.equal($button.text().trim(), 'My Button');
-  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--primary ember-view', true, 'Has correct classes');
-
-  this.set('loading', true);
-
-  assert.equal($button.text().trim(), 'Busy');
-  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--loading uxs-button--primary ember-view', true, 'Has correct classes');
-});
-
-test('it fires an action on button click', function(assert) {
-
-  assert.expect(1);
-
-  this.set('buttonClicked', (name) => {
-    assert.ok(name, 'my-button');
+    assert.equal(this.element.querySelector('[data-test-button-text]').textContent.trim(), "My Button");
   });
 
-  this.render(hbs `{{uxs-button text="My Button" name="my-button" onClick=(action buttonClicked "my-button")}}`);
+  test('it renders a uxs-button with bem modifiers', async function(assert) {
 
-  let $button = this.$('[data-test-uxs-button="my-button"]');
+    // Check default classes
+    await render(hbs `{{uxs-button "My Button"}}`);
 
-  $button.click();
+    // Should have the following default classes
+    hasClasses(assert, this.element.querySelector('[data-test-button]'), [
+      'uxs-button',
+      'uxs-button--contained',
+      'uxs-button--rounded',
+      'uxs-button--primary',
+    ]);
 
-});
+    // Check modifier classes
+    await render(hbs `{{uxs-button
+      "My Button"
+      style="outlined"
+      color="accent"
+      disabled=true
+      radius="round"
+      name="my-button"
+    }}`);
 
-test('it does not fire an action on button click when disabled', function(assert) {
-
-  assert.expect(1);
-
-  this.set('buttonClicked', (name) => {
-    assert.ok(name, 'my-button', 'action called');
+    // Should have the following classes
+    hasClasses(assert, this.element.querySelector('[data-test-button="my-button"]'), [
+      'uxs-button',
+      'uxs-button--outlined',
+      'uxs-button--accent',
+      'uxs-button--disabled',
+      'uxs-button--round',
+    ]);
   });
 
-  this.render(hbs `{{uxs-button text="My Button" name="my-button" onClick=(action buttonClicked "my-button") disabled=true}}`);
+  test('it renders a uxs-button in a loading state', async function(assert) {
+    // Check default classes
+    await render(hbs `{{uxs-button "My Button" loading=true}}`);
 
-  let $button = this.$('[data-test-uxs-button="my-button"]');
-
-  $button.click();
-
-  assert.equal($button.attr("class"), 'uxs uxs-button uxs-button--disabled uxs-button--primary ember-view', 'Has correct classes');
-
-});
-
-test('test button accesibility', function(assert) {
-
-  this.set('disabled', false);
-
-  this.render(hbs `{{uxs-button "My Button" disabled=disabled}}`);
-
-  let $button = this.$('[data-test-uxs-button="my-button"]');
-
-  assert.equal($button.attr('aria-label'), 'My Button');
-  assert.equal($button.attr('role'), 'button');
-
-  this.set('disabled', true);
-
-  assert.equal($button[0].hasAttribute('aria-disabled'), true);
+    // Should have the following default classes
+    hasClasses(assert, this.element.querySelector('[data-test-button]'), [
+      'uxs-button',
+      'uxs-button--contained',
+      'uxs-button--rounded',
+      'uxs-button--primary',
+      'uxs-button--loading',
+    ]);
+  });
 });

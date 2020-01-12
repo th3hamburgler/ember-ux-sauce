@@ -30,8 +30,9 @@ Router.map(function() {
       this.route('typography');
       this.route('flex');
     });
+    this.route('buttons');
+    this.route('fabs');
     this.route('forms', function() {
-      this.route('buttons');
       this.route('button-links');
       this.route('button-groups');
       this.route('controls');

@@ -1,13 +1,25 @@
 {{#if icon}}
-  <div class={{bem b "icon" m}}>
+  <div
+    class={{bem b "icon" m}}
+    data-test-button-icon={{testSelectorValue}}
+  >
     {{icon}}
   </div>
 {{/if}}
-<div class={{bem b "body" m}}>
-  <div class={{bem b "loading" m}}>
+<div
+  class={{bem b "body" m}}
+  data-test-button-body={{testSelectorValue}}
+>
+  <div
+    class={{bem b "loading" m}}
+    data-test-button-loading={{testSelectorValue}}
+  >
     {{loadingText}}
   </div>
-  <div class={{bem b "text" m}}>
+  <div
+    class={{bem b "text" m}}
+    data-test-button-text={{testSelectorValue}}
+  >
     {{text}}{{yield}}
   </div>
 </div>

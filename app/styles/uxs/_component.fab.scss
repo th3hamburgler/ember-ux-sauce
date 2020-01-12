@@ -1,34 +1,139 @@
 .uxs-fab {
-  @extend .material-icons;
-  @include card-shadow(1);
-  @include transition-all;
-  $size        : rem-size($baseline*2.5);
-  $offset      : rem-size($baseline*.75);
-  background   : $c-accent;
-  border-radius: 100%;
-  bottom       : $offset;
-  color        : $c-white;
-  cursor       : pointer;
-  display      : block;
-  height       : $size;
-  right        : $offset;
-  line-height  : $size;
-  position     : fixed;
-  text-align   : center;
-  width        : $size;
+  $self             : '.uxs-button';
 
-  &:focus,
-  &:hover {
-    @include card-shadow(2);
+  // Button Basics
+  @include transition-all;
+  @include text-truncate;
+  @include elevation(6);
+  cursor            : pointer;
+  display           : flex;
+  flex-direction    : row;
+  justify-content   : center;
+  // padding           : rs(1) rs(2);
+  position          : relative;
+  // height            : rs(5);
+  -webkit-appearance: none;
+
+  // Color modifiers
+  @each $modifier, $color in $defaultColors {
+    &--#{$modifier} {
+      background-color: $color;
+      color           : contrast-color($color);
+    }
   }
 
-  &--disabled {
-    background: $c-accent-3;
-    cursor    : not-allowed;
+  &--selected,
+  &:focus,
+  &:hover {
+    @include elevation(8);
+    opacity: 0.8;
+  }
+
+  // Disabled
+  &--disabled,
+  &:disabled {
+    @include elevation(0);
+    background-color: $c-mid;
+    color           : rgba($c-dark,.5);
 
     &:focus,
     &:hover {
-      @include card-shadow(1);
+      @include elevation(0);
+      opacity: 1;
     }
   }
+
+  &--regular {
+    border-radius: rs(7);
+    height       : rs(7);
+    padding      : rs(2);
+    width        : rs(7);
+  }
+
+  &--mini {
+    border-radius: rs(6);
+    height       : rs(6);
+    padding      : rs(1);
+    width        : rs(6);
+  }
+
+  &--extended {
+    border-radius: rs(6);
+    height       : rs(6);
+    min-width    : rs(6);
+    padding      : rs(1.5) rs(2.5);
+  }
+
+  &__text {
+    @include button;
+  }
+
+  &__icon {
+    @extend .material-icons;
+    height     : rs(3);
+    line-height: rs(3);
+    font-size  : rs(2.5);
+
+    &--extended {
+      margin-left : rs(-1);
+      margin-right: rs(1.5);
+    }
+  }
+
+  &__loading-icon,
+  &__loading-text {
+    display : none;
+
+    position: absolute;
+    top     : rs(1);
+
+    &--loading {
+      visibility: visible;
+    }
+  }
+
+  &__loading-icon {
+    left  : 0;
+    right : 0;
+    bottom: 0;
+  }
+
+  &__loading-text {
+    right: 0;
+  }
 }
+
+// .uxs-fab {
+//   @extend .material-icons;
+//   @include card-shadow(1);
+//   @include transition-all;
+//   $size        : rem-size($baseline*2.5);
+//   $offset      : rem-size($baseline*.75);
+//   background   : $c-accent;
+//   border-radius: 100%;
+//   bottom       : $offset;
+//   color        : $c-white;
+//   cursor       : pointer;
+//   display      : block;
+//   height       : $size;
+//   right        : $offset;
+//   line-height  : $size;
+//   position     : fixed;
+//   text-align   : center;
+//   width        : $size;
+//
+//   &:focus,
+//   &:hover {
+//     @include card-shadow(2);
+//   }
+//
+//   &--disabled {
+//     background: $c-accent-3;
+//     cursor    : not-allowed;
+//
+//     &:focus,
+//     &:hover {
+//       @include card-shadow(1);
+//     }
+//   }
+// }
