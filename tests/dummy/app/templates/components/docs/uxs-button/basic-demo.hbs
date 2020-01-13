@@ -16,148 +16,45 @@
 
   {{/demo.example}}
 
-  <table class="docs-table-auto docs-m-4 docs-w-full">
-    <tbody>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-text"
-          >
-            Text
-          </label>
-        </td>
-        <td>
-          {{input
-            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-text"
-            placeholder="Button Text"
-            value=text
-          }}
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-text"
-          >
-            Icon
-          </label>
-        </td>
-        <td>
-          {{input
-            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-icon"
-            placeholder="Icon"
-            value=icon
-          }}
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-disabled"
-          >
-            Disabled
-          </label>
-        </td>
-        <td>
-          <label class="docs-py-3 docs-md:w-2/3 docs-block docs-text-grey docs-font-bold">
-            {{input checked=disabled class="docs-mr-2 docs-leading-tight" type="checkbox"}}
-            <span class="docs-text-sm">
-              {{disabled}}
-            </span>
-          </label>
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">Boolean</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-loading"
-          >
-            Loading
-          </label>
-        </td>
-        <td>
-          <label class="docs-py-3 docs-md:w-2/3 docs-block docs-text-grey docs-font-bold">
-            {{input checked=loading class="docs-mr-2 docs-leading-tight" type="checkbox"}}
-            <span class="docs-text-sm">
-              {{loading}}
-            </span>
-          </label>
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">Boolean</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-style"
-          >
-            Style
-          </label>
-        </td>
-        <td>
-          {{input
-            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-style"
-            placeholder="Style"
-            value=style
-            list="styles"
-          }}
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-size"
-          >
-            Color
-          </label>
-        </td>
-        <td>
-          {{input
-            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-color"
-            placeholder="Color"
-            value=color
-            list="colors"
-          }}
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-size"
-          >
-            Radius
-          </label>
-        </td>
-        <td>
-          {{input
-            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-radius"
-            placeholder="Radius"
-            value=radius
-            list="radii"
-          }}
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
-      </tr>
-    </tbody>
-  </table>
+  {{#args-table "button-basic-demo" as |table|}}
+    {{#table.row "button-text" as |row|}}
+      {{row.label "Text"}}
+      {{row.input text }}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "button-icon" as |row|}}
+      {{row.label "Icon"}}
+      {{row.input icon }}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "button-disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled }}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "button-loading" as |row|}}
+      {{row.label "Loading"}}
+      {{row.checkbox loading }}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "button-style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="button-styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "button-color" as |row|}}
+      {{row.label "Color"}}
+      {{row.input color options="colors"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "button-radii" as |row|}}
+      {{row.label "Radius"}}
+      {{row.input radius options="radii"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
 
-  <datalist id="styles">
+  <datalist id="button-styles">
     <option value="contained"/>
     <option value="outlined"/>
     <option value="naked"/>

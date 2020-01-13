@@ -15,107 +15,34 @@
     </div>
 
   {{/demo.example}}
-  <table class="docs-table-auto docs-m-4 docs-w-full">
-    <tbody>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-text"
-          >
-            Param 1
-          </label>
-        </td>
-        <td>
-          {{input
-            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="fab-link-text"
-            placeholder="Button Text"
-            value=p1
-          }}
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-text"
-          >
-            Param 2
-          </label>
-        </td>
-        <td>
-          {{input
-            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="fab-link-icon"
-            placeholder="Icon"
-            value=p2
-          }}
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-disabled"
-          >
-            Disabled
-          </label>
-        </td>
-        <td>
-          <label class="docs-py-3 docs-md:w-2/3 docs-block docs-text-grey docs-font-bold">
-            {{input checked=disabled class="docs-mr-2 docs-leading-tight" type="checkbox"}}
-            <span class="docs-text-sm">
-              {{disabled}}
-            </span>
-          </label>
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">Boolean</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-style"
-          >
-            Style
-          </label>
-        </td>
-        <td>
-          {{input
-            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="fab-link-style"
-            placeholder="Style"
-            value=style
-            list="fab-styles"
-          }}
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-size"
-          >
-            Color
-          </label>
-        </td>
-        <td>
-          {{input
-            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="fab-link-color"
-            placeholder="Color"
-            value=color
-            list="colors"
-          }}
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
-      </tr>
-    </tbody>
-  </table>
+
+  {{#args-table "fab-link-basic-demo" as |table|}}
+    {{#table.row "fab-link-icon" as |row|}}
+      {{row.label "Param 1"}}
+      {{row.input p1 }}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "fab-link-text" as |row|}}
+      {{row.label "Param 2"}}
+      {{row.input p2 }}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "fab-link-disabled" as |row|}}
+      {{row.label "Disabled"}}
+      {{row.checkbox disabled }}
+      {{row.type "Boolean"}}
+    {{/table.row}}
+    {{#table.row "fab-link-style" as |row|}}
+      {{row.label "Style"}}
+      {{row.input style options="fab-styles"}}
+      {{row.type "String"}}
+    {{/table.row}}
+    {{#table.row "fab-link-color" as |row|}}
+      {{row.label "Color"}}
+      {{row.input color options="colors"}}
+      {{row.type "String"}}
+    {{/table.row}}
+  {{/args-table}}
 
   <datalist id="fab-styles">
     <option value="regular"/>
