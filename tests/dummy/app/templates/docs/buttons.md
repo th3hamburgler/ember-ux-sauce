@@ -54,9 +54,7 @@ Let's look at a basic example. You can play around with some of the arguments in
 
 Button links are available when you need a button to link to another route. The parameter pattern is the same at ember's built in [link-to component](https://guides.emberjs.com/release/templates/links/).
 
-<div class="uxs">
-  {{uxs-button-link "Button" "docs.buttons"}}
-</div>
+{{docs/uxs-button-link/basic-demo}}
 
 <!--
 

@@ -5,6 +5,7 @@
   @include transition-all;
   @include text-truncate;
   @include elevation(6);
+  align-items       : center;
   cursor            : pointer;
   display           : flex;
   flex-direction    : row;

@@ -1,21 +1,20 @@
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="button-basic-demo.hbs"}}
+  {{#demo.example name="fab-link-demo.hbs"}}
 
     <div class="uxs">
-      {{uxs-button
-        text
-        icon=icon
-        disabled=disabled
-        loading=loading
+      {{uxs-fab-link
+        p1
+        "docs.buttons"
+        icon=p2
         style=style
         color=color
         radius=radius
+        disabled=disabled
       }}
     </div>
 
   {{/demo.example}}
-
   <table class="docs-table-auto docs-m-4 docs-w-full">
     <tbody>
       <tr>
@@ -24,15 +23,15 @@
             class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
             for="button-text"
           >
-            Text
+            Param 1
           </label>
         </td>
         <td>
           {{input
             class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-text"
+            id="fab-link-text"
             placeholder="Button Text"
-            value=text
+            value=p1
           }}
         </td>
         <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
@@ -43,15 +42,15 @@
             class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
             for="button-text"
           >
-            Icon
+            Param 2
           </label>
         </td>
         <td>
           {{input
             class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-icon"
+            id="fab-link-icon"
             placeholder="Icon"
-            value=icon
+            value=p2
           }}
         </td>
         <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
@@ -79,25 +78,6 @@
         <td class="docs-w-32">
           <label
             class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-loading"
-          >
-            Loading
-          </label>
-        </td>
-        <td>
-          <label class="docs-py-3 docs-md:w-2/3 docs-block docs-text-grey docs-font-bold">
-            {{input checked=loading class="docs-mr-2 docs-leading-tight" type="checkbox"}}
-            <span class="docs-text-sm">
-              {{loading}}
-            </span>
-          </label>
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">Boolean</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
             for="button-style"
           >
             Style
@@ -106,10 +86,10 @@
         <td>
           {{input
             class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-style"
+            id="fab-link-style"
             placeholder="Style"
             value=style
-            list="styles"
+            list="fab-styles"
           }}
         </td>
         <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
@@ -126,7 +106,7 @@
         <td>
           {{input
             class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-color"
+            id="fab-link-color"
             placeholder="Color"
             value=color
             list="colors"
@@ -134,39 +114,13 @@
         </td>
         <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
       </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-size"
-          >
-            Radius
-          </label>
-        </td>
-        <td>
-          {{input
-            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-radius"
-            placeholder="Radius"
-            value=radius
-            list="radii"
-          }}
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
-      </tr>
     </tbody>
   </table>
 
-  <datalist id="styles">
-    <option value="contained"/>
-    <option value="outlined"/>
-    <option value="naked"/>
-  </datalist>
-
-  <datalist id="radii">
-    <option value="none"/>
-    <option value="rounded"/>
-    <option value="round"/>
+  <datalist id="fab-styles">
+    <option value="regular"/>
+    <option value="mini"/>
+    <option value="extended"/>
   </datalist>
 
   <datalist id="colors">
@@ -182,5 +136,5 @@
   </datalist>
 
 
-  {{demo.snippet "button-basic-demo.hbs"}}
+  {{demo.snippet "fab-link-demo.hbs"}}
 {{/docs-demo}}

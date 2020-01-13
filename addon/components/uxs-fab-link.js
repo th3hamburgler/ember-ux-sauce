@@ -1,38 +1,31 @@
-import Component from '@ember/component';
-import layout from '../templates/components/uxs-fab';
-import Buttonable from 'ember-ux-sauce/mixins/buttonable';
-import Clickable from 'ember-ux-sauce/mixins/clickable';
+import LinkComponent from '@ember/routing/link-component';
+import layout from '../templates/components/uxs-fab-link';
 import {
   computed,
   get
 } from '@ember/object';
 import {
+  alias,
   bool,
   equal
 } from '@ember/object/computed';
+import Buttonable from 'ember-ux-sauce/mixins/buttonable';
 import {
-  alias
-} from '@ember/object/computed';
-export const FAB_STYLES = {
-  REGULAR: 'regular',
-  MINI: 'mini',
-  EXTENDED: 'extended',
-};
+  FAB_STYLES
+} from 'ember-ux-sauce/components/uxs-fab';
 
 /**
-  A component to render a simple fab button
+  A component to render a simple fab button link
 
   ```hbs
-  {{uxs-fab "icon"}}
+  {{uxs-fab-link "icon" "route" param}}
   ```
-  @class UXS Fab
+  @class UXS Fab Link
   @public
 */
-const Fab = Component.extend(Buttonable, Clickable, {
-  // Attributes
+export default LinkComponent.extend(Buttonable, {
   layout,
   base: 'uxs-fab',
-  tagName: 'button',
   /**
     Set to true to disable this button.
 
@@ -44,21 +37,6 @@ const Fab = Component.extend(Buttonable, Clickable, {
     @public
    */
   disabled: false,
-
-  /**
-    Set to true if the button has already been pressed or should be disabled while another action takes place.
-
-    If the _loadingText_ argument has been provided this will be displayed, defaults to "Loading…".
-
-    This will activate it's loading style and also prevent any actions from being fired..
-
-    @argument loading
-    @type     Boolean
-    @default  false
-    @public
-   */
-  loading: false,
-
   /**
     Add a custom name to your button, used for aria labels & test selectors.
 
@@ -110,6 +88,7 @@ const Fab = Component.extend(Buttonable, Clickable, {
     @public
    */
   color: 'primary',
+
   /**
     The buttons text, this can be set as the first positional parameter.
 
@@ -120,7 +99,32 @@ const Fab = Component.extend(Buttonable, Clickable, {
     @default  null
     @public
    */
-  _text: null,
+  computedText: computed('style', 'linkTitle', 'text', function() {
+    const style = get(this, 'style'),
+      linkTitle = get(this, 'linkTitle'),
+      text = get(this, 'text');
+
+    if (style === FAB_STYLES.EXTENDED) {
+      return linkTitle;
+    } else {
+      return text;
+    }
+  }),
+  computedIcon: computed('style', 'linkTitle', 'icon', function() {
+    const style = get(this, 'style'),
+      linkTitle = get(this, 'linkTitle'),
+      icon = get(this, 'icon');
+
+    if (style === FAB_STYLES.EXTENDED) {
+      return icon;
+    } else {
+      return linkTitle;
+    }
+  }),
+
+  showText: equal('style', FAB_STYLES.EXTENDED),
+  showIcon: bool('computedIcon'),
+  loadingIcon: alias('computedIcon'),
   // Methods
   init() {
     this._super(...arguments);
@@ -128,38 +132,7 @@ const Fab = Component.extend(Buttonable, Clickable, {
       '*style',
       '*color',
       'selected',
+      'disabled'
     ]);
   },
-  // Computed
-  icon: computed('style', 'param1', 'param2', function() {
-    const style = get(this, 'style'),
-      p1 = get(this, 'param1'),
-      p2 = get(this, 'param2');
-
-    if (style === FAB_STYLES.EXTENDED) {
-      return p2;
-    } else {
-      return p1;
-    }
-  }),
-  text: computed('style', 'param1', 'param2', function() {
-    const style = get(this, 'style'),
-      p1 = get(this, 'param1'),
-      p2 = get(this, 'param2');
-
-    if (style === FAB_STYLES.EXTENDED) {
-      return p1;
-    } else {
-      return p2;
-    }
-  }),
-  showText: equal('style', FAB_STYLES.EXTENDED),
-  showIcon: bool('icon'),
-  loadingIcon: alias('icon'),
 });
-
-Fab.reopenClass({
-  positionalParams: ['param1', 'param2'],
-});
-
-export default Fab;

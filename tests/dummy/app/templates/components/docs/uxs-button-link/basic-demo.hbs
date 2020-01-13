@@ -1,21 +1,19 @@
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="basic-demo.hbs"}}
+  {{#demo.example name="button-link-demo.hbs"}}
 
-    {{uxs-button-link
-      text
-      "docs.quickstart"
-      disabled=disabled
-      inline=inline
-      loading=loading
-      loadingText=loadingText
-      naked=naked
-      size=size
-      style=style
-    }}
+    <div class="uxs">
+      {{uxs-button-link
+        text
+        "docs.buttons"
+        icon=icon
+        style=style
+        color=color
+        radius=radius
+      }}
+    </div>
 
   {{/demo.example}}
-
   <table class="docs-table-auto docs-m-4 docs-w-full">
     <tbody>
       <tr>
@@ -30,9 +28,28 @@
         <td>
           {{input
             class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-text"
+            id="button-link-text"
             placeholder="Button Text"
             value=text
+          }}
+        </td>
+        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
+      </tr>
+      <tr>
+        <td class="docs-w-32">
+          <label
+            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
+            for="button-text"
+          >
+            Icon
+          </label>
+        </td>
+        <td>
+          {{input
+            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
+            id="button-link-icon"
+            placeholder="Icon"
+            value=icon
           }}
         </td>
         <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
@@ -51,25 +68,6 @@
             {{input checked=disabled class="docs-mr-2 docs-leading-tight" type="checkbox"}}
             <span class="docs-text-sm">
               {{disabled}}
-            </span>
-          </label>
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">Boolean</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-inline"
-          >
-            Inline
-          </label>
-        </td>
-        <td>
-          <label class="docs-py-3 docs-md:w-2/3 docs-block docs-text-grey docs-font-bold">
-            {{input checked=inline class="docs-mr-2 docs-leading-tight" type="checkbox"}}
-            <span class="docs-text-sm">
-              {{inline}}
             </span>
           </label>
         </td>
@@ -98,44 +96,6 @@
         <td class="docs-w-32">
           <label
             class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-loading-text"
-          >
-            Loading Text
-          </label>
-        </td>
-        <td>
-          {{input
-            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-loading-text"
-            placeholder="Loading..."
-            value=loadingText
-          }}
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
-            for="button-naked"
-          >
-            Naked
-          </label>
-        </td>
-        <td>
-          <label class="docs-py-3 docs-md:w-2/3 docs-block docs-text-grey docs-font-bold">
-            {{input checked=naked class="docs-mr-2 docs-leading-tight" type="checkbox"}}
-            <span class="docs-text-sm">
-              {{naked}}
-            </span>
-          </label>
-        </td>
-        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">Boolean</em></td>
-      </tr>
-      <tr>
-        <td class="docs-w-32">
-          <label
-            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
             for="button-style"
           >
             Style
@@ -144,7 +104,7 @@
         <td>
           {{input
             class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-style"
+            id="button-link-style"
             placeholder="Style"
             value=style
             list="styles"
@@ -158,16 +118,36 @@
             class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
             for="button-size"
           >
-            Size
+            Color
           </label>
         </td>
         <td>
           {{input
             class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
-            id="button-size"
-            placeholder="Size"
-            value=size
-            list="sizes"
+            id="button-link-color"
+            placeholder="Color"
+            value=color
+            list="colors"
+          }}
+        </td>
+        <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
+      </tr>
+      <tr>
+        <td class="docs-w-32">
+          <label
+            class="docs-block docs-text-grey docs-font-bold docs-md:text-right docs-mb-1 docs-md:mb-0 docs-pr-4"
+            for="button-size"
+          >
+            Radius
+          </label>
+        </td>
+        <td>
+          {{input
+            class="docs-bg-grey-lighter docs-appearance-none docs-border-2 docs-border-grey-lighter docs-w-full docs-text-grey-darker docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-purple docs-py-2 docs-px-4"
+            id="button-link-radius"
+            placeholder="Radius"
+            value=radius
+            list="radii"
           }}
         </td>
         <td><em class="docs-text-grey-dark docs-text-xs docs-italic docs-pl-4">String</em></td>
@@ -176,6 +156,18 @@
   </table>
 
   <datalist id="styles">
+    <option value="contained"/>
+    <option value="outlined"/>
+    <option value="naked"/>
+  </datalist>
+
+  <datalist id="radii">
+    <option value="none"/>
+    <option value="rounded"/>
+    <option value="round"/>
+  </datalist>
+
+  <datalist id="colors">
     <option value="primary"/>
     <option value="accent"/>
     <option value="warning"/>
@@ -187,14 +179,6 @@
     <option value="white"/>
   </datalist>
 
-  <datalist id="sizes">
-    <option value="giant"/>
-    <option value="huge"/>
-    <option value="large"/>
-    <option value="medium"/>
-    <option value="small"/>
-    <option value="tiny"/>
-  </datalist>
 
-  {{demo.snippet "basic-demo.hbs"}}
+  {{demo.snippet "button-link-demo.hbs"}}
 {{/docs-demo}}

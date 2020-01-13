@@ -1,8 +1,8 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  style: 'contained',
-  text: 'DEMO LINK BUTTON',
+  style: 'regular',
+  p1: 'add',
+  p2: null,
   color: 'primary',
-  radius: 'rounded',
 });
