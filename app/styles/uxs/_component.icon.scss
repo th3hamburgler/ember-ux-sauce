@@ -1,74 +1,211 @@
 .uxs-icon {
-  @include transition-all;
-  @include material-icon;
-  cursor    : pointer;
-  position  : relative;
-  text-align: center;
-  width     : rem-size($baseline);
-  @include text-color-modifiers($prefix:'');
+  $self             : '.uxs-icon';
+  align-items       : center;
+  cursor            : pointer;
+  display           : flex;
+  height            : rs(3);
+  justify-content   : center;
+  position          : relative;
+  width             : rs(3);
+  -webkit-appearance: none;
 
-  &:focus,
-  &:hover {
-    opacity: 0.8;
+  svg {
+    height : rs(3);
+    width  : rs(3);
+    z-index: 2;
+  }
 
-    &::before {
-      $size           : rs(1.25);
-      border-radius   : 100%;
-      background-color: rgba($c-white, 0.1);
-      content         : '';
-      height          : $size;
-      left            : rs(-0.125);
-      position        : absolute;
-      top             : rs(-0.125);
-      min-width       : rs(1);
-      min-height      : rs(1);
-      width           : $size;
+  // Disabled Basics
+  //
+  &--disabled,
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &--naked {
+    // Color modifiers
+    @each $modifier, $color in $defaultColors {
+      &#{$self}--#{$modifier} {
+        path {
+          fill: $color;
+        }
+      }
     }
-  }
 
-  &--inline {
-    float: left;
-  }
-
-  &--disabled {
-    opacity: 0.6;
-    cursor : not-allowed;
-
-    &:focus,
-    &:hover {
-      opacity: 0.6;
+    &:before {
+      @include transition-all;
+      border-radius: rs(2.5);
+      content      : '';
+      height       : rs(5);
+      left         : rs(-1);
+      position     : absolute;
+      top          : rs(-1);
+      width        : rs(5);
+      z-index      : 1;
     }
-  }
-  @include line-height-modifiers;
-  $sizes    : (
-    "giant" : $baseline*4.0,
-    "huge"  : $baseline*3.0,
-    "large" : $baseline*2.0,
-    "medium": $baseline*1.0,
-    "small" : $baseline*0.75,
-    "tiny"  : $baseline*0.7,
-  );
-  @each $modifier, $size in $sizes {
-    &--#{$modifier} {
-      font-size: rem-size($size);
-      width    : rem-size($size);
 
-      &:focus::before,
-      &:hover::before {
-        $size : rem-size($size+(0.25*$baseline));
-        height: $size;
-        width : $size;
+    /*
+     * Hover/Focused/Selected
+     */
+    // Color modifiers
+    @each $modifier, $color in $defaultColors {
+      &#{$self}--#{$modifier} {
+        &#{$self}--selected,
+        &#{$self}:focus,
+        &#{$self}:hover {
+          &:before {
+            background-color: rgba($color,0.2);
+          }
+        }
       }
     }
   }
 
-  &__svg {
-    @include fill-color-modifiers;
-    @each $modifier, $size in $sizes {
-      &--#{$modifier} {
-        height: rem-size($size);
-        width : rem-size($size);
+  &--mini {
+    border-radius: rs(2.5);
+    height       : rs(5);
+    width        : rs(5);
+    padding      : rs(1);
+
+    svg {
+      height: rs(3);
+      width : rs(3);
+    }
+    // Color modifiers
+    @each $modifier, $color in $defaultColors {
+      &#{$self}--#{$modifier} {
+        background-color: $color;
+
+        path {
+          fill: contrast-color($color);
+        }
+      }
+    }
+
+  }
+
+  &--large {
+    border-radius: rs(3.5);
+    height       : rs(7);
+    width        : rs(7);
+    padding      : rs(1.5);
+
+    svg {
+      height: rs(4);
+      width : rs(4);
+    }
+  }
+
+  &--large,
+  &--mini {
+    // Color modifiers
+    @each $modifier, $color in $defaultColors {
+      &#{$self}--#{$modifier} {
+        background-color: $color;
+
+        path {
+          fill: contrast-color($color);
+        }
+      }
+    }
+
+    // Hover/Focused/Selected
+    //
+    &--selected,
+    &:focus,
+    &:hover {
+      @include elevation(4);
+    }
+    // Disabled
+    //
+    &#{$self}--disabled,
+    &:disabled {
+      @include elevation(0);
+      background-color: $c-mid;
+
+      path {
+        fill: rgba($c-dark,.5);
+      }
+
+      &:focus,
+      &:hover {
+        @include elevation(0);
       }
     }
   }
 }
+
+// .uxs-icon {
+//   @include transition-all;
+//   @include material-icon;
+//   cursor    : pointer;
+//   position  : relative;
+//   text-align: center;
+//   width     : rem-size($baseline);
+//   @include text-color-modifiers($prefix:'');
+//
+//   &:focus,
+//   &:hover {
+//     opacity: 0.8;
+//
+//     &::before {
+//       $size           : rs(1.25);
+//       border-radius   : 100%;
+//       background-color: rgba($c-white, 0.1);
+//       content         : '';
+//       height          : $size;
+//       left            : rs(-0.125);
+//       position        : absolute;
+//       top             : rs(-0.125);
+//       min-width       : rs(1);
+//       min-height      : rs(1);
+//       width           : $size;
+//     }
+//   }
+//
+//   &--inline {
+//     float: left;
+//   }
+//
+//   &--disabled {
+//     opacity: 0.6;
+//     cursor : not-allowed;
+//
+//     &:focus,
+//     &:hover {
+//       opacity: 0.6;
+//     }
+//   }
+//   @include line-height-modifiers;
+//   $sizes    : (
+//     "giant" : $baseline*4.0,
+//     "huge"  : $baseline*3.0,
+//     "large" : $baseline*2.0,
+//     "medium": $baseline*1.0,
+//     "small" : $baseline*0.75,
+//     "tiny"  : $baseline*0.7,
+//   );
+//   @each $modifier, $size in $sizes {
+//     &--#{$modifier} {
+//       font-size: rem-size($size);
+//       width    : rem-size($size);
+//
+//       &:focus::before,
+//       &:hover::before {
+//         $size : rem-size($size+(0.25*$baseline));
+//         height: $size;
+//         width : $size;
+//       }
+//     }
+//   }
+//
+//   &__svg {
+//     @include fill-color-modifiers;
+//     @each $modifier, $size in $sizes {
+//       &--#{$modifier} {
+//         height: rem-size($size);
+//         width : rem-size($size);
+//       }
+//     }
+//   }
+// }

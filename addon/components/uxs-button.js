@@ -77,9 +77,9 @@ const Button = Component.extend(Buttonable, Clickable, {
     - outlined
     - naked
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-style
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-button--my-custom-style
 
-    @argument color
+    @argument style
     @type     String
     @default  null
     @public
@@ -104,7 +104,7 @@ const Button = Component.extend(Buttonable, Clickable, {
 
     UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-color_
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-button--my-custom-color_
 
     @argument color
     @type     String

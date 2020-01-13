@@ -32,6 +32,9 @@ Router.map(function() {
     });
     this.route('buttons');
     this.route('fabs');
+    this.route('icons');
+
+
     this.route('forms', function() {
       this.route('button-links');
       this.route('button-groups');
@@ -64,7 +67,6 @@ Router.map(function() {
       this.route('data');
       this.route('datalists');
       this.route('avatars');
-      this.route('icons');
       this.route('menus');
       this.route('preamble');
       this.route('notice');
