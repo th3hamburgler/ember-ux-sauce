@@ -18,13 +18,13 @@ To see a full list of arguments check out the [api page](../api/uxs-icon)
 ### Mini
 
 <div class="uxs">
-  {{uxs-icon "alarm_off" style="mini"}}
+  {{uxs-icon "alarm_off" style="mini" color="primary"}}
 </div>
 
 ### Large
 
 <div class="uxs">
-  {{uxs-icon "alarm_add" style="large" disabled=true}}
+  {{uxs-icon "alarm_add" style="large" color="accent"}}
 </div>
 
 <!--
