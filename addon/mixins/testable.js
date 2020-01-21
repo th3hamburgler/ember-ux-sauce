@@ -2,6 +2,9 @@ import {
   copy
 } from '@ember/object/internals';
 import {
+  computed
+} from '@ember/object';
+import {
   alias
 } from '@ember/object/computed';
 import {
@@ -19,7 +22,7 @@ import {
   This mixin adds an attribute binding to the component to produce a [test selector](https://github.com/simplabs/ember-test-selectors).
 
   By default these attributes are removed in production builds
-  
+
   @class Testable
   @namespace Mixins
   @public
@@ -44,6 +47,12 @@ export default Mixin.create({
     @public
   */
   name: true,
+  modifier: computed('name', function() {
+    if ((typeof this.name) === 'string') {
+      return this.name;
+    }
+    return null;
+  }),
   // Computed
   testSelectorValue: alias('name'),
   /**
@@ -73,6 +82,12 @@ export default Mixin.create({
   init() {
     this._super(...arguments);
     this._defineAttributeBindings();
+    // Customise the base component to add a css modifier for
+    // the name of the insance
+    // e.g. {{uxs-subheading "Foo" name="my-sub-sub"}}
+    this.registerModifiers([
+      '*modifier',
+    ]);
   },
   /**
    * Find the test selector value for this element

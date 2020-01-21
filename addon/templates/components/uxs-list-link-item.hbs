@@ -5,37 +5,44 @@
     aside=(
       component
       "uxs-div"
-      class=(bem b "aside" m)
+      base=(concat b "__aside")
+      m=m
     )
     aside-link=(
       component
-      "link-to"
-      class=(bem b "aside" m)
+      "uxs-link-to"
+      base=(concat b "__aside")
+      m=m
     )
     body=(
       component
       "uxs-div"
-      class=(bem b "body" m)
+      base=(concat b "__body")
+      m=m
     )
     body-link=(
       component
-      "link-to"
-      class=(bem b "body" m)
+      "uxs-link-to"
+      base=(concat b "__body")
+      m=m
     )
     title=(
       component
       "uxs-subheading"
-      class=(bem b "title" m)
+      base=(concat b "__title")
+      m=m
     )
     content=(
       component
       "uxs-content"
-      class=(bem b "content" m)
+      base=(concat b "__content")
+      m=m
     )
     detail=(
       component
       "uxs-detail"
-      class=(bem b "detail" m)
+      base=(concat b "__detail")
+      m=m
     )
     action=(
       component
