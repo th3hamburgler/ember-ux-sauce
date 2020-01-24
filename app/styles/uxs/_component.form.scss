@@ -70,20 +70,24 @@
     @include text-color-modifiers($prefix:'');
     border-color: $c-light;
 
-    &--date,
-    &--datetime,
-    &--email,
-    &--month,
-    &--number,
-    &--password,
-    &--search,
-    &--tel,
-    &--text,
-    &--textarea,
-    &--time,
-    &--url,
-    &--week,
-    &--year {
+    &[type='date'],
+    &[type='datetime'],
+    &[type='email'],
+    &[type='month'],
+    &[type='number'],
+    &[type='password'],
+    &[type='search'],
+    &[type='tel'],
+    &[type='text'],
+    &[type='time'],
+    &[type='url'],
+    &[type='week'],
+    &[type='year'] {
+      @include input-base;
+      margin: 0;
+    }
+
+    @at-root textarea#{&} {
       @include input-base;
       margin: 0;
     }
