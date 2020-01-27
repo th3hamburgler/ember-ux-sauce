@@ -3,8 +3,7 @@ import layout from '../templates/components/uxs-icon';
 import Buttonable from 'ember-ux-sauce/mixins/buttonable';
 import Clickable from 'ember-ux-sauce/mixins/clickable';
 export const ICON_STYLES = {
-  NAKED: 'naked',
-  MINI: 'mini',
+  REGULAR: 'regular',
   LARGE: 'large',
 };
 /**
@@ -31,18 +30,17 @@ const Icon = Component.extend(Buttonable, Clickable, {
     Set the style of the icon.
 
     UXS ships with the following styles:
-    - contained
     - regular
     - large
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-fab--my-custom-style
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-icon--my-custom-style
 
     @argument style
     @type     String
     @default  null
     @public
    */
-  style: ICON_STYLES.NAKED,
+  style: ICON_STYLES.REGULAR,
   /**
     Set the color of the icon.
 

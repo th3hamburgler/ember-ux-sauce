@@ -1,6 +1,6 @@
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="data-simple-demo.hbs"}}
+  {{#demo.example name="data-empty-demo.hbs"}}
 
     {{#uxs-data
       display=display
@@ -23,7 +23,7 @@
 
   {{/demo.example}}
 
-  {{#args-table "datalist-basic-demo" as |table|}}
+  {{#args-table "data-empty-demo" as |table|}}
     {{#table.row "layout" as |row|}}
       {{row.label "Layout"}}
       {{row.input display options="data-layouts"}}
@@ -51,7 +51,7 @@
     {{/table.row}}
   {{/args-table}}
 
-  {{demo.snippet "data-simple-demo.hbs"}}
+  {{demo.snippet "data-empty-demo.hbs"}}
 
   {{args-table/data-layout-options}}
   {{args-table/style-options}}
