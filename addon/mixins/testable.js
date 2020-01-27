@@ -1,6 +1,6 @@
 import {
   copy
-} from '@ember/object/internals';
+} from 'ember-copy';
 import {
   alias
 } from '@ember/object/computed';
