@@ -10,12 +10,6 @@
   position          : relative;
   -webkit-appearance: none;
 
-  // Disabled Basics
-  &--disabled,
-  &:disabled {
-    cursor: not-allowed;
-  }
-
   // Hover background
   &::before {
     @include transition-all;
@@ -27,6 +21,15 @@
     right     : rs(-1);
     top       : rs(-1);
     z-index   : 1;
+  }
+  // Disabled Basics
+  &--disabled,
+  &:disabled {
+    cursor: not-allowed;
+
+    &::before {
+      display: none;
+    }
   }
 
   // Child SVG

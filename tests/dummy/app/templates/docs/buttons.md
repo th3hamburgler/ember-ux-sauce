@@ -46,7 +46,7 @@ To see a full list check out the [api page](../api/components/uxs-button)
 
 ## Usage
 
-Let's look at a basic example. You can play around with some of the arguments in this demo. To see a full list check out the [api page](../api/components/uxs-button)
+Let's look at a basic example. You can play around with some of the arguments in this demo.
 
 {{docs/uxs-button/basic-demo}}
 
@@ -55,6 +55,13 @@ Let's look at a basic example. You can play around with some of the arguments in
 Button links are available when you need a button to link to another route. The parameter pattern is the same at ember's built in [link-to component](https://guides.emberjs.com/release/templates/links/).
 
 {{docs/uxs-button-link/basic-demo}}
+
+## API
+
+To see a full list of arguments for all these components check out the api pages:
+
+-   [uxs-button](../api/components/uxs-button)
+-   [uxs-button-link](../api/components/uxs-button-link)
 
 <!--
 

@@ -5,8 +5,6 @@ The uxs-icon and uxs-icon-link components on their own are generally used for ac
 The icons are defined as svgs. A selection of icon from the <a href="https://material.io/icons/">Material Icons</a> framework has been used in this dummy project. To use your own icons
 just add the svg files to your public directory and visit the development server at _/ember-svg-jar/index.html_.
 
-To see a full list of arguments check out the [api page](../api/uxs-icon)
-
 ## Display Types
 
 ### Regular
@@ -18,8 +16,20 @@ To see a full list of arguments check out the [api page](../api/uxs-icon)
 ### Large
 
 <div class="uxs">
-  {{uxs-icon "alarm_add" style="large" color="accent"}}
+  {{uxs-icon "alarm_add" style="large"}}
 </div>
+
+## Usage
+
+Let's look at a basic example. You can play around with some of the arguments in this demo.
+
+{{docs/uxs-icon/basic-demo}}
+
+## API
+
+To see a full list of arguments for all this component check out the api pages:
+
+-   [uxs-icon](../api/components/uxs-icon)
 
 <!--
 ## Simple Usage
