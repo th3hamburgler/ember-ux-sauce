@@ -5253,10 +5253,10 @@ ember-basic-dropdown@^1.0.4, ember-basic-dropdown@^1.1.0:
     ember-cli-htmlbars "^3.0.1"
     ember-maybe-in-element "^0.2.0"
 
-ember-bem-sauce@^0.9.3:
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/ember-bem-sauce/-/ember-bem-sauce-0.9.3.tgz#edfb75aebc02614f42ad7a560c3b61722aa83b53"
-  integrity sha1-7ft1rrwCYU9CrXpWDDthciqoO1M=
+ember-bem-sauce@^0.9.4:
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/ember-bem-sauce/-/ember-bem-sauce-0.9.4.tgz#4a7df95ca1aba78897e17291a740215e97c246db"
+  integrity sha512-C44GaeXQv3S087ahkdss6W8UwU/6fgUZfxa1n8o8fwQQtIrNiFaSiaE6zH+cw8nhw3XwNtfa3qDNNMZPMKKPGQ==
   dependencies:
     ember-cli-babel "^6.3.0"
 
