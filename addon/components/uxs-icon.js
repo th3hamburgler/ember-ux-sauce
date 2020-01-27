@@ -7,13 +7,14 @@ export const ICON_STYLES = {
   LARGE: 'large',
 };
 /**
-  Render either a font or svg icon.
+  Render a svg icon.
 
   ```hbs
-  {{#uxs-icon "check_circle"}}
+  {{uxs-icon "path.to.svg"}}
   ```
 
-  @class UXSIcon
+  @class UXS Icon
+  @public
 */
 const Icon = Component.extend(Buttonable, Clickable, {
   layout,
