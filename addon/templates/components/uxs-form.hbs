@@ -1,49 +1,9 @@
 {{yield
-  (
-    hash
+  (hash
     control=(
-      component "uxs-form-control"
-      model=model
-      disabled=disabled
-      name=name
-      validateOnFocus=validateOnFocus
-      style=style
-    )
-    button=(
-      component
-      "uxs-button"
-      disabled=disabled
-      name=name
-      style=style
-    )
-    submit=(
-      component
-      "uxs-button"
-      disabled=disabled
-      name=name
-      type="submit"
-      style=style
-    )
-    group=(
-      component
-      "uxs-button-group"
-      disabled=disabled
-      name=name
-      style=style
-    )
-    link=(
-      component
-      "uxs-button-link"
-      disabled=disabled
-      name=name
-      style=style)
-      row=(
-      component
-      "uxs-form-control-row"
-      model=model
-      name=name
-      disabled=disabled
-      style=style
+      component "uxs-form/control"
+      disabled=@disabled
+      style=@style
     )
   )
 }}

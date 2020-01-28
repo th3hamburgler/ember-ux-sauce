@@ -1,190 +1,325 @@
 .uxs-form {
-  &--padding {
-    padding: rs(0.5);
-    @include mq(tablet) {
-      padding: rs(0.5) rs(1);
+  display       : flex;
+  flex-direction: column;
+  position      : relative;
+
+  // Form Controls
+  &__control {
+    position     : relative;
+    margin-bottom: rs(2);
+  }
+
+  // Form Labels
+  &__label {
+    &--filled {
+      @include transition-all;
+      @include body-1;
+      color      : $c-grey;
+      line-height: rs(6);
+      padding    : 0 rs(1.5);
+      position   : absolute;
+      top        : rs(.5);
+      left       : 0;
+
+      &.active,
+      &.focused {
+        @include caption;
+        color      : $c-accent;
+        line-height: rs(2);
+      }
+
+      &.inactive {}
     }
+
+    &--outlined {
+      @include transition-all;
+      @include body-1;
+      color      : $c-grey;
+      left       : rs(1);
+      line-height: rs(6);
+      padding    : 0 rs(0.75);
+      position   : absolute;
+      top        : rs(.5);
+
+      &.active,
+      &.focused {
+        @include caption;
+        background-color: $c-white;
+        color           : $c-accent;
+        line-height     : rs(2);
+        top             : rs(-0.75);
+      }
+
+      &.inactive {}
+    }
+
   }
 
-  &--white {
-    color: $c-white;
-  }
-
-  &__control-row {
+  // Input Container
+  &__input-container {
     display       : flex;
     flex-direction: row;
-    max-width     : $max-width-content;
+    height        : rs(7);
+    min-width     : rs(32);
+    max-width     : 100%;
+    @include mq(tablet) {
+      max-width: rs(48);
+    }
+
+    &--filled {}
+
+    &--outlined {}
   }
 
-  &__control {
-    display      : block;
-    margin-bottom: rem-size($baseline*.5);
-    overflow     : hidden;
-    position     : relative;
-    min-height   : rem-size($baseline*4.5);
-
-    &--inline {
-      @include mq(tablet) {
-        margin-right: rem-size($baseline*.5);
-
-        &:last-of-child {
-          margin-right: 0;
-        }
-      }
-    }
-
-    &--row-control {
-      flex        : 1 1 auto;
-      margin-right: rs(.5);
-      @include mq(tablet) {
-        margin-right: rs(1);
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    &--compact {
-      min-height: 0;
-    }
-
-    &--inline-mobile {
-      margin-right: rem-size($baseline*.5);
-
-      &:last-of-child {
-        margin-right: 0;
-      }
-    }
-  }
-
-  &__label {
-    @include label;
-    margin-bottom: rem-size($baseline*0.5);
-    min-height   : rs(1);
-  }
-
+  // Form Inputs
   &__input {
-    @include contrast-background-color-modifiers($prefix:'');
-    @include border-color-modifiers();
-    @include text-color-modifiers($prefix:'');
-    border-color: $c-light;
+    @include transition-all();
+    @include body-1;
+    background-color: transparent;
+    height          : rs(7);
+    flex            : 1 1 auto;
+    max-width       : none;
 
-    &--date,
-    &--datetime,
-    &--email,
-    &--month,
-    &--number,
-    &--password,
-    &--search,
-    &--tel,
-    &--text,
-    &--textarea,
-    &--time,
-    &--url,
-    &--week,
-    &--year {
-      @include input-base;
-      margin: 0;
-    }
+    &--filled {
+      background-color       : $c-light;
 
-    &--date,
-    &--datetime,
-    &--time {
-      padding: rem-size(($baseline*.25) - 1px) rem-size(($baseline*.25) - 2px);
-    }
+      border-bottom          : rem-size(2px) solid $c-accent;
+      border-top-left-radius : rs(.5);
+      border-top-right-radius: rs(.5);
+      padding                : rs(2.5) rs(1.5) 0;
+      line-height            : rs(4.5);
 
-    &--dropdown {
-      margin-bottom: 0;
-    }
-
-    &--disabled:not([type=checkbox]):not([type=radio]),
-    &:disabled:not([type=checkbox]):not([type=radio]) {
-      cursor      : not-allowed;
-      color       : rgba($c-dark, 0.5);
-      background  : $c-light;
-      border-color: $c-mid;
-    }
-
-    &--inline {
-      margin-right: rem-size($baseline*.5);
-      flex        : 1;
-
-      &:last-of-type {
-        margin-right: 0;
+      &:invalid {
+        border-bottom-color: $c-error;
       }
     }
-    /* HACK - as dropdowns are not inputs the above last-of-type
-     * selector wont cut it. What we really want is a list-of-class */
-    &+.uxs-form__input--dropdown,
-    &--dropdown+.uxs-form__input {
-      margin-left: rem-size($baseline*.5);
+
+    &--outlined {
+      background-color: $c-white;
+      border          : rem-size(1px) solid $c-mid;
+      border-radius   : rs(.5);
+      line-height     : rs(7);
+      padding         : 0 rs(1.75);
+
+      &:focus {
+        border-width: rem-size(2px);
+        border-color: $c-accent;
+      }
+
+      &:invalid {
+        border-width: rem-size(2px);
+        border-color: $c-error;
+      }
     }
   }
 
-  &__error,
-  &__warning {
-    top     : rem-size($baseline*3);
-    position: absolute;
-  }
-
-  &__error,
-  &__warning {
-    @include type-content;
-    @include transition-all;
-    transition-property: color, background-color;
-    @include text-truncate($max-width-content);
-    animation          : slideIn $transition-duration 1;
-    margin             : 0;
-    padding            : 0 rem-size($baseline*0.5);
-    line-height        : rem-size($baseline*1.5);
-    clear              : both;
-    width              : 100%;
-    @include mq(tablet, 'max') {
-      @include type-detail;
-      max-width: $max-width-content;
-    }
-  }
-
-  &__error {
-    background-color: $c-error;
-    color           : $c-white;
-  }
-
-  &__warning {
-    background-color: $c-warning;
-    color           : $c-white;
-  }
-
+  // Form Tips
   &__tip {
-    @extend .detail;
-    @include contrast-text-color-modifiers();
-    @include transition-all;
-    clear    : both;
-    padding  : 0;
-    max-width: $max-width-content;
-    margin   : 0;
+    @include body-2;
+    @include caption;
+    color      : $c-grey;
+    padding    : rs(0.5) rs(1.5) 0;
+    line-height: rs(1.5);
 
-    &--toggle {
-      padding   : 0 rem-size(30px) rem-size($baseline*0.5);
-      margin-top: rem-size($baseline*-0.5);
+    &--filled {
+
+      padding: rs(0.5) rs(1.5) 0;
     }
 
-    &--error {
-      visibility: hidden;
+    &--outlined {
+
+      padding: rs(0.5) rs(1.75) 0;
     }
   }
 }
 
-.uxs-form__control--textarea {
-  .uxs-form__error,
-  .uxs-form__warning {
-    top     : auto;
-    position: relative;
-  }
-
-  .uxs-form__tip--error {
-    display   : none;
-    visibility: hidden;
-  }
-}
+// .uxs-form {
+//   &--padding {
+//     padding: rs(0.5);
+//     @include mq(tablet) {
+//       padding: rs(0.5) rs(1);
+//     }
+//   }
+//
+//   &--white {
+//     color: $c-white;
+//   }
+//
+//   &__control-row {
+//     display       : flex;
+//     flex-direction: row;
+//     max-width     : $max-width-content;
+//   }
+//
+//   &__control {
+//     display      : block;
+//     margin-bottom: rem-size($baseline*.5);
+//     overflow     : hidden;
+//     position     : relative;
+//     min-height   : rem-size($baseline*4.5);
+//
+//     &--inline {
+//       @include mq(tablet) {
+//         margin-right: rem-size($baseline*.5);
+//
+//         &:last-of-child {
+//           margin-right: 0;
+//         }
+//       }
+//     }
+//
+//     &--row-control {
+//       flex        : 1 1 auto;
+//       margin-right: rs(.5);
+//       @include mq(tablet) {
+//         margin-right: rs(1);
+//       }
+//
+//       &:last-child {
+//         margin-right: 0;
+//       }
+//     }
+//
+//     &--compact {
+//       min-height: 0;
+//     }
+//
+//     &--inline-mobile {
+//       margin-right: rem-size($baseline*.5);
+//
+//       &:last-of-child {
+//         margin-right: 0;
+//       }
+//     }
+//   }
+//
+//   &__label {
+//     @include label;
+//     margin-bottom: rem-size($baseline*0.5);
+//     min-height   : rs(1);
+//   }
+//
+//   &__input {
+//     @include contrast-background-color-modifiers($prefix:'');
+//     @include border-color-modifiers();
+//     @include text-color-modifiers($prefix:'');
+//     border-color: $c-light;
+//
+//     &--date,
+//     &--datetime,
+//     &--email,
+//     &--month,
+//     &--number,
+//     &--password,
+//     &--search,
+//     &--tel,
+//     &--text,
+//     &--textarea,
+//     &--time,
+//     &--url,
+//     &--week,
+//     &--year {
+//       @include input-base;
+//       margin: 0;
+//     }
+//
+//     &--date,
+//     &--datetime,
+//     &--time {
+//       padding: rem-size(($baseline*.25) - 1px) rem-size(($baseline*.25) - 2px);
+//     }
+//
+//     &--dropdown {
+//       margin-bottom: 0;
+//     }
+//
+//     &--disabled:not([type=checkbox]):not([type=radio]),
+//     &:disabled:not([type=checkbox]):not([type=radio]) {
+//       cursor      : not-allowed;
+//       color       : rgba($c-dark, 0.5);
+//       background  : $c-light;
+//       border-color: $c-mid;
+//     }
+//
+//     &--inline {
+//       margin-right: rem-size($baseline*.5);
+//       flex        : 1;
+//
+//       &:last-of-type {
+//         margin-right: 0;
+//       }
+//     }
+//     /* HACK - as dropdowns are not inputs the above last-of-type
+//      * selector wont cut it. What we really want is a list-of-class */
+//     &+.uxs-form__input--dropdown,
+//     &--dropdown+.uxs-form__input {
+//       margin-left: rem-size($baseline*.5);
+//     }
+//   }
+//
+//   &__error,
+//   &__warning {
+//     top     : rem-size($baseline*3);
+//     position: absolute;
+//   }
+//
+//   &__error,
+//   &__warning {
+//     @include type-content;
+//     @include transition-all;
+//     transition-property: color, background-color;
+//     @include text-truncate($max-width-content);
+//     animation          : slideIn $transition-duration 1;
+//     margin             : 0;
+//     padding            : 0 rem-size($baseline*0.5);
+//     line-height        : rem-size($baseline*1.5);
+//     clear              : both;
+//     width              : 100%;
+//     @include mq(tablet, 'max') {
+//       @include type-detail;
+//       max-width: $max-width-content;
+//     }
+//   }
+//
+//   &__error {
+//     background-color: $c-error;
+//     color           : $c-white;
+//   }
+//
+//   &__warning {
+//     background-color: $c-warning;
+//     color           : $c-white;
+//   }
+//
+//   &__tip {
+//     @extend .detail;
+//     @include contrast-text-color-modifiers();
+//     @include transition-all;
+//     clear    : both;
+//     padding  : 0;
+//     max-width: $max-width-content;
+//     margin   : 0;
+//
+//     &--toggle {
+//       padding   : 0 rem-size(30px) rem-size($baseline*0.5);
+//       margin-top: rem-size($baseline*-0.5);
+//     }
+//
+//     &--error {
+//       visibility: hidden;
+//     }
+//   }
+// }
+//
+// .uxs-form__control--textarea {
+//   .uxs-form__error,
+//   .uxs-form__warning {
+//     top     : auto;
+//     position: relative;
+//   }
+//
+//   .uxs-form__tip--error {
+//     display   : none;
+//     visibility: hidden;
+//   }
+// }

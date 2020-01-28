@@ -1,29 +1,14 @@
 import Component from '@ember/component';
-import layout from '../templates/components/uxs-form';
+import layout from '../../templates/components/uxs-form/control';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
-export const FORM_STYLES = {
-  FILLED: 'filled',
-  OUTLINED: 'outlined',
-};
+import {
+  FORM_STYLES
+} from '../uxs-form';
 
-/**
-  A component to render a form control
-
-  ```hbs
-  {{#uxs-form as |form|}}
-    //...
-  {{/uxs-form}}
-  ```
-  @class UXS Form
-  @public
-*/
-export default Component.extend(BEMComponent, Testable, {
-  // Propertoes
-  attributeBindings: ['novalidate'],
-  base: 'uxs-form',
-  novalidate: false,
-  tagName: 'form',
+export default Component.extend(Testable, BEMComponent, {
+  // Properties
+  base: 'uxs-form__control',
   layout,
   // Attributes
   /**
@@ -46,7 +31,7 @@ export default Component.extend(BEMComponent, Testable, {
     - filled
     - outlined
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-form--my-custom-style
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-form__control--my-custom-style
 
     @argument style
     @type     String

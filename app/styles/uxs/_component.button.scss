@@ -16,6 +16,10 @@
   min-width         : rs(16);
   -webkit-appearance: none;
 
+  @include mq(tablet) {
+    max-width: rs(48);
+  }
+
   /* ################ *
    * Disabled Basics  *
    * ################ */

@@ -1,5 +1,38 @@
 <div class="uxs">
+  <div class="p-2" id="form">
 
+    {{#uxs-form style="filled" class="mb-4" as |form|}}
+
+      {{#form.control
+        name="email"
+      as |control|
+      }}
+        {{control.label "Email"}}
+        {{control.input value=email}}
+        {{control.tip "Please enter your email address"}}
+      {{/form.control}}
+
+      {{uxs-button "Submit" color="accent" type="submit"}}
+
+    {{/uxs-form}}
+
+    {{#uxs-form style="outlined" class="mb-4" as |form|}}
+
+      {{#form.control
+        name="email"
+      as |control|
+      }}
+        {{control.label "Email"}}
+        {{control.input value=email}}
+        {{control.tip "Please enter your email address"}}
+      {{/form.control}}
+
+      {{uxs-button "Submit" color="accent" type="submit"}}
+
+    {{/uxs-form}}
+
+  </div>
+  {{!--
   <div class="p-2" id="border-padding">
 
     <div class="fx-row fx-ai-start mb">
@@ -175,8 +208,6 @@
     {{uxs-content "Mi a faucibus tempor dui massa ornare aenean a ridiculus urna dictum vulputate dictumst condimentum sem parturient volutpat suscipit nam a. Non vestibulum viverra vestibulum iaculis bibendum velit in sociis proin nunc ad a congue ultricies. Vestibulum adipiscing et cubilia tincidunt vestibulum consectetur sociis quam vestibulum egestas neque tristique vulputate hac turpis consectetur suspendisse. A a quam sociis varius a duis sodales suspendisse a parturient a per ultrices tempor consectetur ultricies aenean gravida euismod hac diam parturient vehicula." 2}}
 
     {{uxs-content "Leo nisl parturient sociosqu nisl integer sed parturient velit a viverra fusce litora amet a purus leo adipiscing duis purus odio amet eleifend. Vel integer parturient quis malesuada tempus blandit consequat dolor consectetur a facilisi senectus lacinia donec metus ad parturient condimentum. Parturient vivamus a justo mus a sit himenaeos hendrerit nisi neque adipiscing montes ultricies vestibulum parturient. Ligula a eleifend suscipit lorem volutpat a elementum dapibus consectetur iaculis nec commodo tellus mi a. Natoque sagittis dis habitant elementum dui condimentum vulputate diam purus ad scelerisque suspendisse vestibulum sit tempor. Ullamcorper parturient maecenas a dictumst per a maecenas auctor vestibulum et elit a pharetra suscipit aenean in eleifend aliquam id a accumsan blandit parturient." 2}}
-
-    {{!-- {{uxs-button "Button"}} --}}
 
     {{uxs-caption "A Caption" class="mb-1"}}
 
@@ -456,7 +487,7 @@
     </div>
 
   </div>
-  {{!-- {{uxs-headline "Styleguide" class="ph-1"}}
+   {{uxs-headline "Styleguide" class="ph-1"}}
 
         {{uxs-subheadline "List Data" class="ph-1"}}
 
