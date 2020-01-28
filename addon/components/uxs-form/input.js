@@ -8,8 +8,9 @@ import {
 import {
   isEmpty
 } from '@ember/utils';
-
-const LABEL_BASE_CLASS = 'uxs-form__label';
+import {
+  bool
+} from '@ember/object/computed';
 
 export default Component.extend(BEMComponent, Testable, {
   base: 'uxs-form__input-container',
@@ -50,6 +51,8 @@ export default Component.extend(BEMComponent, Testable, {
       '*style',
       'inactive',
       'active',
+      'hasPrefixe:has-prefix',
+      'hasSuffixe:has-suffix',
     ]);
   },
   didUpdateAttrs() {
@@ -58,28 +61,59 @@ export default Component.extend(BEMComponent, Testable, {
   },
   updateLabelActiveState() {
     if (!isEmpty(this.value) && this.value.length > 0) {
-      const label = this.findInputsLabel();
-      label.classList.add('active');
+      this.addClassToComponenets('active');
     } else {
-      const label = this.findInputsLabel();
-      label.classList.remove('active');
+      this.removeClassFromComponenets('active');
     }
   },
-  findInputsLabel() {
-    const elements = this.element.parentNode.querySelectorAll(`.${LABEL_BASE_CLASS}`);
+  findControlComponents() {
+    let components = [];
+
+    // Control
+    const control = this.element.parentNode;
+    if (control.classList.contains('.uxs-form__control')) {
+      components.push(control);
+    }
+
+    // Label
+    const elements = this.element.parentNode.querySelectorAll(`.uxs-form__label`);
     if (elements.length > 0) {
-      return elements[0];
+      components.push(elements[0]);
     }
+
+    // Input Container
+    const input = this.element;
+    if (elements.length > 0) {
+      components.push(input);
+    }
+
+    // Prefix / Suffix
+    const fixes = this.element.querySelectorAll(`.uxs-form__prefix-text,.uxs-form__suffix-text`);
+    if (fixes.length > 0) {
+      fixes.forEach((f) => components.push(f));
+    }
+
+    window.console.log(components);
+    return components;
   },
+  addClassToComponenets(className) {
+    const components = this.findControlComponents();
+    components.forEach(component => component.classList.add(className));
+  },
+  removeClassFromComponenets(className) {
+    const components = this.findControlComponents();
+    components.forEach(component => component.classList.remove(className));
+  },
+  // Computed
+  hasPrefixe: bool('prefixText'),
+  hasSuffixe: bool('suffixText'),
   // Actions
   actions: {
     focusIn() {
-      const label = this.findInputsLabel();
-      label.classList.add('focused');
+      this.addClassToComponenets('focus');
     },
     focusOut() {
-      const label = this.findInputsLabel();
-      label.classList.remove('focused');
+      this.removeClassFromComponenets('focus');
     },
     keyUp() {
 

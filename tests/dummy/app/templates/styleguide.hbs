@@ -8,8 +8,17 @@
       as |control|
       }}
         {{control.label "Email"}}
-        {{control.input value=email}}
+        {{control.input value=email prefixText="$"}}
         {{control.tip "Please enter your email address"}}
+      {{/form.control}}
+
+      {{#form.control
+        name="username"
+      as |control|
+      }}
+        {{control.label "Username"}}
+        {{control.input value=username suffixText="@wearesauce.io"}}
+        {{control.tip "Please enter a unique username"}}
       {{/form.control}}
 
       {{uxs-button "Submit" color="accent" type="submit"}}
@@ -23,8 +32,17 @@
       as |control|
       }}
         {{control.label "Email"}}
-        {{control.input value=email}}
+        {{control.input value=email prefixText="$"}}
         {{control.tip "Please enter your email address"}}
+      {{/form.control}}
+
+      {{#form.control
+        name="username"
+      as |control|
+      }}
+        {{control.label "Username"}}
+        {{control.input value=username suffixText="@wearesauce.io"}}
+        {{control.tip "Please enter a unique username"}}
       {{/form.control}}
 
       {{uxs-button "Submit" color="accent" type="submit"}}

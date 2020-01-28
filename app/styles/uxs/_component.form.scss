@@ -22,7 +22,7 @@
       left       : 0;
 
       &.active,
-      &.focused {
+      &.focus {
         @include caption;
         color      : $c-accent;
         line-height: rs(2);
@@ -42,7 +42,7 @@
       top        : rs(.5);
 
       &.active,
-      &.focused {
+      &.focus {
         @include caption;
         background-color: $c-white;
         color           : $c-accent;
@@ -66,30 +66,13 @@
       max-width: rs(48);
     }
 
-    &--filled {}
-
-    &--outlined {}
-  }
-
-  // Form Inputs
-  &__input {
-    @include transition-all();
-    @include body-1;
-    background-color: transparent;
-    height          : rs(7);
-    flex            : 1 1 auto;
-    max-width       : none;
-
     &--filled {
       background-color       : $c-light;
-
       border-bottom          : rem-size(2px) solid $c-accent;
       border-top-left-radius : rs(.5);
       border-top-right-radius: rs(.5);
-      padding                : rs(2.5) rs(1.5) 0;
-      line-height            : rs(4.5);
 
-      &:invalid {
+      &.invalid {
         border-bottom-color: $c-error;
       }
     }
@@ -98,18 +81,104 @@
       background-color: $c-white;
       border          : rem-size(1px) solid $c-mid;
       border-radius   : rs(.5);
-      line-height     : rs(7);
-      padding         : 0 rs(1.75);
 
-      &:focus {
+      &.focus {
         border-width: rem-size(2px);
         border-color: $c-accent;
       }
 
-      &:invalid {
+      &.invalid {
         border-width: rem-size(2px);
         border-color: $c-error;
       }
+    }
+  }
+
+  // Form Inputs
+  &__input {
+    @include transition-all();
+    @include body-1;
+    background-color: transparent;
+    flex            : 1 1 auto;
+    max-width       : none;
+
+    &--filled {
+      padding    : rs(2.5) rs(1.5) 0;
+      line-height: rs(4.5);
+    }
+
+    &--outlined {
+      line-height: rs(7,2);
+      padding    : 0 rs(1.75);
+
+      &.focus,
+      &.invalid {
+        line-height: rs(7,4);
+      }
+    }
+
+    &--has-prefix {
+      padding-left: 0;
+    }
+
+    &--has-suffix {
+      padding-right: 0;
+    }
+  }
+
+  // Input Prefix/Suffix
+  &__prefix-text,
+  &__suffix-text {
+    @include body-1;
+    @include transition-all;
+    color: $c-mid;
+    // height     : rs(7);
+
+    &--filled {
+      opacity    : 0;
+      padding    : rs(2.5) rs(1.5) 0;
+      line-height: rs(4.5);
+
+      &.active,
+      &.focus {
+        opacity: 1;
+      }
+    }
+
+    &--outlined {
+      opacity    : 0;
+      padding    : 0 rs(1.75);
+      line-height: rs(7,2);
+
+      &.focus,
+      &.invalid {
+        line-height: rs(7,4);
+      }
+
+      &.active,
+      &.focus {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__prefix-text {
+    &--filled {
+      padding-right: rs(0.75);
+    }
+
+    &--outlined {
+      padding-right: rs(0.75);
+    }
+  }
+
+  &__suffix-text {
+    &--filled {
+      padding-left: rs(0.75);
+    }
+
+    &--outlined {
+      padding-left: rs(0.75);
     }
   }
 

@@ -1,3 +1,7 @@
+{{#if prefixText}}
+  <div class={{bem b "prefix-text" m}}>{{prefixText}}</div>
+{{/if}}
+
 {{input
   value=@value
   class=(bem b "input" m)
@@ -5,3 +9,7 @@
   focus-out=(action 'focusOut')
   key-up=(action 'keyUp')
 }}
+
+{{#if suffixText}}
+  <div class={{bem b "suffix-text" m}}>{{suffixText}}</div>
+{{/if}}
