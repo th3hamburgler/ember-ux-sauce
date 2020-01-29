@@ -133,21 +133,7 @@
     }
 
     // Alignment
-    &--left {
-      text-align: left;
-    }
-
-    &--right {
-      text-align: right;
-    }
-
-    &--center {
-      text-align: center;
-    }
-
-    &--justify {
-      text-align: justify;
-    }
+    @include align-modifiers;
   }
 
   // Input Prefix/Suffix Text
@@ -213,6 +199,7 @@
   // Form Tips & Errors
   &__error,
   &__tip {
+    @include align-modifiers;
     @include body-2;
     @include caption;
     color      : $c-grey;

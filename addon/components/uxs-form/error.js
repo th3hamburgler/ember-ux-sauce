@@ -11,6 +11,21 @@ export default Component.extend(BEMComponent, Testable, {
   layout,
   // Attributes
   /**
+    Define the text alignment of the input
+
+    The following alignment options are supported:
+    - left (default)
+    - right
+    - center
+    - justify
+
+    @argument align
+    @type     String
+    @default  left
+    @public
+   */
+  align: 'left',
+  /**
     Set to true to disable this error.
 
     The disabled state will just effect the visual appearance of the error
@@ -40,6 +55,7 @@ export default Component.extend(BEMComponent, Testable, {
   init() {
     this._super(...arguments);
     this.registerModifiers([
+      '*align',
       'disabled',
       'invalid',
       '*style',
