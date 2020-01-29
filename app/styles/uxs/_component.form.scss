@@ -11,6 +11,8 @@
 
   // Form Labels
   &__label {
+    pointer-events: none;
+
     &--filled {
       @include transition-all;
       @include body-1;
@@ -83,13 +85,13 @@
       border-radius   : rs(.5);
 
       &.focus {
-        border-width: rem-size(2px);
         border-color: $c-accent;
+        box-shadow  : inset 0 0 0 rem-size(1px) $c-accent;
       }
 
       &.invalid {
-        border-width: rem-size(2px);
         border-color: $c-error;
+        box-shadow  : inset 0 0 0 rem-size(1spx) $c-error;
       }
     }
   }
@@ -110,11 +112,6 @@
     &--outlined {
       line-height: rs(7,2);
       padding    : 0 rs(1.75);
-
-      &.focus,
-      &.invalid {
-        line-height: rs(7,4);
-      }
     }
 
     &--has-prefix {
@@ -132,7 +129,6 @@
     @include body-1;
     @include transition-all;
     color: $c-mid;
-    // height     : rs(7);
 
     &--filled {
       opacity    : 0;
@@ -149,11 +145,6 @@
       opacity    : 0;
       padding    : 0 rs(1.75);
       line-height: rs(7,2);
-
-      &.focus,
-      &.invalid {
-        line-height: rs(7,4);
-      }
 
       &.active,
       &.focus {
