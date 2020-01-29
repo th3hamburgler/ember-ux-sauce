@@ -40,11 +40,12 @@
       as |control|
       }}
         {{control.label "Password"}}
-        {{control.input value=password suffixIcon="visibility_off" type=@type}}
+        {{control.input value=password suffixIcon="visibility_off" type="password"}}
         {{control.tip "At least 12 characters please"}}
       {{/form.control}}
 
-      {{uxs-button "Submit" color="accent" type="submit"}}
+      {{form.submit "Submit" color="accent"}}
+      {{form.reset "Reset" color="grey"}}
 
     {{/uxs-form}}
 
@@ -87,11 +88,12 @@
       as |control|
       }}
         {{control.label "Password"}}
-        {{control.input value=password suffixIcon="visibility_off" type=@type}}
+        {{control.input value=password suffixIcon="visibility_off" type="password"}}
         {{control.tip "At least 12 characters please"}}
       {{/form.control}}
 
-      {{uxs-button "Submit" color="accent" type="submit"}}
+      {{form.submit "Submit" color="accent"}}
+      {{form.reset "Reset" color="grey"}}
 
     {{/uxs-form}}
 
