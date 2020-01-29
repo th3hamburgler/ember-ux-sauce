@@ -7,6 +7,9 @@
   &__control {
     position     : relative;
     margin-bottom: rs(2);
+    // min height should accomodate for forms with no help text
+    // not jumping content when they receive an error message
+    min-height   : rs(10);
   }
 
   // Form Labels
@@ -203,15 +206,14 @@
     @include body-2;
     @include caption;
     color      : $c-grey;
-    padding    : rs(0.5) rs(1.5) 0;
-    line-height: rs(1.5);
+    line-height: rs(2);
 
     &--filled {
-      padding: rs(0.5) rs(1.5) 0;
+      padding: rs(0.5) rs(1.5);
     }
 
     &--outlined {
-      padding: rs(0.5) rs(1.75) 0;
+      padding: rs(0.5) rs(1.75);
     }
 
   }

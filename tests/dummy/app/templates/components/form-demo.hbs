@@ -46,7 +46,23 @@ as |form|}}
   }}
     {{control.label "Password"}}
     {{control.input value=@model.password suffixIcon="visibility_off" type="password" autocomplete="off"}}
-    {{control.tip "At least 12 characters please"}}
+    {{control.error "Passwords must contain an upper case letter, a numeric character and a special character."}}
+  {{/form.control}}
+
+  {{#form.control
+    name="foo"
+  as |control|
+  }}
+    {{control.label "Foo"}}
+    {{control.input value=@model.foo}}
+  {{/form.control}}
+
+  {{#form.control
+    name="bar"
+  as |control|
+  }}
+    {{control.label "Bar"}}
+    {{control.input value=@model.bar}}
   {{/form.control}}
 
   {{form.submit "Submit" color="accent"}}
