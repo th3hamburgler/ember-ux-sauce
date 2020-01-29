@@ -150,7 +150,7 @@
     }
   }
 
-  // Input Prefix/Suffix
+  // Input Prefix/Suffix Text
   &__prefix-text,
   &__suffix-text {
     @include body-1;
@@ -198,6 +198,16 @@
     &--outlined {
       padding-left: rs(0.5);
     }
+  }
+
+  // Input Prefix/Suffix
+  &__prefix-icon,
+  &__suffix-icon {
+    align-items    : center;
+    display        : flex;
+    justify-content: center;
+    height         : rs(7);
+    width          : rs(6);
   }
 
   // Form Tips & Errors

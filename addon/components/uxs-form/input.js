@@ -33,6 +33,15 @@ export default Component.extend(BEMComponent, Testable, {
    */
   align: 'left',
   /**
+    Define the type of input
+
+    @argument type
+    @type     String
+    @default  text
+    @public
+   */
+  type: 'text',
+  /**
     Set to true to disable this text input.
 
     The disabled state will just effect the visual appearance of the text input
@@ -58,6 +67,42 @@ export default Component.extend(BEMComponent, Testable, {
     @public
    */
   style: FORM_STYLES.FILLED,
+  /**
+    Add prefixed text the the input
+
+    @argument prefixText
+    @type     String
+    @default  null
+    @public
+   */
+  prefixText: null,
+  /**
+    Add suffixed text the the input
+
+    @argument suffixText
+    @type     String
+    @default  null
+    @public
+   */
+  suffixText: null,
+  /**
+    Add prefixed icon the the input
+
+    @argument prefixText
+    @type     String
+    @default  null
+    @public
+   */
+  prefixIcon: null,
+  /**
+    Add suffixed icon the the input
+
+    @argument suffixText
+    @type     String
+    @default  null
+    @public
+   */
+  suffixIcon: null,
   // Methods
   init() {
     this._super(...arguments);
@@ -68,8 +113,8 @@ export default Component.extend(BEMComponent, Testable, {
       'inactive',
       'invalid',
       'active',
-      'hasPrefixe:has-prefix',
-      'hasSuffixe:has-suffix',
+      'hasPrefix:has-prefix',
+      'hasSuffix:has-suffix',
     ]);
   },
   didUpdateAttrs() {
@@ -110,7 +155,6 @@ export default Component.extend(BEMComponent, Testable, {
       fixes.forEach((f) => components.push(f));
     }
 
-    window.console.log(components);
     return components;
   },
   addClassToComponenets(className) {
@@ -122,8 +166,8 @@ export default Component.extend(BEMComponent, Testable, {
     components.forEach(component => component.classList.remove(className));
   },
   // Computed
-  hasPrefixe: bool('prefixText'),
-  hasSuffixe: bool('suffixText'),
+  hasPrefix: bool('prefixText'),
+  hasSuffix: bool('suffixText'),
   // Actions
   actions: {
     focusIn() {

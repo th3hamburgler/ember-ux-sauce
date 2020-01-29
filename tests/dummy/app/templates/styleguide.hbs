@@ -1,7 +1,11 @@
 <div class="uxs">
   <div class="p-2" id="form">
 
-    {{#uxs-form style="filled" class="mb-4" as |form|}}
+    {{#uxs-form
+      style="filled"
+      class="mb-4"
+      onSubmit=(action "save")
+    as |form|}}
 
       {{#form.control
         name="email"
@@ -29,13 +33,26 @@
         {{control.label "Username"}}
         {{control.input value=username suffixText="@wearesauce.io" align="right"}}
         {{control.tip "Please enter a unique username"}}
+      {{/form.control}}
+
+      {{#form.control
+        name="username"
+      as |control|
+      }}
+        {{control.label "Password"}}
+        {{control.input value=password suffixIcon="visibility_off" type=@type}}
+        {{control.tip "At least 12 characters please"}}
       {{/form.control}}
 
       {{uxs-button "Submit" color="accent" type="submit"}}
 
     {{/uxs-form}}
 
-    {{#uxs-form style="outlined" class="mb-4" as |form|}}
+    {{#uxs-form
+      style="outlined"
+      class="mb-4"
+      onSubmit=(action "save")
+    as |form|}}
 
       {{#form.control
         name="email"
@@ -63,6 +80,15 @@
         {{control.label "Username"}}
         {{control.input value=username suffixText="@wearesauce.io" align="right"}}
         {{control.tip "Please enter a unique username"}}
+      {{/form.control}}
+
+      {{#form.control
+        name="username"
+      as |control|
+      }}
+        {{control.label "Password"}}
+        {{control.input value=password suffixIcon="visibility_off" type=@type}}
+        {{control.tip "At least 12 characters please"}}
       {{/form.control}}
 
       {{uxs-button "Submit" color="accent" type="submit"}}

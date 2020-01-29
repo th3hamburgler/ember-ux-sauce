@@ -54,6 +54,20 @@ export default Component.extend(BEMComponent, Testable, {
     @public
    */
   style: FORM_STYLES.FILLED,
+  /**
+    Action to be called on the submission of the form
+
+    @argument onSubmit
+    @type     function
+    @default  {}()
+    @public
+   */
+  onSubmit() {},
+  // Events
+  submit(event) {
+    event.preventDefault();
+    this.get('onSubmit')();
+  },
   // Methods
   init() {
     this._super(...arguments);

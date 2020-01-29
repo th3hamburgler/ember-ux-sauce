@@ -1,8 +1,11 @@
 {{#if prefixText}}
   <div class={{bem b "prefix-text" m}}>{{prefixText}}</div>
+{{else if prefixIcon}}
+  <div class={{bem b "prefix-icon" m}}>{{svg-jar prefixIcon}}</div>
 {{/if}}
 
 {{input
+  type=@type
   value=@value
   class=(bem b "input" m)
   focus-in=(action 'focusIn')
@@ -12,4 +15,6 @@
 
 {{#if suffixText}}
   <div class={{bem b "suffix-text" m}}>{{suffixText}}</div>
+{{else if suffixIcon}}
+  <div class={{bem b "suffix-icon" m}}>{{svg-jar suffixIcon}}</div>
 {{/if}}
