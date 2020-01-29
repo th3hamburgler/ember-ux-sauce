@@ -117,6 +117,10 @@ export default Component.extend(BEMComponent, Testable, {
       'hasSuffix:has-suffix',
     ]);
   },
+  didInsertElement() {
+    this._super(...arguments);
+    this.updateLabelActiveState();
+  },
   didUpdateAttrs() {
     this._super(...arguments);
     this.updateLabelActiveState();
