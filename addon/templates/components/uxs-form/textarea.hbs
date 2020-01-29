@@ -1,0 +1,28 @@
+{{#if prefixText}}
+  <div class={{bem b "prefix-text" m}}>{{prefixText}}</div>
+{{else if prefixIcon}}
+  <div class={{bem b "prefix-icon" m}}>{{svg-jar prefixIcon}}</div>
+{{/if}}
+
+{{textarea
+  value=value
+  name=name
+  rows=rows
+  cols=cols
+  disabled=disabled
+  maxlength=maxlength
+  wrap=wrap
+  readonly=readonly
+  autofocus=autofocus
+  spellcheck=spellcheck
+  class=(bem b "textarea" m)
+  focus-in=(action 'focusIn')
+  focus-out=(action 'focusOut')
+  key-up=(action 'keyUp')
+}}
+
+{{#if suffixText}}
+  <div class={{bem b "suffix-text" m}}>{{suffixText}}</div>
+{{else if suffixIcon}}
+  <div class={{bem b "suffix-icon" m}}>{{svg-jar suffixIcon}}</div>
+{{/if}}

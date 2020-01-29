@@ -65,6 +65,15 @@ as |form|}}
     {{control.input value=@model.bar}}
   {{/form.control}}
 
+  {{#form.control
+    name="bio"
+  as |control|
+  }}
+    {{control.label "Biography"}}
+    {{control.textarea value=@model.bio}}
+    {{control.tip "Tell us about yourself"}}
+  {{/form.control}}
+
   {{form.submit "Submit" color="accent"}}
   {{form.reset "Reset" color="grey"}}
 

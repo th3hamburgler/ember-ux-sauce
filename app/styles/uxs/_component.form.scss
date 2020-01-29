@@ -74,7 +74,7 @@
     $element      : '.uxs-form__input-container';
     display       : flex;
     flex-direction: row;
-    height        : rs(7);
+    min-height    : rs(7);
     min-width     : rs(32);
     max-width     : 100%;
     @include mq(tablet) {
@@ -110,7 +110,8 @@
   }
 
   // Form Inputs
-  &__input {
+  &__input,
+  &__textarea {
     @include transition-all();
     @include body-1;
     background-color: transparent;
@@ -118,12 +119,12 @@
     max-width       : none;
 
     &--filled {
+      line-height: rs(4.25);
       padding    : rs(2.5) rs(1.5) 0;
-      line-height: rs(4.5);
     }
 
     &--outlined {
-      line-height: rs(7,2);
+      line-height: rs(6.75);
       padding    : 0 rs(1.75);
     }
 
@@ -139,6 +140,24 @@
     @include align-modifiers;
   }
 
+  &__input {}
+
+  &__textarea {
+    &--filled {
+      line-height   : rs(3);
+      // padding-top   : rs(3.125);
+      margin-top    : rs(2.5);
+      padding-top   : rs(0.625);
+      padding-bottom: rs(0.625);
+    }
+
+    &--outlined {
+      line-height   : rs(3);
+      padding-top   : rs(2);
+      padding-bottom: rs(1.75);
+    }
+  }
+
   // Input Prefix/Suffix Text
   &__prefix-text,
   &__suffix-text {
@@ -149,7 +168,7 @@
     &--filled {
       opacity    : 0;
       padding    : rs(2.5) rs(1.5) 0;
-      line-height: rs(4.5);
+      line-height: rs(4.25);
 
       &.active,
       &.focus {
@@ -160,7 +179,7 @@
     &--outlined {
       opacity    : 0;
       padding    : 0 rs(1.75);
-      line-height: rs(7,2);
+      line-height: rs(6.75);
 
       &.active,
       &.focus {
@@ -195,7 +214,7 @@
     align-items    : center;
     display        : flex;
     justify-content: center;
-    height         : rs(7);
+    height         : rs(6.75);
     width          : rs(6);
   }
 

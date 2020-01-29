@@ -8,7 +8,10 @@ export default Controller.extend({
       handle: '',
       number: '123',
       username: '',
-      password: 'foo'
+      password: 'foo',
+      foo: '',
+      bar: '',
+      bio: 'lipsum \npro \nshmoo',
     });
   },
 });
