@@ -1,10 +1,14 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
-  // Actions
-  actions: {
-    save() {
-      window.console.log('Submit Form');
-    }
-  }
+  init() {
+    this._super(...arguments);
+    this.set('model', {
+      email: 'jim.wardlaw@gmail.com',
+      handle: '',
+      number: '123',
+      username: '',
+      password: 'foo'
+    });
+  },
 });

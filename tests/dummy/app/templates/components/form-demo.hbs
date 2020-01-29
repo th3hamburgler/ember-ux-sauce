@@ -1,0 +1,55 @@
+{{#uxs-form
+  style=@style
+  onSubmit=(action "save")
+as |form|}}
+
+  {{#form.control
+    name="email"
+  as |control|
+  }}
+    {{control.label "Email"}}
+    {{control.input value=@model.email prefixText="$"}}
+    {{control.tip "Please enter your email address"}}
+  {{/form.control}}
+
+  {{#form.control
+    name="handle"
+  as |control|
+  }}
+    {{control.label "Handle"}}
+    {{control.input value=@model.handle suffixIcon="face"}}
+    {{control.tip handleTip align="right"}}
+  {{/form.control}}
+
+  {{#form.control
+    name="number"
+    error="This field should be numeric and less than 100"
+  as |control|
+  }}
+    {{control.label "Number"}}
+    {{control.input value=@model.number}}
+    {{control.tip "Please enter your email address"}}
+  {{/form.control}}
+
+  {{#form.control
+    name="username"
+  as |control|
+  }}
+    {{control.label "Username"}}
+    {{control.input value=@model.username suffixText="@wearesauce.io" align="right"}}
+    {{control.tip "Please enter a unique username"}}
+  {{/form.control}}
+
+  {{#form.control
+    name="username"
+  as |control|
+  }}
+    {{control.label "Password"}}
+    {{control.input value=@model.password suffixIcon="visibility_off" type="password"}}
+    {{control.tip "At least 12 characters please"}}
+  {{/form.control}}
+
+  {{form.submit "Submit" color="accent"}}
+  {{form.reset "Reset" color="grey"}}
+
+{{/uxs-form}}

@@ -1,101 +1,10 @@
 <div class="uxs">
   <div class="p-2" id="form">
 
-    {{#uxs-form
-      style="filled"
-      class="mb-4"
-      onSubmit=(action "save")
-    as |form|}}
-
-      {{#form.control
-        name="email"
-      as |control|
-      }}
-        {{control.label "Email"}}
-        {{control.input value=email prefixText="$"}}
-        {{control.tip "Please enter your email address"}}
-      {{/form.control}}
-
-      {{#form.control
-        name="number"
-        error="This field should be numeric and less than 100"
-      as |control|
-      }}
-        {{control.label "Number"}}
-        {{control.input value=number}}
-        {{control.tip "Please enter your email address"}}
-      {{/form.control}}
-
-      {{#form.control
-        name="username"
-      as |control|
-      }}
-        {{control.label "Username"}}
-        {{control.input value=username suffixText="@wearesauce.io" align="right"}}
-        {{control.tip "Please enter a unique username"}}
-      {{/form.control}}
-
-      {{#form.control
-        name="username"
-      as |control|
-      }}
-        {{control.label "Password"}}
-        {{control.input value=password suffixIcon="visibility_off" type="password"}}
-        {{control.tip "At least 12 characters please"}}
-      {{/form.control}}
-
-      {{form.submit "Submit" color="accent"}}
-      {{form.reset "Reset" color="grey"}}
-
-    {{/uxs-form}}
-
-    {{#uxs-form
-      style="outlined"
-      class="mb-4"
-      onSubmit=(action "save")
-    as |form|}}
-
-      {{#form.control
-        name="email"
-      as |control|
-      }}
-        {{control.label "Email"}}
-        {{control.input value=email prefixText="$"}}
-        {{control.tip "Please enter your email address"}}
-      {{/form.control}}
-
-      {{#form.control
-        name="number"
-        error="This field should be numeric and less than 100"
-      as |control|
-      }}
-        {{control.label "Number"}}
-        {{control.input value=number}}
-        {{control.tip "Please enter your email address"}}
-      {{/form.control}}
-
-      {{#form.control
-        name="username"
-      as |control|
-      }}
-        {{control.label "Username"}}
-        {{control.input value=username suffixText="@wearesauce.io" align="right"}}
-        {{control.tip "Please enter a unique username"}}
-      {{/form.control}}
-
-      {{#form.control
-        name="username"
-      as |control|
-      }}
-        {{control.label "Password"}}
-        {{control.input value=password suffixIcon="visibility_off" type="password"}}
-        {{control.tip "At least 12 characters please"}}
-      {{/form.control}}
-
-      {{form.submit "Submit" color="accent"}}
-      {{form.reset "Reset" color="grey"}}
-
-    {{/uxs-form}}
+    <div class="fx-row">
+      {{form-demo style="filled" class="ph-1" model=model}}
+      {{form-demo style="outlined" class="ph-1" model=model}}
+    </div>
 
   </div>
   {{!--
