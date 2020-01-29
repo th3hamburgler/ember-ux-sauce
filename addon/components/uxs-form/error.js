@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from '../../templates/components/uxs-form/tip';
+import layout from '../../templates/components/uxs-form/error';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import {
@@ -7,13 +7,13 @@ import {
 } from '../uxs-form';
 
 export default Component.extend(BEMComponent, Testable, {
-  base: 'uxs-form__tip',
+  base: 'uxs-form__error',
   layout,
   // Attributes
   /**
-    Set to true to disable this tip.
+    Set to true to disable this error.
 
-    The disabled state will just effect the visual appearance of the tip
+    The disabled state will just effect the visual appearance of the error
 
     @argument disabled
     @type     Boolean
@@ -22,13 +22,13 @@ export default Component.extend(BEMComponent, Testable, {
    */
   disabled: false,
   /**
-    Set the style of the tip.
+    Set the style of the error.
 
     UXS ships with the following styles:
     - filled
     - outlined
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-form__tip--my-custom-style
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-form__error--my-custom-style
 
     @argument style
     @type     String
@@ -46,5 +46,5 @@ export default Component.extend(BEMComponent, Testable, {
     ]);
   },
 }).reopenClass({
-  positionalParams: ['tip'],
+  positionalParams: ['error'],
 });

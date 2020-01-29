@@ -66,6 +66,7 @@ export default Component.extend(BEMComponent, Testable, {
       '*align',
       '*style',
       'inactive',
+      'invalid',
       'active',
       'hasPrefixe:has-prefix',
       'hasSuffixe:has-suffix',

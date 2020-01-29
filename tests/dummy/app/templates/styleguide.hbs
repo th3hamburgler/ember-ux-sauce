@@ -13,6 +13,16 @@
       {{/form.control}}
 
       {{#form.control
+        name="number"
+        error="This field should be numeric and less than 100"
+      as |control|
+      }}
+        {{control.label "Number"}}
+        {{control.input value=number}}
+        {{control.tip "Please enter your email address"}}
+      {{/form.control}}
+
+      {{#form.control
         name="username"
       as |control|
       }}
@@ -33,6 +43,16 @@
       }}
         {{control.label "Email"}}
         {{control.input value=email prefixText="$"}}
+        {{control.tip "Please enter your email address"}}
+      {{/form.control}}
+
+      {{#form.control
+        name="number"
+        error="This field should be numeric and less than 100"
+      as |control|
+      }}
+        {{control.label "Number"}}
+        {{control.input value=number}}
         {{control.tip "Please enter your email address"}}
       {{/form.control}}
 

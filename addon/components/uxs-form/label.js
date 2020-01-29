@@ -39,7 +39,11 @@ export default Component.extend(BEMComponent, Testable, {
   // Methods
   init() {
     this._super(...arguments);
-    this.registerModifiers(['disabled', '*style']);
+    this.registerModifiers([
+      'disabled',
+      'invalid',
+      '*style',
+    ]);
   },
 }).reopenClass({
   positionalParams: ['label'],

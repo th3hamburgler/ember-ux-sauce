@@ -5,6 +5,10 @@ import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import {
   FORM_STYLES
 } from '../uxs-form';
+import {
+  bool,
+  or
+} from '@ember/object/computed';
 
 export default Component.extend(Testable, BEMComponent, {
   // Properties
@@ -23,6 +27,17 @@ export default Component.extend(Testable, BEMComponent, {
    */
   disabled: false,
   /**
+    Set to true to render an invalid control
+
+    The invalid state will be passed to any child controls it yields.
+
+    @argument disabled
+    @type     Boolean
+    @default  false
+    @public
+   */
+  invalid: false,
+  /**
     Set the style of the form.
 
     The style will be passed to any child controls it yields.
@@ -39,9 +54,16 @@ export default Component.extend(Testable, BEMComponent, {
     @public
    */
   style: FORM_STYLES.FILLED,
+  // Computed
+  hasError: bool('error'),
+  isInvalid: or('hasError', 'invalid'),
   // Methods
   init() {
     this._super(...arguments);
-    this.registerModifiers(['disabled', '*style']);
+    this.registerModifiers([
+      'disabled',
+      '*style',
+      'isInvalid:invalid',
+    ]);
   },
 });

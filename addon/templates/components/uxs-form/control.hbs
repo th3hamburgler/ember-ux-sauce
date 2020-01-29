@@ -2,18 +2,39 @@
   (hash
     label=(
       component "uxs-form/label"
+      name=@name
       disabled=@disabled
       style=@style
+      invalid=isInvalid
     )
     input=(
       component "uxs-form/input"
+      name=@name
       disabled=@disabled
       style=@style
+      invalid=isInvalid
     )
     tip=(
       component "uxs-form/tip"
+      name=@name
       disabled=@disabled
       style=@style
+      invalid=isInvalid
+    )
+    error=(
+      component "uxs-form/error"
+      name=@name
+      disabled=@disabled
+      style=@style
+      invalid=isInvalid
     )
   )
 }}
+
+{{#if hasError}}
+  {{uxs-form/error
+    error
+    name=@name
+    disabled=@disabled
+  }}
+{{/if}}
