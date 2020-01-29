@@ -121,6 +121,23 @@
     &--has-suffix {
       padding-right: 0;
     }
+
+    // Alignment
+    &--left {
+      text-align: left;
+    }
+
+    &--right {
+      text-align: right;
+    }
+
+    &--center {
+      text-align: center;
+    }
+
+    &--justify {
+      text-align: justify;
+    }
   }
 
   // Input Prefix/Suffix
@@ -155,21 +172,21 @@
 
   &__prefix-text {
     &--filled {
-      padding-right: rs(0.75);
+      padding-right: rs(0.5);
     }
 
     &--outlined {
-      padding-right: rs(0.75);
+      padding-right: rs(0.5);
     }
   }
 
   &__suffix-text {
     &--filled {
-      padding-left: rs(0.75);
+      padding-left: rs(0.5);
     }
 
     &--outlined {
-      padding-left: rs(0.75);
+      padding-left: rs(0.5);
     }
   }
 

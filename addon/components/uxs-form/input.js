@@ -18,6 +18,21 @@ export default Component.extend(BEMComponent, Testable, {
   b: "uxs-form",
   // Attributes
   /**
+    Define the text alignment of the input
+
+    The following alignment options are supported:
+    - left (default)
+    - right
+    - center
+    - justify
+
+    @argument align
+    @type     String
+    @default  left
+    @public
+   */
+  align: 'left',
+  /**
     Set to true to disable this text input.
 
     The disabled state will just effect the visual appearance of the text input
@@ -39,7 +54,7 @@ export default Component.extend(BEMComponent, Testable, {
 
     @argument style
     @type     String
-    @default  null
+    @default  filled
     @public
    */
   style: FORM_STYLES.FILLED,
@@ -48,6 +63,7 @@ export default Component.extend(BEMComponent, Testable, {
     this._super(...arguments);
     this.registerModifiers([
       'disabled',
+      '*align',
       '*style',
       'inactive',
       'active',
