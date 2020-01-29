@@ -105,6 +105,7 @@ export default Component.extend(BEMComponent, Testable, {
   autofocus: false,
   form: null,
   spellcheck: true,
+  autoresize: false, // ember-autoresize
 
   // Methods
   init() {
