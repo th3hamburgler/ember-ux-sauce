@@ -123,6 +123,15 @@
     &--filled {}
 
     &--outlined {}
+
+    > div {
+      // not sure why we have a blank ember-view
+      // on multi selects right now. This fixes
+      // the flex break
+      display  : flex;
+      flex     : 1 1 auto;
+      max-width: 100%;
+    }
   }
 
   // Form Inputs
@@ -275,8 +284,9 @@
   background : transparent;
   display    : flex;
   flex       : 1 1 auto;
-  position   : relative;
   max-width  : 100%;
+  overflow   : hidden;
+  position   : relative;
 
   &--filled {
     background-color       : $c-light;
@@ -291,7 +301,7 @@
     background-color: $c-white;
     border          : rem-size(1px) solid $c-mid;
     border-radius   : rs(.5);
-    height          : rs(7);
+    // height          : rs(7);
     line-height     : rs(7);
     padding         : 0;
 
@@ -311,6 +321,64 @@
   }
 }
 
+.ember-power-select-trigger {
+  .ember-power-select-multiple-options {
+    display       : flex;
+    flex          : 1 1 auto;
+    flex-direction: row;
+    flex-wrap     : wrap;
+    list-style    : none;
+    margin        : 0;
+    // max-width     : 100%;
+    overflow      : auto;
+  }
+
+  &--filled {
+    .ember-power-select-multiple-options {
+      padding-left : rs(1.75);
+      padding-right: rs(1.25);
+    }
+  }
+
+  &--outlined {
+    .ember-power-select-multiple-options {
+      padding: rs(1.5) rs(1) rs(1) rs(1.5);
+    }
+  }
+
+  .ember-power-select-multiple-option {
+    @include text-truncate;
+    background-color: rgba($c-accent,1);
+    border-radius   : rs(0.5);
+    color           : $c-white;
+    display         : flex;
+    flex-direction  : row;
+    padding-right   : rs(1.75);
+    margin          : 0 rs(0.5) rs(0.5) 0;
+    z-index         : 1;
+  }
+
+  &--filled {
+    .ember-power-select-multiple-option {
+      line-height: rs(3.5);
+    }
+  }
+
+  &--outlined {
+    .ember-power-select-multiple-option {
+      line-height: rs(4,2);
+    }
+  }
+}
+
+.ember-power-select-trigger-multiple-input {
+  background   : transparent;
+  line-height  : rs(4,2);
+  flex         : 1 1 auto;
+  margin-bottom: rs(0.5);
+  padding      : 0;
+}
+
 .ember-power-select-selected-item {
   @include text-truncate;
   display     : block;
@@ -319,24 +387,35 @@
   padding-left: rs(1.75);
 }
 
-.ember-power-select-clear-btn {
-  color      : $c-grey;
+.ember-power-select-clear-btn,
+.ember-power-select-multiple-remove-btn {
   display    : block;
   font-size  : rs(2.5);
   flex-shrink: 0;
+  text-align : center;
+}
+
+.ember-power-select-multiple-remove-btn {
+  color : $c-white;
+  width : rs(1.75);
+  margin: 0 rs(0.5);
+}
+
+.ember-power-select-clear-btn {
+  color      : $c-grey;
   height     : rs(6.75);
   line-height: rs(6.75);
   padding    : 0 rs(0) 0 rs(1.75, 1);
-  text-align : center;
   width      : rs(4.25,1);
   order      : 1;
 }
 
 .ember-power-select-status-icon {
-  height  : rs(6.75);
-  order   : 3;
-  position: relative;
-  width   : rs(6,1);
+  height    : rs(6.75);
+  order     : 3;
+  position  : relative;
+  width     : rs(6,1);
+  align-self: flex-start;
 
   &::after {
     @include transition-all;
