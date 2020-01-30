@@ -248,6 +248,107 @@
   }
 }
 
+// .ember-basic-dropdown-trigger
+.ember-power-select-trigger {
+  background: transparent;
+  display   : flex;
+  flex      : 1 1 auto;
+  position  : relative;
+  width     : auto;
+}
+
+.ember-power-select-selected-item {
+  @include body-1;
+  display: block;
+  flex   : 1 1 auto;
+}
+
+.ember-power-select-status-icon {
+  position    : absolute;
+  display     : inline-block;
+  width       : 0;
+  height      : 0;
+  top         : 0;
+  bottom      : 0;
+  margin      : auto;
+  border-style: solid;
+  border-width: rem-size(8px) rem-size(5px) 0;
+  border-color: $c-grey transparent transparent;
+  right       : rs(2.5);
+}
+
+.uxs-form__control {
+  &--filled {
+    .ember-power-select-trigger {
+      line-height: rs(4.25);
+      padding    : rs(2.5) rs(6) 0 rs(1.5);
+    }
+
+    .ember-power-select-selected-item {
+      line-height: rs(4.25);
+    }
+  }
+
+  &--outlined {
+    .ember-power-select-trigger {
+      height     : rs(6.75);
+      line-height: rs(6.75);
+      padding    : 0 rs(6) 0 rs(1.75);
+    }
+
+    .ember-power-select-selected-item {
+      line-height: rs(6.75);
+    }
+
+  }
+}
+
+@at-root .ember-basic-dropdown-content {
+  @include body-1;
+  @include elevation(6);
+  background-color: $c-white;
+  border          : rem-size(1px) solid $c-mid;
+  position        : absolute;
+  width           : auto;
+  z-index         : 1000;
+}
+
+@at-root .ember-power-select-search {
+  display       : flex;
+  flex-direction: row;
+  border-bottom : rem-size(1px) solid $c-light;
+}
+
+@at-root .ember-power-select-search-input {
+  display    : block;
+  height     : rs(7,1);
+  line-height: rs(7,1);
+  outline    : none;
+  padding    : 0 rs(1.75);
+  flex       : 1 1 auto;
+}
+
+@at-root .ember-power-select-options {
+  list-style: none;
+  padding   : rs(1) 0;
+}
+
+@at-root .ember-power-select-option {
+  @include transition-all;
+  cursor     : pointer;
+  line-height: rs(6);
+  padding    : 0 rs(1.75);
+
+  &:hover {
+    background: $c-light;
+  }
+
+  &[aria-selected="true"],
+  &[aria-current="true"] {
+    background: rgba($c-accent,0.2);
+  }
+}
+
 // .uxs-form {
 //   &--padding {
 //     padding: rs(0.5);

@@ -9,6 +9,11 @@ export default Component.extend({
     const len = this.model.handle.length;
     return `${len}/32`;
   }),
+  // Methods
+  init() {
+    this._super(...arguments);
+    this.set('animalOptions', ['Cat', 'Cow', 'Dog', 'Fish', 'Hamster', 'Horse', 'Pig']);
+  },
   // Actions
   actions: {
     save() {

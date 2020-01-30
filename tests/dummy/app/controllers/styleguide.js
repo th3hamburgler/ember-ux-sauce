@@ -12,6 +12,7 @@ export default Controller.extend({
       foo: '',
       bar: '',
       bio: 'lipsum \npro \nshmoo',
+      animal: 'Dog',
     });
   },
 });

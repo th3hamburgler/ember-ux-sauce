@@ -74,6 +74,23 @@ as |form|}}
     {{control.tip "Tell us about yourself"}}
   {{/form.control}}
 
+  {{#form.control
+    name="animals"
+  as |control|
+  }}
+    {{control.label "Animal"}}
+    {{#control.dropdown as |dropdown|}}
+      {{#dropdown.select
+        options=animalOptions
+        selected=@model.animal
+        onchange=(action (mut @model.animal))
+        searchEnabled=false
+      as |name|}}
+        Option {{name}}
+      {{/dropdown.select}}
+    {{/control.dropdown}}
+  {{/form.control}}
+
   {{form.submit "Submit" color="accent"}}
   {{form.reset "Reset" color="grey"}}
 
