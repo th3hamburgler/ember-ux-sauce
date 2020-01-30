@@ -6245,6 +6245,14 @@ ember-qunit@^3.4.1:
     ember-cli-test-loader "^2.2.0"
     qunit "~2.6.0"
 
+ember-radio-buttons@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/ember-radio-buttons/-/ember-radio-buttons-5.0.0.tgz#adfbf1d6e48ebde31ddc321d79bab62d515974da"
+  integrity sha512-cxMIPpqdDSTMb1rzt7eDGm4XpB5pzwSuVAgSeM+wjBvRc9VdUCP96ReZPd7cKe80czf4pJFacpX3Mqzu0pQ/Ug==
+  dependencies:
+    ember-cli-babel "^7.11.1"
+    ember-cli-htmlbars "^4.0.0"
+
 ember-require-module@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/ember-require-module/-/ember-require-module-0.3.0.tgz#65aff7908b5b846467e4526594d33cfe0c23456b"

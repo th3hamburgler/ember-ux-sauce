@@ -14,6 +14,7 @@ export default Controller.extend({
       bio: 'lipsum \npro \nshmoo',
       animal: 'Dog',
       animals: ['Cat', 'Dog'],
+      gender: null,
     });
   },
 });

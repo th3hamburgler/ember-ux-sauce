@@ -84,7 +84,7 @@ as |form|}}
   {{/form.control}}
 
   {{#form.control
-    name="foo"
+    name="cuisine"
   as |control|
   }}
     {{control.label "What cuisine do you like?"}}
@@ -94,6 +94,17 @@ as |form|}}
     {{control.checkbox label="Italian" checked=@model.italian}}
     {{control.checkbox label="Spanish" checked=@model.spanish}}
     {{control.tip "Check out this bunch of textboxes"}}
+  {{/form.control}}
+
+  {{#form.control
+    name="gender"
+  as |control|
+  }}
+    {{control.label "Gender"}}
+    {{control.radio label="Female" value="female" checked=@model.gender}}
+    {{control.radio label="Male" value="male" checked=@model.gender}}
+    {{control.radio label="N/A" value=null checked=@model.gender}}
+    {{control.tip "State your gender"}}
   {{/form.control}}
 
   {{#form.control
