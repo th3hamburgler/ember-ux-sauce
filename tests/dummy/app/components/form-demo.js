@@ -19,5 +19,9 @@ export default Component.extend({
     save() {
       window.console.log('Submit Form');
     },
+    setDate(date, format) {
+      window.console.log(date, format);
+      this.model.set('dob', format);
+    }
   },
 });

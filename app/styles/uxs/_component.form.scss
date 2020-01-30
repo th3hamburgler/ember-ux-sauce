@@ -93,6 +93,7 @@
   }
 
   // Input Container
+  &__datepicker-container,
   &__input-container {
     $element      : '.uxs-form__input-container';
     display       : flex;
@@ -290,6 +291,7 @@
   }
 
   // Input Prefix/Suffix
+  &__date-icon,
   &__prefix-icon,
   &__suffix-icon {
     align-items    : center;
@@ -297,6 +299,15 @@
     justify-content: center;
     height         : rs(6.75);
     width          : rs(6);
+  }
+
+  &__date-icon {
+    position      : absolute;
+    top           : 1px;
+    right         : 0;
+    // let our clicks passthough
+    // to the element below
+    pointer-events: none;
   }
 
   // Form Tips & Errors

@@ -15,6 +15,7 @@ export default Controller.extend({
       animal: 'Dog',
       animals: ['Cat', 'Dog'],
       gender: null,
+      dob: null,
     });
   },
 });

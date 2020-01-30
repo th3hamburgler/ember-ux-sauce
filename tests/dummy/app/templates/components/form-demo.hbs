@@ -84,6 +84,18 @@ as |form|}}
   {{/form.control}}
 
   {{#form.control
+    name="dob"
+  as |control|
+  }}
+    {{control.label "Date of Birth"}}
+    {{control.date
+      value=(readonly @model.dob)
+      onChange=(action "setDate")
+    }}
+    {{control.date-icon}}
+  {{/form.control}}
+
+  {{#form.control
     name="cuisine"
   as |control|
   }}
