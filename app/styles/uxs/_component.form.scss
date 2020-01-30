@@ -131,6 +131,7 @@
       display  : flex;
       flex     : 1 1 auto;
       max-width: 100%;
+      min-width: 100%;
     }
   }
 
@@ -277,8 +278,9 @@
   }
 }
 
-// .ember-basic-dropdown-trigger
+// Power Select Trigger Component
 .ember-power-select-trigger {
+
   @include body-1;
   align-items: center;
   background : transparent;
@@ -288,13 +290,17 @@
   overflow   : hidden;
   position   : relative;
 
+  &:focus {
+    outline: none;
+  }
+
   &--filled {
     background-color       : $c-light;
     border-bottom          : rem-size(2px) solid $c-accent;
     border-top-left-radius : rs(.5);
     border-top-right-radius: rs(.5);
     line-height            : rs(4.5, 2);
-    padding                : rs(2.5) 0 0;
+    padding                : rs(3,2) 0 0;
   }
 
   &--outlined {
@@ -316,12 +322,7 @@
     }
   }
 
-  &:focus {
-    outline: none;
-  }
-}
-
-.ember-power-select-trigger {
+  // Multiple Option Wrapper
   .ember-power-select-multiple-options {
     display       : flex;
     flex          : 1 1 auto;
@@ -342,10 +343,11 @@
 
   &--outlined {
     .ember-power-select-multiple-options {
-      padding: rs(1.5) rs(1) rs(1) rs(1.5);
+      padding: rs(1.5) rs(1) rs(1.25) rs(1.5);
     }
   }
 
+  // Multiple Option Wrapper
   .ember-power-select-multiple-option {
     @include text-truncate;
     background-color: rgba($c-accent,1);
@@ -366,84 +368,80 @@
 
   &--outlined {
     .ember-power-select-multiple-option {
-      line-height: rs(4,2);
+      line-height: rs(3.5);
     }
   }
-}
 
-.ember-power-select-trigger-multiple-input {
-  background   : transparent;
-  line-height  : rs(4,2);
-  flex         : 1 1 auto;
-  margin-bottom: rs(0.5);
-  padding      : 0;
-}
-
-.ember-power-select-selected-item {
-  @include text-truncate;
-  display     : block;
-  flex        : 1 1 auto;
-  order       : 2;
-  padding-left: rs(1.75);
-}
-
-.ember-power-select-clear-btn,
-.ember-power-select-multiple-remove-btn {
-  display    : block;
-  font-size  : rs(2.5);
-  flex-shrink: 0;
-  text-align : center;
-}
-
-.ember-power-select-multiple-remove-btn {
-  color : $c-white;
-  width : rs(1.75);
-  margin: 0 rs(0.5);
-}
-
-.ember-power-select-clear-btn {
-  color      : $c-grey;
-  height     : rs(6.75);
-  line-height: rs(6.75);
-  padding    : 0 rs(0) 0 rs(1.75, 1);
-  width      : rs(4.25,1);
-  order      : 1;
-}
-
-.ember-power-select-status-icon {
-  height    : rs(6.75);
-  order     : 3;
-  position  : relative;
-  width     : rs(6,1);
-  align-self: flex-start;
-
-  &::after {
-    @include transition-all;
-    border-style: solid;
-    border-width: rem-size(8px) rem-size(5px) 0;
-    border-color: $c-grey transparent transparent;
-    bottom      : 0;
-    content     : '';
-    display     : inline-block;
-    height      : 0;
-    position    : absolute;
-    margin      : auto;
-    right       : rs(2.5);
-    top         : 0;
-    width       : 0;
+  // Multiple Option Search Input
+  .ember-power-select-trigger-multiple-input {
+    background   : transparent;
+    line-height  : rs(3.5);
+    flex         : 1 1 auto;
+    margin-bottom: rs(0.5);
+    padding      : 0;
   }
-}
 
-.ember-power-select-trigger {
+  // Selected Option
+  .ember-power-select-selected-item {
+    @include text-truncate;
+    display     : block;
+    flex        : 1 1 auto;
+    order       : 2;
+    padding-left: rs(1.75);
+  }
+  // Clear Buttons
+  .ember-power-select-clear-btn,
+  .ember-power-select-multiple-remove-btn {
+    display    : block;
+    font-size  : rs(2.5);
+    flex-shrink: 0;
+    text-align : center;
+  }
+  // Clear Single Option Button
+  .ember-power-select-clear-btn {
+    color      : $c-grey;
+    height     : rs(6.75);
+    line-height: rs(6.75);
+    padding    : 0 rs(0) 0 rs(1.75, 1);
+    width      : rs(4.25,1);
+    order      : 1;
+  }
+  // Clear Multiple Option Button
+  .ember-power-select-multiple-remove-btn {
+    color : $c-white;
+    width : rs(1.75);
+    margin: 0 rs(0.5);
+  }
+  // Dropdown Button
+  .ember-power-select-status-icon {
+    height    : rs(6.75);
+    order     : 3;
+    position  : relative;
+    width     : rs(6,1);
+    align-self: flex-start;
+
+    &::after {
+      @include transition-all;
+      border-style: solid;
+      border-width: rem-size(8px) rem-size(5px) 0;
+      border-color: $c-grey transparent transparent;
+      bottom      : 0;
+      content     : '';
+      display     : inline-block;
+      height      : 0;
+      position    : absolute;
+      margin      : auto;
+      right       : rs(2.5);
+      top         : 0;
+      width       : 0;
+    }
+  }
+
   &--filled {
     .ember-power-select-clear-btn,
     .ember-power-select-status-icon {
       height     : rs(4.5,2);
       line-height: rs(4.5,2);
-    }
-
-    .ember-power-select-clear-btn {
-      // padding-bottom: rs(1.25);
     }
 
     .ember-power-select-status-icon {
