@@ -12,7 +12,7 @@ export default Component.extend({
   // Methods
   init() {
     this._super(...arguments);
-    this.set('animalOptions', ['Cat', 'Cow', 'Dog', 'Fish', 'Hamster', 'Horse', 'Pig']);
+    this.set('animalOptions', ['Cat', 'Cow', 'Dog', 'Fish', 'Hamster', 'Horse', 'Pig', 'A really really long option name that will need truncating']);
   },
   // Actions
   actions: {

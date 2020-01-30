@@ -50,6 +50,23 @@ as |form|}}
   {{/form.control}}
 
   {{#form.control
+    name="animals"
+  as |control|
+  }}
+    {{control.label "Animal"}}
+    {{#control.dropdown
+      options=animalOptions
+      selected=@model.animal
+      onchange=(action (mut @model.animal))
+      searchEnabled=true
+      searchPlaceholder="Search Animals..."
+      allowClear=true
+    as |name|}}
+      {{name}}
+    {{/control.dropdown}}
+  {{/form.control}}
+
+  {{#form.control
     name="foo"
   as |control|
   }}
@@ -79,15 +96,13 @@ as |form|}}
   as |control|
   }}
     {{control.label "Animal"}}
-    {{#control.dropdown as |dropdown|}}
-      {{#dropdown.select
-        options=animalOptions
-        selected=@model.animal
-        onchange=(action (mut @model.animal))
-        searchEnabled=false
-      as |name|}}
-        Option {{name}}
-      {{/dropdown.select}}
+    {{#control.dropdown
+      options=animalOptions
+      selected=@model.animal
+      onchange=(action (mut @model.animal))
+      searchEnabled=false
+    as |name|}}
+      {{name}}
     {{/control.dropdown}}
   {{/form.control}}
 

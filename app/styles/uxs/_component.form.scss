@@ -16,6 +16,7 @@
   &__label {
     $element      : '.uxs-form__label';
     pointer-events: none;
+    z-index       : 1;
 
     &--filled {
       @include transition-all;
@@ -77,6 +78,7 @@
     min-height    : rs(7);
     min-width     : rs(32);
     max-width     : 100%;
+
     @include mq(tablet) {
       max-width: rs(48);
     }
@@ -107,6 +109,20 @@
         box-shadow  : inset 0 0 0 rem-size(1spx) $c-error;
       }
     }
+  }
+
+  &__dropdown-container {
+    display       : flex;
+    flex-direction: row;
+    min-height    : rs(7);
+    min-width     : rs(32);
+    @include mq(tablet) {
+      max-width: rs(48);
+    }
+
+    &--filled {}
+
+    &--outlined {}
   }
 
   // Form Inputs
@@ -226,6 +242,10 @@
     @include caption;
     color      : $c-grey;
     line-height: rs(2);
+    max-width  : none;
+    @include mq(tablet) {
+      max-width: rs(48);
+    }
 
     &--filled {
       padding: rs(0.5) rs(1.5);
@@ -250,56 +270,118 @@
 
 // .ember-basic-dropdown-trigger
 .ember-power-select-trigger {
-  background: transparent;
-  display   : flex;
-  flex      : 1 1 auto;
-  position  : relative;
-  width     : auto;
-}
-
-.ember-power-select-selected-item {
   @include body-1;
-  display: block;
-  flex   : 1 1 auto;
-}
+  align-items: center;
+  background : transparent;
+  display    : flex;
+  flex       : 1 1 auto;
+  position   : relative;
+  max-width  : 100%;
 
-.ember-power-select-status-icon {
-  position    : absolute;
-  display     : inline-block;
-  width       : 0;
-  height      : 0;
-  top         : 0;
-  bottom      : 0;
-  margin      : auto;
-  border-style: solid;
-  border-width: rem-size(8px) rem-size(5px) 0;
-  border-color: $c-grey transparent transparent;
-  right       : rs(2.5);
-}
-
-.uxs-form__control {
   &--filled {
-    .ember-power-select-trigger {
-      line-height: rs(4.25);
-      padding    : rs(2.5) rs(6) 0 rs(1.5);
-    }
-
-    .ember-power-select-selected-item {
-      line-height: rs(4.25);
-    }
+    background-color       : $c-light;
+    border-bottom          : rem-size(2px) solid $c-accent;
+    border-top-left-radius : rs(.5);
+    border-top-right-radius: rs(.5);
+    line-height            : rs(4.5, 2);
+    padding                : rs(2.5) 0 0;
   }
 
   &--outlined {
-    .ember-power-select-trigger {
-      height     : rs(6.75);
-      line-height: rs(6.75);
-      padding    : 0 rs(6) 0 rs(1.75);
+    background-color: $c-white;
+    border          : rem-size(1px) solid $c-mid;
+    border-radius   : rs(.5);
+    height          : rs(7);
+    line-height     : rs(7);
+    padding         : 0;
+
+    &.ember-basic-dropdown-trigger--below {
+      border-bottom-left-radius : 0;
+      border-bottom-right-radius: 0;
     }
 
-    .ember-power-select-selected-item {
-      line-height: rs(6.75);
+    &.ember-basic-dropdown-trigger--above {
+      border-top-left-radius : 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.ember-power-select-selected-item {
+  @include text-truncate;
+  display     : block;
+  flex        : 1 1 auto;
+  order       : 2;
+  padding-left: rs(1.75);
+}
+
+.ember-power-select-clear-btn {
+  color      : $c-grey;
+  display    : block;
+  font-size  : rs(2.5);
+  flex-shrink: 0;
+  height     : rs(6.75);
+  line-height: rs(6.75);
+  padding    : 0 rs(0) 0 rs(1.75, 1);
+  text-align : center;
+  width      : rs(4.25,1);
+  order      : 1;
+}
+
+.ember-power-select-status-icon {
+  height  : rs(6.75);
+  order   : 3;
+  position: relative;
+  width   : rs(6,1);
+
+  &::after {
+    @include transition-all;
+    border-style: solid;
+    border-width: rem-size(8px) rem-size(5px) 0;
+    border-color: $c-grey transparent transparent;
+    bottom      : 0;
+    content     : '';
+    display     : inline-block;
+    height      : 0;
+    position    : absolute;
+    margin      : auto;
+    right       : rs(2.5);
+    top         : 0;
+    width       : 0;
+  }
+}
+
+.ember-power-select-trigger {
+  &--filled {
+    .ember-power-select-clear-btn,
+    .ember-power-select-status-icon {
+      height     : rs(4.5,2);
+      line-height: rs(4.5,2);
     }
 
+    .ember-power-select-clear-btn {
+      // padding-bottom: rs(1.25);
+    }
+
+    .ember-power-select-status-icon {
+      &::after {
+        bottom: rs(1.25);
+      }
+    }
+  }
+}
+
+// styles when the dropdown is open
+.ember-basic-dropdown-trigger--above,
+.ember-basic-dropdown-trigger--below {
+  .ember-power-select-status-icon {
+    &::after {
+      transform: rotate(180deg);
+    }
   }
 }
 
@@ -311,21 +393,39 @@
   position        : absolute;
   width           : auto;
   z-index         : 1000;
+
+  &.ember-basic-dropdown-content--above {
+    border-bottom: none;
+  }
+
+  &.ember-basic-dropdown-content--below {
+    border-top: none;
+  }
 }
 
 @at-root .ember-power-select-search {
   display       : flex;
   flex-direction: row;
-  border-bottom : rem-size(1px) solid $c-light;
 }
 
 @at-root .ember-power-select-search-input {
-  display    : block;
-  height     : rs(7,1);
-  line-height: rs(7,1);
-  outline    : none;
-  padding    : 0 rs(1.75);
-  flex       : 1 1 auto;
+  background   : rgba($c-light,.5);
+  border       : none;
+  border-bottom: rem-size(1px) solid $c-mid;
+  display      : block;
+  height       : rs(7,1);
+  line-height  : rs(7,1);
+  outline      : none;
+  padding      : 0 rs(1.75);
+  flex         : 1 1 auto;
+
+  &::placehoder,
+  :-moz-placeholder,
+  :-ms-input-placeholder,
+  ::-moz-placeholder,
+  ::-webkit-input-placeholder {
+    color: $c-error;
+  }
 }
 
 @at-root .ember-power-select-options {
@@ -335,207 +435,18 @@
 
 @at-root .ember-power-select-option {
   @include transition-all;
+  @include text-truncate;
   cursor     : pointer;
   line-height: rs(6);
   padding    : 0 rs(1.75);
 
-  &:hover {
-    background: $c-light;
+  // Hover State
+  &[aria-current="true"] {
+    background: rgba($c-accent,0.05);
   }
 
-  &[aria-selected="true"],
-  &[aria-current="true"] {
+  // Currently Selected State
+  &[aria-selected="true"] {
     background: rgba($c-accent,0.2);
   }
 }
-
-// .uxs-form {
-//   &--padding {
-//     padding: rs(0.5);
-//     @include mq(tablet) {
-//       padding: rs(0.5) rs(1);
-//     }
-//   }
-//
-//   &--white {
-//     color: $c-white;
-//   }
-//
-//   &__control-row {
-//     display       : flex;
-//     flex-direction: row;
-//     max-width     : $max-width-content;
-//   }
-//
-//   &__control {
-//     display      : block;
-//     margin-bottom: rem-size($baseline*.5);
-//     overflow     : hidden;
-//     position     : relative;
-//     min-height   : rem-size($baseline*4.5);
-//
-//     &--inline {
-//       @include mq(tablet) {
-//         margin-right: rem-size($baseline*.5);
-//
-//         &:last-of-child {
-//           margin-right: 0;
-//         }
-//       }
-//     }
-//
-//     &--row-control {
-//       flex        : 1 1 auto;
-//       margin-right: rs(.5);
-//       @include mq(tablet) {
-//         margin-right: rs(1);
-//       }
-//
-//       &:last-child {
-//         margin-right: 0;
-//       }
-//     }
-//
-//     &--compact {
-//       min-height: 0;
-//     }
-//
-//     &--inline-mobile {
-//       margin-right: rem-size($baseline*.5);
-//
-//       &:last-of-child {
-//         margin-right: 0;
-//       }
-//     }
-//   }
-//
-//   &__label {
-//     @include label;
-//     margin-bottom: rem-size($baseline*0.5);
-//     min-height   : rs(1);
-//   }
-//
-//   &__input {
-//     @include contrast-background-color-modifiers($prefix:'');
-//     @include border-color-modifiers();
-//     @include text-color-modifiers($prefix:'');
-//     border-color: $c-light;
-//
-//     &--date,
-//     &--datetime,
-//     &--email,
-//     &--month,
-//     &--number,
-//     &--password,
-//     &--search,
-//     &--tel,
-//     &--text,
-//     &--textarea,
-//     &--time,
-//     &--url,
-//     &--week,
-//     &--year {
-//       @include input-base;
-//       margin: 0;
-//     }
-//
-//     &--date,
-//     &--datetime,
-//     &--time {
-//       padding: rem-size(($baseline*.25) - 1px) rem-size(($baseline*.25) - 2px);
-//     }
-//
-//     &--dropdown {
-//       margin-bottom: 0;
-//     }
-//
-//     &--disabled:not([type=checkbox]):not([type=radio]),
-//     &:disabled:not([type=checkbox]):not([type=radio]) {
-//       cursor      : not-allowed;
-//       color       : rgba($c-dark, 0.5);
-//       background  : $c-light;
-//       border-color: $c-mid;
-//     }
-//
-//     &--inline {
-//       margin-right: rem-size($baseline*.5);
-//       flex        : 1;
-//
-//       &:last-of-type {
-//         margin-right: 0;
-//       }
-//     }
-//     /* HACK - as dropdowns are not inputs the above last-of-type
-//      * selector wont cut it. What we really want is a list-of-class */
-//     &+.uxs-form__input--dropdown,
-//     &--dropdown+.uxs-form__input {
-//       margin-left: rem-size($baseline*.5);
-//     }
-//   }
-//
-//   &__error,
-//   &__warning {
-//     top     : rem-size($baseline*3);
-//     position: absolute;
-//   }
-//
-//   &__error,
-//   &__warning {
-//     @include type-content;
-//     @include transition-all;
-//     transition-property: color, background-color;
-//     @include text-truncate($max-width-content);
-//     animation          : slideIn $transition-duration 1;
-//     margin             : 0;
-//     padding            : 0 rem-size($baseline*0.5);
-//     line-height        : rem-size($baseline*1.5);
-//     clear              : both;
-//     width              : 100%;
-//     @include mq(tablet, 'max') {
-//       @include type-detail;
-//       max-width: $max-width-content;
-//     }
-//   }
-//
-//   &__error {
-//     background-color: $c-error;
-//     color           : $c-white;
-//   }
-//
-//   &__warning {
-//     background-color: $c-warning;
-//     color           : $c-white;
-//   }
-//
-//   &__tip {
-//     @extend .detail;
-//     @include contrast-text-color-modifiers();
-//     @include transition-all;
-//     clear    : both;
-//     padding  : 0;
-//     max-width: $max-width-content;
-//     margin   : 0;
-//
-//     &--toggle {
-//       padding   : 0 rem-size(30px) rem-size($baseline*0.5);
-//       margin-top: rem-size($baseline*-0.5);
-//     }
-//
-//     &--error {
-//       visibility: hidden;
-//     }
-//   }
-// }
-//
-// .uxs-form__control--textarea {
-//   .uxs-form__error,
-//   .uxs-form__warning {
-//     top     : auto;
-//     position: relative;
-//   }
-//
-//   .uxs-form__tip--error {
-//     display   : none;
-//     visibility: hidden;
-//   }
-// }

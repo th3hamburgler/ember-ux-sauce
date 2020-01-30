@@ -1,21 +1,17 @@
-import Component from '@ember/component';
-import layout from '../../templates/components/uxs-form/dropdown';
+import PowerSelect from 'ember-power-select/components/power-select';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import {
+  computed
+} from '@ember/object';
+import {
   FORM_STYLES
 } from '../uxs-form';
-import {
-  isEmpty
-} from '@ember/utils';
-import {
-  bool
-} from '@ember/object/computed';
 
-export default Component.extend(BEMComponent, Testable, {
-  base: 'uxs-form__input-container',
-  layout,
+export default PowerSelect.extend(BEMComponent, Testable, {
+  base: 'uxs-form__dropdown-container',
   b: "uxs-form",
+  tagName: 'div',
   // Attributes
   /**
     Define the text alignment of the input
@@ -118,6 +114,13 @@ export default Component.extend(BEMComponent, Testable, {
     const components = this.findControlComponents();
     components.forEach(component => component.classList.remove(className));
   },
+  // Computed
+  triggerClass: computed('style', function() {
+    return `ember-power-select-trigger--${this.style}`;
+  }),
+  dropdownClass: computed('style', function() {
+    return `ember-power-select-dropdown--${this.style}`;
+  }),
   // Actions
   actions: {
     focusIn() {
