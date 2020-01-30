@@ -134,6 +134,22 @@
     }
   }
 
+  &__datepicker-container {
+    @include body-1;
+    min-width: 100%;
+    max-width: 100%;
+
+    &--filled {
+      line-height: rs(4.25);
+      padding    : rs(2.5) rs(1.5) 0;
+    }
+
+    &--outlined {
+      line-height: rs(6.75);
+      padding    : 0 rs(1.75);
+    }
+  }
+
   &__dropdown-container {
     display       : flex;
     flex-direction: row;

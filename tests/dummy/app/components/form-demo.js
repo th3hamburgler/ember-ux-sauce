@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 import {
-  computed
+  computed,
+  set
 } from '@ember/object';
 
 export default Component.extend({
@@ -19,9 +20,9 @@ export default Component.extend({
     save() {
       window.console.log('Submit Form');
     },
-    setDate(date, format) {
+    setDate(model, date, format) {
       window.console.log(date, format);
-      this.model.set('dob', format);
+      set(model, 'dob', format);
     }
   },
 });

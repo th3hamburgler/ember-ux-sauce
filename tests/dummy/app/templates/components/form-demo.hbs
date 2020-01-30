@@ -90,7 +90,7 @@ as |form|}}
     {{control.label "Date of Birth"}}
     {{control.date
       value=(readonly @model.dob)
-      onChange=(action "setDate")
+      onChange=(action "setDate" @model)
     }}
     {{control.date-icon}}
   {{/form.control}}

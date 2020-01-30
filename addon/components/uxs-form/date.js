@@ -9,7 +9,7 @@ export default FlatPickr.extend(BEMComponent, Testable, {
   // Properties
   base: 'uxs-form__datepicker-container',
   b: "uxs-form",
-  tagName: 'div',
+  // tagName: 'div',
   // Attributes
   type: 'date',
   enableTime: false,
