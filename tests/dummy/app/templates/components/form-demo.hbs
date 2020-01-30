@@ -87,6 +87,19 @@ as |form|}}
     name="foo"
   as |control|
   }}
+    {{control.label "What cuisine do you like?"}}
+    {{control.checkbox label="Chinese" checked=@model.chinese}}
+    {{control.checkbox label="French" checked=@model.french}}
+    {{control.checkbox label="Indian" checked=@model.indian}}
+    {{control.checkbox label="Italian" checked=@model.italian}}
+    {{control.checkbox label="Spanish" checked=@model.spanish}}
+    {{control.tip "Check out this bunch of textboxes"}}
+  {{/form.control}}
+
+  {{#form.control
+    name="foo"
+  as |control|
+  }}
     {{control.label "Foo"}}
     {{control.input value=@model.foo}}
   {{/form.control}}
