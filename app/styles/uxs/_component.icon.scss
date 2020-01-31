@@ -1,87 +1,16 @@
 .uxs-icon {
-  $icon-size-regular: 3;
-  $icon-size-large  : 6;
-  $self             : '.uxs-icon';
-  //
-  align-items       : center;
-  cursor            : pointer;
-  display           : flex;
-  justify-content   : center;
-  position          : relative;
-  -webkit-appearance: none;
-
-  // Hover background
-  &::before {
-    @include transition-all;
-    background: rgba($c-dark,0.0);
-    bottom    : rs(-1);
-    content   : '';
-    left      : rs(-1);
-    position  : absolute;
-    right     : rs(-1);
-    top       : rs(-1);
-    z-index   : 1;
-  }
-  // Disabled Basics
-  &--disabled,
-  &:disabled {
-    cursor: not-allowed;
-
-    &::before {
-      display: none;
-    }
-  }
-
-  // Child SVG
-  svg {
-    z-index: 2;
-  }
-
-  // Regular Size
-  &--regular {
-    height: rs($icon-size-regular);
-    width : rs($icon-size-regular);
-
-    svg {
-      height: rs($icon-size-regular);
-      width : rs($icon-size-regular);
-    }
-
-    &::before {
-      border-radius: rs($icon-size-regular);
-    }
-  }
+  @include icon();
+  @include icon-hover();
 
   &--large {
-    height: rs($icon-size-large);
-    width : rs($icon-size-large);
-
-    svg {
-      height: rs($icon-size-large);
-      width : rs($icon-size-large);
-    }
-
-    &::before {
-      border-radius: rs($icon-size-large);
-    }
-
+    @include icon(6);
   }
 
-  &--large,
-  &--regular {
-    // Color modifiers
-    @each $modifier, $color in $defaultColors {
-      &#{$self}--#{$modifier} {
-        path {
-          fill: $color;
-        }
-      }
-    }
-
-    &:focus,
-    &:hover {
-      &::before {
-        background: rgba($c-dark,0.1);
+  // Color modifiers
+  @each $modifier, $color in $defaultColors {
+    &--#{$modifier} {
+      path {
+        fill: $color;
       }
     }
   }

@@ -1,4 +1,23 @@
 <div class="uxs">
+  <div class="p-2" id="app-bar">
+
+    {{#uxs-app-bar as |bar|}}
+      {{bar.navigation "menu"}}
+      {{bar.title "Page title"}}
+      {{bar.action "favorite"}}
+      {{bar.action "search"}}
+      {{bar.overflowMenu "more_vert"}}
+    {{/uxs-app-bar}}
+
+    {{#uxs-app-bar color="primary" style="extended" as |bar|}}
+      {{bar.navigationLink "menu" "docs"}}
+      {{bar.title "Page title"}}
+      {{bar.actionLink "favorite" "docs"}}
+      {{bar.actionLink "search" "docs"}}
+      {{bar.overflowMenu "more_vert"}}
+    {{/uxs-app-bar}}
+
+  </div>
   <div class="p-2" id="form">
 
     <div class="fx-row">

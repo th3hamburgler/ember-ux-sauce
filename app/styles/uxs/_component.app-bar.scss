@@ -1,0 +1,49 @@
+.uxs-app-bar {
+  // background    : $c-accent;
+  color         : $c-white;
+  display       : flex;
+  flex-direction: row;
+  padding       : rs(2);
+
+  // Color modifiers
+  @each $modifier, $color in $defaultColors {
+    &--#{$modifier} {
+      background: $color;
+    }
+  }
+
+  // Style Modifers
+  &--extended {
+    padding-bottom: rs(3);
+  }
+
+  // Title
+  &__title {
+    @include headline-6;
+    @include text-truncate;
+    flex        : 1 1 auto;
+    margin-right: rs(3);
+
+    &--extended {
+      padding-top: rs(8);
+    }
+  }
+
+  // Icons
+  &__action,
+  &__navigation,
+  &__overflow-menu {
+    @include icon(3, $c-white);
+    @include icon-hover($c-white);
+    flex-shrink: 0;
+  }
+
+  //
+  &__navigation {
+    margin-right: rs(4);
+  }
+
+  &__action {
+    margin-right: rs(3);
+  }
+}

@@ -3,6 +3,64 @@
   display : $display;
   position: $position;
 }
+
+@mixin icon($size:3, $color:$c-dark) {
+  $self             : '.uxs-icon';
+  //
+  align-items       : center;
+  cursor            : pointer;
+  display           : flex;
+  justify-content   : center;
+  position          : relative;
+  -webkit-appearance: none;
+  height            : rs($size);
+  width             : rs($size);
+
+  &::before {
+    border-radius: rs($size);
+  }
+
+  // Disabled Basics
+  &--disabled,
+  &:disabled {
+    cursor: not-allowed;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  svg {
+    height : rs($size);
+    width  : rs($size);
+    z-index: 2;
+    fill   : $color;
+  }
+}
+
+@mixin icon-hover($color: $c-dark) {
+  // Hover background
+  &::before {
+    @include transition-all;
+    background: rgba($color,0);
+    bottom    : rs(-1);
+    content   : '';
+    left      : rs(-1);
+    position  : absolute;
+    right     : rs(-1);
+    top       : rs(-1);
+    z-index   : 1;
+  }
+
+  // Hover State
+  &:focus,
+  &:hover {
+    &::before {
+      background: rgba($color,0.1);
+    }
+  }
+}
+
 /*
  * Transitions
  */
