@@ -4,7 +4,7 @@
   position: $position;
 }
 
-@mixin icon($size:3, $color:$c-dark) {
+@mixin icon($size:3) {
   $self             : '.uxs-icon';
   //
   align-items       : center;
@@ -34,7 +34,7 @@
     height : rs($size);
     width  : rs($size);
     z-index: 2;
-    fill   : $color;
+    fill   : currentColor;
   }
 }
 

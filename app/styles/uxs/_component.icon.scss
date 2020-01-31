@@ -9,9 +9,7 @@
   // Color modifiers
   @each $modifier, $color in $defaultColors {
     &--#{$modifier} {
-      path {
-        fill: $color;
-      }
+      color: $color;
     }
   }
 }

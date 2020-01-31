@@ -1,5 +1,30 @@
 <div class="uxs">
-  <div class="p-2" id="app-bar">
+
+  <div class="" id="nav-bar">
+    {{#uxs-nav-bar as |bar|}}
+      {{bar.logo "addon-docs-pen"}}
+      {{bar.title "CRUD Life"}}
+      {{#bar.menu as |nav|}}
+        {{#nav.menu as |menu|}}
+          {{menu.link "Homepage" "index"}}
+          {{menu.link "Docs" "docs.index"}}
+          {{menu.link "Styleguide" "styleguide"}}
+        {{/nav.menu}}
+      {{/bar.menu}}
+    {{/uxs-nav-bar}}
+
+  </div>
+  <div class="p-2">
+    {{#uxs-menu as |nav|}}
+      {{#nav.menu as |menu|}}
+        {{menu.link "Homepage" "index"}}
+        {{menu.link "Docs" "docs.index"}}
+        {{menu.link "Styleguide" "styleguide"}}
+        {{menu.item "Some Action"}}
+      {{/nav.menu}}
+    {{/uxs-menu}}
+  </div>
+  <div class="" id="app-bar">
 
     {{#uxs-app-bar as |bar|}}
       {{bar.navigation "menu"}}
