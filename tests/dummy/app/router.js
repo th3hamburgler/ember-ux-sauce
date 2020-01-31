@@ -30,10 +30,6 @@ Router.map(function() {
       this.route('typography');
       this.route('flex');
     });
-    this.route('buttons');
-    this.route('fabs');
-    this.route('icons');
-
 
     this.route('forms', function() {
       this.route('button-links');
@@ -48,12 +44,22 @@ Router.map(function() {
       this.route('fieldsets');
       this.route('rows');
     });
+
     this.route('lists', function() {
       this.route('items');
       this.route('avatars');
       this.route('subheadings');
       this.route('notices');
+      this.route('pagination');
+      this.route('tables');
     })
+
+    this.route('data', function() {
+      this.route('index');
+      this.route('inline');
+      this.route('table');
+    });
+
     this.route('navigation', function() {
       this.route('tabs', function() {
         this.route('dogs');
@@ -74,10 +80,18 @@ Router.map(function() {
       this.route('callout');
       this.route('splash');
     });
+
     this.route('typography', function() {
       this.route('lists');
       this.route('tables');
+      this.route('dividers');
     });
+
+    this.route('buttons', function() {
+      this.route('fabs');
+      this.route('icons');
+    });
+
     this.route('layout', function() {
       this.route('app');
       this.route('navbar');

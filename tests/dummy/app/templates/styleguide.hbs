@@ -251,7 +251,7 @@
     {{/uxs-data}}
 
   </div>
-
+--}}
   <div class="p-2" id="lists">
 
     <a href="#lists">
@@ -363,9 +363,9 @@
       {{/list.item}}
 
       {{#list.item as |item|}}
-        {{#item.avatar size="medium" as |avatar|}}
-          {{avatar.large "JW"}}
-        {{/item.avatar}}
+        {{#item.aside}}
+          {{item.avatar "JW" text=true size="medium"}}
+        {{/item.aside}}
         {{#item.body}}
           {{item.title "List Title"}}
           {{item.meta "Meta info"}}
@@ -431,7 +431,7 @@
     {{/uxs-list}}
 
   </div>
-
+  {{!--
   <div class="p-2" id="spacing">
 
     <a href="#spacing">
@@ -462,130 +462,131 @@
     </div>
 
   </div>
-   {{uxs-headline "Styleguide" class="ph-1"}}
+  --}}
+  {{uxs-headline "Styleguide" class="ph-1"}}
 
-        {{uxs-subheadline "List Data" class="ph-1"}}
+  {{uxs-subtitle "List Data" class="ph-1"}}
 
-        {{#uxs-data
-          display="list"
-          padded=false
-          inset=true
-        as |data|
-        }}
-          {{data.item "Label" "Value"}}
-          {{data.item "Another Label" "Value with a tip" "Here's the tip"}}
-          {{data.item "A Long Value" "Scelerisque sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis ut ultricies cursus ornare tempus.Nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit massa in cras ipsum et adipiscing.Sed parturient id aenean." "Here's a long tip nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit"}}
-          {{#data.item as |item|}}
-            {{item.label "Grouped Label"}}
-            {{#item.group as |group|}}
-              {{group.value "Value One"}}
-              {{group.value "Value Two"}}
-              {{group.value "Value Three"}}
-            {{/item.group}}
-            {{item.tip "Here's the tip"}}
-          {{/data.item}}
-          {{#data.item as |item|}}
-            {{item.label "More Groups"}}
-            {{#item.group as |group|}}
-              {{group.value "Value One"}}
-              {{group.value "Value Two sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis"}}
-              {{group.value "Value Three"}}
-            {{/item.group}}
-            {{item.tip "Here's the tip"}}
-          {{/data.item}}
-        {{/uxs-data}}
+  {{#uxs-data
+    display="list"
+    padded=false
+    inset=true
+  as |data|
+  }}
+    {{data.item "Label" "Value"}}
+    {{data.item "Another Label" "Value with a tip" "Here's the tip"}}
+    {{data.item "A Long Value" "Scelerisque sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis ut ultricies cursus ornare tempus.Nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit massa in cras ipsum et adipiscing.Sed parturient id aenean." "Here's a long tip nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit"}}
+    {{#data.item as |item|}}
+      {{item.label "Grouped Label"}}
+      {{#item.group as |group|}}
+        {{group.value "Value One"}}
+        {{group.value "Value Two"}}
+        {{group.value "Value Three"}}
+      {{/item.group}}
+      {{item.tip "Here's the tip"}}
+    {{/data.item}}
+    {{#data.item as |item|}}
+      {{item.label "More Groups"}}
+      {{#item.group as |group|}}
+        {{group.value "Value One"}}
+        {{group.value "Value Two sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis"}}
+        {{group.value "Value Three"}}
+      {{/item.group}}
+      {{item.tip "Here's the tip"}}
+    {{/data.item}}
+  {{/uxs-data}}
 
-        {{uxs-subheadline "Inline Data"}}
+  {{uxs-subtitle "Inline Data"}}
 
-        {{#uxs-data
-          display="inline"
-          padded=false
-          inset=true
-        as |data|
-        }}
-          {{data.item "Label" "Value"}}
-          {{data.item "Another Label" "Value with a tip" "Here's the tip"}}
-          {{data.item "A Long Value" "Scelerisque sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis ut ultricies cursus ornare tempus.Nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit massa in cras ipsum et adipiscing.Sed parturient id aenean." "Here's a long tip nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit"}}
-          {{#data.item as |item|}}
-            {{item.label "Grouped Label"}}
-            {{#item.group as |group|}}
-              {{group.value "Value One"}}
-              {{group.value "Value Two"}}
-              {{group.value "Value Three"}}
-            {{/item.group}}
-            {{item.tip "Here's the tip"}}
-          {{/data.item}}
-          {{#data.item as |item|}}
-            {{item.label "More Groups"}}
-            {{#item.group as |group|}}
-              {{group.value "Value One"}}
-              {{group.value "Value Two sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis"}}
-              {{group.value "Value Three"}}
-            {{/item.group}}
-            {{item.tip "Here's the tip"}}
-          {{/data.item}}
-        {{/uxs-data}}
+  {{#uxs-data
+    display="inline"
+    padded=false
+    inset=true
+  as |data|
+  }}
+    {{data.item "Label" "Value"}}
+    {{data.item "Another Label" "Value with a tip" "Here's the tip"}}
+    {{data.item "A Long Value" "Scelerisque sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis ut ultricies cursus ornare tempus.Nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit massa in cras ipsum et adipiscing.Sed parturient id aenean." "Here's a long tip nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit"}}
+    {{#data.item as |item|}}
+      {{item.label "Grouped Label"}}
+      {{#item.group as |group|}}
+        {{group.value "Value One"}}
+        {{group.value "Value Two"}}
+        {{group.value "Value Three"}}
+      {{/item.group}}
+      {{item.tip "Here's the tip"}}
+    {{/data.item}}
+    {{#data.item as |item|}}
+      {{item.label "More Groups"}}
+      {{#item.group as |group|}}
+        {{group.value "Value One"}}
+        {{group.value "Value Two sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis"}}
+        {{group.value "Value Three"}}
+      {{/item.group}}
+      {{item.tip "Here's the tip"}}
+    {{/data.item}}
+  {{/uxs-data}}
 
-        {{uxs-subheadline "Cell Data"}}
+  {{uxs-subtitle "Cell Data"}}
 
-        {{#uxs-data
-          display="cell"
-          padded=false
-          inset=true
-        as |data|
-        }}
-          {{data.item "Label" "Value"}}
-          {{data.item "Another Label" "Value with a tip" "Here's the tip"}}
-          {{data.item "A Long Value" "Scelerisque sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis ut ultricies cursus ornare tempus.Nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit massa in cras ipsum et adipiscing.Sed parturient id aenean." "Here's a long tip nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit"}}
-          {{#data.item as |item|}}
-            {{item.label "Grouped Label"}}
-            {{#item.group as |group|}}
-              {{group.value "Value One"}}
-              {{group.value "Value Two"}}
-              {{group.value "Value Three"}}
-            {{/item.group}}
-            {{item.tip "Here's the tip"}}
-          {{/data.item}}
-          {{#data.item as |item|}}
-            {{item.label "More Groups"}}
-            {{#item.group as |group|}}
-              {{group.value "Value One"}}
-              {{group.value "Value Two sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis"}}
-              {{group.value "Value Three"}}
-            {{/item.group}}
-            {{item.tip "Here's the tip"}}
-          {{/data.item}}
-        {{/uxs-data}}
+  {{#uxs-data
+    display="cell"
+    padded=false
+    inset=true
+  as |data|
+  }}
+    {{data.item "Label" "Value"}}
+    {{data.item "Another Label" "Value with a tip" "Here's the tip"}}
+    {{data.item "A Long Value" "Scelerisque sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis ut ultricies cursus ornare tempus.Nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit massa in cras ipsum et adipiscing.Sed parturient id aenean." "Here's a long tip nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit"}}
+    {{#data.item as |item|}}
+      {{item.label "Grouped Label"}}
+      {{#item.group as |group|}}
+        {{group.value "Value One"}}
+        {{group.value "Value Two"}}
+        {{group.value "Value Three"}}
+      {{/item.group}}
+      {{item.tip "Here's the tip"}}
+    {{/data.item}}
+    {{#data.item as |item|}}
+      {{item.label "More Groups"}}
+      {{#item.group as |group|}}
+        {{group.value "Value One"}}
+        {{group.value "Value Two sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis"}}
+        {{group.value "Value Three"}}
+      {{/item.group}}
+      {{item.tip "Here's the tip"}}
+    {{/data.item}}
+  {{/uxs-data}}
 
-        {{uxs-subheadline "List Table"}}
+  {{uxs-subtitle "List Table"}}
 
-        {{#uxs-data
-          display="table"
-          padded=false
-          inset=true
-        as |data|
-        }}
-          {{data.item "Label" "Value"}}
-          {{data.item "Another Label" "Value with a tip" "Here's the tip"}}
-          {{data.item "A Long Value" "Scelerisque sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis ut ultricies cursus ornare tempus.Nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit massa in cras ipsum et adipiscing.Sed parturient id aenean." "Here's a long tip nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit"}}
-          {{#data.item as |item|}}
-            {{item.label "Grouped Label"}}
-            {{#item.group as |group|}}
-              {{group.value "Value One"}}
-              {{group.value "Value Two"}}
-              {{group.value "Value Three"}}
-            {{/item.group}}
-            {{item.tip "Here's the tip"}}
-          {{/data.item}}
-          {{#data.item as |item|}}
-            {{item.label "More Groups"}}
-            {{#item.group as |group|}}
-              {{group.value "Value One"}}
-              {{group.value "Value Two sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis"}}
-              {{group.value "Value Three"}}
-            {{/item.group}}
-            {{item.tip "Here's the tip"}}
-          {{/data.item}}
-        {{/uxs-data}} --}}
+  {{#uxs-data
+    display="table"
+    padded=false
+    inset=true
+  as |data|
+  }}
+    {{data.item "Label" "Value"}}
+    {{data.item "Another Label" "Value with a tip" "Here's the tip"}}
+    {{data.item "A Long Value" "Scelerisque sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis ut ultricies cursus ornare tempus.Nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit massa in cras ipsum et adipiscing.Sed parturient id aenean." "Here's a long tip nibh a venenatis tellus odio a cum vestibulum placerat id vestibulum mi parturient blandit"}}
+    {{#data.item as |item|}}
+      {{item.label "Grouped Label"}}
+      {{#item.group as |group|}}
+        {{group.value "Value One"}}
+        {{group.value "Value Two"}}
+        {{group.value "Value Three"}}
+      {{/item.group}}
+      {{item.tip "Here's the tip"}}
+    {{/data.item}}
+    {{#data.item as |item|}}
+      {{item.label "More Groups"}}
+      {{#item.group as |group|}}
+        {{group.value "Value One"}}
+        {{group.value "Value Two sociosqu a mi donec sit ligula sit euismod parturient ipsum dictum facilisis"}}
+        {{group.value "Value Three"}}
+      {{/item.group}}
+      {{item.tip "Here's the tip"}}
+    {{/data.item}}
+  {{/uxs-data}}
 
 </div>
