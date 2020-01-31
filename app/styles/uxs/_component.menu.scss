@@ -1,159 +1,231 @@
-body.ember-tether-enabled {
+@at-root body.ember-tether-enabled {
   overflow: hidden;
 }
 
 .uxs-menu {
-  @include text-color-modifiers();
-  @include background-color-modifiers();
-  @include contrast-border-color-modifiers();
-  border-color: $c-light;
+  @include body-2;
+  display       : flex;
+  flex-direction: column;
+  padding       : rs(1) 0;
 
-  &--bordered {
-    @include card-shadow(1);
-    border-width: rem-size(1px);
-    border-style: solid;
-    display     : table-cell; // grow to content width
-    padding     : rem-size(($baseline*0.5)-1) 0;
+  &--dropdown {
+    @include elevation(8);
+    border-radius: rs(.5);
   }
 
-  &--detail {
-    @include detail-font-size;
-  }
-
-  &--left {
-    text-align: left;
-  }
-
-  &--right {
-    text-align: right;
-  }
-
-  &--center {
-    text-align: center;
-  }
+  &--drawer {}
 
   &--horizontal {
-    display       : flex;
     flex-direction: row;
-    max-width     : none;
-    padding-left  : rs(.5,1);
-    padding-right : rs(.5,1);
-
-    &.uxs-menu--left {
-      justify-content: flex-start;
-    }
-
-    &.uxs-menu--right {
-      justify-content: flex-end;
-    }
-
-    &.uxs-menu--center {
-      justify-content: center;
-    }
-  }
-
-  &__subheading {
-    @include type-subheading;
-    border-bottom: 1px solid $c-light;
-    line-height  : rem-size(($baseline*1.5)-1px);
-    padding      : 0 rem-size($baseline*0.75);
   }
 
   &__item {
-    @include transition-all;
-    cursor     : pointer;
-    // color      : $c-dark;
-    border     : none;
-    font-weight: 300;
-    list-style : none;
-    line-height: rem-size($baseline*1.5);
-    padding    : 0 rem-size($baseline*0.75);
-    display    : flex;
-    align-items: center;
-
-    &:hover {
-      background-color: rgba($c-dark,0.2);
+    cursor        : pointer;
+    display       : flex;
+    flex-direction: row;
+    line-height   : rs(4);
+    padding       : 0 rs(1);
+    @include mq(tablet) {
+      line-height: rs(6);
+      padding    : 0 rs(2);
     }
 
-    &.active {
-      font-weight: 700;
+    &:hover {
+      background: rgba($c-dark, 0.05);
+    }
+
+    &--dropdown {
+      &.active,
+      &:active {
+        background: rgba($c-dark, 0.1);
+      }
+    }
+
+    &--drawer {
+      border-radius: rs(.5);
+      font-weight  : 600;
+      line-height  : rs(5);
+      margin       : rs(.5) rs(1);
+
+      &.active,
+      &:active {
+
+        background: rgba($c-accent, 0.2);
+        color     : $c-accent;
+      }
     }
 
     &--horizontal {
-      // display     : inline-block;
-      margin-right: rem-size($baseline*0.5);
-      padding     : 0 rem-size($baseline*0.25);
+      border-radius: rs(.5);
+      margin       : 0 rs(.5);
+
+      &:first-child {
+        margin-left: 0;
+      }
 
       &:last-child {
         margin-right: 0;
       }
-    }
 
-    &--disabled {
-      cursor        : not-allowed;
-      pointer-events: none;
-      opacity       : 0.6;
-
-      &:focus,
-      &:hover {
-        opacity: 0.6;
+      &.active,
+      &:active {
+        font-weight: 600;
       }
-      @if $high-contrast {
-        text-decoration: line-through;
-      }
-    }
-  }
-
-  &__text {
-    flex: 1 1 auto;
-  }
-
-  &__left,
-  &__right {
-    display   : flex;
-    min-height: rem-size($baseline);
-    min-width : rem-size($baseline);
-  }
-
-  &__left {
-    margin-right: rs(0.25);
-    text-align  : left;
-  }
-
-  &__right {
-    margin-left: rs(0.25);
-    text-align : right;
-  }
-
-  &__icon {
-    display    : block;
-    line-height: rem-size($baseline*1.5);
-
-    &--left {
-      // margin-right: rem-size($baseline*0.25);
-    }
-
-    &--right {
-      // margin-left: rem-size($baseline*0.25);
-    }
-  }
-
-  &__secondary-text {
-    margin-left: rem-size($baseline*1.5);
-  }
-
-  &__divider {
-    background-color: $c-light;
-    @include contrast-background-color-modifiers($dark-color:rgba($c-dark,0.4), $light-color:rgba($c-white,0.4), $prefix:'');
-    height          : rem-size(1px);
-    margin          : rem-size(($baseline/2)-0.5) 0;
-    width           : 100%;
-
-    &--horizontal {
-      line-height: rs(1.5);
-      height     : rs(1.5);
-      margin     : 0 rem-size(($baseline/2)-0.5) 0 0;
-      width      : rem-size(1px);
     }
   }
 }
+// .uxs-menu {
+//   @include text-color-modifiers();
+//   @include background-color-modifiers();
+//   @include contrast-border-color-modifiers();
+//   border-color: $c-light;
+//
+//   &--bordered {
+//     @include card-shadow(1);
+//     border-width: rem-size(1px);
+//     border-style: solid;
+//     display     : table-cell; // grow to content width
+//     padding     : rem-size(($baseline*0.5)-1) 0;
+//   }
+//
+//   &--detail {
+//     @include detail-font-size;
+//   }
+//
+//   &--left {
+//     text-align: left;
+//   }
+//
+//   &--right {
+//     text-align: right;
+//   }
+//
+//   &--center {
+//     text-align: center;
+//   }
+//
+//   &--horizontal {
+//     display       : flex;
+//     flex-direction: row;
+//     max-width     : none;
+//     padding-left  : rs(.5,1);
+//     padding-right : rs(.5,1);
+//
+//     &.uxs-menu--left {
+//       justify-content: flex-start;
+//     }
+//
+//     &.uxs-menu--right {
+//       justify-content: flex-end;
+//     }
+//
+//     &.uxs-menu--center {
+//       justify-content: center;
+//     }
+//   }
+//
+//   &__subheading {
+//     @include type-subheading;
+//     border-bottom: 1px solid $c-light;
+//     line-height  : rem-size(($baseline*1.5)-1px);
+//     padding      : 0 rem-size($baseline*0.75);
+//   }
+//
+//   &__item {
+//     @include transition-all;
+//     cursor     : pointer;
+//     // color      : $c-dark;
+//     border     : none;
+//     font-weight: 300;
+//     list-style : none;
+//     line-height: rem-size($baseline*1.5);
+//     padding    : 0 rem-size($baseline*0.75);
+//     display    : flex;
+//     align-items: center;
+//
+//     &:hover {
+//       background-color: rgba($c-dark,0.2);
+//     }
+//
+//     &.active {
+//       font-weight: 700;
+//     }
+//
+//     &--horizontal {
+//       // display     : inline-block;
+//       margin-right: rem-size($baseline*0.5);
+//       padding     : 0 rem-size($baseline*0.25);
+//
+//       &:last-child {
+//         margin-right: 0;
+//       }
+//     }
+//
+//     &--disabled {
+//       cursor        : not-allowed;
+//       pointer-events: none;
+//       opacity       : 0.6;
+//
+//       &:focus,
+//       &:hover {
+//         opacity: 0.6;
+//       }
+//       @if $high-contrast {
+//         text-decoration: line-through;
+//       }
+//     }
+//   }
+//
+//   &__text {
+//     flex: 1 1 auto;
+//   }
+//
+//   &__left,
+//   &__right {
+//     display   : flex;
+//     min-height: rem-size($baseline);
+//     min-width : rem-size($baseline);
+//   }
+//
+//   &__left {
+//     margin-right: rs(0.25);
+//     text-align  : left;
+//   }
+//
+//   &__right {
+//     margin-left: rs(0.25);
+//     text-align : right;
+//   }
+//
+//   &__icon {
+//     display    : block;
+//     line-height: rem-size($baseline*1.5);
+//
+//     &--left {
+//       // margin-right: rem-size($baseline*0.25);
+//     }
+//
+//     &--right {
+//       // margin-left: rem-size($baseline*0.25);
+//     }
+//   }
+//
+//   &__secondary-text {
+//     margin-left: rem-size($baseline*1.5);
+//   }
+//
+//   &__divider {
+//     background-color: $c-light;
+//     @include contrast-background-color-modifiers($dark-color:rgba($c-dark,0.4), $light-color:rgba($c-white,0.4), $prefix:'');
+//     height          : rem-size(1px);
+//     margin          : rem-size(($baseline/2)-0.5) 0;
+//     width           : 100%;
+//
+//     &--horizontal {
+//       line-height: rs(1.5);
+//       height     : rs(1.5);
+//       margin     : 0 rem-size(($baseline/2)-0.5) 0 0;
+//       width      : rem-size(1px);
+//     }
+//   }
+// }

@@ -12,18 +12,31 @@
         {{/nav.menu}}
       {{/bar.menu}}
     {{/uxs-nav-bar}}
-
   </div>
+
   <div class="p-2">
-    {{#uxs-menu as |nav|}}
-      {{#nav.menu as |menu|}}
-        {{menu.link "Homepage" "index"}}
-        {{menu.link "Docs" "docs.index"}}
-        {{menu.link "Styleguide" "styleguide"}}
-        {{menu.item "Some Action"}}
-      {{/nav.menu}}
+    {{#uxs-menu style="dropdown" class="mb-2" as |menu|}}
+      {{menu.link "Homepage" "index"}}
+      {{menu.link "Docs" "docs.index"}}
+      {{menu.link "Styleguide" "styleguide"}}
+      {{menu.item "Some Action"}}
+    {{/uxs-menu}}
+
+    {{#uxs-menu style="drawer" as |menu|}}
+      {{menu.link "Homepage" "index"}}
+      {{menu.link "Docs" "docs.index"}}
+      {{menu.link "Styleguide" "styleguide"}}
+      {{menu.item "Some Action"}}
+    {{/uxs-menu}}
+
+    {{#uxs-menu style="horizontal" as |menu|}}
+      {{menu.link "Homepage" "index"}}
+      {{menu.link "Docs" "docs.index"}}
+      {{menu.link "Styleguide" "styleguide"}}
+      {{menu.item "Some Action"}}
     {{/uxs-menu}}
   </div>
+
   <div class="" id="app-bar">
 
     {{#uxs-app-bar as |bar|}}
