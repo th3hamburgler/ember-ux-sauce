@@ -4,12 +4,11 @@
     {{#uxs-nav-bar as |bar|}}
       {{bar.logo "addon-docs-pen"}}
       {{bar.title "CRUD Life"}}
-      {{#bar.menu as |nav|}}
-        {{#nav.menu as |menu|}}
-          {{menu.link "Homepage" "index"}}
-          {{menu.link "Docs" "docs.index"}}
-          {{menu.link "Styleguide" "styleguide"}}
-        {{/nav.menu}}
+      {{bar.spacer}}
+      {{#bar.menu as |menu|}}
+        {{menu.link "Homepage" "index"}}
+        {{menu.link "Docs" "docs.index"}}
+        {{menu.link "Styleguide" "styleguide"}}
       {{/bar.menu}}
     {{/uxs-nav-bar}}
   </div>
@@ -17,22 +16,28 @@
   <div class="p-2">
     {{#uxs-menu style="dropdown" class="mb-2" as |menu|}}
       {{menu.link "Homepage" "index"}}
+      {{menu.subtitle "Subheading"}}
       {{menu.link "Docs" "docs.index"}}
       {{menu.link "Styleguide" "styleguide"}}
+      {{menu.divider}}
       {{menu.item "Some Action"}}
     {{/uxs-menu}}
 
     {{#uxs-menu style="drawer" as |menu|}}
       {{menu.link "Homepage" "index"}}
+      {{menu.subtitle "Subheading"}}
       {{menu.link "Docs" "docs.index"}}
       {{menu.link "Styleguide" "styleguide"}}
+      {{menu.divider}}
       {{menu.item "Some Action"}}
     {{/uxs-menu}}
 
     {{#uxs-menu style="horizontal" as |menu|}}
       {{menu.link "Homepage" "index"}}
+      {{menu.subtitle "Subheading"}}
       {{menu.link "Docs" "docs.index"}}
       {{menu.link "Styleguide" "styleguide"}}
+      {{menu.divider}}
       {{menu.item "Some Action"}}
     {{/uxs-menu}}
   </div>

@@ -13,6 +13,7 @@ import {
 
   ```hbs
   {{#uxs-menu as |menu|}}
+    {{menu.link "Home" "index"}}
     {{menu.item "Maps"}}
     {{menu.item "Books"}}
     {{menu.item "Flights"}}

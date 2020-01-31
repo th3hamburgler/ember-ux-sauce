@@ -20,6 +20,8 @@
   }
 
   &__item {
+    @include transition-all;
+    @include text-truncate;
     cursor        : pointer;
     display       : flex;
     flex-direction: row;
@@ -58,6 +60,7 @@
     &--horizontal {
       border-radius: rs(.5);
       margin       : 0 rs(.5);
+      opacity      : 0.6;
 
       &:first-child {
         margin-left: 0;
@@ -67,13 +70,60 @@
         margin-right: 0;
       }
 
+      &:hover {
+        opacity: 1;
+      }
+
       &.active,
       &:active {
-        font-weight: 600;
+        opacity: 1;
       }
     }
   }
+
+  &__subtitle {
+    @include subtitle-2;
+    @include text-truncate;
+    color  : $c-grey;
+    padding: 0 rs(1);
+    @include mq(tablet) {
+      line-height: rs(4);
+      padding    : 0 rs(2);
+    }
+
+    &--dropdown {
+      line-height  : rs(4, 1);
+      padding      : rs(1) rs(2) 0;
+      border-bottom: rem-size(1px) solid $c-light;
+    }
+
+    &--drawer {
+      line-height: rs(2);
+      padding    : rs(2) rs(3) 0;
+    }
+
+    &--horizontal {
+      display: none;
+    }
+  }
+
+  &__divider {
+    background: $c-light;
+    height    : rem-size(1px);
+    margin    : rs(1) 0 rs(1,1);
+
+    &--dropdown {}
+
+    &--drawer {}
+
+    &--horizontal {
+      height: auto;
+      width : rem-size(1px);
+      margin: 0 rs(.5) 0 rs(.5,1);
+    }
+  }
 }
+
 // .uxs-menu {
 //   @include text-color-modifiers();
 //   @include background-color-modifiers();
