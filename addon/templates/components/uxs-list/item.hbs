@@ -26,6 +26,12 @@
       base="uxs-list__meta"
       m=m
     )
+    metaLink=(
+      component
+      "uxs-link"
+      base="uxs-list__meta"
+      m=m
+    )
     avatar=(
       component
       "uxs-list/avatar"
@@ -34,6 +40,11 @@
     action=(
       component
       "uxs-icon"
+      base=(concat b "__action")
+    )
+    actionLink=(
+      component
+      "uxs-icon-link"
       base=(concat b "__action")
     )
   )
