@@ -5,7 +5,7 @@
     data-test-fab-loading-icon=testSelectorValue
   }}
   {{svg-jar
-    icon
+    computedIcon
     class=(bem b "icon" m)
     data-test-fab-icon=testSelectorValue
   }}
@@ -22,6 +22,6 @@
     class={{bem b "text" m}}
     data-test-fab-text={{testSelectorValue}}
   >
-    {{text}}{{yield}}
+    {{computedText}}{{yield}}
   </div>
 {{/if}}

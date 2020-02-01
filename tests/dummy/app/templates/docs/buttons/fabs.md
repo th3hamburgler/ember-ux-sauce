@@ -8,24 +8,28 @@ The fab and fab-link component represents the primary action of a screen.
 
 <div class="uxs">
   {{uxs-fab "add"}}
+  {{uxs-fab-link "add" "docs.index"}}
 </div>
 
 ### Mini
 
 <div class="uxs">
   {{uxs-fab "add" style="mini"}}
+  {{uxs-fab-link "add" "docs.index" style="mini"}}
 </div>
 
 ### Extended
 
 <div class="uxs">
   {{uxs-fab "Button" style="extended"}}
+  {{uxs-fab-link "Button" "docs.index" style="extended"}}
 </div>
 
 ### Extended with icon
 
 <div class="uxs">
   {{uxs-fab "Button" "add" style="extended"}}
+  {{uxs-fab-link "Button" "docs.index" icon="add" style="extended"}}
 </div>
 
 ## Usage
