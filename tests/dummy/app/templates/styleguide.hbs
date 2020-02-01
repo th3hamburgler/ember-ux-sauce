@@ -20,6 +20,19 @@
     </a>
 
     {{#uxs-list as |list|}}
+      {{#list.item as |item|}}
+        {{#item.body class="fx-ai-center"}}
+          {{item.action "loading"}}
+        {{/item.body}}
+      {{/list.item}}
+
+      {{#list.item as |item|}}
+        {{#item.body class="fx-ai-center"}}
+          {{item.action "info_outline"}}
+          {{item.meta "No items found"}}
+        {{/item.body}}
+      {{/list.item}}
+
       {{#each users as |user|}}
         {{#list.item as |item|}}
           {{#item.aside}}
