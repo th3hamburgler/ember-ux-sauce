@@ -1,7 +1,5 @@
 import Mixin from '@ember/object/mixin';
-import {
-  get
-} from '@ember/object';
+
 import {
   bool
 } from '@ember/object/computed';

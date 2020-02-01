@@ -7,7 +7,6 @@ import {
 } from '../uxs-form';
 import {
   bool,
-  or
 } from '@ember/object/computed';
 
 export default Component.extend(Testable, BEMComponent, {
@@ -56,14 +55,13 @@ export default Component.extend(Testable, BEMComponent, {
   style: FORM_STYLES.FILLED,
   // Computed
   hasError: bool('error'),
-  isInvalid: or('hasError', 'invalid'),
   // Methods
   init() {
     this._super(...arguments);
     this.registerModifiers([
       'disabled',
       '*style',
-      'isInvalid:invalid',
+      'invalid',
     ]);
   },
 });

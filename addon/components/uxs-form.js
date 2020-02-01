@@ -3,8 +3,9 @@ import layout from '../templates/components/uxs-form';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import {
+  all,
   task,
-  // timeout
+  timeout
 } from 'ember-concurrency';
 export const FORM_STYLES = {
   FILLED: 'filled',
@@ -26,7 +27,7 @@ export default Component.extend(BEMComponent, Testable, {
   // Propertoes
   attributeBindings: ['novalidate'],
   base: 'uxs-form',
-  novalidate: false,
+  novalidate: true,
   tagName: 'form',
   layout,
   // Attributes
@@ -77,15 +78,17 @@ export default Component.extend(BEMComponent, Testable, {
   // Events
   submit(event) {
     event.preventDefault();
-    this.get('onSubmit')();
+    this.submitTask.perform();
   },
   // Tasks
   submitTask: task(function*() {
     console.log('submitTask');
-    // yield all([
-    yield this.onSubmit();
-    //   timeout(750)
-    // ]);
-    // yield this.afterSubmit();
+    // Add a small artificail delay on from submission
+    // to give the user a better experience
+    yield all([
+      timeout(750),
+      this.onSubmit(),
+    ]);
+    yield this.afterSubmit();
   })
 });

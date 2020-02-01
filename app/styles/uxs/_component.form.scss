@@ -213,6 +213,8 @@
     @include transition-all();
     @include body-1;
     background-color: transparent;
+    border          : none;
+    display         : block;
     flex            : 1 1 auto;
     max-width       : none;
 
@@ -348,7 +350,7 @@
     }
 
   }
-  // A tip folling a checbox or radio control has
+  // A tip folling a checkbox or radio control has
   // no horizontal padding
   .uxs-form__selection-container + .uxs-form__error,
   .uxs-form__selection-container + .uxs-form__tip {
@@ -363,7 +365,12 @@
   }
 
   &__error {
-    color: $c-error;
+    color  : $c-error;
+    display: none;
+
+    &--invalid {
+      display: block;
+    }
   }
 }
 
