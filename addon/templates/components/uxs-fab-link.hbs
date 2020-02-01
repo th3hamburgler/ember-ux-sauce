@@ -1,16 +1,14 @@
 {{#if showIcon}}
-  <div
-    class={{bem b "loading-icon" m}}
-    data-test-fab-loading-icon={{testSelectorValue}}
-  >
-    {{loadingIcon}}
-  </div>
-  <div
-    class={{bem b "icon" m}}
-    data-test-fab-icon={{testSelectorValue}}
-  >
-    {{computedIcon}}
-  </div>
+  {{svg-jar
+    loadingIcon
+    class=(bem b "loading-icon" m)
+    data-test-fab-loading-icon=testSelectorValue
+  }}
+  {{svg-jar
+    icon
+    class=(bem b "icon" m)
+    data-test-fab-icon=testSelectorValue
+  }}
 {{/if}}
 
 {{#if showText}}
@@ -24,6 +22,6 @@
     class={{bem b "text" m}}
     data-test-fab-text={{testSelectorValue}}
   >
-    {{computedText}}{{yield}}
+    {{text}}{{yield}}
   </div>
 {{/if}}
