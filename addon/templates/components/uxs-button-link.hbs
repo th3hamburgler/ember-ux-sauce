@@ -1,10 +1,9 @@
 {{#if icon}}
-  <div
-    class={{bem b "icon" m}}
-    data-test-button-icon={{testSelectorValue}}
-  >
-    {{icon}}
-  </div>
+  {{svg-jar
+    icon
+    class=(bem b "icon" m)
+    data-test-button-icon=testSelectorValue
+  }}
 {{/if}}
 <div
   class={{bem b "body" m}}

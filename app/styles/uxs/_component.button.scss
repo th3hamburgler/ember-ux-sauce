@@ -177,12 +177,9 @@
    * ############### */
 
   &__icon {
-    height      : rs(3);
-    line-height : rs(3);
-    font-size   : rs(2.5);
+    @include icon;
     margin-right: rs(1);
     margin-left : rs(-.5);
-    width       : rs(2.25);
   }
 
   &__body {

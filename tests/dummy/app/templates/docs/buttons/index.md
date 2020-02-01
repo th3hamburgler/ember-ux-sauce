@@ -29,19 +29,19 @@ To see a full list check out the [api page](../api/components/uxs-button)
 ### Contained
 
 <div class="uxs">
-  {{uxs-button "Button" icon="star"}}
+  {{uxs-button "Button" icon="favorite"}}
 </div>
 
 ### Outlined
 
 <div class="uxs">
-  {{uxs-button "Button" icon="star" style="outlined"}}
+  {{uxs-button "Button" icon="favorite" style="outlined"}}
 </div>
 
 ### Naked
 
 <div class="uxs">
-  {{uxs-button "Button" icon="star" style="naked"}}
+  {{uxs-button "Button" icon="favorite" style="naked"}}
 </div>
 
 ## Usage
