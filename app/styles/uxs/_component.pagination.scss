@@ -1,44 +1,156 @@
 .uxs-pagination {
-  // background-color: $c-light;
-  @include background-color-modifiers();
-  display        : flex;
-  flex-direction : row;
-  padding        : rs(0.5);
-  justify-content: space-between;
-  width          : 100%;
-  @include mq(tablet) {
-    padding: rs(.5) rs(1);
-  }
+  @include body-2;
+  align-items   : flex-start;
+  background    : $c-light;
+  display       : flex;
+  flex-direction: row;
+  padding       : rs(2) rs(1);
+  position      : relative;
+  max-width     : 100%;
+  width         : 100%;
 
   &__controls,
   &__info,
-  &__result-limit {
-    max-width: none;
-  }
-
-  &__result-limit {
-    display       : flex;
-    flex-direction: row;
-  }
+  &__result-limit {}
 
   &__info,
   &__label {
-    margin-bottom: 0;
+    margin: 0;
+  }
+
+  &__result-limit {
+    display        : flex;
+    flex-direction : row;
+    justify-content: center;
+    margin-bottom  : rs(1);
+    position       : relative;
+    width          : 100%;
+
+    &::after {
+      content       : '';
+      position      : absolute;
+      top           : rs(1.25);
+      right         : rs(.5);
+      width         : 0;
+      height        : 0;
+      border-left   : rs(.5) solid transparent;
+      border-right  : rs(.5) solid transparent;
+      border-top    : rs(.5) solid $c-grey;
+      pointer-events: none;
+    }
   }
 
   &__size {
-    @include detail-font-size;
-    margin: 0 0 0 rem-size($baseline*0.5);
-    height: rem-size($baseline);
+    @include body-2;
+    -webkit-appearance: none;
+    -moz-appearance   : none;
+    appearance        : none;
+    border            : 1px solid $c-grey;
+    border-radius     : rs(0.5);
+    height            : rs(3);
+    font-family       : $font-family;
+    line-height       : rs(3);
+    margin-left       : rs(2);
+    padding           : 0 rs(1);
+    position          : absolute;
+    top               : 0;
+    right             : 0;
   }
 
   &__info {
-    @include text-truncate;
-    @include mq(tablet) {
-      padding: 0 rem-size($baseline*1);
-    }
-    flex: 1 1 auto;
+    padding   : 0;
+    position  : absolute;
+    left      : 0;
+    bottom    : rs(2);
+    text-align: center;
+    width     : 100%;
   }
 
-  &__controls {}
+  &__controls {
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    width          : rs(9);
+  }
+
+  @include mq(tablet) {
+    flex-direction: row;
+    align-items   : center;
+    padding-left  : rs(2);
+    padding-right : rs(2);
+
+    &__info {
+      bottom    : auto;
+      flex      : 1 1 auto;
+      left      : auto;
+      padding   : 0 rs(2);
+      position  : relative;
+      text-align: left;
+      width     : auto;
+    }
+
+    &__result-limit {
+      margin-bottom: 0;
+      width        : auto;
+
+      &::after {}
+    }
+
+    &__controls {
+      justify-content: space-between;
+      // flex           : 1 1 auto;
+      // width          : auto;
+    }
+
+    &__size {
+      position: relative;
+      top     : auto;
+      right   : auto;
+    }
+  }
 }
+
+// .uxs-pagination {
+//   // background-color: $c-light;
+//   @include background-color-modifiers();
+//   display        : flex;
+//   flex-direction : row;
+//   padding        : rs(0.5);
+//   justify-content: space-between;
+//   width          : 100%;
+//   @include mq(tablet) {
+//     padding: rs(.5) rs(1);
+//   }
+//
+//   &__controls,
+//   &__info,
+//   &__result-limit {
+//     max-width: none;
+//   }
+//
+//   &__result-limit {
+//     display       : flex;
+//     flex-direction: row;
+//   }
+//
+//   &__info,
+//   &__label {
+//     margin-bottom: 0;
+//   }
+//
+//   &__size {
+//     @include detail-font-size;
+//     margin: 0 0 0 rem-size($baseline*0.5);
+//     height: rem-size($baseline);
+//   }
+//
+//   &__info {
+//     @include text-truncate;
+//     @include mq(tablet) {
+//       padding: 0 rem-size($baseline*1);
+//     }
+//     flex: 1 1 auto;
+//   }
+//
+//   &__controls {}
+// }

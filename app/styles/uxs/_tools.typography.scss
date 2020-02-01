@@ -125,67 +125,67 @@
 @mixin helper-type() {
   @include body-2();
 }
-
-/*
- * Type
- */
-@mixin body-type() {
-  font-family: $type-body-family;
-  font-weight: $type-body-weight;
-}
-@mixin light-body-type() {
-  font-family: $type-light-family;
-  font-weight: $type-light-weight;
-}
-@mixin bold-body-type() {
-  font-family: $type-bold-family;
-  font-weight: $type-bold-weight;
-}
-/*
- * Type sizes
- */
-@mixin heading-font-size {
-  font-size    : rem-size($s-large);
-  line-height  : rem-size($baseline*1.5);
-  margin-bottom: rem-size($baseline*0.5);
-}
-@mixin subheading-font-size {
-  font-size  : rem-size($s-medium);
-  line-height: rem-size($baseline);
-}
-@mixin content-font-size {
-  font-size  : rem-size($s-medium);
-  line-height: rem-size($baseline);
-}
-@mixin detail-font-size {
-  font-size  : rem-size($s-small);
-  line-height: rem-size($baseline);
-}
-/*
- * Typography
- */
-@mixin type-heading {
-  text-transform: uppercase;
-  @include heading-font-size;
-  @include bold-body-type;
-}
-@mixin type-subheading {
-  @include subheading-font-size;
-  @include bold-body-type;
-}
-@mixin type-content {
-  max-width: $max-width-content; // Aiming for between 50-60 characters per line
-  @include content-font-size;
-  @include light-body-type;
-}
-@mixin type-detail {
-  max-width: $max-width-detail; // Aiming for between 50-60 characters per line
-  @include detail-font-size;
-  @include light-body-type;
-}
-/*
- * Misc type mixins
- */
+//
+// /*
+//  * Type
+//  */
+// @mixin body-type() {
+//   font-family: $type-body-family;
+//   font-weight: $type-body-weight;
+// }
+// @mixin light-body-type() {
+//   font-family: $type-light-family;
+//   font-weight: $type-light-weight;
+// }
+// @mixin bold-body-type() {
+//   font-family: $type-bold-family;
+//   font-weight: $type-bold-weight;
+// }
+// /*
+//  * Type sizes
+//  */
+// @mixin heading-font-size {
+//   font-size    : rem-size($s-large);
+//   line-height  : rem-size($baseline*1.5);
+//   margin-bottom: rem-size($baseline*0.5);
+// }
+// @mixin subheading-font-size {
+//   font-size  : rem-size($s-medium);
+//   line-height: rem-size($baseline);
+// }
+// @mixin content-font-size {
+//   font-size  : rem-size($s-medium);
+//   line-height: rem-size($baseline);
+// }
+// @mixin detail-font-size {
+//   font-size  : rem-size($s-small);
+//   line-height: rem-size($baseline);
+// }
+// /*
+//  * Typography
+//  */
+// @mixin type-heading {
+//   text-transform: uppercase;
+//   @include heading-font-size;
+//   @include bold-body-type;
+// }
+// @mixin type-subheading {
+//   @include subheading-font-size;
+//   @include bold-body-type;
+// }
+// @mixin type-content {
+//   max-width: $max-width-content; // Aiming for between 50-60 characters per line
+//   @include content-font-size;
+//   @include light-body-type;
+// }
+// @mixin type-detail {
+//   max-width: $max-width-detail; // Aiming for between 50-60 characters per line
+//   @include detail-font-size;
+//   @include light-body-type;
+// }
+// /*
+//  * Misc type mixins
+//  */
 @mixin text-truncate($boundary:100%) {
   max-width    : $boundary;
   white-space  : nowrap;
@@ -204,26 +204,26 @@
     border-bottom-color: $hover-color;
   }
 }
-@mixin label {
-  @include type-subheading;
-  @include bold-body-type;
-  @include text-color-modifiers($prefix:'');
-  @include transition-all;
-  transition-property: color;
-  text-transform     : uppercase;
-  display            : block;
-  letter-spacing     : 1px;
-
-  &--warning {
-    color: $c-warning;
-  }
-
-  &--alert,
-  &--error {
-    color: $c-error;
-  }
-
-  &--disabled {
-    opacity: 0.4;
-  }
-}
+// @mixin label {
+//   @include type-subheading;
+//   @include bold-body-type;
+//   @include text-color-modifiers($prefix:'');
+//   @include transition-all;
+//   transition-property: color;
+//   text-transform     : uppercase;
+//   display            : block;
+//   letter-spacing     : 1px;
+//
+//   &--warning {
+//     color: $c-warning;
+//   }
+//
+//   &--alert,
+//   &--error {
+//     color: $c-error;
+//   }
+//
+//   &--disabled {
+//     opacity: 0.4;
+//   }
+// }

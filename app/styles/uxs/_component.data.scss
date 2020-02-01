@@ -35,9 +35,6 @@ $data-tip-tt: $data-default-tt;
   font-weight   : $data-default-fw;
   line-height   : $data-default-fs;
   text-transform: $data-default-tt;
-  /* Modifiers */
-  @include style-modifiers();
-  @include text-color-modifiers();
 
   &__item {
     border-bottom : rem-size($data-item-border-size) $data-item-border-style $data-item-border-color;
@@ -142,26 +139,6 @@ $data-tip-tt: $data-default-tt;
 
   &__tip {
     // min-width: 100%;
-  }
-
-  &__group,
-  &__item,
-  &__label,
-  &__tip,
-  &__value {
-    /* Modifiers */
-    @include style-modifiers();
-    @include text-color-modifiers();
-  }
-
-  // &__label,
-  &__tip,
-  &__value {
-    /* Modifiers */
-    @include text-align-modifiers;
-    @include font-size-modifiers;
-    @include font-weight-modifiers;
-    @include text-truncate-modifier;
   }
 }
 // $baseline: 25px;

@@ -70,7 +70,7 @@
   }
 
   &__icon {
-    @extend .material-icons;
+    // @extend .material-icons;
     height     : rs(3);
     line-height: rs(3);
     font-size  : rs(2.5);

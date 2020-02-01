@@ -1,168 +1,58 @@
-.italic {
-  font-style: italic;
-}
-
-.bold {
-  @include bold-body-type;
+.truncate-text {
+  @include text-truncate;
 }
 
 .link {
   @include link;
 }
 
-.truncate-text {
-  @include text-truncate;
-}
-/* Font Sizes */
-.s-g {
-  font-size  : rem-size($s-giant);
-  line-height: rem-size($baseline*4);
-}
-
-.s-h {
-  font-size  : rem-size($s-huge);
-  line-height: rem-size($baseline*2);
-}
-
-.s-l {
-  font-size  : rem-size($s-large);
-  line-height: rem-size($baseline*2);
-}
-
-.s-m {
-  font-size  : rem-size($s-medium);
-  line-height: rem-size($baseline);
-}
-
-.s-s {
-  font-size  : rem-size($s-small);
-  line-height: rem-size($baseline);
-}
-/* Type Styles */
-.t-h {
-  @include bold-body-type;
-}
-
-.t-m {
-  @include body-type;
-}
-
-.t-l {
-  @include light-body-type;
-}
-
-.heading {
-  @include type-heading;
-  @include align-modifiers;
-  @include background-color-modifiers;
-  @include text-color-modifiers;
-  @include font-weight-modifiers;
-
-  &--giant {
-    font-size  : rem-size($s-giant);
-    line-height: rem-size($baseline*4);
-  }
-
-  &--huge {
-    font-size  : rem-size($s-huge);
-    line-height: rem-size($baseline*2);
-  }
-}
-
-.subheading {
-  @include type-subheading;
-  @include align-modifiers;
-  @include background-color-modifiers;
-  @include text-color-modifiers;
-  @include font-weight-modifiers;
-}
-
-.content {
-  @include type-content;
-  @include align-modifiers;
-  @include background-color-modifiers;
-  @include text-color-modifiers;
-  @include font-weight-modifiers;
-  margin-bottom: rem-size($baseline);
-}
-
-.detail {
-  @include type-detail;
-  @include align-modifiers;
-  @include background-color-modifiers;
-  @include text-color-modifiers;
-  @include font-weight-modifiers;
-  margin-bottom: rem-size($baseline);
-}
-
-.content,
-.detail {
-  a {
-    @include bold-body-type;
-    @include transition-all;
-    @include link;
-  }
-
-  b,
-  em,
-  strong {
-    @include bold-body-type;
-    color          : inherit;
-    text-decoration: none;
-    font-style     : normal;
-  }
-
-  i {
-    font-style: italic;
-  }
-}
-
-.uxs-dl,
-.uxs-ol,
-.uxs-ul {
-  @include background-color-modifiers;
-  @include font-size-modifiers;
-  @include line-height-modifiers;
-  @include text-color-modifiers;
-  @include type-content;
-  @include font-weight-modifiers;
-}
-
-.uxs-ol,
-.uxs-ul {
-  list-style-position: inside;
-  margin             : 0 0 rem-size($baseline);
-  padding            : 0 0 0 rem-size($baseline);
-
-  &__sublist {
-    margin-bottom: 0;
-  }
-}
-
-.uxs-ol {
-  list-style-type: decimal;
-
-  &__list {}
-}
-
-.uxs-ul {
-  list-style-type: disc;
-
-  &__list {}
-}
-
-.uxs-dl {
-  margin: 0 0 rem-size($baseline);
-
-  &__term {
-    @include type-detail;
-    @include bold-body-type;
-    margin: 0;
-  }
-
-  &__description {
-    @include type-content;
-    margin      : 0;
-    padding-left: rem-size($baseline*.5);
-  }
-}
+//
+// .uxs-dl,
+// .uxs-ol,
+// .uxs-ul {
+//   @include background-color-modifiers;
+//   @include font-size-modifiers;
+//   @include line-height-modifiers;
+//   @include text-color-modifiers;
+//   @include type-content;
+//   @include font-weight-modifiers;
+// }
+//
+// .uxs-ol,
+// .uxs-ul {
+//   list-style-position: inside;
+//   margin             : 0 0 rem-size($baseline);
+//   padding            : 0 0 0 rem-size($baseline);
+//
+//   &__sublist {
+//     margin-bottom: 0;
+//   }
+// }
+//
+// .uxs-ol {
+//   list-style-type: decimal;
+//
+//   &__list {}
+// }
+//
+// .uxs-ul {
+//   list-style-type: disc;
+//
+//   &__list {}
+// }
+//
+// .uxs-dl {
+//   margin: 0 0 rem-size($baseline);
+//
+//   &__term {
+//     @include type-detail;
+//     @include bold-body-type;
+//     margin: 0;
+//   }
+//
+//   &__description {
+//     @include type-content;
+//     margin      : 0;
+//     padding-left: rem-size($baseline*.5);
+//   }
+// }

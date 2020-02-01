@@ -177,7 +177,6 @@
    * ############### */
 
   &__icon {
-    @include material-icon;
     height      : rs(3);
     line-height : rs(3);
     font-size   : rs(2.5);

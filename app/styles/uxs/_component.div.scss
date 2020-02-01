@@ -1,13 +1,9 @@
 .uxs-div {
   @include align-modifiers;
-  @include font-size-modifiers;
-  @include line-height-modifiers;
-  @include text-color-modifiers($prefix:'c-');
   @include background-color-modifiers();
-  @include font-weight-modifiers;
 
   &--clear:after {
-    content: "";
+    content: '';
     display: table;
     clear  : both;
   }

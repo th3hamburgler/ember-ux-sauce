@@ -70,6 +70,7 @@
 @mixin transition ($what) {
   transition: $what $transition-duration $transition-timing-function;
 }
+
 @mixin input-placeholder {
   &.placeholder {
     @content;
@@ -98,56 +99,7 @@
     @content;
   }
 }
-@mixin input-base {
-  @include transition-all;
-  @extend .content;
-  /* Remove Native Style */
-  -webkit-appearance: none;
-  -moz-appearance   : none;
-  appearance        : none;
-  border-width      : 1px;
-  border-style      : solid;
-  border-radius     : 0;
-  display           : block;
-  padding           : rem-size(($baseline*.25) - 1px) rem-size(($baseline*.5) - 1px);
-  width             : 100%;
-  @include input-placeholder() {
-    // color: $c-mid;
-    color  : inherit;
-    opacity: 0.4;
-  };
-  @include input-glow {
-    box-shadow: inset 0 0 rs(0.5) rgba($c-dark, 0.1);
-  };
-}
-@mixin drop-shadow {
-  box-shadow: 4px 4px 3px;
 
-  &:hover {
-    box-shadow: 4px 4px 6px;
-  }
-}
-@mixin card-shadow ($level, $down:true) {
-  $y: -1;
-  @if $down == true {
-    $y: 1;
-  }
-  @if $level == 1 {
-    box-shadow: 0 1px*$y 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  } @else 
-  if $level == 2 {
-    box-shadow: 0 3px*$y 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  } @else 
-  if $level == 3 {
-    box-shadow: 0 10px*$y 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  } @else 
-  if $level == 4 {
-    box-shadow: 0 14px*$y 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  } @else 
-  if $level == 5 {
-    box-shadow: 0 19px*$y 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-  }
-}
 @mixin mq($width, $type: min) {
   @if map_has_key($breakpoints, $width) {
     $width: map_get($breakpoints, $width);
@@ -174,6 +126,7 @@
     @content;
   }
 }
+
 @mixin align-modifiers {
   &--left {
     text-align: left;
@@ -287,38 +240,6 @@
   }
 }
 
-@mixin type-modifiers($types:$defaultTypeScale, $mod:0) {
-  @each $modifier, $type in $types {
-    &--ty-#{$modifier} {
-      font-size     : map-get($type,size);
-      line-height   : map-get($type,height);
-      font-weight   : map-get($type,weight);
-      letter-spacing: map-get($type,spaceing);
-      text-transform: map-get($type,case);
-    }
-  }
-}
-@mixin font-size-modifiers($sizes:$defaultSizes, $mod:0) {
-  @each $modifier, $size in $sizes {
-    &--s-#{$modifier} {
-      font-size: rem-size($size - $mod);
-    }
-  }
-}
-@mixin line-height-modifiers($line-heights:$defaultLineHights, $mod:0) {
-  @each $modifier, $height in $line-heights {
-    &--#{$modifier} {
-      line-height: rem-size($height - $mod);
-    }
-  }
-}
-@mixin font-weight-modifiers($weights:$defaultWeights) {
-  @each $modifier, $weight in $weights {
-    &--#{$modifier} {
-      font-weight: $weight;
-    }
-  }
-}
 @mixin text-truncate-modifier($boundary:100%) {
   &--truncate {
     @include text-truncate($boundary);
