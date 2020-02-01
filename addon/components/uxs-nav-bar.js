@@ -26,4 +26,10 @@ export default Component.extend(BEMComponent, Testable, {
   // Properties
   base: 'uxs-nav-bar',
   layout,
+  fixed: false,
+  // Methods
+  init() {
+    this._super(...arguments);
+    this.registerModifiers(['fixed']);
+  },
 });

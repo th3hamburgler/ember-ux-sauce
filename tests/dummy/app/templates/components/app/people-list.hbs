@@ -13,49 +13,41 @@
 
   {{#each people as |person|}}
 
-    {{#list.item
+    {{#list.itemLink
+      "app.resource.index" person.id
       bordered=true
       lines=3
     as |item|
     }}
-      {{#item.aside-link "app.resource.index" person}}
-        {{item.avatar-text "JW" style="dark"}}
-      {{/item.aside-link}}
-      {{#item.body-link "app.resource.index" person}}
-        {{item.title (concat person.first_name " " person.last_name)}}
-        {{item.detail person.email}}
-        {{item.detail person.gender}}
-      {{/item.body-link}}
       {{#item.aside}}
-        {{uxs-list-menu
-          routes=(get-routes-for "person" "resource")
-          model=person
-        }}
+        {{item.avatar "XX"}}
       {{/item.aside}}
-    {{/list.item}}
+      {{#item.body}}
+        {{item.title (concat person.first_name " " person.last_name)}}
+        {{item.meta person.email}}
+        {{item.meta person.gender}}
+      {{/item.body}}
+      {{#item.aside}}
+        {{item.action "chevron_right"}}
+      {{/item.aside}}
+    {{/list.itemLink}}
 
   {{else if loading}}
 
-    {{#uxs-splash
-      align="center"
-      style="dark"
-    as |splash|
-    }}
-      {{splash.icon "loading" svg=true size="giant"}}
-      {{splash.title "Loading People"}}
-    {{/uxs-splash}}
+    {{#list.item as |item|}}
+      {{#item.body class="fx-ai-center"}}
+        {{item.action "loading"}}
+      {{/item.body}}
+    {{/list.item}}
 
   {{else}}
 
-    {{#uxs-splash
-      align="center"
-      style="dark"
-    as |splash|
-    }}
-      {{splash.icon "hourglass_empty"}}
-      {{splash.title "No People"}}
-      {{splash.text "It seems you don't have any people right now, hit the + button to start adding." align="center"}}
-    {{/uxs-splash}}
+    {{#list.item as |item|}}
+      {{#item.body class="fx-ai-center"}}
+        {{item.action "info_outline"}}
+        {{item.meta "No items found"}}
+      {{/item.body}}
+    {{/list.item}}
 
   {{/each}}
 

@@ -106,4 +106,37 @@
     height         : rs(5);
     width          : rs(5);
   }
+
+  &__notice {
+    @include background-color-modifiers();
+    display       : flex;
+    flex-direction: row;
+    padding       : rs(2) rs(1);
+  }
+
+  &__notice-icon {
+    @include icon;
+    opacity   : 0.6;
+    margin    : 0 rs(2.5) 0 rs(.5);
+    text-align: center;
+  }
+
+  &__notice-text {
+    @include body-2;
+    flex     : 1 1 auto;
+    max-width: none;
+  }
+
+  &__notice-action {
+    @include button;
+    @include transition-all;
+    border-radius: rs(3);
+    cursor       : pointer;
+    padding      : rs(0) rs(1);
+    opacity      : 0.6;
+
+    &:hover {
+      background: rgba($c-white,0.1);
+    }
+  }
 }

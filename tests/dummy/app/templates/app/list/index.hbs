@@ -1,25 +1,14 @@
-{{#uxs-header
-  image="https://placeimg.com/2560/1600/any/grayscale"
-  style="dark on-light"
-as |header|
-}}
-
-  {{#header.toolbar as |toolbar|}}
-    {{toolbar.back "arrow_back"}}
-    {{toolbar.spacer}}
-    {{toolbar.action "filter_list"}}
-    {{toolbar.action "file_download"}}
-    {{toolbar.action "search"}}
-  {{/header.toolbar}}
-  {{#header.title "People"}}
-    {{uxs-action-menu/mobile routes=(get-routes-for "person" "index")}}
-  {{/header.title}}
-
-{{/uxs-header}}
+{{#uxs-app-bar style="extended" as |bar|}}
+  {{bar.navigation "arrow_back"}}
+  {{bar.title "People"}}
+  {{bar.action "filter_list"}}
+  {{bar.action "swap_vert"}}
+  {{bar.action "search"}}
+{{/uxs-app-bar}}
 
 {{#uxs-window}}
 
-  {{#uxs-pane main=true padded=false order=1}}
+  {{#uxs-pane main=true order=1}}
 
     {{uxs-pagination-controls
       size=25
@@ -44,7 +33,6 @@ as |header|
     padded=true
     style="light"
     order=2
-    class="lg:pt2 sm:hidden sm:invisible"
   }}
     {{uxs-action-menu/desktop routes=(get-routes-for "person" "index")}}
   {{/uxs-pane}}

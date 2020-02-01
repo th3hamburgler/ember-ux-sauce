@@ -1,19 +1,23 @@
-{{#uxs-header
-  image="https://placeimg.com/2560/1600/any/grayscale"
-  style="dark on-white"
-as |header|
-}}
-  {{#header.toolbar as |toolbar|}}
-    {{toolbar.spacer}}
-  {{/header.toolbar}}
-  {{header.logo "sauce-logo.large"}}
-{{/uxs-header}}
+{{#uxs-app-bar style="extended" as |bar|}}
+  {{bar.navigation "arrow_back"}}
+  {{bar.title "Dashboard"}}
+  {{bar.action "filter_list"}}
+  {{bar.action "swap_vert"}}
+  {{bar.action "search"}}
+{{/uxs-app-bar}}
 
 {{#uxs-window style="dashboard"}}
 
   {{#uxs-pane full=true padded=true style="dashboard"}}
 
-    {{#uxs-tiles size="medium" style="light" as |row|}}
+    {{uxs-text "Dashboard"}}
+
+    {{link-to "List View" "app.list.index"}}
+    {{link-to "List View (empty)" "app.list.empty"}}
+    {{link-to "List View (filtered)" "app.list.filtered"}}
+    {{link-to "List View (loading)" "app.list.loading"}}
+
+    {{!-- {{#uxs-tiles size="medium" style="light" as |row|}}
       {{row.tile}}
       {{row.tile}}
       {{row.tile}}
@@ -33,7 +37,7 @@ as |header|
     {{#uxs-tiles size="large" style="light" as |row|}}
       {{row.tile}}
       {{row.tile}}
-    {{/uxs-tiles}}
+    {{/uxs-tiles}} --}}
 
   {{/uxs-pane}}
 

@@ -25,9 +25,9 @@
     flex-direction: column;
 
     &--padded {
-      padding: rem-size($baseline*1) rem-size($baseline*0.5);
+      padding: rs(2);
       @include mq(tablet) {
-        padding: rem-size($baseline*1);
+        padding: rs(2);
       }
     }
 
@@ -47,8 +47,8 @@
     }
 
     &--splash {
-      padding  : rem-size($baseline);
-      margin   : rem-size($baseline*2) 0;
+      padding  : rs(2);
+      margin   : rs(2);
       max-width: $max-width-content;
       width    : 90%;
       @include mq(tablet) {

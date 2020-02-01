@@ -1,3 +1,9 @@
+body > .ember-view {
+  min-height    : 100vh;
+  display       : flex;
+  flex-direction: column;
+}
+
 .uxs-app {
   display       : flex;
   flex-direction: column;
@@ -6,15 +12,10 @@
   overflow      : auto;
 
   &--has-fixed-navbar {
-    $height    : #{rs(2)};
+    $height    : #{rs(9)};
     padding-top: $height;
     @supports (padding-top: env(safe-area-inset-top)) {
       padding-top: calc(env(safe-area-inset-top) + #{$height});
     }
-  }
-
-  &__padder {
-    height: rem-size($baseline*2.5);
-    width : 100%;
   }
 }

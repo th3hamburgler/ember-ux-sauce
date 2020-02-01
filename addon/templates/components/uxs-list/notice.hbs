@@ -1,0 +1,25 @@
+{{#if hasIcon}}
+  {{uxs-icon
+    this.icon
+    base="uxs-list__notice-icon"
+    m=m
+  }}
+{{/if}}
+
+{{#if hasText}}
+  {{uxs-text
+    text
+    base="uxs-list__notice-text"
+    m=m
+  }}
+{{/if}}
+
+{{#if hasAction}}
+  {{uxs-text
+    actionText
+    role="button"
+    base="uxs-list__notice-action"
+    m=m
+    onClick=(action "action")
+  }}
+{{/if}}

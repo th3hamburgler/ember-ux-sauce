@@ -1,37 +1,16 @@
-<div class="uxs">
-
+<div class="uxs uxs-full">
   {{#uxs-app fixedNav=true}}
-
-    {{#uxs-navbar fixed=true style="dark" name="App Demo" as |bar|}}
-      {{bar.logo "sauce-logo.desktop" class="sm:hidden sm:invisible"}}
-      {{bar.logo "sauce-logo.mobile" class="lg:hidden lg:invisible"}}
-      {{#bar.desktopNav as |nav|}}
-        {{#nav.menu detail=true align="right" as |menu|}}
-          {{menu.link "Docs" "docs" rightIcon="book"}}
-          {{menu.link "Api" "docs"}}
-          {{menu.link "Dashboard" "app.dash"}}
-          {{menu.link "People" "app.list"}}
-          {{!-- {{menu.link "Single" "app.single"}}
-          {{menu.link "Double" "app.double"}}
-          {{menu.link "Triple" "app.triple"}} --}}
-        {{/nav.menu}}
-      {{/bar.desktopNav}}
-      {{#bar.mobileNav as |nav|}}
-        {{uxs-subheading "AppName" align="center"}}
-        {{#nav.menu as |menu|}}
-          {{menu.link "Docs" "docs" rightIcon="book"}}
-          {{menu.link "Api" "docs"}}
-          {{menu.link "Dashboard" "app.dash"}}
-          {{menu.link "People" "app.list"}}
-          {{!-- {{menu.link "Single" "app.single"}}
-          {{menu.link "Double" "app.double"}}
-          {{menu.link "Triple" "app.triple"}} --}}
-        {{/nav.menu}}
-      {{/bar.mobileNav}}
-    {{/uxs-navbar}}
-
+    {{#uxs-nav-bar fixed=true as |bar|}}
+      {{bar.logo "addon-docs-pen"}}
+      {{bar.title "CRUD Life"}}
+      {{bar.spacer}}
+      {{#bar.menu as |menu|}}
+        {{menu.link "Homepage" "index"}}
+        {{menu.link "Docs" "docs.index"}}
+        {{menu.link "Styleguide" "styleguide"}}
+        {{menu.link "App Layouts" "app"}}
+      {{/bar.menu}}
+    {{/uxs-nav-bar}}
     {{outlet}}
-
   {{/uxs-app}}
-
 </div>

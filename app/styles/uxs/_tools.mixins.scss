@@ -4,17 +4,18 @@
   position: $position;
 }
 
-@mixin icon($size:3) {
+@mixin icon($size:3, $padding:1) {
   $self             : '.uxs-icon';
   //
   align-items       : center;
   cursor            : pointer;
   display           : flex;
-  justify-content   : center;
-  position          : relative;
-  -webkit-appearance: none;
   height            : rs($size);
-  width             : rs($size);
+  justify-content   : center;
+  padding           : 0 rs($padding);
+  position          : relative;
+  width             : rs($size+($padding*2));
+  -webkit-appearance: none;
 
   &::before {
     border-radius: rs($size);
@@ -45,9 +46,9 @@
     background: rgba($color,0);
     bottom    : rs(-1);
     content   : '';
-    left      : rs(-1);
+    left      : 0;
     position  : absolute;
-    right     : rs(-1);
+    right     : 0;
     top       : rs(-1);
     z-index   : 1;
   }

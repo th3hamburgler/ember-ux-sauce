@@ -74,6 +74,10 @@ $isDocs: true;
 @import "uxs/include.elements";
 
 .uxs {
+  &-full {
+    min-height: 100vh;
+    width     : 100vw;
+  }
   @import 'uxs/reset.scss';
   @import "uxs/include.objects";
   @import "uxs/include.components";
