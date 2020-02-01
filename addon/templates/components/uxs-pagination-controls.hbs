@@ -1,5 +1,5 @@
 <label class={{bem b "result-limit" m}}>
-  {{uxs-detail
+  {{uxs-text
     resultsLabel
     testSelectorName="data-test-pagination-label"
     class=(bem b "label" m)
@@ -16,7 +16,7 @@
   </select>
 </label>
 
-{{uxs-detail
+{{uxs-text
   resultsText
   class=(bem b "info" m)
   testSelectorName="data-test-pagination-result-limit"
@@ -24,16 +24,14 @@
 
 <div class={{bem b "controls" m}}>
   {{uxs-icon
-    "keyboard_arrow_left"
-    inline=true
+    "chevron_left"
     disabled=isPreviousButtonDisabled
     onClick=(action "changePage" (dec page))
     testSelectorName="data-test-pagination-prev"
   }}
 
   {{uxs-icon
-    "keyboard_arrow_right"
-    inline=true
+    "chevron_right"
     disabled=isNextButtonDisabled
     onClick=(action "changePage" (inc page))
     testSelectorName="data-test-pagination-next"

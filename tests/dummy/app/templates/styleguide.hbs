@@ -13,7 +13,7 @@
     {{/uxs-nav-bar}}
   </div>
 
-  <div class="p-2" id="lists">
+  <div class="" id="lists">
 
     <a href="#lists">
       {{uxs-overline "Lists" class="mv-2"}}
@@ -36,6 +36,12 @@
         {{/list.item}}
       {{/each}}
     {{/uxs-list}}
+
+    {{uxs-pagination-controls
+      size=10
+      page=2
+      total=2470
+    }}
 
     {{#uxs-list as |list|}}
       {{#each users as |user|}}
@@ -63,6 +69,12 @@
       {{/each}}
     {{/uxs-list}}
 
+    {{uxs-pagination-controls
+      size=10
+      page=2
+      total=2470
+    }}
+
     {{#uxs-list as |list|}}
       {{#each users as |user|}}
         {{#list.itemLink "docs.index" as |item|}}
@@ -78,6 +90,12 @@
         {{/list.itemLink}}
       {{/each}}
     {{/uxs-list}}
+
+    {{uxs-pagination-controls
+      size=10
+      page=2
+      total=2470
+    }}
 
   </div>
 
