@@ -1,15 +1,21 @@
 .uxs-list {
-  @include background-color-modifiers();
+  // @include background-color-modifiers();
 
   &--grow {
     flex: 1 1 auto;
   }
 
   &__item {
+    @include transition-all;
     border-bottom-width: rem-size(1px);
+    cursor             : pointer;
     display            : flex;
     flex-direction     : row;
     padding            : rs(2) 0 rs(2,1);
+
+    &:hover {
+      background: rgba($c-dark, 0.05);
+    }
   }
 
   &__body {
@@ -19,14 +25,6 @@
     flex-direction : column;
     justify-content: flex-start;
     padding        : 0 rs(1);
-
-    &:first-child {
-      padding-left: 0;
-    }
-
-    &:last-child {
-      padding-right: 0;
-    }
   }
 
   &__aside {
@@ -34,14 +32,6 @@
     display        : flex;
     justify-content: center;
     padding        : 0 rs(1);
-
-    &:first-child {
-      padding-left: 0;
-    }
-
-    &:last-child {
-      padding-right: 0;
-    }
   }
 
   &__title {
@@ -50,6 +40,7 @@
 
   &__meta {
     @include body-2();
+    color: $c-grey;
   }
 
   &__avatar {
@@ -60,6 +51,7 @@
     flex-direction : column;
     justify-content: center;
     overflow       : hidden;
+    @include background-color-modifiers;
 
     &--small {
       $size : rs(3);

@@ -7,12 +7,25 @@ import {
   computed
 } from '@ember/object';
 
+const AVATAR_SIZES = {
+    LARGE: 'large',
+    MEDIUM: 'medium',
+    SMALL: 'small',
+  },
+  AVATAR_STYLES = {
+    ICON: 'icon',
+    TEXT: 'text',
+    IMAGE: 'image',
+  };
+
 export default Component.extend(BEMComponent, Clickable, Testable, {
   // Properties
   base: 'uxs-list__avatar',
   layout,
-  size: 'large',
-  alt: 'Avatar image',
+  color: 'accent',
+  size: AVATAR_SIZES.MEDIUM,
+  style: AVATAR_STYLES.TEXT,
+  alt: 'Avatar',
   // Computed
   iconSize: computed('icon', 'size', function() {
     if (this.icon) {
@@ -28,15 +41,13 @@ export default Component.extend(BEMComponent, Clickable, Testable, {
   init() {
     this._super(...arguments);
     this.registerModifiers([
-      '*style',
+      '*color',
       '*size',
-      'icon',
-      'text',
-      'image',
+      '*type',
       '*iconSize',
       '*textSize',
     ]);
   }
 }).reopenClass({
-  positionalParams: ['text'],
+  positionalParams: ['content'],
 });

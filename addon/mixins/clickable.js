@@ -29,11 +29,21 @@ export default Mixin.create({
     @public
   */
   role: 'button',
-  // Actions
-  click() {
+  /**
+    Return true to allow this components events to
+    bubble to parent elements
+    @property bubbles
+    @default  false
+    @type     {boolean}
+    @public
+  */
+  bubbles: false,
+  // Events
+  click(event) {
     let action = get(this, 'onClick');
     if (!this.get('disabled') && action) {
-      action();
+      action(event);
+      return this.bubbles;
     }
   },
   hasClickAction: bool('onClick'),

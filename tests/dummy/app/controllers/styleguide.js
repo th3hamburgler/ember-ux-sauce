@@ -17,5 +17,18 @@ export default Controller.extend({
       gender: null,
       dob: null,
     });
+    const user = {
+      name: 'Jim Wardlaw',
+      email: 'jim@wearesauce.io',
+      role: 'admin',
+      initials: 'JW',
+    };
+    this.set('users', [user, user, user, user, user, ]);
   },
+  // Actions
+  actions: {
+    fav() {
+      window.console.log('Fav!');
+    }
+  }
 });

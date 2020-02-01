@@ -13,6 +13,52 @@
     {{/uxs-nav-bar}}
   </div>
 
+  <div class="p-2" id="lists">
+
+    <a href="#lists">
+      {{uxs-overline "Lists" class="mv-2"}}
+    </a>
+
+    {{#uxs-list as |list|}}
+      {{#each users as |user|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatar user.initials }}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title user.name}}
+            {{item.meta user.email}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.meta "More"}}
+          {{/item.aside}}
+        {{/list.item}}
+      {{/each}}
+    {{/uxs-list}}
+
+    {{#uxs-list as |list|}}
+      {{#each users as |user|}}
+        {{#list.itemLink "docs.index" as |item|}}
+          {{#item.aside}}
+            {{item.avatar user.initials }}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title user.name}}
+            {{item.meta user.email}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action
+              "favorite"
+              onClick=(action "fav")
+              bubbles=false
+            }}
+          {{/item.aside}}
+        {{/list.itemLink}}
+      {{/each}}
+    {{/uxs-list}}
+
+  </div>
+
   <div class="p-2">
     {{#uxs-menu style="dropdown" class="mb-2" as |menu|}}
       {{menu.link "Homepage" "index"}}
@@ -314,185 +360,7 @@
 
   </div>
 --}}
-  <div class="p-2" id="lists">
 
-    <a href="#lists">
-      {{uxs-overline "Lists" class="mv-2"}}
-    </a>
-
-    {{#uxs-list as |list|}}
-
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{item.avatar "event_seat" icon=true}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "Icon Avatar Item"}}
-          {{item.meta "Meta info for an icon avatar list item"}}
-          {{item.meta "More text..."}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.meta "More"}}
-        {{/item.aside}}
-      {{/list.item}}
-
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{item.avatar "242k" text=true}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "Icon Avatar Item"}}
-          {{item.meta "Meta info for an icon avatar list item"}}
-          {{item.meta "More text..."}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.meta "More"}}
-        {{/item.aside}}
-      {{/list.item}}
-
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{item.avatar "https://i.pravatar.cc/216" image=true}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "Image Avatar Item"}}
-          {{item.meta "Meta info for an image avatar list item"}}
-          {{item.meta "More text..."}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.meta "More"}}
-        {{/item.aside}}
-      {{/list.item}}
-
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{#item.avatar as |avatar|}}
-            {{avatar.large "17"}}
-            {{avatar.small "weeks"}}
-          {{/item.avatar}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "Custom Avatar Item"}}
-          {{item.meta "Meta info for a custom avatar list item"}}
-          {{item.meta "More text..."}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.meta "More"}}
-        {{/item.aside}}
-      {{/list.item}}
-
-    {{/uxs-list}}
-
-    {{#uxs-list as |list|}}
-
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{item.avatar "event_seat" icon=true size="medium"}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "Icon Avatar Item"}}
-          {{item.meta "Meta info for an icon avatar list item"}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.meta "More"}}
-        {{/item.aside}}
-      {{/list.item}}
-
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{item.avatar "100k" text=true size="medium"}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "Text Avatar Icon"}}
-          {{item.meta "Meta info for a single line text avatar"}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.meta "More"}}
-        {{/item.aside}}
-      {{/list.item}}
-
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{item.avatar "https://i.pravatar.cc/144" image=true size="medium"}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "Image Avatar Item"}}
-          {{item.meta "Meta info"}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.meta "More"}}
-        {{/item.aside}}
-      {{/list.item}}
-
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{item.avatar "JW" text=true size="medium"}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "List Title"}}
-          {{item.meta "Meta info"}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.meta "More"}}
-        {{/item.aside}}
-      {{/list.item}}
-    {{/uxs-list}}
-
-
-    {{#uxs-list as |list|}}
-
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{item.avatar "event_seat" icon=true size="small"}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "Icon Avatar Item"}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.meta "More"}}
-        {{/item.aside}}
-      {{/list.item}}
-
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{item.avatar "8" text=true size="small"}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "Text Avatar Item"}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.meta "More"}}
-        {{/item.aside}}
-      {{/list.item}}
-
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{item.avatar "https://i.pravatar.cc/72" image=true size="small"}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "List Title"}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.meta "More"}}
-        {{/item.aside}}
-      {{/list.item}}
-
-      {{#list.item as |item|}}
-        {{#item.aside}}
-          {{#item.avatar size="small" as |avatar|}}
-            {{avatar.medium "X"}}
-          {{/item.avatar}}
-        {{/item.aside}}
-        {{#item.body}}
-          {{item.title "List Title"}}
-        {{/item.body}}
-        {{#item.aside}}
-          {{item.meta "More"}}
-        {{/item.aside}}
-      {{/list.item}}
-    {{/uxs-list}}
-
-  </div>
   {{!--
   <div class="p-2" id="spacing">
 
