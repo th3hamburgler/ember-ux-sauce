@@ -70,10 +70,7 @@
   }
 
   &__icon {
-    // @extend .material-icons;
-    height     : rs(3);
-    line-height: rs(3);
-    font-size  : rs(2.5);
+    @include icon;
 
     &--extended {
       margin-left : rs(-1);

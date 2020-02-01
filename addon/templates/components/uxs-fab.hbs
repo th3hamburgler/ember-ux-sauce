@@ -1,16 +1,14 @@
 {{#if showIcon}}
-  <div
-    class={{bem b "loading-icon" m}}
-    data-test-fab-loading-icon={{testSelectorValue}}
-  >
-    {{loadingIcon}}
-  </div>
-  <div
-    class={{bem b "icon" m}}
-    data-test-fab-icon={{testSelectorValue}}
-  >
-    {{icon}}
-  </div>
+  {{svg-jar
+    loadingIcon
+    class=(bem b "loading-icon" m)
+    data-test-fab-loading-icon=testSelectorValue
+  }}
+  {{svg-jar
+    icon
+    class=(bem b "icon" m)
+    data-test-fab-icon=testSelectorValue
+  }}
 {{/if}}
 
 {{#if showText}}

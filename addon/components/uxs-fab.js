@@ -33,6 +33,8 @@ const Fab = Component.extend(Buttonable, Clickable, {
   layout,
   base: 'uxs-fab',
   tagName: 'button',
+  param1: null,
+  param2: null,
   /**
     Set to true to disable this button.
 
