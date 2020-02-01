@@ -63,6 +63,22 @@
       {{/each}}
     {{/uxs-list}}
 
+    {{#uxs-list as |list|}}
+      {{#each users as |user|}}
+        {{#list.itemLink "docs.index" as |item|}}
+          {{#item.aside}}
+            {{item.avatar user.initials }}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title user.name}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.meta user.role}}
+          {{/item.aside}}
+        {{/list.itemLink}}
+      {{/each}}
+    {{/uxs-list}}
+
   </div>
 
   <div class="p-2">
