@@ -12,10 +12,6 @@
     display            : flex;
     flex-direction     : row;
     padding            : rs(2) 0 rs(2,1);
-    @include mq(tablet) {
-      padding-left : rs(1);
-      padding-right: rs(1);
-    }
 
     &:hover {
       background: rgba($c-dark, 0.05);
@@ -101,5 +97,13 @@
     &--icon-small {
       font-size: rs(2);
     }
+  }
+
+  &__action {
+    align-items    : center;
+    display        : flex;
+    justify-content: center;
+    height         : rs(5);
+    width          : rs(5);
   }
 }
