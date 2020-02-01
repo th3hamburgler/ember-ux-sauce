@@ -2,6 +2,10 @@ import Component from '@ember/component';
 import layout from '../templates/components/uxs-form';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
+import {
+  task,
+  // timeout
+} from 'ember-concurrency';
 export const FORM_STYLES = {
   FILLED: 'filled',
   OUTLINED: 'outlined',
@@ -54,6 +58,11 @@ export default Component.extend(BEMComponent, Testable, {
     @public
    */
   style: FORM_STYLES.FILLED,
+  // Methods
+  init() {
+    this._super(...arguments);
+    this.registerModifiers(['disabled', '*style']);
+  },
   /**
     Action to be called on the submission of the form
 
@@ -63,14 +72,20 @@ export default Component.extend(BEMComponent, Testable, {
     @public
    */
   onSubmit() {},
+  afterSubmit() {},
+  onInvalid() {},
   // Events
   submit(event) {
     event.preventDefault();
     this.get('onSubmit')();
   },
-  // Methods
-  init() {
-    this._super(...arguments);
-    this.registerModifiers(['disabled', '*style']);
-  },
+  // Tasks
+  submitTask: task(function*() {
+    console.log('submitTask');
+    // yield all([
+    yield this.onSubmit();
+    //   timeout(750)
+    // ]);
+    // yield this.afterSubmit();
+  })
 });

@@ -5,6 +5,9 @@ import {
 import {
   bool
 } from '@ember/object/computed';
+import {
+  oneWay
+} from '@ember/object/computed';
 /**
   A mixin to add click support to a component.
   @class Clickable
@@ -17,10 +20,18 @@ export default Mixin.create({
     The name of the action to fire on click
     @property onClick
     @default  null
-    @type     {string}
+    @type     closure
     @public
   */
-  onClick: null,
+  onClick() {},
+  /**
+    The name of the task performed on click
+    @property teak
+    @default  null
+    @type     task
+    @public
+  */
+  task: null,
   /**
     Add a role to the item for accessibility
     @property role
@@ -38,13 +49,24 @@ export default Mixin.create({
     @public
   */
   bubbles: false,
+  disabled: oneWay('task.isRunning'),
+  loading: oneWay('task.isRunning'),
+
   // Events
   click(event) {
-    let action = get(this, 'onClick');
-    if (!this.get('disabled') && action) {
-      action(event);
-      return this.bubbles;
+    let task = this.get('task'),
+      onClick = this.get('onClick');
+
+    console.log('clickable: click', task, onClick);
+
+    if (task) {
+      console.log('clickable: task');
+      task.perform();
+    } else {
+      console.log('clickable: action');
+      onClick(event);
     }
+    return this.bubbles;
   },
   hasClickAction: bool('onClick'),
   // Methods

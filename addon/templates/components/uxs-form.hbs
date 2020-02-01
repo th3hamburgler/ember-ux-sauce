@@ -8,20 +8,20 @@
     submit=(
       component "uxs-button"
       type="submit"
-      disabled=@disabled
+      loading=submitTask.isRunning
       color="accent"
+      task=submitTask
     )
     button=(
       component "uxs-button"
       type="button"
-      disabled=@disabled
       color="primary"
     )
     reset=(
       component "uxs-button"
       type="reset"
-      disabled=@disabled
       color="grey"
     )
+    isSubmitting=submitTask.isRunning
   )
 }}
