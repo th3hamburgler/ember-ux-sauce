@@ -1,18 +1,23 @@
-{{#uxs-datalist as |list|}}
-  {{list.item
+{{#uxs-data
+  display="list"
+  padded=false
+  inset=false
+as |data|
+}}
+  {{data.item
     label="Name"
     value=(concat model.first_name " " model.last_name)
   }}
-  {{list.item
+  {{v.item
     label="Email"
     value=model.email
   }}
-  {{list.item
+  {{data.item
     label="Gender"
     value=model.gender
   }}
-  {{list.item
+  {{data.item
     label="IP Address"
     value=model.ip_address
   }}
-{{/uxs-datalist}}
+{{/uxs-data}}
