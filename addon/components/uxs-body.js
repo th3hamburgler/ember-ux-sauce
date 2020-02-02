@@ -30,13 +30,14 @@ export default Component.extend(Textable, {
    */
   base: computed('scale', 'paragraph', function() {
     if (this.paragraph) {
-      return `uxs-paragraph-${this.level}`;
+      return `uxs-paragraph-${this.scale}`;
     } else {
       return `uxs-body-${this.scale}`;
     }
   }),
 
   level: 1,
+  paragraph: false,
   layout
 }).reopenClass({
   positionalParams: ['text', 'scale', 'paragraph'],
