@@ -26,6 +26,7 @@ export default Component.extend(BEMComponent, Clickable, Testable, {
   size: AVATAR_SIZES.MEDIUM,
   style: AVATAR_STYLES.TEXT,
   alt: 'Avatar',
+  icon: false,
   // Computed
   iconSize: computed('icon', 'size', function() {
     if (this.icon) {

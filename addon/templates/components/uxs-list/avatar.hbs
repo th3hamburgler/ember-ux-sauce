@@ -1,5 +1,7 @@
 {{#if image}}
-  <img src={{text}} alt={{alt}} class={{bem b "img" m}}>
+  <img src={{content}} alt={{alt}} class={{bem b "img" m}}>
+{{else if this.icon}}
+  {{svg-jar content class=(bem b "icon" m)}}
 {{else}}
   {{content}}
 {{/if}}

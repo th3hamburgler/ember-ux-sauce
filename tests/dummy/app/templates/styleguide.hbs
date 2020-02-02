@@ -150,7 +150,8 @@
       {{#each users as |user|}}
         {{#list.itemLink "docs.index" as |item|}}
           {{#item.aside}}
-            {{item.avatar user.initials }}
+            {{item.avatar "https://i.pravatar.cc/300
+" image=true}}
           {{/item.aside}}
           {{#item.body}}
             {{item.title user.name}}
@@ -182,7 +183,7 @@
       {{#each users as |user|}}
         {{#list.itemLink "docs.index" as |item|}}
           {{#item.aside}}
-            {{item.avatar user.initials }}
+            {{item.avatar "face" icon=true}}
           {{/item.aside}}
           {{#item.body}}
             {{item.title user.name}}
