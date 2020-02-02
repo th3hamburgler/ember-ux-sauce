@@ -45,7 +45,13 @@ as |header|
 
   {{/uxs-pane}}
 
-  {{#uxs-pane aside=true padded=true style="light" order=2 class="lg:pt2 sm:hidden sm:invisible"}}
+  {{#uxs-pane
+    aside=true
+    style="light"
+    order=2
+    class="ph-1"
+    padded=false
+  }}
     {{uxs-action-menu/desktop routes=(get-routes-for "person" "resource")}}
   {{/uxs-pane}}
 

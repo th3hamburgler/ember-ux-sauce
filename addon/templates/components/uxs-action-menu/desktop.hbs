@@ -1,27 +1,15 @@
-{{#if loading}}
-  {{#uxs-button-group
-    align="center"
-    class="sm:invisible sm:hidden"
-  as |group|
-  }}
+{{#uxs-menu style="drawer" as |menu|}}
+  {{#if loading}}
     {{#each items as |item|}}
-      {{group.button item.params.firstObject disabled=true style=style}}
+      {{menu.item item.params.firstObject disabled=true}}
     {{/each}}
-  {{/uxs-button-group}}
-{{else}}
-  {{!-- This button group is hidden on small devices --}}
-  {{#uxs-button-group
-    align="center"
-    class="sm:invisible sm:hidden"
-  as |group|
-  }}
+  {{else}}
     {{#each items as |item|}}
-      {{group.link
+      {{menu.link
         params=item.params
-        style=style
         disabled=item.disabled
         currentWhen=item.currentWhen
       }}
     {{/each}}
-  {{/uxs-button-group}}
-{{/if}}
+  {{/if}}
+{{/uxs-menu}}

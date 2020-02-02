@@ -127,6 +127,7 @@ export default LinkComponent.extend(BEMComponent, Styleable, Testable, {
       'detail',
       'horizontal',
       'disabled',
+      '*style',
     ])
     this._super(...arguments);
   },

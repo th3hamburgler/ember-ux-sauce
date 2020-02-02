@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import layout from '../templates/components/uxs-menu';
 import Alignable from 'ember-ux-sauce/mixins/alignable';
-import Styleable from 'ember-ux-sauce/mixins/styleable';
+// import Styleable from 'ember-ux-sauce/mixins/styleable';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import {
@@ -28,7 +28,7 @@ import {
   @yield {Component} menu.link uxs-menu/link
   @yield {Component} menu.div uxs-div
 */
-export default Component.extend(BEMComponent, Alignable, Styleable, Testable, {
+export default Component.extend(BEMComponent, Alignable, Testable, {
   layout,
   //
   // Arguments
@@ -117,6 +117,7 @@ export default Component.extend(BEMComponent, Alignable, Styleable, Testable, {
       'detail',
       'horizontal',
       'bordered',
+      '*style'
     ])
     this._super(...arguments);
   },
