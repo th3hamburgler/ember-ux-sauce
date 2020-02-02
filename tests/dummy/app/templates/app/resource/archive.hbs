@@ -30,36 +30,17 @@ as |crumb|
         style="archive-form"
       }}
 
-        {{#uxs-form as |form|}}
-
-          {{uxs-heading
-            heading
-            color="error"
-            style="white"
-            weight="light"
-          }}
-
-
-          {{#uxs-content}}This will archive the Person: <b>{{concat model.first_name " " model.last_name}}</b>.{{/uxs-content}}
-
-          {{#uxs-content}}This person will no longer appear in the system. All data will be archived and require a manual process to restore.{{/uxs-content}}
-
-          {{form.submit
-            "Archive User"
-            color="error"
-            name="submit"
-            loading=loading
-          }}
-
-          {{form.buttonLink
-            "Cancel"
-            "app.resource.index"
-            model.id
-            color="grey"
-            name="cancel"
-          }}
-
-        {{/uxs-form}}
+        {{#uxs-typography as |type|}}
+          {{type.headline "Archive this User?" 4 class="mb" color="error"}}
+          {{#type.body class="mb"}}
+            This will archive the User "<b>{{model.first_name}} {{model.last_name}}</b>".
+          {{/type.body}}
+          {{#type.body class="mb"}}
+            This user will no longer appear in the system. All data will be archived and require a manual process to restore.
+          {{/type.body}}
+          {{uxs-button "Archive" color="error" class="mb"}}
+          {{uxs-button-link "Cancel" "app.resource.index" style="naked" color="grey"}}
+        {{/uxs-typography}}
 
       {{/uxs-pane}}
 

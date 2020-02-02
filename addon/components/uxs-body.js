@@ -9,9 +9,9 @@ import {
   A typographic component to render body text
 
   ```hbs
-  {{uxs-body "Lorem ipsum dolar" 2}}
+  {{uxs-body "Lorem ipsum dolar" 2 true}}
 
-  {{#uxs-body level=2}}Lorem ipsum dolar"{{/uxs-body}}
+  {{#uxs-body level=2 }}Lorem ipsum dolar"{{/uxs-body}}
   ```
 
   @class UXSHeading
