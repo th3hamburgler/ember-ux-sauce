@@ -1,42 +1,78 @@
-{{#uxs-header
-  image="https://placeimg.com/2560/1600/any/grayscale"
-  style="error on-light"
-as |header|
-}}
-  {{#header.toolbar as |toolbar|}}
-    {{toolbar.back "arrow_back"}}
-    {{toolbar.spacer}}
-  {{/header.toolbar}}
-  {{#header.title "Archive Person"}}
-    {{uxs-action-menu/mobile routes=(get-routes-for "person" "resource")}}
-  {{/header.title}}
+{{#uxs-app-bar style="extended" as |bar|}}
+  {{bar.navigationLink "arrow_back" "app.list.index"}}
+  {{bar.title "Archive Person"}}
+{{/uxs-app-bar}}
 
-{{/uxs-header}}
+{{#uxs-breadcrumb
+  style="light"
+  detail=true
+as |crumb|
+}}
+  {{crumb.link "App" "app.dash"}}
+  {{crumb.link "People" "app.list.index"}}
+  {{crumb.item (concat "Archive " model.first_name " " model.last_name)}}
+{{/uxs-breadcrumb}}
 
 {{#uxs-window}}
 
-  {{#uxs-pane main=true padded=false order=1}}
+  {{#uxs-pane
+    main=true
+    order=1
+    class="p"
+  }}
 
-    {{#uxs-breadcrumb
-      style="light"
-      detail=true
-    as |crumb|
-    }}
-      {{crumb.link "App" "app.dash"}}
-      {{crumb.link "People" "app.list.index"}}
-      {{crumb.item (concat "Archive " model.first_name " " model.last_name)}}
-    {{/uxs-breadcrumb}}
+    {{#uxs-window}}
 
-    {{#uxs-archive-form
-      model=model
-      cancelRoute="app.resource.index"
-    }}
+      {{#uxs-pane
+        padding=true
+        split=true
+        order=2
+        style="archive-form"
+      }}
 
-      {{#uxs-content}}This will archive the Person: <b>{{concat model.first_name " " model.last_name}}</b>.{{/uxs-content}}
+        {{#uxs-form as |form|}}
 
-      {{#uxs-content}}This person will no longer appear in the system. All data will be archived and require a manual process to restore.{{/uxs-content}}
+          {{uxs-heading
+            heading
+            color="error"
+            style="white"
+            weight="light"
+          }}
 
-    {{/uxs-archive-form}}
+
+          {{#uxs-content}}This will archive the Person: <b>{{concat model.first_name " " model.last_name}}</b>.{{/uxs-content}}
+
+          {{#uxs-content}}This person will no longer appear in the system. All data will be archived and require a manual process to restore.{{/uxs-content}}
+
+          {{form.submit
+            "Archive User"
+            color="error"
+            name="submit"
+            loading=loading
+          }}
+
+          {{form.buttonLink
+            "Cancel"
+            "app.resource.index"
+            model.id
+            color="grey"
+            name="cancel"
+          }}
+
+        {{/uxs-form}}
+
+      {{/uxs-pane}}
+
+      {{#uxs-pane
+        padding=true
+        split=true
+        style="archive-icon"
+        order=1
+      }}
+        {{uxs-icon icon style="error" size="archive-icon"}}
+      {{/uxs-pane}}
+
+    {{/uxs-window}}
 
   {{/uxs-pane}}
 
