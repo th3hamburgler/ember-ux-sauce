@@ -21,7 +21,7 @@ export default Mixin.create({
     @type     closure
     @public
   */
-  onClick() {},
+  onClick: null, //() {},
   /**
     The name of the task performed on click
     @property teak
@@ -55,16 +55,21 @@ export default Mixin.create({
     let task = this.get('task'),
       onClick = this.get('onClick');
 
-    console.log('clickable: click', task, onClick);
-
     if (task) {
-      console.log('clickable: task');
+      window.console.log('clickable: click', task, onClick, this);
+      window.console.log('clickable: task');
       task.perform();
-    } else {
-      console.log('clickable: action');
+      return this.bubbles;
+    } else if (onClick) {
+      window.console.log('clickable: click', task, onClick, this);
+      window.console.log('clickable: action');
       onClick(event);
+      return this.bubbles;
+    } else {
+      // This component is not clickable - make
+      // sure we return true to bubble the dom
+      return true;
     }
-    return this.bubbles;
   },
   hasClickAction: bool('onClick'),
   // Methods
