@@ -1,9 +1,10 @@
 <label class={{bem b "result-limit" m}}>
-  {{uxs-text
-    resultsLabel
-    testSelectorName="data-test-pagination-label"
-    class=(bem b "label" m)
-  }}
+  <div
+    class={{bem b "label" m}}
+    data-test-pagination-label={{name}}
+  >
+    {{resultsLabel}}
+  </div>
   <select
     onchange={{action "changeSize"}}
     class={{bem b "size" m}}
@@ -16,11 +17,12 @@
   </select>
 </label>
 
-{{uxs-text
-  resultsText
-  class=(bem b "info" m)
-  testSelectorName="data-test-pagination-result-limit"
-}}
+<div 
+  class={{bem b "info" m}}
+  data-test-pagination-result-limit={{name}}
+>
+  {{resultsText}}
+</div>
 
 <div class={{bem b "controls" m}}>
   {{uxs-icon
