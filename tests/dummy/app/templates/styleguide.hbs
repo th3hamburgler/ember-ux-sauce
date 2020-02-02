@@ -14,6 +14,41 @@
     {{/uxs-nav-bar}}
   </div>
 
+  <div class="p" id="snackbar">
+
+    <a href="#snackbar">
+      {{uxs-overline "Snackbar" class="mv-2"}}
+    </a>
+    {{#uxs-snackbar as |bar|}}
+
+      {{#bar.item class="mb" as |item|}}
+        {{item.message "Single-line message"}}
+      {{/bar.item}}
+
+      {{#bar.item class="mb" as |item|}}
+        {{item.message "Single-line message"}}
+        {{item.action "Action"}}
+      {{/bar.item}}
+
+      {{#bar.item class="mb" as |item|}}
+        {{#item.message}}
+          Two-line message<br>
+          with action.
+        {{/item.message}}
+        {{item.actionLink "Action" "docs.index"}}
+      {{/bar.item}}
+
+      {{#bar.item class="mb" as |item|}}
+        {{#item.message}}
+          Two-line message<br>
+          with action.
+        {{/item.message}}
+        {{item.action "Longer action text"}}
+      {{/bar.item}}
+
+    {{/uxs-snackbar}}
+  </div>
+
   <div class="" id="lists">
 
     <a href="#lists">

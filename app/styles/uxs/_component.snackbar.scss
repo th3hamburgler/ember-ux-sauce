@@ -1,0 +1,42 @@
+.uxs-snackbar {
+  &__item {
+    @include elevation(6);
+    align-items    : center;
+    background     : $c-dark;
+    border-radius  : rs(0.5);
+    color          : $c-white;
+    display        : flex;
+    flex-direction : row;
+    flex-wrap      : wrap;
+    justify-content: space-between;
+    max-width      : 100%;
+    min-height     : rs(6);
+    padding        : rs(0.75) rs(1);
+    width          : auto;
+    @include mq(tablet) {
+      max-width: rs(43);
+    }
+  }
+
+  &__message {
+    @include body-2;
+    min-width: 60%;
+    margin   : 0 rs(1);
+  }
+
+  &__action {
+    @include button;
+    @include transition-all;
+    border-radius: rs(.5);
+    color        : $c-accent;
+    cursor       : pointer;
+    line-height  : rs(4.5);
+    height       : rs(4.5);
+    margin       : 0 0 0 auto;
+    padding      : 0 rs(1);
+
+    &:hover {
+      background: rgba($c-white, 0.05);
+    }
+  }
+}
