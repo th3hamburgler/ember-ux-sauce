@@ -30,9 +30,9 @@ export default Component.extend(Textable, {
    */
   base: computed('scale', 'paragraph', function() {
     if (this.paragraph) {
-      return `t-paragraph-${this.level}`;
+      return `uxs-paragraph-${this.level}`;
     } else {
-      return `t-body-${this.scale}`;
+      return `uxs-body-${this.scale}`;
     }
   }),
 
