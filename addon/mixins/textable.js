@@ -5,9 +5,6 @@ import Colorable from '../mixins/colorable';
 import Sizable from '../mixins/sizeable';
 import Weightable from '../mixins/weightable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
-import {
-  computed
-} from '@ember/object';
 
 /**
   A mixing to give a common functionality to text components
@@ -64,22 +61,6 @@ export default Mixin.create(Accessible, Alignable, Colorable, Sizable, Weightabl
   */
   truncate: false,
 
-  /**
-    Define the weight of the component. Standard options are "bold", "medium" or "light". Defaults to no weight (inhered)
-
-    @property weight
-    @default  null
-    @type     String
-    @see      weightable
-    @public
-  */
-
-  typeMod: computed('type', function() {
-    if (this.type) {
-      return `ty-${this.type}`;
-    }
-  }),
-
   //
   // Methods
   //
@@ -87,7 +68,6 @@ export default Mixin.create(Accessible, Alignable, Colorable, Sizable, Weightabl
     this._super(...arguments);
     this.registerModifiers([
       'truncate',
-      '*typeMod',
     ]);
   },
   /**

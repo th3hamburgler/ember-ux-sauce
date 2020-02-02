@@ -171,7 +171,7 @@
  */
 @mixin text-color-modifiers($colors:$defaultColors, $prefix:'c-') {
   @each $modifier, $color in $colors {
-    &--c-#{$prefix}#{$modifier} {
+    &--#{$prefix}#{$modifier} {
       color: $color;
     }
   }

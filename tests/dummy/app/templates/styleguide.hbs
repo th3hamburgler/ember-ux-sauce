@@ -13,6 +13,60 @@
       {{/bar.menu}}
     {{/uxs-nav-bar}}
   </div>
+  <div class="p" id="cards">
+    <a href="#snackbar">
+      {{uxs-overline "Cards" class="mv-2"}}
+    </a>
+
+    {{#uxs-card class="mb-2" as |card|}}
+      {{#card.header}}
+        {{card.headline "Card title"}}
+        {{card.text "Secondary text" color="grey"}}
+      {{/card.header}}
+      {{#card.body}}
+        {{card.text "Greyhound divisively hello coldly wonderfully marginally far upon excluding." color="grey"}}
+      {{/card.body}}
+      {{#card.footer}}
+        {{card.action "Action 1"}}
+        {{card.actionLink "Action 2" "docs.index"}}
+      {{/card.footer}}
+    {{/uxs-card}}
+
+    {{#uxs-card class="mb-2" as |card|}}
+      {{#card.media}}
+        {{card.image "https://source.unsplash.com/random?orientation=landscape"}}
+      {{/card.media}}
+      {{#card.header}}
+        {{card.headline "Card title"}}
+        {{card.text "Secondary text" color="grey"}}
+      {{/card.header}}
+      {{#card.body}}
+        {{card.text "Greyhound divisively hello coldly wonderfully marginally far upon excluding." color="grey"}}
+      {{/card.body}}
+      {{#card.footer}}
+        {{card.action "Action 1"}}
+        {{card.actionLink "Action 2" "docs.index"}}
+      {{/card.footer}}
+    {{/uxs-card}}
+
+    {{#uxs-card style="elevated" as |card|}}
+      {{#card.media}}
+        {{card.image "https://source.unsplash.com/random?orientation=landscape"}}
+      {{/card.media}}
+      {{#card.header}}
+        {{card.headline "Card title"}}
+        {{card.text "Secondary text" color="grey"}}
+      {{/card.header}}
+      {{#card.body}}
+        {{card.text "Greyhound divisively hello coldly wonderfully marginally far upon excluding." color="grey"}}
+      {{/card.body}}
+      {{#card.footer}}
+        {{card.action "Action 1"}}
+        {{card.actionLink "Action 2" "docs.index"}}
+      {{/card.footer}}
+    {{/uxs-card}}
+  </div>
+
 
   <div class="p" id="snackbar">
 

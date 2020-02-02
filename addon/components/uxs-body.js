@@ -28,16 +28,16 @@ export default Component.extend(Textable, {
     @default  "body"
     @public
    */
-  base: computed('level', 'paragraph', function() {
+  base: computed('scale', 'paragraph', function() {
     if (this.paragraph) {
       return `t-paragraph-${this.level}`;
     } else {
-      return `t-body-${this.level}`;
+      return `t-body-${this.scale}`;
     }
   }),
 
   level: 1,
   layout
 }).reopenClass({
-  positionalParams: ['text', 'level', 'paragraph'],
+  positionalParams: ['text', 'scale', 'paragraph'],
 });

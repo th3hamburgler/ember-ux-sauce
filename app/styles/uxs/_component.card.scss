@@ -1,0 +1,48 @@
+.uxs-card {
+  border-radius: rs(.5);
+  max-width    : rs(43);
+  overflow     : hidden;
+  width        : auto;
+
+  &--elevated {
+    @include elevation(1);
+  }
+
+  &--outlined {
+    border: rem-size(1px) solid $c-mid;
+  }
+
+  // Header
+  &__header {
+    padding: rs(1) rs(2) 0;
+  }
+
+  &__body {
+    padding: rs(1) rs(2) 0;
+  }
+
+  &__footer {
+    display       : flex;
+    flex-direction: row;
+    padding       : rs(1) rs(1) 0;
+  }
+
+  &__header + &__body {
+    padding-top: 0;
+  }
+
+  &__action {
+    @include button;
+    @include transition-all;
+    border-radius: rs(.5);
+    color        : $c-accent;
+    cursor       : pointer;
+    line-height  : rs(4);
+    margin       : 0 0 rs(1);
+    padding      : 0 rs(1);
+
+    &:hover {
+      background: rgba($c-accent,0.1);
+    }
+  }
+}

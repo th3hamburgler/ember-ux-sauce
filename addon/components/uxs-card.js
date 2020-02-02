@@ -1,16 +1,16 @@
 import Component from '@ember/component';
-import layout from '../templates/components/uxs-snackbar';
-import Alignable from 'ember-ux-sauce/mixins/alignable';
+import layout from '../templates/components/uxs-card';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import Testable from 'ember-ux-sauce/mixins/testable';
 
-export default Component.extend(Alignable, BEMComponent, Testable, {
+export default Component.extend(BEMComponent, Testable, {
   // Attributes
-  base: 'uxs-snackbar',
+  base: 'uxs-card',
   layout,
+  style: 'outlined',
   // Methods
   init() {
     this._super(...arguments);
-    this.registerModifiers([]);
+    this.registerModifiers(['*style']);
   },
 });

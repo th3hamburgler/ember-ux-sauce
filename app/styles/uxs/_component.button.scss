@@ -168,9 +168,9 @@
   }
 
   // Button followed by Button
-  & + & {
-    margin-top: rs(2);
-  }
+  // & + & {
+  //   margin-top: rs(2);
+  // }
 
   /* ############### *
    * Child Elements  *
@@ -205,9 +205,4 @@
       visibility: visible;
     }
   }
-}
-
-.uxs-button + .uxs-button {
-  // Button followed by Button
-  margin-top: rs(2);
 }

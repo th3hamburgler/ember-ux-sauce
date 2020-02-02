@@ -33,17 +33,23 @@ as |crumb|
         padding=true
         split=true
         order=1
+        class="p"
       }}
 
-        {{#uxs-callout as |callout|}}
-          {{callout.icon "info"}}
-          {{callout.title "Activate Account"}}
-          {{#callout.text}}
-            An invitation email was sent to {{model.email}} with an activation link.
-            This account needs to be activated
-          {{/callout.text}}
-          {{callout.button "Resend Email"}}
-        {{/uxs-callout}}
+        {{#uxs-card as |card|}}
+          {{#card.header}}
+            {{card.headline "Activate Account"}}
+            {{card.text "This account needs to be activated" color="grey"}}
+          {{/card.header}}
+          {{#card.body}}
+            {{#card.text color="grey"}}
+              An invitation email was sent to {{model.email}} with an activation link.
+            {{/card.text}}
+          {{/card.body}}
+          {{#card.footer}}
+            {{card.action "Resend Email"}}
+          {{/card.footer}}
+        {{/uxs-card}}
 
       {{/uxs-pane}}
 

@@ -28,8 +28,8 @@ export default Component.extend(Textable, {
     @default  "headline"
     @public
    */
-  base: computed('level', function() {
-    return `headline-${this.level}`;
+  base: computed('scale', function() {
+    return `headline-${this.scale}`;
   }),
 
   scale: 1,

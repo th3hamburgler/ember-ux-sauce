@@ -28,12 +28,12 @@ export default Component.extend(Textable, {
     @default  "subtitle"
     @public
    */
-  base: computed('level', function() {
-    return `subtitle-${this.level}`;
+  base: computed('scale', function() {
+    return `subtitle-${this.scale}`;
   }),
 
   level: 1,
   layout
 }).reopenClass({
-  positionalParams: ['text', 'level'],
+  positionalParams: ['text', 'scale'],
 });
