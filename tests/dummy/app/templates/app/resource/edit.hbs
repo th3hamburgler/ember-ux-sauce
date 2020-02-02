@@ -1,66 +1,76 @@
-{{#uxs-header
-  image="https://placeimg.com/2560/1600/any/grayscale"
-  style="dark on-light"
-as |header|
-}}
-  {{#header.toolbar as |toolbar|}}
-    {{toolbar.back "arrow_back"}}
-    {{toolbar.spacer}}
-  {{/header.toolbar}}
-  {{#header.title "Edit Person"}}
-    {{uxs-action-menu/mobile routes=(get-routes-for "person" "resource")}}
-  {{/header.title}}
+{{#uxs-app-bar style="extended" as |bar|}}
+  {{bar.navigationLink "arrow_back" "app.list.index"}}
+  {{bar.title "Edit Person"}}
+{{/uxs-app-bar}}
 
-{{/uxs-header}}
+{{#uxs-breadcrumb
+  style="light"
+  detail=true
+as |crumb|
+}}
+  {{crumb.link "App" "app.dash"}}
+  {{crumb.link "People" "app.list.index"}}
+  {{crumb.item (concat "Edit " model.first_name " " model.last_name)}}
+{{/uxs-breadcrumb}}
 
 {{#uxs-window}}
 
-  {{#uxs-pane main=true padded=false order=1}}
-
-    {{#uxs-breadcrumb
-      style="light"
-      detail=true
-    as |crumb|
-    }}
-      {{crumb.link "App" "app.dash"}}
-      {{crumb.link "People" "app.list.index"}}
-      {{crumb.item (concat "Edit " model.first_name " " model.last_name)}}
-    {{/uxs-breadcrumb}}
+  {{#uxs-pane
+    main=true
+    order=1
+    class="p-1"
+  }}
 
 
-    {{#uxs-form model=model as |form|}}
+    {{#uxs-form style="outlined" as |form|}}
 
-      {{#form.row as |row|}}
-        {{row.control
-          label="Name"
-          name="first_name"
-          type="text"
-        }}
-        {{row.control
-          hasLabel=true
-          label=""
-          name="last_name"
-          type="text"
-        }}
-      {{/form.row}}
+      {{#form.control
+        name="first_name"
+      as |control|
+      }}
+        {{control.label "First Name"}}
+        {{control.input value=model.first_name}}
+        {{control.tip "Please enter your first name"}}
+      {{/form.control}}
 
-      {{form.control
-        label="Email"
+      {{#form.control
+        name="last_name"
+      as |control|
+      }}
+        {{control.label "Last Name"}}
+        {{control.input value=model.last_name}}
+        {{control.tip "Please enter your last name"}}
+      {{/form.control}}
+
+      {{#form.control
         name="email"
-        type="text"
+      as |control|
       }}
-      {{form.control
-        label="Gender"
+        {{control.label "Email"}}
+        {{control.input value=model.email sufixIcon="mail"}}
+        {{control.tip "Please enter your email address"}}
+      {{/form.control}}
+
+      {{#form.control
         name="gender"
-        type="text"
+      as |control|
       }}
-      {{form.control
-        label="IP Address"
+        {{control.label "Last Name"}}
+        {{control.input value=model.last_name}}
+        {{control.tip "Please select a gender"}}
+      {{/form.control}}
+
+      {{#form.control
         name="ip_address"
-        type="text"
+      as |control|
       }}
-      {{form.submit "Save" style="primary"}}
-      {{form.link "Cancel" "app.resource.index" model.id}}
+        {{control.label "IP Address"}}
+        {{control.input value=model.ip_address}}
+        {{control.tip "Enter your servers IP"}}
+      {{/form.control}}
+
+      {{form.submit "Save" color="primary"}}
+      {{form.button "Cancel" color="grey"}}
 
     {{/uxs-form}}
 

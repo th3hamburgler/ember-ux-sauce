@@ -58,7 +58,7 @@ export default Component.extend(BEMComponent, Testable, {
     @default  null
     @public
    */
-  style: FORM_STYLES.FILLED,
+  style: FORM_STYLES.OUTLINED,
   // Methods
   init() {
     this._super(...arguments);

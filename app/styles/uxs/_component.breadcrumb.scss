@@ -1,14 +1,11 @@
 .uxs-breadcrumb {
-  @include text-color-modifiers();
   @include background-color-modifiers();
-  // @include contrast-border-color-modifiers();
+  @include body-2;
   border-color  : $c-light;
   display       : flex;
   flex-direction: row;
-  padding       : rs(0.5);
-  @include mq(tablet) {
-    padding: rs(0.5) rs(1);
-  }
+  padding       : rs(1) rs(2);
+  min-width     : 100%;
 
   &--left {
     justify-content: flex-start;
@@ -24,14 +21,15 @@
 
   &__item {
     @include text-truncate;
-    // color         : $c-grey;
-    padding-right : rs(0.75);
+    padding-right : rs(2);
     position      : relative;
     opacity       : 0.5;
     text-transform: uppercase;
+
     @include mq(tablet) {
-      padding-right: rs(1);
+      padding-right: rs(3);
     }
+
     @include mq(tablet, max) {
       display: none;
 
@@ -40,24 +38,22 @@
       }
     }
 
-    &--detail {
-      @include detail-font-size;
-    }
-
     &:after {
       content   : '/';
       position  : absolute;
       text-align: center;
       top       : 0;
       right     : 0;
-      width     : rs(0.75);
+      width     : rs(2);
       @include mq(tablet) {
-        width: rs(1);
+        width: rs(3);
       }
     }
 
     &:last-child {
-      opacity: 1;
+      opacity     : 1;
+      flex-shrink : 0;
+      margin-right: 0;
 
       &:after {
         content: '';

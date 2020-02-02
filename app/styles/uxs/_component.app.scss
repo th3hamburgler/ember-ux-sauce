@@ -12,7 +12,7 @@ body > .ember-view {
   overflow      : auto;
 
   &--has-fixed-navbar {
-    $height    : #{rs(9)};
+    $height    : #{rs(7)};
     padding-top: $height;
     @supports (padding-top: env(safe-area-inset-top)) {
       padding-top: calc(env(safe-area-inset-top) + #{$height});
