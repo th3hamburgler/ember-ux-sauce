@@ -11,7 +11,7 @@ import {
   ```hbs
   {{uxs-headline "Lorem ipsum dolar" 3}}
 
-  {{#uxs-headline scale=3}}Lorem ipsum dolar"{{/uxs-headline}}
+  {{#uxs-headline level=3}}Lorem ipsum dolar"{{/uxs-headline}}
   ```
 
   @class UXSHeading
@@ -28,8 +28,8 @@ export default Component.extend(Textable, {
     @default  "headline"
     @public
    */
-  base: computed('scale', function() {
-    return `headline-${this.scale}`;
+  base: computed('level', function() {
+    return `headline-${this.level}`;
   }),
 
   scale: 1,
@@ -124,5 +124,5 @@ export default Component.extend(Textable, {
     this.registerModifiers(['giant', 'huge']);
   },
 }).reopenClass({
-  positionalParams: ['text', 'scale'],
+  positionalParams: ['text', 'level'],
 });

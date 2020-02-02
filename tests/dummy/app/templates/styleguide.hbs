@@ -386,7 +386,7 @@
     {{uxs-overline "Overline" class="mb-3"}}
 
   </div>
-
+--}}
   <div class="p-2" id="text-component">
 
     <a href="#text-component">
@@ -408,10 +408,29 @@
       {{uxs-text "Button" type="button"}}
       {{uxs-text "Caption" type="caption"}}
       {{uxs-text "Overline" type="overline"}}
+
+      {{uxs-headline "Headline 1" level=1}}
+      {{uxs-headline "Headline 2" level=2}}
+      {{uxs-headline "Headline 3" level=3}}
+      {{uxs-headline "Headline 4" level=4}}
+      {{uxs-headline "Headline 5" level=5}}
+      {{uxs-headline "Headline 6" level=6}}
+
+      {{uxs-subtitle "Subtitle 1" level=1}}
+      {{uxs-subtitle "Subtitle 2" level=2}}
+
+      {{uxs-body "Body 1" level=1}}
+      {{uxs-body "Body 2" level=2}}
+
+      {{#uxs-typography as |type|}}
+        {{type.headline "Heading"}}
+        {{type.body "Lorem ipsum dolar bill yall"}}
+        {{type.button "Action"}}
+      {{/uxs-typography}}
     </a>
 
   </div>
-
+  {{!--
   <div class="p-2" id="data-lists">
 
     <a href="#data-lists">

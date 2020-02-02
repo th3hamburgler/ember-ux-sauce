@@ -11,7 +11,7 @@ import {
   ```hbs
   {{uxs-subtitle "Lorem ipsum dolar" 2}}
 
-  {{#uxs-subtitle scale=2}}Lorem ipsum dolar"{{/uxs-subtitle}}
+  {{#uxs-subtitle level=2}}Lorem ipsum dolar"{{/uxs-subtitle}}
   ```
 
   @class UXSHeading
@@ -28,12 +28,12 @@ export default Component.extend(Textable, {
     @default  "subtitle"
     @public
    */
-  base: computed('scale', function() {
-    return `subtitle-${this.scale}`;
+  base: computed('level', function() {
+    return `subtitle-${this.level}`;
   }),
 
-  scale: 1,
+  level: 1,
   layout
 }).reopenClass({
-  positionalParams: ['text', 'scale'],
+  positionalParams: ['text', 'level'],
 });

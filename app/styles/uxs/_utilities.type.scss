@@ -42,6 +42,16 @@
   @include body-2;
 }
 
+.t-paragraph-1 {
+  @include body-1;
+  margin-bottom: $lh-body-1;
+}
+
+.t-paragraph-2 {
+  @include body-2;
+  margin-bottom: $lh-body-2;
+}
+
 .t-button {
   @include button;
 }
