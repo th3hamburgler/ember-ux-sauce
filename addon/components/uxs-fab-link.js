@@ -131,6 +131,7 @@ export default LinkComponent.extend(Buttonable, {
     this.registerModifiers([
       '*style',
       '*color',
+      '*fixed',
       'selected',
       'disabled'
     ]);
