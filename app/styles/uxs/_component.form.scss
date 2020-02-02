@@ -378,13 +378,14 @@
 .ember-power-select-trigger {
 
   @include body-1;
-  align-items: center;
-  background : transparent;
-  display    : flex;
-  flex       : 1 1 auto;
-  max-width  : 100%;
-  overflow   : hidden;
-  position   : relative;
+  align-items    : center;
+  background     : transparent;
+  display        : flex;
+  flex           : 1 1 auto;
+  justify-content: flex-end;
+  max-width      : 100%;
+  overflow       : hidden;
+  position       : relative;
 
   &:focus {
     outline: none;
@@ -478,12 +479,17 @@
   }
 
   // Selected Option
+  .ember-power-select-placeholder,
   .ember-power-select-selected-item {
     @include text-truncate;
     display     : block;
     flex        : 1 1 auto;
     order       : 2;
     padding-left: rs(1.75);
+  }
+
+  .ember-power-select-placeholder {
+    color: $c-grey;
   }
   // Clear Buttons
   .ember-power-select-clear-btn,

@@ -30,15 +30,18 @@
   &__aside {
     align-items    : center;
     display        : flex;
+    flex           : 0 0 auto;
     justify-content: center;
     padding        : 0 rs(1);
   }
 
   &__title {
+    @include text-truncate;
     @include body-1();
   }
 
   &__meta {
+    @include text-truncate;
     @include body-2();
     color: $c-grey;
   }
