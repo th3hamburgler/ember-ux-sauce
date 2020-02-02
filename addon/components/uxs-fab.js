@@ -123,12 +123,19 @@ const Fab = Component.extend(Buttonable, Clickable, {
     @public
    */
   _text: null,
+
+  /**
+   bottom-left
+   bottom-right
+  */
+  fixed: null,
   // Methods
   init() {
     this._super(...arguments);
     this.registerModifiers([
       '*style',
       '*color',
+      '*fixed',
       'selected',
     ]);
   },

@@ -65,12 +65,26 @@
     padding      : rs(1.5) rs(2.5);
   }
 
+  &--bottom-left,
+  &--bottom-right {
+    position: fixed;
+    bottom  : rs(4);
+  }
+
+  &--bottom-right {
+    right: rs(4);
+  }
+
+  &--bottom-left {
+    left: rs(4);
+  }
+
   &__text {
     @include button;
   }
 
   &__icon {
-    @include icon;
+    @include icon($padding: 0);
 
     &--extended {
       margin-left : rs(-1);
