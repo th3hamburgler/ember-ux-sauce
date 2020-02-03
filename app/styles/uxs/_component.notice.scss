@@ -1,66 +1,115 @@
 .uxs-notice {
-  @include type-content;
+  @include body-1;
+  align-items   : center;
+  box-shadow    : inset 0 0 0 1px $c-mid;
+  border-radius : rs(.5);
+  display       : flex;
+  flex-direction: row;
+  min-width     : rs(32);
+  max-width     : 100%;
+
+  @include mq(tablet) {
+    max-width: rs(48);
+  }
+
   @include background-color-modifiers();
-  background     : $c-mid;
-  clear          : both;
-  color          : $c-white;
-  display        : flex;
-  flex-direction : row;
-  margin-bottom  : rem-size($baseline);
-  max-width      : 100%;
-  padding        : 0 rem-size($baseline*0.5);
-  width          : 100%;
-  align-items    : flex-start;
-  justify-content: space-between;
 
-  &--truncated {
-    @include text-truncate
+  @each $modifier, $color in $defaultColors {
+    &--#{$modifier} {
+      box-shadow: none;
+    }
   }
 
-  &--has-text {
-    display: block;
-    padding: rem-size($baseline*0.5);
+  &__text {
+    flex  : 1 1 auto;
+    margin: rs(2) rs(1);
   }
 
-  &--disabled {
-    cursor        : not-allowed;
-    pointer-events: none;
-    opacity       : 0.6;
+  &__icon {
+    @include icon();
+    align-self: flex-start;
+    height    : rs(5);
+    width     : rs(5);
+    margin    : rs(1);
   }
-}
 
-.uxs-notice__text {
-  flex   : 1 1 auto;
-  padding: rem-size($baseline*0.5) 0;
-
-  &--truncated {
-    @include text-truncate
+  &__action {
+    @include button-component;
+    align-self: flex-start;
+    // margin    : rs(1);
+    min-width : 0;
+    // padding   : 0 rs(1);
+    //
+    &:hover {
+      background-color: rgba($c-white, .1);
+    }
+    @include contrast-text-color-modifiers($dark-color:$c-white, $light-color:$c-dark);
   }
 }
 
-.uxs-notice__icon {
-  @extend .uxs-icon;
-  flex-basis: auto;
-  padding   : rem-size($baseline*0.5) 0;
-
-  &--prefix {
-    margin-right: rs(0.5);
-  }
-
-  &--suffix {
-    margin-left: rs(0.5);
-  }
-}
-
-.uxs-notice__button {
-  margin-bottom: rs(0.25);
-  margin-top   : rs(0.25);
-
-  &--prefix {
-    margin-right: rs(0.5);
-  }
-
-  &--suffix {
-    margin-left: rs(0.5);
-  }
-}
+// .uxs-notice {
+//   @include type-content;
+//   @include background-color-modifiers();
+//   background     : $c-mid;
+//   clear          : both;
+//   color          : $c-white;
+//   display        : flex;
+//   flex-direction : row;
+//   margin-bottom  : rem-size($baseline);
+//   max-width      : 100%;
+//   padding        : 0 rem-size($baseline*0.5);
+//   width          : 100%;
+//   align-items    : flex-start;
+//   justify-content: space-between;
+//
+//   &--truncated {
+//     @include text-truncate
+//   }
+//
+//   &--has-text {
+//     display: block;
+//     padding: rem-size($baseline*0.5);
+//   }
+//
+//   &--disabled {
+//     cursor        : not-allowed;
+//     pointer-events: none;
+//     opacity       : 0.6;
+//   }
+// }
+//
+// .uxs-notice__text {
+//   flex   : 1 1 auto;
+//   padding: rem-size($baseline*0.5) 0;
+//
+//   &--truncated {
+//     @include text-truncate
+//   }
+// }
+//
+// .uxs-notice__icon {
+//   @extend .uxs-icon;
+//   flex-basis: auto;
+//   padding   : rem-size($baseline*0.5) 0;
+//
+//   &--prefix {
+//     margin-right: rs(0.5);
+//   }
+//
+//   &--suffix {
+//     margin-left: rs(0.5);
+//   }
+// }
+//
+// .uxs-notice__button {
+//   margin-bottom: rs(0.25);
+//   margin-top   : rs(0.25);
+//
+//   &--prefix {
+//     margin-right: rs(0.5);
+//   }
+//
+//   &--suffix {
+//     margin-left: rs(0.5);
+//   }
+// }

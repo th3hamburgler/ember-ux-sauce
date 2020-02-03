@@ -136,8 +136,14 @@
 
   &__datepicker-container {
     @include body-1;
-    min-width: 100%;
+    border   : none;
     max-width: 100%;
+    min-width: 100%;
+    width    : 100%;
+    @include mq(tablet) {
+      max-width: rs(48);
+      min-width: rs(32);
+    }
 
     &--filled {
       line-height: rs(4.25);

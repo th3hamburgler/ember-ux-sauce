@@ -67,6 +67,51 @@
     {{/uxs-card}}
   </div>
 
+  <div class="p" id="notice">
+
+    <a href="#notice">
+      {{uxs-overline "Notice" class="mv-2"}}
+    </a>
+
+    {{uxs-notice
+      "This is a default notice"
+      "warning"
+      class="mb"
+    }}
+
+    {{uxs-notice
+      "This is a notice with an icon"
+      "warning"
+      color="warning"
+      class="mb"
+    }}
+
+    {{#uxs-notice
+      color="error"
+      class="mb"
+    as |notice|
+    }}
+      {{notice.icon "warning"}}
+      {{#notice.text}}
+        This notice spans multiple lines<br>
+        Has a icon...<br>
+        ...and an action
+      {{/notice.text}}
+      {{notice.action "Undo"}}
+    {{/uxs-notice}}
+
+
+    {{#uxs-notice
+      color="primary"
+      class="mb"
+    as |notice|
+    }}
+      {{notice.icon "face"}}
+      {{notice.text "A happy notice"}}
+      {{notice.actionLink "Go now" "docs.index"}}
+    {{/uxs-notice}}
+
+  </div>
 
   <div class="p" id="snackbar">
 

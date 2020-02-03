@@ -1,38 +1,17 @@
-{{text}}
+{{#if icon}}
+  {{uxs-icon icon base=(concat b "__icon") m=m}}
+{{/if}}
+
+{{#if text}}
+  {{uxs-text text base=(concat b "__text") m=m}}
+{{/if}}
+
 {{yield
   (
     hash
-    icon=(
-      component
-      "uxs-icon"
-      base=(concat b "__icon")
-      class=(bem b "icon" m)
-    )
-    link=(
-      component
-      "uxs-button-link"
-      naked=true
-      inline=true
-      style="white"
-      class=(bem b "button" m)
-      disabled=disabled
-      testSelectorName=(concat b "-link")
-    )
-    button=(
-      component
-      "uxs-button"
-      naked=true
-      inline=true
-      style="white"
-      class=(bem b "button" m)
-      disabled=disabled
-      testSelectorName=(concat b "-button")
-    )
-    text=(
-      component
-      "uxs-text"
-      class=(bem b "text" m)
-      testSelectorName=(concat b "-text")
-    )
+    icon=(component "uxs-icon" base=(concat b "__icon") m=m)
+    text=(component "uxs-text" base=(concat b "__text") m=m)
+    action=(component "uxs-button" base=(concat b "__action") m=m)
+    actionLink=(component "uxs-button-link" base=(concat b "__action") m=m)
   )
 }}

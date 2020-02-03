@@ -1,33 +1,9 @@
 .uxs-button {
-  $self             : '.uxs-button';
+  $self: '.uxs-button';
 
   // Button Basics
-  @include button;
-  @include transition-all;
-  @include text-truncate;
-  border            : none;
-  cursor            : pointer;
-  display           : flex;
-  flex-direction    : row;
-  justify-content   : center;
-  padding           : rs(1) rs(2);
-  position          : relative;
-  height            : rs(5);
-  max-width         : 100%;
-  min-width         : rs(16);
-  -webkit-appearance: none;
+  @include button-component;
 
-  @include mq(tablet) {
-    max-width: rs(48);
-  }
-
-  /* ################ *
-   * Disabled Basics  *
-   * ################ */
-  &--disabled,
-  &:disabled {
-    cursor: not-allowed;
-  }
   /* ################ *
    * Contained Button *
    * ################ */
@@ -132,78 +108,6 @@
         }
       }
     }
-
-    /*
-     * Disabled
-     */
-    &--disabled,
-    &:disabled {
-      color: $c-mid;
-
-      &:focus,
-      &:hover {
-        background-color: transparent!important;
-      }
-    }
   }
 
-  /*
-   * Radius modifier
-   */
-  &--square {
-    border-radius: 0;
-  }
-
-  &--rounded {
-    border-radius: rs(.5);
-  }
-
-  &--round {
-    border-radius: rs(2.5);
-  }
-
-  &--loading {
-    animation                : opacityPulse 3s ease-out;
-    animation-iteration-count: infinite;
-    opacity                  : 1;
-  }
-
-  // Button followed by Button
-  // & + & {
-  //   margin-top: rs(2);
-  // }
-
-  /* ############### *
-   * Child Elements  *
-   * ############### */
-
-  &__icon {
-    @include icon;
-    margin-right: rs(1);
-    margin-left : rs(-.5);
-  }
-
-  &__body {
-    position: relative;
-  }
-
-  &__text {
-    visibility: visible;
-
-    &--loading {
-      visibility: hidden;
-    }
-  }
-
-  &__loading {
-    visibility: hidden;
-    position  : absolute;
-    top       : 0;
-    left      : 0;
-    right     : 0;
-
-    &--loading {
-      visibility: visible;
-    }
-  }
 }
