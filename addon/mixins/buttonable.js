@@ -28,12 +28,20 @@ export default Mixin.create(Accessible, BEMComponent, Testable, {
   // isWhite: equal('style', 'white'),
   /**
    * Alias for the aria accesibility label
+   *
+   * @computed label
+   * @type     String
+   * @public
    */
   label: alias('text'),
   /**
    * Default the component name to dasherized text
    * If used in block format text will be null, so return true
    * The name property should be set manually in block usage
+   *
+   * @computed name
+   * @type     String
+   * @public
    */
   name: computed('text', function() {
     let text = get(this, 'text');

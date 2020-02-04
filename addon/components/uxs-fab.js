@@ -125,8 +125,15 @@ const Fab = Component.extend(Buttonable, Clickable, {
   _text: null,
 
   /**
-   bottom-left
-   bottom-right
+    Where to fix this fab on the screen:
+
+    bottom-left
+    bottom-right
+
+    @argument fixed
+    @type     String
+    @default  null
+    @public
   */
   fixed: null,
   // Methods

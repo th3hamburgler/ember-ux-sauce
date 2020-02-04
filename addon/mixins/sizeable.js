@@ -38,6 +38,8 @@ export default Mixin.create({
    * This is a placeholder function that will be overridden
    * by the registerModifiers function from BEMComponent mixin
    * for any component that uses this mixin
+   *
+   * @function registerModifiers
    */
   registerModifiers: function() {
     if (this._super) {

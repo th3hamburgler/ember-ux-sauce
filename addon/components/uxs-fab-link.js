@@ -90,6 +90,18 @@ export default LinkComponent.extend(Buttonable, {
   color: 'primary',
 
   /**
+    Where to fix this fab on the screen:
+
+    bottom-left
+    bottom-right
+
+    @argument fixed
+    @type     String
+    @default  null
+    @public
+  */
+  fixed: null,
+  /**
     The buttons text, this can be set as the first positional parameter.
 
     It will also default to the components name.

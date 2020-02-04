@@ -65,7 +65,7 @@ export default Mixin.create({
 
     @property testSelectorName
     @default  null
-    @type     {(string)}
+    @type     string
     @public
   */
   testSelectorName: null,
@@ -78,8 +78,11 @@ export default Mixin.create({
     this._defineAttributeBindings();
   },
   /**
-   * Find the test selector value for this element
-   */
+    Find the test selector value for this element
+
+    @method _getTestSelectorName
+    @type string
+    */
   _getTestSelectorName() {
     let selector = this.get('testSelectorName');
 
@@ -99,8 +102,11 @@ export default Mixin.create({
     return selector;
   },
   /**
-   * Add a attributeBindings computed property
-   * that will add base classes
+   Add a attributeBindings computed property
+   that will add base classes
+
+   @method _defineAttributeBindings
+   @type string
    */
   _defineAttributeBindings() {
     // Get existing bindings
@@ -121,5 +127,17 @@ export default Mixin.create({
     attributeBindings.push(`testSelectorValue:data-test-${selector}`);
 
     this.set('attributeBindings', attributeBindings);
+  },
+  /**
+   * This is a placeholder function that will be overridden
+   * by the registerModifiers function from BEMComponent mixin
+   * for any component that uses this mixin
+   *
+   * @function registerModifiers
+   */
+  registerModifiers: function() {
+    if (this._super) {
+      this._super(...arguments);
+    }
   },
 });
