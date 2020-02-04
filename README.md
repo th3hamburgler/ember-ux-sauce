@@ -1,22 +1,20 @@
 # ember-ux-sauce
 
-[Short description of the addon.]
+A Collection of UI components inspired by Google Material Design for ember
 
 ## Installation
 
--   `git clone <repository-url>` this repository
--   `cd ember-ux-sauce`
--   `npm install`
+-   `ember install ember-ux-sauce`
 
 ## Usage
 
-[Longer description of how to use the addon in apps.]
+View the [Documentation Pages](https://sauce-consultants.github.io/ember-ux-sauce) for more info
 
 ## Contributing
 
 ### Installation
 
--   `git clone <repository-url>`
+-   `git clone https://github.com/sauce-consultants/ember-ux-sauce`
 -   `cd my-addon`
 -   `npm install`
 
