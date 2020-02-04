@@ -6,7 +6,6 @@ Here's a summary of the patterns we use and encourage authors to follow when ext
 -   [Make Use of ember-test-selectors](#make-use-of-ember-test-selectors)
 -   [Create Accessible Components](#create-accessible-components)
 -   [Build Components on Top of the Shared Mixins](#build-components-on-top-of-the-shared-mixins)
--   [Use Ember Prop Types](#use-ember-prop-types)
 
 ## BEM All the Things
 
@@ -26,7 +25,7 @@ In the case of components rendered in loops, either use model id's or a zero bas
 
 ## Create Accessible Components
 
-Write this
+Write this...
 
 ## Addons
 

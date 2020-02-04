@@ -26,25 +26,6 @@ export default Mixin.create({
   */
   color: null,
 
-  /**
-    Set the style of the component.
-
-    UXS ships with the following stock styles: primary, accent, warning, error, dark, grey, mid, light & white. More can be added to the $defaultColors array. This will set the background color of the component and set a contrasting base color for the text
-
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _--my-custom-style_
-
-    @property style
-    @default null
-    @type String
-  */
-  style: null,
-
-  // Computed
-  styleModifier: computed('style', function() {
-    if (this.style) {
-      return `${this.style}`;
-    }
-  }),
   colorModifier: computed('color', function() {
     if (this.color) {
       return `c-${this.color}`;
@@ -54,8 +35,7 @@ export default Mixin.create({
   init() {
     this._super(...arguments);
     this.registerModifiers([
-      '*styleModifier',
-      '*colorModifier'
+      '*color'
     ]);
   },
   /**
