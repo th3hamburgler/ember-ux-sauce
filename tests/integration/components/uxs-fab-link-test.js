@@ -14,16 +14,16 @@ import hasClasses from '../../helpers/has-classes';
 module('Integration | Component | uxs-fab-link', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    await render(hbs `{{uxs-fab-link "my-icon" "docs.fabs"}}`);
+  test('it renders a uxs-fab-link', async function(assert) {
+    await render(hbs `{{uxs-fab-link "add" "docs.fabs"}}`);
 
-    assert.equal(this.element.querySelector('[data-test-fab-icon]').textContent.trim(), 'my-icon');
+    assert.equal(this.element.querySelector('[data-test-fab-icon]').tagName, 'svg');
   });
 
   test('it renders a uxs-fab-link with bem modifiers', async function(assert) {
 
     // Check default classes
-    await render(hbs `{{uxs-fab-link "my-icon" "docs.fabs"}}`);
+    await render(hbs `{{uxs-fab-link "add" "docs.fabs"}}`);
 
     // Should have the following default classes
     hasClasses(assert, this.element.querySelector('[data-test-fab]'), [
@@ -34,7 +34,7 @@ module('Integration | Component | uxs-fab-link', function(hooks) {
 
     // Check modifier classes
     await render(hbs `{{uxs-fab-link
-      "my-icon"
+      "add"
       "docs.fabs"
       style="mini"
       color="accent"
@@ -51,7 +51,7 @@ module('Integration | Component | uxs-fab-link', function(hooks) {
 
   test('it renders a uxs-fab-link in a disabled state', async function(assert) {
     // Check default classes
-    await render(hbs `{{uxs-fab-link "my-icon" "docs.fabs" disabled=true}}`);
+    await render(hbs `{{uxs-fab-link "add" "docs.fabs" disabled=true}}`);
 
     // Should have the following default classes
     hasClasses(assert, this.element.querySelector('[data-test-fab]'), [
@@ -77,7 +77,7 @@ module('Integration | Component | uxs-fab-link', function(hooks) {
     assert.equal(this.element.querySelector('[data-test-fab-text]').textContent.trim(), 'My Button');
 
     // Check state with text and icon
-    await render(hbs `{{uxs-fab-link "My Button" "docs.fabs" icon="my-icon" style="extended"}}`);
+    await render(hbs `{{uxs-fab-link "My Button" "docs.fabs" icon="add" style="extended"}}`);
 
     // Should have the following default classes
     hasClasses(assert, this.element.querySelector('[data-test-fab]'), [
@@ -87,7 +87,7 @@ module('Integration | Component | uxs-fab-link', function(hooks) {
     ]);
 
     assert.ok(this.element.querySelector('[data-test-fab-icon]'));
-    assert.equal(this.element.querySelector('[data-test-fab-icon]').textContent.trim(), 'my-icon');
+    assert.equal(this.element.querySelector('[data-test-fab-icon]').tagName, 'svg');
     assert.equal(this.element.querySelector('[data-test-fab-text]').textContent.trim(), 'My Button');
 
   });

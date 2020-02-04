@@ -16,15 +16,15 @@ module('Integration | Component | uxs-fab', function(hooks) {
 
   test('it renders', async function(assert) {
 
-    await render(hbs `{{uxs-fab "my-icon"}}`);
+    await render(hbs `{{uxs-fab "add"}}`);
 
-    assert.equal(this.element.querySelector('[data-test-fab-icon]').textContent.trim(), 'my-icon');
+    assert.equal(this.element.querySelector('[data-test-fab-icon]').tagName, 'svg');
   });
 
   test('it renders a uxs-fab with bem modifiers', async function(assert) {
 
     // Check default classes
-    await render(hbs `{{uxs-fab "my-icon"}}`);
+    await render(hbs `{{uxs-fab "add"}}`);
 
     // Should have the following default classes
     hasClasses(assert, this.element.querySelector('[data-test-fab]'), [
@@ -35,7 +35,7 @@ module('Integration | Component | uxs-fab', function(hooks) {
 
     // Check modifier classes
     await render(hbs `{{uxs-fab
-      "my-icon"
+      "add"
       style="mini"
       color="accent"
       disabled=true
@@ -53,7 +53,7 @@ module('Integration | Component | uxs-fab', function(hooks) {
 
   test('it renders a uxs-fab in a loading state', async function(assert) {
     // Check default classes
-    await render(hbs `{{uxs-fab "my-icon" loading=true}}`);
+    await render(hbs `{{uxs-fab "add" loading=true}}`);
 
     // Should have the following default classes
     hasClasses(assert, this.element.querySelector('[data-test-fab]'), [
@@ -78,7 +78,7 @@ module('Integration | Component | uxs-fab', function(hooks) {
     assert.equal(this.element.querySelector('[data-test-fab-text]').textContent.trim(), 'My Button');
 
     // Check state with text and icon
-    await render(hbs `{{uxs-fab "My Button" "my-icon" style="extended"}}`);
+    await render(hbs `{{uxs-fab "My Button" "add" style="extended"}}`);
 
     // Should have the following default classes
     hasClasses(assert, this.element.querySelector('[data-test-fab]'), [
@@ -88,7 +88,7 @@ module('Integration | Component | uxs-fab', function(hooks) {
     ]);
 
     assert.ok(this.element.querySelector('[data-test-fab-icon]'));
-    assert.equal(this.element.querySelector('[data-test-fab-icon]').textContent.trim(), 'my-icon');
+    assert.equal(this.element.querySelector('[data-test-fab-icon]').tagName, 'svg');
     assert.equal(this.element.querySelector('[data-test-fab-text]').textContent.trim(), 'My Button');
 
   });

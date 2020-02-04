@@ -59,6 +59,7 @@ export default Component.extend(BEMComponent, Testable, {
     @public
    */
   style: 'outlined',
+  submitTimeout: 750,
   // Methods
   init() {
     this._super(...arguments);
@@ -82,11 +83,10 @@ export default Component.extend(BEMComponent, Testable, {
   },
   // Tasks
   submitTask: task(function*() {
-    console.log('submitTask');
     // Add a small artificail delay on from submission
     // to give the user a better experience
     yield all([
-      timeout(750),
+      timeout(this.submitTimeout),
       this.onSubmit(),
     ]);
     yield this.afterSubmit();
