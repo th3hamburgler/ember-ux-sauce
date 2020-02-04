@@ -44,17 +44,6 @@ export default Mixin.create(Accessible, Alignable, Colorable, Weightable, BEMCom
     */
   name: true,
   /**
-    Define the font-size of the component.<br/>
-    Available scales are body-1 (16px) & body-2 (14px)<br/>
-    Defaults to null (inherit font-size from parents)
-
-    @property scale
-    @default  null
-    @type     String
-    @public
-  */
-  scale: null,
-  /**
     Set to true to truncate the text to one line
 
     @property truncate
@@ -78,7 +67,6 @@ export default Mixin.create(Accessible, Alignable, Colorable, Weightable, BEMCom
     this._super(...arguments);
     this.registerModifiers([
       'truncate',
-      '*scale'
     ]);
   },
   /**

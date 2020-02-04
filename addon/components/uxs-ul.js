@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 import layout from '../templates/components/uxs-ul';
 import Textable from '../mixins/textable';
+import Scalable from '../mixins/scalable';
 
 /**
   A component to render unordered lists
@@ -18,7 +19,7 @@ import Textable from '../mixins/textable';
   @yield {Hash} list
   @yield {Component} list.item
 */
-export default Component.extend(Textable, {
+export default Component.extend(Scalable, Textable, {
   /**
    The text align direction, 'left', 'center', 'right' or 'justified'.
    Defaults to no alignment (inheret from parents)

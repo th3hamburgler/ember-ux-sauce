@@ -12,11 +12,15 @@ The type scale is a combination of 13 styles that are supported by the type syst
 
 In the type scale, headlines span from a range of 1 through 6. Headlines are the largest text on the screen, reserved for short, important text or numerals.
 
+[Api Docs](api/components/uxs-headline).
+
 {{docs/typography/headline-type}}
 
 ### Subtitles
 
 Subtitles are smaller than headlines. They are typically reserved for medium-emphasis text that is shorter in length.
+
+[Api Docs](api/components/uxs-subtitle).
 
 {{docs/typography/subtitle-type}}
 
@@ -24,17 +28,21 @@ Subtitles are smaller than headlines. They are typically reserved for medium-emp
 
 Body text comes in ranges 1-2, and it’s typically used for long-form writing as it works well for small text sizes.
 
+[Api Docs](api/components/uxs-body).
+
 {{docs/typography/body-type}}
 
 ### Caption and overline
 
 Caption and overline text (text with a line above it) are the smallest font sizes. They are used sparingly to annotate imagery or to introduce a headline.
 
+[Api Docs Caption](api/components/uxs-caption) | [Api Docs Overline](api/components/uxs-overline).
+
 {{docs/typography/caption-overline-type}}
 
 ### Button
 
-Button text is a call to action used different types of buttons (such as text, outlined and contained buttons) and in tabs, dialogs, and cards. Button text is typically an all caps.
+Button text is a call to action used different types of buttons (such as text, outlined and contained buttons) and in tabs, dialogs, and cards. Button text is typically an all caps. There is no button type component in uxs as it's used for the functional button component.
 
 {{docs/typography/button-type}}
 <!--

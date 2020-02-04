@@ -6,7 +6,7 @@ import {
 } from '@ember/object';
 
 /**
-  A typographic component to render headline text
+  A typographic component to render headlines
 
   ```hbs
   {{uxs-headline "Lorem ipsum dolar" 3}}
@@ -14,115 +14,99 @@ import {
   {{#uxs-headline scale=3}}Lorem ipsum dolar"{{/uxs-headline}}
   ```
 
-  @class UXSHeading
+  @class UXS Headline
+  @public
 */
 export default Component.extend(Textable, {
-  //
-  // Properties
-  // ---------
   /**
-    The BEM base name for this component: "headline-x"
+   The text align direction, 'left', 'center', 'right' or 'justified'.
+   Defaults to no alignment (inheret from parents)
 
-    @property base
-    @type     String
-    @default  "headline"
-    @public
+   @argument align
+   @type     String
+   @default  null
+   @public
+   */
+  align: null,
+  /**
+   The BEM base name for this component
+
+   @argument base
+   @type     String
+   @default  'uxs-ol'
+   @public
    */
   base: computed('scale', function() {
     return `uxs-headline-${this.scale}`;
   }),
-
-  scale: 1,
-
   /**
-    The test selector name defines the name of the [data-test-*] attribute binding<br/>
-    _Default is "headline"_
+    Adds a color modifier to the component.<br/>
+    Standard options are 'white', 'light', 'mid', 'grey', 'dark', 'primary', 'accent', 'success', 'warning'  or 'error'.<br/>
+    Defaults to no style (inheret from parents).
 
-    @property testSelectorName
-    @default  true
-    @type     String
+    @argument color
+    @type String
     @public
-  */
-
+    */
+  color: null,
   /**
-    The base property is used as the value for test selectors.<br/>
-    _Default is the value of "name"
-
-    @property testSelectorValue
-    @default  true
-    @type     String
-    @public
-  */
-
-  //
-  // Private
-  // ---------
-  /**
-    The path to the handlbars template
+    Path to the component template file
 
     @property layout
     @type     String
     @private
-   */
+    */
   layout,
-
-  //
-  // Arguments
-  // ---------
   /**
-    The text align direction, "left", "center", "right" or "justified". Defaults to no alignment (inheret)
-
-    @argument align
-    @default  null
-    @type     String
-  */
-
-  /**
-    Adds a color modifier to the component. Standard options are "white", "light", "mid", "grey", "dark", "primary", "accent", "success", "warning"  or "error". Defaults to no style (inheret).
-
-    @argument color
-    @type String
-  */
-
-  /**
-  The name of the component. This property also defaults to the value for test selectors.<br/>
-
-  The default is true, which ensures the test selector is added. If set to false the test selector is not rendered.
+    The name of the component.
+    This property also used as the default value for the test selector attribute.<br/>
+    The default is true, which ensures the test selector is added.<br/>
+    If set to false the test selector is not rendered.
 
     @argument name
     @type     Boolean|String
-  */
-
+    @public
+    */
+  name: true,
   /**
-    Adds a style modifier to the component. Standard options are "white", "light", "mid", "grey", "dark", "primary", "accent", "success", "warning"  or "error". Defaults to no style (inheret).
+    Define the font-size of the component.<br/>
+    Available scales are body-1 (16px) & body-2 (14px)<br/>
+    Defaults to null (inherit font-size from parents)
 
-    @argument style
-    @type String
-  */
-
-  /**
-    Define the size of the component. Standard options are "giant", "huge", "large", "medium", "small", or "tiny". Defaults to no size (inhered)
-
-    @argument size
+    @argument scale
     @default null
     @type String
+    @public
   */
-
+  scale: 1,
   /**
-    The text to be rendered inside this component<br>
-    _This can be passed in as the first positional parameter_
+    The html tag name for the root of the component
 
-    @argument text*
-    @type String
+    @argument  tagName
+    @type       String
+    @default    'ol'
+    @public
+    */
+  tagName: 'h1',
+  /**
+    Set to true to truncate the text to one line
+
+    @argument truncate
+    @type Boolean
+    @default null
+    @public
   */
-  text: '',
-  //
-  // Methods
-  // -------
-  init() {
-    this._super(...arguments);
-    this.registerModifiers(['giant', 'huge']);
-  },
+  truncate: false,
+  /**
+    Define the weight of the component.<br/>
+    Standard options are 'bold', 'medium' or 'light'. Defaults to no weight (inhered)
+
+    @argument weight
+    @default null
+    @type String
+    @public
+  */
+  weight: null,
 }).reopenClass({
   positionalParams: ['text', 'scale'],
 });
