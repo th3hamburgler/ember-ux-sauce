@@ -1,0 +1,19 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="typography-type-demo.hbs"}}
+
+    <div class="uxs">
+      {{#uxs-typography as |t|}}
+        {{t.headline "Headline" 3 align="center"}}
+        {{t.headline "Overview" 5}}
+        {{t.body "Adipiscing consequat a potenti a mollis suspendisse orci a id sagittis posuere vestibulum suspendisse suspendisse sed nisi.Odio." 1 true}}
+        {{t.subtitle "A Subtitle"}}
+        {{t.body "Non ac arcu magnis commodo a vel at a odio vestibulum a mus dui mus vestibulum pretium nulla.Himenaeos cubilia inceptos potenti imperdiet." 2 true}}
+      {{/uxs-typography}}
+    </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet "typography-type-demo.hbs"}}
+
+{{/docs-demo}}

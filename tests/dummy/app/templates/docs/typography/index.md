@@ -8,6 +8,8 @@ The type scale is based on [Google's Material Design](https://material.io/design
 
 The type scale is a combination of 13 styles that are supported by the type system. It contains reusable categories of text, each with an intended application and meaning.
 
+## Components
+
 ### Headlines
 
 In the type scale, headlines span from a range of 1 through 6. Headlines are the largest text on the screen, reserved for short, important text or numerals.
@@ -42,41 +44,18 @@ Caption and overline text (text with a line above it) are the smallest font size
 
 ### Button
 
-Button text is a call to action used different types of buttons (such as text, outlined and contained buttons) and in tabs, dialogs, and cards. Button text is typically an all caps. There is no button type component in uxs as it's used for the functional button component.
+Button text is a call to action used different types of buttons (such as text, outlined and contained buttons) and in tabs, dialogs, and cards. Button text is typically an all caps.
+
+There is no button type component in uxs as it's used for the functional button component but you can use the uxs-text component to render the button type.
+
+[Api Docs](api/components/uxs-text).
 
 {{docs/typography/button-type}}
-<!--
-## Text
 
-A basic component to render text with. It defaults to body text, but by using the arguments it can be customized. To see a full list check out the [api page](../api/components/uxs-text).
+### Typography
 
-{{docs/uxs-text/basic-demo}}
+The typography component is a tagless component that yields out all the above type components. This is a convenience component for you to use when working with a lot of structured text.
 
-## Headings
+[Api Docs](api/components/uxs-typography).
 
-A component to render headings. Using the arguments it can be customized. To see a full list check out the [api page](../api/components/uxs-heading).
-
-{{docs/uxs-heading/basic-demo}}
-
-## Subheadings
-
-A component to render subheadings. Using the arguments it can be customized. To see a full list check out the [api page](../api/components/uxs-subheading).
-
-{{docs/uxs-subheading/basic-demo}}
-
-## Content
-
-A component to render content text. Using the arguments it can be customized. To see a full list check out the [api page](../api/components/uxs-content).
-
-{{docs/uxs-content/basic-demo}}
-
-## Details
-
-A component to render detail text. Using the arguments it can be customized. To see a full list check out the [api page](../api/components/uxs-detail).
-
-{{docs/uxs-detail/basic-demo}}
-
-{{args-table/align-options}}
-{{args-table/size-options}}
-{{args-table/style-options}}
-{{args-table/weight-options}} -->
+{{docs/typography/typography-type}}
