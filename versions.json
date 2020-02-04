@@ -22,5 +22,11 @@
     "name": "Latest",
     "sha": "6579bbaf1606e65a2a81ba89f0f0bb128b87e34d",
     "tag": "1.1.5"
+  },
+  "version/2.0.0": {
+    "path": "versions/version/2.0.0",
+    "name": "version/2.0.0",
+    "sha": "1da1a597d21e74ebbcebe0b5dfe80a4c24385a9b",
+    "tag": null
   }
 }
