@@ -8,8 +8,15 @@
     position     : relative;
     margin-bottom: rs(2);
     // min height should accomodate for forms with no help text
-    // not jumping content when they receive an error message
+    // no jumping content when they receive an error message
     min-height   : rs(10);
+    max-width    : 100%;
+    min-width    : 100%;
+    width        : 100%;
+    @include mq(tablet) {
+      max-width: rs(48);
+      min-width: rs(32);
+    }
   }
 
   // Form Labels
@@ -99,12 +106,7 @@
     display       : flex;
     flex-direction: row;
     min-height    : rs(7);
-    min-width     : rs(32);
-    max-width     : 100%;
-
-    @include mq(tablet) {
-      max-width: rs(48);
-    }
+    width         : 100%;
 
     &--filled {
       background-color       : $c-light;
@@ -136,14 +138,6 @@
 
   &__datepicker-container {
     @include body-1;
-    border   : none;
-    max-width: 100%;
-    min-width: 100%;
-    width    : 100%;
-    @include mq(tablet) {
-      max-width: rs(48);
-      min-width: rs(32);
-    }
 
     &--filled {
       line-height: rs(4.25);

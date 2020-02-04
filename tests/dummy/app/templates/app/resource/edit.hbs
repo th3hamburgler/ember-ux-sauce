@@ -68,6 +68,19 @@ as |crumb|
         {{control.tip "Enter your servers IP"}}
       {{/form.control}}
 
+      {{#form.control
+        name="dob"
+      as |control|
+      }}
+        {{control.label "Date of Birth"}}
+        {{control.date
+          value=(readonly (moment-format model.dob "DD/MM/YY"))
+          dateFormat="d/m/y"
+          onChange=(action (mut model.dob))
+        }}
+        {{control.date-icon}}
+      {{/form.control}}
+
       {{form.submit "Save" color="primary"}}
       {{form.button "Cancel" color="grey"}}
 
