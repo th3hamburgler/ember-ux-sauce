@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="184px" viewBox="0 0 320 184" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Abstract / Data / Table</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Abstract-/-Data-/-Table" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#EFEFEF" fill-rule="nonzero" opacity="0.499697731" x="0" y="0" width="320" height="184"></rect>
+        <g id="Group" transform="translate(8.000000, 8.000000)" fill-rule="nonzero">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="304" height="56"></rect>
+            <rect id="Rectangle" fill="#3694E2" x="8" y="10" width="64" height="20"></rect>
+            <rect id="Rectangle" fill="#1C77C3" x="176" y="10" width="120" height="20"></rect>
+            <rect id="Rectangle" fill="#68AFE9" x="8" y="34" width="288" height="12"></rect>
+            <rect id="Rectangle" fill="#1C77C3" transform="translate(152.000000, 55.500000) scale(1, -1) translate(-152.000000, -55.500000) " x="0" y="55" width="304" height="1"></rect>
+        </g>
+        <g id="Group" transform="translate(8.000000, 64.000000)" fill-rule="nonzero">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="304" height="56"></rect>
+            <rect id="Rectangle" fill="#3694E2" x="8" y="10" width="56" height="20"></rect>
+            <rect id="Rectangle" fill="#1C77C3" x="136" y="10" width="160" height="20"></rect>
+            <rect id="Rectangle" fill="#68AFE9" x="8" y="34" width="288" height="12"></rect>
+            <rect id="Rectangle" fill="#1C77C3" transform="translate(152.000000, 55.500000) scale(1, -1) translate(-152.000000, -55.500000) " x="0" y="55" width="304" height="1"></rect>
+        </g>
+        <g id="Group" transform="translate(8.000000, 120.000000)" fill-rule="nonzero">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="304" height="56"></rect>
+            <rect id="Rectangle" fill="#3694E2" x="8" y="10" width="88" height="20"></rect>
+            <rect id="Rectangle" fill="#1C77C3" x="160" y="10" width="136" height="20"></rect>
+            <rect id="Rectangle" fill="#68AFE9" x="8" y="34" width="288" height="12"></rect>
+            <rect id="Rectangle" fill="#1C77C3" transform="translate(152.000000, 55.500000) scale(1, -1) translate(-152.000000, -55.500000) " x="0" y="55" width="304" height="1"></rect>
+        </g>
+    </g>
+</svg>
