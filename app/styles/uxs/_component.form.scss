@@ -103,6 +103,8 @@
   &__datepicker-container,
   &__input-container {
     $element      : '.uxs-form__input-container';
+    border        : none;
+    border-radius : 0;
     display       : flex;
     flex-direction: row;
     min-height    : rs(7);
