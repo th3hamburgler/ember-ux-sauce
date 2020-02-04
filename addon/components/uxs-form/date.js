@@ -1,4 +1,4 @@
-import FlatPickr from 'ember-ux-sauce/components/uxs-flatpickr';
+import FlatPickr from 'ember-flatpickr/components/ember-flatpickr';
 import Testable from 'ember-ux-sauce/mixins/testable';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import {

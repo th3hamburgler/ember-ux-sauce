@@ -32,7 +32,7 @@ export default Component.extend(Textable, {
    */
   base: computed('type', function() {
     if (this.type) {
-      return `t-${this.type}`;
+      return `uxs-${this.type}`;
     }
   }),
   // Methods

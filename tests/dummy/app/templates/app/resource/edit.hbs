@@ -76,7 +76,7 @@ as |crumb|
         {{control.date
           value=(readonly (moment-format model.dob "DD/MM/YY"))
           dateFormat="d/m/y"
-          onChange=(action (mut model.dob))
+          onChange=(action (mut dateValues))
         }}
         {{control.date-icon}}
       {{/form.control}}

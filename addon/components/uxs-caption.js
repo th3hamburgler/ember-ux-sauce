@@ -25,7 +25,7 @@ export default Component.extend(Textable, {
     @default  "caption"
     @public
    */
-  base: 'caption',
+  base: 'uxs-caption',
 
   layout
 }).reopenClass({

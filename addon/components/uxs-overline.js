@@ -25,7 +25,7 @@ export default Component.extend(Textable, {
     @default  "overline"
     @public
    */
-  base: 'overline',
+  base: 'uxs-overline',
 
   layout
 }).reopenClass({

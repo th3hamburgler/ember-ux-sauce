@@ -1,9 +1,0 @@
-{{#if hasPrefixIcon}}
-  {{uxs-icon prefixIcon class=(bem b "icon" m) prefix=true size=size}}
-{{/if}}
-{{#uxs-text base=(concat b "__text")}}
-  {{text}}{{yield}}
-{{/uxs-text}}
-{{#if hasSuffixIcon}}
-  {{uxs-icon suffixIcon class=(bem b "icon" m) suffix=true size=size}}
-{{/if}}
