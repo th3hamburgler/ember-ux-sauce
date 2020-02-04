@@ -268,19 +268,19 @@ $fc-caption: none;
 $fc-overline: uppercase;
 
 $defaultTypeScale: (
-  'headline-1': ('size' : $fs-headline-1, 'height':$lh-headline-1, 'weight': $fw-headline-1, 'spaceing':$ls-headline-1, 'case' : $fc-headline-1),
-  'headline-2': ('size' : $fs-headline-2, 'height':$lh-headline-2, 'weight': $fw-headline-2, 'spaceing':$ls-headline-2, 'case' : $fc-headline-2),
-  'headline-3': ('size' : $fs-headline-3, 'height':$lh-headline-3, 'weight': $fw-headline-3, 'spaceing':$ls-headline-3, 'case' : $fc-headline-3),
-  'headline-4': ('size' : $fs-headline-4, 'height':$lh-headline-4, 'weight': $fw-headline-4, 'spaceing':$ls-headline-4, 'case' : $fc-headline-4),
-  'headline-5': ('size' : $fs-headline-5, 'height':$lh-headline-5, 'weight': $fw-headline-5, 'spaceing':$ls-headline-5, 'case' : $fc-headline-5),
-  'headline-6': ('size' : $fs-headline-6, 'height':$lh-headline-6, 'weight': $fw-headline-6, 'spaceing':$ls-headline-6, 'case' : $fc-headline-6),
-  'subtitle-1': ('size' : $fs-subtitle-1, 'height':$lh-subtitle-1, 'weight': $fw-subtitle-1, 'spaceing':$ls-subtitle-1, 'case' : $fc-subtitle-1),
-  'subtitle-2': ('size' : $fs-subtitle-2, 'height':$lh-subtitle-2, 'weight': $fw-subtitle-2, 'spaceing':$ls-subtitle-2, 'case' : $fc-subtitle-2),
-  'body-1'    : ('size' : $fs-body-1, 'height':$lh-body-1, 'weight': $fw-body-1, 'spaceing':$ls-body-1, 'case' : $fc-body-1),
-  'body-2'    : ('size' : $fs-body-2, 'height':$lh-body-2, 'weight': $fw-body-2, 'spaceing':$ls-body-2, 'case' : $fc-body-2),
-  'button'    : ('size' : $fs-button, 'height':$lh-button, 'weight': $fw-button, 'spaceing':$ls-button, 'case' : $fc-button),
-  'caption'   : ('size' : $fs-caption, 'height':$lh-caption, 'weight': $fw-caption, 'spaceing':$ls-caption, 'case' : $fc-caption),
-  'overline'  : ('size' : $fs-overline, 'height':$lh-overline, 'weight': $fw-overline, 'spaceing':$ls-overline, 'case' : $fc-overline),
+  'headline-1': ('size' : $fs-headline-1, 'height':$lh-headline-1, 'weight': $fw-headline-1, 'spacing':$ls-headline-1, 'case' : $fc-headline-1),
+  'headline-2': ('size' : $fs-headline-2, 'height':$lh-headline-2, 'weight': $fw-headline-2, 'spacing':$ls-headline-2, 'case' : $fc-headline-2),
+  'headline-3': ('size' : $fs-headline-3, 'height':$lh-headline-3, 'weight': $fw-headline-3, 'spacing':$ls-headline-3, 'case' : $fc-headline-3),
+  'headline-4': ('size' : $fs-headline-4, 'height':$lh-headline-4, 'weight': $fw-headline-4, 'spacing':$ls-headline-4, 'case' : $fc-headline-4),
+  'headline-5': ('size' : $fs-headline-5, 'height':$lh-headline-5, 'weight': $fw-headline-5, 'spacing':$ls-headline-5, 'case' : $fc-headline-5),
+  'headline-6': ('size' : $fs-headline-6, 'height':$lh-headline-6, 'weight': $fw-headline-6, 'spacing':$ls-headline-6, 'case' : $fc-headline-6),
+  'subtitle-1': ('size' : $fs-subtitle-1, 'height':$lh-subtitle-1, 'weight': $fw-subtitle-1, 'spacing':$ls-subtitle-1, 'case' : $fc-subtitle-1),
+  'subtitle-2': ('size' : $fs-subtitle-2, 'height':$lh-subtitle-2, 'weight': $fw-subtitle-2, 'spacing':$ls-subtitle-2, 'case' : $fc-subtitle-2),
+  'body-1'    : ('size' : $fs-body-1, 'height':$lh-body-1, 'weight': $fw-body-1, 'spacing':$ls-body-1, 'case' : $fc-body-1),
+  'body-2'    : ('size' : $fs-body-2, 'height':$lh-body-2, 'weight': $fw-body-2, 'spacing':$ls-body-2, 'case' : $fc-body-2),
+  'button'    : ('size' : $fs-button, 'height':$lh-button, 'weight': $fw-button, 'spacing':$ls-button, 'case' : $fc-button),
+  'caption'   : ('size' : $fs-caption, 'height':$lh-caption, 'weight': $fw-caption, 'spacing':$ls-caption, 'case' : $fc-caption),
+  'overline'  : ('size' : $fs-overline, 'height':$lh-overline, 'weight': $fw-overline, 'spacing':$ls-overline, 'case' : $fc-overline),
 )
 !default;
 

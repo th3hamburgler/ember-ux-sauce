@@ -276,6 +276,29 @@
   }
 }
 /**
+ * Add text weight modifer rules to a component
+ */
+@mixin text-weight-modifiers($weights:$defaultWeights, $prefix:'') {
+  @each $modifier, $weight in $weights {
+    &--#{$prefix}#{$modifier} {
+      font-weight: $weight;
+    }
+  }
+}
+/**
+ * Add text weight modifer rules to a component
+ */
+@mixin text-scale-modifiers($scales:$defaultTypeScale, $prefix:'') {
+  @each $modifier, $scale in $scales {
+    &--#{$prefix}#{$modifier} {
+      font-size     : map-get($scale, 'size');
+      line-height   : map-get($scale, 'height');
+      letter-spacing: map-get($scale, 'spacing');
+      text-transform: map-get($scale, 'case');
+    }
+  }
+}
+/**
  * Add modifiers to set the background and text color of an element
  */
 @mixin style-modifiers($colors:$defaultColors, $opacity:1) {

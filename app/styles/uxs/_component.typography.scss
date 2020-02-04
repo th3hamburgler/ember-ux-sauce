@@ -64,16 +64,48 @@
 .uxs-body-2,
 .uxs-button,
 .uxs-caption,
+.uxs-dl,
 .uxs-headline-1,
 .uxs-headline-2,
 .uxs-headline-3,
 .uxs-headline-4,
 .uxs-headline-5,
 .uxs-headline-6,
+.uxs-ol,
 .uxs-overline,
 .uxs-paragraph-1,
 .uxs-paragraph-2,
 .uxs-subtitle-1,
-.uxs-subtitle-2 {
+.uxs-subtitle-2,
+.uxs-ul {
+  @include text-align-modifiers;
   @include text-color-modifiers;
+  @include text-truncate-modifier;
+  @include text-weight-modifiers;
+}
+
+.uxs-dl {
+  @include text-scale-modifiers;
+
+  &__description,
+  &__term {
+    @include text-align-modifiers;
+    @include text-color-modifiers;
+    @include text-scale-modifiers;
+    @include text-truncate-modifier;
+    @include text-weight-modifiers;
+  }
+}
+
+.uxs-ol,
+.uxs-ul {
+  @include text-scale-modifiers;
+
+  &__item {
+    @include text-align-modifiers;
+    @include text-color-modifiers;
+    @include text-scale-modifiers;
+    @include text-truncate-modifier;
+    @include text-weight-modifiers;
+  }
 }
