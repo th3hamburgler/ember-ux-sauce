@@ -2,13 +2,7 @@
 /* UXS SETTINGS */
 /* ------------ */
 $isDocs: true!default;
-@import 'https://fonts.googleapis.com/css?family=Lato:300,400,700|Material+Icons';
-
-// If true use 8px grid else 25px grid;
-$newGridDefault: true!default;
-
-// Include deprecated styles
-$incDeprecated: true!default;
+@import 'https://fonts.googleapis.com/css?family=Lato:300,400,700';
 
 // 1. The Grid
 // 2. Media Queries
@@ -102,10 +96,10 @@ $breakpoints: (
 $mediaModifiers: (
   // phone is default so no need to add as a utility class modifier
   // xs: 'phone',
-  sm: 'tablet',
-  md: 'tablet-wide',
-  lg: 'desktop',
-  xl: 'desktop-wide'
+  'sm': 'tablet',
+  'md': 'tablet-wide',
+  'lg': 'desktop',
+  'xl': 'desktop-wide'
 )
 !default;
 
@@ -122,10 +116,6 @@ $transition-timing-function: cubic-bezier(.4,0,.2,1)!default;
 /* ------------- */
 /* 4. TYPOGRAPHY */
 /* ------------- */
-
-// @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap');
-// @import url('https://fonts.googleapis.com/css?family=Rubik:100,200,300,300i,400,400i,500,500i,600,700,700i800,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Lato:100,200,300,300i,400,400i,500,500i,600,700,700i800,900&display=swap');
 
 // The default type face
 $font-family: 'Lato', sans-serif;
@@ -201,26 +191,6 @@ $fs-button: rem-size(14px);
 $fs-caption: rem-size(12px);
 $fs-overline: rem-size(10px);
 
-// @if $incDeprecated == true {
-$s-giant: scale($type-base, 3, $type-scale)!default;
-$s-huge: scale($type-base, 2, $type-scale)!default;
-$s-large: scale($type-base, 1, $type-scale)!default;
-$s-medium: $type-base!default;
-$s-small: scale($type-base, -1, $type-scale)!default;
-$s-tiny: scale($type-base, -2, $type-scale)!default;
-
-// Sizes used as style modifiers in our mixins
-$defaultSizes: (
-  "giant" : $s-giant,
-  "huge"  : $s-huge,
-  "large" : $s-large,
-  "medium": $s-medium,
-  "small" : $s-small,
-  "tiny"  : $s-tiny,
-)
-!default;
-// }
-
 // The default line-heights
 // - Headings
 $lh-headline-1: rem-size(96px);
@@ -239,26 +209,6 @@ $lh-body-2: rem-size(24px);
 $lh-button: rem-size(24px);
 $lh-caption: rem-size(16px);
 $lh-overline: rem-size(16px);
-
-// @if $incDeprecated == true {
-// The default line-heights - adhere to the grid!
-$lh-giant: rs(4)!default;
-$lh-huge: rs(3)!default;
-$lh-large: rs(2)!default;
-$lh-medium: rs(1)!default;
-$lh-small: rs(1)!default;
-$lh-tiny: rs(1)!default;
-
-$defaultLineHights: (
-  "giant" : $lh-giant,
-  "huge"  : $lh-huge,
-  "large" : $lh-large,
-  "medium": $lh-medium,
-  "small" : $lh-small,
-  "tiny"  : $lh-tiny,
-)
-!default;
-// }
 
 // The default font-weights
 // - Headings

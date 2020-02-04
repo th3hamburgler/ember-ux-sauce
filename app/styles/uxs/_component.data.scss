@@ -1,46 +1,14 @@
-// $baseline: 8px;
-/* Item */
-$data-item-v-padding: 1.5!default; // baselines
-$data-item-h-padding: 1!default;
-$data-item-border-size: 1!default; // px
-$data-item-border-style: solid!default;
-$data-item-border-color: $c-light!default;
-$data-item-inset: 2!default;
-$data-item-inset-tablet: 3!default;
-$data-item-h-margin: 2!default;
-$data-item-h-margin-tablet: 3!default;
-$data-value-indent: 2!default;
-/* Children */
-$data-default-lh: 3;
-$data-label-lh: $data-default-lh;
-$data-value-lh: $data-default-lh;
-$data-tip-lh: $data-default-lh;
-$data-default-fs: $s-medium;
-$data-label-fs: $data-default-fs;
-$data-value-fs: $data-default-fs;
-$data-tip-fs: $s-small;
-$data-default-fw: 400;
-$data-label-fw: 700;
-$data-value-fw: 100;
-$data-tip-fw: 100;
-$data-default-tt: none;
-$data-label-tt: uppercase;
-$data-value-tt: $data-default-tt;
-$data-tip-tt: $data-default-tt;
-
 .uxs-data {
+  @include body-1;
   display       : flex;
   flex-direction: column;
-  font-size     : $data-default-fs;
-  font-weight   : $data-default-fw;
-  line-height   : $data-default-fs;
-  text-transform: $data-default-tt;
+  text-transform: none;
 
   &__item {
-    border-bottom : rem-size($data-item-border-size) $data-item-border-style $data-item-border-color;
+    border-bottom : rem-size(1) solid $c-light;
     display       : flex;
     flex-direction: column;
-    padding       : rs($data-item-v-padding) 0 rs($data-item-v-padding, $data-item-border-size);
+    padding       : rs(1.5) 0 rs(1.5, 1);
 
     &--cell,
     &--inline,
@@ -50,20 +18,20 @@ $data-tip-tt: $data-default-tt;
     }
 
     &--inset {
-      padding-left : rs($data-item-inset);
-      padding-right: rs($data-item-inset);
+      padding-left : rs(2);
+      padding-right: rs(2);
       @include mq(tablet) {
-        padding-left : rs($data-item-inset-tablet);
-        padding-right: rs($data-item-inset-tablet);
+        padding-left : rs(2-tablet);
+        padding-right: rs(2-tablet);
       }
     }
 
     &--padded {
-      margin-left : rs($data-item-h-margin);
-      margin-right: rs($data-item-h-margin);
+      margin-left : rs(2);
+      margin-right: rs(2);
       @include mq(tablet) {
-        margin-left : rs($data-item-h-margin-tablet);
-        margin-right: rs($data-item-h-margin-tablet);
+        margin-left : rs(3);
+        margin-right: rs(3);
       }
     }
   }
@@ -71,23 +39,15 @@ $data-tip-tt: $data-default-tt;
   &__group {}
 
   &__label {
-    // line-height   : rs($data-label-lh);
-    // font-size     : $data-label-fs;
-    // font-weight   : $data-label-fw;
-    // text-transform: $data-label-tt;
     @include label-type();
   }
 
   &__value {
-    padding-left: rs($data-value-indent);
+    padding-left: rs(2);
     @include input-type();
   }
 
   &__tip {
-    // line-height   : rs($data-tip-lh);
-    // font-size     : $data-tip-fs;
-    // font-weight   : $data-tip-fw;
-    // text-transform: $data-tip-tt;
     @include helper-type();
   }
 
@@ -104,7 +64,7 @@ $data-tip-tt: $data-default-tt;
     &--cell,
     &--inline,
     &--table {
-      padding-right: rs($data-item-h-padding);
+      padding-right: rs(1);
     }
 
     &--cell,
@@ -141,4 +101,3 @@ $data-tip-tt: $data-default-tt;
     // min-width: 100%;
   }
 }
-// $baseline: 25px;

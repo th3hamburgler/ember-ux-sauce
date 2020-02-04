@@ -69,19 +69,19 @@
 /* --------------- */
 
 $weights: (
-  hairline : 100,
-  thin     : 200,
-  light    : 300,
-  normal   : 400,
-  medium   : 500,
-  semibold : 600,
-  bold     : 700,
-  extrabold: 800,
-  black    : 900,
+  'hairline' : 100,
+  'thin'     : 200,
+  'light'    : 300,
+  'normal'   : 400,
+  'medium'   : 500,
+  'semibold' : 600,
+  'bold'     : 700,
+  'extrabold': 800,
+  'black'    : 900,
 );
 
 @each $modifier, $weight in $weights {
-  .fw-#{$modifier} {
+  .fw-#{"" +$modifier} {
     font-weight: $weight;
   }
 
@@ -116,10 +116,10 @@ $weights: (
 /* ------------- */
 
 $textAligns: (
-  center : center,
-  left   : left,
-  right  : right,
-  justify: justify,
+  'center'' :' center,
+  'left'' :' left,
+  'right'' :' right,
+  'justify'':' justify,
 );
 
 // .ta-center
@@ -156,10 +156,10 @@ $textAligns: (
 /* ------------------ */
 
 $decorations: (
-  overline    : overline,
-  underline   : underline,
-  line-through: line-through,
-  none        : none,
+  'overline'    : overline,
+  'underline'   : underline,
+  'line-through': line-through,
+  'none'        : none,
 );
 
 // td-overline
@@ -206,10 +206,10 @@ $decorations: (
 /* 4. TEXT TRANSFORM */
 /* ------------------ */
 $textTransforms: (
-  capitalize: capitalize,
-  lowercase : lowercase,
-  none      : none,
-  uppercase : uppercase,
+  'capitalize': capitalize,
+  'lowercase' : lowercase,
+  'none'      : none,
+  'uppercase' : uppercase,
 );
 
 .tt {

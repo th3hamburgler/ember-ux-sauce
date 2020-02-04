@@ -9,8 +9,6 @@
  * Components – specific UI components.
  * Utilities – utilities and helper classes - override anything before!
  */
-/* */
-$theme: "sauce"!default;
 
 @import "uxs/tools.functions";
 @import "uxs/settings.variables";
@@ -22,4 +20,3 @@ $theme: "sauce"!default;
 @import "uxs/include.objects";
 @import "uxs/include.components";
 @import "uxs/include.trumps";
-// @import "theme/include.theme";
