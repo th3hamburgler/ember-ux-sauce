@@ -2,6 +2,9 @@ import Component from '@ember/component';
 import layout from '../templates/components/uxs-button';
 import Buttonable from 'ember-ux-sauce/mixins/buttonable';
 import Clickable from 'ember-ux-sauce/mixins/clickable';
+import {
+  oneWay
+} from '@ember/object/computed';
 export const BUTTON_STYLES = {
   CONTAINED: 'contained',
   OUTLINED: 'outlined',
@@ -18,9 +21,38 @@ export const BUTTON_STYLES = {
   @public
 */
 const Button = Component.extend(Buttonable, Clickable, {
-  // Attributes
-  layout,
-  tagName: 'button',
+  /**
+   The BEM base name for this component
+
+   @argument base
+   @type     String
+   @default  'uxs-button'
+   @public
+   */
+  base: 'uxs-button',
+  /**
+    Return true to allow this component event to
+    bubble to parent elements
+
+    @argument bubbles
+    @default  false
+    @type     {boolean}
+    @public
+  */
+  bubbles: false,
+  /**
+    Set the color of the button.
+
+    UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
+
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-button--my-custom-color_
+
+    @argument color
+    @type     String
+    @default  'primary'
+    @public
+   */
+  color: 'primary',
   /**
     Set to true to disable this button.
 
@@ -31,10 +63,17 @@ const Button = Component.extend(Buttonable, Clickable, {
     @default  false
     @public
    */
-  disabled: false,
-
+  disabled: oneWay('task.isRunning'),
   /**
-    Set to true if the button has already been pressed or should be disabled while another action takes place.
+    Path to the component template file
+
+    @property layout
+    @type     String
+    @private
+    */
+  layout,
+  /**
+    Set to true if the button has already been pressed or should be disabled while another action takes place. If the button is passed a task it will display the loading state automatically while the task is running
 
     If the _loadingText_ argument has been provided this will be displayed, defaults to "Loading…".
 
@@ -45,8 +84,7 @@ const Button = Component.extend(Buttonable, Clickable, {
     @default  false
     @public
    */
-  loading: false,
-
+  loading: oneWay('task.isRunning'),
   /**
     Add a custom name to your button, used for aria labels & test selectors.
 
@@ -58,6 +96,25 @@ const Button = Component.extend(Buttonable, Clickable, {
     @public
    */
   name: true,
+  /**
+    The name of the action to fire on click<br>
+    NOTE: if you assign a value to this action it will block the dom event and prevent bubbling by default
+
+    @argument onClick
+    @default  null
+    @type     closure
+    @public
+  */
+  onClick: null,
+  /**
+    Add an html role to the item for accessibility
+
+    @argument role
+    @default  'button'
+    @type     string
+    @public
+  */
+  role: 'button',
   /**
     Set's the button style to a selected state.
 
@@ -73,7 +130,7 @@ const Button = Component.extend(Buttonable, Clickable, {
     Set the style of the button.
 
     UXS ships with the following styles:
-    - contained
+    - contained (default)
     - outlined
     - naked
 
@@ -81,37 +138,44 @@ const Button = Component.extend(Buttonable, Clickable, {
 
     @argument style
     @type     String
-    @default  null
+    @default  'default'
     @public
    */
   style: BUTTON_STYLES.CONTAINED,
   /**
+    The html tag name for the root of the component
+
+    @argument  tagName
+    @type       String
+    @default    'button'
+    @public
+    */
+  tagName: 'button',
+  /**
+    The name of the ember concurrency task to
+    perform on click. If a task is defined that
+    will take presedence over an onClick action
+
+    @argument task
+    @default  null
+    @type     task
+    @public
+  */
+  task: null,
+  /**
     Set the border radius of the button.
 
     UXS ships with the following styles:
-    - square
-    - rounded
+    - rounded (default)
     - round
+    - square
 
     @argument radius
     @type     String
-    @default  null
+    @default  'rounded'
     @public
    */
   radius: 'rounded',
-  /**
-    Set the color of the button.
-
-    UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
-
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-button--my-custom-color_
-
-    @argument color
-    @type     String
-    @default  null
-    @public
-   */
-  color: 'primary',
   /**
     The buttons text, this can be set as the first positional parameter.
 

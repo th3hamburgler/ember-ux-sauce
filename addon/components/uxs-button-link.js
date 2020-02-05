@@ -21,9 +21,28 @@ import {
   @public
 */
 export default LinkComponent.extend(Buttonable, {
-  // Attributes
-  layout,
-  role: 'link',
+  /**
+   The BEM base name for this component
+
+   @argument base
+   @type     String
+   @default  'uxs-button'
+   @public
+   */
+  base: 'uxs-button',
+  /**
+    Set the color of the button.
+
+    UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
+
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-button--my-custom-color_
+
+    @argument color
+    @type     String
+    @default  'primary'
+    @public
+   */
+  color: 'primary',
   /**
     Set to true to disable this button.
 
@@ -35,7 +54,14 @@ export default LinkComponent.extend(Buttonable, {
     @public
    */
   disabled: false,
+  /**
+    Path to the component template file
 
+    @property layout
+    @type     String
+    @private
+    */
+  layout,
   /**
     Add a custom name to your button, used for aria labels & test selectors.
 
@@ -48,21 +74,64 @@ export default LinkComponent.extend(Buttonable, {
    */
   name: true,
   /**
+    Add an html role to the item for accessibility
+
+    @argument role
+    @default  'link'
+    @type     string
+    @public
+  */
+  role: 'link',
+  /**
+    Set's the button style to a selected state.
+
+    Can be used to toggle buttons or to infer an active state without disabling the buttons action.
+
+    @argument selected
+    @type     Boolean
+    @default  selected
+    @public
+   */
+  selected: null,
+  /**
     Set the style of the button.
 
     UXS ships with the following styles:
-    - contained
+    - contained (default)
     - outlined
     - naked
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-style
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-button--my-custom-style
 
-    @argument color
+    @argument style
     @type     String
-    @default  null
+    @default  'default'
     @public
    */
   style: BUTTON_STYLES.CONTAINED,
+  /**
+    The html tag name for the root of the component
+
+    @argument  tagName
+    @type       String
+    @default    'a'
+    @public
+    */
+  tagName: 'a',
+  /**
+    Set the border radius of the button.
+
+    UXS ships with the following styles:
+    - rounded (default)
+    - round
+    - square
+
+    @argument radius
+    @type     String
+    @default  'rounded'
+    @public
+   */
+  radius: 'rounded',
   /**
     The buttons text, this can be set as the first positional parameter.
 
@@ -74,33 +143,7 @@ export default LinkComponent.extend(Buttonable, {
     @public
    */
   text: alias('linkTitle'),
-  /**
-    Set the border radius of the button.
 
-    UXS ships with the following styles:
-    - square
-    - rounded
-    - round
-
-    @argument radius
-    @type     String
-    @default  null
-    @public
-   */
-  radius: 'rounded',
-  /**
-    Set the color of the button.
-
-    UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
-
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-color_
-
-    @argument color
-    @type     String
-    @default  null
-    @public
-   */
-  color: 'primary',
   // Methods
   init() {
     this._super(...arguments);

@@ -1,7 +1,6 @@
 import Mixin from '@ember/object/mixin';
-
 import {
-  bool
+  or
 } from '@ember/object/computed';
 import {
   oneWay
@@ -15,16 +14,18 @@ import {
 export default Mixin.create({
   // Attributes
   /**
-    The name of the action to fire on click
+    The name of the action to fire on click<br>
+    NOTE: if you assign a value to this action it will block the dom event and prevent bubbling by default
+
     @property onClick
     @default  null
     @type     closure
     @public
   */
-  onClick: null, //() {},
+  onClick: null,
   /**
     The name of the task performed on click
-    @property teak
+    @property task
     @default  null
     @type     task
     @public
@@ -32,6 +33,7 @@ export default Mixin.create({
   task: null,
   /**
     Add a role to the item for accessibility
+
     @property role
     @default  'button'
     @type     {string}
@@ -47,22 +49,37 @@ export default Mixin.create({
     @public
   */
   bubbles: false,
-  disabled: oneWay('task.isRunning'),
-  loading: oneWay('task.isRunning'),
+  /**
+    Set to true to disable the component.<br>
+    This will activate it's disabled style and also prevent any actions from being fired.<br>
+    If the button is passed a task it will display the loading state automatically while the task is running
 
+    @property disabled
+    @type     Boolean
+    @default  false
+    @public
+   */
+  disabled: oneWay('task.isRunning'),
+  /**
+    Set to true if the component has already been pressed or should be disabled while another action takes place.<br>
+    If the button is passed a task it will display the loading state automatically while the task is running<br>
+    This will activate it's loading style and also prevent any actions from being fired..
+
+    @property loading
+    @type     Boolean
+    @default  false
+    @public
+   */
+  loading: oneWay('task.isRunning'),
   // Events
   click(event) {
     let task = this.get('task'),
       onClick = this.get('onClick');
 
     if (task) {
-      window.console.log('clickable: click', task, onClick, this);
-      window.console.log('clickable: task');
       task.perform();
       return this.bubbles;
     } else if (onClick) {
-      window.console.log('clickable: click', task, onClick, this);
-      window.console.log('clickable: action');
       onClick(event);
       return this.bubbles;
     } else {
@@ -71,7 +88,7 @@ export default Mixin.create({
       return true;
     }
   },
-  hasClickAction: bool('onClick'),
+  hasClickAction: or('onClick', 'task'),
   // Methods
   init() {
     this._super(...arguments);
