@@ -8,7 +8,8 @@ import {
 } from '@ember/object';
 import {
   bool,
-  equal
+  equal,
+  oneWay
 } from '@ember/object/computed';
 import {
   alias
@@ -29,12 +30,38 @@ export const FAB_STYLES = {
   @public
 */
 const Fab = Component.extend(Buttonable, Clickable, {
-  // Attributes
-  layout,
+  /**
+   The BEM base name for this component
+
+   @argument base
+   @type     String
+   @default  'uxs-button'
+   @public
+   */
   base: 'uxs-fab',
-  tagName: 'button',
-  param1: null,
-  param2: null,
+  /**
+    Return true to allow this component event to
+    bubble to parent elements
+
+    @argument bubbles
+    @default  false
+    @type     {boolean}
+    @public
+  */
+  bubbles: false,
+  /**
+    Set the color of the button.
+
+    UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
+
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-button--my-custom-color_
+
+    @argument color
+    @type     String
+    @default  'primary'
+    @public
+   */
+  color: 'primary',
   /**
     Set to true to disable this button.
 
@@ -45,10 +72,29 @@ const Fab = Component.extend(Buttonable, Clickable, {
     @default  false
     @public
    */
-  disabled: false,
-
+  disabled: oneWay('task.isRunning'),
   /**
-    Set to true if the button has already been pressed or should be disabled while another action takes place.
+    Where to fix this fab on the screen:
+
+    bottom-left
+    bottom-right
+
+    @argument fixed
+    @type     String
+    @default  null
+    @public
+  */
+  fixed: null,
+  /**
+    Path to the component template file
+
+    @property layout
+    @type     String
+    @private
+    */
+  layout,
+  /**
+    Set to true if the button has already been pressed or should be disabled while another action takes place. If the button is passed a task it will display the loading state automatically while the task is running
 
     If the _loadingText_ argument has been provided this will be displayed, defaults to "Loading…".
 
@@ -59,8 +105,7 @@ const Fab = Component.extend(Buttonable, Clickable, {
     @default  false
     @public
    */
-  loading: false,
-
+  loading: oneWay('task.isRunning'),
   /**
     Add a custom name to your button, used for aria labels & test selectors.
 
@@ -72,6 +117,46 @@ const Fab = Component.extend(Buttonable, Clickable, {
     @public
    */
   name: true,
+  /**
+    The name of the action to fire on click<br>
+    NOTE: if you assign a value to this action it will block the dom event and prevent bubbling by default
+
+    @argument onClick
+    @default  null
+    @type     closure
+    @public
+  */
+  onClick: null,
+  /**
+    For regular and mini style buttons param1 is the icon path.<br>
+    For extended buttons, this should be the text value.<br>This can be set as the first positional parameter.<br>
+
+    It will also default to the components name.
+
+    @argument param1
+    @type     String
+    @default  null
+    @private
+   */
+  param1: null,
+  /**
+    For extended buttons, param2 should be the optional icon path.<br>This can be set as the second positional parameter.<br>
+
+    @argument param1
+    @type     String
+    @default  null
+    @private
+   */
+  param2: null,
+  /**
+    Add an html role to the item for accessibility
+
+    @argument role
+    @default  'button'
+    @type     string
+    @public
+  */
+  role: 'button',
   /**
     Set's the button style to a selected state.
 
@@ -87,55 +172,52 @@ const Fab = Component.extend(Buttonable, Clickable, {
     Set the style of the button.
 
     UXS ships with the following styles:
-    - regular
-    - mini
-    - extended
+    - contained (default)
+    - outlined
+    - naked
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-style
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-fab--my-custom-style
 
     @argument style
     @type     String
-    @default  null
+    @default  'regular'
     @public
    */
-  style: 'regular',
+  style: FAB_STYLES.REGULAR,
   /**
-    Set the color of the button.
+    The html tag name for the root of the component
 
-    UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
-
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-color_
-
-    @argument color
-    @type     String
-    @default  null
+    @argument  tagName
+    @type       String
+    @default    'div'
     @public
-   */
-  color: 'primary',
+    */
+  tagName: 'div',
   /**
-    The buttons text, this can be set as the first positional parameter.
+    The name of the ember concurrency task to
+    perform on click. If a task is defined that
+    will take presedence over an onClick action
 
-    It will also default to the components name.
-
-    @argument text
-    @type     String
+    @argument task
     @default  null
-    @public
-   */
-  _text: null,
-
-  /**
-    Where to fix this fab on the screen:
-
-    bottom-left
-    bottom-right
-
-    @argument fixed
-    @type     String
-    @default  null
+    @type     task
     @public
   */
-  fixed: null,
+  task: null,
+  /**
+    Set the border radius of the button.
+
+    UXS ships with the following styles:
+    - rounded (default)
+    - round
+    - square
+
+    @argument radius
+    @type     String
+    @default  'rounded'
+    @public
+   */
+  radius: 'rounded',
   // Methods
   init() {
     this._super(...arguments);

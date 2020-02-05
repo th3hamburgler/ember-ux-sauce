@@ -24,8 +24,28 @@ import {
   @public
 */
 export default LinkComponent.extend(Buttonable, {
-  layout,
+  /**
+   The BEM base name for this component
+
+   @argument base
+   @type     String
+   @default  'uxs-button'
+   @public
+   */
   base: 'uxs-fab',
+  /**
+    Set the color of the button.
+
+    UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
+
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-fab--my-custom-color_
+
+    @argument color
+    @type     String
+    @default  'primary'
+    @public
+   */
+  color: 'primary',
   /**
     Set to true to disable this button.
 
@@ -38,6 +58,26 @@ export default LinkComponent.extend(Buttonable, {
    */
   disabled: false,
   /**
+    Where to fix this fab on the screen:
+
+    bottom-left
+    bottom-right
+
+    @argument fixed
+    @type     String
+    @default  null
+    @public
+  */
+  fixed: null,
+  /**
+    Path to the component template file
+
+    @property layout
+    @type     String
+    @private
+    */
+  layout,
+  /**
     Add a custom name to your button, used for aria labels & test selectors.
 
     By default this will be the same as the _text_ argument unless you parse a different value.
@@ -48,6 +88,15 @@ export default LinkComponent.extend(Buttonable, {
     @public
    */
   name: true,
+  /**
+    Add an html role to the item for accessibility
+
+    @argument role
+    @default  'link'
+    @type     string
+    @public
+  */
+  role: 'link',
   /**
     Set's the button style to a selected state.
 
@@ -63,48 +112,41 @@ export default LinkComponent.extend(Buttonable, {
     Set the style of the button.
 
     UXS ships with the following styles:
-    - regular
-    - mini
-    - extended
+    - contained (default)
+    - outlined
+    - naked
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-style
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-fab--my-custom-style
 
     @argument style
     @type     String
-    @default  null
+    @default  'default'
     @public
    */
-  style: 'regular',
+  style: FAB_STYLES.REGULAR,
   /**
-    Set the color of the button.
+    The html tag name for the root of the component
 
-    UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
-
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-custom-color_
-
-    @argument color
-    @type     String
-    @default  null
+    @argument  tagName
+    @type       String
+    @default    'a'
     @public
-   */
-  color: 'primary',
-
-  /**
-    Where to fix this fab on the screen:
-
-    bottom-left
-    bottom-right
-
-    @argument fixed
-    @type     String
-    @default  null
-    @public
-  */
-  fixed: null,
+    */
+  tagName: 'a',
   /**
     The buttons text, this can be set as the first positional parameter.
 
     It will also default to the components name.
+
+    @argument text
+    @type     String
+    @default  null
+    @public
+   */
+  text: alias('linkTitle'),
+  /**
+    The buttons text for extended style fabs this is will
+    linkTitle, for others the text attribute
 
     @argument text
     @type     String
@@ -122,6 +164,15 @@ export default LinkComponent.extend(Buttonable, {
       return text;
     }
   }),
+  /**
+    The buttons icon, for extended style fabs this is will
+    be the icon attribute. For others it the linkTitle, first positional param
+
+    @argument text
+    @type     String
+    @default  null
+    @public
+   */
   computedIcon: computed('style', 'linkTitle', 'icon', function() {
     const style = get(this, 'style'),
       linkTitle = get(this, 'linkTitle'),
@@ -133,7 +184,6 @@ export default LinkComponent.extend(Buttonable, {
       return linkTitle;
     }
   }),
-
   showText: equal('style', FAB_STYLES.EXTENDED),
   showIcon: bool('computedIcon'),
   loadingIcon: alias('computedIcon'),
