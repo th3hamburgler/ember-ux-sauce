@@ -20,6 +20,8 @@
   height            : rs(5);
   max-width         : 100%;
   min-width         : rs(16);
+  width             : auto;
+  width             : fit-content;
   -webkit-appearance: none;
 
   @include mq(tablet) {

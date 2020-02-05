@@ -4,7 +4,9 @@ The button and button-link components are used for actions. This could be to sub
 
 To see a full list check out the [api page](../api/components/uxs-button)
 
-## Display Types
+## Button Styles
+
+UXS ships with 3 styles of buttons.
 
 ### Contained
 
@@ -25,6 +27,8 @@ To see a full list check out the [api page](../api/components/uxs-button)
 </div>
 
 ## Leading Icon
+
+Buttons can also include icons.
 
 ### Contained
 
