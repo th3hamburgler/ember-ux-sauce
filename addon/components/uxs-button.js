@@ -41,11 +41,11 @@ const Button = Component.extend(Buttonable, Clickable, {
   */
   bubbles: false,
   /**
-    Set the color of the button.
+    Set the color of the component.
 
     UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-button--my-custom-color_
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-component--my-custom-color_
 
     @argument color
     @type     String
@@ -54,7 +54,7 @@ const Button = Component.extend(Buttonable, Clickable, {
    */
   color: 'primary',
   /**
-    Set to true to disable this button.
+    Set to true to disable this component.
 
     This will activate it's disabled style and also prevent any actions from being fired.
 
@@ -73,7 +73,7 @@ const Button = Component.extend(Buttonable, Clickable, {
     */
   layout,
   /**
-    Set to true if the button has already been pressed or should be disabled while another action takes place. If the button is passed a task it will display the loading state automatically while the task is running
+    Set to true if the component has already been pressed or should be disabled while another action takes place. If the component is passed a task it will display the loading state automatically while the task is running
 
     If the _loadingText_ argument has been provided this will be displayed, defaults to "Loading…".
 
@@ -86,7 +86,7 @@ const Button = Component.extend(Buttonable, Clickable, {
    */
   loading: oneWay('task.isRunning'),
   /**
-    Add a custom name to your button, used for aria labels & test selectors.
+    Add a custom name to your component, used for aria labels & test selectors.
 
     By default this will be the same as the _text_ argument unless you parse a different value.
 
@@ -110,15 +110,15 @@ const Button = Component.extend(Buttonable, Clickable, {
     Add an html role to the item for accessibility
 
     @argument role
-    @default  'button'
+    @default  'component'
     @type     string
     @public
   */
   role: 'button',
   /**
-    Set's the button style to a selected state.
+    Set's the component style to a selected state.
 
-    Can be used to toggle buttons or to infer an active state without disabling the buttons action.
+    Can be used to toggle components or to infer an active state without disabling the components action.
 
     @argument selected
     @type     Boolean
@@ -127,14 +127,14 @@ const Button = Component.extend(Buttonable, Clickable, {
    */
   selected: null,
   /**
-    Set the style of the button.
+    Set the style of the component.
 
     UXS ships with the following styles:
     - contained (default)
     - outlined
     - naked
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-button--my-custom-style
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-component--my-custom-style
 
     @argument style
     @type     String
@@ -163,7 +163,7 @@ const Button = Component.extend(Buttonable, Clickable, {
   */
   task: null,
   /**
-    Set the border radius of the button.
+    Set the border radius of the component.
 
     UXS ships with the following styles:
     - rounded (default)
@@ -177,7 +177,7 @@ const Button = Component.extend(Buttonable, Clickable, {
    */
   radius: 'rounded',
   /**
-    The buttons text, this can be set as the first positional parameter.
+    The components text, this can be set as the first positional parameter.
 
     It will also default to the components name.
 

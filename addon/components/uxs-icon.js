@@ -2,6 +2,10 @@ import Component from '@ember/component';
 import layout from '../templates/components/uxs-icon';
 import Buttonable from 'ember-ux-sauce/mixins/buttonable';
 import Clickable from 'ember-ux-sauce/mixins/clickable';
+import {
+  oneWay
+} from '@ember/object/computed';
+
 export const ICON_STYLES = {
   REGULAR: 'regular',
   LARGE: 'large',
@@ -17,44 +21,158 @@ export const ICON_STYLES = {
   @public
 */
 const Icon = Component.extend(Buttonable, Clickable, {
-  layout,
   /**
-    The BEM base name for this component
+   The BEM base name for this component
 
-    @argument base
-    @type     String
-    @default  "uxs-icon"
-    @public
+   @argument base
+   @type     String
+   @default  'uxs-icon'
+   @public
    */
   base: 'uxs-icon',
   /**
-    Set the style of the icon.
+    Return true to allow this component event to
+    bubble to parent elements
+
+    @argument bubbles
+    @default  false
+    @type     {boolean}
+    @public
+  */
+  bubbles: false,
+  /**
+    Set the color of the component.
+
+    UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
+
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-component--my-custom-color_
+
+    @argument color
+    @type     String
+    @default  'dark'
+    @public
+   */
+  color: 'dark',
+  /**
+    Set to true to disable this component.
+
+    This will activate it's disabled style and also prevent any actions from being fired.
+
+    @argument disabled
+    @type     Boolean
+    @default  false
+    @public
+   */
+  disabled: oneWay('task.isRunning'),
+  /**
+    Path to the component template file
+
+    @property layout
+    @type     String
+    @private
+    */
+  layout,
+  /**
+    Set to true if the component has already been pressed or should be disabled while another action takes place. If the component is passed a task it will display the loading state automatically while the task is running
+
+    If the _loadingText_ argument has been provided this will be displayed, defaults to "Loading…".
+
+    This will activate it's loading style and also prevent any actions from being fired..
+
+    @argument loading
+    @type     Boolean
+    @default  false
+    @public
+   */
+  loading: oneWay('task.isRunning'),
+  /**
+    Add a custom name to your component, used for aria labels & test selectors.
+
+    By default this will be the same as the _text_ argument unless you parse a different value.
+
+    @argument name
+    @type     String
+    @default  null
+    @public
+   */
+  name: true,
+  /**
+    The name of the action to fire on click<br>
+    NOTE: if you assign a value to this action it will block the dom event and prevent bubbling by default
+
+    @argument onClick
+    @default  null
+    @type     closure
+    @public
+  */
+  onClick: null,
+  /**
+    Add an html role to the item for accessibility
+
+    @argument role
+    @default  'button'
+    @type     string
+    @public
+  */
+  role: 'button',
+  /**
+    Set's the component style to a selected state.
+
+    Can be used to toggle components or to infer an active state without disabling the components action.
+
+    @argument selected
+    @type     Boolean
+    @default  selected
+    @public
+   */
+  selected: null,
+  /**
+    Set the style of the component.
 
     UXS ships with the following styles:
-    - regular
-    - large
+    - contained (default)
+    - outlined
+    - naked
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-icon--my-custom-style
+    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-component--my-custom-style
 
     @argument style
     @type     String
-    @default  null
+    @default  'regular'
     @public
    */
   style: ICON_STYLES.REGULAR,
   /**
-    Set the color of the icon.
+    The html tag name for the root of the component
 
-    UXS ships with the following stock color: primary, accent, warning, error, dark, grey, mid, light & white.
+    @argument  tagName
+    @type       String
+    @default    'div'
+    @public
+    */
+  tagName: 'div',
+  /**
+    The name of the ember concurrency task to
+    perform on click. If a task is defined that
+    will take presedence over an onClick action
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-icon--my-custom-color_
+    @argument task
+    @default  null
+    @type     task
+    @public
+  */
+  task: null,
+  /**
+    The icon svg path, this can be set as the first positional parameter.
 
-    @argument color
+    It will also default to the components name.
+
+    @argument icon
     @type     String
     @default  null
     @public
    */
-  color: 'dark',
+  icon: null,
   // Methods
   init() {
     this._super(...arguments);
@@ -71,101 +189,3 @@ Icon.reopenClass({
 });
 
 export default Icon;
-
-// const FormTip = Component.extend(Buttonable, Clickable, {
-//   layout,
-//   //
-//   // Arguments
-//   // ---------
-//   /**
-//     The BEM base name for this component
-//
-//     @argument base
-//     @type     String
-//     @default  "uxs-icon"
-//     @public
-//    */
-//   base: 'uxs-icon',
-//   /**
-//     Set the style of the component.
-//
-//     UXS ships with the following stock styles: primary, accent, warning, error, dark, grey, mid, light & white.
-//
-//     You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-icon--my-custom-style_
-//
-//     @argument style
-//     @type     String
-//     @default  null
-//     @public
-//    */
-//   style: null,
-//   /**
-//     Set to true to use an svg icon
-//
-//     @argument svg
-//     @type     Boolean
-//     @default  false
-//     @public
-//    */
-//   svg: false,
-//   /**
-//     Set to true to disable this component.
-//
-//     This will activate it's disabled style and also prevent any actions from being fired and links working.
-//
-//     @argument disabled
-//     @type     Boolean
-//     @default  false
-//     @public
-//    */
-//   disabled: false,
-//   /**
-//     Style the icon inline with sibling components.
-//
-//     @argument inline
-//     @type     Boolean
-//     @default  false
-//     @public
-//    */
-//   inline: false,
-//   /**
-//     Set the size of the component. Default is medium.
-//
-//     UXS ships with the following stock sizes: giant, huge, large, medium, small, tiny.
-//
-//     You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.button--my-massive-size_
-//
-//     @argument size
-//     @type     String
-//     @default  null
-//     @public
-//    */
-//   size: 'medium',
-//
-//   /**
-//     The name of the component, will be used as the value for all test selectors.
-//     If set to false the test selector is not rendered.
-//
-//     @argument name
-//     @default  true
-//     @type     {(boolean,string)}
-//     @public
-//   */
-//   name: true,
-//   // Methods
-//   init() {
-//     this._super(...arguments);
-//     this.registerModifiers([
-//       'disabled',
-//       '*size',
-//       '*style',
-//       'inline',
-//     ]);
-//   },
-// });
-//
-// FormTip.reopenClass({
-//   positionalParams: ['icon']
-// });
-//
-// export default FormTip;
