@@ -2,13 +2,6 @@ import Component from '@ember/component';
 import layout from '../templates/components/uxs-list';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import Testable from 'ember-ux-sauce/mixins/testable';
-import {
-  computed,
-  get
-} from '@ember/object';
-import {
-  isEmpty
-} from '@ember/utils';
 
 /**
   A component to render a resource list
@@ -19,30 +12,41 @@ import {
   {{/uxs-list}}
   ```
   @class UXS List
+  @yield {Hash} list
+  @yield {Component} list.item uxs-list/item
+  @yield {Component} list.itemLink uxs-list/item-link
+  @yield {Component} list.notice uxs-list/notice
   @public
 */
 export default Component.extend(BEMComponent, Testable, {
-  // Attributes
+  /**
+    Path to the component template file
+
+    @property layout
+    @type     String
+    @private
+    */
   layout,
   /**
-    The base css class name 'uxs-list'
+   The BEM base name for this component
 
-    @field base
-    @type String
+   @argument base
+   @type     String
+   @default  'uxs-list'
+   @public
    */
   base: 'uxs-list',
-  // Arguments
   /**
-    Set to true if this lists items should include a border
+    Include a bottom border to each list item
 
     @argument bordered
     @type     Boolean
-    @default  false
+    @default  true
     @public
    */
-  bordered: false,
+  bordered: true,
   /**
-    Set to true if this list should grow to fit the flex box parent
+    Set to true if this list should grow vertically to fill the flex box parent
 
     @argument grow
     @type     Boolean
@@ -51,31 +55,30 @@ export default Component.extend(BEMComponent, Testable, {
    */
   grow: false,
   /**
-    Set the style of the splash component.
+    Add a custom name to your component, used for aria labels & test selectors.
 
-    UXS ships with the following stock styles: primary, accent, warning, error, dark, grey, mid, light & white.
+    By default this will be the same as the _text_ argument unless you parse a different value.
 
-    You can customise your component by using any string here and adding your own css for the custom modifier e.g. _.uxs-splash--my-custom-style_
-
-    @argument style
+    @argument name
     @type     String
     @default  null
     @public
    */
-  style: null,
-  // Computed
-  parentStyle: computed('style', function() {
-    const style = get(this, 'style');
-    if (!isEmpty(style)) {
-      return `parent-${style}`;
-    }
-  }),
+  name: true,
+  /**
+    Add an html role to the component for accessibility
+
+    @argument role
+    @default  'list'
+    @type     string
+    @public
+  */
+  role: 'list',
   // Methods
   init() {
     this._super(...arguments);
     this.registerModifiers([
       'bordered',
-      '*style',
       'grow',
     ]);
   },

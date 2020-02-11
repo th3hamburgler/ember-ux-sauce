@@ -4,7 +4,7 @@ import {
 } from '@ember/object';
 
 export default Controller.extend({
-  items: computed(function() {
+  rows: computed(function() {
     return [{
         title: "Item One",
         location: "United Kingdom",

@@ -107,7 +107,7 @@ const Icon = Component.extend(Buttonable, Clickable, {
   */
   onClick: null,
   /**
-    Add an html role to the item for accessibility
+    Add an html role to the component for accessibility
 
     @argument role
     @default  'button'

@@ -149,7 +149,7 @@ const Fab = Component.extend(Buttonable, Clickable, {
    */
   param2: null,
   /**
-    Add an html role to the item for accessibility
+    Add an html role to the component for accessibility
 
     @argument role
     @default  'button'

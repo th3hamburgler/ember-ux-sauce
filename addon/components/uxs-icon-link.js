@@ -72,7 +72,7 @@ export default LinkComponent.extend(Buttonable, {
    */
   name: true,
   /**
-    Add an html role to the item for accessibility
+    Add an html role to the component for accessibility
 
     @argument role
     @default  'link'
