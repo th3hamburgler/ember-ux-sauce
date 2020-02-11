@@ -1,7 +1,26 @@
 # List Avatars
 
-Avatars are used to display infomation in a square or circle.
+Avatars are used to display graphical infomation in a square or circle.
 
+## Image Avatars
+
+Use an avatar to display an image.
+
+{{docs/uxs-list/avatar/image-demo}}
+
+## Icon Avatars
+
+Use an avatar to display an svg icon/image.
+
+{{docs/uxs-list/avatar/icon-demo}}
+
+## Text Avatars
+
+Use an avatar to display short text like a count or initials
+
+{{docs/uxs-list/avatar/text-demo}}
+
+<!--
 ## Image Avatars
 
 Use images avatars to display an image.
@@ -42,3 +61,4 @@ Here's an example of the avatars in all stock sizes:
 
 {{args-table/size-options}}
 {{args-table/style-options}}
+-->

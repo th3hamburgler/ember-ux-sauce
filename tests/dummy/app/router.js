@@ -33,7 +33,7 @@ Router.map(function() {
 
     this.route('lists', function() {
       this.route('index');
-      // this.route('avatars');
+      this.route('avatars');
       // this.route('subheadings');
       // this.route('notices');
       this.route('pagination');

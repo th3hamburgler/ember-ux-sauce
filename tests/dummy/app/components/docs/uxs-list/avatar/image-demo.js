@@ -1,6 +1,6 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  bordered: false,
-  rounded: true,
+  content: 'https://i.pravatar.cc/144',
+  color: 'accent',
 });
