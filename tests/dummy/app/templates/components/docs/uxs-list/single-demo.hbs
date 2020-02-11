@@ -1,0 +1,25 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="single-list-demo.hbs"}}
+
+    {{#uxs-list as |list|}}
+      {{#each @rows as |row|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatar "face" icon=true color="grey"}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title row.title}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.meta "More"}}
+          {{/item.aside}}
+        {{/list.item}}
+      {{/each}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "single-list-demo.hbs"}}
+
+{{/docs-demo}}

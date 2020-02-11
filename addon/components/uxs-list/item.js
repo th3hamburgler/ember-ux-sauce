@@ -3,7 +3,9 @@ import layout from '../../templates/components/uxs-list/item';
 import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
 import Clickable from 'ember-ux-sauce/mixins/clickable';
 import Testable from 'ember-ux-sauce/mixins/testable';
-
+import {
+  oneWay
+} from '@ember/object/computed';
 /**
   A component to render a list item
 
@@ -54,7 +56,17 @@ export default Component.extend(BEMComponent, Clickable, Testable, {
    */
   bordered: true,
   /**
-    Set to true to disable this item.
+    Return true to allow this component event to
+    bubble to parent elements
+
+    @argument bubbles
+    @default  false
+    @type     {boolean}
+    @public
+  */
+  bubbles: false,
+  /**
+    Set to true to disable this component.
 
     This will activate it's disabled style and also prevent any actions from being fired.
 
@@ -63,7 +75,20 @@ export default Component.extend(BEMComponent, Clickable, Testable, {
     @default  false
     @public
    */
-  disabled: false,
+  disabled: oneWay('task.isRunning'),
+  /**
+    Set to true if the component has already been pressed or should be disabled while another action takes place. If the component is passed a task it will display the loading state automatically while the task is running
+
+    If the _loadingText_ argument has been provided this will be displayed, defaults to "Loading…".
+
+    This will activate it's loading style and also prevent any actions from being fired..
+
+    @argument loading
+    @type     Boolean
+    @default  false
+    @public
+   */
+  loading: oneWay('task.isRunning'),
   /**
     Add a custom name to your item, used for aria labels & test selectors.
 
@@ -74,6 +99,27 @@ export default Component.extend(BEMComponent, Clickable, Testable, {
    */
   name: true,
   /**
+    The name of the action to fire on click<br>
+    NOTE: if you assign a value to this action it will block the dom event and prevent bubbling by default
+
+    @argument onClick
+    @default  null
+    @type     closure
+    @public
+  */
+  onClick: null,
+  /**
+    The name of the ember concurrency task to
+    perform on click. If a task is defined that
+    will take presedence over an onClick action
+
+    @argument task
+    @default  null
+    @type     task
+    @public
+  */
+  task: null,
+  /**
     Add an html role to the component for accessibility
 
     @argument role
@@ -81,7 +127,7 @@ export default Component.extend(BEMComponent, Clickable, Testable, {
     @type     string
     @public
   */
-  role: 'item',
+  role: 'listitem',
   /**
     The html tag name for the root of the component
 

@@ -10,64 +10,25 @@ Lists are a continuous group of text or images. They are composed of items conta
 
 Single-line list items contain a maximum of one line of text.
 
-{{#uxs-list as |list|}}
-  {{#each rows as |row|}}
-    {{#list.item as |item|}}
-      {{#item.aside}}
-        {{item.avatar "face" icon=true color="grey"}}
-      {{/item.aside}}
-      {{#item.body}}
-        {{item.title "One Line Item"}}
-      {{/item.body}}
-      {{#item.aside}}
-        {{item.meta "More"}}
-      {{/item.aside}}
-    {{/list.item}}
-  {{/each}}
-{{/uxs-list}}
+This demo uses an icon avatar and clickable meta text for the action.
+
+{{docs/uxs-list/single-demo rows=rows}}
 
 ### Two-line list
 
 Two-line list items contain a maximum of two lines of text.
 
-{{#uxs-list as |list|}}
-  {{#each rows as |row|}}
-    {{#list.item as |item|}}
-      {{#item.aside}}
-        {{item.avatar "face" icon=true color="grey"}}
-      {{/item.aside}}
-      {{#item.body}}
-        {{item.title "One Line Item"}}
-        {{item.meta "Secondary Text"}}
-      {{/item.body}}
-      {{#item.aside}}
-        {{item.meta "More"}}
-      {{/item.aside}}
-    {{/list.item}}
-  {{/each}}
-{{/uxs-list}}
+This demo uses a text avatar and an icon action.
+
+{{docs/uxs-list/two-line-demo rows=rows}}
 
 ### Three-line list
 
 Three-line list items contains a maximum of three lines of text.
 
-{{#uxs-list as |list|}}
-  {{#each rows as |row|}}
-    {{#list.item as |item|}}
-      {{#item.aside}}
-        {{item.avatar "face" icon=true color="grey"}}
-      {{/item.aside}}
-      {{#item.body}}
-        {{item.title "One Line Item"}}
-        {{item.meta "Secondary line text"}}
-        {{item.meta "Tertiary line text."}}
-      {{/item.body}}
-      {{#item.aside}}
-        {{item.meta "More"}}
-      {{/item.aside}}
-    {{/list.item}}
-  {{/each}}
-{{/uxs-list}}
+This demo uses an image avatar and a meta text link action.
+
+{{docs/uxs-list/three-line-demo rows=rows}}
 
 ## Structure
 
@@ -87,13 +48,25 @@ List items can contain two types of child components to control their horizontal
 
 The `item.body` component should be used to contain the primary text. This components width will scale with the available space.
 
-[List Body API Docs](/docs/api/components/uxs-list/body)
+This component is an alias of the [uxs-div](/docs/api/components/uxs-div) component with a base css class override.
 
 ### Aside
 
 The `item.aside` component should be used to contain any supporting visual data like avatars and icons. It can also be used to display clickable secondary actions icons and meta text.
 
-[List Aside API Docs](/docs/api/components/uxs-list/aside)
+This component is an alias of the [uxs-div](/docs/api/components/uxs-div) component with a base css class override.
+
+### Title
+
+The primary text for an item is displayed in bold text. There should only be one title per list item.
+
+This component is an alias of the [uxs-text](/docs/api/components/uxs-text) component with a base css class override.
+
+### Meta
+
+Any suplimentary text for an item is displayed in a lighter text.
+
+This component is an alias of the [uxs-text](/docs/api/components/uxs-text) component with a base css class override.
 
 <!--
 ## Basic Example

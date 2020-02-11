@@ -81,7 +81,7 @@ export default LinkComponent.extend(BEMComponent, Testable, {
     @type     string
     @public
   */
-  role: 'item',
+  role: 'listitem',
   /**
     The html tag name for the root of the component
 

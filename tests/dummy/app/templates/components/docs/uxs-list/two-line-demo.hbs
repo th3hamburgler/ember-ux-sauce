@@ -1,0 +1,26 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="two-line-list-demo.hbs"}}
+
+    {{#uxs-list as |list|}}
+      {{#each @rows as |row|}}
+        {{#list.item as |item|}}
+          {{#item.aside}}
+            {{item.avatar row.count text=true color="grey"}}
+          {{/item.aside}}
+          {{#item.body}}
+            {{item.title row.title}}
+            {{item.meta row.location}}
+          {{/item.body}}
+          {{#item.aside}}
+            {{item.action "chevron_right"}}
+          {{/item.aside}}
+        {{/list.item}}
+      {{/each}}
+    {{/uxs-list}}
+
+  {{/demo.example}}
+
+  {{demo.snippet "two-line-list-demo.hbs"}}
+
+{{/docs-demo}}
