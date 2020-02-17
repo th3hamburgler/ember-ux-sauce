@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1
+
+Minor scss changes to the spacing helpers and typography variables
+
 ## 2.0.0
 
 ### UXS 2.0
