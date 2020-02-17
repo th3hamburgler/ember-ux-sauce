@@ -10,14 +10,13 @@ The following classes are available to use to apply space to your designs. Utili
 
 ## Spacing Scale
 
-The following spacing scale defines the modifiers and scale of spacing helper classess. The key is the modifer and value is the scale.
+The following spacing scale defines the modifiers and scale of spacing helper classes. The key is the modifier and value is the scale.
 
 ```
 $spacing-scale: (
   "0" : 0,
   "½" : 0.5,
   "1" : 1,
-  "1½": 1.5,
   "2" : 2,
   "3" : 3,
   "4" : 4,
@@ -33,107 +32,100 @@ $spacing-scale: (
 
 By default the spacing scale is shared by padding, margin, width & height. _$defaultSpacing_ defines the $baseline ratio to scale, the _$spacing_ has then sets the ratio at the different media query breakpoints.
 
-By default spacing is **12.5px** on mobile and **25px** on tablets and larger.
+By default spacing is **8px** on mobile, tablets and larger but can be customised by overrding the _$spacing_ variable.
 
 ```
-$defaultSpacing: 0.5;
+$defaultSpacing: ;
 
 $spacing: (
-  "tablet": 1,
+  "tablet": 0.5,
 );
 ```
 
-<table class="docs-table-auto docs-w-full">
+<table class="docs-table-auto docs-w-full uxs">
   <thead>
     <tr>
-      <th class="lh-1 pr-1 ta-l">Name</th>
-      <th class="lh-1 pr-1 ta-l">Pixels</th>
-      <th class="lh-1 pr-1 ta-l">Size</th>
+      <th class="lh-3 pr-2 ta-l">Name</th>
+      <th class="lh-3 pr-2 ta-l">Pixels</th>
+      <th class="lh-3 pr-2 ta-l">Size</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="lh-1 pr-½">0</td>
-      <td class="lh-1 pr-½">0px</td>
-      <td class="lh-1 pr-½">
-        <div class="h-1 w-0 bg-p"></div>
+      <td class="lh-3 pr-2">0</td>
+      <td class="lh-3 pr-2">0px</td>
+      <td class="lh-3 pr-2">
+        <div class="h-2 w-0 bg-primary"></div>
       </td>
     </tr>
     <tr>
-      <td class="lh-1 pr-½">½</td>
-      <td class="lh-1 pr-½">12.5px</td>
-      <td class="lh-1 pr-½">
-        <div class="h-1 w-½ bg-p"></div>
+      <td class="lh-3 pr-2">½</td>
+      <td class="lh-3 pr-2">4px</td>
+      <td class="lh-3 pr-2">
+        <div class="h-2 w-½ bg-primary"></div>
       </td>
     </tr>
     <tr>
-      <td class="lh-1 pr-½">1</td>
-      <td class="lh-1 pr-½">25px</td>
-      <td class="lh-1 pr-½">
-        <div class="h-1 w-1 bg-p"></div>
+      <td class="lh-3 pr-2">1</td>
+      <td class="lh-3 pr-2">8px</td>
+      <td class="lh-3 pr-2">
+        <div class="h-2 w-1 bg-primary"></div>
       </td>
     </tr>
     <tr>
-      <td class="lh-1 pr-1½">1½</td>
-      <td class="lh-1 pr-1½">37.5px</td>
-      <td class="lh-1 pr-1½">
-        <div class="h-1 w-1½ bg-p"></div>
+      <td class="lh-3 pr-2">2</td>
+      <td class="lh-3 pr-2">16px</td>
+      <td class="lh-3 pr-2">
+        <div class="h-2 w-2 bg-primary"></div>
       </td>
     </tr>
     <tr>
-      <td class="lh-1 pr-½">2</td>
-      <td class="lh-1 pr-½">50px</td>
-      <td class="lh-1 pr-½">
-        <div class="h-1 w-2 bg-p"></div>
+      <td class="lh-3 pr-2">3</td>
+      <td class="lh-3 pr-2">24px</td>
+      <td class="lh-3 pr-2">
+        <div class="h-2 w-3 bg-primary"></div>
       </td>
     </tr>
     <tr>
-      <td class="lh-1 pr-½">3</td>
-      <td class="lh-1 pr-½">75px</td>
-      <td class="lh-1 pr-½">
-        <div class="h-1 w-3 bg-p"></div>
+      <td class="lh-3 pr-2">4</td>
+      <td class="lh-3 pr-2">32px</td>
+      <td class="lh-3 pr-2">
+        <div class="h-2 w-4 bg-primary"></div>
       </td>
     </tr>
     <tr>
-      <td class="lh-1 pr-½">4</td>
-      <td class="lh-1 pr-½">100px</td>
-      <td class="lh-1 pr-½">
-        <div class="h-1 w-4 bg-p"></div>
+      <td class="lh-3 pr-2">5</td>
+      <td class="lh-3 pr-2">40px</td>
+      <td class="lh-3 pr-2">
+        <div class="h-2 w-5 bg-primary"></div>
       </td>
     </tr>
     <tr>
-      <td class="lh-1 pr-½">5</td>
-      <td class="lh-1 pr-½">125px</td>
-      <td class="lh-1 pr-½">
-        <div class="h-1 w-5 bg-p"></div>
+      <td class="lh-3 pr-2">6</td>
+      <td class="lh-3 pr-2">48px</td>
+      <td class="lh-3 pr-2">
+        <div class="h-2 w-6 bg-primary"></div>
       </td>
     </tr>
     <tr>
-      <td class="lh-1 pr-½">6</td>
-      <td class="lh-1 pr-½">150px</td>
-      <td class="lh-1 pr-½">
-        <div class="h-1 w-6 bg-p"></div>
+      <td class="lh-3 pr-2">8</td>
+      <td class="lh-3 pr-2">64px</td>
+      <td class="lh-3 pr-2">
+        <div class="h-2 w-8 bg-primary"></div>
       </td>
     </tr>
     <tr>
-      <td class="lh-1 pr-½">8</td>
-      <td class="lh-1 pr-½">200px</td>
-      <td class="lh-1 pr-½">
-        <div class="h-1 w-8 bg-p"></div>
+      <td class="lh-3 pr-2">12</td>
+      <td class="lh-3 pr-2">96px</td>
+      <td class="lh-3 pr-2">
+        <div class="h-2 w-12 bg-primary"></div>
       </td>
     </tr>
     <tr>
-      <td class="lh-1 pr-½">12</td>
-      <td class="lh-1 pr-½">300px</td>
-      <td class="lh-1 pr-½">
-        <div class="h-1 w-12 bg-p"></div>
-      </td>
-    </tr>
-    <tr>
-      <td class="lh-1 pr-½">16</td>
-      <td class="lh-1 pr-½">400px</td>
-      <td class="lh-1 pr-½">
-        <div class="h-1 w-16 bg-p"></div>
+      <td class="lh-3 pr-2">16</td>
+      <td class="lh-3 pr-2">128px</td>
+      <td class="lh-3 pr-2">
+        <div class="h-2 w-16 bg-primary"></div>
       </td>
     </tr>
   </tbody>

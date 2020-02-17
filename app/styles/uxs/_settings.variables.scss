@@ -2,42 +2,28 @@
 /* UXS SETTINGS */
 /* ------------ */
 $isDocs: true!default;
-@import 'https://fonts.googleapis.com/css?family=Lato:300,400,700';
-
-// 1. The Grid
+@import 'https://fonts.googleapis.com/css?family=Lato:300,400,700'; // 1. The Grid
 // 2. Media Queries
 // 3. Animations
 // 4. Typography
 // 5. Color Pallet
-
 /* ----------- */
 /* 1. THE GRID */
 /* ----------- */
-
 // The grid baseline dimension used thoughout the app
 // $baseline: 25px!default;
-$baseline: 8px!default;
-
-// The default browser font-size used to convert units to rem
-$root-fs: 16!default;
-
-// By default the spacing scale is shared by padding, margin, width & height
+$baseline: 8px!default; // The default browser font-size used to convert units to rem
+$root-fs: 16!default; // By default the spacing scale is shared by padding, margin, width & height
 // Defailt spacing applies to all media querys (mobile first)
-$defaultSpacing: 2!default;
-// The $spacing hash can be used to apply different spacing at
+$defaultSpacing: 1!default; // The $spacing hash can be used to apply different spacing at
 // different media queries.
-$spacing: (
-  "tablet": 2,
-)
-!default;
-
-// UXS includes a comprehensive numeric spacing scale. One spacing
+$spacing: ()
+!default; // UXS includes a comprehensive numeric spacing scale. One spacing
 // unit is equal to 1 $spacing unit at the relevant media query size
 $spacing-scale: (
   "0" : 0,
   "½" : 0.5,
   "1" : 1,
-  "1½": 1.5,
   "2" : 2,
   "3" : 3,
   "4" : 4,
@@ -47,38 +33,26 @@ $spacing-scale: (
   "12": 12,
   "16": 16,
 )
-!default;
-
-// Default padding sizes, can be overriden from spacing
+!default; // Default padding sizes, can be overriden from spacing
 $defaultPadding: $defaultSpacing;
-$padding: $spacing!default;
-
-// Default margin sizes, can be overriden from spacing
+$padding: $spacing!default; // Default margin sizes, can be overriden from spacing
 // first item is the default (mobile first)
 $defaultMargin: $defaultSpacing;
-$margin: $spacing!default;
-
-// Default $width sizes, can be overriden from spacing
+$margin: $spacing!default; // Default $width sizes, can be overriden from spacing
 // first item is the default (mobile first)
 $defaultWidth: $defaultSpacing;
-$width: $spacing!default;
-
-// Default margin sizes, can be overriden from spacing
+$width: $spacing!default; // Default margin sizes, can be overriden from spacing
 // first item is the default (mobile first)
 $defaultHeight: $defaultSpacing;
-$height: $spacing!default;
-
-// Default border-widths at different media sizes
+$height: $spacing!default; // Default border-widths at different media sizes
 // first item is the default (mobile first)
 $border-width: (
   "phone": 1px,
 )
 !default;
-
 /* ---------------- */
 /* 2. MEDIA QUERIES */
 /* ---------------- */
-
 $breakpoints: (
   "phone"       : 480px,
   // xs
@@ -92,7 +66,6 @@ $breakpoints: (
   // xl
 )
 !default;
-
 $mediaModifiers: (
   // phone is default so no need to add as a utility class modifier
   // xs: 'phone',
@@ -102,171 +75,117 @@ $mediaModifiers: (
   'xl': 'desktop-wide'
 )
 !default;
-
 /* ------------- */
 /* 3. ANIMATIONS */
 /* ------------- */
-
 // The default time for css transition animations
-$transition-duration: 0.2s!default;
-
-// The default timing function for css transition animations
+$transition-duration: 0.2s!default; // The default timing function for css transition animations
 $transition-timing-function: cubic-bezier(.4,0,.2,1)!default;
-
 /* ------------- */
 /* 4. TYPOGRAPHY */
 /* ------------- */
-
 // The default type face
-$font-family: 'Lato', sans-serif;
-$font-family-mono: Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
-
-// The default typeface body text
-$type-body-family: $font-family, sans-serif!default;
-
-// The default weight for body text
-$type-body-weight: 400!default;
-
-// The default typeface light text
-$type-light-family: $font-family, sans-serif!default;
-
-// The default weight for light text
-$type-light-weight: 300!default;
-
-// The default typeface bold text
-$type-bold-family: $font-family, sans-serif!default;
-
-// The default weight for bold text
-$type-bold-weight: 700!default;
-
-// Hash of sizes used thoughout system as modifiers in our mixins
+$font-family: 'Lato', sans-serif!default;
+$font-family-mono: Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace; // The default typeface body text
+$type-body-family: $font-family, sans-serif!default; // The default weight for body text
+$type-body-weight: 400!default; // The default typeface light text
+$type-light-family: $font-family, sans-serif!default; // The default weight for light text
+$type-light-weight: 300!default; // The default typeface bold text
+$type-bold-family: $font-family, sans-serif!default; // The default weight for bold text
+$type-bold-weight: 700!default; // Hash of sizes used thoughout system as modifiers in our mixins
 $defaultWeights: (
   "bold"  : 700,
   "normal": 400,
   "light" : 300, // deprecated due to color clash
   "thin"  : 300,
 )
-!default;
-
-// Our base font size to use with the scale
-$type-base: 18px!default;
-// A scale to use on our type sizes
-$type-scale: 1.618!default;
-
-// The default font-familys
+!default; // Our base font size to use with the scale
+$type-base: 18px!default; // A scale to use on our type sizes
+$type-scale: 1.618!default; // The default font-familys
 // - Headings
 $ff-headline-1: $font-family;
 $ff-headline-2: $font-family;
 $ff-headline-3: $font-family;
 $ff-headline-4: $font-family;
 $ff-headline-5: $font-family;
-$ff-headline-6: $font-family;
-// - Subtitles
+$ff-headline-6: $font-family; // - Subtitles
 $ff-subtitle-1: $font-family;
-$ff-subtitle-2: $font-family;
-// - Body
+$ff-subtitle-2: $font-family; // - Body
 $ff-body-1: $font-family;
-$ff-body-2: $font-family;
-// - Misc
+$ff-body-2: $font-family; // - Misc
 $ff-button: $font-family;
 $ff-caption: $font-family;
-$ff-overline: $font-family;
-
-// The default font-sizes
+$ff-overline: $font-family; // The default font-sizes
 // - Headings
 $fs-headline-1: rem-size(96px);
 $fs-headline-2: rem-size(60px);
 $fs-headline-3: rem-size(48px);
 $fs-headline-4: rem-size(34px);
 $fs-headline-5: rem-size(24px);
-$fs-headline-6: rem-size(20px);
-// - Subtitles
+$fs-headline-6: rem-size(20px); // - Subtitles
 $fs-subtitle-1: rem-size(16px);
-$fs-subtitle-2: rem-size(14px);
-// - Body
+$fs-subtitle-2: rem-size(14px); // - Body
 $fs-body-1: rem-size(16px);
-$fs-body-2: rem-size(14px);
-// - Misc
+$fs-body-2: rem-size(14px); // - Misc
 $fs-button: rem-size(14px);
 $fs-caption: rem-size(12px);
-$fs-overline: rem-size(10px);
-
-// The default line-heights
+$fs-overline: rem-size(10px); // The default line-heights
 // - Headings
 $lh-headline-1: rem-size(96px);
 $lh-headline-2: rem-size(64px);
 $lh-headline-3: rem-size(56px);
 $lh-headline-4: rem-size(40px);
 $lh-headline-5: rem-size(32px);
-$lh-headline-6: rem-size(24px);
-// - Subtitles
+$lh-headline-6: rem-size(24px); // - Subtitles
 $lh-subtitle-1: rem-size(24px);
-$lh-subtitle-2: rem-size(24px);
-// - Body
+$lh-subtitle-2: rem-size(24px); // - Body
 $lh-body-1: rem-size(24px);
-$lh-body-2: rem-size(24px);
-// - Misc
+$lh-body-2: rem-size(24px); // - Misc
 $lh-button: rem-size(24px);
 $lh-caption: rem-size(16px);
-$lh-overline: rem-size(16px);
-
-// The default font-weights
+$lh-overline: rem-size(16px); // The default font-weights
 // - Headings
 $fw-headline-1: 300;
 $fw-headline-2: 300;
 $fw-headline-3: 400;
 $fw-headline-4: 400;
 $fw-headline-5: 400;
-$fw-headline-6: 500;
-// - Subtitles
+$fw-headline-6: 500; // - Subtitles
 $fw-subtitle-1: 400;
-$fw-subtitle-2: 500;
-// - Body
+$fw-subtitle-2: 500; // - Body
 $fw-body-1: 400;
-$fw-body-2: 400;
-// - Misc
+$fw-body-2: 400; // - Misc
 $fw-button: 500;
 $fw-caption: 400;
-$fw-overline: 400;
-
-// The default letter spacing
+$fw-overline: 400; // The default letter spacing
 // - Headings
 $ls-headline-1: rem-size(-1.5px);
 $ls-headline-2: rem-size(-0.5px);
 $ls-headline-3: rem-size(0px);
 $ls-headline-4: rem-size(0.25px);
 $ls-headline-5: rem-size(0px);
-$ls-headline-6: rem-size(0.15px);
-// - Subtitles
+$ls-headline-6: rem-size(0.15px); // - Subtitles
 $ls-subtitle-1: rem-size(0.15px);
-$ls-subtitle-2: rem-size(0.1px);
-// - Body
+$ls-subtitle-2: rem-size(0.1px); // - Body
 $ls-body-1: rem-size(0.5px);
-$ls-body-2: rem-size(0.25px);
-// - Misc
+$ls-body-2: rem-size(0.25px); // - Misc
 $ls-button: rem-size(1.25px);
 $ls-caption: rem-size(0.4px);
-$ls-overline: rem-size(1.5px);
-
-// The default font case
+$ls-overline: rem-size(1.5px); // The default font case
 // - Headings
 $fc-headline-1: none;
 $fc-headline-2: none;
 $fc-headline-3: none;
 $fc-headline-4: none;
 $fc-headline-5: none;
-$fc-headline-6: none;
-// - Subtitles
+$fc-headline-6: none; // - Subtitles
 $fc-subtitle-1: none;
-$fc-subtitle-2: none;
-// - Body
+$fc-subtitle-2: none; // - Body
 $fc-body-1: none;
-$fc-body-2: none;
-// - Misc
+$fc-body-2: none; // - Misc
 $fc-button: uppercase;
 $fc-caption: none;
 $fc-overline: uppercase;
-
 $defaultTypeScale: (
   'headline-1': ('size' : $fs-headline-1, 'height':$lh-headline-1, 'weight': $fw-headline-1, 'spacing':$ls-headline-1, 'case' : $fc-headline-1),
   'headline-2': ('size' : $fs-headline-2, 'height':$lh-headline-2, 'weight': $fw-headline-2, 'spacing':$ls-headline-2, 'case' : $fc-headline-2),
@@ -282,31 +201,22 @@ $defaultTypeScale: (
   'caption'   : ('size' : $fs-caption, 'height':$lh-caption, 'weight': $fw-caption, 'spacing':$ls-caption, 'case' : $fc-caption),
   'overline'  : ('size' : $fs-overline, 'height':$lh-overline, 'weight': $fw-overline, 'spacing':$ls-overline, 'case' : $fc-overline),
 )
-!default;
-
-// Anything from 45 to 75 characters is regarded as a satisfactory
+!default; // Anything from 45 to 75 characters is regarded as a satisfactory
 // length of line for a single-column page
 // The 66-character line (counting both letters and spaces) is ideal
 // http://mikeyanderson.com/optimal_characters_per_line
-
 // Max with for content sized text
 $max-width-small: rs(54)!default;
 $max-width-detail: $max-width-small; // deprecated var
-
 // Max with for detail sized text
 $max-width-medium: rs(64)!default;
 $max-width-content: $max-width-medium; // deprecated var
-
 /* --------------- */
 /* 5. COLOR PALLET */
 /* --------------- */
-
 // Is this a high contrast theme
-$high-contrast: false!default;
-
-// A colors lightness that when exceed will require a dark contrast
+$high-contrast: false!default; // A colors lightness that when exceed will require a dark contrast
 $contrast-threshold: 60!default;
-
 /*
  * Colors https://coolors.co/1c77c3-141414-5fad56-eca400-db3a34
  */
@@ -315,7 +225,6 @@ $c-grey: shade-light($c-dark, 5, 15)!default;
 $c-mid: shade-light($c-dark, 10, 15)!default;
 $c-light: shade-light($c-dark, 14, 15)!default;
 $c-white: rgb(255,255,255)!default;
-
 /* Primary */
 $c-primary: #1C77C3!default;
 $c-primary-1: $c-primary!default;
@@ -366,17 +275,14 @@ $defaultColors: (
   "transparent": transparent,
 )
 !default;
-
 /* Aliases */
 $c-sk-back: $c-mid!default;
 $c-sk-front: $c-light!default;
 $c-sk-light: lighten($c-sk-front, 2%)!default;
-
 /* ------- */
 /* BUTTONS */
 /* ------- */
 // todo: move to button component scss file
-
 /*
  * Buttons
  */
