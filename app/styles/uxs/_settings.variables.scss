@@ -2,7 +2,8 @@
 /* UXS SETTINGS */
 /* ------------ */
 $isDocs: true!default;
-@import 'https://fonts.googleapis.com/css?family=Lato:300,400,700'; // 1. The Grid
+@import 'https://fonts.googleapis.com/css?family=Lato:300,400,700';
+/* 1. The Grid */
 // 2. Media Queries
 // 3. Animations
 // 4. Typography
@@ -84,15 +85,19 @@ $transition-timing-function: cubic-bezier(.4,0,.2,1)!default;
 /* ------------- */
 /* 4. TYPOGRAPHY */
 /* ------------- */
-// The default type face
+/* The default type faces */
 $font-family: 'Lato', sans-serif!default;
-$font-family-mono: Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace; // The default typeface body text
-$type-body-family: $font-family, sans-serif!default; // The default weight for body text
-$type-body-weight: 400!default; // The default typeface light text
-$type-light-family: $font-family, sans-serif!default; // The default weight for light text
-$type-light-weight: 300!default; // The default typeface bold text
-$type-bold-family: $font-family, sans-serif!default; // The default weight for bold text
-$type-bold-weight: 700!default; // Hash of sizes used thoughout system as modifiers in our mixins
+$font-family-mono: Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace!default;
+/* The default typeface & weights for regular text */
+$type-regular-family: $font-family, sans-serif!default;
+$type-regular-weight: 400!default;
+/* The default typeface & weights for light text */
+$type-light-family: $font-family, sans-serif!default;
+$type-light-weight: 300!default;
+/* The default typeface & weights for bold text */
+$type-bold-family: $font-family, sans-serif!default;
+$type-bold-weight: 700!default;
+/* Hash of sizes used thoughout system as modifiers in our mixins */
 $defaultWeights: (
   "bold"  : 700,
   "normal": 400,
@@ -100,92 +105,97 @@ $defaultWeights: (
   "thin"  : 300,
 )
 !default; // Our base font size to use with the scale
-$type-base: 18px!default; // A scale to use on our type sizes
-$type-scale: 1.618!default; // The default font-familys
+/* Headings */
+$ff-headline: $font-family!default;
+$ff-headline-1: $ff-headline!default;
+$ff-headline-2: $ff-headline!default;
+$ff-headline-3: $ff-headline!default;
+$ff-headline-4: $ff-headline!default;
+$ff-headline-5: $ff-headline!default;
+$ff-headline-6: $ff-headline!default;
+/* Subtitles */
+$ff-subtitle: $font-family!default;
+$ff-subtitle-1: $ff-subtitle!default;
+$ff-subtitle-2: $ff-subtitle!default;
+/* Body */
+$ff-body: $font-family!default;
+$ff-body-1: $ff-body!default;
+$ff-body-2: $ff-body!default;
+/* Misc */
+$ff-caption: $font-family!default;
+$ff-overline: $font-family!default;
+/* The default font-sizes */
+$ff-button: $font-family!default; // - Headings
+/* Font Sizes */
+$fs-headline-1: rem-size(96px)!default;
+$fs-headline-2: rem-size(60px)!default;
+$fs-headline-3: rem-size(48px)!default;
+$fs-headline-4: rem-size(34px)!default;
+$fs-headline-5: rem-size(24px)!default;
+$fs-headline-6: rem-size(20px)!default; // - Subtitles
+$fs-subtitle-1: rem-size(16px)!default;
+$fs-subtitle-2: rem-size(14px)!default; // - Body
+$fs-body-1: rem-size(16px)!default;
+$fs-body-2: rem-size(14px)!default; // - Misc
+$fs-button: rem-size(14px)!default;
+$fs-caption: rem-size(12px)!default;
+$fs-overline: rem-size(10px)!default; // The default line-heights
 // - Headings
-$ff-headline-1: $font-family;
-$ff-headline-2: $font-family;
-$ff-headline-3: $font-family;
-$ff-headline-4: $font-family;
-$ff-headline-5: $font-family;
-$ff-headline-6: $font-family; // - Subtitles
-$ff-subtitle-1: $font-family;
-$ff-subtitle-2: $font-family; // - Body
-$ff-body-1: $font-family;
-$ff-body-2: $font-family; // - Misc
-$ff-button: $font-family;
-$ff-caption: $font-family;
-$ff-overline: $font-family; // The default font-sizes
+$lh-headline-1: rem-size(96px)!default;
+$lh-headline-2: rem-size(64px)!default;
+$lh-headline-3: rem-size(56px)!default;
+$lh-headline-4: rem-size(40px)!default;
+$lh-headline-5: rem-size(32px)!default;
+$lh-headline-6: rem-size(24px)!default; // - Subtitles
+$lh-subtitle-1: rem-size(24px)!default;
+$lh-subtitle-2: rem-size(24px)!default; // - Body
+$lh-body-1: rem-size(24px)!default;
+$lh-body-2: rem-size(24px)!default; // - Misc
+$lh-button: rem-size(24px)!default;
+$lh-caption: rem-size(16px)!default;
+$lh-overline: rem-size(16px)!default; // The default font-weights
 // - Headings
-$fs-headline-1: rem-size(96px);
-$fs-headline-2: rem-size(60px);
-$fs-headline-3: rem-size(48px);
-$fs-headline-4: rem-size(34px);
-$fs-headline-5: rem-size(24px);
-$fs-headline-6: rem-size(20px); // - Subtitles
-$fs-subtitle-1: rem-size(16px);
-$fs-subtitle-2: rem-size(14px); // - Body
-$fs-body-1: rem-size(16px);
-$fs-body-2: rem-size(14px); // - Misc
-$fs-button: rem-size(14px);
-$fs-caption: rem-size(12px);
-$fs-overline: rem-size(10px); // The default line-heights
+$fw-headline-1: 300!default;
+$fw-headline-2: 300!default;
+$fw-headline-3: 400!default;
+$fw-headline-4: 400!default;
+$fw-headline-5: 400!default;
+$fw-headline-6: 500!default; // - Subtitles
+$fw-subtitle-1: 400!default;
+$fw-subtitle-2: 500!default; // - Body
+$fw-body-1: 400!default;
+$fw-body-2: 400!default; // - Misc
+$fw-button: 500!default;
+$fw-caption: 400!default;
+$fw-overline: 400!default; // The default letter spacing
 // - Headings
-$lh-headline-1: rem-size(96px);
-$lh-headline-2: rem-size(64px);
-$lh-headline-3: rem-size(56px);
-$lh-headline-4: rem-size(40px);
-$lh-headline-5: rem-size(32px);
-$lh-headline-6: rem-size(24px); // - Subtitles
-$lh-subtitle-1: rem-size(24px);
-$lh-subtitle-2: rem-size(24px); // - Body
-$lh-body-1: rem-size(24px);
-$lh-body-2: rem-size(24px); // - Misc
-$lh-button: rem-size(24px);
-$lh-caption: rem-size(16px);
-$lh-overline: rem-size(16px); // The default font-weights
+$ls-headline-1: rem-size(-1.5px)!default;
+$ls-headline-2: rem-size(-0.5px)!default;
+$ls-headline-3: rem-size(0px)!default;
+$ls-headline-4: rem-size(0.25px)!default;
+$ls-headline-5: rem-size(0px)!default;
+$ls-headline-6: rem-size(0.15px)!default; // - Subtitles
+$ls-subtitle-1: rem-size(0.15px)!default;
+$ls-subtitle-2: rem-size(0.1px)!default; // - Body
+$ls-body-1: rem-size(0.5px)!default;
+$ls-body-2: rem-size(0.25px)!default; // - Misc
+$ls-button: rem-size(1.25px)!default;
+$ls-caption: rem-size(0.4px)!default;
+$ls-overline: rem-size(1.5px)!default; // The default font case
 // - Headings
-$fw-headline-1: 300;
-$fw-headline-2: 300;
-$fw-headline-3: 400;
-$fw-headline-4: 400;
-$fw-headline-5: 400;
-$fw-headline-6: 500; // - Subtitles
-$fw-subtitle-1: 400;
-$fw-subtitle-2: 500; // - Body
-$fw-body-1: 400;
-$fw-body-2: 400; // - Misc
-$fw-button: 500;
-$fw-caption: 400;
-$fw-overline: 400; // The default letter spacing
-// - Headings
-$ls-headline-1: rem-size(-1.5px);
-$ls-headline-2: rem-size(-0.5px);
-$ls-headline-3: rem-size(0px);
-$ls-headline-4: rem-size(0.25px);
-$ls-headline-5: rem-size(0px);
-$ls-headline-6: rem-size(0.15px); // - Subtitles
-$ls-subtitle-1: rem-size(0.15px);
-$ls-subtitle-2: rem-size(0.1px); // - Body
-$ls-body-1: rem-size(0.5px);
-$ls-body-2: rem-size(0.25px); // - Misc
-$ls-button: rem-size(1.25px);
-$ls-caption: rem-size(0.4px);
-$ls-overline: rem-size(1.5px); // The default font case
-// - Headings
-$fc-headline-1: none;
-$fc-headline-2: none;
-$fc-headline-3: none;
-$fc-headline-4: none;
-$fc-headline-5: none;
-$fc-headline-6: none; // - Subtitles
-$fc-subtitle-1: none;
-$fc-subtitle-2: none; // - Body
-$fc-body-1: none;
-$fc-body-2: none; // - Misc
-$fc-button: uppercase;
-$fc-caption: none;
-$fc-overline: uppercase;
+$fc-headline-1: none!default;
+$fc-headline-2: none!default;
+$fc-headline-3: none!default;
+$fc-headline-4: none!default;
+$fc-headline-5: none!default;
+$fc-headline-6: none!default; // - Subtitles
+$fc-subtitle-1: none!default;
+$fc-subtitle-2: none!default; // - Body
+$fc-body-1: none!default;
+$fc-body-2: none!default; // - Misc
+$fc-button: uppercase!default;
+$fc-caption: none!default;
+$fc-overline: uppercase!default;
 $defaultTypeScale: (
   'headline-1': ('size' : $fs-headline-1, 'height':$lh-headline-1, 'weight': $fw-headline-1, 'spacing':$ls-headline-1, 'case' : $fc-headline-1),
   'headline-2': ('size' : $fs-headline-2, 'height':$lh-headline-2, 'weight': $fw-headline-2, 'spacing':$ls-headline-2, 'case' : $fc-headline-2),

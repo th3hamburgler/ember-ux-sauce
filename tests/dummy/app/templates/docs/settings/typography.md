@@ -61,8 +61,8 @@ The typography system comes with 3 weights; bold, medium and light. These can al
 ### SCSS Defaults
 
     /** Typographic weights **/
-    $type-body-family: 'Lato', sans-serif!default;
-    $type-body-weight: 400!default;
+    $type-regular-family: 'Lato', sans-serif!default;
+    $type-regular-weight: 400!default;
     $type-light-family: 'Lato', sans-serif!default;
     $type-light-weight: 300!default;
     $type-bold-family: 'Lato', sans-serif!default;

@@ -1,11 +1,10 @@
 // Padding Spacing
 
 .p {
-  // default is the spaceing at "1"
-  $default: map-get($spacing-scale, "1") * $defaultPadding;
+  // default alias is the spaceing at "2"
+  $default: map-get($spacing-scale, "2") * $defaultPadding;
   // default padding
   padding : rs($default);
-
   // vertical padding
   &v {
     padding-top   : rs($default);
@@ -102,9 +101,7 @@
       }
     }
   }
-
   /* ----------------- */
   /* PADDING + BORDERS */
   /* ----------------- */
-
 }

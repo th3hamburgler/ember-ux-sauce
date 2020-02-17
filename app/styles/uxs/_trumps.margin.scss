@@ -1,6 +1,36 @@
 // Margin Spacing
 
 .m {
+  // default alias is the spacing at "2"
+  $default: map-get($spacing-scale, "2") * $defaultMargin;
+  // default margin
+  margin  : rs($default);
+  // vertical margin
+  &v {
+    margin-top   : rs($default);
+    margin-bottom: rs($default);
+  }
+  // horizontal margin
+  &h {
+    margin-left : rs($default);
+    margin-right: rs($default);
+  }
+  // top margin
+  &t {
+    margin-top: rs($default);
+  }
+  // right margin
+  &r {
+    margin-right: rs($default);
+  }
+  // bottom margin
+  &b {
+    margin-bottom: rs($default);
+  }
+  // left margin
+  &l {
+    margin-left: rs($default);
+  }
   @each $modifier, $scale in $spacing-scale {
     // All the margin
     &-#{$modifier} {

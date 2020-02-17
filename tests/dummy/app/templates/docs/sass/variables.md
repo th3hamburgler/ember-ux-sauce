@@ -62,10 +62,10 @@ The default styles use one typeface throughout, but it is possible to customise 
 $font-family: 'Lato';
 
 // The default typeface body text
-$type-body-family: $font-family, sans-serif;
+$type-regular-family: $font-family, sans-serif;
 
 // The default weight for body text
-$type-body-weight: 400;
+$type-regular-weight: 400;
 
 // The default typeface light text
 $type-light-family: $font-family, sans-serif;
