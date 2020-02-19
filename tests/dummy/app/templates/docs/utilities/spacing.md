@@ -35,7 +35,7 @@ By default the spacing scale is shared by padding, margin, width & height. _$def
 By default spacing is **8px** on mobile, tablets and larger but can be customised by overrding the _$spacing_ variable.
 
 ```
-$defaultSpacing: ;
+$defaultSpacing: 1;
 
 $spacing: (
   "tablet": 0.5,

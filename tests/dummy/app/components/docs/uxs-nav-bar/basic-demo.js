@@ -1,7 +1,6 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  style: 'grey',
-  title: '',
+  title: 'App Name',
   fixed: false,
 });

@@ -1,0 +1,26 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="drawer-basic-demo.hbs" class="uxs"}}
+
+    <div class="bg-mid">
+
+      {{#uxs-drawer style="standard" as |drawer|}}
+        {{#drawer.header}}
+          {{uxs-headline "Title" 6}}
+          {{uxs-subtitle "subtext" 2}}
+        {{/drawer.header}}
+        {{drawer.divider}}
+        {{#drawer.menu as |menu|}}
+          {{menu.item "Home" class="active"}}
+          {{menu.item "Account"}}
+          {{menu.item "Logout"}}
+        {{/drawer.menu}}
+      {{/uxs-drawer}}
+
+    </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet "drawer-basic-demo.hbs"}}
+
+{{/docs-demo}}

@@ -1,18 +1,20 @@
 {{#docs-demo as |demo|}}
 
-  {{#demo.example name="navbar-basic-demo.hbs"}}
+  {{#demo.example name="nav-bar-basic-demo.hbs" class="uxs"}}
 
-    {{#uxs-navbar style=style title=title fixed=fixed as |bar|}}
+    {{#uxs-nav-bar fixed=fixed as |bar|}}
+      {{bar.title title}}
+      {{bar.spacer}}
       {{#bar.menu as |nav|}}
         {{nav.item "Home"}}
         {{nav.item "Account"}}
         {{nav.item "Logout"}}
       {{/bar.menu}}
-    {{/uxs-navbar}}
+    {{/uxs-nav-bar}}
 
   {{/demo.example}}
 
-  {{#args-table "text-basic-demo" as |table|}}
+  {{#args-table "nav-bar-basic-demo" as |table|}}
     {{#table.row "title" as |row|}}
       {{row.label "Title"}}
       {{row.input title}}
@@ -30,6 +32,6 @@
     {{/table.row}}
   {{/args-table}}
 
-  {{demo.snippet "navbar-basic-demo.hbs"}}
+  {{demo.snippet "nav-bar-basic-demo.hbs"}}
 
 {{/docs-demo}}

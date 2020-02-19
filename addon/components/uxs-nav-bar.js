@@ -18,14 +18,36 @@ import layout from '../templates/components/uxs-nav-bar';
   @public
   @yield {Hash} bar
   @yield {Component} bar.logo
+  @yield {Component} bar.title
   @yield {Component} bar.menu
-  @yield {Component} bar.mobileNav
-  @yield {Component} bar.desktopNav
+  @yield {Component} bar.drawer
 */
 export default Component.extend(BEMComponent, Testable, {
-  // Properties
+  /**
+   The BEM base name for this component
+
+   @argument base
+   @type     String
+   @default  'uxs-button'
+   @public
+   */
   base: 'uxs-nav-bar',
+  /**
+    Path to the component template file
+
+    @property layout
+    @type     String
+    @private
+    */
   layout,
+  /**
+   Set to true to fix the navbar to the top of the screen
+
+   @argument fixed
+   @type     Boolean
+   @default  false
+   @public
+   */
   fixed: false,
   // Methods
   init() {

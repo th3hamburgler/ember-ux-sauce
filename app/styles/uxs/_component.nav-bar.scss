@@ -32,16 +32,135 @@
     // pass false to as color so not to
     // override and svs logo colors
     @include icon(6);
-    max-height  : rs(7);
-    margin-right: rs(3);
+    max-height  : rs(3);
+    margin-right: rs(2);
+    padding     : 0;
     width       : auto;
 
     svg {
-      width: auto;
+      height: 100%;
+      width : auto;
     }
   }
 }
 
+.uxs-overlay {
+  background: rgba($c-dark,.4);
+  bottom    : 0;
+  left      : 0;
+  position  : absolute;
+  top       : 0;
+  right     : 0;
+  z-index   : 10;
+}
+
+.uxs-drawer {
+  background: $c-white;
+  overflow  : auto;
+
+  &--standard {
+    min-width: rs(36);
+    max-width: rs(54);
+  }
+
+  &--bottom,
+  &--modal {
+    @include elevation(16);
+    position: absolute;
+    z-index : 10;
+  }
+
+  &--modal {
+    min-width: rs(36);
+    max-width: rs(54);
+    bottom   : 0;
+    left     : 0;
+    top      : 0;
+  }
+
+  &--bottom {
+    bottom    : 0;
+    left      : 0;
+    right     : 0;
+    max-height: rs(54);
+  }
+
+  &__header {
+    padding: rs(2);
+    @include mq(tablet) {
+      padding: rs(2) rs(3);
+    }
+  }
+
+  &__divider {
+    background: $c-light;
+    height    : rem-size(1px);
+    width     : 100%;
+    // margin    : rs(1,1) 0 rs(1);
+    margin-top: rem-size(-1px);
+  }
+}
+
+.mobile {
+  position     : relative;
+  height       : 812px;
+  margin-bottom: rs(2);
+  overflow     : hidden;
+  @include mq(tablet) {
+    // border       : rs(1) solid $c-dark;
+    box-shadow   : 0 0 0 rs(1.5) $c-dark;
+    border-radius: rs(5);
+    background   : $c-white;
+    width        : 375px;
+
+    &__screen {
+      background: $c-primary;
+      position  : relative;
+      height    : 812px;
+      width     : 375px;
+    }
+
+    &::before {
+      background                : $c-dark;
+      border-bottom-left-radius : 30px;
+      border-bottom-right-radius: 30px;
+      content                   : '';
+      display                   : block;
+      left                      : 85px;
+      position                  : absolute;
+      top                       : 0;
+      height                    : 30px;
+      width                     : 205px;
+      z-index                   : 99;
+    }
+
+    &::after {
+      background   : $c-mid;
+      border-radius: 3px;
+      bottom       : 20px;
+      content      : '';
+      display      : block;
+      height       : 6px;
+      left         : 114px;
+      position     : absolute;
+      width        : 147px;
+      z-index      : 99;
+    }
+  }
+
+  &__spacer {
+    background: transparent;
+    width     : 100%;
+
+    &--top {
+      height: 44px;
+    }
+
+    &--bottom {
+      height: 34px;
+    }
+  }
+}
 // .uxs-navbar {
 //   // color          : $c-white;
 //   display        : flex;

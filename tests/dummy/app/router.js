@@ -40,6 +40,11 @@ Router.map(function() {
       // this.route('tables');
     })
 
+    this.route('menus', function() {
+      this.route('navbar');
+      this.route('drawer');
+    });
+
     this.route('settings', function() {
       this.route('colors');
       this.route('typography');

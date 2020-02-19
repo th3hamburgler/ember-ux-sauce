@@ -2,7 +2,6 @@
   @each $modifier, $background in $defaultColors {
     &-#{$modifier} {
       background-color: $background;
-      color           : contrast-color($background);
     }
   }
 }

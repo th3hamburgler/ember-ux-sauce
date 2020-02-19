@@ -2,7 +2,6 @@
   display       : flex;
   flex-direction: column;
   position      : relative;
-
   // Form Controls
   &__control {
     position     : relative;
@@ -16,9 +15,9 @@
     @include mq(tablet) {
       max-width: rs(48);
       min-width: rs(32);
+      width    : rs(48);
     }
   }
-
   // Form Labels
   &__label {
     $element      : '.uxs-form__label';
@@ -96,9 +95,7 @@
         color: $c-error;
       }
     }
-
   }
-
   // Input Container
   &__datepicker-container,
   &__input-container {
@@ -208,7 +205,6 @@
     line-height   : rs(3);
     user-select   : none;
   }
-
   // Form Inputs
   &__input,
   &__textarea {
@@ -237,7 +233,6 @@
     &--has-suffix {
       padding-right: 0;
     }
-
     // Alignment
     @include align-modifiers;
   }
@@ -259,7 +254,6 @@
       padding-bottom: rs(1.75);
     }
   }
-
   // Input Prefix/Suffix Text
   &__prefix-text,
   &__suffix-text {
@@ -309,7 +303,6 @@
       padding-left: rs(0.5);
     }
   }
-
   // Input Prefix/Suffix
   &__date-icon,
   &__prefix-icon,
@@ -329,7 +322,6 @@
     // to the element below
     pointer-events: none;
   }
-
   // Form Tips & Errors
   &__error,
   &__tip {
@@ -350,7 +342,6 @@
     &--outlined {
       padding: rs(0.5) rs(1.75);
     }
-
   }
   // A tip folling a checkbox or radio control has
   // no horizontal padding
@@ -375,10 +366,8 @@
     }
   }
 }
-
 // Power Select Trigger Component
 .ember-power-select-trigger {
-
   @include body-1;
   align-items    : center;
   background     : transparent;
@@ -420,7 +409,6 @@
       border-top-right-radius: 0;
     }
   }
-
   // Multiple Option Wrapper
   .ember-power-select-multiple-options {
     display       : flex;
@@ -445,7 +433,6 @@
       padding: rs(1.5) rs(1) rs(1.25) rs(1.5);
     }
   }
-
   // Multiple Option Wrapper
   .ember-power-select-multiple-option {
     @include text-truncate;
@@ -470,7 +457,6 @@
       line-height: rs(3.5);
     }
   }
-
   // Multiple Option Search Input
   .ember-power-select-trigger-multiple-input {
     background   : transparent;
@@ -479,7 +465,6 @@
     margin-bottom: rs(0.5);
     padding      : 0;
   }
-
   // Selected Option
   .ember-power-select-placeholder,
   .ember-power-select-selected-item {
@@ -555,7 +540,6 @@
     }
   }
 }
-
 // styles when the dropdown is open
 .ember-basic-dropdown-trigger--above,
 .ember-basic-dropdown-trigger--below {
@@ -565,7 +549,6 @@
     }
   }
 }
-
 @at-root .ember-basic-dropdown-content {
   @include body-1;
   @include elevation(6);
@@ -583,12 +566,10 @@
     border-top: none;
   }
 }
-
 @at-root .ember-power-select-search {
   display       : flex;
   flex-direction: row;
 }
-
 @at-root .ember-power-select-search-input {
   background   : rgba($c-light,.5);
   border       : none;
@@ -608,24 +589,20 @@
     color: $c-error;
   }
 }
-
 @at-root .ember-power-select-options {
   list-style: none;
   padding   : rs(1) 0;
 }
-
 @at-root .ember-power-select-option {
   @include transition-all;
   @include text-truncate;
   cursor     : pointer;
   line-height: rs(6);
   padding    : 0 rs(1.75);
-
   // Hover State
   &[aria-current="true"] {
     background: rgba($c-accent,0.05);
   }
-
   // Currently Selected State
   &[aria-selected="true"] {
     background: rgba($c-accent,0.2);

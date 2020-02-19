@@ -51,7 +51,6 @@
 
       &.active,
       &:active {
-
         background: rgba($c-accent, 0.2);
         color     : $c-accent;
       }
@@ -123,7 +122,6 @@
     }
   }
 }
-
 // .uxs-menu {
 //   @include text-color-modifiers();
 //   @include background-color-modifiers();
