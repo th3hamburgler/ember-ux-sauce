@@ -49,9 +49,24 @@ export default Component.extend(BEMComponent, Testable, {
    @public
    */
   fixed: false,
+  /**
+   Set to true to display the nav drawer
+
+   @argument showDrawer
+   @type     Boolean
+   @default  false
+   @public
+   */
+  showDrawer: false,
   // Methods
   init() {
     this._super(...arguments);
     this.registerModifiers(['fixed']);
+  },
+  // Actions
+  actions: {
+    toggleDrawer() {
+      this.toggleProperty('showDrawer');
+    },
   },
 });

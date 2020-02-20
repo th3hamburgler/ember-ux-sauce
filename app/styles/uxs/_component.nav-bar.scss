@@ -42,6 +42,13 @@
       width : auto;
     }
   }
+
+  &__menu {
+    display: none;
+    @include mq(tablet-wide) {
+      display: flex;
+    }
+  }
 }
 
 .uxs-overlay {
@@ -159,6 +166,18 @@
     &--bottom {
       height: 34px;
     }
+  }
+}
+
+.uxs-modal-drawer {
+  animation: slideInLeft 0.5s;
+  height   : 100vh;
+  overflow : auto;
+
+  &__overlay {
+    animation : fadeIn 0.5s;
+    background: rgba($c-dark,0.8);
+    cursor    : pointer;
   }
 }
 // .uxs-navbar {

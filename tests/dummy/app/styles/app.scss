@@ -4,6 +4,7 @@
 //
 // @import 'uxs/tools.functions';
 //
+
 body.ember-tether-enabled {
   overflow: hidden;
 }
@@ -63,9 +64,7 @@ body.ember-tether-enabled {
 //     outline: none;
 //   }
 // }
-
 $isDocs: true;
-
 @import "uxs/tools.functions";
 @import "uxs/settings.variables";
 @import "uxs/include.base";
@@ -73,6 +72,7 @@ $isDocs: true;
 @import "uxs/include.vendor";
 @import "uxs/include.elements";
 
+.modal-overlays,
 .uxs {
   &-full {
     min-height: 100vh;
@@ -92,7 +92,6 @@ body > .ember-view {
     height: 24px;
     width : 24px;
   }
-
 }
 
 .docs-md :not(pre) > code {
@@ -139,5 +138,4 @@ body > .ember-view {
       border-color: rgba($c-primary, .3);
     }
   }
-
 }

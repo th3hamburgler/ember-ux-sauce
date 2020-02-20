@@ -1,12 +1,20 @@
 {{yield (hash
   logo=(component "uxs-nav-bar/logo")
   title=(component "uxs-nav-bar/title")
+  spacer=(component "uxs-div" base=(concat b "__spacer"))
   menu=(
     component
     "uxs-menu"
     align="right"
     bordered=false
     horizontal=true
+    class=(bem b "menu" m)
   )
-  spacer=(component "uxs-div" base=(concat b "__spacer"))
+  drawerToggle=(component "uxs-icon" "menu" color="white" onClick=(action 'toggleDrawer'))
+  drawer=(
+    component
+    "uxs-nav-bar/drawer"
+    showDrawer=showDrawer
+  )
+  showDrawer=this.showDrawer
 )}}

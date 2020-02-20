@@ -3,16 +3,40 @@
   <div class="" id="nav-bar">
     {{#uxs-nav-bar as |bar|}}
       {{bar.logo "addon-docs-pen"}}
-      {{bar.title "CRUD Life"}}
+      {{bar.title bar.showDrawer}}
+
       {{bar.spacer}}
+
       {{#bar.menu as |menu|}}
         {{menu.link "Homepage" "index"}}
         {{menu.link "Docs" "docs.index"}}
         {{menu.link "Styleguide" "styleguide"}}
         {{menu.link "App Layouts" "app"}}
       {{/bar.menu}}
+
+      {{bar.drawerToggle}}
+
+      {{#bar.drawer as |drawer|}}
+
+        {{#drawer.modal as |modal|}}
+          {{#modal.header}}
+            {{modal.title "Title"}}
+            {{modal.text "subtext"}}
+          {{/modal.header}}
+          {{modal.divider}}
+          {{#modal.menu as |menu|}}
+            {{menu.item "Home" class="active"}}
+            {{menu.item "Account"}}
+            {{menu.item "Logout"}}
+          {{/modal.menu}}
+        {{/drawer.modal}}
+
+      {{/bar.drawer}}
+
     {{/uxs-nav-bar}}
   </div>
+
+
   <div class="p" id="cards">
     <a href="#snackbar">
       {{uxs-overline "Cards" class="mv-2"}}

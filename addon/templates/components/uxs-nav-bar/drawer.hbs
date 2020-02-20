@@ -1,0 +1,15 @@
+{{#if showDrawer}}
+  {{#modal-dialog
+   onClose=(action (mut showDrawer) false)
+   containerClass="uxs uxs-modal-drawer"
+   overlayClass="uxs uxs-modal-drawer__overlay"
+   wrapperClass="uxs uxs--modal-drawer__wrapper"
+   attachment="middle left"
+   targetAttachment="middle left"
+   targetModifier="visible"
+   animatable=true
+  }}
+   {{yield (hash modal=(component "uxs-drawer" style="modal"))}}
+  {{/modal-dialog}}
+
+{{/if}}

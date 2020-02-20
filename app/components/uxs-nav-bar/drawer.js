@@ -1,0 +1,1 @@
+export { default } from 'ember-ux-sauce/components/uxs-nav-bar/drawer';
