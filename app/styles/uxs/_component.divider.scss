@@ -1,0 +1,17 @@
+.uxs-divider {
+  background: rgba($c-dark,0.18);
+  border    : 0;
+  display   : block;
+
+  &--horizontal {
+    height: rem-size(1px);
+    margin: rs(1.5,1) 0 rs(1.5);
+    width : 100%;
+  }
+
+  &--vertical {
+    height: 100;
+    margin: 0 rs(1.5) 0 rs(1.5,1);
+    width : rem-size(1px);
+  }
+}
