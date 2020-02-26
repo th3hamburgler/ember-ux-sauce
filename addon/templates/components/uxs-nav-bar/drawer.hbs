@@ -13,7 +13,7 @@
       animatable=true
   }}
     <div {{action "toggleDrawer"}} class="drawer-modal__body">
-      {{yield (hash modal=(component "uxs-drawer" style="modal"))}}
+      {{yield (hash drawer=(component "uxs-drawer" style="modal"))}}
     </div>
 
   {{/modal-dialog}}

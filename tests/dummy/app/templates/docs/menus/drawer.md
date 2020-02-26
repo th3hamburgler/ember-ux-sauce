@@ -31,3 +31,6 @@ Bottom navigation drawers are a specialized type of modal drawer for use with a 
 For increased reachability from the bottom app bar’s menu icon, they open from the bottom of the screen rather than the side.
 
 {{docs/uxs-drawer/bottom-demo}}
+
+
+[API Docs](/docs/api/components/uxs-drawer)

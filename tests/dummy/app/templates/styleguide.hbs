@@ -1,6 +1,5 @@
 <div class="uxs uxs-full">
 
-  {{!-- <div class="" id="nav-bar"> --}}
     {{#uxs-nav-bar as |bar|}}
       {{bar.logo "addon-docs-pen"}}
 
@@ -15,25 +14,24 @@
 
       {{bar.drawerToggle}}
 
-      {{#bar.drawer as |drawer|}}
+      {{#bar.modal as |modal|}}
 
-        {{#drawer.modal as |modal|}}
-          {{#modal.header}}
-            {{modal.title "Title"}}
-            {{modal.text "subtext"}}
-          {{/modal.header}}
-          {{modal.divider}}
-          {{#modal.menu as |menu|}}
+        {{#modal.drawer as |drawer|}}
+          {{#drawer.header}}
+            {{drawer.title "Title"}}
+            {{drawer.text "subtext"}}
+          {{/drawer.header}}
+          {{drawer.divider}}
+          {{#drawer.menu as |menu|}}
             {{menu.item "Home" class="active"}}
             {{menu.item "Account"}}
             {{menu.item "Logout"}}
-          {{/modal.menu}}
-        {{/drawer.modal}}
+          {{/drawer.menu}}
+        {{/modal.drawer}}
 
-      {{/bar.drawer}}
+      {{/bar.modal}}
 
     {{/uxs-nav-bar}}
-  {{!-- </div> --}}
 
 
   <div class="p" id="cards">

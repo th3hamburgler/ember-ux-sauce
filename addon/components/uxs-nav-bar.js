@@ -19,8 +19,12 @@ import layout from '../templates/components/uxs-nav-bar';
   @yield {Hash} bar
   @yield {Component} bar.logo
   @yield {Component} bar.title
+  @yield {Component} bar.spacer
   @yield {Component} bar.menu
   @yield {Component} bar.drawer
+  @yield {Component} bar.drawerToggle
+  @yield {Component} bar.modal
+  @yield {Boolean} bar.isShowingDrawer
 */
 export default Component.extend(BEMComponent, Testable, {
   /**

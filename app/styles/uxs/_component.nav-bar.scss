@@ -51,16 +51,6 @@
   }
 }
 
-.uxs-overlay {
-  background: rgba($c-dark,.4);
-  bottom    : 0;
-  left      : 0;
-  position  : absolute;
-  top       : 0;
-  right     : 0;
-  z-index   : 10;
-}
-
 .uxs-drawer {
   background: $c-white;
   overflow  : auto;
