@@ -1,0 +1,34 @@
+{{!-- template-lint-disable  --}}
+
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="spacer-row-demo.hbs"}}
+
+    <div class="uxs">
+      <div class="fx-row bg-light pl-1 pt-1">
+        <div class="bg-mid p-2 mr-1 mb-1 ta-c">Left</div>
+        {{uxs-spacer}}
+        <div class="bg-mid p-2 mr-1 mb-1 ta-c">Right</div>
+      </div>
+    </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet "spacer-row-demo.hbs"}}
+  {{#demo.example name="spacer-col-demo.hbs"}}
+    <div class="uxs">
+      <div
+        class="fx-col bg-light pl-1 pt-1"
+        style={{html-safe "height:320px"}}
+      >
+        <div class="bg-mid p-2 mr-1 mb-1 ta-c">Top</div>
+        {{uxs-spacer}}
+        <div class="bg-mid p-2 mr-1 mb-1 ta-c">Bottom</div>
+      </div>
+    </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet "spacer-col-demo.hbs"}}
+
+{{/docs-demo}}

@@ -23,6 +23,7 @@ Router.map(function() {
       this.route('lists');
       this.route('tables');
       this.route('dividers');
+      this.route('spacers');
     });
 
     this.route('buttons', function() {
