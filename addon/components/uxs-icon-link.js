@@ -1,6 +1,7 @@
 import LinkComponent from '@ember/routing/link-component';
 import layout from '../templates/components/uxs-icon-link';
 import Buttonable from 'ember-ux-sauce/mixins/buttonable';
+import Visible from 'ember-ux-sauce/mixins/visible';
 import {
   alias
 } from '@ember/object/computed';
@@ -18,7 +19,7 @@ export const ICON_STYLES = {
   @class UXS Icon Link
   @public
 */
-export default LinkComponent.extend(Buttonable, {
+export default LinkComponent.extend(Buttonable, Visible, {
   /**
    The BEM base name for this component
 
@@ -127,6 +128,46 @@ export default LinkComponent.extend(Buttonable, {
     @public
    */
   icon: alias('linkTitle'),
+
+  /**
+    The css display value of the root element
+    when it is visible.
+
+    Defaults to _flex-
+
+    @argument visibleDisplayType
+    @default  'flex'
+    @type     String
+    @public
+  */
+  visibleDisplayType: 'flex',
+
+  /**
+    Set to true to set a display class on the root.
+    The class used will depend on the value of _visibleDisplayType_
+    Default is _flex_
+
+    Pass in a media query code to display visible at a break point.
+    e.g. visible="md" will add the md:flex class
+    @argument visible
+    @default  null
+    @type     String
+    @public
+  */
+  visible: null,
+
+  /**
+    Set to true to set a hidden class on the root.
+    e.g. _hidden_
+
+    Pass in a media query code to hide at a break point.
+    e.g. visible="lg" will add the lg:hidden class
+    @argument hidden
+    @default  null
+    @type     String
+    @public
+  */
+  hidden: null,
   // Methods
   init() {
     this._super(...arguments);

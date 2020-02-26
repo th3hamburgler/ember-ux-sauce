@@ -8,9 +8,18 @@
     align="right"
     bordered=false
     horizontal=true
+    hidden=true
+    visible="md"
     class=(bem b "menu" m)
   )
-  drawerToggle=(component "uxs-icon" "menu" color="white" onClick=(action "toggleDrawer"))
+  drawerToggle=(
+    component
+    "uxs-icon"
+    "menu"
+    color="white"
+    onClick=(action "toggleDrawer")
+    hidden="md"
+  )
   modal=(
     component
     "uxs-nav-bar/drawer"
