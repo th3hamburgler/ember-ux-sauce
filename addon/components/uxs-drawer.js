@@ -15,6 +15,7 @@ import layout from '../templates/components/uxs-drawer';
     {{#drawer.menu as |menu|}}
       ...
     {{/drawer.menu}}
+    {{drawer.spacer}}
   {{/uxs-drawer}}
   ```
   @class UXS Drawer
@@ -24,6 +25,7 @@ import layout from '../templates/components/uxs-drawer';
   @yield {Component} drawer.title
   @yield {Component} drawer.text
   @yield {Component} drawer.drawer
+  @yield {Component} drawer.spacer
   @yield {Component} drawer.menu
 */
 export default Component.extend(BEMComponent, Testable, {
