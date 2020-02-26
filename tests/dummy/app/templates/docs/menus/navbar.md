@@ -26,4 +26,7 @@ The modal yeilds a _uxs-drawer_ component for standard mobile menu interface but
 
 {{docs/uxs-nav-bar/drawer-demo}}
 
+**NOTE:** By default the _mobileToggle_ will be hidden on non mobile devices but we have overridden the hidden property here so it's visible on the docs page.
+See the [Visible Mixin Docs](/docs/api/mixins/visible) for further details.
+
 [API Docs](/docs/api/components/uxs-nav-bar)
