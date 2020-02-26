@@ -24,6 +24,44 @@ UXS ships with 3 styles of buttons.
   {{uxs-button "Button" style="naked"}}
 </div>
 
+## Button Layout
+
+### Block Buttons
+
+Block level buttons span the full width of a parent and will have a bottom margin.
+
+<div class="uxs">
+  <div class="fx-col bg-light">
+    {{uxs-button "Block Button" block=true}}
+    {{uxs-button "Block Button" block=true color="accent"}}
+  </div>
+</div>
+
+### Inline Buttons
+
+Inline buttons will appear alongside other elements when wrapped in a flex row.
+The include horizontal margins to space.
+
+<div class="uxs">
+  <div class="fx-row bg-light">
+    {{uxs-button "Inline Button" inline=true}}
+    {{uxs-button "Inline Button" inline=true color="accent"}}
+  </div>
+</div>
+
+### Responsive Layout
+
+Both _block_ and _inline_ attributes can accept a media query code to target layouts at different levels.
+
+In this example the buttons appear inline on small devices (768px) and under and block on devices above
+
+<div class="uxs bg-light">
+  <div class="mb-2 fx-col sm:fx-row">
+    {{uxs-button "Primary" block="sm" inline="sm"}}
+    {{uxs-button "Secondary" color="accent" block="sm" inline="sm"}}
+  </div>
+</div>
+
 ## Leading Icon
 
 Buttons can also include icons.

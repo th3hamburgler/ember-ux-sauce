@@ -68,7 +68,7 @@ export default Mixin.create({
   ],
   // Computeds
   visibleClass: computed('visible', function() {
-    if (this.visible == true) {
+    if (this.visible === true) {
       // visible on all devices
       return this.visibleDisplayType;
     }
@@ -79,7 +79,7 @@ export default Mixin.create({
     return null;
   }),
   hiddenClass: computed('hidden', function() {
-    if (this.hidden == true) {
+    if (this.hidden === true) {
       // hidden on all devices
       return 'hidden';
     }

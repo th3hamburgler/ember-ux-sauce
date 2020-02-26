@@ -187,6 +187,33 @@ const Button = Component.extend(Buttonable, Clickable, {
     @public
    */
   text: null,
+  /**
+   The set to true if you want this button to appear as a full width block
+   This will set the button to 100% width of its parent and add a bottom margin.
+
+   Pass in a media query code to display block at a break point and under.
+   e.g. block="md" will add the uxs-button--md:block class
+
+   @argument block
+   @type     String/Boolean
+   @default  null
+   @public
+   */
+  block: null,
+
+  /**
+   The set to true if you want this button to appear inline with other buttons.
+   This will add horizontal margins.
+
+   Pass in a media query code to display inline at a break point and above.
+   e.g. inline="md" will add the uxs-button--md:inline class
+
+   @argument inline
+   @type     String/Boolean
+   @default  null
+   @public
+   */
+  inline: null,
   // Methods
   init() {
     this._super(...arguments);

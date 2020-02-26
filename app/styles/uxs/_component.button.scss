@@ -1,9 +1,7 @@
 .uxs-button {
   $self: '.uxs-button';
-
   // Button Basics
   @include button-component;
-
   /* ################ *
    * Contained Button *
    * ################ */
@@ -51,7 +49,6 @@
      */
     padding-top   : rs(1,1); // Account for border
     padding-bottom: rs(1,1); // size
-
     // Color modifiers
     @each $modifier, $color in $defaultColors {
       &#{$self}--#{$modifier} {
@@ -94,7 +91,6 @@
         color: $color;
       }
     }
-
     /*
      * Hover/Focused/Selected
      */
@@ -109,5 +105,56 @@
       }
     }
   }
+  /*
+   * Block Button
+   * Full width with bottom margin
+   */
+  &--block {
+    margin-bottom: rs(2);
+    max-width    : 100%;
+    width        : 100%;
+  }
+  // Media query specific display helper classes
+  @each $modifier, $breakpoint in $mediaModifiers {
+    @include mq($breakpoint, max) {
+      &--#{$modifier}\:block {
+        margin-bottom: rs(2);
+        max-width    : 100%;
+        width        : 100%;
+      }
+    }
+  }
+  /*
+   * Inline Button
+   * Inline with horizontal margins
+   */
+  &--inline {
+    margin-left : rs(1);
+    margin-right: rs(1);
 
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  // Media query specific display helper classes
+  @each $modifier, $breakpoint in $mediaModifiers {
+    @include mq($breakpoint) {
+      &--#{$modifier}\:inline {
+        margin-left : rs(1);
+        margin-right: rs(1);
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
 }

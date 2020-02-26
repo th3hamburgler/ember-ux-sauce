@@ -39,11 +39,20 @@
       {{uxs-overline "Cards" class="mv-2"}}
     </a>
 
-    <div class="block">Block</div>
-    <div class="inline-block">Inline Block</div>
-    <div class="inline">Inline</div>
-    <div class="flex">Flex</div>
-    <div class="hidden">Hidden</div>
+    <div class="fx-col">
+      {{uxs-button "Primary" block=true}}
+      {{uxs-button "Secondary" color="accent" block=true}}
+    </div>
+
+    <div class="fx-row mb-2">
+      {{uxs-button "Primary" inline=true}}
+      {{uxs-button "Secondary" color="accent" inline=true}}
+    </div>
+
+    <div class="mb-2 fx-col sm:fx-row ">
+      {{uxs-button "Primary" block="sm" inline="sm"}}
+      {{uxs-button "Secondary" color="accent" block="sm" inline="sm"}}
+    </div>
 
 
     {{#uxs-card class="mb-2" as |card|}}
