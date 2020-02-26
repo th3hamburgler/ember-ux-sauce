@@ -22,10 +22,16 @@ export default Component.extend({
   /**
    Set to true to display the nav drawer
 
-   @argument showDrawer
+   @argument isShowingDrawer
    @type     Boolean
    @default  false
    @public
    */
-  showDrawer: false,
+  isShowingDrawer: false,
+  //
+  actions: {
+    toggleDrawer() {
+      this.toggleProperty('isShowingDrawer');
+    },
+  }
 });

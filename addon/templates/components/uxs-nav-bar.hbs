@@ -10,11 +10,11 @@
     horizontal=true
     class=(bem b "menu" m)
   )
-  drawerToggle=(component "uxs-icon" "menu" color="white" onClick=(action 'toggleDrawer'))
+  drawerToggle=(component "uxs-icon" "menu" color="white" onClick=(action "toggleDrawer"))
   drawer=(
     component
     "uxs-nav-bar/drawer"
-    showDrawer=showDrawer
+    isShowingDrawer=isShowingDrawer
   )
-  showDrawer=this.showDrawer
+  isShowingDrawer=this.isShowingDrawer
 )}}

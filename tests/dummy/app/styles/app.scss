@@ -5,7 +5,8 @@
 // @import 'uxs/tools.functions';
 //
 
-body.ember-tether-enabled {
+body.ember-tether-enabled,
+body.liquid-tether-enabled {
   overflow: hidden;
 }
 //
@@ -65,6 +66,15 @@ body.ember-tether-enabled {
 //   }
 // }
 $isDocs: true;
+@import "ember-modal-dialog/ember-modal-structure";
+
+.uxs-modal-drawer {
+  overflow: auto;
+  top     : 0;
+  left    : 0;
+  bottom  : 0;
+  right   : 0;
+}
 @import "uxs/tools.functions";
 @import "uxs/settings.variables";
 @import "uxs/include.base";

@@ -168,15 +168,46 @@
     }
   }
 }
+// ember-modal-dialog
+// ember-modal-dialog-target-attachment-left
+// emd-target-attachment-left
+// emd-attachment-middle
+// emd-attachment-left
+// uxs
+// uxs-modal-drawer
+// ember-tether
+// ember-view
+// ember-tether-element
+// ember-tether-enabled
+// ember-tether-element-attached-middle
+// ember-tether-element-attached-left
+// ember-tether-target-attached-middle
+// ember-tether-target-attached-left
 
-.uxs-modal-drawer {
-  animation: slideInLeft 0.5s;
-  height   : 100vh;
-  overflow : auto;
+.ember-modal-dialog {
+  background: transparent;
+}
+// we use at-root here to ensure any namespace paths
+// are removed as the modal will always be at the top
+// level of the DOM
+@at-root .drawer-modal {
+  &__container {
+    background: white;
+    display   : flex;
+    max-height: 100vh;
+    min-height: 100vh;
+    width     : 75%;
+    max-width : rs(40);
+    min-width : rs(25);
+    overflow  : auto;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+  }
 
   &__overlay {
-    animation : fadeIn 0.5s;
-    background: rgba($c-dark,0.8);
+    background: rgba($c-dark, 0.6);
     cursor    : pointer;
   }
 }

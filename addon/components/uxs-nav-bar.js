@@ -52,12 +52,12 @@ export default Component.extend(BEMComponent, Testable, {
   /**
    Set to true to display the nav drawer
 
-   @argument showDrawer
+   @argument isShowingDrawer
    @type     Boolean
    @default  false
    @public
    */
-  showDrawer: false,
+  isShowingDrawer: false,
   // Methods
   init() {
     this._super(...arguments);
@@ -66,7 +66,7 @@ export default Component.extend(BEMComponent, Testable, {
   // Actions
   actions: {
     toggleDrawer() {
-      this.toggleProperty('showDrawer');
+      this.toggleProperty('isShowingDrawer');
     },
   },
 });

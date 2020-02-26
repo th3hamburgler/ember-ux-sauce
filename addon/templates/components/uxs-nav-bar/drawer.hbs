@@ -1,15 +1,21 @@
-{{#if showDrawer}}
+{{#if isShowingDrawer}}
+
   {{#modal-dialog
-   onClose=(action (mut showDrawer) false)
-   containerClass="uxs uxs-modal-drawer"
-   overlayClass="uxs uxs-modal-drawer__overlay"
-   wrapperClass="uxs uxs--modal-drawer__wrapper"
-   attachment="middle left"
-   targetAttachment="middle left"
-   targetModifier="visible"
-   animatable=true
+      onClose=(action "toggleDrawer")
+      translucentOverlay=true
+      tetherTarget="body"
+      targetAttachment="top left"
+      targetModifier="visible"
+      attachment="top left"
+      containerClass="drawer-modal__container"
+      overlayClass="drawer-modal__overlay"
+      wrapperClass="drawer-modal__wrapper"
+      animatable=true
   }}
-   {{yield (hash modal=(component "uxs-drawer" style="modal"))}}
+    <div {{action "toggleDrawer"}} class="drawer-modal__body">
+      {{yield (hash modal=(component "uxs-drawer" style="modal"))}}
+    </div>
+
   {{/modal-dialog}}
 
 {{/if}}

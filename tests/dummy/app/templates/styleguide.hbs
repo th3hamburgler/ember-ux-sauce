@@ -1,9 +1,8 @@
 <div class="uxs uxs-full">
 
-  <div class="" id="nav-bar">
+  {{!-- <div class="" id="nav-bar"> --}}
     {{#uxs-nav-bar as |bar|}}
       {{bar.logo "addon-docs-pen"}}
-      {{bar.title bar.showDrawer}}
 
       {{bar.spacer}}
 
@@ -34,7 +33,7 @@
       {{/bar.drawer}}
 
     {{/uxs-nav-bar}}
-  </div>
+  {{!-- </div> --}}
 
 
   <div class="p" id="cards">
@@ -90,7 +89,7 @@
       {{/card.footer}}
     {{/uxs-card}}
   </div>
-
+  {{!--
   <div class="p" id="notice">
 
     <a href="#notice">
@@ -203,7 +202,6 @@
           {{/item.body}}
           {{#item.aside}}
             {{item.meta "More"}}
-            {{!-- {{item.metaLink "More" "docs.components"}} --}}
           {{/item.aside}}
         {{/list.item}}
       {{/each}}
@@ -233,10 +231,6 @@
               onClick=(action "fav")
               bubbles=false
             }}
-            {{!-- {{item.actionLink
-              "favorite"
-              "docs.components"
-            }} --}}
           {{/item.aside}}
         {{/list.itemLink}}
       {{/each}}
@@ -328,7 +322,7 @@
     </div>
 
   </div>
-  {{!--
+
   <div class="p-2" id="border-padding">
 
     <div class="fx-row fx-ai-start mb">
@@ -510,7 +504,7 @@
     {{uxs-overline "Overline" class="mb-3"}}
 
   </div>
---}}
+
   <div class="p-2" id="text-component">
 
     <a href="#text-component">
@@ -554,7 +548,7 @@
     </a>
 
   </div>
-  {{!--
+
   <div class="p-2" id="data-lists">
 
     <a href="#data-lists">
@@ -624,7 +618,7 @@
     </div>
 
   </div>
-  --}}
+
   {{uxs-headline "Styleguide" class="ph-1"}}
 
   {{uxs-subtitle "List Data" class="ph-1"}}
@@ -750,5 +744,5 @@
       {{item.tip "Here's the tip"}}
     {{/data.item}}
   {{/uxs-data}}
-
+--}}
 </div>

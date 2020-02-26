@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+  isShowingModal: false,
   init() {
     this._super(...arguments);
     this.set('model', {
@@ -29,6 +30,9 @@ export default Controller.extend({
   actions: {
     fav() {
       window.console.log('Fav!');
-    }
+    },
+    toggleModal() {
+      this.toggleProperty('isShowingModal');
+    },
   }
 });
