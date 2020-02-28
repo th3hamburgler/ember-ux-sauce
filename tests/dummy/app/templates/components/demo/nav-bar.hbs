@@ -1,0 +1,35 @@
+{{#uxs-nav-bar as |bar|}}
+  {{bar.title "App Demo"}}
+
+  {{bar.spacer}}
+
+  {{#bar.menu as |menu|}}
+    {{menu.link "Single" "demo.single"}}
+    {{menu.link "Dashboard" "demo.dashboard"}}
+    {{menu.link "Collection" "demo.collection"}}
+    {{menu.link "Resource" "demo.resource"}}
+    {{menu.link "Splash" "demo.splash"}}
+  {{/bar.menu}}
+
+  {{bar.drawerToggle}}
+
+  {{#bar.modal as |modal|}}
+
+    {{#modal.drawer as |drawer|}}
+      {{#drawer.header}}
+        {{drawer.title "App Demo"}}
+        {{drawer.text "subtext"}}
+      {{/drawer.header}}
+      {{drawer.divider}}
+      {{#drawer.menu as |menu|}}
+        {{menu.link "Single" "demo.single"}}
+        {{menu.link "Dashboard" "demo.dashboard"}}
+        {{menu.link "Collection" "demo.collection"}}
+        {{menu.link "Resource" "demo.resource"}}
+        {{menu.link "Splash" "demo.splash"}}
+      {{/drawer.menu}}
+    {{/modal.drawer}}
+
+  {{/bar.modal}}
+
+{{/uxs-nav-bar}}

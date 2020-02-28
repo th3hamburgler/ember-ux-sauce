@@ -1,0 +1,112 @@
+<main class="uxs">
+  <div class="uxs-grid pv-3 ph-1½">
+
+    <header class="mh-1½ mb-3">
+      {{uxs-headline "Main 12 Column Grid Classes" 5}}
+    </header>
+
+    {{#each columns as |col|}}
+      <div class="uxs-row mb-3">
+        <div class="uxs-col uxs-col--{{col}}">
+          <div class="bg-accent c-white pv-2 ta-center truncate mh-1½">{{col}} Columns</div>
+        </div>
+        {{#let (sub numberOfColumns col) as |otherCol|}}
+          {{#if (gt otherCol 0)}}
+            <div class="uxs-col uxs-col--{{otherCol}}">
+              <div class="bg-accent c-white pv-2 ta-center truncate mh-1½">{{otherCol}} Columns</div>
+            </div>
+          {{/if}}
+        {{/let}}
+      </div>
+    {{/each}}
+
+    <header class="mh-1½ mb-3">
+      {{uxs-headline "Push Column Modifer Classes" 5}}
+    </header>
+
+    {{#each columns as |col|}}
+      {{#if (lt col numberOfColumns)}}
+        {{#let (sub numberOfColumns col) as |otherCol|}}
+
+          <div class="uxs-row mb-3">
+            <div class="uxs-col uxs-col--{{col}} uxs-col--push-{{otherCol}}">
+              <div class="bg-accent c-white pv-2 ta-center truncate mh-1½">{{col}} Columns Pushed</div>
+            </div>
+          </div>
+
+        {{/let}}
+      {{/if}}
+    {{/each}}
+
+    {{#each columns as |col|}}
+      <div class="uxs-row">
+        <div class="uxs-col uxs-col--{{col}}">
+          {{#each columns as |subCol|}}
+
+            {{#if (lte subCol col)}}
+
+              <div class="uxs-row mb-3">
+                <div class="uxs-col uxs-col--{{subCol}}:{{col}}">
+                  <div class="bg-primary c-white pv-2 ta-center truncate mh-1½">{{subCol}}:{{col}} Columns</div>
+                </div>
+
+                {{#let (sub col subCol) as |otherSubCol|}}
+                  {{#if (gt otherSubCol 0)}}
+                    <div class="uxs-col uxs-col--{{otherSubCol}}:{{col}}">
+                      <div class="bg-accent c-white pv-2 ta-center truncate mh-1½">{{otherSubCol}}:{{col}} Columns</div>
+                    </div>
+                  {{/if}}
+                {{/let}}
+
+              </div>
+
+            {{/if}}
+
+          {{/each}}
+
+        </div>
+        {{#let (sub numberOfColumns col) as |otherCol|}}
+          {{#if (gt otherCol 0)}}
+            <div class="uxs-col uxs-col--{{otherCol}} mb-3">
+              <div class="bg-mid c-white pv-2 ta-center truncate mh-1½ h-full">{{otherCol}} Columns</div>
+            </div>
+          {{/if}}
+        {{/let}}
+      </div>
+    {{/each}}
+
+  </div>
+
+  <header class="mh-3 mb-3">
+    {{uxs-headline "Single Page Layout" 5}}
+  </header>
+
+  <nav class="bg-dark c-white p-3">
+    {{uxs-subtitle "Nav Bar"}}
+  </nav>
+  <header class="bg-primary c-white p-3 pt-8">
+    {{uxs-headline "Header"}}
+  </header>
+  <main class="uxs-grid pv-3 ph-1½">
+    <div class="uxs-row">
+      <div class="uxs-col uxs-col--18 uxs-row">
+        <div class="uxs-col uxs-col--9:18 ph-1½">
+          {{#uxs-body paragraph=true}}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra diam sit amet nisl suscipit. Mauris vitae ultricies leo integer malesuada. Mauris sit amet massa vitae tortor condimentum lacinia quis vel. Nisl vel pretium lectus quam id leo in vitae. Sed tempus urna et pharetra pharetra massa. Id interdum velit laoreet id donec ultrices. Mi proin sed libero enim sed faucibus turpis in. Nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Pharetra sit amet aliquam id diam maecenas ultricies. Egestas diam in arcu cursus euismod. Adipiscing diam donec adipiscing tristique risus nec feugiat in.{{/uxs-body}}
+        </div>
+        <div class="uxs-col uxs-col--9:18 ph-1½">
+          {{#uxs-body paragraph=true}}Donec ac odio tempor orci dapibus ultrices in. Iaculis nunc sed augue lacus. Massa tincidunt nunc pulvinar sapien. Arcu cursus vitae congue mauris. Libero nunc consequat interdum varius sit amet mattis vulputate. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Sed adipiscing diam donec adipiscing tristique. Egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam. Velit euismod in pellentesque massa placerat duis. Pellentesque habitant morbi tristique senectus et netus et malesuada.{{/uxs-body}}
+        </div>
+      </div>
+      <div class="uxs-col uxs-col--6 ph-1½">
+        {{!-- <div class="bg-light"> --}}
+          {{#uxs-body paragraph=true}}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra diam sit amet nisl suscipit. Mauris vitae ultricies leo integer malesuada. Mauris sit amet massa vitae tortor condimentum lacinia quis vel. Nisl vel pretium lectus quam id leo in vitae. Sed tempus urna et pharetra pharetra massa. Id interdum velit laoreet id donec ultrices. Mi proin sed libero enim sed faucibus turpis in. Nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Pharetra sit amet aliquam id diam maecenas ultricies. Egestas diam in arcu cursus euismod. Adipiscing diam donec adipiscing tristique risus nec feugiat in.{{/uxs-body}}
+        {{!-- </div> --}}
+      </div>
+    </div>
+  </main>
+  <footer class="bg-mid c-dark ph-3 pv-2">
+    {{uxs-subtitle "Footer" class="ta-center"}}
+  </footer>
+
+
+</main>

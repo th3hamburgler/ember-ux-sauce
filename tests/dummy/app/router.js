@@ -116,6 +116,7 @@ Router.map(function() {
     // });
 
 
+
     this.route('layout', function() {
       this.route('app');
       this.route('navbar');
@@ -141,6 +142,7 @@ Router.map(function() {
   });
 
   this.route('styleguide');
+  this.route('grid');
   this.route('app', function() {
     this.route('dash', {
       path: '/'
@@ -165,6 +167,15 @@ Router.map(function() {
       this.route('archive');
     });
 
+  });
+  this.route('demo', function() {
+    this.route('single', {
+      path: '/'
+    });
+    this.route('dashboard');
+    this.route('collection');
+    this.route('resource');
+    this.route('splash');
   });
   this.route('not-found', {
     path: '/*path'

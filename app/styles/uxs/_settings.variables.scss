@@ -25,6 +25,7 @@ $spacing-scale: (
   "0" : 0,
   "½" : 0.5,
   "1" : 1,
+  "1½": 1.5,
   "2" : 2,
   "3" : 3,
   "4" : 4,
@@ -33,6 +34,8 @@ $spacing-scale: (
   "8" : 8,
   "12": 12,
   "16": 16,
+  "24": 24,
+  "32": 32,
 )
 !default; // Default padding sizes, can be overriden from spacing
 $defaultPadding: $defaultSpacing;

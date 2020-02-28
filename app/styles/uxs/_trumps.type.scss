@@ -1,7 +1,6 @@
 /* ------------- */
 /* 1. TYPOGRAPHY */
 /* ------------- */
-
 .t-headline-1 {
   @include headline-1;
 }
@@ -63,11 +62,9 @@
 .t-overline {
   @include overline;
 }
-
 /* --------------- */
 /* 2. FONT WEIGHTS */
 /* --------------- */
-
 $weights: (
   'hairline' : 100,
   'thin'     : 200,
@@ -79,7 +76,6 @@ $weights: (
   'extrabold': 800,
   'black'    : 900,
 );
-
 @each $modifier, $weight in $weights {
   .fw-#{"" +$modifier} {
     font-weight: $weight;
@@ -93,7 +89,6 @@ $weights: (
     font-weight: $weight;
   }
 }
-
 // - Examples -
 // .sm:ta-center
 // .md:ta-left
@@ -110,22 +105,19 @@ $weights: (
     }
   }
 }
-
 /* ------------- */
 /* 3. TEXT ALIGN */
 /* ------------- */
-
 $textAligns: (
-  'center'' :' center,
-  'left'' :' left,
-  'right'' :' right,
-  'justify'':' justify,
-);
-
-// .ta-center
+  'center' : center,
+  'left'   : left,
+  'right'  : right,
+  'justify': justify,
+); // .ta-center
 // .ta-left
 // .ta-right
 // .ta-justify
+
 .ta {
   @each $modifier, $align in $textAligns {
     &-#{$modifier} {
@@ -133,7 +125,6 @@ $textAligns: (
     }
   }
 }
-
 // - Examples -
 // .sm:ta-center
 // .md:ta-left
@@ -150,19 +141,15 @@ $textAligns: (
     }
   }
 }
-
 /* ------------------ */
 /* 3. TEXT DECORATION */
 /* ------------------ */
-
 $decorations: (
   'overline'    : overline,
   'underline'   : underline,
   'line-through': line-through,
   'none'        : none,
-);
-
-// td-overline
+); // td-overline
 // td-underline
 // td-line-through
 // td-none
@@ -171,7 +158,6 @@ $decorations: (
     text-decoration: $decoration;
   }
 }
-
 // - Examples -
 // .hover:td-overline
 // .focus:td-underline
@@ -184,7 +170,6 @@ $decorations: (
     text-decoration: $decoration;
   }
 }
-
 // - Examples -
 // .sm:td-overline
 // .md:td-underline
@@ -201,7 +186,6 @@ $decorations: (
     }
   }
 }
-
 /* ------------------ */
 /* 4. TEXT TRANSFORM */
 /* ------------------ */
