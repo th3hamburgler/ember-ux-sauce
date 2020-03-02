@@ -4,7 +4,7 @@
   border-color  : $c-light;
   display       : flex;
   flex-direction: row;
-  padding       : rs(2);
+  // padding       : rs(2);
   min-width     : 100%;
 
   &--left {
@@ -25,11 +25,9 @@
     position      : relative;
     opacity       : 0.5;
     text-transform: uppercase;
-
     @include mq(tablet) {
       padding-right: rs(3);
     }
-
     @include mq(tablet, max) {
       display: none;
 

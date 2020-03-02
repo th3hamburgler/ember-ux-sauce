@@ -54,6 +54,12 @@
       {{uxs-button "Secondary" color="accent" block="sm" inline="sm"}}
     </div>
 
+    {{#uxs-breadcrumb as |crumb|}}
+      {{crumb.item "Item"}}
+      {{crumb.item "Item"}}
+      {{crumb.item "Item"}}
+    {{/uxs-breadcrumb}}
+
 
     {{#uxs-card class="mb-2" as |card|}}
       {{#card.header}}

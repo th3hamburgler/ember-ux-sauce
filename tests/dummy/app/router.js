@@ -173,7 +173,12 @@ Router.map(function() {
       path: '/'
     });
     this.route('dashboard');
-    this.route('collection');
+    this.route('collection', function() {
+      this.route('index', {
+        path: '/'
+      });
+      this.route('loading');
+    });
     this.route('resource');
     this.route('splash');
   });

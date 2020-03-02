@@ -1,0 +1,83 @@
+$numberOfColumns: 24;
+
+.uxs-layout {
+  display       : flex;
+  flex-direction: column;
+  width         : 100%;
+  min-width     : rs(40);
+}
+
+.uxs-row {
+  display       : flex;
+  flex-direction: row;
+  flex-wrap     : wrap;
+  width         : 100%;
+}
+
+.uxs-col {
+  overflow: hidden;
+  flex    : 0 0 auto;
+  @for $r from 1 through $numberOfColumns {
+    // These are the col classes for our global column row
+    &--#{$r} {
+      width: percentage($r/$numberOfColumns);
+    }
+    // Add push modifier to push col by number of cols
+    &--push-#{$r} {
+      margin-left: percentage($r/$numberOfColumns);
+    }
+    // Now add sizings for sub column rows eg 4:11 (4 cols in a 11 col parent row)
+    @for $c from 1 through $r {
+      &--#{$c}\:#{$r} {
+        width: percentage($c/$r);
+      }
+      // Add push modifier to push col by number of cols
+      &--push-#{$c}\:#{$r} {
+        margin-left: percentage($c/$r);
+      }
+    }
+  }
+}
+// And media query variants for the cols
+@each $modifier, $breakpoint in $mediaModifiers {
+  @include mq($breakpoint) {
+    .#{$modifier}\:uxs-col {
+      overflow: hidden;
+      flex    : 0 0 auto;
+      @for $r from 1 through $numberOfColumns {
+        // These are the col classes for our global column row
+        &--#{$r} {
+          width: percentage($r/$numberOfColumns);
+        }
+        // Add push modifier to push col by number of cols
+        &--push-#{$r} {
+          margin-left: percentage($r/$numberOfColumns);
+        }
+        // Now add sizings for sub column rows eg 4:11 (4 cols in a 11 col parent row)
+        @for $c from 1 through $r {
+          &--#{$c}\:#{$r} {
+            width: percentage($c/$r);
+          }
+          // Add push modifier to push col by number of cols
+          &--push-#{$c}\:#{$r} {
+            margin-left: percentage($c/$r);
+          }
+        }
+      }
+    }
+  }
+  $c-skeleton-text-light: $c-light;
+  $c-skeleton-text-mid  : $c-mid;
+  $c-skeleton-text-dark : $c-grey;
+
+  .skeleton {
+    &__word {
+      background    : $c-skeleton-text-light;
+      border-radius : rs(0.75);
+      display       : inline-block;
+      height        : rs(1.5);
+      vertical-align: middle;
+      width         : rs(6);
+    }
+  }
+}
