@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.3
+
+- Bind max/min attributes to input
+- Modal fixes
+- UXS Columns
+
 ## 2.0.2
 
 - Added uxs-drawer
