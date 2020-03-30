@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.4
+
+- uxs-menu vertical and dropdown layouts
+
 ## 2.0.3
 
 - Bind max/min attributes to input
