@@ -1,0 +1,17 @@
+{{#docs-demo as |demo|}}
+
+  {{#demo.example name="menu-vertical-left-icons-demo.hbs"}}
+    <div class="uxs">
+      {{#uxs-menu style="vertical" hasLeftIcon=true as |menu|}}
+        {{menu.item "Maps" leftIcon="add"}}
+        {{menu.item "Books" leftIcon="add"}}
+        {{menu.item "Flights" leftIcon="add"}}
+        {{menu.item "App" leftIcon="add"}}
+      {{/uxs-menu}}
+    </div>
+
+  {{/demo.example}}
+
+  {{demo.snippet "menu-vertical-left-icons-demo.hbs"}}
+
+{{/docs-demo}}

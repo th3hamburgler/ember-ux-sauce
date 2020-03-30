@@ -2,32 +2,16 @@
 
   {{#demo.example name="menu-horizontal-demo.hbs"}}
 
-    {{#uxs-menu horizontal=true align=align detail=detail style=style as |menu|}}
-      {{menu.item "Maps"}}
-      {{menu.item "Books"}}
-      {{menu.item "Flights"}}
-      {{menu.item "App"}}
-    {{/uxs-menu}}
+    <div class="uxs">
+      {{#uxs-menu style="horizontal" as |menu|}}
+        {{menu.item "Maps"}}
+        {{menu.item "Books"}}
+        {{menu.item "Flights"}}
+        {{menu.item "App"}}
+      {{/uxs-menu}}
+    </div>
 
   {{/demo.example}}
-
-  {{#args-table "menu-horizontal-demo" as |table|}}
-    {{#table.row "align" as |row|}}
-      {{row.label "Align"}}
-      {{row.input align options="align-directions"}}
-      {{row.type "String"}}
-    {{/table.row}}
-    {{#table.row "detail" as |row|}}
-      {{row.label "Detail"}}
-      {{row.checkbox detail}}
-      {{row.type "Bolean"}}
-    {{/table.row}}
-    {{#table.row "style" as |row|}}
-      {{row.label "Style"}}
-      {{row.input style options="styles"}}
-      {{row.type "String"}}
-    {{/table.row}}
-  {{/args-table}}
 
   {{demo.snippet "menu-horizontal-demo.hbs"}}
 

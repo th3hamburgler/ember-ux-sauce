@@ -143,6 +143,8 @@ const NavItem = Component.extend(BEMComponent, Clickable, Styleable, Testable, {
     this.registerModifiers([
       'detail',
       'horizontal',
+      'showRightIcon:has-right-icon',
+      'showLeftIcon:has-left-icon'
     ])
     this._super(...arguments);
   },

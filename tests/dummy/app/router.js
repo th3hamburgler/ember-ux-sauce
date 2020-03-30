@@ -42,6 +42,7 @@ Router.map(function() {
     })
 
     this.route('menus', function() {
+      this.route('dropdown');
       this.route('navbar');
       this.route('drawer');
     });

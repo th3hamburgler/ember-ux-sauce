@@ -15,6 +15,13 @@
 
   &--drawer {}
 
+  &--vertical {
+    flex-direction : column;
+    max-width      : none;
+    align-items    : flex-start;
+    justify-content: center;
+  }
+
   &--horizontal {
     flex-direction: row;
     max-width     : none;
@@ -23,6 +30,8 @@
   &__item {
     @include transition-all;
     @include text-truncate;
+    border-radius : rs(.5);
+    align-items   : center;
     cursor        : pointer;
     display       : flex;
     flex-direction: row;
@@ -57,18 +66,23 @@
       }
     }
 
+    &--vertical {
+      line-height: rs(5);
+      width      : 100%;
+
+      &.uxs-menu__item--has-right-icon {
+        padding-right: 0;
+      }
+
+      &.uxs-menu__item--has-left-icon {
+        padding-left: 0;
+      }
+    }
+
     &--horizontal {
       border-radius: rs(.5);
       margin       : 0 rs(.5);
       opacity      : 0.6;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
 
       &:hover {
         opacity: 1;
@@ -78,6 +92,16 @@
       &:active {
         opacity: 1;
       }
+    }
+  }
+
+  &__text {
+    flex: 1 1 auto;
+  }
+
+  &__icon {
+    &:before {
+      display: none;
     }
   }
 

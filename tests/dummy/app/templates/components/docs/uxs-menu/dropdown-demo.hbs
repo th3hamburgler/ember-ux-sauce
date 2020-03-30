@@ -1,21 +1,21 @@
 {{#docs-demo as |demo|}}
 
   {{#demo.example name="menu-dropdown-demo-demo.hbs"}}
-
-    {{#basic-dropdown as |dropdown|}}
-      {{#dropdown.trigger}}
-        {{uxs-button "Dropdown Menu" style="primary"}}
-      {{/dropdown.trigger}}
-      {{#dropdown.content}}
-        {{#uxs-menu as |menu|}}
-          {{#menu.item}}Normal nav item{{/menu.item}}
-          {{#menu.item}}And another{{/menu.item}}
-          {{menu.separator}}
-          {{#menu.link "docs.index"}}This one is a link{{/menu.link}}
-        {{/uxs-menu}}
-      {{/dropdown.content}}
-    {{/basic-dropdown}}
-
+    <div class="uxs">
+      {{#basic-dropdown as |dropdown|}}
+        {{#dropdown.trigger}}
+          {{uxs-button "Dropdown Menu" style="primary"}}
+        {{/dropdown.trigger}}
+        {{#dropdown.content}}
+          {{#uxs-menu style="vertical" hasRightIcon=true as |menu|}}
+            {{menu.item "Maps" rightIcon="add"}}
+            {{menu.item "Books" rightIcon="add"}}
+            {{menu.item "Flights" rightIcon="add"}}
+            {{menu.item "App" rightIcon="add"}}
+          {{/uxs-menu}}
+        {{/dropdown.content}}
+      {{/basic-dropdown}}
+    </div>
   {{/demo.example}}
 
   {{demo.snippet "menu-dropdown-demo-demo.hbs"}}
