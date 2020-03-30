@@ -3,7 +3,6 @@
   flex-direction: row;
   padding       : rs(2);
   width         : 100%;
-
   // Color modifiers
   @each $modifier, $color in $defaultColors {
     &--#{$modifier} {
@@ -11,12 +10,10 @@
       color     : contrast-color($color);
     }
   }
-
   // Style Modifers
   &--extended {
     padding-bottom: rs(3);
   }
-
   // Title
   &__title {
     @include headline-6;
@@ -28,7 +25,6 @@
       padding-top: rs(8);
     }
   }
-
   // Icons
   &__action,
   &__navigation,
@@ -37,17 +33,15 @@
     @include icon-hover();
     flex-shrink: 0;
   }
-
   //
   &__navigation {
     margin-right: rs(2);
   }
 
   &__action {
-    margin-right: rs(1);
-
-    &:last-child {
-      margin-right: 0;
-    }
+    // margin-right: rs(1);
+    // &:last-child {
+    //   margin-right: 0;
+    // }
   }
 }
