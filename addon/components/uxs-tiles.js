@@ -1,12 +1,8 @@
-import Component from '@ember/component';
-import layout from '../templates/components/uxs-tiles';
-import Testable from 'ember-ux-sauce/mixins/testable';
-import BEMComponent from 'ember-bem-sauce/mixins/bem-component';
-import {
-  computed,
-  get,
-  set
-} from '@ember/object';
+import Component from "@ember/component";
+import layout from "../templates/components/uxs-tiles";
+import Testable from "ember-ux-sauce/mixins/testable";
+import BEMComponent from "ember-bem-sauce/mixins/bem-component";
+import { computed, get, set } from "@ember/object";
 
 /**
   A component to render a tile row component
@@ -32,7 +28,7 @@ export default Component.extend(Testable, BEMComponent, {
     @field base
     @type String
    */
-  base: 'uxs-tiles__group',
+  base: "uxs-tiles__group",
   /**
     Set the size of child tiles
 
@@ -43,7 +39,7 @@ export default Component.extend(Testable, BEMComponent, {
     @default  "medium"
     @public
    */
-  size: 'medium',
+  size: "medium",
   /**
     Set the style of the splash component.
 
@@ -58,39 +54,39 @@ export default Component.extend(Testable, BEMComponent, {
    */
   style: null,
   // Capacity
-  capacity: computed('size', function() {
-    switch (get(this, 'size')) {
-      case 'small':
+  capacity: computed("size", function () {
+    switch (get(this, "size")) {
+      case "small":
         return 5;
-      case 'medium':
+      case "medium":
         return 3;
-      case 'large':
+      case "large":
         return 2;
     }
   }),
   // Methods
   init() {
     this._super(...arguments);
-    this.registerModifiers([
-      'scroll',
-      '*style',
-    ]);
+    this.registerModifiers(["scroll", "*style"]);
   },
   didInsertElement() {
     this.autoDetectScrollMode();
   },
   /**
    * Auto detect when scroll is needed
+   * unless scroll is explicitly set to false
    **/
   autoDetectScrollMode() {
     // let theInnerHtml = this.element;
-    const capacity = get(this, 'capacity'),
+    const capacity = get(this, "capacity"),
       selector = `#${this.elementId} .uxs-tiles__item`,
       numberOfTiles = document.querySelectorAll(selector).length;
 
-    if (numberOfTiles > capacity) {
-      set(this, 'scroll', true);
+    const allowScroll = get(this, "scroll");
+    if (allowScroll == undefined || allowScroll) {
+      if (numberOfTiles > capacity) {
+        set(this, "scroll", true);
+      }
     }
-  }
-
+  },
 });
