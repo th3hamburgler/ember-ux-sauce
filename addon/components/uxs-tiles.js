@@ -88,9 +88,11 @@ export default Component.extend(Testable, BEMComponent, {
       selector = `#${this.elementId} .uxs-tiles__item`,
       numberOfTiles = document.querySelectorAll(selector).length;
 
-    if (numberOfTiles > capacity) {
-      set(this, 'scroll', true);
+    const allowScroll = get(this, 'scroll');
+    if(allowScroll == undefined || allowScroll) {
+      if (numberOfTiles > capacity) {
+        set(this, 'scroll', true);
+      }
     }
   }
-
 });
