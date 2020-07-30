@@ -102,14 +102,14 @@
       top     : rs(-6);
       flex    : 1 1 auto;
       height  : calc(100vh - (#{rs(5.5, 5px)}));
-      width   : calc(100vw - #{rs(1)});
+      width   : calc(100% - #{rs(1)});
       @include mq(tablet) {
         margin     : 0 rs(1) 0 0;
         flex-grow  : 0;
         flex-shrink: 0;
         // 1/3 width with 2rem padding at row ends and another two seperating margins
         height     : calc(100vh - (#{rs(5.5, 5px)}));
-        width      : calc(100vw - (#{rs(2)}));
+        width      : calc(100% - (#{rs(2)}));
       }
     }
 
@@ -117,14 +117,14 @@
       margin: 0 0 rs(0.5);
       flex  : 1 1 auto;
       height: calc(60vw - #{rs(1)});
-      width : calc(100vw - #{rs(1)});
+      width : calc(100% - #{rs(1)});
       @include mq(tablet) {
         margin     : 0 rs(1) 0 0;
         flex-grow  : 0;
         flex-shrink: 0;
         // 1/2 width with 2rem padding at row ends and another two seperating margins
         height     : calc(20vw - (#{rs(4/3)}));
-        width      : calc(50vw - (#{rs(1.5)}));
+        width      : calc((100% / 2) - (#{rs(0.5)}));
       }
       //- #{rs(1.25)}
     }
@@ -133,21 +133,21 @@
       margin: 0 0 rs(0.5);
       flex  : 1 1 auto;
       height: calc(60vw - #{rs(1)});
-      width : calc(100vw - #{rs(1)});
+      width : calc(100% - #{rs(1)});
       @include mq(tablet) {
         margin     : 0 rs(1) 0 0;
         flex-grow  : 0;
         flex-shrink: 0;
         // 1/3 width with 2rem padding at row ends and another two seperating margins
         height     : calc(20vw - (#{rs(4/3)}));
-        width      : calc(33.3vw - (#{rs(4/3)}));
+        width      : calc((100% / 3) - (#{rs(2/3)}));
       }
       //- #{rs(1.25)}
     }
 
     &--small {
       height: calc(50vw - (#{rs(1.5/2)}));
-      width : calc(50vw - (#{rs(1.5/2)}));
+      width : calc((100% / 2) - (#{rs(0.5/2)}));
       margin: 0 rs(0.5) rs(0.5) 0;
       // flex      : 1 1 0;
       &:nth-child(even) {
@@ -156,7 +156,7 @@
       @include mq(tablet) {
         // 1/5 width with 2rem padding at row ends and another 4 seperating margins
         height: calc(20vw - (#{rs(6/5)}));
-        width : calc(20vw - (#{rs(6/5)}));
+        width : calc((100% / 5) - (#{rs(4/5)}));
         margin: 0 rs(1) 0 0;
 
         &:nth-child(even) {
